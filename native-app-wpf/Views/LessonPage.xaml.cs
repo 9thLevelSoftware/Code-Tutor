@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -45,9 +46,8 @@ public partial class LessonPage : UserControl
                 mainWindow.SetSidebarContent(sidebar);
             }
 
-            LoadLesson();
             SetupNavigation();
-            CheckCompletionStatus();
+            Loaded += LessonPage_Loaded;
         }
         catch (Exception ex)
         {
@@ -57,7 +57,21 @@ public partial class LessonPage : UserControl
         }
     }
 
-    private async void CheckCompletionStatus()
+    private async void LessonPage_Loaded(object sender, RoutedEventArgs e)
+    {
+        Loaded -= LessonPage_Loaded; // Only fire once
+        try
+        {
+            await LoadLessonAsync();
+            await CheckCompletionStatusAsync();
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"[LessonPage] Load failed: {ex.Message}");
+        }
+    }
+
+    private async Task CheckCompletionStatusAsync()
     {
         if (await _progressService.IsLessonCompleteAsync(_lesson.Id))
         {
@@ -66,7 +80,7 @@ public partial class LessonPage : UserControl
         }
     }
 
-    private async void LoadLesson()
+    private async Task LoadLessonAsync()
     {
         LessonTitle.Text = _lesson.Title;
         LessonTime.Text = $"{_lesson.EstimatedMinutes} min";

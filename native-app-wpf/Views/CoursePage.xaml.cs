@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using CodeTutor.Wpf.Models;
@@ -40,10 +42,23 @@ public partial class CoursePage : UserControl
         LessonCount.Text = course.Modules.Sum(m => m.Lessons.Count).ToString();
         EstimatedTime.Text = course.EstimatedHours.ToString();
 
-        LoadProgressAsync();
+        Loaded += CoursePage_Loaded;
     }
 
-    private async void LoadProgressAsync()
+    private async void CoursePage_Loaded(object sender, RoutedEventArgs e)
+    {
+        Loaded -= CoursePage_Loaded;
+        try
+        {
+            await LoadProgressAsync();
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"[CoursePage] Load progress failed: {ex.Message}");
+        }
+    }
+
+    private async Task LoadProgressAsync()
     {
         var stats = await _progressService.GetCourseProgressAsync(_course);
 
