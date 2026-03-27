@@ -40,12 +40,12 @@ public partial class CodingChallenge : UserControl
     public bool IsCompleted { get; private set; }
     public string ChallengeId => _challenge.Id;
 
-    public CodingChallenge(Challenge challenge)
+    public CodingChallenge(Challenge challenge, ICodeExecutionService executionService)
     {
         InitializeComponent();
         _challenge = challenge;
         _originalCode = challenge.StarterCode;
-        _executionService = new CodeExecutionService();
+        _executionService = executionService;
 
         if (PerformanceProfile.IsSoftwareRendering && CodeEditorBorder.Effect is DropShadowEffect effect)
         {
@@ -134,6 +134,7 @@ public partial class CodingChallenge : UserControl
     {
         await StopCurrentSessionAsync();
 
+        _executionCts?.Dispose();
         _executionCts = new CancellationTokenSource();
         _outputBuffer.Clear();
 
@@ -155,10 +156,12 @@ public partial class CodingChallenge : UserControl
         try
         {
             _currentSession = await _executionService.StartInteractiveSessionAsync(CodeEditor.Text, _challenge.Language);
-            
-            _currentSession.OutputReceived += (s, data) => Dispatcher.Invoke(() => AppendOutput(data, false));
-            _currentSession.ErrorReceived += (s, data) => Dispatcher.Invoke(() => AppendOutput(data, true));
-            _currentSession.Exited += (s, exitCode) => Dispatcher.Invoke(() => OnSessionExited(exitCode));
+
+            // Attach handlers BEFORE Start() so no events are missed
+            _currentSession.OutputReceived += (s, data) => Dispatcher.BeginInvoke(() => AppendOutput(data, false));
+            _currentSession.ErrorReceived += (s, data) => Dispatcher.BeginInvoke(() => AppendOutput(data, true));
+            _currentSession.Exited += (s, exitCode) => Dispatcher.BeginInvoke(() => OnSessionExited(exitCode));
+            _currentSession.Start();
         }
         catch (Exception ex)
         {

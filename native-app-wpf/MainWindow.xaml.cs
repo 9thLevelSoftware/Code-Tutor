@@ -11,8 +11,11 @@ namespace CodeTutor.Wpf;
 
 public partial class MainWindow : Window
 {
+    private readonly ServiceProvider _serviceProvider;
     private readonly INavigationService _navigation;
     private readonly ICourseService _courseService;
+    private readonly IProgressService _progressService;
+    private readonly ICodeExecutionService _codeExecutionService;
     private readonly ITutorService _tutorService;
     private readonly IModelDownloadService _downloadService;
     private Controls.TutorChat? _tutorChat;
@@ -27,12 +30,17 @@ public partial class MainWindow : Window
         var services = new ServiceCollection();
         services.AddSingleton<ICourseService, CourseService>();
         services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<IProgressService, ProgressService>();
+        services.AddSingleton<ICodeExecutionService, CodeExecutionService>();
         services.AddSingleton<ITutorService, LlamaTutorService>();
         services.AddSingleton<IModelDownloadService, ModelDownloadService>();
         var provider = services.BuildServiceProvider();
+        _serviceProvider = provider;
 
         _navigation = provider.GetRequiredService<INavigationService>();
         _courseService = provider.GetRequiredService<ICourseService>();
+        _progressService = provider.GetRequiredService<IProgressService>();
+        _codeExecutionService = provider.GetRequiredService<ICodeExecutionService>();
         _tutorService = provider.GetRequiredService<ITutorService>();
         _downloadService = provider.GetRequiredService<IModelDownloadService>();
 
@@ -57,8 +65,10 @@ public partial class MainWindow : Window
         };
 
         // Navigate to landing page
-        var landingPage = new LandingPage(_courseService, _navigation, _tutorService, _downloadService);
+        var landingPage = new LandingPage(_courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
         _navigation.NavigateTo(landingPage);
+
+        Closed += (_, _) => { _serviceProvider.Dispose(); };
     }
 
     public void SetSidebarContent(object content)

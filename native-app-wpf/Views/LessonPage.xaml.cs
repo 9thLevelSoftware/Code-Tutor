@@ -17,12 +17,13 @@ public partial class LessonPage : UserControl
     private readonly Lesson _lesson;
     private readonly ICourseService _courseService;
     private readonly INavigationService _navigation;
-    private readonly IProgressService _progressService = new ProgressService();
+    private readonly IProgressService _progressService;
+    private readonly ICodeExecutionService _codeExecutionService;
     private readonly ITutorService _tutorService;
     private readonly IModelDownloadService _downloadService;
-    private readonly List<Controls.CodingChallenge> _challengeControls = new();
+    private readonly List<ChallengeControlWrapper> _challengeControls = new();
 
-    public LessonPage(Course course, Lesson lesson, ICourseService courseService, INavigationService navigation, ITutorService tutorService, IModelDownloadService downloadService)
+    public LessonPage(Course course, Lesson lesson, ICourseService courseService, INavigationService navigation, IProgressService progressService, ICodeExecutionService codeExecutionService, ITutorService tutorService, IModelDownloadService downloadService)
     {
         try
         {
@@ -31,13 +32,15 @@ public partial class LessonPage : UserControl
             _lesson = lesson ?? throw new ArgumentNullException(nameof(lesson));
             _courseService = courseService ?? throw new ArgumentNullException(nameof(courseService));
             _navigation = navigation ?? throw new ArgumentNullException(nameof(navigation));
+            _progressService = progressService ?? throw new ArgumentNullException(nameof(progressService));
+            _codeExecutionService = codeExecutionService ?? throw new ArgumentNullException(nameof(codeExecutionService));
             _tutorService = tutorService ?? throw new ArgumentNullException(nameof(tutorService));
             _downloadService = downloadService ?? throw new ArgumentNullException(nameof(downloadService));
 
             // Refresh sidebar and highlight active lesson
             if (Application.Current.MainWindow is MainWindow mainWindow)
             {
-                var sidebar = new CourseSidebar(course, courseService, navigation, tutorService, downloadService);
+                var sidebar = new CourseSidebar(course, courseService, navigation, progressService, codeExecutionService, tutorService, downloadService);
                 sidebar.SetCurrentLesson(lesson);
                 mainWindow.SetSidebarContent(sidebar);
             }
@@ -99,14 +102,29 @@ public partial class LessonPage : UserControl
             }
         }
 
-        // Add challenges
+        // Add challenges with type-appropriate controls
         foreach (var challenge in challenges)
         {
-            var challengeControl = new Controls.CodingChallenge(challenge);
-            challengeControl.ChallengeCompleted += OnChallengeCompleted;
-            challengeControl.ContextChanged += OnChallengeContextChanged;
-            _challengeControls.Add(challengeControl);
-            ContentPanel.Children.Add(challengeControl);
+            var challengeType = (challenge.Type ?? "").ToUpperInvariant();
+
+            if (challengeType == "QUIZ" && challenge.Options != null && challenge.Options.Count > 0)
+            {
+                // Multiple-choice quiz - use QuizChallenge control
+                var quizControl = new Controls.QuizChallenge(challenge);
+                quizControl.ChallengeCompleted += OnChallengeCompleted;
+                quizControl.ContextChanged += OnChallengeContextChanged;
+                _challengeControls.Add(new ChallengeControlWrapper(quizControl));
+                ContentPanel.Children.Add(quizControl);
+            }
+            else
+            {
+                // Code-based challenges (FREE_CODING, CODE, implementation, etc.)
+                var challengeControl = new Controls.CodingChallenge(challenge, _codeExecutionService);
+                challengeControl.ChallengeCompleted += OnChallengeCompleted;
+                challengeControl.ContextChanged += OnChallengeContextChanged;
+                _challengeControls.Add(new ChallengeControlWrapper(challengeControl));
+                ContentPanel.Children.Add(challengeControl);
+            }
         }
 
         // Set initial tutor context with lesson info
@@ -198,7 +216,7 @@ public partial class LessonPage : UserControl
     {
         if (PrevButton.Tag is Lesson prevLesson)
         {
-            var lessonPage = new LessonPage(_course, prevLesson, _courseService, _navigation, _tutorService, _downloadService);
+            var lessonPage = new LessonPage(_course, prevLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
             _navigation.NavigateTo(lessonPage, prevLesson);
         }
     }
@@ -207,7 +225,7 @@ public partial class LessonPage : UserControl
     {
         if (NextButton.Tag is Lesson nextLesson)
         {
-            var lessonPage = new LessonPage(_course, nextLesson, _courseService, _navigation, _tutorService, _downloadService);
+            var lessonPage = new LessonPage(_course, nextLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
             _navigation.NavigateTo(lessonPage, nextLesson);
         }
     }
@@ -221,7 +239,7 @@ public partial class LessonPage : UserControl
 
     private void BreadcrumbCourse_Click(object sender, RoutedEventArgs e)
     {
-        var coursePage = new CoursePage(_courseService, _navigation, _course, _tutorService, _downloadService);
+        var coursePage = new CoursePage(_courseService, _navigation, _course, _progressService, _codeExecutionService, _tutorService, _downloadService);
         _navigation.NavigateTo(coursePage, _course);
     }
 
@@ -281,4 +299,25 @@ public partial class LessonPage : UserControl
             mainWindow.UpdateTutorContext(context);
         }
     }
+}
+
+/// <summary>
+/// Wraps either CodingChallenge or QuizChallenge to provide a uniform IsCompleted interface.
+/// </summary>
+internal class ChallengeControlWrapper
+{
+    private readonly Controls.CodingChallenge? _codingChallenge;
+    private readonly Controls.QuizChallenge? _quizChallenge;
+
+    public ChallengeControlWrapper(Controls.CodingChallenge codingChallenge)
+    {
+        _codingChallenge = codingChallenge;
+    }
+
+    public ChallengeControlWrapper(Controls.QuizChallenge quizChallenge)
+    {
+        _quizChallenge = quizChallenge;
+    }
+
+    public bool IsCompleted => _codingChallenge?.IsCompleted ?? _quizChallenge?.IsCompleted ?? false;
 }
