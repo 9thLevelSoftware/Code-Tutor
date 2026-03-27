@@ -1,6 +1,5 @@
 using System.IO;
 using System.Net.Http;
-using System.Reflection;
 
 namespace CodeTutor.Wpf.Services;
 
@@ -14,14 +13,14 @@ public class ModelInfo
     public string HuggingFaceRepo { get; set; } = string.Empty;
     public string ModelFile { get; set; } = string.Empty;  // GGUF filename
     
-    // Use same path resolution as LlamaTutorService
+    // Use AppDomain.CurrentDomain.BaseDirectory as primary -- Assembly.Location returns ""
+    // in single-file published apps (PublishSingleFile=true in .NET 6+)
     public string LocalPath
     {
         get
         {
-            var assemblyLocation = Assembly.GetExecutingAssembly().Location;
-            var assemblyDirectory = Path.GetDirectoryName(assemblyLocation) ?? AppDomain.CurrentDomain.BaseDirectory;
-            return Path.Combine(assemblyDirectory, "models", Id, "model.gguf");
+            var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            return Path.Combine(baseDir, "models", Id, "model.gguf");
         }
     }
 
@@ -86,19 +85,19 @@ public class ModelDownloadService : IModelDownloadService
 
     public ModelInfo GetCurrentModelInfo() => CurrentModel;
 
-    public async Task<bool> IsModelInstalledAsync()
+    public Task<bool> IsModelInstalledAsync()
     {
-        return File.Exists(CurrentModel.LocalPath);
+        return Task.FromResult(File.Exists(CurrentModel.LocalPath));
     }
 
-    public async Task<long> GetModelSizeAsync()
+    public Task<long> GetModelSizeAsync()
     {
         if (File.Exists(CurrentModel.LocalPath))
         {
             var fileInfo = new FileInfo(CurrentModel.LocalPath);
-            return fileInfo.Length;
+            return Task.FromResult(fileInfo.Length);
         }
-        return 0;
+        return Task.FromResult(0L);
     }
 
     public async Task<bool> DownloadModelAsync(CancellationToken cancellationToken = default)
@@ -109,19 +108,23 @@ public class ModelDownloadService : IModelDownloadService
             Directory.CreateDirectory(targetDirectory);
 
             var targetPath = CurrentModel.LocalPath;
+            var tempPath = targetPath + ".downloading";
             var fileName = CurrentModel.ModelFile;
+
+            // Clean up any previous partial download
+            if (File.Exists(tempPath)) File.Delete(tempPath);
 
             StatusChanged?.Invoke(this, $"Downloading {CurrentModel.Name}...");
             StatusChanged?.Invoke(this, $"Target: {targetPath}");
 
             // Download from HuggingFace
             var url = $"{HuggingFaceBaseUrl}/{CurrentModel.HuggingFaceRepo}/resolve/main/{fileName}";
-            
+
             System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] Downloading from: {url}");
-            System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] Saving to: {targetPath}");
+            System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] Saving to: {tempPath} (will rename on success)");
 
             using var response = await _httpClient.GetAsync(url, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
-            
+
             if (!response.IsSuccessStatusCode)
             {
                 var errorMsg = $"Download failed: HTTP {(int)response.StatusCode} - {response.ReasonPhrase}";
@@ -134,38 +137,45 @@ public class ModelDownloadService : IModelDownloadService
             System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] Content length: {totalBytes} bytes");
 
             await using var contentStream = await response.Content.ReadAsStreamAsync(cancellationToken);
-            await using var fileStream = new FileStream(targetPath, FileMode.Create, FileAccess.Write, FileShare.None, 8192, true);
-
-            var buffer = new byte[81920]; // 80KB buffer
-            long totalBytesRead = 0;
-            int bytesRead;
-
-            while ((bytesRead = await contentStream.ReadAsync(buffer, cancellationToken)) > 0)
+            await using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write, FileShare.None, 8192, true))
             {
-                await fileStream.WriteAsync(buffer.AsMemory(0, bytesRead), cancellationToken);
-                totalBytesRead += bytesRead;
+                var buffer = new byte[81920]; // 80KB buffer
+                long totalBytesRead = 0;
+                int bytesRead;
 
-                var progress = new ModelDownloadProgress
+                while ((bytesRead = await contentStream.ReadAsync(buffer, cancellationToken)) > 0)
                 {
-                    CurrentFile = fileName,
-                    BytesDownloaded = totalBytesRead,
-                    TotalBytes = totalBytes,
-                    OverallProgress = totalBytes > 0 ? (double)totalBytesRead / totalBytes * 100 : 0
-                };
-                ProgressChanged?.Invoke(this, progress);
+                    await fileStream.WriteAsync(buffer.AsMemory(0, bytesRead), cancellationToken);
+                    totalBytesRead += bytesRead;
+
+                    var progress = new ModelDownloadProgress
+                    {
+                        CurrentFile = fileName,
+                        BytesDownloaded = totalBytesRead,
+                        TotalBytes = totalBytes,
+                        OverallProgress = totalBytes > 0 ? (double)totalBytesRead / totalBytes * 100 : 0
+                    };
+                    ProgressChanged?.Invoke(this, progress);
+                }
+
+                System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] Download complete: {totalBytesRead} bytes");
             }
 
+            // Rename temp file to final path only after successful, complete download
+            File.Move(tempPath, targetPath, overwrite: true);
+
             StatusChanged?.Invoke(this, $"{CurrentModel.Name} download complete!");
-            System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] Download complete: {totalBytesRead} bytes");
             return true;
         }
         catch (OperationCanceledException)
         {
+            CleanupPartialDownload();
             StatusChanged?.Invoke(this, "Download cancelled.");
             return false;
         }
         catch (HttpRequestException ex)
         {
+            CleanupPartialDownload();
             var errorMsg = $"Network error: {ex.Message}";
             System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] {errorMsg}");
             StatusChanged?.Invoke(this, errorMsg);
@@ -173,6 +183,7 @@ public class ModelDownloadService : IModelDownloadService
         }
         catch (Exception ex)
         {
+            CleanupPartialDownload();
             var errorMsg = $"Download failed: {ex.Message}";
             System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] {errorMsg}");
             StatusChanged?.Invoke(this, errorMsg);
@@ -180,14 +191,27 @@ public class ModelDownloadService : IModelDownloadService
         }
     }
 
-    public async Task<bool> UninstallModelAsync()
+    private void CleanupPartialDownload()
+    {
+        var tempPath = CurrentModel.LocalPath + ".downloading";
+        try
+        {
+            if (File.Exists(tempPath)) File.Delete(tempPath);
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"[ModelDownloadService] Failed to clean up partial download: {ex.Message}");
+        }
+    }
+
+    public Task<bool> UninstallModelAsync()
     {
         try
         {
             if (!File.Exists(CurrentModel.LocalPath))
             {
                 StatusChanged?.Invoke(this, "Model not found.");
-                return true;
+                return Task.FromResult(true);
             }
 
             StatusChanged?.Invoke(this, $"Uninstalling {CurrentModel.Name}...");
@@ -202,12 +226,12 @@ public class ModelDownloadService : IModelDownloadService
             }
 
             StatusChanged?.Invoke(this, "Model uninstalled. Disk space freed.");
-            return true;
+            return Task.FromResult(true);
         }
         catch (Exception ex)
         {
             StatusChanged?.Invoke(this, $"Uninstall failed: {ex.Message}");
-            return false;
+            return Task.FromResult(false);
         }
     }
 }
