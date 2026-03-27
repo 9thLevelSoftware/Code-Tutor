@@ -117,23 +117,23 @@ public class Phi4TutorService : ITutorService, IDisposable
         var sb = new StringBuilder();
 
         // System prompt - keep concise
-        sb.AppendLine("<|system|>");
-        sb.AppendLine("You are a friendly programming tutor. Be concise and helpful.");
+        sb.Append("<|system|>").Append('\n');
+        sb.Append("You are a friendly programming tutor. Be concise and helpful.").Append('\n');
 
         // Add context if available (truncated for speed)
         if (!string.IsNullOrEmpty(context.CurrentLanguage))
-            sb.AppendLine($"Language: {context.CurrentLanguage}");
+            sb.Append($"Language: {context.CurrentLanguage}").Append('\n');
         if (!string.IsNullOrEmpty(context.LessonTitle))
-            sb.AppendLine($"Lesson: {context.LessonTitle}");
+            sb.Append($"Lesson: {context.LessonTitle}").Append('\n');
         if (!string.IsNullOrEmpty(context.UserCode))
         {
             // Truncate code to first 20 lines for faster processing
             var codeLines = context.UserCode.Split('\n').Take(20);
-            sb.AppendLine($"\nCode:\n```{context.CurrentLanguage?.ToLower() ?? ""}\n{string.Join("\n", codeLines)}\n```");
+            sb.Append($"\nCode:\n```{context.CurrentLanguage?.ToLower() ?? ""}\n{string.Join("\n", codeLines)}\n```").Append('\n');
         }
         if (!string.IsNullOrEmpty(context.ExecutionError))
-            sb.AppendLine($"\nError: {context.ExecutionError}");
-        sb.AppendLine("<|end|>");
+            sb.Append($"\nError: {context.ExecutionError}").Append('\n');
+        sb.Append("<|end|>").Append('\n');
 
         // OPTIMIZATION: Only include last 3 messages instead of 6
         // Reduces tokenization time and memory usage
@@ -142,22 +142,22 @@ public class Phi4TutorService : ITutorService, IDisposable
         {
             var role = msg.Role == MessageRole.User ? "user" : "assistant";
             // Truncate long messages
-            var content = msg.Content.Length > 200 
-                ? msg.Content.Substring(0, 200) + "..." 
+            var content = msg.Content.Length > 200
+                ? msg.Content.Substring(0, 200) + "..."
                 : msg.Content;
-            sb.AppendLine($"<|{role}|>");
-            sb.AppendLine(content);
-            sb.AppendLine("<|end|>");
+            sb.Append($"<|{role}|>").Append('\n');
+            sb.Append(content).Append('\n');
+            sb.Append("<|end|>").Append('\n');
         }
 
         // Current user message (truncated)
-        var truncatedMessage = userMessage.Length > 300 
-            ? userMessage.Substring(0, 300) + "..." 
+        var truncatedMessage = userMessage.Length > 300
+            ? userMessage.Substring(0, 300) + "..."
             : userMessage;
-        sb.AppendLine("<|user|>");
-        sb.AppendLine(truncatedMessage);
-        sb.AppendLine("<|end|>");
-        sb.AppendLine("<|assistant|>");
+        sb.Append("<|user|>").Append('\n');
+        sb.Append(truncatedMessage).Append('\n');
+        sb.Append("<|end|>").Append('\n');
+        sb.Append("<|assistant|>").Append('\n');
 
         return sb.ToString();
     }
@@ -167,59 +167,6 @@ public class Phi4TutorService : ITutorService, IDisposable
         var outputTokens = generator.GetSequence(0);
         var newToken = outputTokens[^1];
         return _tokenizer!.Decode(new ReadOnlySpan<int>(new[] { newToken }));
-    }
-
-    private string BuildPrompt(string userMessage, TutorContext context, IReadOnlyList<TutorMessage> history)
-    {
-        var sb = new StringBuilder();
-
-        // System prompt
-        sb.AppendLine("<|system|>");
-        sb.AppendLine("You are a friendly and knowledgeable programming tutor helping students learn to code.");
-        sb.AppendLine("Guidelines:");
-        sb.AppendLine("- Give clear, concise explanations suitable for beginners");
-        sb.AppendLine("- Use examples when helpful, but keep them short");
-        sb.AppendLine("- If the student has an error, explain what went wrong and guide them to fix it");
-        sb.AppendLine("- Encourage good coding practices");
-        sb.AppendLine("- Be supportive and patient");
-        sb.AppendLine("- Keep responses focused and under 200 words unless more detail is needed");
-
-        // Add context if available
-        if (!string.IsNullOrEmpty(context.CurrentLanguage))
-        {
-            sb.AppendLine($"\nCurrent programming language: {context.CurrentLanguage}");
-        }
-        if (!string.IsNullOrEmpty(context.LessonTitle))
-        {
-            sb.AppendLine($"Current lesson: {context.LessonTitle}");
-        }
-        if (!string.IsNullOrEmpty(context.UserCode))
-        {
-            sb.AppendLine($"\nStudent's current code:\n```{context.CurrentLanguage?.ToLower() ?? ""}\n{context.UserCode}\n```");
-        }
-        if (!string.IsNullOrEmpty(context.ExecutionError))
-        {
-            sb.AppendLine($"\nExecution error:\n{context.ExecutionError}");
-        }
-        sb.AppendLine("<|end|>");
-
-        // Add conversation history (last 6 messages to stay within context)
-        var recentHistory = history.TakeLast(6);
-        foreach (var msg in recentHistory)
-        {
-            var role = msg.Role == MessageRole.User ? "user" : "assistant";
-            sb.AppendLine($"<|{role}|>");
-            sb.AppendLine(msg.Content);
-            sb.AppendLine("<|end|>");
-        }
-
-        // Add current user message
-        sb.AppendLine("<|user|>");
-        sb.AppendLine(userMessage);
-        sb.AppendLine("<|end|>");
-        sb.AppendLine("<|assistant|>");
-
-        return sb.ToString();
     }
 
     private void UpdateProgress(int progress)

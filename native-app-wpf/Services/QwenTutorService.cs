@@ -144,50 +144,50 @@ public class QwenTutorService : ITutorService, IDisposable
         var sb = new StringBuilder();
 
         // Qwen chat template uses <|im_start|> and <|im_end|>
-        sb.AppendLine("<|im_start|>system");
-        sb.AppendLine("You are an expert coding tutor specializing in helping beginners learn programming.");
-        sb.AppendLine("Guidelines:");
-        sb.AppendLine("- Explain concepts clearly with code examples");
-        sb.AppendLine("- Help debug errors step by step");
-        sb.AppendLine("- Encourage good coding practices");
-        sb.AppendLine("- Be concise but thorough");
-        sb.AppendLine("- Focus on practical, working solutions");
+        sb.Append("<|im_start|>system").Append('\n');
+        sb.Append("You are an expert coding tutor specializing in helping beginners learn programming.").Append('\n');
+        sb.Append("Guidelines:").Append('\n');
+        sb.Append("- Explain concepts clearly with code examples").Append('\n');
+        sb.Append("- Help debug errors step by step").Append('\n');
+        sb.Append("- Encourage good coding practices").Append('\n');
+        sb.Append("- Be concise but thorough").Append('\n');
+        sb.Append("- Focus on practical, working solutions").Append('\n');
 
         if (!string.IsNullOrEmpty(context.CurrentLanguage))
-            sb.AppendLine($"\nProgramming language: {context.CurrentLanguage}");
+            sb.Append($"\nProgramming language: {context.CurrentLanguage}").Append('\n');
         if (!string.IsNullOrEmpty(context.LessonTitle))
-            sb.AppendLine($"Current lesson: {context.LessonTitle}");
+            sb.Append($"Current lesson: {context.LessonTitle}").Append('\n');
         if (!string.IsNullOrEmpty(context.UserCode))
         {
             var codeLines = context.UserCode.Split('\n').Take(20);
-            sb.AppendLine($"\nStudent's code:\n```{context.CurrentLanguage?.ToLower() ?? ""}\n{string.Join("\n", codeLines)}\n```");
+            sb.Append($"\nStudent's code:\n```{context.CurrentLanguage?.ToLower() ?? ""}\n{string.Join("\n", codeLines)}\n```").Append('\n');
         }
         if (!string.IsNullOrEmpty(context.ExecutionError))
-            sb.AppendLine($"\nError message: {context.ExecutionError}");
-        
-        sb.AppendLine("<|im_end|>");
+            sb.Append($"\nError message: {context.ExecutionError}").Append('\n');
+
+        sb.Append("<|im_end|>").Append('\n');
 
         // Add conversation history (last 3 messages)
         var recentHistory = history.TakeLast(3);
         foreach (var msg in recentHistory)
         {
             var role = msg.Role == MessageRole.User ? "user" : "assistant";
-            var content = msg.Content.Length > 200 
-                ? msg.Content.Substring(0, 200) + "..." 
+            var content = msg.Content.Length > 200
+                ? msg.Content.Substring(0, 200) + "..."
                 : msg.Content;
-            sb.AppendLine($"<|im_start|>{role}");
-            sb.AppendLine(content);
-            sb.AppendLine("<|im_end|>");
+            sb.Append($"<|im_start|>{role}").Append('\n');
+            sb.Append(content).Append('\n');
+            sb.Append("<|im_end|>").Append('\n');
         }
 
         // Current user message
-        var truncatedMessage = userMessage.Length > 300 
-            ? userMessage.Substring(0, 300) + "..." 
+        var truncatedMessage = userMessage.Length > 300
+            ? userMessage.Substring(0, 300) + "..."
             : userMessage;
-        sb.AppendLine("<|im_start|>user");
-        sb.AppendLine(truncatedMessage);
-        sb.AppendLine("<|im_end|>");
-        sb.AppendLine("<|im_start|>assistant");
+        sb.Append("<|im_start|>user").Append('\n');
+        sb.Append(truncatedMessage).Append('\n');
+        sb.Append("<|im_end|>").Append('\n');
+        sb.Append("<|im_start|>assistant").Append('\n');
 
         return sb.ToString();
     }
