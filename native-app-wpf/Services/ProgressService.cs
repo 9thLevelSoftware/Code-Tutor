@@ -54,8 +54,17 @@ public class ProgressService : IProgressService
             var json = await File.ReadAllTextAsync(_progressFilePath);
             _cachedProgress = JsonSerializer.Deserialize<UserProgress>(json) ?? new UserProgress();
         }
-        catch
+        catch (Exception ex)
         {
+            System.Diagnostics.Debug.WriteLine($"[ProgressService] Failed to load progress, starting fresh: {ex.Message}");
+            try
+            {
+                var backupPath = _progressFilePath + ".corrupt";
+                if (File.Exists(_progressFilePath))
+                    File.Copy(_progressFilePath, backupPath, overwrite: true);
+            }
+            catch { /* Best-effort backup */ }
+
             _cachedProgress = new UserProgress();
         }
 
@@ -75,6 +84,10 @@ public class ProgressService : IProgressService
     {
         var progress = await LoadProgressAsync();
         progress.CompletedLessons.Add(lessonId);
+
+        var today = DateTime.UtcNow.Date.ToString("yyyy-MM-dd");
+        progress.DailyActivity.TryAdd(today, true);
+
         await SaveProgressAsync(progress);
     }
 
@@ -93,18 +106,41 @@ public class ProgressService : IProgressService
         int total = allLessons.Count;
         double percent = total > 0 ? (double)completed / total * 100 : 0;
 
+        var weekStart = DateTime.UtcNow.Date.AddDays(-(int)DateTime.UtcNow.DayOfWeek);
+        int daysActiveThisWeek = 0;
+        for (var d = weekStart; d <= DateTime.UtcNow.Date; d = d.AddDays(1))
+        {
+            if (progress.DailyActivity.ContainsKey(d.ToString("yyyy-MM-dd")))
+                daysActiveThisWeek++;
+        }
+
         return new CourseProgressStats(
             CompletedLessons: completed,
             TotalLessons: total,
             PercentComplete: Math.Round(percent, 1),
             CurrentStreak: GetCurrentStreak(),
-            TimeThisWeek: TimeSpan.Zero // Placeholder - would need session tracking
+            TimeThisWeek: TimeSpan.FromDays(daysActiveThisWeek)
         );
     }
 
     public int GetCurrentStreak()
     {
-        // Placeholder implementation - would need daily activity tracking
-        return 0;
+        if (_cachedProgress == null || _cachedProgress.DailyActivity.Count == 0)
+            return 0;
+
+        var today = DateTime.UtcNow.Date;
+        int streak = 0;
+
+        var checkDate = _cachedProgress.DailyActivity.ContainsKey(today.ToString("yyyy-MM-dd"))
+            ? today
+            : today.AddDays(-1);
+
+        while (_cachedProgress.DailyActivity.ContainsKey(checkDate.ToString("yyyy-MM-dd")))
+        {
+            streak++;
+            checkDate = checkDate.AddDays(-1);
+        }
+
+        return streak;
     }
 }

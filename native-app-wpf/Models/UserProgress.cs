@@ -14,6 +14,12 @@ public class UserProgress
 
     [JsonPropertyName("lastUpdated")]
     public DateTime LastUpdated { get; set; } = DateTime.UtcNow;
+
+    [JsonPropertyName("dailyActivity")]
+    public Dictionary<string, bool> DailyActivity { get; set; } = new();
+
+    [JsonPropertyName("sessionStartTimes")]
+    public List<DateTime> SessionStartTimes { get; set; } = new();
 }
 
 public class LessonProgress
