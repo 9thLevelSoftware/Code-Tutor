@@ -10,5 +10,6 @@
     "NO_EMPTY"
   ],
   "correctAnswer": 1,
-  "explanation": "NOT NULL is the SQL constraint that prevents a column from containing NULL values."
+  "explanation": "NOT NULL is the SQL constraint that prevents a column from containing NULL values.",
+  "question": "Please select the correct option."
 }

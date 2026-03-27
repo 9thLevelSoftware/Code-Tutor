@@ -5,19 +5,34 @@
   "description": "Create a temperature monitoring flow that emits temperature readings, filters out invalid readings, converts to Fahrenheit, and alerts on high temperatures.",
   "difficulty": "intermediate",
   "hints": [
-    "Use filter { } to remove invalid readings",
-    "Use map { } to transform Celsius to Fahrenheit",
-    "Create a Pair with the temperature and alert status",
-    "100°F = 37.78°C, so readings of 38+ will trigger alerts"
+    {
+      "level": 1,
+      "text": "Use filter { } to remove invalid readings"
+    },
+    {
+      "level": 2,
+      "text": "Use map { } to transform Celsius to Fahrenheit"
+    },
+    {
+      "level": 3,
+      "text": "Create a Pair with the temperature and alert status"
+    },
+    {
+      "level": 4,
+      "text": "100\u00b0F = 37.78\u00b0C, so readings of 38+ will trigger alerts"
+    }
   ],
   "testCases": [
     {
       "description": "Should filter out -999 readings",
-      "expectedBehavior": "Only valid temperatures appear in output"
+      "expectedBehavior": "Only valid temperatures appear in output",
+      "id": "test-1"
     },
     {
       "description": "Should alert on high temperatures",
-      "expectedBehavior": "Temperatures above 100°F show as alerts"
+      "expectedBehavior": "Temperatures above 100\u00b0F show as alerts",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

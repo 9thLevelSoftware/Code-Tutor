@@ -5,5 +5,25 @@
   "description": "Create comprehensive tests for the budgets API endpoints.",
   "instructions": "Write tests that cover:\n1. Creating a budget (happy path)\n2. Creating budget with invalid amount (validation)\n3. Getting budget status (spent vs limit)\n4. Budget alerts when over limit\n5. User isolation (can't see other user's budgets)",
   "language": "python",
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Test class uses pytest.mark.asyncio decorator",
+      "expectedOutput": "@pytest.mark.asyncio",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Happy path test for budget creation is implemented",
+      "expectedOutput": "async def test_create_budget(",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Over-limit budget status test is implemented",
+      "expectedOutput": "async def test_get_budget_status_over_limit(",
+      "isVisible": false
+    }
+  ]
 }

@@ -5,7 +5,26 @@
   "description": "Create a navigation shell that switches between bottom navigation, navigation rail, and sidebar based on screen width.",
   "instructions": "Build a ResponsiveNavigationShell widget that wraps child content with appropriate navigation. For screens < 600px wide, use a BottomNavigationBar. For screens 600-900px, use a NavigationRail. For screens > 900px, use a NavigationDrawer (permanent sidebar). All navigation types should have the same 4 destinations: Home, Search, Favorites, Profile. The selected index and onDestinationSelected callback should be passed as parameters.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the ResponsiveNavigationShell class",
+      "expectedOutput": "ResponsiveNavigationShell",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses BottomNavigationBar",
+      "expectedOutput": "BottomNavigationBar",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

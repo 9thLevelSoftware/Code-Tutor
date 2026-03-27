@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "In the TaskFlow capstone, which module contains the @Serializable data classes shared between the server and client?",
+      "question": "In the TaskFlow capstone, which module contains the @Serializable data classes shared between the server and client?",
       "options": [
         "server/ -- the server generates the classes and the client copies them",
         "composeApp/ -- the UI module owns the data models",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "Why does TaskFlow use H2 instead of PostgreSQL for the server database?",
+      "question": "Why does TaskFlow use H2 instead of PostgreSQL for the server database?",
       "options": [
         "H2 is faster than PostgreSQL for all workloads",
         "H2 is an embedded JVM database requiring zero setup -- no Docker or external services needed",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "What is the purpose of the 'synced' column in the SQLDelight TaskEntity table?",
+      "question": "What is the purpose of the 'synced' column in the SQLDelight TaskEntity table?",
       "options": [
         "It stores the server-side primary key for the task",
         "It tracks whether a local change has been pushed to the server, enabling offline-first behavior",

@@ -3,7 +3,7 @@
   "title": "Real-Time Patterns Quiz",
   "description": "Test your understanding of real-time communication patterns.",
   "instructions": "Answer the following questions about real-time patterns:\n\n1. Which pattern provides true bidirectional communication?\n   A) Polling\n   B) Long-Polling\n   C) WebSocket\n   D) Server-Sent Events\n\n2. What is the main disadvantage of regular polling?\n   A) Requires special protocols\n   B) Wastes bandwidth when no updates exist\n   C) Only works on mobile devices\n   D) Cannot send JSON data\n\n3. How does long-polling differ from regular polling?\n   A) It uses a different protocol\n   B) Server holds connection until data is available\n   C) Client sends multiple requests simultaneously\n   D) It only works with WebSocket servers\n\n4. When would SSE be preferred over WebSocket?\n   A) For chat applications\n   B) When client needs to send frequent updates\n   C) For server-to-client notifications only\n   D) For gaming applications\n\n5. Which pattern does Serverpod use for real-time features?\n   A) Polling\n   B) Long-Polling\n   C) WebSocket\n   D) Server-Sent Events\n\nEnter your answers as a comma-separated list (e.g., 'A,B,C,D,E')",
-  "type": "quiz",
+  "type": "QUIZ",
   "expectedOutput": "C,B,B,C,C",
   "language": "text",
   "testCases": [],

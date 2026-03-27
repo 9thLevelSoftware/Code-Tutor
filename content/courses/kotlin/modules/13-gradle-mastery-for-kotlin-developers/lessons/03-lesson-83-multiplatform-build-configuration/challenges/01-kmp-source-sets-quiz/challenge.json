@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "In a KMP project, where should platform-independent business logic be placed?",
+      "question": "In a KMP project, where should platform-independent business logic be placed?",
       "options": [
         "androidMain",
         "iosMain",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "What is the purpose of an intermediate source set like 'nativeMain' in KMP?",
+      "question": "What is the purpose of an intermediate source set like 'nativeMain' in KMP?",
       "options": [
         "It replaces commonMain for native platforms",
         "It allows sharing code between native targets (iOS, macOS, Linux) without including JVM or JS",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "If you declare 'expect fun platformName(): String' in commonMain, where must the 'actual' implementation go?",
+      "question": "If you declare 'expect fun platformName(): String' in commonMain, where must the 'actual' implementation go?",
       "options": [
         "In commonMain alongside the expect declaration",
         "In each platform source set (androidMain, iosMain, etc.) that the project targets",

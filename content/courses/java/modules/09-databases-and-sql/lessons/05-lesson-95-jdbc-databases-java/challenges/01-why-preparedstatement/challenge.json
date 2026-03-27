@@ -10,5 +10,6 @@
     "PreparedStatement is easier to write"
   ],
   "correctAnswer": 1,
-  "explanation": "PreparedStatement parameterizes queries, preventing attackers from injecting malicious SQL. String concatenation is a major security vulnerability."
+  "explanation": "PreparedStatement parameterizes queries, preventing attackers from injecting malicious SQL. String concatenation is a major security vulnerability.",
+  "question": "Please select the correct option."
 }

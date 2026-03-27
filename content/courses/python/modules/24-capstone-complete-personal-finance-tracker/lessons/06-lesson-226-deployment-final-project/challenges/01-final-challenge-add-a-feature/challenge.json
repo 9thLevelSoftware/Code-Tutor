@@ -5,5 +5,25 @@
   "description": "Choose and implement one additional feature for your Finance Tracker.",
   "instructions": "Pick ONE of these features and implement it completely:\n\n1. **Recurring Transactions** - Automatically create transactions on a schedule\n2. **Budget Alerts** - Send notifications when approaching budget limits\n3. **Monthly Reports** - Generate PDF or HTML reports of spending\n4. **Data Visualization** - Add an endpoint that returns chart-ready data\n5. **Import from Bank CSV** - Parse common bank export formats\n\nYour implementation should include:\n- Model/schema changes if needed\n- Repository methods\n- API endpoints\n- Tests\n- CLI command (optional)",
   "language": "python",
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "A dataclass model is defined for the feature",
+      "expectedOutput": "@dataclass",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "RecurringTransaction dataclass has required fields",
+      "expectedOutput": "class RecurringTransaction",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "A method for determining next occurrence is implemented",
+      "expectedOutput": "def next_occurrence(",
+      "isVisible": false
+    }
+  ]
 }

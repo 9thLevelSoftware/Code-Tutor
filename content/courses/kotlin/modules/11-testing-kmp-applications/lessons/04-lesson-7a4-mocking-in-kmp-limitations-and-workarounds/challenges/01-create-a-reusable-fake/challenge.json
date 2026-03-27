@@ -5,15 +5,29 @@
   "description": "Create a comprehensive FakeAuthRepository that can simulate various authentication scenarios.",
   "difficulty": "intermediate",
   "hints": [
-    "Use MutableStateFlow for observeAuthState",
-    "Store registered users as Map<email, Pair<password, User>>",
-    "Emit AuthState.Loading before processing login",
-    "Check simulateLoginError before validating credentials"
+    {
+      "level": 1,
+      "text": "Use MutableStateFlow for observeAuthState"
+    },
+    {
+      "level": 2,
+      "text": "Store registered users as Map<email, Pair<password, User>>"
+    },
+    {
+      "level": 3,
+      "text": "Emit AuthState.Loading before processing login"
+    },
+    {
+      "level": 4,
+      "text": "Check simulateLoginError before validating credentials"
+    }
   ],
   "testCases": [
     {
       "description": "Fake supports login success, failure, and observation",
-      "expectedBehavior": "All AuthRepository methods work correctly with test controls"
+      "expectedBehavior": "All AuthRepository methods work correctly with test controls",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

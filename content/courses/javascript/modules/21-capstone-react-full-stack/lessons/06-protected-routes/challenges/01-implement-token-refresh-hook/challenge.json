@@ -26,14 +26,35 @@
     }
   ],
   "hints": [
-    "JWT tokens are three base64-encoded parts separated by dots - use split('.') and atob() to decode",
-    "The exp claim is in seconds since epoch, multiply by 1000 for JavaScript milliseconds",
-    "Use useRef for isRefreshing to prevent re-renders and race conditions"
+    {
+      "level": 1,
+      "text": "JWT tokens are three base64-encoded parts separated by dots - use split('.') and atob() to decode"
+    },
+    {
+      "level": 2,
+      "text": "The exp claim is in seconds since epoch, multiply by 1000 for JavaScript milliseconds"
+    },
+    {
+      "level": 3,
+      "text": "Use useRef for isRefreshing to prevent re-renders and race conditions"
+    }
   ],
   "commonMistakes": [
-    "Not handling base64url encoding (replace - with + and _ with /)",
-    "Forgetting to multiply exp by 1000 when comparing to Date.now()",
-    "Not cleaning up the interval in useEffect return function"
+    {
+      "mistake": "Not handling base64url encoding (replace - with + and _ with /)",
+      "consequence": "The program will crash.",
+      "correction": ""
+    },
+    {
+      "mistake": "Forgetting to multiply exp by 1000 when comparing to Date.now()",
+      "consequence": "The program will crash.",
+      "correction": ""
+    },
+    {
+      "mistake": "Not cleaning up the interval in useEffect return function",
+      "consequence": "The program will crash.",
+      "correction": ""
+    }
   ],
   "difficulty": "intermediate"
 }

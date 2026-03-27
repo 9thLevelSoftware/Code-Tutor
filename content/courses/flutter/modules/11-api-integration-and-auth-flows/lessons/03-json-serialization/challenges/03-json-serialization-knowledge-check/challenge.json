@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What does the 'part' directive do in a file using json_serializable?",
       "options": [
         "Imports the json_serializable package",
         "Connects the file to its generated code file",
@@ -14,11 +13,11 @@
         "Specifies the JSON format version"
       ],
       "correctAnswer": 1,
-      "explanation": "The 'part' directive (e.g., part 'user.g.dart';) connects your model file to the generated code file. The generated file uses 'part of' to indicate it belongs to your main file, allowing them to share private members."
+      "explanation": "The 'part' directive (e.g., part 'user.g.dart';) connects your model file to the generated code file. The generated file uses 'part of' to indicate it belongs to your main file, allowing them to share private members.",
+      "question": "What does the 'part' directive do in a file using json_serializable?"
     },
     {
       "id": "q2",
-      "text": "Why should you use 'explicitToJson: true' in @JsonSerializable when you have nested objects?",
       "options": [
         "It makes serialization faster",
         "It reduces the generated code size",
@@ -26,11 +25,11 @@
         "It enables null safety for nested fields"
       ],
       "correctAnswer": 2,
-      "explanation": "Without explicitToJson: true, nested objects might be serialized using their toString() method instead of their toJson() method. This option ensures that when you call toJson() on a parent object, all nested objects also have their toJson() methods called."
+      "explanation": "Without explicitToJson: true, nested objects might be serialized using their toString() method instead of their toJson() method. This option ensures that when you call toJson() on a parent object, all nested objects also have their toJson() methods called.",
+      "question": "Why should you use 'explicitToJson: true' in @JsonSerializable when you have nested objects?"
     },
     {
       "id": "q3",
-      "text": "What is the main advantage of freezed's copyWith method?",
       "options": [
         "It makes objects mutable",
         "It creates a new instance with some fields changed while keeping others",
@@ -38,11 +37,11 @@
         "It improves JSON parsing performance"
       ],
       "correctAnswer": 1,
-      "explanation": "copyWith creates a new immutable instance with only the specified fields changed. For example, user.copyWith(name: 'New Name') returns a new User with the updated name but all other fields copied from the original. The original object remains unchanged."
+      "explanation": "copyWith creates a new immutable instance with only the specified fields changed. For example, user.copyWith(name: 'New Name') returns a new User with the updated name but all other fields copied from the original. The original object remains unchanged.",
+      "question": "What is the main advantage of freezed's copyWith method?"
     },
     {
       "id": "q4",
-      "text": "When using freezed union types, what does the 'when' method do?",
       "options": [
         "Waits for an async operation to complete",
         "Filters results based on a condition",
@@ -50,11 +49,11 @@
         "Converts the union type to JSON"
       ],
       "correctAnswer": 2,
-      "explanation": "The 'when' method is exhaustive pattern matching - it requires you to handle all variants of the union type. For example, state.when(loading: () => ..., success: (data) => ..., error: (msg) => ...) ensures you handle every possible state."
+      "explanation": "The 'when' method is exhaustive pattern matching - it requires you to handle all variants of the union type. For example, state.when(loading: () => ..., success: (data) => ..., error: (msg) => ...) ensures you handle every possible state.",
+      "question": "When using freezed union types, what does the 'when' method do?"
     },
     {
       "id": "q5",
-      "text": "What command regenerates all generated code and removes conflicting files?",
       "options": [
         "flutter pub run build_runner clean",
         "flutter pub run build_runner build --delete-conflicting-outputs",
@@ -62,7 +61,8 @@
         "dart run build_runner refresh"
       ],
       "correctAnswer": 1,
-      "explanation": "flutter pub run build_runner build --delete-conflicting-outputs regenerates all code and automatically deletes any generated files that conflict with the new output. This is useful when you rename fields or change model structures."
+      "explanation": "flutter pub run build_runner build --delete-conflicting-outputs regenerates all code and automatically deletes any generated files that conflict with the new output. This is useful when you rename fields or change model structures.",
+      "question": "What command regenerates all generated code and removes conflicting files?"
     }
   ]
 }

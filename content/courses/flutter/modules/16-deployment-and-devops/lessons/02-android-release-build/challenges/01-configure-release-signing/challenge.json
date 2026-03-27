@@ -5,7 +5,26 @@
   "description": "Set up a complete Android release signing configuration.",
   "instructions": "Write the complete build.gradle signing configuration that: 1) Loads key.properties safely (handling missing file), 2) Defines a release signing config, 3) Applies it to the release build type with minifyEnabled and shrinkResources enabled.",
   "language": "groovy",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Defines signingConfigs block",
+      "expectedOutput": "signingConfigs",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Configures keystore properties",
+      "expectedOutput": "storeFile",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Links signing config to release build type",
+      "expectedOutput": "signingConfig",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

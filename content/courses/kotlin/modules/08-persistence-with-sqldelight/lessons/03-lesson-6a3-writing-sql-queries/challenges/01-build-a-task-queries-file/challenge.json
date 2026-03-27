@@ -5,19 +5,34 @@
   "description": "Create a complete .sq file for a task management app with full CRUD operations plus additional utility queries.",
   "difficulty": "intermediate",
   "hints": [
-    "Use INTEGER for boolean and date fields",
-    "CASE statements help with custom ordering",
-    "Use NULLS LAST for optional dates",
-    "NOT toggles between 0 and 1"
+    {
+      "level": 1,
+      "text": "Use INTEGER for boolean and date fields"
+    },
+    {
+      "level": 2,
+      "text": "CASE statements help with custom ordering"
+    },
+    {
+      "level": 3,
+      "text": "Use NULLS LAST for optional dates"
+    },
+    {
+      "level": 4,
+      "text": "NOT toggles between 0 and 1"
+    }
   ],
   "testCases": [
     {
       "description": "All 10 queries should be defined",
-      "expectedBehavior": "Each query has a name and SQL"
+      "expectedBehavior": "Each query has a name and SQL",
+      "id": "test-1"
     },
     {
       "description": "Ordering should be correct",
-      "expectedBehavior": "getAllTasks orders by due_date then priority"
+      "expectedBehavior": "getAllTasks orders by due_date then priority",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

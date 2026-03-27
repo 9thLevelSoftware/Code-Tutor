@@ -10,5 +10,6 @@
     "Environment variables use less memory"
   ],
   "correctAnswer": 2,
-  "explanation": "Source code is often public (GitHub). Environment variables keep secrets separate and allow different values per environment."
+  "explanation": "Source code is often public (GitHub). Environment variables keep secrets separate and allow different values per environment.",
+  "question": "Please select the correct option."
 }

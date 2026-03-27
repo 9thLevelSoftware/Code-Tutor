@@ -5,7 +5,26 @@
   "description": "Create a complete RegisterPage component with form validation, error handling, and redirect after successful registration.",
   "instructions": "Create a RegisterPage component that:\n1. Has fields for name, email, password, and confirm password\n2. Validates that passwords match before submitting\n3. Shows field-specific errors from the server\n4. Redirects to dashboard after successful registration\n5. Has a link to the login page",
   "language": "jsx",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Component uses useState to manage form state",
+      "expectedOutput": "useState",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Component uses useNavigate for redirect after registration",
+      "expectedOutput": "useNavigate",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Form includes a password confirmation field",
+      "expectedOutput": "confirmPassword",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

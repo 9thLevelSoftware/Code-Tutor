@@ -21,8 +21,10 @@ class User(Base):
 
 ```python
 # WRONG: MD5/SHA1/SHA256 are NOT for passwords
-import hashlib
-hashed = hashlib.sha256(password.encode()).hexdigest()
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+hashed = pwd_context.hash(password)
 # Too fast! Attacker can try billions per second
 
 # RIGHT: Use bcrypt (intentionally slow)

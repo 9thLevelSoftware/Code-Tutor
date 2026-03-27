@@ -17,7 +17,7 @@ public class LlamaTutorService : ITutorService, IDisposable
 {
     private LLamaWeights? _model;
     private LLamaContext? _context;
-    private readonly string _modelPath;
+    private string _modelPath;
     private readonly string _systemPrompt;
     private bool _disposed;
 
@@ -61,19 +61,26 @@ public class LlamaTutorService : ITutorService, IDisposable
                     Path.Combine(Directory.GetCurrentDirectory(), "models", "qwen2.5-coder-7b", "model.gguf"),
                 };
 
+                string? foundPath = null;
                 foreach (var altPath in alternativePaths)
                 {
                     System.Diagnostics.Debug.WriteLine($"[LlamaTutorService] Trying alternative: {altPath}");
                     if (File.Exists(altPath))
                     {
-                        System.Diagnostics.Debug.WriteLine($"[LlamaTutorService] Found at alternative path!");
+                        System.Diagnostics.Debug.WriteLine($"[LlamaTutorService] Found at alternative path: {altPath}");
+                        foundPath = altPath;
                         break;
                     }
                 }
 
-                throw new FileNotFoundException(
-                    $"The AI Tutor model was not found at '{_modelPath}'. " +
-                    "Please download it from the AI Tutor panel.");
+                if (foundPath == null)
+                {
+                    throw new FileNotFoundException(
+                        $"The AI Tutor model was not found at '{_modelPath}'. " +
+                        "Please download it from the AI Tutor panel.");
+                }
+
+                _modelPath = foundPath;
             }
 
             // Check file size (should be ~4.5GB for Q4_K_M)

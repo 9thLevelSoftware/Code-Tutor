@@ -5,19 +5,34 @@
   "description": "Implement a ViewModel for a Todo list app with add, toggle complete, and delete functionality.",
   "difficulty": "intermediate",
   "hints": [
-    "Use MutableStateFlow for internal state",
-    "Use _state.update { } for state changes",
-    "Filter todos based on current filter when updating",
-    "Clear the text field after adding"
+    {
+      "level": 1,
+      "text": "Use MutableStateFlow for internal state"
+    },
+    {
+      "level": 2,
+      "text": "Use _state.update { } for state changes"
+    },
+    {
+      "level": 3,
+      "text": "Filter todos based on current filter when updating"
+    },
+    {
+      "level": 4,
+      "text": "Clear the text field after adding"
+    }
   ],
   "testCases": [
     {
       "description": "Adding a todo should update the list",
-      "expectedBehavior": "New todo appears in todos list"
+      "expectedBehavior": "New todo appears in todos list",
+      "id": "test-1"
     },
     {
       "description": "Toggling should flip isCompleted",
-      "expectedBehavior": "Todo completion state changes"
+      "expectedBehavior": "Todo completion state changes",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

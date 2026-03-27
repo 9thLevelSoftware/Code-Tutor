@@ -15,5 +15,19 @@
       "text": "Use json.containsKey() to check if a field exists, and 'is' type checks to verify types."
     }
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the ContractVerification class",
+      "expectedOutput": "ContractVerification",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Uses test() or group() for test organization",
+      "expectedOutput": "test(",
+      "isVisible": true
+    }
+  ]
 }

@@ -29,8 +29,8 @@ payload = {
 
 ```python
 # WRONG: Weak secret
-SECRET_KEY = "secret"  # Easily guessed!
-SECRET_KEY = "abc123"  # Too short!
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")  # Easily guessed!
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")  # Too short!
 
 # RIGHT: Strong, environment-based secret
 import secrets

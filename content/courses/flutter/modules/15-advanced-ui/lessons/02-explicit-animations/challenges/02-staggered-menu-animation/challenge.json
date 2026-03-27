@@ -5,7 +5,20 @@
   "description": "Create a menu with items that animate in sequence.",
   "instructions": "Build a vertical menu with 4 items that slide in from the left with a staggered delay. Each item should start animating 100ms after the previous one. Use Interval to create the stagger effect. Items should fade in while sliding.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the StaggeredMenuAnimation class",
+      "expectedOutput": "StaggeredMenuAnimation",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

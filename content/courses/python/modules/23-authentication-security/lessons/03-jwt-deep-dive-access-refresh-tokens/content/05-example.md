@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict, Any
 from enum import Enum
 
-SECRET_KEY = "your-256-bit-secret-key-keep-this-safe"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = "HS256"
 
 class TokenError(Enum):

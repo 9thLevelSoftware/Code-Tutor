@@ -5,7 +5,26 @@
   "description": "Build a utility class that shows platform-appropriate confirmation dialogs.",
   "instructions": "Create an AdaptiveConfirmDialog class with a static show() method. On iOS, it should show a CupertinoAlertDialog. On Android, it should show a Material AlertDialog. The method should accept context, title, message, confirmText, and cancelText parameters, and return a Future<bool?> indicating the user's choice.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the AdaptiveConfirmDialog class",
+      "expectedOutput": "AdaptiveConfirmDialog",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the show() method",
+      "expectedOutput": "show",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses CupertinoAlertDialog",
+      "expectedOutput": "CupertinoAlertDialog",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

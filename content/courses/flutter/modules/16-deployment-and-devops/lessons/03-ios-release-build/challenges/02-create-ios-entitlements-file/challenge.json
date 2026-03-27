@@ -5,7 +5,26 @@
   "description": "Configure entitlements for an app using Push Notifications and Sign in with Apple.",
   "instructions": "Create a Runner.entitlements file that enables: 1) Push notifications in production environment, 2) Sign in with Apple capability, 3) Associated domains for universal links to 'myapp.example.com'. Use the correct entitlement keys and value formats.",
   "language": "xml",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains entitlements plist structure",
+      "expectedOutput": "plist",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Defines required entitlement keys",
+      "expectedOutput": "<key>",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses proper plist XML structure",
+      "expectedOutput": "<!DOCTYPE plist",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

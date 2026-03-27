@@ -41,7 +41,7 @@ from typing import Optional, List
 app = FastAPI(title="Blog API", version="1.0.0")
 
 # ========== Security Config ==========
-SECRET_KEY = "your-secret-key-change-in-production"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

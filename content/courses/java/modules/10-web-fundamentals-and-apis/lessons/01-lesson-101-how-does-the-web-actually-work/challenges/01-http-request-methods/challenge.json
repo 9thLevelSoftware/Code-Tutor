@@ -10,5 +10,6 @@
     "DELETE"
   ],
   "correctAnswer": 2,
-  "explanation": "PUT updates an existing resource. POST creates new resources. GET reads data. DELETE removes resources."
+  "explanation": "PUT updates an existing resource. POST creates new resources. GET reads data. DELETE removes resources.",
+  "question": "Please select the correct option."
 }

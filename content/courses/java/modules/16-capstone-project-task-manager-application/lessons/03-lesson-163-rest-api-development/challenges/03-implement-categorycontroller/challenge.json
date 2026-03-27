@@ -5,7 +5,26 @@
   "description": "Create a CategoryController with CRUD endpoints following the patterns from TaskController.",
   "instructions": "Implement the CategoryController class with the following endpoints:\n1. GET /api/categories - List all categories for current user\n2. POST /api/categories - Create new category\n3. PUT /api/categories/{id} - Update category\n4. DELETE /api/categories/{id} - Delete category\n\nFollow the same patterns as TaskController: use DTOs, inject the authenticated user, return proper status codes.",
   "language": "java",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Class is annotated with @RestController",
+      "expectedOutput": "@RestController",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Base path is mapped to /api/categories",
+      "expectedOutput": "@RequestMapping(\"/api/categories\")",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Has a GET endpoint to list categories",
+      "expectedOutput": "@GetMapping",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

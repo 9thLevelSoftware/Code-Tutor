@@ -5,7 +5,26 @@
   "description": "Create a rate limiting system to protect the login endpoint from brute force attacks.",
   "instructions": "Implement a rate limiting service that:\n\n1. Tracks failed login attempts per email address\n2. Stores attempts with timestamps\n3. Blocks login after 5 failed attempts within 15 minutes\n4. Automatically resets after the cooldown period\n5. Returns remaining attempts and lockout time when blocked\n\nYou'll need to:\n- Create a LoginAttempt protocol model\n- Implement the RateLimiter class\n- Integrate with the login endpoint",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the LoginAttempt class",
+      "expectedOutput": "LoginAttempt",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Uses Session parameter for endpoint methods",
+      "expectedOutput": "Session",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses RateLimiter",
+      "expectedOutput": "RateLimiter",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

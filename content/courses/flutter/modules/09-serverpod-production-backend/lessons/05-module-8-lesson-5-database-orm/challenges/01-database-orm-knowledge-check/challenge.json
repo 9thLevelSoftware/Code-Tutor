@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the purpose of an ORM (Object-Relational Mapper)?",
       "options": [
         "To make the database run faster",
         "To convert between database tables and programming language objects",
@@ -14,11 +13,11 @@
         "To create database backups"
       ],
       "correctAnswer": 1,
-      "explanation": "An ORM converts data between a relational database (tables, rows, columns) and object-oriented programming (classes, objects, properties). This lets you work with typed Dart objects instead of raw SQL strings."
+      "explanation": "An ORM converts data between a relational database (tables, rows, columns) and object-oriented programming (classes, objects, properties). This lets you work with typed Dart objects instead of raw SQL strings.",
+      "question": "What is the purpose of an ORM (Object-Relational Mapper)?"
     },
     {
       "id": "q2",
-      "text": "When defining a model in Serverpod, what does adding 'table: users' do?",
       "options": [
         "It names the Dart class 'users'",
         "It creates a database table named 'users' and adds an automatic 'id' field",
@@ -26,11 +25,11 @@
         "It makes the model read-only"
       ],
       "correctAnswer": 1,
-      "explanation": "Adding 'table: users' tells Serverpod to create a database table with that name. Serverpod automatically adds an 'id' field of type int? as the primary key, and generates database access methods on the .db property."
+      "explanation": "Adding 'table: users' tells Serverpod to create a database table with that name. Serverpod automatically adds an 'id' field of type int? as the primary key, and generates database access methods on the .db property.",
+      "question": "When defining a model in Serverpod, what does adding 'table: users' do?"
     },
     {
       "id": "q3",
-      "text": "What is the correct way to find all active users ordered by creation date?",
       "options": [
         "User.findAll(active: true, order: 'createdAt')",
         "await User.db.find(session, where: (t) => t.isActive.equals(true), orderBy: (t) => t.createdAt)",
@@ -38,11 +37,11 @@
         "User.db.getActive().orderBy('createdAt')"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod uses User.db.find() with a where lambda for filtering and orderBy lambda for sorting. The session is always the first parameter. This provides type safety and compile-time checking."
+      "explanation": "Serverpod uses User.db.find() with a where lambda for filtering and orderBy lambda for sorting. The session is always the first parameter. This provides type safety and compile-time checking.",
+      "question": "What is the correct way to find all active users ordered by creation date?"
     },
     {
       "id": "q4",
-      "text": "What happens when you use session.db.transaction() and an operation inside fails?",
       "options": [
         "The successful operations are kept, only the failed one is reverted",
         "The database crashes and requires restart",
@@ -50,11 +49,11 @@
         "The error is ignored and execution continues"
       ],
       "correctAnswer": 2,
-      "explanation": "Transactions are atomic - either all operations succeed together, or all are rolled back together. If any operation throws an exception, PostgreSQL undoes all changes made within that transaction, ensuring data consistency."
+      "explanation": "Transactions are atomic - either all operations succeed together, or all are rolled back together. If any operation throws an exception, PostgreSQL undoes all changes made within that transaction, ensuring data consistency.",
+      "question": "What happens when you use session.db.transaction() and an operation inside fails?"
     },
     {
       "id": "q5",
-      "text": "How do you load a Post along with its author User in a single query?",
       "options": [
         "Post.db.findById(session, id).loadAuthor()",
         "Post.db.findById(session, id, include: Post.include(author: User.include()))",
@@ -62,7 +61,8 @@
         "User.db.findById(session, post.authorId)"
       ],
       "correctAnswer": 1,
-      "explanation": "Use the include parameter with Post.include() to specify which relations to load. By default, related objects are not loaded to save database queries. The include pattern allows precise control over what data is fetched."
+      "explanation": "Use the include parameter with Post.include() to specify which relations to load. By default, related objects are not loaded to save database queries. The include pattern allows precise control over what data is fetched.",
+      "question": "How do you load a Post along with its author User in a single query?"
     }
   ],
   "difficulty": "intermediate"

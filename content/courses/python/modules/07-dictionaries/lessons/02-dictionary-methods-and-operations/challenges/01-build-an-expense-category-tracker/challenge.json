@@ -4,5 +4,25 @@
   "title": "Build an Expense Category Tracker",
   "description": "Create an expense tracker that counts spending by category using dictionary methods. Use the get() method pattern for counting and iterate through expenses to display totals.",
   "instructions": "1. Create a list of expense tuples: `expenses = [('food', 25), ('transport', 15), ('food', 30), ('entertainment', 50), ('transport', 20)]`\n2. Create an empty dictionary `category_totals`\n3. Loop through expenses and use `get()` with default 0 to accumulate totals per category\n4. Print each category and its total using `.items()`\n5. Calculate and print the grand total using `.values()`",
-  "language": "python"
+  "language": "python",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Expense summary header is printed",
+      "expectedOutput": "Expense Summary:",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Grand total of all expenses is displayed",
+      "expectedOutput": "Grand Total: $140",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Category totals are accumulated using .items()",
+      "expectedOutput": "food: $55",
+      "isVisible": false
+    }
+  ]
 }

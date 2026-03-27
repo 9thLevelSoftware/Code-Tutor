@@ -5,7 +5,20 @@
   "description": "Build a product card that displays localized prices, dates, and pluralized review counts.",
   "instructions": "Create a ProductCard widget that shows: (1) Product name (localized), (2) Price formatted for current locale, (3) 'X reviews' with proper pluralization, (4) 'Last updated: [date]' with locale-aware date formatting. The card should work correctly in both LTR and RTL layouts.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the ProductCard class",
+      "expectedOutput": "ProductCard",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

@@ -4,5 +4,25 @@
   "title": "Transform Transaction Data with Comprehensions",
   "description": "Use dictionary and set comprehensions to transform and filter transaction data for your finance tracker. Practice creating lookup dictionaries and filtering data efficiently.",
   "instructions": "1. Given a list of transaction dictionaries, create a lookup dict by transaction ID\n2. Use a dict comprehension to filter only 'expense' type transactions\n3. Use a dict comprehension to create a category -> total amount mapping\n4. Use a set comprehension to get unique merchants\n5. Print all results",
-  "language": "python"
+  "language": "python",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Transaction lookup by ID works",
+      "expectedOutput": "Transaction T003:",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Expense-only filtering returns correct count",
+      "expectedOutput": "Expense count: 4",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Unique merchants are extracted via set comprehension",
+      "expectedOutput": "Unique merchants:",
+      "isVisible": false
+    }
+  ]
 }

@@ -5,14 +5,25 @@
   "description": "Create a complete Koin module for a book reading app with database, repository, and ViewModel.",
   "difficulty": "intermediate",
   "hints": [
-    "Use single { } for things that should be created once",
-    "Use singleOf(::ClassName) { bind<Interface>() } for interface binding",
-    "Use viewModel { parameters -> ... } when you need runtime values"
+    {
+      "level": 1,
+      "text": "Use single { } for things that should be created once"
+    },
+    {
+      "level": 2,
+      "text": "Use singleOf(::ClassName) { bind<Interface>() } for interface binding"
+    },
+    {
+      "level": 3,
+      "text": "Use viewModel { parameters -> ... } when you need runtime values"
+    }
   ],
   "testCases": [
     {
       "description": "Module should have all 5 definitions",
-      "expectedBehavior": "Database, Queries, Repository, and both ViewModels defined"
+      "expectedBehavior": "Database, Queries, Repository, and both ViewModels defined",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

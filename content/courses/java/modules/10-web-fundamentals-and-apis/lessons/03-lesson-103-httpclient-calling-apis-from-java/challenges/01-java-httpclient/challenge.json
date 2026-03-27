@@ -10,5 +10,6 @@
     "client.fetch(request)"
   ],
   "correctAnswer": 1,
-  "explanation": "HttpClient.send(request, bodyHandler) sends the request synchronously. sendAsync() is for async requests."
+  "explanation": "HttpClient.send(request, bodyHandler) sends the request synchronously. sendAsync() is for async requests.",
+  "question": "Please select the correct option."
 }

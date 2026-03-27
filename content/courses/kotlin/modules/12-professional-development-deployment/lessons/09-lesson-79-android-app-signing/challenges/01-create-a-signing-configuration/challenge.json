@@ -5,15 +5,29 @@
   "description": "Create a secure signing configuration that loads credentials from environment variables with fallback to local.properties.",
   "difficulty": "intermediate",
   "hints": [
-    "Use System.getenv() to read environment variables",
-    "Use Properties class to load from local.properties",
-    "Create a helper function to check both sources",
-    "Check if keystore file exists before using signing config"
+    {
+      "level": 1,
+      "text": "Use System.getenv() to read environment variables"
+    },
+    {
+      "level": 2,
+      "text": "Use Properties class to load from local.properties"
+    },
+    {
+      "level": 3,
+      "text": "Create a helper function to check both sources"
+    },
+    {
+      "level": 4,
+      "text": "Check if keystore file exists before using signing config"
+    }
   ],
   "testCases": [
     {
       "description": "Signing config loads from environment or properties",
-      "expectedBehavior": "Credentials are never hardcoded and loaded dynamically"
+      "expectedBehavior": "Credentials are never hardcoded and loaded dynamically",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

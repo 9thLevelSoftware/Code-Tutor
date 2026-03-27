@@ -30,7 +30,7 @@ railway add --database postgresql
 # Provisions database and sets DATABASE_URL automatically
 
 # Step 5: Set environment variables
-railway variables set SECRET_KEY="your-secret-key-here"
+railway variables set SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 railway variables set ENVIRONMENT="production"
 railway variables set DEBUG="false"
 

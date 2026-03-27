@@ -10,5 +10,6 @@
     "Tests eliminate the need for debugging"
   ],
   "correctAnswer": 1,
-  "explanation": "Automated tests run instantly and consistently every time. Manual testing is slow, error-prone, and doesn't scale."
+  "explanation": "Automated tests run instantly and consistently every time. Manual testing is slow, error-prone, and doesn't scale.",
+  "question": "What is the primary benefit of automated testing?"
 }

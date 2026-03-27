@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the main problem with 'spaghetti code' where API calls, state management, and UI are all in one widget?",
       "options": [
         "It runs slower than organized code",
         "It is impossible to test, maintain, and scale",
@@ -14,11 +13,11 @@
         "It uses more memory"
       ],
       "correctAnswer": 1,
-      "explanation": "Spaghetti code is problematic because you cannot test pieces in isolation, changes in one area break others, and multiple developers cannot work on the same feature. Performance and memory are not the primary concerns."
+      "explanation": "Spaghetti code is problematic because you cannot test pieces in isolation, changes in one area break others, and multiple developers cannot work on the same feature. Performance and memory are not the primary concerns.",
+      "question": "What is the main problem with 'spaghetti code' where API calls, state management, and UI are all in one widget?"
     },
     {
       "id": "q2",
-      "text": "What does 'Separation of Concerns' mean in software architecture?",
       "options": [
         "Keeping your personal and work code separate",
         "Each part of the code has ONE clear responsibility",
@@ -26,11 +25,11 @@
         "Using different programming languages for different features"
       ],
       "correctAnswer": 1,
-      "explanation": "Separation of Concerns means each layer or component has a single, well-defined responsibility. The Model handles data, the Repository handles data access, the ViewModel handles logic, and the View handles UI."
+      "explanation": "Separation of Concerns means each layer or component has a single, well-defined responsibility. The Model handles data, the Repository handles data access, the ViewModel handles logic, and the View handles UI.",
+      "question": "What does 'Separation of Concerns' mean in software architecture?"
     },
     {
       "id": "q3",
-      "text": "In MVVM architecture, what is the ViewModel's responsibility?",
       "options": [
         "Making HTTP requests to APIs",
         "Displaying buttons and text on screen",
@@ -38,7 +37,8 @@
         "Storing data in a database"
       ],
       "correctAnswer": 2,
-      "explanation": "The ViewModel sits between the Model (data) and View (UI). It manages application state, handles business logic, and transforms data for display. It does NOT make direct API calls (that is the Repository's job) or display UI (that is the View's job)."
+      "explanation": "The ViewModel sits between the Model (data) and View (UI). It manages application state, handles business logic, and transforms data for display. It does NOT make direct API calls (that is the Repository's job) or display UI (that is the View's job).",
+      "question": "In MVVM architecture, what is the ViewModel's responsibility?"
     }
   ]
 }

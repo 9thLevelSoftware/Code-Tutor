@@ -10,5 +10,6 @@
     "~/.spring/"
   ],
   "correctAnswer": 1,
-  "explanation": "Spring Boot looks in src/main/resources/ for application.yml or application.properties."
+  "explanation": "Spring Boot looks in src/main/resources/ for application.yml or application.properties.",
+  "question": "Please select the correct option."
 }

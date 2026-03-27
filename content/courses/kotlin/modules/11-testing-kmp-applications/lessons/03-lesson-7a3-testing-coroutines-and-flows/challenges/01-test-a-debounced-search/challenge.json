@@ -5,15 +5,29 @@
   "description": "Test a search flow that debounces input to avoid excessive API calls.",
   "difficulty": "advanced",
   "hints": [
-    "Use advanceTimeBy() to control debounce timing",
-    "StandardTestDispatcher gives you control over virtual time",
-    "Add searchDelay to FakeRepository to simulate slow searches",
-    "collectLatest cancels previous collection when new value arrives"
+    {
+      "level": 1,
+      "text": "Use advanceTimeBy() to control debounce timing"
+    },
+    {
+      "level": 2,
+      "text": "StandardTestDispatcher gives you control over virtual time"
+    },
+    {
+      "level": 3,
+      "text": "Add searchDelay to FakeRepository to simulate slow searches"
+    },
+    {
+      "level": 4,
+      "text": "collectLatest cancels previous collection when new value arrives"
+    }
   ],
   "testCases": [
     {
       "description": "All debounce behavior tests should pass",
-      "expectedBehavior": "Debounce prevents excess calls, executes after delay, and cancels in-flight searches"
+      "expectedBehavior": "Debounce prevents excess calls, executes after delay, and cancels in-flight searches",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

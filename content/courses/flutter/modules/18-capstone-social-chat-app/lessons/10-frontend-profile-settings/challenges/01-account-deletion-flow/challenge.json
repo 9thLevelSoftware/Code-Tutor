@@ -5,7 +5,26 @@
   "description": "Implement a secure account deletion flow with confirmation dialogs, optional data export, and re-authentication before final deletion.",
   "instructions": "Build a complete account deletion system:\n\n1. Create a DeleteAccountScreen accessible from settings\n2. Show clear warning about what will be deleted (posts, messages, followers, etc.)\n3. Offer optional data export before deletion with progress indicator\n4. Require password re-entry for security verification\n5. Implement a multi-step confirmation (type 'DELETE' to confirm)\n6. Show a countdown or cooling-off period option\n7. Handle the deletion API call with proper error handling\n8. Navigate to login screen and clear all local data on success",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the DeleteAccountScreen class",
+      "expectedOutput": "DeleteAccountScreen",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the deleted() method",
+      "expectedOutput": "deleted",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the confirmation() method",
+      "expectedOutput": "confirmation",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

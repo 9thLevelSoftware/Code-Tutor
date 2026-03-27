@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "According to the test pyramid, which type of test should you have the MOST of?",
       "options": [
         "End-to-end tests",
         "Integration tests",
@@ -14,11 +13,11 @@
         "Manual tests"
       ],
       "correctAnswer": 2,
-      "explanation": "Unit tests form the base of the pyramid. They are fast, cheap to write, and catch bugs at the source. You should have many more unit tests than integration or E2E tests."
+      "explanation": "Unit tests form the base of the pyramid. They are fast, cheap to write, and catch bugs at the source. You should have many more unit tests than integration or E2E tests.",
+      "question": "According to the test pyramid, which type of test should you have the MOST of?"
     },
     {
       "id": "q2",
-      "text": "In TDD, what should you do FIRST?",
       "options": [
         "Write the implementation code",
         "Write a failing test",
@@ -26,11 +25,11 @@
         "Set up the database"
       ],
       "correctAnswer": 1,
-      "explanation": "TDD follows Red-Green-Refactor. The first step (Red) is to write a test that fails because the feature does not exist yet. Only then do you write the implementation."
+      "explanation": "TDD follows Red-Green-Refactor. The first step (Red) is to write a test that fails because the feature does not exist yet. Only then do you write the implementation.",
+      "question": "In TDD, what should you do FIRST?"
     },
     {
       "id": "q3",
-      "text": "Which code should be your HIGHEST priority to test?",
       "options": [
         "Simple getters and setters",
         "Generated code from build_runner",
@@ -38,11 +37,11 @@
         "Configuration files"
       ],
       "correctAnswer": 2,
-      "explanation": "Business logic (calculations, validation) and security code (authentication, authorization) are critical and should always have thorough test coverage."
+      "explanation": "Business logic (calculations, validation) and security code (authentication, authorization) are critical and should always have thorough test coverage.",
+      "question": "Which code should be your HIGHEST priority to test?"
     },
     {
       "id": "q4",
-      "text": "What is a common mistake when writing tests?",
       "options": [
         "Testing observable behavior",
         "Testing edge cases",
@@ -50,7 +49,8 @@
         "Using descriptive test names"
       ],
       "correctAnswer": 2,
-      "explanation": "Testing private implementation details makes tests brittle. When you refactor internals, tests break even though the external behavior is unchanged. Focus on testing observable behavior instead."
+      "explanation": "Testing private implementation details makes tests brittle. When you refactor internals, tests break even though the external behavior is unchanged. Focus on testing observable behavior instead.",
+      "question": "What is a common mistake when writing tests?"
     }
   ],
   "difficulty": "intermediate"

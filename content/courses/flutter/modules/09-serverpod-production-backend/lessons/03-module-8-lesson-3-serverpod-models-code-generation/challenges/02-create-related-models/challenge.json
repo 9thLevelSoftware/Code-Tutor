@@ -5,7 +5,26 @@
   "description": "Define two related models: Category and Product with a one-to-many relationship.",
   "instructions": "Create two models with a relationship:\n\n1. Category model:\n   - Fields: name (String), description (String?), isActive (bool)\n   - Table: categories\n\n2. Product model:\n   - Fields: name (String), price (double), categoryId (int)\n   - A relation field that links to Category\n   - Table: products\n\nShow both YAML files.",
   "language": "yaml",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Defines the Category model",
+      "expectedOutput": "class: Category",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Includes the 'name' field",
+      "expectedOutput": "name",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Defines a relation between models",
+      "expectedOutput": "relation",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

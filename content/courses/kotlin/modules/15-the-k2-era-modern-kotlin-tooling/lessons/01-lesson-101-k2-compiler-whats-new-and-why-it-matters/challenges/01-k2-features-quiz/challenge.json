@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the primary benefit of the K2 compiler over the K1 (old) compiler?",
+      "question": "What is the primary benefit of the K2 compiler over the K1 (old) compiler?",
       "options": [
         "K2 adds new language features that K1 cannot support",
         "K2 is significantly faster (up to 2x compilation speed) with better type inference and IDE responsiveness",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "What does 'FIR' stand for in the context of the K2 compiler?",
+      "question": "What does 'FIR' stand for in the context of the K2 compiler?",
       "options": [
         "Fast Incremental Recompilation",
         "Frontend Intermediate Representation",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "In Kotlin 2.0+, what is the recommended way to enable the K2 compiler?",
+      "question": "In Kotlin 2.0+, what is the recommended way to enable the K2 compiler?",
       "options": [
         "Add a compiler plugin to build.gradle.kts",
         "K2 is the DEFAULT compiler since Kotlin 2.0 -- no action needed",

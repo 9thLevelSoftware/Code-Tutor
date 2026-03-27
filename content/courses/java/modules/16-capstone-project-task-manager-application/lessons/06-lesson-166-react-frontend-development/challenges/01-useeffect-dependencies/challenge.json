@@ -5,26 +5,12 @@
   "description": "Understand when useEffect re-runs based on dependencies.",
   "question": "You have: useEffect(() => { fetchTasks(filter); }, [filter]). When does fetchTasks get called?",
   "options": [
-    {
-      "id": "a",
-      "text": "Only once when the component mounts",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "On every render of the component",
-      "isCorrect": false
-    },
-    {
-      "id": "c",
-      "text": "On mount and whenever the filter value changes",
-      "isCorrect": true
-    },
-    {
-      "id": "d",
-      "text": "Never, because fetchTasks is not in the dependency array",
-      "isCorrect": false
-    }
+    "Only once when the component mounts",
+    "On every render of the component",
+    "On mount and whenever the filter value changes",
+    "Never, because fetchTasks is not in the dependency array"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 2,
+  "explanation": "A useEffect with [filter] in the dependency array runs its callback on initial mount and again whenever the filter value changes. An empty dependency array [] would run only on mount, no array at all would run on every render, and fetchTasks does not need to be in the array since only its argument (filter) determines when to re-fetch."
 }

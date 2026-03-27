@@ -44,5 +44,6 @@
       "correction": "Always write main()"
     }
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "starterCode": "// TODO: Add your implementation here\n"
 }

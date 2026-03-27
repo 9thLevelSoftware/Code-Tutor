@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What does Gradle's build cache store?",
+      "question": "What does Gradle's build cache store?",
       "options": [
         "Source code snapshots for version control",
         "Task outputs keyed by task inputs, so identical inputs skip execution",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "What is the difference between a local build cache and a remote build cache?",
+      "question": "What is the difference between a local build cache and a remote build cache?",
       "options": [
         "Local caches use SSD, remote caches use HDD",
         "Local cache is per-machine (in ~/.gradle); remote cache is shared across developers and CI via an HTTP server",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "Why should you avoid using 'gradle clean build' as your default build command?",
+      "question": "Why should you avoid using 'gradle clean build' as your default build command?",
       "options": [
         "It corrupts the build cache",
         "'clean' deletes all build outputs, forcing full recompilation and defeating incremental compilation and caching",

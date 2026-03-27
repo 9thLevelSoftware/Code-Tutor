@@ -5,19 +5,34 @@
   "description": "Write migration files to evolve a Notes app schema from v1 to v3.",
   "difficulty": "intermediate",
   "hints": [
-    "Use ALTER TABLE ADD COLUMN for new columns",
-    "Set NOT NULL with DEFAULT if column must be required",
-    "UPDATE existing data when needed",
-    "Create indexes for foreign keys"
+    {
+      "level": 1,
+      "text": "Use ALTER TABLE ADD COLUMN for new columns"
+    },
+    {
+      "level": 2,
+      "text": "Set NOT NULL with DEFAULT if column must be required"
+    },
+    {
+      "level": 3,
+      "text": "UPDATE existing data when needed"
+    },
+    {
+      "level": 4,
+      "text": "Create indexes for foreign keys"
+    }
   ],
   "testCases": [
     {
       "description": "1.sqm should add updated_at and is_pinned",
-      "expectedBehavior": "Both columns added with correct types"
+      "expectedBehavior": "Both columns added with correct types",
+      "id": "test-1"
     },
     {
       "description": "2.sqm should create Folder table and link to Note",
-      "expectedBehavior": "Folder table created, folder_id added to Note"
+      "expectedBehavior": "Folder table created, folder_id added to Note",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

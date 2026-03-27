@@ -5,7 +5,26 @@
   "description": "Create tests for the TaskFilters component using React Testing Library.",
   "instructions": "Write tests for TaskFilters that verify:\n1. All filter dropdowns (status, priority) are rendered\n2. Search input is rendered\n3. Changing status filter calls onFilterChange with correct value\n4. Typing in search input calls onFilterChange with updated search term",
   "language": "jsx",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Tests use render from React Testing Library to mount the component",
+      "expectedOutput": "render",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Tests use fireEvent to simulate user interactions with filters",
+      "expectedOutput": "fireEvent",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Tests use screen queries to find filter elements",
+      "expectedOutput": "screen",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

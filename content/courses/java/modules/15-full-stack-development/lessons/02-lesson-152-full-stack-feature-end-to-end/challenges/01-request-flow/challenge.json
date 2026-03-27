@@ -10,5 +10,6 @@
     "Backend -> Frontend -> Database"
   ],
   "correctAnswer": 2,
-  "explanation": "User action -> Frontend (React) -> API call -> Backend (Spring) -> Database -> Response -> Backend -> Frontend -> UI update."
+  "explanation": "User action -> Frontend (React) -> API call -> Backend (Spring) -> Database -> Response -> Backend -> Frontend -> UI update.",
+  "question": "Please select the correct option."
 }

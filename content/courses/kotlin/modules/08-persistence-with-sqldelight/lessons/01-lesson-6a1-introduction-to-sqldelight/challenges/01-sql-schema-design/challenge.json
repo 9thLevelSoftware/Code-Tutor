@@ -5,19 +5,34 @@
   "description": "Design a SQL schema for a simple task management app with tasks and categories.",
   "difficulty": "intermediate",
   "hints": [
-    "Use INTEGER for boolean (0 = false, 1 = true)",
-    "Use INTEGER for dates (store as epoch milliseconds)",
-    "Add AUTOINCREMENT to primary keys",
-    "Use FOREIGN KEY for relationships"
+    {
+      "level": 1,
+      "text": "Use INTEGER for boolean (0 = false, 1 = true)"
+    },
+    {
+      "level": 2,
+      "text": "Use INTEGER for dates (store as epoch milliseconds)"
+    },
+    {
+      "level": 3,
+      "text": "Add AUTOINCREMENT to primary keys"
+    },
+    {
+      "level": 4,
+      "text": "Use FOREIGN KEY for relationships"
+    }
   ],
   "testCases": [
     {
       "description": "Schema should have Categories and Tasks tables",
-      "expectedBehavior": "Both CREATE TABLE statements are present"
+      "expectedBehavior": "Both CREATE TABLE statements are present",
+      "id": "test-1"
     },
     {
       "description": "Tasks should reference Categories",
-      "expectedBehavior": "category_id foreign key exists"
+      "expectedBehavior": "category_id foreign key exists",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

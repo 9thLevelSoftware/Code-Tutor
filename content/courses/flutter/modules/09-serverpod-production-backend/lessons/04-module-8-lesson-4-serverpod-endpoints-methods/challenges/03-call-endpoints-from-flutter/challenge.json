@@ -5,7 +5,26 @@
   "description": "Write Flutter code to call Serverpod endpoints and handle responses.",
   "instructions": "Write a ProductService class in Flutter that:\n\n1. Has a constructor accepting a Client instance\n2. Implements fetchAllProducts() that calls client.product.getAllProducts()\n3. Implements fetchProduct(int id) that gets a single product\n4. Implements createProduct(String name, double price) that creates a new product\n5. Handles errors and returns appropriate results\n\nUse try-catch for error handling.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the ProductService class",
+      "expectedOutput": "ProductService",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the fetchAllProducts() method",
+      "expectedOutput": "fetchAllProducts",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the getAllProducts() method",
+      "expectedOutput": "getAllProducts",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

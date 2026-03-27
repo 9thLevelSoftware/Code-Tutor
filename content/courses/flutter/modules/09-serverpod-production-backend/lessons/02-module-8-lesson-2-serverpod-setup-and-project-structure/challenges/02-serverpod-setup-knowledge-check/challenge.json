@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What are the three packages created when you run 'serverpod create my_app'?",
       "options": [
         "my_app_frontend, my_app_backend, my_app_shared",
         "my_app_server, my_app_client, my_app_flutter",
@@ -14,11 +13,11 @@
         "server, client, shared"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod creates three packages: my_app_server (the backend), my_app_client (generated client library), and my_app_flutter (sample Flutter app). The client package is auto-generated from the server code."
+      "explanation": "Serverpod creates three packages: my_app_server (the backend), my_app_client (generated client library), and my_app_flutter (sample Flutter app). The client package is auto-generated from the server code.",
+      "question": "What are the three packages created when you run 'serverpod create my_app'?"
     },
     {
       "id": "q2",
-      "text": "Which command regenerates the client code after modifying server endpoints?",
       "options": [
         "serverpod build",
         "serverpod generate",
@@ -26,11 +25,11 @@
         "serverpod compile"
       ],
       "correctAnswer": 1,
-      "explanation": "The 'serverpod generate' command regenerates all auto-generated code, including the client package. You should run this after modifying endpoints or protocol definitions."
+      "explanation": "The 'serverpod generate' command regenerates all auto-generated code, including the client package. You should run this after modifying endpoints or protocol definitions.",
+      "question": "Which command regenerates the client code after modifying server endpoints?"
     },
     {
       "id": "q3",
-      "text": "What services does Docker run for Serverpod development?",
       "options": [
         "MySQL and Memcached",
         "MongoDB and Redis",
@@ -38,11 +37,11 @@
         "SQLite and Redis"
       ],
       "correctAnswer": 2,
-      "explanation": "Serverpod uses PostgreSQL as its database and Redis for caching and session storage. Both are containerized using Docker for easy local development."
+      "explanation": "Serverpod uses PostgreSQL as its database and Redis for caching and session storage. Both are containerized using Docker for easy local development.",
+      "question": "What services does Docker run for Serverpod development?"
     },
     {
       "id": "q4",
-      "text": "Where do you define data models in a Serverpod project?",
       "options": [
         "In Dart classes in lib/src/models/",
         "In YAML files in lib/src/protocol/",
@@ -50,11 +49,11 @@
         "In SQL files in migrations/"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod uses YAML files in the lib/src/protocol/ directory to define data models. From these YAML definitions, Serverpod generates Dart classes for both server and client."
+      "explanation": "Serverpod uses YAML files in the lib/src/protocol/ directory to define data models. From these YAML definitions, Serverpod generates Dart classes for both server and client.",
+      "question": "Where do you define data models in a Serverpod project?"
     },
     {
       "id": "q5",
-      "text": "What is the purpose of the my_app_client package?",
       "options": [
         "It contains the Flutter UI components",
         "It is a generated package that Flutter apps import to call server endpoints",
@@ -62,7 +61,8 @@
         "It handles local database operations"
       ],
       "correctAnswer": 1,
-      "explanation": "The my_app_client package is automatically generated from your server code. Flutter apps import this package to get type-safe access to all server endpoints and data models."
+      "explanation": "The my_app_client package is automatically generated from your server code. Flutter apps import this package to get type-safe access to all server endpoints and data models.",
+      "question": "What is the purpose of the my_app_client package?"
     }
   ],
   "difficulty": "intermediate"

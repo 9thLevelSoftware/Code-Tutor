@@ -5,7 +5,20 @@
   "description": "Build a complete GitHub Actions workflow that automates the entire release process from version tagging to store deployment with quality gates.",
   "instructions": "Create a comprehensive automated release pipeline:\n\n1. Set up GitHub Actions workflow triggered by version tags (v*.*.*)\n2. Implement version extraction from tag and validation\n3. Run full test suite as quality gate before building\n4. Generate changelog from conventional commits since last tag\n5. Build Android App Bundle and iOS IPA in parallel\n6. Upload debug symbols to Crashlytics automatically\n7. Deploy Android to Play Store Internal track\n8. Deploy iOS to TestFlight\n9. Create GitHub Release with changelog and artifacts\n10. Send Slack notification with release summary\n11. Add manual approval step before production promotion\n12. Implement rollback workflow for failed releases\n\nReference the deployment patterns from Module 16 for CI/CD best practices.",
   "language": "yaml",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Defines the GitHub model",
+      "expectedOutput": "class: GitHub",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Contains required field definitions",
+      "expectedOutput": "fields",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

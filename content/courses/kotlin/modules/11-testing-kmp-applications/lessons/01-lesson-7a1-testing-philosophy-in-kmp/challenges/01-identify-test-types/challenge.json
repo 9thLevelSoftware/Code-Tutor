@@ -5,15 +5,29 @@
   "description": "Given a list of features, identify which test type (unit, integration, E2E) is most appropriate and where the test should live (commonTest, androidTest, iosTest).",
   "difficulty": "beginner",
   "hints": [
-    "Unit tests are for pure logic with no external dependencies",
-    "Integration tests combine multiple components (e.g., repository + database)",
-    "Platform-specific APIs require platform-specific tests",
-    "Shared code in commonTest can run on JVM for speed"
+    {
+      "level": 1,
+      "text": "Unit tests are for pure logic with no external dependencies"
+    },
+    {
+      "level": 2,
+      "text": "Integration tests combine multiple components (e.g., repository + database)"
+    },
+    {
+      "level": 3,
+      "text": "Platform-specific APIs require platform-specific tests"
+    },
+    {
+      "level": 4,
+      "text": "Shared code in commonTest can run on JVM for speed"
+    }
   ],
   "testCases": [
     {
       "description": "Understanding test categorization",
-      "expectedBehavior": "Correctly identify test types and locations for each feature"
+      "expectedBehavior": "Correctly identify test types and locations for each feature",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

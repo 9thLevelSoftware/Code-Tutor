@@ -4,5 +4,25 @@
   "title": "Create an Account Balance Tracker",
   "description": "Build a simple account balance dictionary for your personal finance tracker. Create a dictionary that stores account names as keys and their balances as values, then look up specific accounts.",
   "instructions": "1. Create a dictionary called `accounts` with at least 3 accounts (e.g., 'checking', 'savings', 'credit_card') and their balances\n2. Use the `get()` method to safely look up the 'savings' balance and store it in `savings_balance`\n3. Use `get()` with a default value of 0 to look up a non-existent account called 'investment' and store it in `investment_balance`\n4. Add a new account 'emergency_fund' with a balance of 1000\n5. Print all account information",
-  "language": "python"
+  "language": "python",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Savings balance is printed",
+      "expectedOutput": "Savings balance:",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Investment balance defaults to 0 for missing account",
+      "expectedOutput": "Investment balance: $0",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Emergency fund account is added and shown in output",
+      "expectedOutput": "emergency_fund",
+      "isVisible": false
+    }
+  ]
 }

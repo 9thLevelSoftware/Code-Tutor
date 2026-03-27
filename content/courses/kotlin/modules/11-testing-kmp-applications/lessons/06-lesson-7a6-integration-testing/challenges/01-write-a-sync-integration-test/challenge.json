@@ -5,15 +5,29 @@
   "description": "Test the sync flow: fetch from API, save to database, expose via repository.",
   "difficulty": "advanced",
   "hints": [
-    "Use Ktor MockEngine to simulate API responses",
-    "Create real in-memory database for repository",
-    "Test both success and error paths",
-    "Verify both return value AND database state"
+    {
+      "level": 1,
+      "text": "Use Ktor MockEngine to simulate API responses"
+    },
+    {
+      "level": 2,
+      "text": "Create real in-memory database for repository"
+    },
+    {
+      "level": 3,
+      "text": "Test both success and error paths"
+    },
+    {
+      "level": 4,
+      "text": "Verify both return value AND database state"
+    }
   ],
   "testCases": [
     {
       "description": "All 4 sync scenarios should pass",
-      "expectedBehavior": "Add new, update newer, preserve newer local, handle errors"
+      "expectedBehavior": "Add new, update newer, preserve newer local, handle errors",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

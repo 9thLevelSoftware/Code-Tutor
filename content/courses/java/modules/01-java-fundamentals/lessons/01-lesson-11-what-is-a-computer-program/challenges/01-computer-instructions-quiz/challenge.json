@@ -10,5 +10,6 @@
     "The computer refuses to execute"
   ],
   "correctAnswer": 2,
-  "explanation": "Computers are literal - they do exactly what you tell them, nothing more. They cannot infer intent or use common sense."
+  "explanation": "Computers are literal - they do exactly what you tell them, nothing more. They cannot infer intent or use common sense.",
+  "question": "What happens if you tell a computer to 'spread peanut butter on bread' without specifying which side?"
 }

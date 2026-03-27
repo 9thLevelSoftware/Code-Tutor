@@ -5,18 +5,30 @@
   "description": "Organize a set of dependencies into proper commonMain and platform modules.",
   "difficulty": "intermediate",
   "hints": [
-    "Shared code with no platform deps goes in commonModule",
-    "Database drivers are platform-specific - they go in platformModule",
-    "The commonModule can depend on types provided by platformModule"
+    {
+      "level": 1,
+      "text": "Shared code with no platform deps goes in commonModule"
+    },
+    {
+      "level": 2,
+      "text": "Database drivers are platform-specific - they go in platformModule"
+    },
+    {
+      "level": 3,
+      "text": "The commonModule can depend on types provided by platformModule"
+    }
   ],
   "testCases": [
     {
       "description": "Common module should not have any platform imports",
-      "expectedBehavior": "NetworkClient, Repository, ViewModel in commonModule"
+      "expectedBehavior": "NetworkClient, Repository, ViewModel in commonModule",
+      "id": "test-1"
     },
     {
       "description": "Platform modules provide database drivers",
-      "expectedBehavior": "AndroidSqliteDriver in android, NativeSqliteDriver in ios"
+      "expectedBehavior": "AndroidSqliteDriver in android, NativeSqliteDriver in ios",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

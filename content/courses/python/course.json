@@ -2,7 +2,7 @@
   "id": "python",
   "language": "python",
   "title": "Python Backend Development",
-  "description": "Master Python from fundamentals to backend development with APIs, databases, async programming, and Python 3.13+ features like Exception Groups and TaskGroups through 90+ interactive lessons. Python 3.14 features noted where applicable.",
+  "description": "Master Python from fundamentals to backend development with APIs, databases, and async programming using modern Python 3.12+ features through 90+ interactive lessons.",
   "minimumRuntimeVersion": "Python 3.12",
 "difficulty": "beginner-to-advanced",
   "estimatedHours": 150,

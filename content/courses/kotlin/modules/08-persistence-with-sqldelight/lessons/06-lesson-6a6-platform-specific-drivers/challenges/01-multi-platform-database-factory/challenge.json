@@ -5,19 +5,34 @@
   "description": "Create a complete DatabaseDriverFactory implementation for all platforms with proper configuration.",
   "difficulty": "intermediate",
   "hints": [
-    "Android needs Context in constructor",
-    "Use AndroidSqliteDriver.Callback for pragmas",
-    "iOS needs maxReaderConnections for thread safety",
-    "Desktop must check if database file exists before creating schema"
+    {
+      "level": 1,
+      "text": "Android needs Context in constructor"
+    },
+    {
+      "level": 2,
+      "text": "Use AndroidSqliteDriver.Callback for pragmas"
+    },
+    {
+      "level": 3,
+      "text": "iOS needs maxReaderConnections for thread safety"
+    },
+    {
+      "level": 4,
+      "text": "Desktop must check if database file exists before creating schema"
+    }
   ],
   "testCases": [
     {
       "description": "Each platform should create proper driver",
-      "expectedBehavior": "Driver creates and connects successfully"
+      "expectedBehavior": "Driver creates and connects successfully",
+      "id": "test-1"
     },
     {
       "description": "Foreign keys should be enabled on Android",
-      "expectedBehavior": "PRAGMA foreign_keys returns 1"
+      "expectedBehavior": "PRAGMA foreign_keys returns 1",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

@@ -5,7 +5,26 @@
   "description": "Add a method to TaskRepository that finds all high-priority tasks for a user that are not yet completed.",
   "instructions": "Write a repository method signature in TaskRepository that finds all tasks where:\n1. The owner matches the given ownerId\n2. Priority is HIGH or URGENT\n3. Status is not COMPLETED\n\nUse Spring Data JPA query derivation (method naming convention).",
   "language": "java",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Repository method uses Spring Data JPA naming convention with 'findBy' prefix",
+      "expectedOutput": "findBy",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Method filters by ownerId parameter",
+      "expectedOutput": "OwnerId",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Method uses 'In' suffix to match multiple priority values (HIGH, URGENT)",
+      "expectedOutput": "PriorityIn",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

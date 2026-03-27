@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "Where would you put a reusable 'AppButton' widget that is used across 5 different features?",
       "options": [
         "features/buttons/widgets/app_button.dart",
         "core/widgets/app_button.dart",
@@ -14,11 +13,11 @@
         "features/home/widgets/app_button.dart"
       ],
       "correctAnswer": 1,
-      "explanation": "Widgets used by multiple features belong in core/widgets/. This keeps reusable code in one place and prevents features from depending on each other. The core/ folder is for shared code."
+      "explanation": "Widgets used by multiple features belong in core/widgets/. This keeps reusable code in one place and prevents features from depending on each other. The core/ folder is for shared code.",
+      "question": "Where would you put a reusable 'AppButton' widget that is used across 5 different features?"
     },
     {
       "id": "q2",
-      "text": "Where would you put the login screen for your authentication feature?",
       "options": [
         "lib/views/login_screen.dart",
         "core/views/login_screen.dart",
@@ -26,11 +25,11 @@
         "screens/login_screen.dart"
       ],
       "correctAnswer": 2,
-      "explanation": "In feature-first organization, each feature has its own folder. Login is part of the auth feature, so it goes in features/auth/views/. This keeps all authentication-related code together."
+      "explanation": "In feature-first organization, each feature has its own folder. Login is part of the auth feature, so it goes in features/auth/views/. This keeps all authentication-related code together.",
+      "question": "Where would you put the login screen for your authentication feature?"
     },
     {
       "id": "q3",
-      "text": "Your cart feature needs to access the current user's ID. What is the CORRECT way to do this?",
       "options": [
         "Import directly from features/auth/models/user.dart",
         "Copy the user model into features/cart/models/",
@@ -38,11 +37,11 @@
         "Store user ID in a global variable"
       ],
       "correctAnswer": 2,
-      "explanation": "Features should not import from each other directly. Instead, use shared services as intermediaries. This keeps features independent and prevents tight coupling. If auth changes, cart does not break."
+      "explanation": "Features should not import from each other directly. Instead, use shared services as intermediaries. This keeps features independent and prevents tight coupling. If auth changes, cart does not break.",
+      "question": "Your cart feature needs to access the current user's ID. What is the CORRECT way to do this?"
     },
     {
       "id": "q4",
-      "text": "You created a 'ProductRatingStars' widget used ONLY in the product detail screen. Where should it go?",
       "options": [
         "core/widgets/product_rating_stars.dart",
         "features/products/widgets/product_rating_stars.dart",
@@ -50,11 +49,11 @@
         "features/common/widgets/product_rating_stars.dart"
       ],
       "correctAnswer": 1,
-      "explanation": "If a widget is only used within one feature, it stays in that feature's widgets/ folder. Only put things in core/ if they are used by 2+ features. This prevents core/ from becoming a dumping ground."
+      "explanation": "If a widget is only used within one feature, it stays in that feature's widgets/ folder. Only put things in core/ if they are used by 2+ features. This prevents core/ from becoming a dumping ground.",
+      "question": "You created a 'ProductRatingStars' widget used ONLY in the product detail screen. Where should it go?"
     },
     {
       "id": "q5",
-      "text": "What is the MAIN advantage of feature-first folder organization?",
       "options": [
         "Smaller file sizes",
         "Faster app compilation",
@@ -62,7 +61,8 @@
         "Required by Flutter framework"
       ],
       "correctAnswer": 2,
-      "explanation": "Feature-first organization groups all code for a feature (models, views, viewmodels, widgets) in one folder. This makes it easy to find everything related to a feature, work on it without jumping between folders, and even delete an entire feature by removing one folder."
+      "explanation": "Feature-first organization groups all code for a feature (models, views, viewmodels, widgets) in one folder. This makes it easy to find everything related to a feature, work on it without jumping between folders, and even delete an entire feature by removing one folder.",
+      "question": "What is the MAIN advantage of feature-first folder organization?"
     }
   ]
 }

@@ -5,7 +5,26 @@
   "description": "Create a DashboardPage that shows task statistics and recent tasks.",
   "instructions": "Create a DashboardPage component that:\n1. Fetches task statistics (total, pending, completed, overdue counts)\n2. Shows recent 5 tasks\n3. Displays a welcome message with the user's name\n4. Has quick links to create a new task and view all tasks",
   "language": "jsx",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Component uses useEffect to fetch tasks on mount",
+      "expectedOutput": "useEffect",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Component uses taskService to fetch data",
+      "expectedOutput": "taskService",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Dashboard includes a link to create a new task",
+      "expectedOutput": "Link",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

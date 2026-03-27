@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "11.1-challenge",
+  "id": "11.1-challenge-efaed3",
   "title": "Practice Challenge",
   "description": "Simulate a simple database system:\n\n1. Create an array called `database` to store user objects\n2. Create a function `insertUser(name, email)` that:\n   - Generates a unique ID\n   - Adds user to database\n   - Returns the new user\n3. Create a function `findUserByEmail(email)` that:\n   - Searches the database\n   - Returns the user or null\n4. Create a function `updateUserEmail(id, newEmail)` that:\n   - Finds user by ID\n   - Updates their email\n   - Returns true/false for success\n\nTest all functions.",
   "instructions": "Simulate a simple database system:\n\n1. Create an array called `database` to store user objects\n2. Create a function `insertUser(name, email)` that:\n   - Generates a unique ID\n   - Adds user to database\n   - Returns the new user\n3. Create a function `findUserByEmail(email)` that:\n   - Searches the database\n   - Returns the user or null\n4. Create a function `updateUserEmail(id, newEmail)` that:\n   - Finds user by ID\n   - Updates their email\n   - Returns true/false for success\n\nTest all functions.",

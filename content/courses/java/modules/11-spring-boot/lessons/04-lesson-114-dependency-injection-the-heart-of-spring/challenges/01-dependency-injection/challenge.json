@@ -10,5 +10,6 @@
     "Static factory methods"
   ],
   "correctAnswer": 1,
-  "explanation": "Constructor injection is recommended because: dependencies are explicit, objects are immutable, and testing is easier."
+  "explanation": "Constructor injection is recommended because: dependencies are explicit, objects are immutable, and testing is easier.",
+  "question": "Please select the correct option."
 }

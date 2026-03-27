@@ -10,5 +10,6 @@
     "mvn install"
   ],
   "correctAnswer": 2,
-  "explanation": "mvn package runs the full lifecycle: compile -> test -> package (create JAR). mvn install goes further by copying to local repository."
+  "explanation": "mvn package runs the full lifecycle: compile -> test -> package (create JAR). mvn install goes further by copying to local repository.",
+  "question": "Please select the correct option."
 }

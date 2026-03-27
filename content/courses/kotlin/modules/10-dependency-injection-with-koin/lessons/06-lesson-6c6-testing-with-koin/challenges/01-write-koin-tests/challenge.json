@@ -5,15 +5,29 @@
   "description": "Create a complete test suite for a BookRepository and BookViewModel.",
   "difficulty": "intermediate",
   "hints": [
-    "FakeRepository should have a flag to simulate failures",
-    "Use StandardTestDispatcher for controlled coroutine execution",
-    "Test initial state, success case, and error case",
-    "Remember to call advanceUntilIdle() to complete coroutines"
+    {
+      "level": 1,
+      "text": "FakeRepository should have a flag to simulate failures"
+    },
+    {
+      "level": 2,
+      "text": "Use StandardTestDispatcher for controlled coroutine execution"
+    },
+    {
+      "level": 3,
+      "text": "Test initial state, success case, and error case"
+    },
+    {
+      "level": 4,
+      "text": "Remember to call advanceUntilIdle() to complete coroutines"
+    }
   ],
   "testCases": [
     {
       "description": "Tests should cover initial state, loading success, and loading failure",
-      "expectedBehavior": "All three scenarios tested with appropriate assertions"
+      "expectedBehavior": "All three scenarios tested with appropriate assertions",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

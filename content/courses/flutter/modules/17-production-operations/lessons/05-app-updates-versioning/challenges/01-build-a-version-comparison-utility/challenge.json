@@ -5,7 +5,26 @@
   "description": "Create a robust version comparison utility that handles semantic versioning including pre-release versions.",
   "instructions": "Create a Version class that:\n\n1. Parses version strings like '2.4.1', '2.4.1-beta.1', '2.4.1+45'\n2. Has properties for major, minor, patch, preRelease, and buildNumber\n3. Implements comparison operators (==, <, >, <=, >=)\n4. Handles edge cases (missing components default to 0, pre-release < release)\n5. Has a static compareTo method that returns -1, 0, or 1\n6. Has isNewerThan(other) and isOlderThan(other) convenience methods",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the VersionComparisonUtility class",
+      "expectedOutput": "VersionComparisonUtility",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the operators() method",
+      "expectedOutput": "operators",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the isNewerThan() method",
+      "expectedOutput": "isNewerThan",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

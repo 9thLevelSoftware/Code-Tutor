@@ -1,5 +1,1 @@
-// vercel.json
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
-}
+// TODO: Add your implementation here

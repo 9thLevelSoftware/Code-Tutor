@@ -7,8 +7,7 @@ title: "Code Example: Project Structure"
 
 **1. Root level:**
 - `README.md`: First thing people see
-- `requirements.txt`: All dependencies
-- `setup.py`: For pip installation
+- `pyproject.toml`: Modern package and dependency management
 - `.gitignore`: Exclude temp files, secrets
 
 **2. Source code (`src/`):**
@@ -40,8 +39,7 @@ Each layer only talks to layer below it.
 my_project/
 │
 ├── README.md              # Project overview and setup instructions
-├── requirements.txt       # Dependencies
-├── setup.py              # Package installation config
+├── pyproject.toml         # Modern project and dependency config
 ├── .gitignore            # Files to ignore in version control
 ├── .env.example          # Environment variables template
 │

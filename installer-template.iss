@@ -51,6 +51,7 @@ function InitializeSetup(): Boolean;
 var
   ResultCode: Integer;
   PythonInstalled, NodeInstalled, JavaInstalled: Boolean;
+  DotNetInstalled, FlutterInstalled, KotlinInstalled: Boolean;
   MissingRuntimes: String;
 begin
   Result := True;
@@ -63,8 +64,17 @@ begin
   // Check for Node.js
   NodeInstalled := Exec('node', '--version', '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);
 
-  // Check for Java
+  // Check for Java (also covers Kotlin JVM)
   JavaInstalled := Exec('java', '-version', '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);
+
+  // Check for .NET SDK (for C# courses)
+  DotNetInstalled := Exec('dotnet', '--version', '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);
+
+  // Check for Flutter SDK (for Flutter/Dart courses)
+  FlutterInstalled := Exec('flutter', '--version', '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);
+
+  // Check for Kotlin compiler
+  KotlinInstalled := Exec('kotlinc', '-version', '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and (ResultCode = 0);
 
   // Build warning message
   if not PythonInstalled then
@@ -72,7 +82,13 @@ begin
   if not NodeInstalled then
     MissingRuntimes := MissingRuntimes + '  • Node.js 18+ (for JavaScript courses)' + #13#10;
   if not JavaInstalled then
-    MissingRuntimes := MissingRuntimes + '  • Java 17+ (for Java courses)' + #13#10;
+    MissingRuntimes := MissingRuntimes + '  • Java 21+ (for Java and Kotlin courses)' + #13#10;
+  if not DotNetInstalled then
+    MissingRuntimes := MissingRuntimes + '  • .NET 8.0 SDK (for C# courses)' + #13#10;
+  if not FlutterInstalled then
+    MissingRuntimes := MissingRuntimes + '  • Flutter SDK (for Flutter/Dart courses)' + #13#10;
+  if not KotlinInstalled then
+    MissingRuntimes := MissingRuntimes + '  • Kotlin compiler (for Kotlin courses)' + #13#10;
 
   // Show warning if any runtimes are missing
   if MissingRuntimes <> '' then

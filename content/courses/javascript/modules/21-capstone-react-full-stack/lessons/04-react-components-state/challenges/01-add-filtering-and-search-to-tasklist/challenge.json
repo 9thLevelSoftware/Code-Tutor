@@ -26,13 +26,30 @@
     }
   ],
   "hints": [
-    "Use toLowerCase() on both the search term and task text for case-insensitive matching",
-    "The useMemo hook helps avoid recalculating filters on every render",
-    "When sorting by date, convert createdAt strings to Date objects with new Date()"
+    {
+      "level": 1,
+      "text": "Use toLowerCase() on both the search term and task text for case-insensitive matching"
+    },
+    {
+      "level": 2,
+      "text": "The useMemo hook helps avoid recalculating filters on every render"
+    },
+    {
+      "level": 3,
+      "text": "When sorting by date, convert createdAt strings to Date objects with new Date()"
+    }
   ],
   "commonMistakes": [
-    "Forgetting to spread the array before sorting (sort mutates the original array)",
-    "Not handling empty search terms which should return all tasks"
+    {
+      "mistake": "Forgetting to spread the array before sorting (sort mutates the original array)",
+      "consequence": "The code will fail or behave unpredictably.",
+      "correction": ""
+    },
+    {
+      "mistake": "Not handling empty search terms which should return all tasks",
+      "consequence": "The code will fail or behave unpredictably.",
+      "correction": ""
+    }
   ],
   "difficulty": "intermediate"
 }

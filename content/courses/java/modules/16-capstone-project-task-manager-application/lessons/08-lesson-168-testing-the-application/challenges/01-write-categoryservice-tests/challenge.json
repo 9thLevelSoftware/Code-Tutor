@@ -5,7 +5,26 @@
   "description": "Create unit tests for the CategoryService class.",
   "instructions": "Write tests for CategoryService that cover:\n1. Creating a category successfully\n2. Throwing exception when category name already exists for user\n3. Getting all categories for a user\n4. Deleting a category (and verifying tasks are not deleted, just unlinked)",
   "language": "java",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Test class uses @ExtendWith(MockitoExtension.class) for Mockito support",
+      "expectedOutput": "@ExtendWith(MockitoExtension.class)",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Tests use @Mock to create mock repositories",
+      "expectedOutput": "@Mock",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Tests verify behavior with assertions from AssertJ",
+      "expectedOutput": "assertThat",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

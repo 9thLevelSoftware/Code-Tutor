@@ -5,26 +5,12 @@
   "description": "Test your understanding of how the application tiers communicate.",
   "question": "In our Task Manager architecture, which component is responsible for converting a TaskRequest DTO into a Task entity and saving it to the database?",
   "options": [
-    {
-      "id": "a",
-      "text": "TaskController - it receives the request and should handle everything",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "TaskService - it implements business logic and coordinates with the repository",
-      "isCorrect": true
-    },
-    {
-      "id": "c",
-      "text": "TaskRepository - it handles all database operations",
-      "isCorrect": false
-    },
-    {
-      "id": "d",
-      "text": "React frontend - it prepares data before sending to the API",
-      "isCorrect": false
-    }
+    "TaskController - it receives the request and should handle everything",
+    "TaskService - it implements business logic and coordinates with the repository",
+    "TaskRepository - it handles all database operations",
+    "React frontend - it prepares data before sending to the API"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 1,
+  "explanation": "In three-tier architecture, the Service layer is responsible for business logic, including converting DTOs to entities and coordinating persistence through repositories. The Controller only handles HTTP concerns, the Repository only handles database operations, and the frontend only sends requests."
 }

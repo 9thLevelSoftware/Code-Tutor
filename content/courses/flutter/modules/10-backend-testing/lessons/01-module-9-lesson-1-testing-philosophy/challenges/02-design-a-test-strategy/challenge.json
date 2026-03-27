@@ -19,5 +19,19 @@
       "text": "E2E tests simulate real user journeys - from registration all the way to accessing protected resources."
     }
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the TestStrategy class",
+      "expectedOutput": "TestStrategy",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Uses test() or group() for test organization",
+      "expectedOutput": "test(",
+      "isVisible": true
+    }
+  ]
 }

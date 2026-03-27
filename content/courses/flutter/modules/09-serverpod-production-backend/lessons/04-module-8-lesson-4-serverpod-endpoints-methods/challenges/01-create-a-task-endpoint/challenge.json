@@ -5,7 +5,26 @@
   "description": "Create an endpoint for managing todo tasks with CRUD operations.",
   "instructions": "Create a TaskEndpoint with the following methods:\n\n1. getTasks(Session session) - Returns all tasks\n2. getTask(Session session, int taskId) - Returns a single task or null\n3. createTask(Session session, Task task) - Creates and returns a new task\n4. updateTask(Session session, Task task) - Updates and returns the task\n5. deleteTask(Session session, int taskId) - Deletes and returns success boolean\n\nAssume a Task model exists with: id, title, isCompleted, createdAt fields.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the TaskEndpoint class",
+      "expectedOutput": "TaskEndpoint",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the getTasks() method",
+      "expectedOutput": "getTasks",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the getTask() method",
+      "expectedOutput": "getTask",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

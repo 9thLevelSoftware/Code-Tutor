@@ -1,4 +1,7 @@
+using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeTutor.Tests.Models;
 
@@ -125,6 +128,9 @@ public class Challenge
     [JsonPropertyName("starterCode")]
     public string StarterCode { get; set; } = string.Empty;
 
+    [JsonPropertyName("startingCode")]
+    public string StartingCode { get; set; } = string.Empty;
+
     [JsonPropertyName("solution")]
     public string Solution { get; set; } = string.Empty;
 
@@ -148,10 +154,10 @@ public class Challenge
     public string? Question { get; set; }
 
     [JsonPropertyName("options")]
-    public List<AnswerOption>? Options { get; set; }
+    public List<string>? Options { get; set; }
 
     [JsonPropertyName("correctAnswer")]
-    public int? CorrectAnswer { get; set; }
+    public JsonElement? CorrectAnswer { get; set; }
 
     [JsonPropertyName("explanation")]
     public string? Explanation { get; set; }

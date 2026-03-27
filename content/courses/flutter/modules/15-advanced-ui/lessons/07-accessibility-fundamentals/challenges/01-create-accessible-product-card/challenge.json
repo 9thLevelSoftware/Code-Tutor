@@ -5,7 +5,26 @@
   "description": "Build a product card that works perfectly with screen readers.",
   "instructions": "Create an AccessibleProductCard widget that displays a product image, name, price, and rating. The card should: (1) Use MergeSemantics to combine all content into one announcement, (2) Exclude the decorative star icons but announce the rating value, (3) Be tappable with proper button semantics, (4) Have a minimum touch target of 48x48 dp.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the AccessibleProductCard class",
+      "expectedOutput": "AccessibleProductCard",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses MergeSemantics",
+      "expectedOutput": "MergeSemantics",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

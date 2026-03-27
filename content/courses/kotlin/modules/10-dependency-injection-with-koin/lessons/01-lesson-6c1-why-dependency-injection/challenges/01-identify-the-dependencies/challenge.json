@@ -5,14 +5,25 @@
   "description": "Given a tightly-coupled class, identify all dependencies that should be injected.",
   "difficulty": "beginner",
   "hints": [
-    "Look for any objects created with getInstance(), create(), or getLogger()",
-    "Each of these should become a constructor parameter",
-    "Consider using interfaces to define contracts"
+    {
+      "level": 1,
+      "text": "Look for any objects created with getInstance(), create(), or getLogger()"
+    },
+    {
+      "level": 2,
+      "text": "Each of these should become a constructor parameter"
+    },
+    {
+      "level": 3,
+      "text": "Consider using interfaces to define contracts"
+    }
   ],
   "testCases": [
     {
       "description": "Identify 4 dependencies: database/dao, network client, cache, and logger",
-      "expectedBehavior": "All hard-coded dependencies replaced with constructor parameters"
+      "expectedBehavior": "All hard-coded dependencies replaced with constructor parameters",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

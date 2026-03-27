@@ -5,7 +5,26 @@
   "description": "Build a comprehensive health check system that monitors database, cache, and external services.",
   "instructions": "Create a HealthChecker class that:\n\n1. Defines a HealthCheck result class with name, status, latency, and error\n2. Implements checkDatabase() that tests database connectivity\n3. Implements checkCache() that tests Redis/cache connectivity\n4. Implements checkAll() that runs all checks and returns aggregate status\n5. Calculates overall system health based on individual check results\n6. Handles timeouts gracefully (max 5 seconds per check)",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the HealthChecker class",
+      "expectedOutput": "HealthChecker",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the checkDatabase() method",
+      "expectedOutput": "checkDatabase",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the checkCache() method",
+      "expectedOutput": "checkCache",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

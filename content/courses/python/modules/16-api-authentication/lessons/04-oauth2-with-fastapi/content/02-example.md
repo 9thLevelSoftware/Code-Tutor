@@ -42,7 +42,7 @@ import jwt
 print("=== OAuth2 with FastAPI ===")
 
 # Configuration
-SECRET_KEY = "your-secret-key-here"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

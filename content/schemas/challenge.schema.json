@@ -125,5 +125,23 @@
       "description": "Starting code template for the challenge"
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": { "const": "FREE_CODING" }
+        },
+        "required": ["type"]
+      },
+      "then": {
+        "required": ["testCases"],
+        "properties": {
+          "testCases": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
 }

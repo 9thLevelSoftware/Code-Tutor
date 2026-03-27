@@ -10,5 +10,6 @@
     "Integration tests require a browser"
   ],
   "correctAnswer": 1,
-  "explanation": "Unit tests isolate single components (mock dependencies). Integration tests verify components work together correctly."
+  "explanation": "Unit tests isolate single components (mock dependencies). Integration tests verify components work together correctly.",
+  "question": "Please select the correct option."
 }

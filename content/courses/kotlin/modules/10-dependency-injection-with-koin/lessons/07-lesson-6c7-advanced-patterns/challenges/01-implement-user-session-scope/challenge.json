@@ -5,15 +5,29 @@
   "description": "Create a user session management system using Koin scopes.",
   "difficulty": "advanced",
   "hints": [
-    "Use scope(named(\"userSession\")) to define the scope",
-    "Use createScope() to create a new scope instance",
-    "Use scope.close() to destroy all scoped dependencies",
-    "Store the scope reference in SessionManager"
+    {
+      "level": 1,
+      "text": "Use scope(named(\"userSession\")) to define the scope"
+    },
+    {
+      "level": 2,
+      "text": "Use createScope() to create a new scope instance"
+    },
+    {
+      "level": 3,
+      "text": "Use scope.close() to destroy all scoped dependencies"
+    },
+    {
+      "level": 4,
+      "text": "Store the scope reference in SessionManager"
+    }
   ],
   "testCases": [
     {
       "description": "Session should be created on login and destroyed on logout",
-      "expectedBehavior": "getCurrentSession() returns data after login, null after logout"
+      "expectedBehavior": "getCurrentSession() returns data after login, null after logout",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

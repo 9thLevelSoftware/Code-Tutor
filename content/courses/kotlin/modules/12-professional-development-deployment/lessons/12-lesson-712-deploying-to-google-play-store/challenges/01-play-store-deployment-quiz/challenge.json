@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What file format does Google Play require for new app submissions (since August 2021)?",
+      "question": "What file format does Google Play require for new app submissions (since August 2021)?",
       "options": [
         "APK (Android Package Kit)",
         "AAB (Android App Bundle)",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "What is the purpose of Play App Signing?",
+      "question": "What is the purpose of Play App Signing?",
       "options": [
         "To encrypt the app's source code",
         "Google manages your app signing key, so you upload with an upload key and Google re-signs for distribution",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "What is the recommended testing track progression before production release?",
+      "question": "What is the recommended testing track progression before production release?",
       "options": [
         "Production immediately for fast iteration",
         "Internal testing -> Closed testing -> Open testing -> Production",

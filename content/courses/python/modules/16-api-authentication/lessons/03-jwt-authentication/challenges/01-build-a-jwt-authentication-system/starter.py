@@ -1,8 +1,9 @@
+import os
 import jwt
 from datetime import datetime, timedelta
 from typing import Optional
 
-SECRET_KEY = "your-secret-key"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = "HS256"
 
 # TODO: Implement create_access_token

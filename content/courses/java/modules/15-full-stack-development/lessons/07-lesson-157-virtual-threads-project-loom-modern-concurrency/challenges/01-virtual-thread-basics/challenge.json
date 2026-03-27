@@ -5,26 +5,12 @@
   "description": "What is the main advantage of virtual threads over platform threads?",
   "question": "What is the main advantage of virtual threads over platform threads?",
   "options": [
-    {
-      "id": "a",
-      "text": "They make CPU-intensive calculations faster",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "They use less memory and allow millions of concurrent threads",
-      "isCorrect": true
-    },
-    {
-      "id": "c",
-      "text": "They automatically parallelize sequential code",
-      "isCorrect": false
-    },
-    {
-      "id": "d",
-      "text": "They replace the need for databases",
-      "isCorrect": false
-    }
+    "They make CPU-intensive calculations faster",
+    "They use less memory and allow millions of concurrent threads",
+    "They automatically parallelize sequential code",
+    "They replace the need for databases"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 1,
+  "explanation": "Virtual threads are lightweight threads managed by the JVM rather than the OS. They use significantly less memory than platform threads (often just a few hundred bytes of stack vs. 1MB+), enabling applications to create millions of concurrent threads. They do not speed up CPU-bound work or automatically parallelize code."
 }

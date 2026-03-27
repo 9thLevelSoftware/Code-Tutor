@@ -17,7 +17,7 @@ from typing import Optional
 import secrets
 
 # Configuration
-SECRET_KEY = "your-256-bit-secret-key-keep-this-safe"  # In production: use environment variable
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")  # In production: use environment variable
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 15
 REFRESH_TOKEN_EXPIRE_DAYS = 7

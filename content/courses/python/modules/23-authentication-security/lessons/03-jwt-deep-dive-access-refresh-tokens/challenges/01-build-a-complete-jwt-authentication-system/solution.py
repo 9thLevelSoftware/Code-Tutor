@@ -1,10 +1,11 @@
+import os
 import jwt
 import secrets
 from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict, Any
 from dataclasses import dataclass, field
 
-SECRET_KEY = "finance-tracker-secret-key-256-bits-long!"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = "HS256"
 
 @dataclass

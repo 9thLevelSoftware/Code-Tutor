@@ -10,5 +10,6 @@
     "create_users_v1.sql"
   ],
   "correctAnswer": 1,
-  "explanation": "Flyway uses V{version}__{description}.sql format. The V prefix and double underscore are required. Version determines execution order."
+  "explanation": "Flyway uses V{version}__{description}.sql format. The V prefix and double underscore are required. Version determines execution order.",
+  "question": "Please select the correct option."
 }

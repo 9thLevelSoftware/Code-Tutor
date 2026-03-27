@@ -19,5 +19,25 @@
       "text": "For the multiple errors test, use hasLength(greaterThanOrEqualTo(3)) to verify at least 3 errors exist."
     }
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the PasswordValidator class",
+      "expectedOutput": "PasswordValidator",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the character() method",
+      "expectedOutput": "character",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses ValidationResult",
+      "expectedOutput": "ValidationResult",
+      "isVisible": false
+    }
+  ]
 }

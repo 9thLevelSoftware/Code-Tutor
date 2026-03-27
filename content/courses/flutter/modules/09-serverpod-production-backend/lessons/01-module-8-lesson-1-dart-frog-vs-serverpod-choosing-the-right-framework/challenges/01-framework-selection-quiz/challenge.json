@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "You are building a chat application with real-time messaging, user accounts, and message history. Which framework should you choose?",
       "options": [
         "Dart Frog - because it is faster to set up",
         "Serverpod - because it has built-in real-time, auth, and database",
@@ -14,11 +13,11 @@
         "Neither - Dart cannot do real-time"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod is the clear choice for a chat app. It provides built-in WebSocket streaming for real-time messages, authentication for user accounts, and an ORM for storing message history. Building all of this manually with Dart Frog would take weeks."
+      "explanation": "Serverpod is the clear choice for a chat app. It provides built-in WebSocket streaming for real-time messages, authentication for user accounts, and an ORM for storing message history. Building all of this manually with Dart Frog would take weeks.",
+      "question": "You are building a chat application with real-time messaging, user accounts, and message history. Which framework should you choose?"
     },
     {
       "id": "q2",
-      "text": "What is Serverpod's main advantage over Dart Frog?",
       "options": [
         "Faster runtime performance",
         "Automatic client code generation and built-in features",
@@ -26,11 +25,11 @@
         "Smaller deployment size"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod's killer feature is code generation - it automatically creates type-safe client libraries from your server endpoints. Combined with built-in ORM, auth, real-time, and file storage, it eliminates huge amounts of boilerplate code."
+      "explanation": "Serverpod's killer feature is code generation - it automatically creates type-safe client libraries from your server endpoints. Combined with built-in ORM, auth, real-time, and file storage, it eliminates huge amounts of boilerplate code.",
+      "question": "What is Serverpod's main advantage over Dart Frog?"
     },
     {
       "id": "q3",
-      "text": "You need to build a simple webhook receiver that validates incoming requests and forwards them to another service. Which framework is better suited?",
       "options": [
         "Serverpod - always use the more powerful option",
         "Dart Frog - simpler setup for a focused, simple task",
@@ -38,11 +37,11 @@
         "Both require the same amount of code"
       ],
       "correctAnswer": 1,
-      "explanation": "Dart Frog is perfect for simple, focused APIs like webhook receivers. You do not need a database, auth, or real-time features. Dart Frog lets you create the endpoint in minutes without Docker or PostgreSQL setup."
+      "explanation": "Dart Frog is perfect for simple, focused APIs like webhook receivers. You do not need a database, auth, or real-time features. Dart Frog lets you create the endpoint in minutes without Docker or PostgreSQL setup.",
+      "question": "You need to build a simple webhook receiver that validates incoming requests and forwards them to another service. Which framework is better suited?"
     },
     {
       "id": "q4",
-      "text": "What infrastructure does Serverpod require that Dart Frog does not?",
       "options": [
         "A web server",
         "Docker and PostgreSQL",
@@ -50,11 +49,11 @@
         "HTTPS certificates"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod requires Docker for local development and PostgreSQL as its database. Dart Frog has no such requirements - it runs as a simple Dart process and you choose your own database (or none at all)."
+      "explanation": "Serverpod requires Docker for local development and PostgreSQL as its database. Dart Frog has no such requirements - it runs as a simple Dart process and you choose your own database (or none at all).",
+      "question": "What infrastructure does Serverpod require that Dart Frog does not?"
     },
     {
       "id": "q5",
-      "text": "A startup is building an MVP to test if their idea has market fit. They need basic user data storage and will likely rebuild if successful. Which framework should they choose?",
       "options": [
         "Serverpod - they will need its features eventually",
         "Dart Frog - faster to ship, okay to rebuild later",
@@ -62,7 +61,8 @@
         "Use Firebase instead of Dart"
       ],
       "correctAnswer": 1,
-      "explanation": "For an MVP with uncertain future, Dart Frog is ideal. It lets them ship quickly to validate the idea. If successful, they can migrate to Serverpod with their validated requirements. If not, they have not over-invested in infrastructure."
+      "explanation": "For an MVP with uncertain future, Dart Frog is ideal. It lets them ship quickly to validate the idea. If successful, they can migrate to Serverpod with their validated requirements. If not, they have not over-invested in infrastructure.",
+      "question": "A startup is building an MVP to test if their idea has market fit. They need basic user data storage and will likely rebuild if successful. Which framework should they choose?"
     }
   ],
   "difficulty": "intermediate"

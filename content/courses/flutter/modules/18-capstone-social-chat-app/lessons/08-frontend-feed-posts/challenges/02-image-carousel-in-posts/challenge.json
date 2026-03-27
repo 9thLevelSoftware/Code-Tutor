@@ -5,7 +5,20 @@
   "description": "Implement multi-image posts with a PageView carousel, dots indicator, and pinch-to-zoom functionality for a polished image viewing experience.",
   "instructions": "Implement an image carousel for posts:\n\n1. Replace grid layout with PageView for 2+ images\n2. Add dots indicator showing current position\n3. Implement smooth page transitions\n4. Add pinch-to-zoom on individual images\n5. Support swipe gestures for navigation\n6. Show image counter (1/4, 2/4, etc.)\n7. Preload adjacent images for smooth scrolling",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the PageView class",
+      "expectedOutput": "PageView",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the counter() method",
+      "expectedOutput": "counter",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

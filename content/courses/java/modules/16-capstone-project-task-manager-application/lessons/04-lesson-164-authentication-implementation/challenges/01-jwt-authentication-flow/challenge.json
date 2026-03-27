@@ -5,26 +5,12 @@
   "description": "Understand how JWT authentication works in our application.",
   "question": "After a user successfully logs in, what is stored in the SecurityContext for subsequent requests?",
   "options": [
-    {
-      "id": "a",
-      "text": "The JWT token string itself",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "The user's password (encrypted)",
-      "isCorrect": false
-    },
-    {
-      "id": "c",
-      "text": "A UsernamePasswordAuthenticationToken containing the UserDetails",
-      "isCorrect": true
-    },
-    {
-      "id": "d",
-      "text": "The HTTP session ID",
-      "isCorrect": false
-    }
+    "The JWT token string itself",
+    "The user's password (encrypted)",
+    "A UsernamePasswordAuthenticationToken containing the UserDetails",
+    "The HTTP session ID"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 2,
+  "explanation": "After JWT validation, Spring Security creates a UsernamePasswordAuthenticationToken containing the UserDetails object and stores it in the SecurityContext. This token holds the principal (user details), credentials, and granted authorities. The raw JWT string and passwords are not stored in the context, and JWT-based auth is stateless so there is no HTTP session."
 }

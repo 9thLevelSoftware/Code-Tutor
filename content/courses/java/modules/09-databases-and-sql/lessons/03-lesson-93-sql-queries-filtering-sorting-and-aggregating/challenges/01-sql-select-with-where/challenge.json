@@ -10,5 +10,6 @@
     "The student with the highest GPA"
   ],
   "correctAnswer": 1,
-  "explanation": "WHERE filters to gpa > 3.5, ORDER BY gpa DESC sorts descending (highest first). * selects all columns."
+  "explanation": "WHERE filters to gpa > 3.5, ORDER BY gpa DESC sorts descending (highest first). * selects all columns.",
+  "question": "Please select the correct option."
 }

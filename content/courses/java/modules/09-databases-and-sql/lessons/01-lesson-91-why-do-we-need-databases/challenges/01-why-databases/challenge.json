@@ -10,5 +10,6 @@
     "Variables are not secure"
   ],
   "correctAnswer": 1,
-  "explanation": "Variables exist in RAM (memory) and disappear when the program ends. Databases store data on disk permanently."
+  "explanation": "Variables exist in RAM (memory) and disappear when the program ends. Databases store data on disk permanently.",
+  "question": "Please select the correct option."
 }

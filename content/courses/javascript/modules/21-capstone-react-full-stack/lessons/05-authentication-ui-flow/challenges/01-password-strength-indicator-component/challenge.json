@@ -26,13 +26,30 @@
     }
   ],
   "hints": [
-    "Use regular expressions to test for character types: /[a-z]/, /[A-Z]/, /\\d/, /[!@#$%^&*]/",
-    "The useMemo hook prevents recalculating strength on every render",
-    "Use useEffect to notify parent component when strength changes"
+    {
+      "level": 1,
+      "text": "Use regular expressions to test for character types: /[a-z]/, /[A-Z]/, /\\d/, /[!@#$%^&*]/"
+    },
+    {
+      "level": 2,
+      "text": "The useMemo hook prevents recalculating strength on every render"
+    },
+    {
+      "level": 3,
+      "text": "Use useEffect to notify parent component when strength changes"
+    }
   ],
   "commonMistakes": [
-    "Not escaping special characters in regex patterns",
-    "Forgetting to handle the empty password case in the UI"
+    {
+      "mistake": "Not escaping special characters in regex patterns",
+      "consequence": "The program will crash.",
+      "correction": ""
+    },
+    {
+      "mistake": "Forgetting to handle the empty password case in the UI",
+      "consequence": "The program will crash.",
+      "correction": ""
+    }
   ],
   "difficulty": "intermediate"
 }

@@ -478,14 +478,5 @@ public class LearningJourneyTests
             "First module should have multiple introductory lessons");
     }
 
-    private Course? LoadCourse(string courseId)
-    {
-        var courseFile = Path.Combine(_contentPath, courseId, "course.json");
-
-        if (!File.Exists(courseFile))
-            return null;
-
-        var json = File.ReadAllText(courseFile);
-        return JsonSerializer.Deserialize<Course>(json, _jsonOptions);
-    }
+    private Course? LoadCourse(string courseId) => TestCourseLoader.LoadCourse(_contentPath, courseId);
 }

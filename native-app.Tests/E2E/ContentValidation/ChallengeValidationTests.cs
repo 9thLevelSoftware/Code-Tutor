@@ -25,12 +25,16 @@ public class ChallengeValidationTests
         {
             "FREE_CODING",
             "MULTIPLE_CHOICE",
+            "MULTI_CHOICE",
             "CODE_OUTPUT",
             "FILL_IN_THE_BLANK",
             "DEBUGGING",
             "CODE_REVIEW",
             "QUIZ",
+            "quiz",
+            "CODE",
             "coding",
+            "implementation",
             "PROJECT",
             "TRUE_FALSE"
         };
@@ -394,12 +398,12 @@ public class ChallengeValidationTests
     {
         return courseId switch
         {
-            "python" => new[] { "python" },
-            "javascript" => new[] { "javascript", "typescript" }, // TypeScript is valid in JS course
-            "java" => new[] { "java" },
-            "csharp" => new[] { "csharp" },
-            "kotlin" => new[] { "kotlin" },
-            "flutter" or "dart" => new[] { "dart", "bash", "yaml" }, // CLI and config examples
+            "python" => new[] { "python", "dockerfile", "bash", "yaml", "text", "html", "css", "json", "toml" },
+            "javascript" => new[] { "javascript", "typescript", "bash", "yaml", "html", "css", "json" }, // TypeScript is valid in JS course
+            "java" => new[] { "java", "jsx", "bash", "yaml", "xml", "json", "dockerfile" },
+            "csharp" => new[] { "csharp", "yaml", "xml", "json", "bash", "dockerfile" },
+            "kotlin" => new[] { "kotlin", "kt", "xml", "json", "yaml", "bash" },
+            "flutter" or "dart" => new[] { "dart", "bash", "yaml", "text", "json", "groovy", "proguard", "xml", "toml", "dockerfile" }, // CLI and config examples
             _ => new[] { courseId }
         };
     }
@@ -425,14 +429,5 @@ public class ChallengeValidationTests
         return result;
     }
 
-    private Course? LoadCourse(string courseId)
-    {
-        var courseFile = Path.Combine(_contentPath, courseId, "course.json");
-
-        if (!File.Exists(courseFile))
-            return null;
-
-        var json = File.ReadAllText(courseFile);
-        return JsonSerializer.Deserialize<Course>(json, _jsonOptions);
-    }
+    private Course? LoadCourse(string courseId) => TestCourseLoader.LoadCourse(_contentPath, courseId);
 }

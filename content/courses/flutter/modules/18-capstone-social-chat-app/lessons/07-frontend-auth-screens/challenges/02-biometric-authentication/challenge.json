@@ -5,7 +5,20 @@
   "description": "Add fingerprint and face unlock as an optional authentication method with secure storage integration.",
   "instructions": "Implement biometric authentication:\n\n1. Check device biometric capabilities\n2. Add biometric toggle in security settings\n3. Store encrypted credentials for biometric unlock\n4. Show biometric prompt on app launch (if enabled)\n5. Implement fallback to password entry\n6. Handle biometric failures gracefully\n7. Clear biometric data on logout",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the BiometricAuthentication class",
+      "expectedOutput": "BiometricAuthentication",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the launch() method",
+      "expectedOutput": "launch",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

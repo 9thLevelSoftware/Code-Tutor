@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the PRIMARY advantage of using Dart for both frontend and backend?",
       "options": [
         "Dart runs faster than all other languages",
         "You can share code (like models) between Flutter and the server",
@@ -14,11 +13,11 @@
         "Other backend languages don't support REST APIs"
       ],
       "correctAnswer": 1,
-      "explanation": "The main advantage is code sharing. When you use Dart on both ends, you can write model classes once and use them everywhere. This reduces duplication and bugs from mismatched definitions."
+      "explanation": "The main advantage is code sharing. When you use Dart on both ends, you can write model classes once and use them everywhere. This reduces duplication and bugs from mismatched definitions.",
+      "question": "What is the PRIMARY advantage of using Dart for both frontend and backend?"
     },
     {
       "id": "q2",
-      "text": "Which framework is described as 'Next.js for Dart' with file-based routing?",
       "options": [
         "Shelf",
         "Serverpod",
@@ -26,11 +25,11 @@
         "Flutter Server"
       ],
       "correctAnswer": 2,
-      "explanation": "Dart Frog uses file-based routing (create a file, get a route) similar to Next.js. It's lightweight and perfect for learning and prototypes."
+      "explanation": "Dart Frog uses file-based routing (create a file, get a route) similar to Next.js. It's lightweight and perfect for learning and prototypes.",
+      "question": "Which framework is described as 'Next.js for Dart' with file-based routing?"
     },
     {
       "id": "q3",
-      "text": "When might you choose a NON-Dart backend?",
       "options": [
         "When building a Flutter app",
         "When you want shared models",
@@ -38,11 +37,11 @@
         "When you want fast development"
       ],
       "correctAnswer": 2,
-      "explanation": "If your team already has expertise in another language (like Python for ML), forcing Dart might cause friction. Technology choices should consider team skills and ecosystem needs."
+      "explanation": "If your team already has expertise in another language (like Python for ML), forcing Dart might cause friction. Technology choices should consider team skills and ecosystem needs.",
+      "question": "When might you choose a NON-Dart backend?"
     },
     {
       "id": "q4",
-      "text": "What does Shelf provide in the Dart ecosystem?",
       "options": [
         "A full ORM and authentication system",
         "The low-level HTTP server foundation",
@@ -50,7 +49,8 @@
         "A Flutter widget library"
       ],
       "correctAnswer": 1,
-      "explanation": "Shelf is the low-level HTTP server library for Dart. It's the foundation that frameworks like Dart Frog build upon. It gives you complete control but requires more manual work."
+      "explanation": "Shelf is the low-level HTTP server library for Dart. It's the foundation that frameworks like Dart Frog build upon. It gives you complete control but requires more manual work.",
+      "question": "What does Shelf provide in the Dart ecosystem?"
     }
   ],
   "difficulty": "intermediate"

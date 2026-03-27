@@ -5,15 +5,29 @@
   "description": "Write UI tests for a notes list screen with search, empty state, and item interactions.",
   "difficulty": "advanced",
   "hints": [
-    "Use testTag for finding specific elements",
-    "Use waitUntil for async loading",
-    "Advance the test scheduler for coroutine-based operations",
-    "performTextInput simulates typing in search"
+    {
+      "level": 1,
+      "text": "Use testTag for finding specific elements"
+    },
+    {
+      "level": 2,
+      "text": "Use waitUntil for async loading"
+    },
+    {
+      "level": 3,
+      "text": "Advance the test scheduler for coroutine-based operations"
+    },
+    {
+      "level": 4,
+      "text": "performTextInput simulates typing in search"
+    }
   ],
   "testCases": [
     {
       "description": "All 5 UI tests should pass",
-      "expectedBehavior": "Loading, empty, list, search, and click behaviors work correctly"
+      "expectedBehavior": "Loading, empty, list, search, and click behaviors work correctly",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

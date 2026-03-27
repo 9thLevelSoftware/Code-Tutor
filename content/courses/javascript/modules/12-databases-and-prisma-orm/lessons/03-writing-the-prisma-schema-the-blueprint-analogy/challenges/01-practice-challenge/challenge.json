@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "11.3-challenge",
+  "id": "11.3-challenge-a37e25",
   "title": "Practice Challenge",
   "description": "Simulate a Prisma schema structure in JavaScript:\n\n1. Create an object called `schema` with a `models` property\n2. Add a 'Product' model with these fields:\n   - id (integer, auto-increment)\n   - name (string, required)\n   - price (number, required)\n   - inStock (boolean, default true)\n   - description (string, optional)\n   - createdAt (date, default now)\n\n3. Create a function `generateModelSQL(model)` that simulates generating SQL\n4. Display the schema structure\n\nYou're simulating what Prisma does internally!",
   "instructions": "Simulate a Prisma schema structure in JavaScript:\n\n1. Create an object called `schema` with a `models` property\n2. Add a 'Product' model with these fields:\n   - id (integer, auto-increment)\n   - name (string, required)\n   - price (number, required)\n   - inStock (boolean, default true)\n   - description (string, optional)\n   - createdAt (date, default now)\n\n3. Create a function `generateModelSQL(model)` that simulates generating SQL\n4. Display the schema structure\n\nYou're simulating what Prisma does internally!",
@@ -22,7 +22,7 @@
   "hints": [
     {
       "level": 1,
-      "text": "Create nested objects: schema → models → Product → fields → {id, name, price...}"
+      "text": "Create nested objects: schema \u2192 models \u2192 Product \u2192 fields \u2192 {id, name, price...}"
     }
   ],
   "commonMistakes": [

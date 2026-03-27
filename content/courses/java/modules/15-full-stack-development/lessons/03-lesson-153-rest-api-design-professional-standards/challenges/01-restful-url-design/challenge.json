@@ -10,5 +10,6 @@
     "GET /api/fetch-orders-for-user-123"
   ],
   "correctAnswer": 1,
-  "explanation": "REST uses nouns (resources) and nesting. /users/123/orders is resource-oriented. Verbs belong in HTTP methods, not URLs."
+  "explanation": "REST uses nouns (resources) and nesting. /users/123/orders is resource-oriented. Verbs belong in HTTP methods, not URLs.",
+  "question": "Please select the correct option."
 }

@@ -5,15 +5,29 @@
   "description": "Given a simple Task Manager app requirement, design the package structure and key classes for each layer following Clean Architecture principles.",
   "difficulty": "intermediate",
   "hints": [
-    "Domain layer should have no external dependencies",
-    "Repository interface goes in domain, implementation in data",
-    "Use cases are optional for simple CRUD",
-    "DTOs should map to/from domain entities"
+    {
+      "level": 1,
+      "text": "Domain layer should have no external dependencies"
+    },
+    {
+      "level": 2,
+      "text": "Repository interface goes in domain, implementation in data"
+    },
+    {
+      "level": 3,
+      "text": "Use cases are optional for simple CRUD"
+    },
+    {
+      "level": 4,
+      "text": "DTOs should map to/from domain entities"
+    }
   ],
   "testCases": [
     {
       "description": "Domain models should be pure data classes",
-      "expectedBehavior": "No framework imports in domain layer"
+      "expectedBehavior": "No framework imports in domain layer",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

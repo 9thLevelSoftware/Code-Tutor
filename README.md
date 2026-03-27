@@ -149,16 +149,16 @@ This creates a complete Windows installer with:
 
 ```bash
 # Run all tests
-dotnet test native-app.Tests/CodeTutor.Wpf.Tests.csproj
+dotnet test native-app.Tests/native-app.Tests.csproj
 
 # Run with coverage
-dotnet test native-app.Tests/CodeTutor.Wpf.Tests.csproj --collect:"XPlat Code Coverage"
+dotnet test native-app.Tests/native-app.Tests.csproj --collect:"XPlat Code Coverage"
 
 # Run specific test category
-dotnet test native-app.Tests/CodeTutor.Wpf.Tests.csproj --filter Category=Services
+dotnet test native-app.Tests/native-app.Tests.csproj --filter Category=Services
 ```
 
-**Test Coverage**: 102 tests, 90% service coverage
+**Test Coverage**: 261 total E2E validation tests (100% passing)
 
 ## 📚 Supported Languages & Features
 

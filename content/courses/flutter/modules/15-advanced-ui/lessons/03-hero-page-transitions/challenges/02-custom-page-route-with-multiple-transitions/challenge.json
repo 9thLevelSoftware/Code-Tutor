@@ -5,7 +5,26 @@
   "description": "Create a reusable custom page route that supports multiple transition types.",
   "instructions": "Build a CustomPageRoute class that accepts a TransitionType enum (fade, slideUp, slideRight, scale) and applies the appropriate transition. Then demonstrate using it with Navigator.push() for different screens.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the CustomPageRoute class",
+      "expectedOutput": "CustomPageRoute",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the enum() method",
+      "expectedOutput": "enum",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the push() method",
+      "expectedOutput": "push",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

@@ -5,7 +5,20 @@
   "description": "Add Google and Apple sign-in buttons to the login screen with OAuth flow handling and account linking.",
   "instructions": "Implement social login functionality:\n\n1. Add Google Sign-In button with proper branding\n2. Add Apple Sign-In button (iOS only, or web)\n3. Implement OAuth flow for each provider\n4. Handle account linking when email already exists\n5. Store social auth tokens securely\n6. Update auth state after successful social login\n7. Handle cancellation and errors gracefully",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the SocialLoginIntegration class",
+      "expectedOutput": "SocialLoginIntegration",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the button() method",
+      "expectedOutput": "button",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

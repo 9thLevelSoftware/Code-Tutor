@@ -4,5 +4,25 @@
   "title": "Track Unique Expense Categories",
   "description": "Use sets to track unique expense categories from a list of transactions. Practice set operations to find common and unique categories between different time periods.",
   "instructions": "1. Create a list `january_expenses` with categories: ['food', 'transport', 'food', 'entertainment', 'utilities', 'food']\n2. Create a list `february_expenses` with categories: ['food', 'transport', 'healthcare', 'utilities', 'transport']\n3. Convert both lists to sets to get unique categories\n4. Find categories that appear in both months (intersection)\n5. Find all categories across both months (union)\n6. Find categories unique to January (difference)\n7. Print all results",
-  "language": "python"
+  "language": "python",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "January unique categories are printed",
+      "expectedOutput": "January categories:",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Common categories between months are found",
+      "expectedOutput": "Common categories:",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "January-only categories are computed via set difference",
+      "expectedOutput": "January only:",
+      "isVisible": false
+    }
+  ]
 }

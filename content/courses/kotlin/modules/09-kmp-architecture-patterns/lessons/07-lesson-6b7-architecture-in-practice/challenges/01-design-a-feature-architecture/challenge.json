@@ -5,15 +5,29 @@
   "description": "You're building a 'Shopping Cart' feature. Design the complete architecture including domain models, repository interface, ViewModel state, and UI actions.",
   "difficulty": "advanced",
   "hints": [
-    "Domain models should contain business logic (like calculating totals)",
-    "UI models should have formatted strings ready for display",
-    "Consider all user actions and error states",
-    "Repository handles data source coordination"
+    {
+      "level": 1,
+      "text": "Domain models should contain business logic (like calculating totals)"
+    },
+    {
+      "level": 2,
+      "text": "UI models should have formatted strings ready for display"
+    },
+    {
+      "level": 3,
+      "text": "Consider all user actions and error states"
+    },
+    {
+      "level": 4,
+      "text": "Repository handles data source coordination"
+    }
   ],
   "testCases": [
     {
       "description": "Cart should calculate totals correctly",
-      "expectedBehavior": "subtotal, discount, total computed from items"
+      "expectedBehavior": "subtotal, discount, total computed from items",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

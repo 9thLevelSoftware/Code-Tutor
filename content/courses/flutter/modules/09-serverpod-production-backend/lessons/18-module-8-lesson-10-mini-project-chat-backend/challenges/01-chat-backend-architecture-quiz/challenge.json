@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "Why do we use both HTTP endpoints and streaming endpoints in the chat backend?",
       "options": [
         "HTTP is faster than WebSocket",
         "HTTP for CRUD operations and history; streaming for real-time delivery",
@@ -14,11 +13,11 @@
         "WebSocket cannot handle file uploads"
       ],
       "correctAnswer": 1,
-      "explanation": "HTTP endpoints handle operations that need request-response patterns: fetching message history, creating rooms, uploading files. Streaming endpoints handle real-time delivery where the server needs to push data immediately to all connected clients."
+      "explanation": "HTTP endpoints handle operations that need request-response patterns: fetching message history, creating rooms, uploading files. Streaming endpoints handle real-time delivery where the server needs to push data immediately to all connected clients.",
+      "question": "Why do we use both HTTP endpoints and streaming endpoints in the chat backend?"
     },
     {
       "id": "q2",
-      "text": "What is the purpose of the ChatMember model in the database schema?",
       "options": [
         "To store message content",
         "To create a many-to-many relationship between users and rooms",
@@ -26,11 +25,11 @@
         "To store file attachments"
       ],
       "correctAnswer": 1,
-      "explanation": "ChatMember creates a many-to-many relationship: one user can be in many rooms, and one room can have many users. It also stores membership metadata like role (admin/member), join date, and notification preferences."
+      "explanation": "ChatMember creates a many-to-many relationship: one user can be in many rooms, and one room can have many users. It also stores membership metadata like role (admin/member), join date, and notification preferences.",
+      "question": "What is the purpose of the ChatMember model in the database schema?"
     },
     {
       "id": "q3",
-      "text": "Why do typing indicators use an auto-timeout timer?",
       "options": [
         "To save battery on mobile devices",
         "To automatically clear stale typing status if the user stops without explicitly signaling",
@@ -38,11 +37,11 @@
         "To limit the number of typing events"
       ],
       "correctAnswer": 1,
-      "explanation": "If a user starts typing but then closes the app, navigates away, or loses connection, they never send a 'stopped typing' signal. The auto-timeout ensures their typing indicator clears after a few seconds of inactivity, preventing permanently stuck indicators."
+      "explanation": "If a user starts typing but then closes the app, navigates away, or loses connection, they never send a 'stopped typing' signal. The auto-timeout ensures their typing indicator clears after a few seconds of inactivity, preventing permanently stuck indicators.",
+      "question": "Why do typing indicators use an auto-timeout timer?"
     },
     {
       "id": "q4",
-      "text": "What is the advantage of soft-deleting messages instead of hard-deleting them?",
       "options": [
         "It is faster than actual deletion",
         "Preserves audit trail and allows message recovery if needed",
@@ -50,11 +49,11 @@
         "It prevents index fragmentation"
       ],
       "correctAnswer": 1,
-      "explanation": "Soft delete (setting isDeleted = true) preserves the message in the database for audit purposes, legal compliance, or potential recovery. It also maintains referential integrity if other messages reply to the deleted one."
+      "explanation": "Soft delete (setting isDeleted = true) preserves the message in the database for audit purposes, legal compliance, or potential recovery. It also maintains referential integrity if other messages reply to the deleted one.",
+      "question": "What is the advantage of soft-deleting messages instead of hard-deleting them?"
     },
     {
       "id": "q5",
-      "text": "In the ChatStreamEndpoint, why do we use a Map<StreamingSession, Set<int>> to track session rooms?",
       "options": [
         "To limit the number of rooms per user",
         "For efficient cleanup when a session disconnects",
@@ -62,7 +61,8 @@
         "To sort rooms alphabetically"
       ],
       "correctAnswer": 1,
-      "explanation": "When a session disconnects (streamClosed), we need to remove it from all room subscriber lists. Without tracking which rooms a session is in, we would have to iterate through every room. The session-to-rooms map allows O(1) lookup for cleanup."
+      "explanation": "When a session disconnects (streamClosed), we need to remove it from all room subscriber lists. Without tracking which rooms a session is in, we would have to iterate through every room. The session-to-rooms map allows O(1) lookup for cleanup.",
+      "question": "In the ChatStreamEndpoint, why do we use a Map<StreamingSession, Set<int>> to track session rooms?"
     }
   ],
   "difficulty": "intermediate"

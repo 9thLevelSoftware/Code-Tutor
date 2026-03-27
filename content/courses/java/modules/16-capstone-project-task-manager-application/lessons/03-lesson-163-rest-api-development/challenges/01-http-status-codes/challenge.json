@@ -5,26 +5,12 @@
   "description": "Choose the correct status code for each scenario.",
   "question": "A user tries to update a task that belongs to another user. What HTTP status code should the API return?",
   "options": [
-    {
-      "id": "a",
-      "text": "400 Bad Request - the request data was invalid",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "401 Unauthorized - the user is not logged in",
-      "isCorrect": false
-    },
-    {
-      "id": "c",
-      "text": "403 Forbidden - the user is logged in but not allowed to access this resource",
-      "isCorrect": false
-    },
-    {
-      "id": "d",
-      "text": "404 Not Found - the task was not found (for this user)",
-      "isCorrect": true
-    }
+    "400 Bad Request - the request data was invalid",
+    "401 Unauthorized - the user is not logged in",
+    "403 Forbidden - the user is logged in but not allowed to access this resource",
+    "404 Not Found - the task was not found (for this user)"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 2,
+  "explanation": "403 Forbidden is the correct status code when a user is authenticated but lacks permission to access or modify a specific resource. 401 means the user is not authenticated at all, 400 means the request itself was malformed, and 404 means the resource does not exist. Since the user is logged in but trying to access another user's task, 403 is appropriate."
 }

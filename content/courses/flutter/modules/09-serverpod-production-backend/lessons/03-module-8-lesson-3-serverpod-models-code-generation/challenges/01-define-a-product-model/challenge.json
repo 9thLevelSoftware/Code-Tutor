@@ -5,7 +5,26 @@
   "description": "Create a YAML model definition for an e-commerce Product with various field types.",
   "instructions": "Create a Product model with the following requirements:\n\n1. The model should be named 'Product' with a table called 'products'\n2. Include these fields:\n   - name (required String)\n   - description (optional String)\n   - price (required double)\n   - stockQuantity (required int with default 0)\n   - isAvailable (required bool with default true)\n   - createdAt (required DateTime)\n   - categoryId (required int for foreign key)\n   - imageUrls (optional List of Strings)\n\nWrite the complete YAML definition.",
   "language": "yaml",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Defines the Product model",
+      "expectedOutput": "class: Product",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Includes the 'name' field",
+      "expectedOutput": "name",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Includes the 'description' field",
+      "expectedOutput": "description",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

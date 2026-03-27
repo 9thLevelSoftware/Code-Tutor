@@ -48,5 +48,6 @@
       "correction": "Include all labels and values: 'Name: ' + userName + ', Age: ' + userAge + ', Learning: ' + isLearning"
     }
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "starterCode": "// TODO: Add your implementation here\n"
 }

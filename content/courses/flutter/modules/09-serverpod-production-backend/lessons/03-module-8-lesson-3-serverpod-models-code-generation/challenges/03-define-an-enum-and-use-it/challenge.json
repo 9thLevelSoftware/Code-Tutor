@@ -5,7 +5,26 @@
   "description": "Create an OrderStatus enum and an Order model that uses it.",
   "instructions": "Create:\n\n1. An OrderStatus enum with values: pending, processing, shipped, delivered, cancelled\n\n2. An Order model with:\n   - orderId (String)\n   - customerId (int)\n   - status (OrderStatus with default pending)\n   - totalAmount (double)\n   - createdAt (DateTime)\n   - shippedAt (DateTime, optional)\n\nWrite both YAML definitions.",
   "language": "yaml",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Defines the Order model",
+      "expectedOutput": "class: Order",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Includes the 'orderId' field",
+      "expectedOutput": "orderId",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses an enum type",
+      "expectedOutput": "enum",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

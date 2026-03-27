@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "Why should email sending be done in the background rather than synchronously?",
       "options": [
         "Email libraries do not support synchronous calls",
         "It reduces server memory usage",
@@ -14,11 +13,11 @@
         "Emails must be encrypted before sending"
       ],
       "correctAnswer": 2,
-      "explanation": "Email sending via SMTP typically takes 500ms to 3 seconds. If done synchronously, users wait for this, and if the SMTP server is down, the request fails entirely. Background processing provides fast user response, automatic retries, and better reliability."
+      "explanation": "Email sending via SMTP typically takes 500ms to 3 seconds. If done synchronously, users wait for this, and if the SMTP server is down, the request fails entirely. Background processing provides fast user response, automatic retries, and better reliability.",
+      "question": "Why should email sending be done in the background rather than synchronously?"
     },
     {
       "id": "q2",
-      "text": "What is the purpose of exponential backoff in retry strategies?",
       "options": [
         "To make the code more complex and secure",
         "To progressively wait longer between retries, avoiding overwhelming a struggling service",
@@ -26,11 +25,11 @@
         "To encrypt retry requests"
       ],
       "correctAnswer": 1,
-      "explanation": "Exponential backoff increases the delay between retries (e.g., 1s, 2s, 4s, 8s). This gives failing services time to recover and prevents a thundering herd of retries from overwhelming them further."
+      "explanation": "Exponential backoff increases the delay between retries (e.g., 1s, 2s, 4s, 8s). This gives failing services time to recover and prevents a thundering herd of retries from overwhelming them further.",
+      "question": "What is the purpose of exponential backoff in retry strategies?"
     },
     {
       "id": "q3",
-      "text": "What makes a background task idempotent, and why is this important?",
       "options": [
         "It runs faster each time it executes",
         "Running it multiple times produces the same result as running it once, preventing duplicate side effects",
@@ -38,11 +37,11 @@
         "It uses less memory on subsequent runs"
       ],
       "correctAnswer": 1,
-      "explanation": "An idempotent task produces the same outcome whether run once or multiple times. This is critical because background tasks might retry after failures, and you do not want to send duplicate emails or process the same order twice."
+      "explanation": "An idempotent task produces the same outcome whether run once or multiple times. This is critical because background tasks might retry after failures, and you do not want to send duplicate emails or process the same order twice.",
+      "question": "What makes a background task idempotent, and why is this important?"
     },
     {
       "id": "q4",
-      "text": "When should you use a Future Call versus a Scheduled Job in Serverpod?",
       "options": [
         "Future Calls are for recurring tasks; Scheduled Jobs are for one-time tasks",
         "Future Calls are for one-time delayed execution; Scheduled Jobs are for recurring tasks on a schedule",
@@ -50,11 +49,11 @@
         "Future Calls run immediately; Scheduled Jobs run after a delay"
       ],
       "correctAnswer": 1,
-      "explanation": "Future Calls schedule a single execution at a specific future time (e.g., send reminder in 24 hours). Scheduled Jobs run repeatedly on a schedule (e.g., generate daily report at 6 AM every day)."
+      "explanation": "Future Calls schedule a single execution at a specific future time (e.g., send reminder in 24 hours). Scheduled Jobs run repeatedly on a schedule (e.g., generate daily report at 6 AM every day).",
+      "question": "When should you use a Future Call versus a Scheduled Job in Serverpod?"
     },
     {
       "id": "q5",
-      "text": "What is a 'dead letter queue' in the context of background tasks?",
       "options": [
         "A queue for sending letters by mail",
         "A storage for tasks that have permanently failed after all retry attempts",
@@ -62,7 +61,8 @@
         "A queue that processes tasks in reverse order"
       ],
       "correctAnswer": 1,
-      "explanation": "A dead letter queue stores tasks that have failed permanently after exhausting all retry attempts. These tasks require manual investigation to understand why they failed and whether they can be fixed and reprocessed."
+      "explanation": "A dead letter queue stores tasks that have failed permanently after exhausting all retry attempts. These tasks require manual investigation to understand why they failed and whether they can be fixed and reprocessed.",
+      "question": "What is a 'dead letter queue' in the context of background tasks?"
     }
   ],
   "difficulty": "intermediate"

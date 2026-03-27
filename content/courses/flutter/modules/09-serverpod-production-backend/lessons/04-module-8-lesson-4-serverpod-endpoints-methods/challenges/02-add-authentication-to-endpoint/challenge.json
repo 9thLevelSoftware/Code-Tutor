@@ -5,7 +5,26 @@
   "description": "Create a secure endpoint that requires user authentication.",
   "instructions": "Create a NoteEndpoint where:\n\n1. All methods require authentication (use requireLogin getter)\n2. getMyNotes() returns only notes belonging to the authenticated user\n3. createNote() automatically sets the authorId to the current user\n4. deleteNote() only allows deleting own notes (check authorId matches)\n\nHandle authentication errors with appropriate exceptions.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the NoteEndpoint class",
+      "expectedOutput": "NoteEndpoint",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the authentication() method",
+      "expectedOutput": "authentication",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the getMyNotes() method",
+      "expectedOutput": "getMyNotes",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

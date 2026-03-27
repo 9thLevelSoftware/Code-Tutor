@@ -40,17 +40,26 @@ config = {
 }
 ```
 
-**3. requirements.txt:**
-```
-Flask==3.0.0
-SQLAlchemy==2.0.0
-python-dotenv==1.0.0
-pytest==7.4.0
+**3. pyproject.toml:**
+```toml
+[project]
+name = "my_project"
+version = "0.1.0"
+dependencies = [
+    "Flask>=3.0.0",
+    "SQLAlchemy>=2.0.0",
+    "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4.0"
+]
 ```
 
 **Install dependencies:**
 ```bash
-pip install -r requirements.txt
+pip install .
 ```
 
 **4. .gitignore:**

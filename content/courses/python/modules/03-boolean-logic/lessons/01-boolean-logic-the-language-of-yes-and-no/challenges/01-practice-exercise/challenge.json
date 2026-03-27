@@ -2,8 +2,8 @@
   "type": "FREE_CODING",
   "id": "module-03-lesson-01-challenge-1",
   "title": "Practice Exercise",
-  "description": "Build a **Movie Ticket Validator** that checks if someone can watch different movie ratings.\n\n**Your task:**\n\n- Ask the user for their age\n- Create Boolean variables that check if they can watch movies rated:\n  - **G** (General - any age)\n  - **PG-13** (13 and older)\n  - **R** (17 and older)\n\n- Display which ratings they can watch\n\n**Example output:**\n\n```\nEnter your age: 15\n\nMovie Rating Access:\n• G-rated movies: True\n• PG-13 movies: True\n• R-rated movies: False\n\nYou can watch 2 out of 3 rating categories!\n```\n**Hints:**\n\n- Use `>=` to check if age meets the minimum\n- G-rated has no minimum (everyone can watch)\n- Count how many ratings are True",
-  "instructions": "Build a **Movie Ticket Validator** that checks if someone can watch different movie ratings.\n\n**Your task:**\n\n- Ask the user for their age\n- Create Boolean variables that check if they can watch movies rated:\n  - **G** (General - any age)\n  - **PG-13** (13 and older)\n  - **R** (17 and older)\n\n- Display which ratings they can watch\n\n**Example output:**\n\n```\nEnter your age: 15\n\nMovie Rating Access:\n• G-rated movies: True\n• PG-13 movies: True\n• R-rated movies: False\n\nYou can watch 2 out of 3 rating categories!\n```\n**Hints:**\n\n- Use `>=` to check if age meets the minimum\n- G-rated has no minimum (everyone can watch)\n- Count how many ratings are True",
+  "description": "Build a **Movie Ticket Validator** that checks if someone can watch different movie ratings.\n\n**Your task:**\n\n- Ask the user for their age\n- Create Boolean variables that check if they can watch movies rated:\n  - **G** (General - any age)\n  - **PG-13** (13 and older)\n  - **R** (17 and older)\n\n- Display which ratings they can watch\n\n**Example output:**\n\n```\nEnter your age: 15\n\nMovie Rating Access:\n\u2022 G-rated movies: True\n\u2022 PG-13 movies: True\n\u2022 R-rated movies: False\n\nYou can watch 2 out of 3 rating categories!\n```\n**Hints:**\n\n- Use `>=` to check if age meets the minimum\n- G-rated has no minimum (everyone can watch)\n- Count how many ratings are True",
+  "instructions": "Build a **Movie Ticket Validator** that checks if someone can watch different movie ratings.\n\n**Your task:**\n\n- Ask the user for their age\n- Create Boolean variables that check if they can watch movies rated:\n  - **G** (General - any age)\n  - **PG-13** (13 and older)\n  - **R** (17 and older)\n\n- Display which ratings they can watch\n\n**Example output:**\n\n```\nEnter your age: 15\n\nMovie Rating Access:\n\u2022 G-rated movies: True\n\u2022 PG-13 movies: True\n\u2022 R-rated movies: False\n\nYou can watch 2 out of 3 rating categories!\n```\n**Hints:**\n\n- Use `>=` to check if age meets the minimum\n- G-rated has no minimum (everyone can watch)\n- Count how many ratings are True",
   "language": "python",
   "testCases": [
     {
@@ -49,5 +49,6 @@
       "correction": "> is greater than, < is less than"
     }
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "starterCode": "# TODO: Add your implementation here\n"
 }

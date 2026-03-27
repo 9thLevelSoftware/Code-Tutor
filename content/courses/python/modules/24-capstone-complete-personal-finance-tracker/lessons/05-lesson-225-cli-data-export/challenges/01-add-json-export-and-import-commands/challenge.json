@@ -5,5 +5,25 @@
   "description": "Extend the CLI with JSON backup and restore functionality.",
   "instructions": "1. Add 'export json' command that exports all user data (transactions, categories, budgets)\n2. Add 'import json' command that imports data from a backup file\n3. Use pathlib for all file operations\n4. Handle duplicate detection on import",
   "language": "python",
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "export_json command function is defined",
+      "expectedOutput": "def export_json(",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "import_json command function is defined",
+      "expectedOutput": "def import_json(",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "JSON serialization uses json.dumps or json_lib.dumps",
+      "expectedOutput": ".dumps(",
+      "isVisible": false
+    }
+  ]
 }

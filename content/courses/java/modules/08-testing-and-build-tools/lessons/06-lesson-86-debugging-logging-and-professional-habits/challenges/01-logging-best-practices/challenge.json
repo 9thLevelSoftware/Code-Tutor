@@ -10,5 +10,6 @@
     "ERROR - something failed"
   ],
   "correctAnswer": 1,
-  "explanation": "INFO is for normal, significant business events. DEBUG is for development details. WARN/ERROR are for problems."
+  "explanation": "INFO is for normal, significant business events. DEBUG is for development details. WARN/ERROR are for problems.",
+  "question": "Please select the correct option."
 }

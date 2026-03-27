@@ -5,7 +5,26 @@
   "description": "Create a comprehensive feature flag service that wraps Firebase Remote Config with convenient methods for common feature flag patterns.",
   "instructions": "Create a FeatureFlagService class that:\n\n1. Uses the singleton pattern with FirebaseRemoteConfig.instance\n2. Has an initialize() method that sets config settings and default values, then fetches and activates\n3. Has typed getters for specific feature flags: isNewCheckoutEnabled, isDarkModeEnabled, maxCartItems\n4. Has generic getBool(key), getString(key), getInt(key) methods for any flag\n5. Has a refresh() method that fetches and activates new values, returning true if values changed\n6. Handles errors gracefully (catch exceptions, continue with defaults)",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the FeatureFlagService class",
+      "expectedOutput": "FeatureFlagService",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the initialize() method",
+      "expectedOutput": "initialize",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the getBool() method",
+      "expectedOutput": "getBool",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

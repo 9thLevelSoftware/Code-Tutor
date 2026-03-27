@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the difference between structured logging and unstructured logging?",
+      "question": "What is the difference between structured logging and unstructured logging?",
       "options": [
         "Structured logging uses XML, unstructured uses JSON",
         "Structured logging emits machine-parseable key-value fields; unstructured outputs free-text strings",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "In a KMP backend (Ktor), what should a health check endpoint return?",
+      "question": "In a KMP backend (Ktor), what should a health check endpoint return?",
       "options": [
         "The full application configuration including secrets",
         "A simple HTTP 200 with basic status info (database connectivity, uptime)",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "Which metric is MOST important for detecting a memory leak in a Ktor backend?",
+      "question": "Which metric is MOST important for detecting a memory leak in a Ktor backend?",
       "options": [
         "HTTP request count per minute",
         "JVM heap usage trending upward over time without returning to baseline",

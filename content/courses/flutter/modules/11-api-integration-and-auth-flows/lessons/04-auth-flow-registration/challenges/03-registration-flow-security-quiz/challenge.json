@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "Why should you use flutter_secure_storage instead of SharedPreferences for storing auth tokens?",
       "options": [
         "flutter_secure_storage is faster",
         "SharedPreferences stores data in plain text that can be easily extracted",
@@ -14,11 +13,11 @@
         "SharedPreferences does not work on iOS"
       ],
       "correctAnswer": 1,
-      "explanation": "SharedPreferences stores data in plain text (XML on Android, plist on iOS) that can be accessed by anyone with device access or through backup extraction. flutter_secure_storage uses platform-specific encryption (Keychain on iOS, EncryptedSharedPreferences on Android) to protect sensitive data like auth tokens."
+      "explanation": "SharedPreferences stores data in plain text (XML on Android, plist on iOS) that can be accessed by anyone with device access or through backup extraction. flutter_secure_storage uses platform-specific encryption (Keychain on iOS, EncryptedSharedPreferences on Android) to protect sensitive data like auth tokens.",
+      "question": "Why should you use flutter_secure_storage instead of SharedPreferences for storing auth tokens?"
     },
     {
       "id": "q2",
-      "text": "What is the purpose of validating passwords on both client and server?",
       "options": [
         "Client validation improves UX; server validation ensures security against bypassed clients",
         "They serve identical purposes and only one is needed",
@@ -26,11 +25,11 @@
         "Both are only for improved performance"
       ],
       "correctAnswer": 0,
-      "explanation": "Client-side validation provides immediate feedback to users, improving the registration experience. However, it can be bypassed by malicious users. Server-side validation is the security gatekeeper that ensures all data meets requirements regardless of how the request was made. Both are essential for a complete solution."
+      "explanation": "Client-side validation provides immediate feedback to users, improving the registration experience. However, it can be bypassed by malicious users. Server-side validation is the security gatekeeper that ensures all data meets requirements regardless of how the request was made. Both are essential for a complete solution.",
+      "question": "What is the purpose of validating passwords on both client and server?"
     },
     {
       "id": "q3",
-      "text": "Why do we implement a resend cooldown timer for verification emails?",
       "options": [
         "To reduce server load only",
         "To prevent email spam abuse and rate limiting from email providers",
@@ -38,11 +37,11 @@
         "Email providers require it by law"
       ],
       "correctAnswer": 1,
-      "explanation": "Without a cooldown, malicious users could trigger thousands of emails, potentially getting your domain blacklisted by email providers or incurring excessive costs. The cooldown protects against abuse while still allowing legitimate users to request new emails when needed."
+      "explanation": "Without a cooldown, malicious users could trigger thousands of emails, potentially getting your domain blacklisted by email providers or incurring excessive costs. The cooldown protects against abuse while still allowing legitimate users to request new emails when needed.",
+      "question": "Why do we implement a resend cooldown timer for verification emails?"
     },
     {
       "id": "q4",
-      "text": "What is the correct way to handle a 'widget not mounted' scenario after an async operation?",
       "options": [
         "Wrap everything in a try-catch block",
         "Check 'if (mounted)' before calling setState after await",
@@ -50,11 +49,11 @@
         "Disable the async operation"
       ],
       "correctAnswer": 1,
-      "explanation": "After an await, the widget might have been disposed (user navigated away). Calling setState on a disposed widget throws an error. Always check 'if (!mounted) return;' after async operations before updating state to prevent this crash."
+      "explanation": "After an await, the widget might have been disposed (user navigated away). Calling setState on a disposed widget throws an error. Always check 'if (!mounted) return;' after async operations before updating state to prevent this crash.",
+      "question": "What is the correct way to handle a 'widget not mounted' scenario after an async operation?"
     },
     {
       "id": "q5",
-      "text": "Why should passwords have a maximum length limit (like 128 characters)?",
       "options": [
         "Users cannot remember longer passwords",
         "Databases cannot store longer strings",
@@ -62,7 +61,8 @@
         "The keyboard does not support more characters"
       ],
       "correctAnswer": 2,
-      "explanation": "Password hashing algorithms like bcrypt are intentionally slow to prevent brute-force attacks. An attacker could submit extremely long passwords (megabytes) to consume excessive CPU time, creating a denial-of-service condition. A reasonable limit like 128 characters prevents this while allowing any practical password."
+      "explanation": "Password hashing algorithms like bcrypt are intentionally slow to prevent brute-force attacks. An attacker could submit extremely long passwords (megabytes) to consume excessive CPU time, creating a denial-of-service condition. A reasonable limit like 128 characters prevents this while allowing any practical password.",
+      "question": "Why should passwords have a maximum length limit (like 128 characters)?"
     }
   ]
 }

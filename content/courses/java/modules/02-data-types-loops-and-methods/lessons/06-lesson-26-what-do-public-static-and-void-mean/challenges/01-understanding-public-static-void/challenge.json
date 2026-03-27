@@ -10,5 +10,6 @@
     "The method is required"
   ],
   "correctAnswer": 1,
-  "explanation": "Static means the method belongs to the class itself, so it can be called without creating an object first. That's why main() can run before any objects exist."
+  "explanation": "Static means the method belongs to the class itself, so it can be called without creating an object first. That's why main() can run before any objects exist.",
+  "question": "Which access modifier allows access only within the same class?"
 }

@@ -5,19 +5,34 @@
   "description": "Write the build.gradle.kts configuration for a KMP project with SQLDelight support for Android, iOS, and Desktop.",
   "difficulty": "intermediate",
   "hints": [
-    "The plugin ID is 'app.cash.sqldelight'",
-    "Use 'coroutines-extensions' for Flow support",
-    "Each platform needs its own driver dependency",
-    "Database name becomes the generated class name"
+    {
+      "level": 1,
+      "text": "The plugin ID is 'app.cash.sqldelight'"
+    },
+    {
+      "level": 2,
+      "text": "Use 'coroutines-extensions' for Flow support"
+    },
+    {
+      "level": 3,
+      "text": "Each platform needs its own driver dependency"
+    },
+    {
+      "level": 4,
+      "text": "Database name becomes the generated class name"
+    }
   ],
   "testCases": [
     {
       "description": "SQLDelight plugin should be applied",
-      "expectedBehavior": "Plugin declaration is present"
+      "expectedBehavior": "Plugin declaration is present",
+      "id": "test-1"
     },
     {
       "description": "All platform drivers should be configured",
-      "expectedBehavior": "Android, iOS, and Desktop drivers are added"
+      "expectedBehavior": "Android, iOS, and Desktop drivers are added",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

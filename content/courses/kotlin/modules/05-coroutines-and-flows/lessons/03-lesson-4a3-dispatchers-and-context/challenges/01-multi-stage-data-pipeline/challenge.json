@@ -5,18 +5,30 @@
   "description": "Build a data pipeline that downloads data (IO), processes it (CPU), and displays results (Main). Each stage should run on the appropriate dispatcher.",
   "difficulty": "intermediate",
   "hints": [
-    "Use withContext(Dispatchers.IO) for downloadData",
-    "Use withContext(Dispatchers.Default) for processData",
-    "The pipeline function just calls them in sequence"
+    {
+      "level": 1,
+      "text": "Use withContext(Dispatchers.IO) for downloadData"
+    },
+    {
+      "level": 2,
+      "text": "Use withContext(Dispatchers.Default) for processData"
+    },
+    {
+      "level": 3,
+      "text": "The pipeline function just calls them in sequence"
+    }
   ],
   "testCases": [
     {
       "description": "Should download on IO thread",
-      "expectedBehavior": "Download prints thread containing 'DefaultDispatcher' or IO pool"
+      "expectedBehavior": "Download prints thread containing 'DefaultDispatcher' or IO pool",
+      "id": "test-1"
     },
     {
       "description": "Should process on Default thread",
-      "expectedBehavior": "Processing prints thread containing 'DefaultDispatcher'"
+      "expectedBehavior": "Processing prints thread containing 'DefaultDispatcher'",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

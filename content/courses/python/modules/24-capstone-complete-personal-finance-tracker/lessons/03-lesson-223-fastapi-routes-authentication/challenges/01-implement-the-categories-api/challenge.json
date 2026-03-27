@@ -5,5 +5,25 @@
   "description": "Create the complete categories router with CRUD endpoints and default category seeding.",
   "instructions": "1. Create CategoryCreate and CategoryResponse Pydantic schemas\n2. Implement GET /categories (list user's categories)\n3. Implement POST /categories (create custom category)\n4. Implement DELETE /categories/{id} (delete only non-default categories)\n5. Add validation to prevent deleting categories with transactions",
   "language": "python",
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "CategoryCreate Pydantic schema is defined",
+      "expectedOutput": "class CategoryCreate(BaseModel)",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "DELETE endpoint prevents deleting default categories",
+      "expectedOutput": "Cannot delete default categories",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "CategoryResponse schema is defined with model_config",
+      "expectedOutput": "class CategoryResponse(BaseModel)",
+      "isVisible": false
+    }
+  ]
 }

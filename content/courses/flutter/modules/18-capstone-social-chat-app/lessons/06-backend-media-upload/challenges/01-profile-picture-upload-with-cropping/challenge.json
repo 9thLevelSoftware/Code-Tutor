@@ -5,7 +5,26 @@
   "description": "Implement a profile picture upload system with client-side crop coordinates and server-side processing.",
   "instructions": "Create a profile picture upload endpoint that:\n\n1. Accepts an image with optional crop coordinates (x, y, width, height)\n2. Validates the image type and size\n3. Applies server-side cropping if coordinates provided\n4. Generates square profile picture sizes (64, 128, 256, 512)\n5. Replaces and deletes the user's old profile picture\n6. Updates the user profile with new avatar URLs\n7. Returns the updated user profile with all avatar sizes",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the ProfilePictureUploadWithCropping class",
+      "expectedOutput": "ProfilePictureUploadWithCropping",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the coordinates() method",
+      "expectedOutput": "coordinates",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the sizes() method",
+      "expectedOutput": "sizes",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace CodeTutor.Wpf.Models;
@@ -114,17 +115,57 @@ public class Challenge
     [JsonPropertyName("starterCode")]
     public string StarterCode { get; set; } = string.Empty;
 
+    [JsonPropertyName("startingCode")]
+    public string StartingCode { get; set; } = string.Empty;
+
     [JsonPropertyName("solution")]
     public string Solution { get; set; } = string.Empty;
 
     [JsonPropertyName("language")]
     public string Language { get; set; } = string.Empty;
 
+    [JsonPropertyName("difficulty")]
+    public string Difficulty { get; set; } = string.Empty;
+
     [JsonPropertyName("hints")]
     public List<Hint> Hints { get; set; } = new();
 
     [JsonPropertyName("testCases")]
     public List<TestCase> TestCases { get; set; } = new();
+
+    [JsonPropertyName("commonMistakes")]
+    public List<CommonMistake> CommonMistakes { get; set; } = new();
+
+    // Multiple choice challenge fields
+    [JsonPropertyName("question")]
+    public string? Question { get; set; }
+
+    [JsonPropertyName("options")]
+    public List<string>? Options { get; set; }
+
+    [JsonPropertyName("correctAnswer")]
+    public JsonElement? CorrectAnswer { get; set; }
+
+    [JsonPropertyName("explanation")]
+    public string? Explanation { get; set; }
+
+    // TRUE_FALSE challenge fields
+    [JsonPropertyName("statement")]
+    public string? Statement { get; set; }
+
+    [JsonPropertyName("isTrue")]
+    public bool? IsTrue { get; set; }
+
+    // Multi-question quiz fields
+    [JsonPropertyName("questions")]
+    public List<QuizQuestion>? Questions { get; set; }
+
+    // Code output challenge fields
+    [JsonPropertyName("codeSnippet")]
+    public string? CodeSnippet { get; set; }
+
+    [JsonPropertyName("expectedOutput")]
+    public string? ExpectedOutput { get; set; }
 }
 
 public class Hint
@@ -144,9 +185,49 @@ public class TestCase
     [JsonPropertyName("description")]
     public string Description { get; set; } = string.Empty;
 
+    [JsonPropertyName("input")]
+    public string? Input { get; set; }
+
     [JsonPropertyName("expectedOutput")]
     public string ExpectedOutput { get; set; } = string.Empty;
 
     [JsonPropertyName("isVisible")]
     public bool IsVisible { get; set; } = true;
+}
+
+public class QuizQuestion
+{
+    [JsonPropertyName("id")]
+    public string Id { get; set; } = string.Empty;
+
+    [JsonPropertyName("question")]
+    public string? Question { get; set; }
+
+    [JsonPropertyName("text")]
+    public string? Text { get; set; }
+
+    /// <summary>Resolved question text: prefers "question", falls back to "text".</summary>
+    [JsonIgnore]
+    public string QuestionText => Question ?? Text ?? string.Empty;
+
+    [JsonPropertyName("options")]
+    public List<string> Options { get; set; } = new();
+
+    [JsonPropertyName("correctAnswer")]
+    public JsonElement? CorrectAnswer { get; set; }
+
+    [JsonPropertyName("explanation")]
+    public string? Explanation { get; set; }
+}
+
+public class CommonMistake
+{
+    [JsonPropertyName("mistake")]
+    public string Mistake { get; set; } = string.Empty;
+
+    [JsonPropertyName("consequence")]
+    public string Consequence { get; set; } = string.Empty;
+
+    [JsonPropertyName("correction")]
+    public string Correction { get; set; } = string.Empty;
 }

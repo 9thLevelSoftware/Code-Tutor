@@ -10,5 +10,6 @@
     "Write code, refactor, write test"
   ],
   "correctAnswer": 1,
-  "explanation": "TDD follows Red-Green-Refactor: Write a failing test (Red), write minimal code to pass (Green), then clean up (Refactor)."
+  "explanation": "TDD follows Red-Green-Refactor: Write a failing test (Red), write minimal code to pass (Green), then clean up (Refactor).",
+  "question": "Please select the correct option."
 }

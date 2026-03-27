@@ -5,15 +5,29 @@
   "description": "Write tests for a SearchNotesUseCase that filters notes by query string.",
   "difficulty": "intermediate",
   "hints": [
-    "Use @BeforeTest to set up common test data",
-    "Test both title and content matching",
-    "Don't forget edge cases like blank queries",
-    "Use assertEquals for clear failure messages"
+    {
+      "level": 1,
+      "text": "Use @BeforeTest to set up common test data"
+    },
+    {
+      "level": 2,
+      "text": "Test both title and content matching"
+    },
+    {
+      "level": 3,
+      "text": "Don't forget edge cases like blank queries"
+    },
+    {
+      "level": 4,
+      "text": "Use assertEquals for clear failure messages"
+    }
   ],
   "testCases": [
     {
       "description": "All 6 test scenarios should pass",
-      "expectedBehavior": "Tests verify all search functionality"
+      "expectedBehavior": "Tests verify all search functionality",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

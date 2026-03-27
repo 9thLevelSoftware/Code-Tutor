@@ -10,5 +10,6 @@
     "Spring requires explicit frontend registration"
   ],
   "correctAnswer": 1,
-  "explanation": "Browsers enforce Same-Origin Policy. Different ports = different origins. CORS headers explicitly allow cross-origin requests."
+  "explanation": "Browsers enforce Same-Origin Policy. Different ports = different origins. CORS headers explicitly allow cross-origin requests.",
+  "question": "Please select the correct option."
 }

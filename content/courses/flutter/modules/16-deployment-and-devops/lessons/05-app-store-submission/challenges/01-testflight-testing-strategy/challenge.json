@@ -24,5 +24,6 @@
   ],
   "correctAnswer": "b",
   "explanation": "External testing with email invites is ideal for this scenario. You have a known list of 500 testers who signed up, so importing their emails gives you control over exactly who can test. Internal testing is limited to 100 people and requires App Store Connect team roles. A public link would work but offers less control over who joins. Skipping beta testing misses valuable feedback before public launch.",
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "question": "Your Flutter app is ready for beta testing. You want to distribute it to 500 external beta users who signed up on your website. You need their feedback before the public launch. Which TestFlight approach should you use?"
 }

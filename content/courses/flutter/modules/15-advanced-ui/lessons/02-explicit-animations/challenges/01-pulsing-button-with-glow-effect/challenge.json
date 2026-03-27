@@ -5,7 +5,26 @@
   "description": "Create a button that continuously pulses with a glowing effect.",
   "instructions": "Build a circular button that continuously scales between 1.0 and 1.15 with an elastic curve. Add a glow effect (BoxShadow) that intensifies as the button grows. The animation should loop forever using repeat(reverse: true).",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the BoxShadow class",
+      "expectedOutput": "BoxShadow",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the effect() method",
+      "expectedOutput": "effect",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the repeat() method",
+      "expectedOutput": "repeat",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

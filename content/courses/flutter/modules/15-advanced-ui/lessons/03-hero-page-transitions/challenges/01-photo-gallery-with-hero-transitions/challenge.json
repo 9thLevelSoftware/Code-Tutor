@@ -5,7 +5,26 @@
   "description": "Build a photo gallery with smooth Hero transitions.",
   "instructions": "Create a grid of photos that expands to full-screen when tapped. Use Hero widgets to animate the selected photo from its grid position to the center of the screen. Include a custom flightShuttleBuilder that adds a shadow effect during the transition.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the PhotoGalleryWithHeroTransitions class",
+      "expectedOutput": "PhotoGalleryWithHeroTransitions",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses Hero for animation",
+      "expectedOutput": "Hero",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

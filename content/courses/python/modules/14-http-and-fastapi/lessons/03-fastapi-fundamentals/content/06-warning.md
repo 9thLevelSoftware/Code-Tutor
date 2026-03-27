@@ -55,7 +55,7 @@ uvicorn main:app --reload
 
 ```python
 # WRONG
-SECRET_KEY = "super-secret-key-123"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 
 # RIGHT: Use environment variables
 import os

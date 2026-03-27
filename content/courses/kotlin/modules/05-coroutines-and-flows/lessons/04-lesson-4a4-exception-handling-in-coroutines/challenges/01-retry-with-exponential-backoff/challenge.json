@@ -5,19 +5,34 @@
   "description": "Implement a retry mechanism that attempts an operation multiple times with exponential backoff between attempts.",
   "difficulty": "intermediate",
   "hints": [
-    "Use repeat() to try multiple times",
-    "Catch exceptions inside the loop, not outside",
-    "Remember to rethrow CancellationException",
-    "Double the delay after each failed attempt"
+    {
+      "level": 1,
+      "text": "Use repeat() to try multiple times"
+    },
+    {
+      "level": 2,
+      "text": "Catch exceptions inside the loop, not outside"
+    },
+    {
+      "level": 3,
+      "text": "Remember to rethrow CancellationException"
+    },
+    {
+      "level": 4,
+      "text": "Double the delay after each failed attempt"
+    }
   ],
   "testCases": [
     {
       "description": "Should succeed after retries",
-      "expectedBehavior": "Returns 'Success on attempt 3'"
+      "expectedBehavior": "Returns 'Success on attempt 3'",
+      "id": "test-1"
     },
     {
       "description": "Should use exponential backoff",
-      "expectedBehavior": "Delays increase: 100ms, 200ms, 400ms..."
+      "expectedBehavior": "Delays increase: 100ms, 200ms, 400ms...",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

@@ -10,5 +10,6 @@
     "Spring Boot is more secure"
   ],
   "correctAnswer": 1,
-  "explanation": "Spring Boot's auto-configuration eliminates boilerplate. It detects dependencies and configures them automatically."
+  "explanation": "Spring Boot's auto-configuration eliminates boilerplate. It detects dependencies and configures them automatically.",
+  "question": "Please select the correct option."
 }

@@ -5,7 +5,26 @@
   "description": "Build a notification card that respects reduced motion preferences.",
   "instructions": "Create a NotificationCard widget that slides in from the right when shown. When the user has reduced motion enabled, it should fade in instantly instead of sliding. The card should include: (1) Check for reduced motion preference using MediaQuery, (2) Animate with slide + fade when motion is allowed, (3) Show instantly or with simple fade when reduced motion is preferred, (4) Include a dismiss button with proper semantics.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the NotificationCard class",
+      "expectedOutput": "NotificationCard",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses MediaQuery",
+      "expectedOutput": "MediaQuery",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

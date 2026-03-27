@@ -42,7 +42,7 @@ import jwt
 
 print("=== OAuth2 Scopes in FastAPI ===")
 
-SECRET_KEY = "your-secret-key"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = "HS256"
 
 print("\n1. Defining Scopes:")

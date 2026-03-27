@@ -304,6 +304,10 @@ public class CourseService : ICourseService
                 challenge.Language = GetLanguageFromExtension(Path.GetExtension(starterFile));
             }
         }
+        else if (!string.IsNullOrEmpty(challenge.StartingCode))
+        {
+            challenge.StarterCode = challenge.StartingCode;
+        }
 
         // Load solution code
         var solutionFile = Directory.GetFiles(challengeDir, "solution.*").OrderBy(f => f).FirstOrDefault();

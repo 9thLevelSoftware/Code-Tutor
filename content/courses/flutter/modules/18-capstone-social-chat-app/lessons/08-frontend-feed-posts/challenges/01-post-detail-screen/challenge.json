@@ -5,7 +5,20 @@
   "description": "Build a full post detail view with comments section, add comment form, and share functionality for a complete social media experience.",
   "instructions": "Implement a comprehensive post detail screen:\n\n1. Display the full post with all content and images\n2. Show comments list with pagination\n3. Add comment input form at the bottom\n4. Implement real-time comment adding with optimistic updates\n5. Add share functionality with platform share sheet\n6. Handle loading and error states for comments\n7. Support replying to comments (nested comments)",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the PostDetailScreen class",
+      "expectedOutput": "PostDetailScreen",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the comments() method",
+      "expectedOutput": "comments",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

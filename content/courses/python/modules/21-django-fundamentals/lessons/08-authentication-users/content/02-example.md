@@ -16,7 +16,7 @@ Logout completed
 from dataclasses import dataclass, field
 from typing import Dict, Optional, List
 from datetime import datetime
-import hashlib
+from django.contrib.auth.hashers import make_password
 import secrets
 import re
 
@@ -60,7 +60,7 @@ class AnonymousUser:
 
 def hash_password(password: str) -> str:
     """Hash password (simplified - Django uses PBKDF2/bcrypt)."""
-    return hashlib.sha256(password.encode()).hexdigest()
+    return make_password(password)
 
 
 class AuthenticationError(Exception):

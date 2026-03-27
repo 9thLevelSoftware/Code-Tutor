@@ -24,5 +24,6 @@
   ],
   "correctAnswer": "b",
   "explanation": "With a crash rate jumping from 0.5% to 4% and multiple users reporting the same issue, you should pause the phased release immediately to prevent more users from being affected. Fix the crash, test thoroughly, and submit a new version. Waiting or releasing to all users would expose more people to the bug. The crash is clearly a regression, not expected behavior.",
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "question": "You're on Day 3 of a phased release (5% of users). Multiple 1-star reviews mention the app crashes when taking a photo, and your crash reports confirm a 4% crash rate for this version (up from 0.5% in the previous version). What should you do?"
 }

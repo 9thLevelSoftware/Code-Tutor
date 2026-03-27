@@ -5,7 +5,26 @@
   "description": "Create an analytics mixin that tracks users through a conversion funnel (e.g., checkout flow).",
   "instructions": "Create a CheckoutFunnelAnalytics class that tracks users through a 4-step checkout funnel:\n\n1. viewCart - Log when user views their cart with itemCount and cartTotal\n2. beginCheckout - Log when user starts checkout with cartTotal and optional couponCode\n3. addPaymentInfo - Log when user adds payment method with paymentType (e.g., 'credit_card', 'paypal')\n4. completePurchase - Log when purchase is complete with orderId, orderTotal, and itemCount\n5. Include a calculateFunnelDropoff() method that takes a Map of step counts and returns dropoff percentages\n\nEach step should include a 'funnel_step' parameter (1-4) for easy funnel visualization.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the CheckoutFunnelAnalytics class",
+      "expectedOutput": "CheckoutFunnelAnalytics",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the paymentType() method",
+      "expectedOutput": "paymentType",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the calculateFunnelDropoff() method",
+      "expectedOutput": "calculateFunnelDropoff",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

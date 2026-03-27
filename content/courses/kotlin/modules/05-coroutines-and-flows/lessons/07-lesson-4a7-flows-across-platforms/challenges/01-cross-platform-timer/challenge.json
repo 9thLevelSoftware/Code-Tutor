@@ -5,19 +5,34 @@
   "description": "Create a countdown timer that works on all platforms using Flow, with start, pause, and reset functionality.",
   "difficulty": "intermediate",
   "hints": [
-    "Store the timer job so you can cancel it on pause",
-    "Use _state.update { } for thread-safe updates",
-    "Check isActive in the loop to respect cancellation",
-    "Set isFinished = true when remainingSeconds reaches 0"
+    {
+      "level": 1,
+      "text": "Store the timer job so you can cancel it on pause"
+    },
+    {
+      "level": 2,
+      "text": "Use _state.update { } for thread-safe updates"
+    },
+    {
+      "level": 3,
+      "text": "Check isActive in the loop to respect cancellation"
+    },
+    {
+      "level": 4,
+      "text": "Set isFinished = true when remainingSeconds reaches 0"
+    }
   ],
   "testCases": [
     {
       "description": "Should count down each second",
-      "expectedBehavior": "remainingSeconds decreases every second"
+      "expectedBehavior": "remainingSeconds decreases every second",
+      "id": "test-1"
     },
     {
       "description": "Should pause and resume correctly",
-      "expectedBehavior": "Pausing stops countdown, resuming continues from where it left off"
+      "expectedBehavior": "Pausing stops countdown, resuming continues from where it left off",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

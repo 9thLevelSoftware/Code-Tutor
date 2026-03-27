@@ -5,22 +5,10 @@
   "description": "Test your understanding of OAuth security best practices.",
   "question": "Where should the OAuth client_secret be stored in a production ASP.NET Core application?",
   "options": [
-    {
-      "id": "a",
-      "text": "In appsettings.json committed to source control"
-    },
-    {
-      "id": "b",
-      "text": "In a JavaScript constant for the frontend to use"
-    },
-    {
-      "id": "c",
-      "text": "In Azure Key Vault, AWS Secrets Manager, or environment variables on the server"
-    },
-    {
-      "id": "d",
-      "text": "Embedded directly in the compiled DLL for security"
-    }
+    "In appsettings.json committed to source control",
+    "In a JavaScript constant for the frontend to use",
+    "In Azure Key Vault, AWS Secrets Manager, or environment variables on the server",
+    "Embedded directly in the compiled DLL for security"
   ],
   "correctAnswer": "c",
   "explanation": "The client_secret must NEVER be exposed to client-side code or committed to source control. In production, secrets should be stored in secure vaults like Azure Key Vault, AWS Secrets Manager, HashiCorp Vault, or at minimum in server environment variables. The application retrieves these secrets at runtime. Options A and D expose secrets in your codebase, and option B would expose the secret to anyone who views your website's JavaScript - all of which would allow attackers to impersonate your application in OAuth flows.",

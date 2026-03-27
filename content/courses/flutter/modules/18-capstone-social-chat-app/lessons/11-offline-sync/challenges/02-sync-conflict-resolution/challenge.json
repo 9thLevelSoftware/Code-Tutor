@@ -5,7 +5,26 @@
   "description": "Implement a conflict resolution system that detects when the same post was edited offline on multiple devices, provides merge strategies, and allows user choice for conflicts.",
   "instructions": "Build a sync conflict resolution system:\n\n1. Create ConflictDetector that compares local and server timestamps\n2. Detect conflicts when localModifiedAt differs from server updatedAt\n3. Implement three merge strategies: lastWriteWins, serverWins, clientWins\n4. Create a ConflictResolutionDialog that shows both versions\n5. Allow user to pick which version to keep or merge content\n6. For content merging, show a diff view highlighting changes\n7. Store conflict resolution preference (always ask, prefer local, prefer server)\n8. Log conflicts for debugging and analytics\n9. Handle cascading conflicts (e.g., deleted on server, edited locally)",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the ConflictDetector class",
+      "expectedOutput": "ConflictDetector",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the preference() method",
+      "expectedOutput": "preference",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the conflicts() method",
+      "expectedOutput": "conflicts",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

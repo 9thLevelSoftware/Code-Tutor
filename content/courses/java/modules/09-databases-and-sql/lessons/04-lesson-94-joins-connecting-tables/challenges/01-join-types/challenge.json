@@ -10,5 +10,6 @@
     "CROSS JOIN"
   ],
   "correctAnswer": 1,
-  "explanation": "LEFT JOIN keeps all rows from the left table (students) even if there's no match in the right table (enrollments)."
+  "explanation": "LEFT JOIN keeps all rows from the left table (students) even if there's no match in the right table (enrollments).",
+  "question": "Please select the correct option."
 }

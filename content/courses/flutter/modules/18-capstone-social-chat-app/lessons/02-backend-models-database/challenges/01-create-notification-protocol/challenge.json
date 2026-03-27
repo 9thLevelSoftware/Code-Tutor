@@ -5,7 +5,26 @@
   "description": "Design a notification model for push notifications and in-app alerts.",
   "instructions": "Create a Serverpod protocol file for a Notification model that:\n\n1. Has fields for: id, userId, title, body, notificationType (enum), relatedEntityId, relatedEntityType\n2. Tracks read status with isRead boolean and readAt timestamp\n3. Supports different notification types: message, like, comment, follow, system\n4. Includes createdAt timestamp\n5. Has appropriate indexes for querying user notifications\n6. Create the NotificationType enum in a separate definition",
   "language": "yaml",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Defines the Notification model",
+      "expectedOutput": "class: Notification",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Contains required field definitions",
+      "expectedOutput": "fields",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses an enum type",
+      "expectedOutput": "enum",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

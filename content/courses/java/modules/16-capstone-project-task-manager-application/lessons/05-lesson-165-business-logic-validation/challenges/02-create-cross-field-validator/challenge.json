@@ -5,7 +5,26 @@
   "description": "Create a class-level validator that ensures description is required when priority is URGENT.",
   "instructions": "Create a custom validator @RequireDescriptionForUrgent that:\n1. Applies at the class level (not field level)\n2. Checks if priority is URGENT\n3. If URGENT, validates that description is not blank\n4. Returns appropriate error message",
   "language": "java",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Custom annotation @RequireDescriptionForUrgent is defined",
+      "expectedOutput": "@interface RequireDescriptionForUrgent",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Annotation targets class level with @Target(ElementType.TYPE)",
+      "expectedOutput": "ElementType.TYPE",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Validator class implements ConstraintValidator",
+      "expectedOutput": "implements ConstraintValidator",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

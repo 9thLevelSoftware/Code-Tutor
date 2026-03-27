@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from typing import Optional
 
 app = FastAPI()
-SECRET_KEY = 'change-this-secret-key'
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = 'HS256'
 
 # OAuth2 scheme

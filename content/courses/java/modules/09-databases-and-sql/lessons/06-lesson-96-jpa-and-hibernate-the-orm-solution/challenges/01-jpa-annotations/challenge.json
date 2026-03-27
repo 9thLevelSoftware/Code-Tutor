@@ -10,5 +10,6 @@
     "@Model"
   ],
   "correctAnswer": 1,
-  "explanation": "@Entity marks a class as a JPA entity (maps to a database table). @Table customizes the table name. @Repository is for Spring Data."
+  "explanation": "@Entity marks a class as a JPA entity (maps to a database table). @Table customizes the table name. @Repository is for Spring Data.",
+  "question": "Please select the correct option."
 }

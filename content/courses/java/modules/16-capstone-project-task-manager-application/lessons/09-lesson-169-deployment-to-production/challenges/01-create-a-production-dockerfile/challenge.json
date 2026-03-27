@@ -5,7 +5,26 @@
   "description": "Write a multi-stage Dockerfile for the Spring Boot application with security best practices.",
   "instructions": "Create a Dockerfile that:\n1. Uses Gradle 8.12 with JDK 25 for the build stage\n2. Uses Eclipse Temurin 25 JRE Alpine for the runtime\n3. Creates a non-root user called 'appuser'\n4. Includes a HEALTHCHECK instruction\n5. Exposes port 8080",
   "language": "dockerfile",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Dockerfile uses multi-stage build with a named builder stage",
+      "expectedOutput": "AS builder",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Runtime stage uses Eclipse Temurin JRE Alpine image",
+      "expectedOutput": "eclipse-temurin",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Dockerfile includes a HEALTHCHECK instruction",
+      "expectedOutput": "HEALTHCHECK",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,
@@ -16,5 +35,6 @@
       "text": "On Alpine Linux, use addgroup -S and adduser -S for system users."
     }
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "solution": "FROM eclipse-temurin:17-jre-alpine\nCOPY target/app.jar app.jar\nENTRYPOINT [\"java\",\"-jar\",\"/app.jar\"]"
 }

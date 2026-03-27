@@ -5,7 +5,26 @@
   "description": "Create a profile header that adapts gracefully to large text sizes.",
   "instructions": "Build a ProfileHeader widget that displays a user avatar, name, title, and action buttons. At normal text sizes, show horizontal layout. At large text sizes (>1.5x), switch to a vertical layout that stacks elements. Requirements: (1) Check text scale factor using MediaQuery, (2) Horizontal layout at normal sizes with avatar, text, and buttons in a row, (3) Vertical layout at large sizes stacking avatar on top, then text, then buttons, (4) Icons should scale with text size, (5) Ensure minimum touch targets of 48x48.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the ProfileHeader class",
+      "expectedOutput": "ProfileHeader",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the sizes() method",
+      "expectedOutput": "sizes",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses MediaQuery",
+      "expectedOutput": "MediaQuery",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

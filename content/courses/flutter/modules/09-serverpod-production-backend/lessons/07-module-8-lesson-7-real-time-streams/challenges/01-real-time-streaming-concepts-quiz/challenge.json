@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the main difference between HTTP and WebSocket communication?",
       "options": [
         "HTTP is faster than WebSocket",
         "WebSocket maintains a persistent connection allowing server-initiated messages",
@@ -14,11 +13,11 @@
         "WebSocket can only send text data"
       ],
       "correctAnswer": 1,
-      "explanation": "WebSocket maintains a persistent, bidirectional connection. Unlike HTTP where the client must initiate every request, WebSocket allows the server to push data to the client at any time without the client asking. This makes it ideal for real-time features like chat and notifications."
+      "explanation": "WebSocket maintains a persistent, bidirectional connection. Unlike HTTP where the client must initiate every request, WebSocket allows the server to push data to the client at any time without the client asking. This makes it ideal for real-time features like chat and notifications.",
+      "question": "What is the main difference between HTTP and WebSocket communication?"
     },
     {
       "id": "q2",
-      "text": "Which Serverpod endpoint method is called when a client first establishes a streaming connection?",
       "options": [
         "handleStreamMessage()",
         "streamOpened()",
@@ -26,11 +25,11 @@
         "initializeStream()"
       ],
       "correctAnswer": 1,
-      "explanation": "The streamOpened(StreamingSession session) method is called once when a client establishes a streaming connection. This is where you should initialize session state, validate authentication, and optionally send welcome messages."
+      "explanation": "The streamOpened(StreamingSession session) method is called once when a client establishes a streaming connection. This is where you should initialize session state, validate authentication, and optionally send welcome messages.",
+      "question": "Which Serverpod endpoint method is called when a client first establishes a streaming connection?"
     },
     {
       "id": "q3",
-      "text": "Why is it critical to implement the streamClosed() method in streaming endpoints?",
       "options": [
         "It is required by Serverpod or the code will not compile",
         "It improves connection speed",
@@ -38,11 +37,11 @@
         "It is optional and only needed for debugging"
       ],
       "correctAnswer": 2,
-      "explanation": "If you add sessions to collections (like subscriber lists) in streamOpened but never remove them in streamClosed, you create memory leaks and may try to send messages to disconnected clients. Always clean up in streamClosed."
+      "explanation": "If you add sessions to collections (like subscriber lists) in streamOpened but never remove them in streamClosed, you create memory leaks and may try to send messages to disconnected clients. Always clean up in streamClosed.",
+      "question": "Why is it critical to implement the streamClosed() method in streaming endpoints?"
     },
     {
       "id": "q4",
-      "text": "What is exponential backoff in the context of reconnection?",
       "options": [
         "Connecting to multiple servers simultaneously",
         "Waiting progressively longer between reconnection attempts (1s, 2s, 4s, 8s...)",
@@ -50,11 +49,11 @@
         "Encrypting connection attempts"
       ],
       "correctAnswer": 1,
-      "explanation": "Exponential backoff means waiting progressively longer between reconnection attempts. This prevents overwhelming the server with reconnection requests when it comes back online after an outage. Many clients reconnecting instantly could crash the server again."
+      "explanation": "Exponential backoff means waiting progressively longer between reconnection attempts. This prevents overwhelming the server with reconnection requests when it comes back online after an outage. Many clients reconnecting instantly could crash the server again.",
+      "question": "What is exponential backoff in the context of reconnection?"
     },
     {
       "id": "q5",
-      "text": "In a chat application, why should you use optimistic UI?",
       "options": [
         "It reduces server load",
         "Messages appear instantly in the UI before server confirmation, improving perceived performance",
@@ -62,7 +61,8 @@
         "It is required for WebSocket to work"
       ],
       "correctAnswer": 1,
-      "explanation": "Optimistic UI shows the user's message immediately in the chat, before the server confirms receipt. This makes the app feel instant and responsive. The message can be marked as 'sending' initially, then updated to 'sent' or 'failed' based on server response."
+      "explanation": "Optimistic UI shows the user's message immediately in the chat, before the server confirms receipt. This makes the app feel instant and responsive. The message can be marked as 'sending' initially, then updated to 'sent' or 'failed' based on server response.",
+      "question": "In a chat application, why should you use optimistic UI?"
     }
   ],
   "difficulty": "intermediate"

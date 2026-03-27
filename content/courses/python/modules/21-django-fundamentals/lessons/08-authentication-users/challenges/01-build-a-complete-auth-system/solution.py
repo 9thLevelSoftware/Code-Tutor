@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import Dict, Optional, List, Callable
 from datetime import datetime, timedelta
 from functools import wraps
-import hashlib
+from django.contrib.auth.hashers import make_password
 import secrets
 import re
 
@@ -38,7 +38,7 @@ class AnonymousUser:
     permissions: List[str] = field(default_factory=list)
 
 def hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode()).hexdigest()
+    return make_password(password)
 
 class AuthSystem:
     MAX_FAILED_ATTEMPTS = 5

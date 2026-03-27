@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "11.4-challenge",
+  "id": "11.4-challenge-797a21",
   "title": "Practice Challenge",
   "description": "Simulate a migration system:\n\n1. Create a `migrations` array to store migration records\n2. Create a function `createMigration(name, sql)` that:\n   - Generates a timestamp\n   - Creates migration object\n   - Adds to migrations array\n   - Returns the migration\n3. Create a function `applyMigrations()` that:\n   - Loops through all migrations\n   - Simulates executing SQL\n   - Tracks which are applied\n4. Simulate creating 3 migrations:\n   - 'init' (create users table)\n   - 'add_posts' (create posts table)\n   - 'add_timestamps' (add createdAt fields)\n5. Display migration history\n\nYou're simulating what Prisma does!",
   "instructions": "Simulate a migration system:\n\n1. Create a `migrations` array to store migration records\n2. Create a function `createMigration(name, sql)` that:\n   - Generates a timestamp\n   - Creates migration object\n   - Adds to migrations array\n   - Returns the migration\n3. Create a function `applyMigrations()` that:\n   - Loops through all migrations\n   - Simulates executing SQL\n   - Tracks which are applied\n4. Simulate creating 3 migrations:\n   - 'init' (create users table)\n   - 'add_posts' (create posts table)\n   - 'add_timestamps' (add createdAt fields)\n5. Display migration history\n\nYou're simulating what Prisma does!",

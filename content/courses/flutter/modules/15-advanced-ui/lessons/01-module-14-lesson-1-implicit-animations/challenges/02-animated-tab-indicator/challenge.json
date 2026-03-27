@@ -5,7 +5,26 @@
   "description": "Create a custom animated tab bar with a sliding indicator.",
   "instructions": "Build a horizontal tab bar with 3 tabs. When a tab is selected, animate an underline indicator to slide to that tab's position. Use TweenAnimationBuilder to animate the indicator position and AnimatedOpacity to highlight the selected tab text.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the TweenAnimationBuilder class",
+      "expectedOutput": "TweenAnimationBuilder",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses AnimatedOpacity",
+      "expectedOutput": "AnimatedOpacity",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

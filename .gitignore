@@ -44,7 +44,6 @@ lerna-debug.log*
 
 # OS files
 Thumbs.db
-.DS_Store
 
 # Data files (temporary - will use DB later)
 data/
@@ -75,11 +74,18 @@ publish/
 native-app-wpf/bin/
 native-app-wpf/obj/
 
+# Generated installer script (contains machine-specific paths)
+installer.iss
+
 # Backup files
 *.bak
 *.backup.json
 *.backup
 
-# Temporary scripts
+# Temporary scripts (migration/fix utilities)
 normalize-courses.js
 phase2-content-fill.js
+fix_*.py
+normalize_*.py
+convert_*.py
+test_input.py

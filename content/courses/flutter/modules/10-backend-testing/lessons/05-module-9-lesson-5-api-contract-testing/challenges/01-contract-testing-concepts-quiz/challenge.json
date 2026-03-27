@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the primary purpose of contract testing?",
       "options": [
         "To test individual functions in isolation",
         "To verify API shape and types match expectations between systems",
@@ -14,11 +13,11 @@
         "To measure code coverage percentage"
       ],
       "correctAnswer": 1,
-      "explanation": "Contract testing specifically verifies that the interface (contract) between systems matches expectations."
+      "explanation": "Contract testing specifically verifies that the interface (contract) between systems matches expectations.",
+      "question": "What is the primary purpose of contract testing?"
     },
     {
       "id": "q2",
-      "text": "Which is an example of a BREAKING change in an API?",
       "options": [
         "Adding a new optional field to a response",
         "Adding a new endpoint",
@@ -26,11 +25,11 @@
         "Adding a new optional query parameter"
       ],
       "correctAnswer": 2,
-      "explanation": "Removing a field from a response is a breaking change because existing clients that expect that field will fail."
+      "explanation": "Removing a field from a response is a breaking change because existing clients that expect that field will fail.",
+      "question": "Which is an example of a BREAKING change in an API?"
     },
     {
       "id": "q3",
-      "text": "What is the main advantage of Serverpod's approach to contracts?",
       "options": [
         "It generates OpenAPI documentation automatically",
         "It uses compile-time code generation for type-safe client/server communication",
@@ -38,11 +37,11 @@
         "It requires no testing at all"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod generates Dart classes for both server and client from a single model definition, catching type mismatches at compile time."
+      "explanation": "Serverpod generates Dart classes for both server and client from a single model definition, catching type mismatches at compile time.",
+      "question": "What is the main advantage of Serverpod's approach to contracts?"
     },
     {
       "id": "q4",
-      "text": "In consumer-driven contract testing, who defines the contract?",
       "options": [
         "The backend team exclusively",
         "The DevOps team",
@@ -50,7 +49,8 @@
         "The contracts are auto-generated from code"
       ],
       "correctAnswer": 2,
-      "explanation": "In consumer-driven contracts, the consumer (frontend) defines what it needs from the API. The provider (backend) then verifies it can satisfy all consumer contracts."
+      "explanation": "In consumer-driven contracts, the consumer (frontend) defines what it needs from the API. The provider (backend) then verifies it can satisfy all consumer contracts.",
+      "question": "In consumer-driven contract testing, who defines the contract?"
     }
   ],
   "difficulty": "intermediate"

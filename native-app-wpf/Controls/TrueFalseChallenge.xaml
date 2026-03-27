@@ -1,0 +1,82 @@
+<UserControl x:Class="CodeTutor.Wpf.Controls.TrueFalseChallenge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:CodeTutor.Wpf.Controls"
+             xmlns:behaviors="clr-namespace:CodeTutor.Wpf.Behaviors">
+    <Grid>
+        <Border Style="{StaticResource CardBorder}"
+                Margin="0,0,0,24"
+                behaviors:AnimationBehaviors.EnableFadeInOnLoad="True">
+            <StackPanel>
+                <!-- Header -->
+                <TextBlock x:Name="TfTitle"
+                           Style="{StaticResource SubheadingText}"
+                           Margin="0,0,0,8" />
+                <TextBlock x:Name="TfDescription"
+                           Style="{StaticResource BodyText}"
+                           Foreground="{StaticResource TextSecondaryBrush}"
+                           Margin="0,0,0,16" />
+
+                <!-- Statement -->
+                <Border Background="{StaticResource BackgroundLightBrush}"
+                        CornerRadius="6"
+                        Padding="16"
+                        Margin="0,0,0,16">
+                    <TextBlock x:Name="StatementText"
+                               Style="{StaticResource BodyText}"
+                               TextWrapping="Wrap"
+                               FontWeight="Medium" />
+                </Border>
+
+                <!-- True / False Buttons -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                    <Button x:Name="TrueButton"
+                            Style="{StaticResource PrimaryButton}"
+                            Click="TrueButton_Click"
+                            Margin="0,0,12,0">
+                        <TextBlock Text="True" />
+                    </Button>
+                    <Button x:Name="FalseButton"
+                            Style="{StaticResource GhostButton}"
+                            Click="FalseButton_Click">
+                        <TextBlock Text="False" />
+                    </Button>
+                </StackPanel>
+
+                <!-- Result Panel -->
+                <Border x:Name="ResultPanel"
+                        CornerRadius="6"
+                        Padding="16"
+                        Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock x:Name="ResultText"
+                                   Style="{StaticResource BodyText}"
+                                   FontWeight="SemiBold"
+                                   Margin="0,0,0,8" />
+                        <TextBlock x:Name="ExplanationText"
+                                   Style="{StaticResource BodyText}"
+                                   TextWrapping="Wrap" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Try Again -->
+                <Button x:Name="ResetButton"
+                        Style="{StaticResource GhostButton}"
+                        Click="Reset_Click"
+                        Margin="0,8,0,0"
+                        Visibility="Collapsed">
+                    <TextBlock Text="Try Again" />
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <controls:ConfettiOverlay x:Name="ConfettiOverlay"
+                                  Visibility="Collapsed"
+                                  Panel.ZIndex="2" />
+        <controls:AchievementBadge x:Name="AchievementBadge"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Top"
+                                   Margin="0,12,12,0"
+                                   Panel.ZIndex="3" />
+    </Grid>
+</UserControl>

@@ -5,15 +5,29 @@
   "description": "Create a GitHub Actions workflow that runs on pull requests to validate the build and tests.",
   "difficulty": "intermediate",
   "hints": [
-    "Use 'on: pull_request' to trigger on PRs",
-    "Use EnricoMi/publish-unit-test-result-action for PR comments",
-    "Set cache-read-only: true for PR builds",
-    "Use github.event.number to name artifacts uniquely"
+    {
+      "level": 1,
+      "text": "Use 'on: pull_request' to trigger on PRs"
+    },
+    {
+      "level": 2,
+      "text": "Use EnricoMi/publish-unit-test-result-action for PR comments"
+    },
+    {
+      "level": 3,
+      "text": "Set cache-read-only: true for PR builds"
+    },
+    {
+      "level": 4,
+      "text": "Use github.event.number to name artifacts uniquely"
+    }
   ],
   "testCases": [
     {
       "description": "Workflow triggers on PRs and runs all checks",
-      "expectedBehavior": "Build succeeds, tests run, results posted to PR"
+      "expectedBehavior": "Build succeeds, tests run, results posted to PR",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

@@ -10,5 +10,6 @@
     "@GlobalHandler"
   ],
   "correctAnswer": 1,
-  "explanation": "@ControllerAdvice creates a global handler. @ExceptionHandler inside it handles specific exceptions."
+  "explanation": "@ControllerAdvice creates a global handler. @ExceptionHandler inside it handles specific exceptions.",
+  "question": "Please select the correct option."
 }

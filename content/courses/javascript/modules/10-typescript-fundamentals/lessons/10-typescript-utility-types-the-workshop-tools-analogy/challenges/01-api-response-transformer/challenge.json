@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "10.10-challenge-1",
+  "id": "10.10-challenge-2-86b61d",
   "title": "API Response Transformer",
   "description": "Use Pick, Omit, and Partial to create different views of a User type for various API endpoints. Create types for public profiles, update operations, and admin views while keeping sensitive data protected.",
   "instructions": "1. Start with the full User interface (id, name, email, passwordHash, role, createdAt, lastLogin, preferences)\n2. Create PublicUser using Pick (only id, name, role)\n3. Create UpdateUserInput using Partial and Omit (no id, passwordHash, createdAt)\n4. Create AdminUserView using Omit (hide only passwordHash)\n5. Create a function that transforms a full User to PublicUser\n6. Test with sample user data",

@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "Which HTTP method should you use to update only the email field of a user profile?",
       "options": [
         "GET - because you are getting data",
         "POST - because you are sending data",
@@ -14,11 +13,11 @@
         "PATCH - because you are partially updating"
       ],
       "correctAnswer": 3,
-      "explanation": "PATCH is used for partial updates when you only want to modify specific fields. PUT would require sending the entire user object, even the fields you are not changing. PATCH is more efficient and clearer in intent."
+      "explanation": "PATCH is used for partial updates when you only want to modify specific fields. PUT would require sending the entire user object, even the fields you are not changing. PATCH is more efficient and clearer in intent.",
+      "question": "Which HTTP method should you use to update only the email field of a user profile?"
     },
     {
       "id": "q2",
-      "text": "In Dio, what is the correct order to add interceptors for: logging, authentication, and retry logic?",
       "options": [
         "Retry, Auth, Logging",
         "Logging, Auth, Retry",
@@ -26,11 +25,11 @@
         "The order does not matter"
       ],
       "correctAnswer": 1,
-      "explanation": "Interceptors execute in order. Add Logging first to see all traffic including the auth headers that get added. Add Auth second to attach tokens before retry logic. Add Retry last so it can retry with the authenticated request."
+      "explanation": "Interceptors execute in order. Add Logging first to see all traffic including the auth headers that get added. Add Auth second to attach tokens before retry logic. Add Retry last so it can retry with the authenticated request.",
+      "question": "In Dio, what is the correct order to add interceptors for: logging, authentication, and retry logic?"
     },
     {
       "id": "q3",
-      "text": "What DioExceptionType indicates the server is unreachable (no internet or DNS failure)?",
       "options": [
         "badResponse",
         "connectionTimeout",
@@ -38,11 +37,11 @@
         "receiveTimeout"
       ],
       "correctAnswer": 2,
-      "explanation": "connectionError occurs when the connection cannot be established at all - no internet, DNS failure, or server completely unreachable. connectionTimeout means we started connecting but it took too long. badResponse means we got a response but it was an error status."
+      "explanation": "connectionError occurs when the connection cannot be established at all - no internet, DNS failure, or server completely unreachable. connectionTimeout means we started connecting but it took too long. badResponse means we got a response but it was an error status.",
+      "question": "What DioExceptionType indicates the server is unreachable (no internet or DNS failure)?"
     },
     {
       "id": "q4",
-      "text": "Why should you NOT hardcode API keys in your Dart source code?",
       "options": [
         "Dart cannot compile string constants",
         "Keys will be in version control and possibly decompiled from the app",
@@ -50,11 +49,11 @@
         "API keys expire immediately when hardcoded"
       ],
       "correctAnswer": 1,
-      "explanation": "Hardcoded API keys end up in your git history (permanent, even if deleted later) and can be extracted from compiled apps by reverse engineering. Use environment variables, .env files (not committed), or fetch keys from your secure backend."
+      "explanation": "Hardcoded API keys end up in your git history (permanent, even if deleted later) and can be extracted from compiled apps by reverse engineering. Use environment variables, .env files (not committed), or fetch keys from your secure backend.",
+      "question": "Why should you NOT hardcode API keys in your Dart source code?"
     },
     {
       "id": "q5",
-      "text": "When should you use Dio instead of the Serverpod client?",
       "options": [
         "Always use Dio, it is more powerful",
         "When calling your own Serverpod backend",
@@ -62,7 +61,8 @@
         "Only for file downloads"
       ],
       "correctAnswer": 2,
-      "explanation": "Use the Serverpod client for your own Serverpod backend (type-safe, generated code). Use Dio for third-party APIs that do not have Serverpod-style clients. Dio gives you interceptors and fine control needed for external services."
+      "explanation": "Use the Serverpod client for your own Serverpod backend (type-safe, generated code). Use Dio for third-party APIs that do not have Serverpod-style clients. Dio gives you interceptors and fine control needed for external services.",
+      "question": "When should you use Dio instead of the Serverpod client?"
     }
   ]
 }

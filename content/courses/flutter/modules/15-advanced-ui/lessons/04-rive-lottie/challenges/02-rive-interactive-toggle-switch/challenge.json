@@ -5,7 +5,20 @@
   "description": "Create an animated toggle switch using Rive state machines.",
   "instructions": "Build a RiveToggle widget that uses a Rive animation with a state machine. The toggle should have an 'isOn' boolean input in its state machine. When tapped, toggle the state and update the Rive input. The widget should accept an initial value and notify parent of changes via callback. Handle the onInit to find and store the SMIBool input reference.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the RiveToggle class",
+      "expectedOutput": "RiveToggle",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the build() method",
+      "expectedOutput": "build",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

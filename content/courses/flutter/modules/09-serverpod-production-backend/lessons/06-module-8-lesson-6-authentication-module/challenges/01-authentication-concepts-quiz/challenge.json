@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the difference between authentication and authorization?",
       "options": [
         "They are the same thing",
         "Authentication verifies WHO you are, authorization verifies WHAT you can do",
@@ -14,11 +13,11 @@
         "Authentication uses passwords, authorization uses tokens"
       ],
       "correctAnswer": 1,
-      "explanation": "Authentication (AuthN) verifies a user's identity - proving they are who they claim to be. Authorization (AuthZ) determines what actions an authenticated user is allowed to perform. You must authenticate first, then authorize specific actions."
+      "explanation": "Authentication (AuthN) verifies a user's identity - proving they are who they claim to be. Authorization (AuthZ) determines what actions an authenticated user is allowed to perform. You must authenticate first, then authorize specific actions.",
+      "question": "What is the difference between authentication and authorization?"
     },
     {
       "id": "q2",
-      "text": "Why should you use Serverpod's built-in auth module instead of building your own?",
       "options": [
         "It is faster to write code",
         "It handles security concerns like password hashing, secure tokens, and timing attacks",
@@ -26,11 +25,11 @@
         "Custom auth is not possible in Dart"
       ],
       "correctAnswer": 1,
-      "explanation": "Building authentication from scratch is dangerous because there are many subtle security concerns: proper password hashing, secure token generation, timing attack prevention, session management. Serverpod's auth module handles all of these with battle-tested implementations."
+      "explanation": "Building authentication from scratch is dangerous because there are many subtle security concerns: proper password hashing, secure token generation, timing attack prevention, session management. Serverpod's auth module handles all of these with battle-tested implementations.",
+      "question": "Why should you use Serverpod's built-in auth module instead of building your own?"
     },
     {
       "id": "q3",
-      "text": "What special behavior does Apple Sign-In have regarding user email?",
       "options": [
         "It always provides the real email address",
         "It only provides the email on the first sign-in, not on subsequent logins",
@@ -38,11 +37,11 @@
         "It requires a paid Apple Developer account to get email"
       ],
       "correctAnswer": 1,
-      "explanation": "Apple only provides the user's email address on the FIRST sign-in. After that, subsequent sign-ins only include the user identifier. You must store the email when you first receive it, or you will lose access to it."
+      "explanation": "Apple only provides the user's email address on the FIRST sign-in. After that, subsequent sign-ins only include the user identifier. You must store the email when you first receive it, or you will lose access to it.",
+      "question": "What special behavior does Apple Sign-In have regarding user email?"
     },
     {
       "id": "q4",
-      "text": "How do you check if a user is authenticated in a Serverpod endpoint?",
       "options": [
         "Check the HTTP headers manually",
         "Use session.auth.authenticatedUserId which returns null if not authenticated",
@@ -50,11 +49,11 @@
         "Authentication is checked automatically for all endpoints"
       ],
       "correctAnswer": 1,
-      "explanation": "The Session object passed to every endpoint method contains authentication information. Use session.auth.authenticatedUserId to get the user's ID - it returns null if the user is not authenticated."
+      "explanation": "The Session object passed to every endpoint method contains authentication information. Use session.auth.authenticatedUserId to get the user's ID - it returns null if the user is not authenticated.",
+      "question": "How do you check if a user is authenticated in a Serverpod endpoint?"
     },
     {
       "id": "q5",
-      "text": "What is a session token analogous to in the hotel key card analogy?",
       "options": [
         "The hotel lobby",
         "Your ID card that you show at check-in",
@@ -62,7 +61,8 @@
         "The room itself"
       ],
       "correctAnswer": 2,
-      "explanation": "A session token is like a hotel key card. You show your ID (password) at check-in (login), receive a key card (session token), and use that card to access your room (protected endpoints) without showing ID again until checkout (logout) or the card expires."
+      "explanation": "A session token is like a hotel key card. You show your ID (password) at check-in (login), receive a key card (session token), and use that card to access your room (protected endpoints) without showing ID again until checkout (logout) or the card expires.",
+      "question": "What is a session token analogous to in the hotel key card analogy?"
     }
   ],
   "difficulty": "intermediate"

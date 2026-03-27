@@ -10,5 +10,6 @@
     "Configure in application.yml"
   ],
   "correctAnswer": 1,
-  "explanation": "Spring Security 7 uses SecurityFilterChain beans with lambda DSL. WebSecurityConfigurerAdapter was removed in Spring Security 6."
+  "explanation": "Spring Security 7 uses SecurityFilterChain beans with lambda DSL. WebSecurityConfigurerAdapter was removed in Spring Security 6.",
+  "question": "Please select the correct option."
 }

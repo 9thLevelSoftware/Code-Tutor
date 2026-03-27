@@ -5,15 +5,29 @@
   "description": "Convert a traditional DSL module to use Koin Annotations.",
   "difficulty": "intermediate",
   "hints": [
-    "Use @Single for singletons like HttpClient, Api, Repository",
-    "Use @Bind for interface implementations",
-    "Use @Factory for use cases (stateless, new instance each time)",
-    "Use @KoinViewModel for ViewModels"
+    {
+      "level": 1,
+      "text": "Use @Single for singletons like HttpClient, Api, Repository"
+    },
+    {
+      "level": 2,
+      "text": "Use @Bind for interface implementations"
+    },
+    {
+      "level": 3,
+      "text": "Use @Factory for use cases (stateless, new instance each time)"
+    },
+    {
+      "level": 4,
+      "text": "Use @KoinViewModel for ViewModels"
+    }
   ],
   "testCases": [
     {
       "description": "All classes should have appropriate annotations",
-      "expectedBehavior": "@Single for singletons, @Factory for use cases, @KoinViewModel for ViewModel"
+      "expectedBehavior": "@Single for singletons, @Factory for use cases, @KoinViewModel for ViewModel",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

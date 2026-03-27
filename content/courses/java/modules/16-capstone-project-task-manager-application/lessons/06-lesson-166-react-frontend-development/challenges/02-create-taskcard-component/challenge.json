@@ -5,7 +5,26 @@
   "description": "Build a TaskCard component that displays task information with priority-based styling.",
   "instructions": "Create a TaskCard component that:\n1. Displays task title, status, priority, and due date\n2. Shows different background colors based on priority (URGENT=red, HIGH=orange, MEDIUM=yellow, LOW=green)\n3. Shows overdue indicator if due date is in the past and task is not completed\n4. Has Edit and Delete buttons that call the provided callbacks",
   "language": "jsx",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Component renders the task title",
+      "expectedOutput": "task.title",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Component includes Edit and Delete buttons with onClick handlers",
+      "expectedOutput": "onDelete",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Component checks for overdue status using dueDate",
+      "expectedOutput": "dueDate",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

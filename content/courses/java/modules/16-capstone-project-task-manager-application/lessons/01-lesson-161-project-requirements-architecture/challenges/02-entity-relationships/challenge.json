@@ -5,26 +5,12 @@
   "description": "Understand how entities relate to each other in our data model.",
   "question": "What happens to a user's tasks when we delete that user from the database, based on our data model design?",
   "options": [
-    {
-      "id": "a",
-      "text": "The tasks remain in the database with a null owner",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "The deletion fails because tasks still reference the user",
-      "isCorrect": false
-    },
-    {
-      "id": "c",
-      "text": "The tasks are also deleted (cascade delete)",
-      "isCorrect": true
-    },
-    {
-      "id": "d",
-      "text": "The tasks are automatically assigned to an admin user",
-      "isCorrect": false
-    }
+    "The tasks remain in the database with a null owner",
+    "The deletion fails because tasks still reference the user",
+    "The tasks are also deleted (cascade delete)",
+    "The tasks are automatically assigned to an admin user"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 2,
+  "explanation": "In a typical Task Manager data model, the User-to-Task relationship uses CascadeType.ALL, meaning when a user is deleted, all their tasks are automatically deleted as well (cascade delete). This ensures referential integrity without leaving orphaned task records in the database."
 }

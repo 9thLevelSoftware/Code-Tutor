@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "11.2-challenge",
+  "id": "11.2-challenge-051b09",
   "title": "Practice Challenge",
   "description": "Simulate Prisma-style database operations:\n\n1. Create a mock Prisma client class with a `book` property\n2. Implement these methods on the `book` object:\n   - `create(data)` - Returns new book with generated ID\n   - `findMany()` - Returns all books array\n   - `findUnique(where)` - Finds book by ID\n   - `update(where, data)` - Updates book and returns it\n\n3. Create a books array to store data\n4. Test all CRUD operations\n\nMake it feel like Prisma's API!",
   "instructions": "Simulate Prisma-style database operations:\n\n1. Create a mock Prisma client class with a `book` property\n2. Implement these methods on the `book` object:\n   - `create(data)` - Returns new book with generated ID\n   - `findMany()` - Returns all books array\n   - `findUnique(where)` - Finds book by ID\n   - `update(where, data)` - Updates book and returns it\n\n3. Create a books array to store data\n4. Test all CRUD operations\n\nMake it feel like Prisma's API!",

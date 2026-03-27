@@ -5,26 +5,12 @@
   "description": "Test your understanding of Spring Data pagination.",
   "question": "A client requests GET /api/tasks?page=2&size=10. The database has 47 tasks total. What will the response's 'content' array contain?",
   "options": [
-    {
-      "id": "a",
-      "text": "Tasks 1-10 (first page, ignoring page parameter)",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "Tasks 11-20 (page 2 means second page)",
-      "isCorrect": false
-    },
-    {
-      "id": "c",
-      "text": "Tasks 21-30 (page is zero-indexed, so page=2 is the third page)",
-      "isCorrect": true
-    },
-    {
-      "id": "d",
-      "text": "Tasks 21-47 (all remaining tasks from page 2 onwards)",
-      "isCorrect": false
-    }
+    "Tasks 1-10 (first page, ignoring page parameter)",
+    "Tasks 11-20 (page 2 means second page)",
+    "Tasks 21-30 (page is zero-indexed, so page=2 is the third page)",
+    "Tasks 21-47 (all remaining tasks from page 2 onwards)"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 2,
+  "explanation": "Spring Data pagination is zero-indexed, so page=0 is the first page, page=1 is the second, and page=2 is the third. With size=10 and page=2, the response returns tasks 21-30 (the third group of 10). The total of 47 tasks means there are 5 pages total (10+10+10+10+7)."
 }

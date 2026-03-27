@@ -10,5 +10,6 @@
     "SELECT * FROM users WHERE email LIKE ?"
   ],
   "correctAnswer": 1,
-  "explanation": "Spring Data parses method names into queries. 'findByEmailAndActiveTrue' becomes WHERE email = ? AND active = true."
+  "explanation": "Spring Data parses method names into queries. 'findByEmailAndActiveTrue' becomes WHERE email = ? AND active = true.",
+  "question": "Please select the correct option."
 }

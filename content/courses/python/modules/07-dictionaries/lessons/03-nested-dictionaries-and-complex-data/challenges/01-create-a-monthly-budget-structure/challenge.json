@@ -4,5 +4,25 @@
   "title": "Create a Monthly Budget Structure",
   "description": "Build a nested dictionary structure for tracking monthly budgets with categories and subcategories. Practice accessing and modifying nested data in a finance tracker context.",
   "instructions": "1. Create a nested dictionary `budget` with structure: month -> category -> {limit, spent}\n2. Include at least 2 months (e.g., 'january', 'february')\n3. Each month should have at least 2 categories (e.g., 'food', 'transport')\n4. Access January's food limit and store it in `jan_food_limit`\n5. Update February's transport spent amount to 180\n6. Loop through all months and categories to print the budget summary",
-  "language": "python"
+  "language": "python",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "January food limit is accessed and printed",
+      "expectedOutput": "January food limit: $500",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Budget summary section is printed",
+      "expectedOutput": "Budget Summary:",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Remaining amount is calculated and shown",
+      "expectedOutput": "remaining",
+      "isVisible": false
+    }
+  ]
 }

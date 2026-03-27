@@ -5,7 +5,26 @@
   "description": "Add a token refresh endpoint that issues a new JWT when the current one is still valid.",
   "instructions": "Implement a /api/auth/refresh endpoint in AuthController that:\n1. Accepts the current valid JWT in the Authorization header\n2. Verifies the token is still valid\n3. Issues a new token with a fresh expiration\n4. Returns the new token in AuthResponse format",
   "language": "java",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Endpoint is mapped to POST /refresh",
+      "expectedOutput": "@PostMapping(\"/refresh\")",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Method uses @AuthenticationPrincipal to get the current user",
+      "expectedOutput": "@AuthenticationPrincipal",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Returns an AuthResponse wrapped in ResponseEntity",
+      "expectedOutput": "ResponseEntity<AuthResponse>",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the primary advantage of using TestSession over mocking the entire Session object?",
       "options": [
         "TestSession is faster to create",
         "TestSession provides the same interface as production Session with testing features like database isolation",
@@ -14,11 +13,11 @@
         "TestSession automatically generates test data"
       ],
       "correctAnswer": 1,
-      "explanation": "TestSession provides the same interface as a production Session but includes testing features like isolated database access, controllable time, and mock authentication support."
+      "explanation": "TestSession provides the same interface as a production Session but includes testing features like isolated database access, controllable time, and mock authentication support.",
+      "question": "What is the primary advantage of using TestSession over mocking the entire Session object?"
     },
     {
       "id": "q2",
-      "text": "How should you test an endpoint that requires authentication?",
       "options": [
         "Skip authentication tests - they are too complex",
         "Use the production authentication system with real credentials",
@@ -26,11 +25,11 @@
         "Mock the entire endpoint to avoid authentication"
       ],
       "correctAnswer": 2,
-      "explanation": "The correct approach is to create a test user in the database and then update the session's authentication state using session.updateAuthentication(). This tests the real authentication flow."
+      "explanation": "The correct approach is to create a test user in the database and then update the session's authentication state using session.updateAuthentication(). This tests the real authentication flow.",
+      "question": "How should you test an endpoint that requires authentication?"
     },
     {
       "id": "q3",
-      "text": "Why is database cleanup between tests important in Serverpod testing?",
       "options": [
         "It makes tests run faster",
         "It ensures tests are isolated and do not depend on data from other tests",
@@ -38,11 +37,11 @@
         "It is only needed for production databases"
       ],
       "correctAnswer": 1,
-      "explanation": "Database cleanup ensures test isolation. Without cleanup, tests may pass or fail depending on which other tests ran before them, making results unreliable and debugging difficult."
+      "explanation": "Database cleanup ensures test isolation. Without cleanup, tests may pass or fail depending on which other tests ran before them, making results unreliable and debugging difficult.",
+      "question": "Why is database cleanup between tests important in Serverpod testing?"
     },
     {
       "id": "q4",
-      "text": "When testing streaming endpoints, what special consideration is needed?",
       "options": [
         "Streaming endpoints cannot be tested",
         "You must test on a production server",
@@ -50,11 +49,11 @@
         "Streaming tests must run in isolation without other tests"
       ],
       "correctAnswer": 2,
-      "explanation": "Streaming tests need timing considerations because messages propagate asynchronously. Adding small delays ensures messages arrive before assertions, and cleaning up connections prevents resource leaks."
+      "explanation": "Streaming tests need timing considerations because messages propagate asynchronously. Adding small delays ensures messages arrive before assertions, and cleaning up connections prevents resource leaks.",
+      "question": "When testing streaming endpoints, what special consideration is needed?"
     },
     {
       "id": "q5",
-      "text": "What is the recommended approach for testing endpoints that call external APIs?",
       "options": [
         "Always call the real API in tests",
         "Skip testing external API integration",
@@ -62,7 +61,8 @@
         "Disable external API calls in test mode"
       ],
       "correctAnswer": 2,
-      "explanation": "Inject mock services for external APIs using Serverpod's dependency injection. This makes tests fast, reliable, and prevents side effects like sending real emails or making real API calls."
+      "explanation": "Inject mock services for external APIs using Serverpod's dependency injection. This makes tests fast, reliable, and prevents side effects like sending real emails or making real API calls.",
+      "question": "What is the recommended approach for testing endpoints that call external APIs?"
     }
   ],
   "difficulty": "intermediate"

@@ -5,19 +5,34 @@
   "description": "Create a secure PIN storage system with hashing and attempt limiting.",
   "difficulty": "intermediate",
   "hints": [
-    "Hash the PIN before storing - never store plain text",
-    "Track attempts in secure storage (persists across app restarts)",
-    "Check lockout timestamp before allowing verification",
-    "Reset attempts after successful verification"
+    {
+      "level": 1,
+      "text": "Hash the PIN before storing - never store plain text"
+    },
+    {
+      "level": 2,
+      "text": "Track attempts in secure storage (persists across app restarts)"
+    },
+    {
+      "level": 3,
+      "text": "Check lockout timestamp before allowing verification"
+    },
+    {
+      "level": 4,
+      "text": "Reset attempts after successful verification"
+    }
   ],
   "testCases": [
     {
       "description": "Should hash PIN before storage",
-      "expectedBehavior": "Stored value is not the plain PIN"
+      "expectedBehavior": "Stored value is not the plain PIN",
+      "id": "test-1"
     },
     {
       "description": "Should lock out after max attempts",
-      "expectedBehavior": "Throws error after 5 failed attempts"
+      "expectedBehavior": "Throws error after 5 failed attempts",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

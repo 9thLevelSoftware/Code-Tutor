@@ -27,7 +27,7 @@ from datetime import datetime, timedelta
 app = FastAPI()
 
 # JWT settings
-SECRET_KEY = "your-secret-key"
+SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 ALGORITHM = "HS256"
 
 # OAuth2 scheme - tells FastAPI where to find the token

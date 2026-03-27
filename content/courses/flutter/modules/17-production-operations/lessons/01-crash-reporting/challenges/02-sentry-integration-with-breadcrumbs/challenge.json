@@ -5,7 +5,26 @@
   "description": "Set up Sentry for error tracking with navigation breadcrumbs.",
   "instructions": "Create a main.dart that:\n\n1. Initializes Sentry with SentryFlutter.init()\n2. Reads the DSN from environment (SENTRY_DSN)\n3. Sets the environment from ENVIRONMENT variable\n4. Configures traces sample rate to 20%\n5. Creates a MaterialApp with SentryNavigatorObserver for automatic navigation breadcrumbs\n6. Includes a custom AppBreadcrumbs class with logUserAction() and logApiCall() methods",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the SentryFlutter class",
+      "expectedOutput": "SentryFlutter",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the init() method",
+      "expectedOutput": "init",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the environment() method",
+      "expectedOutput": "environment",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

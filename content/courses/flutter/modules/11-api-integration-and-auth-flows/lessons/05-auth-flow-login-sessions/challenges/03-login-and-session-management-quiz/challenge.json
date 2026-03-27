@@ -6,7 +6,6 @@
   "questions": [
     {
       "id": "q1",
-      "text": "What is the primary purpose of a refresh token compared to an access token?",
       "options": [
         "Refresh tokens are used for every API request",
         "Refresh tokens are used only to obtain new access tokens without re-entering credentials",
@@ -14,11 +13,11 @@
         "Refresh tokens contain user profile information"
       ],
       "correctAnswer": 1,
-      "explanation": "Refresh tokens are long-lived tokens used exclusively to obtain new access tokens when the current access token expires. This allows users to stay logged in without re-entering credentials, while limiting the damage if an access token is compromised since it expires quickly."
+      "explanation": "Refresh tokens are long-lived tokens used exclusively to obtain new access tokens when the current access token expires. This allows users to stay logged in without re-entering credentials, while limiting the damage if an access token is compromised since it expires quickly.",
+      "question": "What is the primary purpose of a refresh token compared to an access token?"
     },
     {
       "id": "q2",
-      "text": "Why should you clear the password field after a failed login attempt?",
       "options": [
         "To save memory",
         "To prevent the password from being visible if someone looks at the screen",
@@ -26,11 +25,11 @@
         "To make the form look cleaner"
       ],
       "correctAnswer": 1,
-      "explanation": "Clearing the password field after a failed login attempt is a security best practice. If someone is looking over the user's shoulder (shoulder surfing), they might see dots representing password length. Clearing forces the user to re-enter, ensuring the password is not left visible for observation."
+      "explanation": "Clearing the password field after a failed login attempt is a security best practice. If someone is looking over the user's shoulder (shoulder surfing), they might see dots representing password length. Clearing forces the user to re-enter, ensuring the password is not left visible for observation.",
+      "question": "Why should you clear the password field after a failed login attempt?"
     },
     {
       "id": "q3",
-      "text": "What is token rotation and why is it important?",
       "options": [
         "Changing the encryption algorithm periodically",
         "Issuing a new refresh token each time one is used, invalidating the old one",
@@ -38,11 +37,11 @@
         "Changing the token format between requests"
       ],
       "correctAnswer": 1,
-      "explanation": "Token rotation means issuing a new refresh token each time one is used to get a new access token, while invalidating the old refresh token. This limits the window of opportunity for attackers who might have stolen a refresh token, since it becomes invalid after its first use."
+      "explanation": "Token rotation means issuing a new refresh token each time one is used to get a new access token, while invalidating the old refresh token. This limits the window of opportunity for attackers who might have stolen a refresh token, since it becomes invalid after its first use.",
+      "question": "What is token rotation and why is it important?"
     },
     {
       "id": "q4",
-      "text": "When implementing auto-login, why should you verify the session with the server before proceeding?",
       "options": [
         "To update the user interface",
         "To check for app updates",
@@ -50,11 +49,11 @@
         "To download the latest user avatar"
       ],
       "correctAnswer": 2,
-      "explanation": "Verifying with the server ensures that stored tokens are still valid (not expired or revoked) and that the user account has not been suspended or deleted. Without this check, users could access the app with invalid sessions or blocked accounts until they make an API call that fails."
+      "explanation": "Verifying with the server ensures that stored tokens are still valid (not expired or revoked) and that the user account has not been suspended or deleted. Without this check, users could access the app with invalid sessions or blocked accounts until they make an API call that fails.",
+      "question": "When implementing auto-login, why should you verify the session with the server before proceeding?"
     },
     {
       "id": "q5",
-      "text": "What is the recommended approach when a token refresh fails due to an expired refresh token?",
       "options": [
         "Retry the refresh indefinitely",
         "Show an error and crash the app",
@@ -62,7 +61,8 @@
         "Continue using the app without authentication"
       ],
       "correctAnswer": 2,
-      "explanation": "When a refresh token expires, there is no way to obtain new tokens without user credentials. The correct approach is to clear stored credentials (to prevent stale data), show a clear message explaining what happened, and redirect users to the login screen where they can re-authenticate."
+      "explanation": "When a refresh token expires, there is no way to obtain new tokens without user credentials. The correct approach is to clear stored credentials (to prevent stale data), show a clear message explaining what happened, and redirect users to the login screen where they can re-authenticate.",
+      "question": "What is the recommended approach when a token refresh fails due to an expired refresh token?"
     }
   ]
 }

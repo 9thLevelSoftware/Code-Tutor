@@ -5,7 +5,26 @@
   "description": "Create a full-text search system for messages with conversation filtering and result highlighting.",
   "instructions": "Implement a message search system that:\n\n1. Performs full-text search across user's messages\n2. Supports filtering by conversation\n3. Highlights matched text in results\n4. Returns messages with context (conversation info, sender)\n5. Uses efficient database indexing\n6. Supports pagination for large result sets\n\nCreate the search endpoint with proper indexing strategy.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the MessageSearchAndHistory class",
+      "expectedOutput": "MessageSearchAndHistory",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Uses Session parameter for endpoint methods",
+      "expectedOutput": "Session",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Returns appropriate response types",
+      "expectedOutput": "Future<",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

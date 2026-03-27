@@ -5,15 +5,29 @@
   "description": "Create a GitHub Actions workflow that runs tests efficiently for a KMP project.",
   "difficulty": "intermediate",
   "hints": [
-    "Use 'if: github.event_name == 'pull_request'' to limit expensive jobs",
-    "The 'gradle/gradle-build-action' handles caching automatically",
-    "Use 'if: always()' on upload-artifact to capture failure logs",
-    "The 'dorny/test-reporter' action creates nice summaries"
+    {
+      "level": 1,
+      "text": "Use 'if: github.event_name == 'pull_request'' to limit expensive jobs"
+    },
+    {
+      "level": 2,
+      "text": "The 'gradle/gradle-build-action' handles caching automatically"
+    },
+    {
+      "level": 3,
+      "text": "Use 'if: always()' on upload-artifact to capture failure logs"
+    },
+    {
+      "level": 4,
+      "text": "The 'dorny/test-reporter' action creates nice summaries"
+    }
   ],
   "testCases": [
     {
       "description": "Workflow file is valid YAML",
-      "expectedBehavior": "No syntax errors when workflow runs"
+      "expectedBehavior": "No syntax errors when workflow runs",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

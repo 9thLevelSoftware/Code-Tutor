@@ -121,9 +121,28 @@ public partial class LessonPage : UserControl
         {
             var challengeType = (challenge.Type ?? "").ToUpperInvariant();
 
-            if (challengeType == "QUIZ" && challenge.Options != null && challenge.Options.Count > 0)
+            if (challengeType == "TRUE_FALSE")
             {
-                // Multiple-choice quiz - use QuizChallenge control
+                // True/False challenge
+                var tfControl = new Controls.TrueFalseChallenge(challenge);
+                tfControl.ChallengeCompleted += OnChallengeCompleted;
+                tfControl.ContextChanged += OnChallengeContextChanged;
+                _challengeControls.Add(new ChallengeControlWrapper(tfControl));
+                ContentPanel.Children.Add(tfControl);
+            }
+            else if (challengeType == "QUIZ" && challenge.Questions != null && challenge.Questions.Count > 0)
+            {
+                // Multi-question quiz
+                var mqControl = new Controls.MultiQuizChallenge(challenge);
+                mqControl.ChallengeCompleted += OnChallengeCompleted;
+                mqControl.ContextChanged += OnChallengeContextChanged;
+                _challengeControls.Add(new ChallengeControlWrapper(mqControl));
+                ContentPanel.Children.Add(mqControl);
+            }
+            else if (challengeType is "QUIZ" or "MULTIPLE_CHOICE" or "MULTI_CHOICE"
+                     && challenge.Options != null && challenge.Options.Count > 0)
+            {
+                // Single-question multiple-choice quiz
                 var quizControl = new Controls.QuizChallenge(challenge);
                 quizControl.ChallengeCompleted += OnChallengeCompleted;
                 quizControl.ContextChanged += OnChallengeContextChanged;
@@ -340,12 +359,14 @@ public partial class LessonPage : UserControl
 }
 
 /// <summary>
-/// Wraps either CodingChallenge or QuizChallenge to provide a uniform IsCompleted interface.
+/// Wraps challenge controls to provide a uniform IsCompleted interface.
 /// </summary>
 internal class ChallengeControlWrapper
 {
     private readonly Controls.CodingChallenge? _codingChallenge;
     private readonly Controls.QuizChallenge? _quizChallenge;
+    private readonly Controls.TrueFalseChallenge? _trueFalseChallenge;
+    private readonly Controls.MultiQuizChallenge? _multiQuizChallenge;
 
     public ChallengeControlWrapper(Controls.CodingChallenge codingChallenge)
     {
@@ -357,5 +378,20 @@ internal class ChallengeControlWrapper
         _quizChallenge = quizChallenge;
     }
 
-    public bool IsCompleted => _codingChallenge?.IsCompleted ?? _quizChallenge?.IsCompleted ?? false;
+    public ChallengeControlWrapper(Controls.TrueFalseChallenge trueFalseChallenge)
+    {
+        _trueFalseChallenge = trueFalseChallenge;
+    }
+
+    public ChallengeControlWrapper(Controls.MultiQuizChallenge multiQuizChallenge)
+    {
+        _multiQuizChallenge = multiQuizChallenge;
+    }
+
+    public bool IsCompleted =>
+        _codingChallenge?.IsCompleted
+        ?? _quizChallenge?.IsCompleted
+        ?? _trueFalseChallenge?.IsCompleted
+        ?? _multiQuizChallenge?.IsCompleted
+        ?? false;
 }

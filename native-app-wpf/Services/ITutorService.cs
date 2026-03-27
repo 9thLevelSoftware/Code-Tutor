@@ -30,7 +30,7 @@ public interface ITutorService
     event EventHandler<int>? LoadingProgressChanged;
 
     /// <summary>
-    /// Initialize and load the Phi-4 model
+    /// Initialize and load the AI tutor model
     /// </summary>
     Task LoadModelAsync(CancellationToken cancellationToken = default);
 

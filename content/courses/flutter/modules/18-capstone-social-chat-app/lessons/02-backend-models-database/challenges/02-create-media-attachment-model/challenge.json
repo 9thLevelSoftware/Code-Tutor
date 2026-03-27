@@ -5,7 +5,26 @@
   "description": "Design a reusable media attachment model for images, videos, and files across the app.",
   "instructions": "Create a MediaAttachment protocol that:\n\n1. Can be attached to posts, messages, or comments (polymorphic)\n2. Stores: url, thumbnailUrl, mimeType, fileSize, width, height, duration (for video/audio)\n3. Tracks upload status: pending, processing, ready, failed\n4. Includes uploader reference and timestamps\n5. Has a MediaType enum: image, video, audio, document\n6. Supports ordering for multiple attachments",
   "language": "yaml",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Defines the MediaAttachmentModel model",
+      "expectedOutput": "class: MediaAttachmentModel",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Contains required field definitions",
+      "expectedOutput": "fields",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses an enum type",
+      "expectedOutput": "enum",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

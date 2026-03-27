@@ -7,11 +7,11 @@ title: "Managing Secrets and Environment Variables"
 
 ```bash
 # Set secrets (encrypted, not shown in fly.toml)
-fly secrets set SECRET_KEY="your-super-secret-key-here"
+fly secrets set SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
 fly secrets set API_KEY="external-api-key"
 
 # Set multiple secrets at once
-fly secrets set SECRET_KEY="key1" JWT_SECRET="key2" API_TOKEN="token"
+fly secrets set SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret") JWT_SECRET="key2" API_TOKEN="token"
 
 # List all secrets (names only, not values)
 fly secrets list

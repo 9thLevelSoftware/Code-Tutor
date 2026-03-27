@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "12.6-challenge",
+  "id": "12.6-challenge-5ac7ce",
   "title": "Practice Challenge",
   "description": "Create a clock component with useEffect:\n\n1. Create a `ClockComponent` object with:\n   - state: { time: current time string }\n   - mount() - simulates component mounting\n   - unmount() - simulates component unmounting\n   - Use effect to update time every second\n   - Cleanup timer on unmount\n\n2. Test by mounting, waiting 3 seconds, then unmounting",
   "instructions": "Create a clock component with useEffect:\n\n1. Create a `ClockComponent` object with:\n   - state: { time: current time string }\n   - mount() - simulates component mounting\n   - unmount() - simulates component unmounting\n   - Use effect to update time every second\n   - Cleanup timer on unmount\n\n2. Test by mounting, waiting 3 seconds, then unmounting",

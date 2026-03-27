@@ -5,26 +5,12 @@
   "description": "Test your understanding of JPA cascade behavior.",
   "question": "In the User entity, we have @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) for tasks. What happens when we call userRepository.delete(user)?",
   "options": [
-    {
-      "id": "a",
-      "text": "Only the user is deleted, tasks remain with null owner",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "The deletion fails because tasks still reference the user",
-      "isCorrect": false
-    },
-    {
-      "id": "c",
-      "text": "The user and all their tasks are deleted automatically",
-      "isCorrect": true
-    },
-    {
-      "id": "d",
-      "text": "Tasks are moved to a default system user",
-      "isCorrect": false
-    }
+    "Only the user is deleted, tasks remain with null owner",
+    "The deletion fails because tasks still reference the user",
+    "The user and all their tasks are deleted automatically",
+    "Tasks are moved to a default system user"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 2,
+  "explanation": "With @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true), JPA cascades all operations from the parent to children. When the user is deleted, CascadeType.ALL includes REMOVE, so all associated tasks are automatically deleted along with the user. The orphanRemoval flag further ensures any tasks removed from the collection are also deleted."
 }

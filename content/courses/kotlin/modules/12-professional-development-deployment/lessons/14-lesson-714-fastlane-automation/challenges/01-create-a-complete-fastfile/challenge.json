@@ -5,15 +5,29 @@
   "description": "Create a Fastfile for Android that includes build, test, and deployment lanes.",
   "difficulty": "advanced",
   "hints": [
-    "Use gradle() action for building",
-    "Pass signing properties via the properties parameter",
-    "Use upload_to_play_store for Play Store deployment",
-    "Lane options can be passed as parameters"
+    {
+      "level": 1,
+      "text": "Use gradle() action for building"
+    },
+    {
+      "level": 2,
+      "text": "Pass signing properties via the properties parameter"
+    },
+    {
+      "level": 3,
+      "text": "Use upload_to_play_store for Play Store deployment"
+    },
+    {
+      "level": 4,
+      "text": "Lane options can be passed as parameters"
+    }
   ],
   "testCases": [
     {
       "description": "Fastfile defines all required lanes",
-      "expectedBehavior": "test, build, deploy_internal, and deploy_production lanes work correctly"
+      "expectedBehavior": "test, build, deploy_internal, and deploy_production lanes work correctly",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

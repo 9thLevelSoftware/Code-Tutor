@@ -10,5 +10,6 @@
     "@Component + @GetMapping"
   ],
   "correctAnswer": 1,
-  "explanation": "@RestController = @Controller + @ResponseBody. It returns data directly (not views) as JSON/XML."
+  "explanation": "@RestController = @Controller + @ResponseBody. It returns data directly (not views) as JSON/XML.",
+  "question": "Please select the correct option."
 }

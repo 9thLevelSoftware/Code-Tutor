@@ -5,7 +5,26 @@
   "description": "Add emoji reactions to messages with real-time broadcasting and aggregation.",
   "instructions": "Implement a message reactions system that:\n\n1. Allows users to add emoji reactions to messages\n2. Supports multiple reaction types (emoji)\n3. Tracks who reacted with what emoji\n4. Aggregates reaction counts per emoji type\n5. Broadcasts reaction changes in real-time\n6. Allows toggling reactions (add/remove)\n\nCreate the MessageReaction model and ReactionEndpoint with full implementation.",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the MessageReaction class",
+      "expectedOutput": "MessageReaction",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the reactions() method",
+      "expectedOutput": "reactions",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Uses ReactionEndpoint",
+      "expectedOutput": "ReactionEndpoint",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

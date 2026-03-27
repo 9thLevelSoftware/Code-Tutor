@@ -1,0 +1,68 @@
+<UserControl x:Class="CodeTutor.Wpf.Controls.MultiQuizChallenge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:CodeTutor.Wpf.Controls"
+             xmlns:behaviors="clr-namespace:CodeTutor.Wpf.Behaviors">
+    <Grid>
+        <Border Style="{StaticResource CardBorder}"
+                Margin="0,0,0,24"
+                behaviors:AnimationBehaviors.EnableFadeInOnLoad="True">
+            <StackPanel>
+                <!-- Quiz Header -->
+                <TextBlock x:Name="QuizTitle"
+                           Style="{StaticResource SubheadingText}"
+                           Margin="0,0,0,8" />
+                <TextBlock x:Name="QuizDescription"
+                           Style="{StaticResource BodyText}"
+                           Foreground="{StaticResource TextSecondaryBrush}"
+                           Margin="0,0,0,16" />
+
+                <!-- Progress indicator -->
+                <TextBlock x:Name="ProgressText"
+                           Style="{StaticResource BodyText}"
+                           Foreground="{StaticResource TextSecondaryBrush}"
+                           Margin="0,0,0,12" />
+
+                <!-- Questions container (populated in code-behind) -->
+                <StackPanel x:Name="QuestionsPanel" />
+
+                <!-- Submit All Button -->
+                <StackPanel Orientation="Horizontal" Margin="0,8,0,16">
+                    <Button x:Name="SubmitAllButton"
+                            Style="{StaticResource PrimaryButton}"
+                            Click="SubmitAll_Click"
+                            IsEnabled="False">
+                        <TextBlock Text="Submit All Answers" />
+                    </Button>
+                    <Button x:Name="ResetAllButton"
+                            Style="{StaticResource GhostButton}"
+                            Click="ResetAll_Click"
+                            Margin="12,0,0,0"
+                            Visibility="Collapsed">
+                        <TextBlock Text="Try Again" />
+                    </Button>
+                </StackPanel>
+
+                <!-- Overall Result -->
+                <Border x:Name="OverallResultPanel"
+                        CornerRadius="6"
+                        Padding="16"
+                        Visibility="Collapsed">
+                    <TextBlock x:Name="OverallResultText"
+                               Style="{StaticResource BodyText}"
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap" />
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <controls:ConfettiOverlay x:Name="ConfettiOverlay"
+                                  Visibility="Collapsed"
+                                  Panel.ZIndex="2" />
+        <controls:AchievementBadge x:Name="AchievementBadge"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Top"
+                                   Margin="0,12,12,0"
+                                   Panel.ZIndex="3" />
+    </Grid>
+</UserControl>

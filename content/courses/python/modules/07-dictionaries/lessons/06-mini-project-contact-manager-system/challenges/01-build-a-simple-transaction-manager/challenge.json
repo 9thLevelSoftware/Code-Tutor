@@ -4,5 +4,25 @@
   "title": "Build a Simple Transaction Manager",
   "description": "Apply everything you learned about dictionaries and sets to build a simple transaction manager for your personal finance tracker. This mini-project combines dictionary operations, sets, and functions.",
   "instructions": "1. Create an empty `transactions` dictionary to store transactions by ID\n2. Implement `add_transaction(transactions, id, category, amount, tags)` that adds a transaction with the given details. Tags should be stored as a set.\n3. Implement `get_transaction(transactions, id)` that safely returns a transaction or None\n4. Implement `get_all_tags(transactions)` that returns all unique tags across all transactions\n5. Add at least 3 sample transactions and test your functions\n6. Print a summary showing all transactions and unique tags",
-  "language": "python"
+  "language": "python",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "add_transaction function is defined",
+      "expectedOutput": "def add_transaction(",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "get_all_tags function is defined",
+      "expectedOutput": "def get_all_tags(",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Transaction summary is printed",
+      "expectedOutput": "All Transactions:",
+      "isVisible": false
+    }
+  ]
 }

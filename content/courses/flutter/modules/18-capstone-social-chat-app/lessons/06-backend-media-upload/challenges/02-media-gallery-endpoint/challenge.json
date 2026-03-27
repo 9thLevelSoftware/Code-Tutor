@@ -5,7 +5,26 @@
   "description": "Create an endpoint to list a user's uploaded media with filtering and pagination.",
   "instructions": "Implement a media gallery endpoint that:\n\n1. Lists the authenticated user's media files\n2. Supports filtering by media type (image, video, audio)\n3. Supports filtering by date range\n4. Returns paginated results with cursor-based pagination\n5. Includes thumbnail URLs for quick loading\n6. Supports sorting by date or size\n7. Returns total counts for each media type",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the MediaGalleryEndpoint class",
+      "expectedOutput": "MediaGalleryEndpoint",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Uses Session parameter for endpoint methods",
+      "expectedOutput": "Session",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Returns appropriate response types",
+      "expectedOutput": "Future<",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "10.10-challenge-2",
+  "id": "10.10-challenge-2-61c434",
   "title": "Configuration Builder",
   "description": "Use Record, Readonly, and Required to build a type-safe configuration system. Create environment-specific configs, status mappings, and frozen settings that prevent accidental mutations.",
   "instructions": "1. Create Environment type ('development' | 'staging' | 'production')\n2. Create EnvironmentConfig interface with optional properties (apiUrl, debug, logLevel)\n3. Use Record to map each Environment to its EnvironmentConfig\n4. Create a Required version for validated configs\n5. Create a Readonly frozen config type\n6. Implement getConfig function that returns frozen, fully-populated config\n7. Test with all three environments",

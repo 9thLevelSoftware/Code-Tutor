@@ -5,26 +5,12 @@
   "description": "Understand proper schema migration workflow.",
   "question": "You need to add a 'completed_at' timestamp column to the tasks table. The V3__create_tasks.sql migration has already been applied. What should you do?",
   "options": [
-    {
-      "id": "a",
-      "text": "Edit V3__create_tasks.sql to add the column",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "Create V4__add_completed_at_to_tasks.sql with ALTER TABLE",
-      "isCorrect": true
-    },
-    {
-      "id": "c",
-      "text": "Delete the flyway_schema_history table and re-run all migrations",
-      "isCorrect": false
-    },
-    {
-      "id": "d",
-      "text": "Add the column directly to the entity and let Hibernate update the schema",
-      "isCorrect": false
-    }
+    "Edit V3__create_tasks.sql to add the column",
+    "Create V4__add_completed_at_to_tasks.sql with ALTER TABLE",
+    "Delete the flyway_schema_history table and re-run all migrations",
+    "Add the column directly to the entity and let Hibernate update the schema"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 1,
+  "explanation": "Flyway migrations are immutable once applied. You should never edit an already-applied migration, as Flyway checksums will detect the change and fail. Instead, create a new migration file (V4__add_completed_at_to_tasks.sql) with an ALTER TABLE statement to add the column. Deleting flyway_schema_history or relying on Hibernate auto-DDL are unsafe practices."
 }

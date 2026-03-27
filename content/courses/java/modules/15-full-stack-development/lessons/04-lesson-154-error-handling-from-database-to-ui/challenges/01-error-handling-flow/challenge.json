@@ -10,5 +10,6 @@
     "Let the frontend handle the raw exception"
   ],
   "correctAnswer": 2,
-  "explanation": "Backend catches DB exceptions, maps to Problem Details (RFC 7807), returns appropriate status. Frontend shows user-friendly message."
+  "explanation": "Backend catches DB exceptions, maps to Problem Details (RFC 7807), returns appropriate status. Frontend shows user-friendly message.",
+  "question": "Please select the correct option."
 }

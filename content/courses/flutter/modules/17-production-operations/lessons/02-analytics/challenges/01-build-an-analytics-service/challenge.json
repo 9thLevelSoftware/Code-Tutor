@@ -5,7 +5,26 @@
   "description": "Create a comprehensive analytics service that wraps Firebase Analytics for clean, type-safe event tracking.",
   "instructions": "Create an AnalyticsService class that:\n\n1. Uses the singleton pattern with FirebaseAnalytics.instance\n2. Has a logScreenView() method that takes screenName and optional screenClass\n3. Has a logButtonTap() method that takes buttonName and optional screenName\n4. Has a logSearch() method that takes searchTerm and resultsCount\n5. Has a setUserTier() method that sets a 'user_tier' user property\n6. Has a logFeatureUsed() method that takes featureName and optional duration in seconds",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the AnalyticsService class",
+      "expectedOutput": "AnalyticsService",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the logScreenView() method",
+      "expectedOutput": "logScreenView",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the logButtonTap() method",
+      "expectedOutput": "logButtonTap",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

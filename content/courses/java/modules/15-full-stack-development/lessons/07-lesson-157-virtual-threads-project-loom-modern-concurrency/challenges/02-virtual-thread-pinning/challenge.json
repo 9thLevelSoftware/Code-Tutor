@@ -5,26 +5,12 @@
   "description": "What causes virtual thread pinning and how should you avoid it?",
   "question": "Which of the following should you AVOID when using virtual threads because it causes pinning?",
   "options": [
-    {
-      "id": "a",
-      "text": "Using ReentrantLock for synchronization",
-      "isCorrect": false
-    },
-    {
-      "id": "b",
-      "text": "Using synchronized blocks or methods",
-      "isCorrect": true
-    },
-    {
-      "id": "c",
-      "text": "Making HTTP calls with HttpClient",
-      "isCorrect": false
-    },
-    {
-      "id": "d",
-      "text": "Using try-with-resources blocks",
-      "isCorrect": false
-    }
+    "Using ReentrantLock for synchronization",
+    "Using synchronized blocks or methods",
+    "Making HTTP calls with HttpClient",
+    "Using try-with-resources blocks"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "correctAnswer": 1,
+  "explanation": "Virtual thread pinning occurs when a virtual thread holds a monitor lock via a synchronized block or method, preventing it from being unmounted from its carrier thread. This blocks the underlying platform thread and defeats the purpose of virtual threads. Use ReentrantLock instead, which allows the virtual thread to unmount while waiting."
 }

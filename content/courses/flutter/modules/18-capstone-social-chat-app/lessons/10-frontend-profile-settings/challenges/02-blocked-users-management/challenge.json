@@ -5,7 +5,20 @@
   "description": "Implement a blocked users management screen with list display, unblock functionality, and ability to block users from their profile.",
   "instructions": "Build a blocked users management system:\n\n1. Create BlockedUsersScreen showing list of blocked users\n2. Display user avatar, name, and block date for each entry\n3. Add unblock button with confirmation dialog\n4. Handle empty state when no users are blocked\n5. Implement pull-to-refresh for the list\n6. Add search/filter capability for users with many blocked accounts\n7. Show loading and error states appropriately\n8. Update the list optimistically when unblocking",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the BlockedUsersScreen class",
+      "expectedOutput": "BlockedUsersScreen",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements required functionality",
+      "expectedOutput": "class BlockedUsersScreen",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

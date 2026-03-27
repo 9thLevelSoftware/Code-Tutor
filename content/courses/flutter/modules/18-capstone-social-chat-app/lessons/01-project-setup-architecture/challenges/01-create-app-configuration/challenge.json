@@ -5,7 +5,20 @@
   "description": "Set up the app configuration with environment-specific server URLs.",
   "instructions": "Create an AppConfig class that:\n\n1. Has a static serverUrl property that returns the correct URL based on environment\n2. Uses String.fromEnvironment to read ENVIRONMENT variable\n3. Returns 'http://localhost:8080/' for development\n4. Returns 'https://api.socialchat.app/' for production\n5. Includes a static isProduction getter\n6. Has a static appVersion property set to '1.0.0'",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the AppConfig class",
+      "expectedOutput": "AppConfig",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Defines the AppConfig configuration",
+      "expectedOutput": "AppConfig",
+      "isVisible": true
+    }
+  ],
   "hints": [
     {
       "level": 1,

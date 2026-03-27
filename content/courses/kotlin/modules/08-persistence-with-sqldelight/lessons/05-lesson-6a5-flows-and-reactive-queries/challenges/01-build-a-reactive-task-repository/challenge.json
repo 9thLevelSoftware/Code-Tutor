@@ -5,19 +5,34 @@
   "description": "Create a task repository with reactive flows for filtering and statistics.",
   "difficulty": "intermediate",
   "hints": [
-    "Use asFlow() to convert Query to Flow",
-    "Use mapToList for multiple results",
-    "Use mapToOne for single values",
-    "Use combine to combine multiple flows"
+    {
+      "level": 1,
+      "text": "Use asFlow() to convert Query to Flow"
+    },
+    {
+      "level": 2,
+      "text": "Use mapToList for multiple results"
+    },
+    {
+      "level": 3,
+      "text": "Use mapToOne for single values"
+    },
+    {
+      "level": 4,
+      "text": "Use combine to combine multiple flows"
+    }
   ],
   "testCases": [
     {
       "description": "Flows should emit when tasks change",
-      "expectedBehavior": "Adding/removing tasks triggers new emissions"
+      "expectedBehavior": "Adding/removing tasks triggers new emissions",
+      "id": "test-1"
     },
     {
       "description": "Completion rate should calculate correctly",
-      "expectedBehavior": "Returns 0-1 float based on completed/total"
+      "expectedBehavior": "Returns 0-1 float based on completed/total",
+      "id": "test-2"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

@@ -366,36 +366,7 @@ public class CourseContentValidationTests
             $"Course {courseId} should have a valid difficulty level");
     }
 
-    private Course? LoadCourse(string courseId)
-    {
-        var courseFile = Path.Combine(_contentPath, courseId, "course.json");
+    private Course? LoadCourse(string courseId) => TestCourseLoader.LoadCourse(_contentPath, courseId);
 
-        if (!File.Exists(courseFile))
-            return null;
-
-        var json = File.ReadAllText(courseFile);
-        return JsonSerializer.Deserialize<Course>(json, _jsonOptions);
-    }
-
-    private List<Course> LoadAllCourses()
-    {
-        var courses = new List<Course>();
-
-        if (!Directory.Exists(_contentPath))
-            return courses;
-
-        foreach (var dir in Directory.GetDirectories(_contentPath))
-        {
-            var courseFile = Path.Combine(dir, "course.json");
-            if (File.Exists(courseFile))
-            {
-                var json = File.ReadAllText(courseFile);
-                var course = JsonSerializer.Deserialize<Course>(json, _jsonOptions);
-                if (course != null)
-                    courses.Add(course);
-            }
-        }
-
-        return courses;
-    }
+    private List<Course> LoadAllCourses() => TestCourseLoader.LoadAllCourses(_contentPath);
 }

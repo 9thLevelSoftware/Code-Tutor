@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "In the testing pyramid, which layer should have the MOST tests in a KMP project?",
+      "question": "In the testing pyramid, which layer should have the MOST tests in a KMP project?",
       "options": [
         "UI tests (Compose Multiplatform)",
         "Integration tests (API + database)",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "What is the primary advantage of testing shared KMP code in commonTest?",
+      "question": "What is the primary advantage of testing shared KMP code in commonTest?",
       "options": [
         "Tests run faster than platform-specific tests",
         "Tests automatically verify behavior on ALL target platforms",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "When should you use platform-specific test source sets (e.g., androidUnitTest, iosTest)?",
+      "question": "When should you use platform-specific test source sets (e.g., androidUnitTest, iosTest)?",
       "options": [
         "For all tests to ensure platform correctness",
         "Only when testing expect/actual implementations or platform-specific behavior",

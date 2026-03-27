@@ -5,16 +5,33 @@
   "description": "Review this code and identify all the architecture violations. List at least 5 problems.",
   "difficulty": "intermediate",
   "hints": [
-    "Look for platform-specific code that shouldn't be in shared code",
-    "Check how coroutines are launched",
-    "Consider testability - could you test this?",
-    "Look for the Repository pattern - is it used?",
-    "Check state management approach"
+    {
+      "level": 1,
+      "text": "Look for platform-specific code that shouldn't be in shared code"
+    },
+    {
+      "level": 2,
+      "text": "Check how coroutines are launched"
+    },
+    {
+      "level": 3,
+      "text": "Consider testability - could you test this?"
+    },
+    {
+      "level": 4,
+      "text": "Look for the Repository pattern - is it used?"
+    },
+    {
+      "level": 5,
+      "text": "Check state management approach"
+    }
   ],
   "testCases": [
     {
       "description": "Should identify at least 5 problems",
-      "expectedBehavior": "Lists violations of architecture principles"
+      "expectedBehavior": "Lists violations of architecture principles",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }

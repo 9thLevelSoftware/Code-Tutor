@@ -5,7 +5,26 @@
   "description": "Create an HTTP client wrapper that automatically monitors all network requests with Firebase Performance.",
   "instructions": "Create a MonitoredApiClient class that:\n\n1. Takes an optional http.Client in its constructor (for testing)\n2. Has a get(url, headers) method that performs GET with monitoring\n3. Has a post(url, headers, body) method that performs POST with monitoring\n4. Each request should track: URL, HTTP method, response status code, response size\n5. Include a getRequestStats() method that returns total requests, successful requests, and average response time in milliseconds\n6. Track statistics internally (don't need Firebase for stats, just the HTTP metrics)",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the MonitoredApiClient class",
+      "expectedOutput": "MonitoredApiClient",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the constructor() method",
+      "expectedOutput": "constructor",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the get() method",
+      "expectedOutput": "get",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

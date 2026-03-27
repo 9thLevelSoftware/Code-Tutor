@@ -6,7 +6,7 @@
   "questions": [
     {
       "id": "q1",
-      "text": "In a KMP CI/CD pipeline, which step should run FIRST?",
+      "question": "In a KMP CI/CD pipeline, which step should run FIRST?",
       "options": [
         "Deploy to production",
         "Run commonTest (shared unit tests)",
@@ -18,7 +18,7 @@
     },
     {
       "id": "q2",
-      "text": "Why do KMP projects typically need SEPARATE CI jobs for Android and iOS builds?",
+      "question": "Why do KMP projects typically need SEPARATE CI jobs for Android and iOS builds?",
       "options": [
         "To make the pipeline look more organized",
         "Android builds require Linux/Windows, iOS builds require macOS with Xcode",
@@ -30,7 +30,7 @@
     },
     {
       "id": "q3",
-      "text": "What is the purpose of Gradle build caching in a KMP CI pipeline?",
+      "question": "What is the purpose of Gradle build caching in a KMP CI pipeline?",
       "options": [
         "To store source code backups",
         "To avoid recompiling unchanged modules, reducing build time significantly",

@@ -5,7 +5,26 @@
   "description": "Create a kill switch service that can instantly disable features in production with proper fallback behavior.",
   "instructions": "Create a KillSwitchService class that:\n\n1. Uses singleton pattern with FirebaseRemoteConfig.instance\n2. Has an isKilled(feature) method that checks if 'kill_switch_{feature}' is true\n3. Has specific kill switch getters: isPaymentsKilled, isRegistrationKilled\n4. Has isMaintenanceMode and maintenanceMessage getters\n5. Supports listeners that are notified when kill switch status changes (use onConfigUpdated)\n6. Has addListener(callback) and removeListener(callback) methods",
   "language": "dart",
-  "testCases": [],
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Contains the KillSwitchService class",
+      "expectedOutput": "KillSwitchService",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Implements the isKilled() method",
+      "expectedOutput": "isKilled",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Implements the addListener() method",
+      "expectedOutput": "addListener",
+      "isVisible": false
+    }
+  ],
   "hints": [
     {
       "level": 1,

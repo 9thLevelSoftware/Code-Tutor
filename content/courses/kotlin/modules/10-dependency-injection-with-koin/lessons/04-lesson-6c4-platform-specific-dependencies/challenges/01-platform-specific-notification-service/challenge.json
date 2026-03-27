@@ -5,15 +5,29 @@
   "description": "Create a notification service with platform-specific implementations for Android and iOS.",
   "difficulty": "intermediate",
   "hints": [
-    "Define interface in commonMain with suspend functions if needed",
-    "Android uses NotificationManager and WorkManager",
-    "iOS uses UNUserNotificationCenter",
-    "Register implementations in respective platform modules"
+    {
+      "level": 1,
+      "text": "Define interface in commonMain with suspend functions if needed"
+    },
+    {
+      "level": 2,
+      "text": "Android uses NotificationManager and WorkManager"
+    },
+    {
+      "level": 3,
+      "text": "iOS uses UNUserNotificationCenter"
+    },
+    {
+      "level": 4,
+      "text": "Register implementations in respective platform modules"
+    }
   ],
   "testCases": [
     {
       "description": "Interface should be in commonMain with platform implementations",
-      "expectedBehavior": "Same API, different implementations per platform"
+      "expectedBehavior": "Same API, different implementations per platform",
+      "id": "test-1"
     }
-  ]
+  ],
+  "instructions": "Write the code according to the description."
 }
