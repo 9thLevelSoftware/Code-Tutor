@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Code Tutor Rules" Description="Code analysis rules for Code Tutor" ToolsVersion="17.0">
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- Disable XML comment analysis -->
+    <Rule Id="SA0001" Action="None" />
+    
+    <!-- Allow underscore prefix for private fields (common C# convention) -->
+    <Rule Id="SA1309" Action="None" />
+    
+    <!-- Allow file headers to be optional -->
+    <Rule Id="SA1633" Action="None" />
+    
+    <!-- Relax blank line requirements for existing codebase -->
+    <Rule Id="SA1516" Action="None" />
+    <Rule Id="SA1513" Action="None" />
+    <Rule Id="SA1515" Action="None" />
+    <Rule Id="SA1518" Action="None" />
+    
+    <!-- Relax ordering rules (existing codebase has mixed ordering) -->
+    <Rule Id="SA1201" Action="None" />
+    <Rule Id="SA1202" Action="None" />
+    <Rule Id="SA1203" Action="None" />
+    <Rule Id="SA1204" Action="None" />
+    <Rule Id="SA1210" Action="None" />
+    <Rule Id="SA1214" Action="None" />
+    
+    <!-- Allow trailing commas to be optional -->
+    <Rule Id="SA1413" Action="None" />
+    
+    <!-- Allow regions (useful for organizing code) -->
+    <Rule Id="SA1124" Action="None" />
+    
+    <!-- Allow multiple types per file (common for small helper types) -->
+    <Rule Id="SA1402" Action="None" />
+    
+    <!-- Relax spacing rules -->
+    <Rule Id="SA1005" Action="None" />
+    <Rule Id="SA1009" Action="None" />
+    <Rule Id="SA1025" Action="None" />
+    <Rule Id="SA1028" Action="None" />
+    <Rule Id="SA1111" Action="None" />
+    <Rule Id="SA1117" Action="None" />
+    
+    <!-- Allow string.Empty or "" (both are valid) -->
+    <Rule Id="SA1122" Action="None" />
+    
+    <!-- Allow file name flexibility -->
+    <Rule Id="SA1649" Action="None" />
+    
+    <!-- Allow 'this.' prefix to be optional -->
+    <Rule Id="SA1101" Action="None" />
+  </Rules>
+</RuleSet>
