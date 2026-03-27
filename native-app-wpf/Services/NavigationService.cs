@@ -15,7 +15,7 @@ public interface INavigationService
 
 public class NavigationService : INavigationService
 {
-    private readonly Stack<(UserControl View, object? Parameter)> _history = new();
+    private readonly Stack<Func<UserControl>> _history = new();
     private bool _isBackNavigation;
 
     public event EventHandler<object>? Navigated;
@@ -26,7 +26,15 @@ public class NavigationService : INavigationService
     public void NavigateTo(UserControl view, object? parameter = null)
     {
         _isBackNavigation = false;
-        _history.Push((view, parameter));
+        _history.Push(() => view);
+        Navigated?.Invoke(this, view);
+    }
+
+    public void NavigateWithFactory(Func<UserControl> factory, object? parameter = null)
+    {
+        _isBackNavigation = false;
+        var view = factory();
+        _history.Push(factory);
         Navigated?.Invoke(this, view);
     }
 
@@ -36,8 +44,9 @@ public class NavigationService : INavigationService
         {
             _isBackNavigation = true;
             _history.Pop();
-            var (view, _) = _history.Peek();
-            Navigated?.Invoke(this, view);
+            var factory = _history.Peek();
+            var freshView = factory();
+            Navigated?.Invoke(this, freshView);
         }
     }
 }

@@ -47,6 +47,12 @@ public partial class MainWindow : Window
         // Subscribe to navigation
         _navigation.Navigated += (_, view) =>
         {
+            // Reset sidebar when navigating to landing page
+            if (view is LandingPage)
+            {
+                SidebarContent.Content = null;
+            }
+
             if (MainContent is AnimatedContentControl animated)
             {
                 if (_navigation.IsBackNavigation)

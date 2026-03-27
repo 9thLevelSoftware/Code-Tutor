@@ -216,8 +216,16 @@ public partial class LessonPage : UserControl
     {
         if (PrevButton.Tag is Lesson prevLesson)
         {
-            var lessonPage = new LessonPage(_course, prevLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
-            _navigation.NavigateTo(lessonPage, prevLesson);
+            if (_navigation is NavigationService navService)
+            {
+                navService.NavigateWithFactory(() =>
+                    new LessonPage(_course, prevLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService));
+            }
+            else
+            {
+                var lessonPage = new LessonPage(_course, prevLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
+                _navigation.NavigateTo(lessonPage, prevLesson);
+            }
         }
     }
 
@@ -225,8 +233,16 @@ public partial class LessonPage : UserControl
     {
         if (NextButton.Tag is Lesson nextLesson)
         {
-            var lessonPage = new LessonPage(_course, nextLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
-            _navigation.NavigateTo(lessonPage, nextLesson);
+            if (_navigation is NavigationService navService)
+            {
+                navService.NavigateWithFactory(() =>
+                    new LessonPage(_course, nextLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService));
+            }
+            else
+            {
+                var lessonPage = new LessonPage(_course, nextLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
+                _navigation.NavigateTo(lessonPage, nextLesson);
+            }
         }
     }
 
@@ -239,8 +255,16 @@ public partial class LessonPage : UserControl
 
     private void BreadcrumbCourse_Click(object sender, RoutedEventArgs e)
     {
-        var coursePage = new CoursePage(_courseService, _navigation, _course, _progressService, _codeExecutionService, _tutorService, _downloadService);
-        _navigation.NavigateTo(coursePage, _course);
+        if (_navigation is NavigationService navService)
+        {
+            navService.NavigateWithFactory(() =>
+                new CoursePage(_courseService, _navigation, _course, _progressService, _codeExecutionService, _tutorService, _downloadService));
+        }
+        else
+        {
+            var coursePage = new CoursePage(_courseService, _navigation, _course, _progressService, _codeExecutionService, _tutorService, _downloadService);
+            _navigation.NavigateTo(coursePage, _course);
+        }
     }
 
     private async void OnChallengeCompleted(object? sender, string challengeId)

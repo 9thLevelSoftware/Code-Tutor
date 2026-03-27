@@ -80,8 +80,16 @@ public partial class LandingPage : UserControl
     {
         if (sender is Button button && button.Tag is Course course)
         {
-            var coursePage = new CoursePage(_courseService, _navigation, course, _progressService, _codeExecutionService, _tutorService, _downloadService);
-            _navigation.NavigateTo(coursePage, course);
+            if (_navigation is NavigationService navService)
+            {
+                navService.NavigateWithFactory(() =>
+                    new CoursePage(_courseService, _navigation, course, _progressService, _codeExecutionService, _tutorService, _downloadService));
+            }
+            else
+            {
+                var coursePage = new CoursePage(_courseService, _navigation, course, _progressService, _codeExecutionService, _tutorService, _downloadService);
+                _navigation.NavigateTo(coursePage, course);
+            }
         }
     }
 }

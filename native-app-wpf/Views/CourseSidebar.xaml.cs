@@ -81,8 +81,16 @@ public partial class CourseSidebar : UserControl
 
     private void CourseOverview_Click(object sender, RoutedEventArgs e)
     {
-        var coursePage = new CoursePage(_courseService, _navigation, _course, _progressService, _codeExecutionService, _tutorService, _downloadService);
-        _navigation.NavigateTo(coursePage, _course);
+        if (_navigation is NavigationService navService)
+        {
+            navService.NavigateWithFactory(() =>
+                new CoursePage(_courseService, _navigation, _course, _progressService, _codeExecutionService, _tutorService, _downloadService));
+        }
+        else
+        {
+            var coursePage = new CoursePage(_courseService, _navigation, _course, _progressService, _codeExecutionService, _tutorService, _downloadService);
+            _navigation.NavigateTo(coursePage, _course);
+        }
     }
 
     private void ModuleHeader_Click(object sender, RoutedEventArgs e)
@@ -133,8 +141,16 @@ public partial class CourseSidebar : UserControl
             _currentLesson = lesson;
             UpdateLessonStyles();
 
-            var lessonPage = new LessonPage(_course, lesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
-            _navigation.NavigateTo(lessonPage, lesson);
+            if (_navigation is NavigationService navService)
+            {
+                navService.NavigateWithFactory(() =>
+                    new LessonPage(_course, lesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService));
+            }
+            else
+            {
+                var lessonPage = new LessonPage(_course, lesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
+                _navigation.NavigateTo(lessonPage, lesson);
+            }
         }
     }
 

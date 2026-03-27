@@ -76,8 +76,16 @@ public partial class CoursePage : UserControl
         var firstLesson = _course.Modules.FirstOrDefault()?.Lessons.FirstOrDefault();
         if (firstLesson != null)
         {
-            var lessonPage = new LessonPage(_course, firstLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
-            _navigation.NavigateTo(lessonPage, firstLesson);
+            if (_navigation is NavigationService navService)
+            {
+                navService.NavigateWithFactory(() =>
+                    new LessonPage(_course, firstLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService));
+            }
+            else
+            {
+                var lessonPage = new LessonPage(_course, firstLesson, _courseService, _navigation, _progressService, _codeExecutionService, _tutorService, _downloadService);
+                _navigation.NavigateTo(lessonPage, firstLesson);
+            }
         }
     }
 }
