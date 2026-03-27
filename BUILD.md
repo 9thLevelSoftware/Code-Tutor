@@ -1,18 +1,19 @@
 # Code Tutor - Build & Distribution Guide
 
+> **Note:** Code Tutor is a WPF application and only supports Windows.
+> Cross-platform support would require porting to a framework like Avalonia or MAUI.
+
 This guide explains how to build Code Tutor installers for distribution.
 
 ---
 
-## 🪟 Windows Installer (.exe)
-
-### Prerequisites
+## Prerequisites
 
 1. **.NET 8.0 SDK** - https://dotnet.microsoft.com/download/dotnet/8.0
 2. **Inno Setup 6** (optional, for creating installer) - https://jrsoftware.org/isdl.php
 3. **PowerShell 5.0+** (included with Windows 10/11)
 
-### Quick Build
+## Quick Build
 
 **Option 1: Using Batch File (Easiest)**
 ```batch
@@ -31,12 +32,12 @@ build-installer.bat
 .\build-installer.ps1 -Version "1.0.1"
 ```
 
-### What Gets Built
+## What Gets Built
 
 The build script creates:
 
 1. **Self-Contained Executable**
-   - Location: `publish/CodeTutor.Native.exe`
+   - Location: `publish/CodeTutor.exe`
    - Size: ~80-120 MB (includes .NET runtime)
    - No installation required (portable)
 
@@ -47,7 +48,7 @@ The build script creates:
    - Creates Desktop shortcut (optional)
    - Detects missing language runtimes
 
-### Build Process Details
+## Build Process Details
 
 **Step 1: Clean Build**
 - Removes old publish directory
@@ -75,129 +76,49 @@ dotnet publish native-app-wpf/CodeTutor.Wpf.csproj \
 
 ---
 
-## 🐧 Linux Build (Self-Contained)
+## Build Script Parameters
 
-### Prerequisites
+The `build-installer.ps1` script accepts the following parameters:
 
-1. **.NET 8.0 SDK** - https://dotnet.microsoft.com/download/dotnet/8.0
+| Parameter        | Default     | Description                                     |
+|------------------|-------------|-------------------------------------------------|
+| `-Configuration` | `"Release"` | Build configuration (`Release` or `Debug`)      |
+| `-Version`       | `"1.0.0"`   | Version string embedded in the installer        |
+| `-SkipBuild`     | `$false`    | Switch to skip the build step and reuse existing publish directory |
 
-### Build Commands
+### Examples
 
-```bash
-# Build self-contained Linux executable
-dotnet publish native-app-wpf/CodeTutor.Wpf.csproj \
-  -c Release \
-  -r linux-x64 \
-  --self-contained true \
-  -p:PublishSingleFile=true \
-  -o publish-linux
+```powershell
+# Debug build (with symbols)
+.\build-installer.ps1 -Configuration Debug
 
-# Copy content
-cp -r content publish-linux/Content
-cp -r docs publish-linux/docs
-cp README.md publish-linux/
+# Skip build (use existing publish directory)
+.\build-installer.ps1 -SkipBuild
 
-# Create tarball for distribution
-cd publish-linux
-tar -czf ../dist/CodeTutor-Linux-x64-1.0.0.tar.gz .
-cd ..
-```
-
-### Create .deb Package (Debian/Ubuntu)
-
-```bash
-# Install dpkg-deb if needed
-sudo apt install dpkg-dev
-
-# Create package structure
-mkdir -p code-tutor_1.0.0_amd64/DEBIAN
-mkdir -p code-tutor_1.0.0_amd64/usr/local/bin
-mkdir -p code-tutor_1.0.0_amd64/usr/share/applications
-mkdir -p code-tutor_1.0.0_amd64/usr/share/code-tutor
-
-# Copy files
-cp publish-linux/CodeTutor code-tutor_1.0.0_amd64/usr/local/bin/code-tutor
-cp -r publish-linux/Content code-tutor_1.0.0_amd64/usr/share/code-tutor/
-cp -r publish-linux/docs code-tutor_1.0.0_amd64/usr/share/code-tutor/
-
-# Create control file
-cat > code-tutor_1.0.0_amd64/DEBIAN/control << EOF
-Package: code-tutor
-Version: 1.0.0
-Section: education
-Priority: optional
-Architecture: amd64
-Depends: libc6
-Maintainer: Code Tutor <support@example.com>
-Description: Interactive coding education platform
- Learn Python, JavaScript, Java, C#, and Rust through
- interactive lessons with real-time code execution.
-EOF
-
-# Build package
-dpkg-deb --build code-tutor_1.0.0_amd64
+# Custom version
+.\build-installer.ps1 -Version "2.0.0-beta"
 ```
 
 ---
 
-## 🍎 macOS Build (Self-Contained)
-
-### Prerequisites
-
-1. **.NET 8.0 SDK** - https://dotnet.microsoft.com/download/dotnet/8.0
-2. **Xcode Command Line Tools** (for code signing)
-
-### Build Commands
+## Manual Build (Without Script)
 
 ```bash
-# Build self-contained macOS executable
-dotnet publish native-app-wpf/CodeTutor.Wpf.csproj \
-  -c Release \
-  -r osx-x64 \
-  --self-contained true \
-  -p:PublishSingleFile=true \
-  -o publish-macos
+# 1. Build
+dotnet publish native-app-wpf/CodeTutor.Wpf.csproj -c Release -r win-x64 --self-contained -o publish
 
-# Copy content
-cp -r content publish-macos/Content
-cp -r docs publish-macos/docs
-cp README.md publish-macos/
+# 2. Copy content
+xcopy /E /I /Y content publish\Content
+xcopy /E /I /Y docs publish\docs
+copy README.md publish\
 
-# Create .app bundle
-mkdir -p CodeTutor.app/Contents/MacOS
-mkdir -p CodeTutor.app/Contents/Resources
-
-cp publish-macos/CodeTutor CodeTutor.app/Contents/MacOS/
-cp -r publish-macos/Content CodeTutor.app/Contents/Resources/
-cp -r publish-macos/docs CodeTutor.app/Contents/Resources/
-
-# Create Info.plist
-cat > CodeTutor.app/Contents/Info.plist << EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>CFBundleExecutable</key>
-    <string>CodeTutor</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.codetutor.app</string>
-    <key>CFBundleName</key>
-    <string>Code Tutor</string>
-    <key>CFBundleVersion</key>
-    <string>1.0.0</string>
-    <key>LSMinimumSystemVersion</key>
-    <string>10.15</string>
-</dict>
-</plist>
-EOF
-
-# Create DMG (requires hdiutil)
-hdiutil create -volname "Code Tutor" -srcfolder CodeTutor.app -ov -format UDZO dist/CodeTutor-macOS-1.0.0.dmg
+# 3. Create ZIP for distribution
+powershell Compress-Archive -Path publish\* -DestinationPath dist\CodeTutor-Portable-1.0.0.zip
 ```
 
 ---
 
-## 📦 Distribution Checklist
+## Distribution Checklist
 
 Before distributing your build:
 
@@ -226,7 +147,7 @@ Before distributing your build:
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### "dotnet not found"
 **Solution**: Install .NET 8.0 SDK from https://dotnet.microsoft.com/download
@@ -242,12 +163,6 @@ Before distributing your build:
 ### Installer too large
 **Solution**: The self-contained build includes the .NET runtime (~60-80 MB). This is normal and ensures the app works without requiring .NET installation.
 
-To reduce size, use framework-dependent deployment (requires .NET 8.0 installed):
-```powershell
-.\build-installer.ps1 -SelfContained $false
-```
-(Not recommended for end-user distribution)
-
 ### Code execution fails after installation
 **Checklist**:
 - [ ] Check if language runtime is installed (python, node, java, etc.)
@@ -256,61 +171,9 @@ To reduce size, use framework-dependent deployment (requires .NET 8.0 installed)
 
 ---
 
-## 📝 Advanced Options
+## Platform-Specific Notes
 
-### Custom Build Configuration
-
-```powershell
-# Debug build (with symbols)
-.\build-installer.ps1 -Configuration Debug
-
-# Skip build (use existing publish directory)
-.\build-installer.ps1 -SkipBuild
-
-# Custom version
-.\build-installer.ps1 -Version "2.0.0-beta"
-```
-
-### Manual Build (Without Script)
-
-```bash
-# 1. Build
-dotnet publish native-app-wpf/CodeTutor.Wpf.csproj -c Release -r win-x64 --self-contained -o publish
-
-# 2. Copy content
-xcopy /E /I /Y content publish\Content
-xcopy /E /I /Y docs publish\docs
-copy README.md publish\
-
-# 3. Create ZIP for distribution
-powershell Compress-Archive -Path publish\* -DestinationPath dist\CodeTutor-Portable-1.0.0.zip
-```
-
----
-
-## 🌐 Platform-Specific Notes
-
-### Windows
 - **Target**: Windows 10 (1809) or later
 - **Architecture**: x64 (64-bit)
 - **Runtime**: Self-contained (no .NET installation required)
 - **Installer**: Inno Setup creates Start Menu + Desktop shortcuts
-
-### Linux
-- **Target**: Ubuntu 20.04+ / Debian 11+ / Fedora 36+
-- **Architecture**: x64
-- **Distribution**: .tar.gz or .deb package
-
-### macOS
-- **Target**: macOS 10.15 (Catalina) or later
-- **Architecture**: x64 (Intel) or arm64 (Apple Silicon)
-- **Distribution**: .dmg or .app bundle
-- **Note**: Code signing required for Gatekeeper bypass
-
----
-
-## 📞 Support
-
-**Build Issues**: Check TROUBLESHOOTING.md or create an issue on GitHub
-
-**Distribution Questions**: See CONTRIBUTING.md for release guidelines
