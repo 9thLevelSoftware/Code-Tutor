@@ -80,12 +80,13 @@ public class CodeExecutionService : ICodeExecutionService
         var errorBuilder = new System.Text.StringBuilder();
         var tcs = new TaskCompletionSource<int>();
 
-        try 
+        try
         {
             using var session = await StartInteractiveSessionAsync(code, language);
             session.OutputReceived += (s, data) => outputBuilder.Append(data);
             session.ErrorReceived += (s, data) => errorBuilder.Append(data);
             session.Exited += (s, code) => tcs.TrySetResult(code);
+            session.Start();
 
             // Wait for exit or timeout
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
@@ -115,11 +116,11 @@ public class CodeExecutionService : ICodeExecutionService
         return langLower switch
         {
             "python" => await StartLocalSessionAsync("python", code, ".py", "-u"), // -u for unbuffered output
-            "javascript" or "js" => await StartLocalSessionAsync("node", code, ".js", "--interactive"), // node interactive might need care, usually just running script is fine
+            "javascript" or "js" => await StartLocalSessionAsync("node", code, ".js"), // run script file directly
             "java" => await StartJavaSessionAsync(code),
-            "kotlin" => await StartLocalSessionAsync("kotlinc", code, ".kts", "-script"),
+            "kotlin" => await StartLocalSessionAsync("kotlin", code, ".kts"), // kotlin runs .kts scripts directly
             // "rust" => await StartRustSessionAsync(code), // Needs compilation step first
-            "dart" or "flutter" => await StartLocalSessionAsync("dart", code, ".dart", "run"),
+            "dart" or "flutter" => await StartLocalSessionAsync("dart", code, ".dart"), // dart runs .dart files directly without 'run' subcommand
             _ => throw new NotSupportedException($"Interactive mode not supported for '{language}'")
         };
     }
@@ -156,7 +157,7 @@ public class CodeExecutionService : ICodeExecutionService
         
         process.EnableRaisingEvents = true;
 
-        return new InteractiveProcessSession(process);
+        return new InteractiveProcessSession(process, tempFilePath: tempFile);
     }
 
     private async Task<IInteractiveSession> StartJavaSessionAsync(string code)
@@ -209,6 +210,6 @@ public class CodeExecutionService : ICodeExecutionService
         if (process == null) throw new Exception("Failed to start Java process");
         process.EnableRaisingEvents = true;
 
-        return new InteractiveProcessSession(process);
+        return new InteractiveProcessSession(process, tempDirPath: tempDir);
     }
 }
