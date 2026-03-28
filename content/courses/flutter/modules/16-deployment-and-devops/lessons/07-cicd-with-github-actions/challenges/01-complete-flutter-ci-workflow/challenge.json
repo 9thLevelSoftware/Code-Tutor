@@ -1,6 +1,8 @@
 {
   "type": "CODE",
   "id": "16.7-challenge-0",
+  "lessonId": "lesson-16-07",
+  "order": 1,
   "title": "Complete Flutter CI Workflow",
   "description": "Create a GitHub Actions workflow that runs tests and static analysis on pull requests.",
   "instructions": "Complete the Flutter CI workflow configuration. The workflow should:\n\n1. Trigger on pull requests to the main branch\n2. Use Flutter version 3.24.0 with caching enabled\n3. Check code formatting with dart format\n4. Run static analysis with flutter analyze\n5. Execute all tests with coverage reporting\n6. Upload coverage results to Codecov",

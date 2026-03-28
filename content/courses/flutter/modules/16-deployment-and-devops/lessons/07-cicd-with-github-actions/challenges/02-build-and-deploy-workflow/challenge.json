@@ -1,6 +1,8 @@
 {
   "type": "CODE",
   "id": "16.7-challenge-1",
+  "lessonId": "lesson-16-07",
+  "order": 2,
   "title": "Build and Deploy Workflow",
   "description": "Create a workflow that builds Android APK and deploys to Play Store internal track.",
   "instructions": "Complete the deployment workflow that:\n\n1. Triggers when a version tag (v*) is pushed\n2. Decodes the keystore from a base64 secret\n3. Builds a signed release APK using environment variables for signing\n4. Uploads the APK as an artifact with 14-day retention\n5. Deploys to Google Play Store internal track using the upload action",
