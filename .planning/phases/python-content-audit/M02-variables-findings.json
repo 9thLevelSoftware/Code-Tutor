@@ -1,0 +1,61 @@
+{
+  "course": "python",
+  "module": "02-variables",
+  "moduleTitle": "Variables",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/02-variables/lessons/01-the-labeled-box-variables-explained",
+      "lessonTitle": "The Labeled Box (Variables Explained)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/02-variables/lessons/02-different-kinds-of-boxes-data-types-strings-integers-floats",
+      "lessonTitle": "Different Kinds of Boxes (Data Types: Strings, Integers, Floats)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/02-variables/lessons/03-converting-between-data-types-type-conversion-casting",
+      "lessonTitle": "Converting Between Data Types (Type Conversion & Casting)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/02-variables/lessons/04-box-math-basic-operators",
+      "lessonTitle": "Box Math: Basic Operators",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/02-variables/lessons/05-mini-project-simple-calculator",
+      "lessonTitle": "Mini-Project: Simple Calculator",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}
