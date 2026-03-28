@@ -3,6 +3,8 @@
   "id": "lesson-15-02-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-15-02",
+  "order": 1,
   "instructions": "Create tests with mocks for an OrderService!\n\n1. Define interfaces:\n   - IInventoryService: bool CheckStock(string productId, int quantity)\n   - IPaymentService: bool ProcessPayment(decimal amount)\n\n2. Create OrderService class:\n   - Constructor takes IInventoryService and IPaymentService\n   - Method: PlaceOrder(string productId, int quantity, decimal price)\n   - Returns true if stock available AND payment succeeds\n   - Returns false if no stock OR payment fails\n\n3. Write tests using Moq:\n   - Test successful order (stock OK, payment OK)\n   - Test failed order (no stock)\n   - Test failed order (payment fails)\n   - Verify each service was called correctly\n\nUse Setup(), Returns(), Verify()!",
   "language": "csharp",
   "testCases": [

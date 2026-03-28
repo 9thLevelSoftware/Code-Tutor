@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "13.6-challenge-0",
+  "lessonId": "lesson-14-06",
+  "order": 1,
   "title": "Write Login Flow Integration Test",
   "description": "Create an integration test for a complete login flow.",
   "instructions": "Test the login flow: enter email, enter password, tap login, verify navigation to home.",

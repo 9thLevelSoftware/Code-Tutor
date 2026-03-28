@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "13.3-challenge-1",
+  "lessonId": "lesson-13-03",
+  "order": 1,
   "title": "Build a Task Table",
   "description": "Create a Drift table for tasks with proper column types.",
   "instructions": "Define a Tasks table with: id (auto-increment), title (required, max 100 chars), description (optional), isCompleted (default false), dueDate (optional), priority (default 0), createdAt (default now).",

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.9-challenge-1",
+  "lessonId": "lesson-15-09",
+  "order": 2,
   "title": "Build Language Switcher",
   "description": "Create a language switcher widget that allows users to change the app's locale.",
   "instructions": "Build a LanguageSwitcher widget that: (1) Shows a dropdown or list of available languages, (2) Displays language names in their native form (English, Espanol, etc.), (3) Indicates the currently selected language, (4) Notifies parent widget when selection changes. Use a callback to communicate the selected locale.",

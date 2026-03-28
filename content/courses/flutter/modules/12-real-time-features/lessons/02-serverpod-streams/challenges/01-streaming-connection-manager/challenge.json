@@ -1,24 +1,25 @@
 {
-  "id": "11.2-challenge-0",
+  "type": "CODE",
+  "id": "12.2-challenge-1",
   "title": "Streaming Connection Manager",
-  "description": "Build a connection manager that handles the complete streaming lifecycle.",
-  "instructions": "Create a StreamingConnectionManager class that:\n\n1. Opens and maintains a streaming connection\n2. Tracks connection state (disconnected, connecting, connected, reconnecting)\n3. Implements automatic reconnection with exponential backoff\n4. Exposes a stream of connection state changes\n5. Properly disposes all resources\n\nRequirements:\n- Maximum 5 reconnection attempts\n- Backoff delays: 1s, 2s, 4s, 8s, 16s\n- Expose connectionState as a Stream\n- Include a manual reconnect() method\n- Cancel all timers and subscriptions in dispose()",
-  "type": "implementation",
-  "expectedOutput": "A fully functional StreamingConnectionManager that handles connection lifecycle with automatic reconnection using exponential backoff.",
+  "description": "Create a robust connection manager for Serverpod streams that handles reconnection and error states.",
+  "lessonId": "lesson-12-02",
+  "order": 1,
+  "instructions": "Build a StreamConnectionManager class that:\n\n1. Manages the lifecycle of a Serverpod stream:\n   - Connect to a streaming endpoint\n   - Monitor connection health\n   - Auto-reconnect on failure with exponential backoff\n   - Track connection state (connecting, connected, disconnected, error)\n\n2. Provide connection state to UI:\n   - Expose connection status as a stream\n   - Show appropriate UI based on state (loading spinner, connected indicator, retry button)\n\n3. Handle cleanup:\n   - Properly dispose streams when no longer needed\n   - Cancel reconnect timers on dispose\n\nUse this pattern for managing chat stream connections.",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use a StreamController<ConnectionState> to expose the connection state as a stream."
+      "text": "Use a StreamController to broadcast connection state changes to listeners."
     },
     {
       "level": 2,
-      "text": "Calculate exponential backoff delay with: Duration(seconds: 1 << (attempts - 1)) where attempts starts at 1."
+      "text": "Implement exponential backoff: start with 1 second, double each retry up to a max (e.g., 30s)."
     },
     {
       "level": 3,
-      "text": "Store the Timer reference so you can cancel it in dispose() and when a new reconnection is scheduled."
+      "text": "Reset the backoff timer when connection is manually re-established (user action)."
     }
   ]
 }

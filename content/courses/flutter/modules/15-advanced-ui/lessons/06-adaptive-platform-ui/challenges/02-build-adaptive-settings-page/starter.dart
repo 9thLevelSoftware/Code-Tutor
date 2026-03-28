@@ -16,24 +16,24 @@ class _AdaptiveSettingsPageState extends State<AdaptiveSettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Return CupertinoPageScaffold on iOS, Scaffold on Android
-    // TODO: Include platform-appropriate app bar
-    // TODO: Build settings list with adaptive switches
-    // TODO: Add logout button with confirmation dialog
+    // Return CupertinoPageScaffold on iOS, Scaffold on Android
+    // Include platform-appropriate app bar
+    // Build settings list with adaptive switches
+    // Add logout button with confirmation dialog
     return Container();
   }
 
   Widget _buildSettingsContent() {
-    // TODO: Build the settings list content
+    // Build the settings list content below
     return Container();
   }
 
   Widget _buildSwitch(bool value, ValueChanged<bool> onChanged) {
-    // TODO: Return CupertinoSwitch or Switch based on platform
+    // Return CupertinoSwitch or Switch based on platform below
     return Container();
   }
 
   Future<void> _showLogoutConfirmation() async {
-    // TODO: Show platform-appropriate confirmation dialog
+    // Show platform-appropriate confirmation dialog here
   }
 }

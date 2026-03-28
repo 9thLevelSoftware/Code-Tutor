@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
-  "id": "12.7-quiz-1",
+  "id": "13.7-quiz-1",
+  "lessonId": "lesson-13-07",
+  "order": 2,
   "title": "Offline-First Architecture",
   "description": "Final assessment of offline-first concepts.",
   "questions": [

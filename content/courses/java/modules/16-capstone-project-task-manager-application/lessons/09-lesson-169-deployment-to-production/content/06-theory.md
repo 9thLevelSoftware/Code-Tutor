@@ -131,3 +131,13 @@ Monitoring Checklist:
 - Error rate under 1%
 - Memory usage stable (no leaks)
 - Disk space adequate
+
+## Pre-Deployment Security Checklist
+
+- [ ] Change default database passwords
+- [ ] Set strong JWT secret (256+ bit random string)
+- [ ] Configure CORS for production domain only
+- [ ] Enable HTTPS (never deploy with HTTP)
+- [ ] Review environment variables (no secrets in code)
+- [ ] Enable Spring Boot actuator security
+- [ ] Set up application logging

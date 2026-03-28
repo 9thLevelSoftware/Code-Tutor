@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-10-03-challenge-01",
+  "lessonId": "lesson-10-03",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build a download manager with Task<T>!\n\n1. Create 'async Task<int> DownloadFileAsync(string filename, int sizeKB)':\n   - Print 'Downloading [filename] ([sizeKB]KB)...'\n   - await Task.Delay(sizeKB * 10) to simulate download (bigger = slower)\n   - Print '[filename] complete!'\n   - Return sizeKB\n\n2. In main code:\n   - Start 4 downloads simultaneously (different sizes: 50KB, 150KB, 100KB, 200KB)\n   - Store in List<Task<int>>\n   - Use Task.WhenAll to wait for ALL downloads\n   - Sum the results to get total KB downloaded\n   - Calculate and display total MB (KB / 1024.0)\n\n3. BONUS: Use Task.WhenAny to detect which file finishes FIRST",

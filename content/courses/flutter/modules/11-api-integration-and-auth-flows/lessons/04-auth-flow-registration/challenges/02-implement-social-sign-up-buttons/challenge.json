@@ -2,22 +2,24 @@
   "type": "CODE",
   "id": "11.4-challenge-2",
   "title": "Implement Social Sign-Up Buttons",
-  "description": "Add Google and Apple sign-up options to the registration screen with proper platform detection and error handling.",
-  "instructions": "Extend the registration screen to include social sign-up options:\n\n1. Add Google Sign-Up button that works on both iOS and Android\n2. Add Apple Sign-Up button that only appears on iOS devices\n3. Create a divider between social buttons and email form saying \"or register with email\"\n4. Handle the different OAuth flows for each provider\n5. Store the tokens securely after successful social auth\n6. Handle cancellation and errors gracefully\n\nNote: You do not need to implement the actual OAuth logic - focus on the UI structure and placeholder methods.",
+  "description": "Add Google and Apple Sign-In buttons to the registration flow.",
+  "lessonId": "lesson-11-04",
+  "order": 2,
+  "instructions": "Extend the registration screen with social sign-up options:\n\n1. Create SocialSignUpButtons widget that displays:\n   - 'Sign up with Google' button (with Google logo)\n   - 'Sign up with Apple' button (with Apple logo, iOS only)\n   - Proper error handling for each provider\n\n2. Implement the sign-up flow:\n   - User taps button → authenticate with provider\n   - On success, send token to your Serverpod backend\n   - Backend verifies token and creates/returns user account\n   - Navigate to home screen on success\n\n3. Handle edge cases:\n   - User already has account with this email (link accounts or show login)\n   - User cancels the sign-in flow\n   - Network errors during token exchange",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Import 'dart:io' to access Platform.isIOS for conditional rendering."
+      "text": "Use the google_sign_in and sign_in_with_apple packages. Remember Apple Sign-In is required if you have any other social login."
     },
     {
       "level": 2,
-      "text": "Use OutlinedButton for Google (matches their branding guidelines) and FilledButton with black background for Apple."
+      "text": "After getting the auth credential, pass the ID token to your Serverpod backend for verification."
     },
     {
       "level": 3,
-      "text": "Check for 'canceled' in error messages to distinguish user cancellation from actual errors."
+      "text": "For account linking, check if the email already exists. If so, offer to link the social account to the existing account."
     }
   ]
 }

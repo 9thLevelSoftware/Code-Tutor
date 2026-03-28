@@ -20,11 +20,11 @@ class AccessibleModal extends StatefulWidget {
 }
 
 class _AccessibleModalState extends State<AccessibleModal> {
-  // TODO: Add FocusScopeNode for focus trapping
+  // Add FocusScopeNode for focus trapping here
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Implement accessible modal
+    // Implement accessible modal below
     // 1. Use FocusScope to trap focus
     // 2. Handle Escape key to close
     // 3. Auto-focus first button

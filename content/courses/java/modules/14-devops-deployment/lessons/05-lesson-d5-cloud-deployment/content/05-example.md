@@ -1,13 +1,13 @@
 ---
 type: "EXAMPLE"
-title: "GitHub Actions + Railway"
+title: "GitHub Actions + Fly.io"
 ---
 
 Automated deployment from GitHub Actions:
 
 ```yaml
 # .github/workflows/deploy.yml
-name: Deploy to Railway
+name: Deploy to Fly.io
 
 on:
   push:
@@ -24,6 +24,7 @@ jobs:
           java-version: '25'
           distribution: 'temurin'
           cache: 'maven'
+          cache-dependency-path: '**/pom.xml'
       
       - name: Run tests
         run: ./mvnw verify
@@ -35,22 +36,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
+      - name: Install Fly.io CLI
+        run: |
+          curl -L https://fly.io/install.sh | sh
+          echo "$HOME/.fly/bin" >> $GITHUB_PATH
       
-      - name: Deploy to Railway
-        run: railway up --service ${{ vars.RAILWAY_SERVICE_ID }}
+      - name: Deploy to Fly.io
+        run: fly deploy --remote-only
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
-# How to get RAILWAY_TOKEN:
-# 1. Go to railway.app/account/tokens
-# 2. Generate a new token
-# 3. Add to GitHub repo secrets as RAILWAY_TOKEN
-
-# How to get RAILWAY_SERVICE_ID:
-# 1. In Railway dashboard, click your service
-# 2. Go to Settings
-# 3. Copy the Service ID
-# 4. Add to GitHub repo variables as RAILWAY_SERVICE_ID
+# How to get FLY_API_TOKEN:
+# 1. Run: fly tokens create deploy -x 999d
+# 2. Copy the token
+# 3. Add to GitHub repo secrets as FLY_API_TOKEN
 ```
+
+**Note:** Railway discontinued their free tier in 2024. This example now uses Fly.io which offers a generous free tier with 256MB RAM and 3GB transfer per month.

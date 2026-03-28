@@ -1,6 +1,8 @@
 {
   "type": "CODE",
   "id": "16.6-challenge-1",
+  "lessonId": "lesson-16-06",
+  "order": 2,
   "title": "Production Dockerfile Optimization",
   "description": "Create an optimized multi-stage Dockerfile for a Dart backend with security best practices.",
   "instructions": "Complete the production Dockerfile for a Serverpod backend. Your Dockerfile should:\n\n1. Use multi-stage builds to minimize final image size\n2. Create a non-root user called 'appuser' for security\n3. Include a HEALTHCHECK instruction\n4. Copy only the compiled server binary and necessary config files\n5. Set appropriate environment variables for production",

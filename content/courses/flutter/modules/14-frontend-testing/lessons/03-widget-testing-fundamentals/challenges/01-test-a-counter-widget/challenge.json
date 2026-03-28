@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "13.3-challenge-0",
+  "lessonId": "lesson-14-03",
+  "order": 1,
   "title": "Test a Counter Widget",
   "description": "Write widget tests for a simple counter screen.",
   "instructions": "Test that the counter displays 0 initially, increments when + is tapped, and decrements when - is tapped.",

@@ -11,6 +11,6 @@ title: "Common Pitfalls"
 
 **JavaScript habits**: Don't look for .js files or write onclick="function()". Blazor uses @onclick="CSharpMethod" - all interactivity is C#!
 
-**Render mode required**: In .NET 8+, components need a render mode for interactivity. Without @rendermode, @onclick won't work! Static SSR has no interactivity.
+**Render mode required**: In .NET 9+, components need a render mode for interactivity. Without @rendermode, @onclick won't work! Static SSR has no interactivity.
 
 **Hot Reload limitations**: Some changes require app restart. Adding new components or changing namespaces won't Hot Reload - restart the app.

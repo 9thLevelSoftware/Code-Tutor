@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.9-challenge-0",
+  "lessonId": "lesson-18-09",
+  "order": 1,
   "title": "Voice Message Recording",
   "description": "Implement a hold-to-record voice message feature with waveform visualization during recording and playback controls in the chat.",
   "instructions": "Build a comprehensive voice message system:\n\n1. Create a hold-to-record button that starts recording on press and stops on release\n2. Show a recording indicator with elapsed time and waveform visualization\n3. Implement a cancel gesture by swiping left while holding\n4. Display voice messages with waveform preview and duration\n5. Add playback controls with progress indicator and play/pause button\n6. Support audio focus management (pause other audio when playing)\n7. Handle microphone permissions properly",

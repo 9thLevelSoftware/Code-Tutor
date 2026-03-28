@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.5-challenge-0",
+  "lessonId": "lesson-15-05",
+  "order": 1,
   "title": "Responsive Product Grid",
   "description": "Build a product grid that adapts its column count based on available width.",
   "instructions": "Create a ProductGrid widget that displays product cards in a grid. Use LayoutBuilder to calculate the number of columns: 1 column for width < 400px, 2 columns for width < 700px, 3 columns for width < 1000px, and 4 columns for larger widths. Each product card should show an image placeholder, title, and price. The grid should have 16px spacing between items.",

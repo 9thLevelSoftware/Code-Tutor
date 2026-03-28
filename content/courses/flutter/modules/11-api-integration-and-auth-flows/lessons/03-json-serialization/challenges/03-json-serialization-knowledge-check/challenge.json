@@ -3,6 +3,8 @@
   "id": "11.3-quiz-1",
   "title": "JSON Serialization Knowledge Check",
   "description": "Test your understanding of JSON serialization patterns in Dart.",
+  "lessonId": "lesson-11-03",
+  "order": 3,
   "questions": [
     {
       "id": "q1",

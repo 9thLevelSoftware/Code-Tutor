@@ -1,6 +1,6 @@
 using System;
 
-Console.WriteLine("=== BLAZOR RENDERING MODES (.NET 8) ===");
+Console.WriteLine("=== BLAZOR RENDERING MODES (.NET 9) ===");
 
 Console.WriteLine("\n1. STATIC SSR (Server-Side Rendering)");
 Console.WriteLine("   Use case: Product catalog, blog posts");
@@ -15,6 +15,6 @@ Console.WriteLine("Feature          | Server  | WASM    | Auto");
 Console.WriteLine("-----------------|---------|---------|--------");
 // Fill in comparison
 
-Console.WriteLine("\n=== .NET 8 CONFIGURATION ===");
+Console.WriteLine("\n=== .NET 9 CONFIGURATION ===");
 Console.WriteLine("builder.Services.AddRazorComponents()");
 // Show configuration

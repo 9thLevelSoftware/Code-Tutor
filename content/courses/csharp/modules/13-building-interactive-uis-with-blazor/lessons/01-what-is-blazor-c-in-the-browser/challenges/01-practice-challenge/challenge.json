@@ -3,6 +3,8 @@
   "id": "lesson-13-01-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-13-01",
+  "order": 1,
   "instructions": "Create your first Blazor component!\n\n1. Create a 'Greeting' component structure:\n   - Title: \"Welcome to Blazor!\"\n   - Display current year using @DateTime.Now.Year\n   - Input field for user's name\n   - Button \"Greet Me\"\n   - When clicked, display \"Hello, [name]! Welcome to Blazor!\"\n\n2. Component should have:\n   - HTML markup section\n   - @code block with:\n     - string name field\n     - string greeting field\n     - GreetUser() method that sets greeting\n\n3. Print the complete component structure\n\nThis demonstrates Blazor's syntax and interactivity!",
   "language": "csharp",
   "testCases": [

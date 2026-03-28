@@ -13,12 +13,12 @@ class CustomPageRoute<T> extends PageRouteBuilder<T> {
     required this.page,
     this.type = TransitionType.fade,
   }) : super(
-    // TODO: Configure pageBuilder
-    // TODO: Configure transitionDuration
-    // TODO: Configure transitionsBuilder based on type
+    // Configure pageBuilder here
+    // Configure transitionDuration here
+    // Configure transitionsBuilder based on type
     pageBuilder: (context, animation, secondaryAnimation) => page,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      // TODO: Return appropriate transition widget based on type
+      // Return appropriate transition widget based on type
       return child;
     },
   );
@@ -28,7 +28,7 @@ class CustomPageRoute<T> extends PageRouteBuilder<T> {
 class TransitionDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: Create buttons that navigate with different transition types
+    // Create buttons that navigate with different transition types below
     return Container();
   }
 }

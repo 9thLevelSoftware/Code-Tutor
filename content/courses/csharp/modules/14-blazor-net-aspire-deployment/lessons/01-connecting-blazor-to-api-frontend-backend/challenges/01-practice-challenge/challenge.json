@@ -3,6 +3,8 @@
   "id": "lesson-14-01-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-14-01",
+  "order": 1,
   "instructions": "Build a full-stack Todo app!\n\n1. API (backend):\n   - Todo model (Id, Title, IsCompleted)\n   - GET /api/todos (list all)\n   - POST /api/todos (create)\n   - PUT /api/todos/{id} (update)\n   - DELETE /api/todos/{id} (delete)\n   - Use in-memory list\n\n2. Blazor component (frontend):\n   - Inject HttpClient\n   - OnInitializedAsync: load todos\n   - Display list with checkboxes\n   - Input to add new todo\n   - Delete button for each\n   - Handle loading and errors\n\n3. Print both API and Blazor code!\n\nThis is your first full-stack app!",
   "language": "csharp",
   "testCases": [

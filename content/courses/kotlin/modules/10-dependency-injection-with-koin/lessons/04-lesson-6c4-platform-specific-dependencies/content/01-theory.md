@@ -27,6 +27,8 @@ actual fun getPlatformSettings(): AppSettings =
     AndroidSettings(context)
 
 // iosMain/kotlin/IOSSettings.kt
+import platform.Foundation.*  // Required for NSUserDefaults
+
 actual fun getPlatformSettings(): AppSettings = 
     IOSSettings(NSUserDefaults.standardUserDefaults)
 ```

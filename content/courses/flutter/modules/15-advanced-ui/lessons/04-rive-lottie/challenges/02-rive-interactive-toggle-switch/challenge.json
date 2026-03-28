@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.4-challenge-1",
+  "lessonId": "lesson-15-04",
+  "order": 2,
   "title": "Rive Interactive Toggle Switch",
   "description": "Create an animated toggle switch using Rive state machines.",
   "instructions": "Build a RiveToggle widget that uses a Rive animation with a state machine. The toggle should have an 'isOn' boolean input in its state machine. When tapped, toggle the state and update the Rive input. The widget should accept an initial value and notify parent of changes via callback. Handle the onInit to find and store the SMIBool input reference.",

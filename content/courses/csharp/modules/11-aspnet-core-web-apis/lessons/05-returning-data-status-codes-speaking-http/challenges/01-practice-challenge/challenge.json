@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-11-05-challenge-01",
+  "lessonId": "lesson-11-05",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build a Product API with proper status codes and validation!\n\n1. Create 'Product' class (Id, Name, Price, Stock)\n\n2. Create endpoints with PROPER status codes:\n\n   GET /api/products -> 200 OK with all products\n   \n   GET /api/products/{id} -> 200 OK if found, 404 if not\n   \n   POST /api/products -> Validate:\n     - Name required (400 if missing)\n     - Price must be > 0 (400 if not)\n     - Stock must be >= 0 (400 if negative)\n     - If valid: 201 Created with location\n   \n   PUT /api/products/{id} -> Validate same as POST:\n     - 404 if product not found\n     - 400 if validation fails\n     - 200 OK with updated product if success\n   \n   DELETE /api/products/{id} -> 404 if not found, 204 if deleted\n\n3. Return helpful error messages for 400 responses!",

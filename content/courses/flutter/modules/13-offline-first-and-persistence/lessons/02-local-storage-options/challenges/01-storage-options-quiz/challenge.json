@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
-  "id": "12.2-quiz-1",
+  "id": "13.2-quiz-1",
+  "lessonId": "lesson-13-02",
+  "order": 1,
   "title": "Storage Options Quiz",
   "description": "Choose the right storage solution for different scenarios.",
   "questions": [

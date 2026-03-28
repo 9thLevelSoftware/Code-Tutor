@@ -4,5 +4,6 @@
   "moduleId": "module-13",
   "order": 5,
   "estimatedMinutes": 15,
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "topics": ["Blazor", "Events", "Event Handling", "@onclick", "@onchange", "Interactive"]
 }

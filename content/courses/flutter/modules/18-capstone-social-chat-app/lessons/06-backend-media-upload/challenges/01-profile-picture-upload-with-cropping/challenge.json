@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.6-challenge-0",
+  "lessonId": "lesson-18-06",
+  "order": 1,
   "title": "Profile Picture Upload with Cropping",
   "description": "Implement a profile picture upload system with client-side crop coordinates and server-side processing.",
   "instructions": "Create a profile picture upload endpoint that:\n\n1. Accepts an image with optional crop coordinates (x, y, width, height)\n2. Validates the image type and size\n3. Applies server-side cropping if coordinates provided\n4. Generates square profile picture sizes (64, 128, 256, 512)\n5. Replaces and deletes the user's old profile picture\n6. Updates the user profile with new avatar URLs\n7. Returns the updated user profile with all avatar sizes",

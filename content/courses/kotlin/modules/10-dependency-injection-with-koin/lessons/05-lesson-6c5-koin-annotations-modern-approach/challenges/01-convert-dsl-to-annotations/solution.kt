@@ -1,5 +1,38 @@
 import org.koin.core.annotation.*
 
+// ========== Required Setup ==========
+// Add to gradle/libs.versions.toml:
+// [versions]
+// koin = "4.1.1"
+// ksp = "2.3.4"
+//
+// [libraries]
+// koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin" }
+// koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin" }
+//
+// [plugins]
+// ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+//
+// Add to shared/build.gradle.kts:
+// plugins {
+//     alias(libs.plugins.ksp)
+// }
+//
+// kotlin {
+//     sourceSets {
+//         commonMain.dependencies {
+//             implementation(libs.koin.annotations)
+//         }
+//     }
+// }
+//
+// dependencies {
+//     add("kspCommonMainMetadata", libs.koin.ksp.compiler)
+//     add("kspAndroid", libs.koin.ksp.compiler)
+//     add("kspIosArm64", libs.koin.ksp.compiler)
+//     add("kspIosSimulatorArm64", libs.koin.ksp.compiler)
+// }
+
 // Module declaration
 @Module
 @ComponentScan("com.example.app.user")
@@ -64,4 +97,4 @@ class UserProfileViewModel(
 )
 
 // Usage in startKoin:
-// modules(UserModuleModule().module)
+// modules(UserModule().module)

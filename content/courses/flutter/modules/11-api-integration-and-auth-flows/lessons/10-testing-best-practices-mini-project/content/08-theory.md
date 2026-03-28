@@ -143,7 +143,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
+          flutter-version: '3.38.0'
 
       - name: Install dependencies
         run: flutter pub get
@@ -152,7 +152,7 @@ jobs:
         run: ./scripts/run_all_tests.sh
 
       - name: Upload coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: coverage/lcov.info
 ```

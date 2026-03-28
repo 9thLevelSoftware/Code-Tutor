@@ -12,7 +12,7 @@ TRADITIONAL HOSTING (VPS):
 - Good for: Learning Linux, complex setups
 
 PLATFORM AS A SERVICE (PaaS):
-- Railway, Heroku, Render, Fly.io
+- Fly.io, Heroku, Render
 - Upload code, platform handles the rest
 - Less control, less work
 - Good for: Getting started, MVPs, side projects
@@ -30,9 +30,10 @@ SERVERLESS:
 - Good for: Event-driven, low-traffic apps
 
 FOR LEARNING:
-We'll use Railway because:
-- Free tier for hobby projects
-- Git-based deployments
+We'll use Fly.io because:
+- Generous free tier (256MB RAM, 3GB transfer/month)
+- Docker-based and Git-based deployments
 - Automatic HTTPS
-- Easy PostgreSQL addon
+- Easy PostgreSQL support
 - No credit card required to start
+- Note: Railway discontinued their free tier in 2024. This lesson now uses Fly.io.

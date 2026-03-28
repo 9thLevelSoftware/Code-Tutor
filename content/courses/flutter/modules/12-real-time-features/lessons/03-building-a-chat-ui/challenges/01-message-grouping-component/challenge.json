@@ -1,24 +1,25 @@
 {
-  "id": "11.3-challenge-0",
+  "type": "CODE",
+  "id": "12.3-challenge-1",
   "title": "Message Grouping Component",
-  "description": "Build a message grouping system that visually clusters consecutive messages from the same sender.",
-  "instructions": "Create a MessageGroup widget that groups consecutive messages from the same sender:\n\n1. Only show the sender's avatar on the first message of a group\n2. Only show the sender's name on the first message of a group\n3. Reduce spacing between messages in the same group\n4. Show the timestamp only on the last message of a group\n5. Apply different border radius to first, middle, and last messages in a group\n\nRequirements:\n- Create a method to determine message position in group (first, middle, last, only)\n- Apply appropriate styling based on position\n- Handle edge cases (single message groups, different senders)\n- Use proper padding/margins for visual grouping",
-  "type": "implementation",
-  "expectedOutput": "A complete message grouping system that creates visually connected message clusters with appropriate styling for each position in the group.",
+  "description": "Build a chat message list that intelligently groups messages by sender and time.",
+  "lessonId": "lesson-12-03",
+  "order": 1,
+  "instructions": "Create a ChatMessageList widget that:\n\n1. Groups consecutive messages from the same sender:\n   - Show sender avatar only on the first message in a group\n   - Show timestamp only on the last message (or first if group has 1 message)\n   - Messages within 2 minutes of each other are grouped\n\n2. Different styling for sent vs received:\n   - Sent messages: right-aligned, primary color background\n   - Received messages: left-aligned, neutral background\n\n3. Features:\n   - Auto-scroll to bottom when new messages arrive\n   - 'Scroll to bottom' button when user scrolls up\n   - Pull-to-refresh to load older messages\n   - Smooth animations when new messages appear\n\nUse ListView.builder for performance with long chat histories.",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "A message is 'first' if the previous message is from a different sender or doesn't exist, and the next message is from the same sender."
+      "text": "Create a MessageGroup class that holds consecutive messages from one sender."
     },
     {
       "level": 2,
-      "text": "Use BorderRadius.only() to create different corner radii for each position. For sent messages, modify the bottom-right corner; for received, modify the bottom-left."
+      "text": "Use itemBuilder to determine if a message is first, last, or middle in its group and style accordingly."
     },
     {
       "level": 3,
-      "text": "The padding between grouped messages should be smaller (2-4px) than between separate groups (8-12px). Use position to determine the appropriate EdgeInsets."
+      "text": "Use AnimatedList or add a fade-in animation to new messages for a polished feel."
     }
   ]
 }

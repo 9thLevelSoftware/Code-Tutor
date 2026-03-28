@@ -33,6 +33,6 @@ Blazor lets you:
 Two main hosting models:
 1. Blazor Server - C# runs on server, UI updates over SignalR
 2. Blazor WebAssembly - C# runs IN BROWSER via WebAssembly
-3. Blazor Auto (.NET 8) - Best of both!
+3. Blazor Auto (.NET 9) - Best of both!
 
 Think: Blazor = 'Build modern web apps with C#, not JavaScript!'

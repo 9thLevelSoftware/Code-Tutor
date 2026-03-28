@@ -37,6 +37,8 @@ class AndroidFileStorage(private val context: Context) : FileStorage {
 
 ```kotlin
 // iosMain/kotlin/platform/FileStorage.ios.kt
+import platform.Foundation.*  // Required for NSFileManager, NSData, etc.
+
 class IOSFileStorage : FileStorage {
     private val fileManager = NSFileManager.defaultManager
     private val documentsDir = NSSearchPathForDirectoriesInDomains(

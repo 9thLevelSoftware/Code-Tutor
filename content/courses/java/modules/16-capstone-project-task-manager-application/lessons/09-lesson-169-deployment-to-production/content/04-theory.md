@@ -54,7 +54,7 @@ secrets/
 
 Secure Secret Storage in Production:
 
-1. Railway/Heroku: Add in dashboard under Environment Variables
+1. Fly.io/Heroku: Add in dashboard under Environment Variables
 
 2. AWS Secrets Manager:
 ```java

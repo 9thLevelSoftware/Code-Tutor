@@ -1,56 +1,58 @@
 {
-  "type": "QUIZ",
   "id": "10.5-quiz-1",
   "title": "Contract Testing Concepts Quiz",
-  "description": "Test your understanding of API contract testing principles.",
+  "type": "quiz",
+  "lessonId": "lesson-10-05",
+  "order": 1,
+  "description": "Test your understanding of API contract testing.",
   "questions": [
     {
       "id": "q1",
       "options": [
-        "To test individual functions in isolation",
-        "To verify API shape and types match expectations between systems",
-        "To test complete user workflows end-to-end",
-        "To measure code coverage percentage"
+        "Testing that the API returns data quickly",
+        "Verifying the API response matches the agreed schema",
+        "Testing the database schema",
+        "Testing user interface components"
       ],
       "correctAnswer": 1,
-      "explanation": "Contract testing specifically verifies that the interface (contract) between systems matches expectations.",
-      "question": "What is the primary purpose of contract testing?"
+      "explanation": "Contract testing verifies that the API responses match the agreed-upon schema between frontend and backend teams, ensuring compatibility.",
+      "question": "What is the main purpose of API contract testing?"
     },
     {
       "id": "q2",
       "options": [
-        "Adding a new optional field to a response",
-        "Adding a new endpoint",
-        "Removing a field from a response",
-        "Adding a new optional query parameter"
+        "Hardcoded values in tests",
+        "JSON Schema or OpenAPI specifications",
+        "Manual verification only",
+        "Database migration scripts"
       ],
-      "correctAnswer": 2,
-      "explanation": "Removing a field from a response is a breaking change because existing clients that expect that field will fail.",
-      "question": "Which is an example of a BREAKING change in an API?"
+      "correctAnswer": 1,
+      "explanation": "JSON Schema and OpenAPI specifications define the expected structure of API requests and responses, forming the 'contract' between services.",
+      "question": "What defines the contract between API consumer and provider?"
     },
     {
       "id": "q3",
       "options": [
-        "It generates OpenAPI documentation automatically",
-        "It uses compile-time code generation for type-safe client/server communication",
-        "It runs faster than other frameworks",
-        "It requires no testing at all"
+        "Consumer tests the provider's API",
+        "Provider tests against consumer expectations",
+        "Both sides independently verify the contract",
+        "Contract tests are run in production"
       ],
       "correctAnswer": 1,
-      "explanation": "Serverpod generates Dart classes for both server and client from a single model definition, catching type mismatches at compile time.",
-      "question": "What is the main advantage of Serverpod's approach to contracts?"
+      "explanation": "In contract testing, the provider tests their implementation against contracts (schemas) that represent consumer expectations.",
+      "question": "How does contract testing typically work?"
     },
     {
       "id": "q4",
       "options": [
-        "The backend team exclusively",
-        "The DevOps team",
-        "The consumer (frontend) specifies what it needs",
-        "The contracts are auto-generated from code"
+        "Changes must not break existing consumers",
+        "All changes require consumer approval",
+        "Only additive changes are allowed",
+        "No changes are ever allowed"
       ],
-      "correctAnswer": 2,
-      "explanation": "In consumer-driven contracts, the consumer (frontend) defines what it needs from the API. The provider (backend) then verifies it can satisfy all consumer contracts.",
-      "question": "In consumer-driven contract testing, who defines the contract?"
+      "correctAnswer": 0,
+      "explanation": "The key principle is backward compatibility - changes should not break existing consumers. This might mean supporting multiple versions or careful deprecation.",
+      "question": "What is important when evolving API contracts?"
     }
   ],
   "difficulty": "intermediate"

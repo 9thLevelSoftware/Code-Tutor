@@ -11,7 +11,7 @@ class _AnimatedTabBarState extends State<AnimatedTabBar> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Implement animated tab bar
+    // Implement animated tab bar below
     // 1. Create a Row of tab buttons
     // 2. Use TweenAnimationBuilder to animate indicator position
     // 3. Use AnimatedOpacity or AnimatedDefaultTextStyle for selected state

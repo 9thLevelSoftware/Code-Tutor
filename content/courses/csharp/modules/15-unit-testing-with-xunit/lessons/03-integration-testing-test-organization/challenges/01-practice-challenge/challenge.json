@@ -3,6 +3,8 @@
   "id": "lesson-15-03-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-15-03",
+  "order": 1,
   "instructions": "Create integration tests for a ProductRepository!\n\n1. Create Product class: Id, Name, Price, InStock (bool)\n\n2. Create ProductRepository class:\n   - Constructor takes DbContext\n   - AddProduct(Product) - adds to database\n   - GetInStock() - returns products where InStock = true\n   - GetByPriceRange(min, max) - returns products in price range\n\n3. Write integration tests using in-memory database:\n   - Test AddProduct persists correctly\n   - Test GetInStock returns only in-stock products\n   - Test GetByPriceRange filters correctly\n   - Implement IDisposable for cleanup\n\nUse UseInMemoryDatabase and seed test data!",
   "language": "csharp",
   "testCases": [

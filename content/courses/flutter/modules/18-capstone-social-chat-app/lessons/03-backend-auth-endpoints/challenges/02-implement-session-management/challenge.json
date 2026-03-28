@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.3-challenge-1",
+  "lessonId": "lesson-18-03",
+  "order": 2,
   "title": "Implement Session Management",
   "description": "Create a session tracking system that allows users to view and revoke their active sessions.",
   "instructions": "Implement session management that:\n\n1. Tracks active sessions with device info\n2. Allows users to list their active sessions\n3. Allows revoking individual sessions\n4. Allows revoking all sessions except current\n5. Updates last activity timestamp\n\nCreate:\n- UserSession protocol model\n- SessionManager service class\n- Endpoint methods for session management",

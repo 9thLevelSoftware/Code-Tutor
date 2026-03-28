@@ -1,6 +1,8 @@
 {
   "type": "MULTI_CHOICE",
   "id": "16.4-challenge-0",
+  "lessonId": "lesson-16-04",
+  "order": 1,
   "title": "Release Track Selection",
   "description": "Choose the appropriate release track for different testing scenarios.",
   "instructions": "Your Flutter app is ready for broader testing. You want external beta testers (about 500 people) to test the app, but you don't want it to appear in Play Store search results yet. Which release track should you use?",

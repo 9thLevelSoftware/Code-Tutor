@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "13.2-challenge-0",
+  "lessonId": "lesson-14-02",
+  "order": 1,
   "title": "Test a TodoNotifier",
   "description": "Write unit tests for a TodoNotifier with add, toggle, and remove methods.",
   "instructions": "Complete the test file to cover all TodoNotifier methods.",

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.4-challenge-0",
+  "lessonId": "lesson-18-04",
+  "order": 1,
   "title": "Implement Content Moderation Service",
   "description": "Create a content moderation service that filters prohibited content and detects spam patterns.",
   "instructions": "Implement a ContentModerator class that:\n\n1. Checks content against a list of banned words\n2. Detects spam patterns (excessive caps, repeated characters, URLs)\n3. Returns a moderation result with reasons\n4. Supports configurable sensitivity levels\n5. Handles edge cases (Unicode, leetspeak)\n\nThe service should be fast enough for real-time moderation during post/comment creation.",

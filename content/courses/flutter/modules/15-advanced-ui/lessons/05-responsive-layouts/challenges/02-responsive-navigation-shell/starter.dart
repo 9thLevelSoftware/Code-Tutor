@@ -14,13 +14,13 @@ class ResponsiveNavigationShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Use LayoutBuilder to determine navigation type
-    // TODO: Return appropriate layout based on width:
+    // Use LayoutBuilder to determine navigation type
+    // Return appropriate layout based on width:
     //   - < 600: Scaffold with BottomNavigationBar
     //   - 600-900: Row with NavigationRail + child
     //   - > 900: Row with NavigationDrawer + child
     return Container();
   }
   
-  // TODO: Create helper methods for each navigation type
+  // Create helper methods for each navigation type below
 }

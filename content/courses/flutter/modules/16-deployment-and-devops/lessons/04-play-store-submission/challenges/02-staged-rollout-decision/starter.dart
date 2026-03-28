@@ -1,84 +1,53 @@
-/// Staged Rollout Decision Monitor
-///
-/// This exercise helps you understand when to halt a staged rollout
-/// based on metrics and user feedback.
+import 'package:flutter/material.dart';
 
-class RolloutMetrics {
-  final double currentPercentage;
-  final double crashFreeUsersRate;
-  final double previousCrashFreeRate;
-  final int negativeReviewCount;
-  final List<String> negativeReviewTopics;
-
-  RolloutMetrics({
-    required this.currentPercentage,
-    required this.crashFreeUsersRate,
-    required this.previousCrashFreeRate,
-    required this.negativeReviewCount,
-    required this.negativeReviewTopics,
-  });
-}
+// Staged Rollout Decision Challenge
+// When releasing to production, you can use staged rollouts to limit risk.
+// Implement the decision logic for when to pause, resume, or halt a rollout.
 
 enum RolloutAction {
   continueRollout,
+  pauseRollout,
   haltRollout,
-  increaseRollout,
-  rollback,
 }
 
-class RolloutDecision {
-  final RolloutAction action;
-  final String reason;
-
-  RolloutDecision({
-    required this.action,
-    required this.reason,
-  });
-}
-
-/// Analyzes rollout metrics and determines the appropriate action.
-///
-/// Guidelines:
-/// - If crash-free rate drops more than 3% from baseline, halt immediately
-/// - If multiple reviews mention the same crash pattern, halt immediately
-/// - Never increase rollout when issues are detected
-/// - Google Play doesn't support automatic rollback
-RolloutDecision analyzeRollout(RolloutMetrics metrics) {
-  // Guide: Calculate the crash rate change
-
-  // Guide: Check if crash rate drop exceeds 3% threshold
-
-  // Guide: Check if negative reviews indicate a pattern
-
-  // Guide: Return appropriate action with clear reasoning
-
-  return RolloutDecision(
-    action: RolloutAction.continueRollout,
-    reason: 'No issues detected',
-  );
+class RolloutDecisionMaker {
+  // TODO: Implement the logic to decide the appropriate rollout action
+  // based on crash rates, user feedback, and current rollout percentage
+  
+  RolloutAction decideAction({
+    required double currentRolloutPercentage,
+    required double crashRate,
+    required double previousCrashRate,
+    required double oneStarReviewPercentage,
+    required int dayOfRollout,
+  }) {
+    // Your implementation here
+    throw UnimplementedError('Implement rollout decision logic');
+  }
+  
+  String getActionExplanation(RolloutAction action) {
+    // TODO: Explain why each action was taken
+    switch (action) {
+      case RolloutAction.continueRollout:
+        return '';
+      case RolloutAction.pauseRollout:
+        return '';
+      case RolloutAction.haltRollout:
+        return '';
+    }
+  }
 }
 
 void main() {
-  // Scenario: 10% rollout, crash rate dropped from 99.5% to 96.2%
-  // Multiple 1-star reviews mention crash when saving data
-  final metrics = RolloutMetrics(
-    currentPercentage: 10.0,
-    crashFreeUsersRate: 96.2,
-    previousCrashFreeRate: 99.5,
-    negativeReviewCount: 5,
-    negativeReviewTopics: [
-      'crash when saving data',
-      'app crashes on save',
-      'crashes when I try to save',
-      'save button causes crash',
-      'crash during data save',
-    ],
+  final decisionMaker = RolloutDecisionMaker();
+  
+  // Test scenario: Day 3, 5% rollout, crash rate jumped from 0.5% to 4%
+  final action = decisionMaker.decideAction(
+    currentRolloutPercentage: 5.0,
+    crashRate: 4.0,
+    previousCrashRate: 0.5,
+    oneStarReviewPercentage: 15.0,
+    dayOfRollout: 3,
   );
-
-  final decision = analyzeRollout(metrics);
-  print('Current rollout: ${metrics.currentPercentage}%');
-  print('Crash-free rate: ${metrics.crashFreeUsersRate}%');
-  print('Previous rate: ${metrics.previousCrashFreeRate}%');
-  print('\nDecision: ${decision.action}');
-  print('Reason: ${decision.reason}');
+  print('Decision: $action');
 }

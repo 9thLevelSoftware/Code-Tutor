@@ -7,7 +7,7 @@ Before deploying to production, verify:
 
 SECURITY:
 [ ] No secrets in code or git history
-[ ] HTTPS only (Railway handles this)
+[ ] HTTPS only (Fly.io handles this automatically)
 [ ] Secure password/JWT generation
 [ ] CORS configured correctly
 [ ] Rate limiting if needed
@@ -15,7 +15,7 @@ SECURITY:
 DATABASE:
 [ ] Connection pooling configured
 [ ] Migrations work (Flyway/Liquibase)
-[ ] Backups configured (Railway does this)
+[ ] Backups configured (Fly.io PostgreSQL includes backups)
 [ ] DDL-auto set to 'validate' or 'none' in production
 
 PERFORMANCE:

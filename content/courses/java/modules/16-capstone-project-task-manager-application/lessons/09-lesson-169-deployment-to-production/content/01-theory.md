@@ -58,7 +58,7 @@ EXPOSE 8080
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=30s \
-  CMD wget --quiet --tries=1 --spider http://localhost:8080/actuator/health || exit 1
+  CMD curl -f http://localhost:8080/actuator/health || exit 1
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
@@ -69,9 +69,12 @@ For Maven projects, replace the builder stage:
 FROM maven:3.9-eclipse-temurin-25 AS builder
 WORKDIR /app
 COPY pom.xml .
+COPY mvnw .mvnw/
+COPY .mvn .mvn
+RUN chmod +x mvnw
 RUN mvn dependency:go-offline
 COPY src ./src
-RUN mvn package -DskipTests
+RUN ./mvnw clean package -DskipTests
 ```
 
 Build and run locally:

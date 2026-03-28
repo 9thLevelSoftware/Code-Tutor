@@ -17,13 +17,13 @@ DOWNLOADED (Blazor WebAssembly):
 • Large download, but works offline
 • Device does all the work
 
-SMART MODE (Blazor Auto - .NET 8+):
+SMART MODE (Blazor Auto - .NET 9+):
 • Starts streaming immediately (fast!)
 • Downloads in background
 • Switches to local playback when ready
 • Best of both worlds!
 
-.NET 8/9 UNIFIED RENDERING:
+.NET 9 UNIFIED RENDERING:
 • Static SSR (Server-Side Rendering) - No interactivity, SEO-friendly
 • Interactive Server - C# on server via SignalR
 • Interactive WebAssembly - C# in browser via WASM

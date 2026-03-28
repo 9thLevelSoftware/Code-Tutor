@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-17-04-challenge-01",
+  "lessonId": "lesson-17-04",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create an AOT-ready Todo API with Minimal APIs!\n\n1. Create models:\n   - TodoItem: Id (int), Title (string), IsComplete (bool), DueDate (DateTime?)\n   - CreateTodoRequest: Title (string), DueDate (DateTime?)\n   - TodoList: Items (List<TodoItem>), TotalCount (int)\n\n2. Create JSON source generator context for all types\n\n3. Implement endpoints:\n   - GET /todos - returns TodoList\n   - GET /todos/{id} - returns single TodoItem or 404\n   - POST /todos - accepts CreateTodoRequest, returns created TodoItem\n   - PUT /todos/{id}/complete - marks item complete, returns updated item\n   - DELETE /todos/{id} - removes item\n\n4. Use in-memory list for storage (simulated database)\n\n5. Configure JSON options to use the source generator",

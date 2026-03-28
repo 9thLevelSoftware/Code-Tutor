@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-05-challenge-01",
+  "lessonId": "lesson-12-05",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Demonstrate DbContext change tracking!\n\n1. Create 'Task' entity (Id, Title, IsCompleted)\n\n2. Create 'TaskDbContext' with DbSet<Task>\n\n3. Simulate change tracking states:\n   - Create new task, add to context\n   - Print state (should be 'Added')\n   - 'Save' and print state (now 'Unchanged')\n   - Modify task title\n   - Print state (now 'Modified')\n   - Mark for removal\n   - Print state (now 'Deleted')\n\n4. Show DbContext responsibilities:\n   - Print: Connection management\n   - Print: Change tracking\n   - Print: Query translation\n   - Print: Transaction management\n\n5. Emphasize 'using' statement importance!",

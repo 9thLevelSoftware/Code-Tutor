@@ -39,6 +39,7 @@ val platformModule = module {
 }
 
 // ========== iosMain/kotlin/di/PlatformModule.ios.kt ==========
+import platform.Foundation.*
 import app.cash.sqldelight.driver.native.NativeSqliteDriver
 import org.koin.dsl.module
 

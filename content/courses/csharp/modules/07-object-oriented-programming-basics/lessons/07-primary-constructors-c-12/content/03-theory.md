@@ -17,16 +17,16 @@ title: "Syntax Breakdown"
 
 ---
 
-## 🆕 C# 13 Preview: The `field` Keyword
+## 🆕 C# 13: The `field` Keyword
 
-**Note**: C# 13 introduces a preview feature that pairs well with primary constructors - the `field` contextual keyword.
+C# 13 introduces a powerful feature that pairs excellently with primary constructors - the `field` contextual keyword.
 
 **What it does**: The `field` keyword lets you access the compiler-generated backing field within property accessors, eliminating the need to declare explicit backing fields.
 
 ```csharp
 public class Person(string name, int age)
 {
-    // Using 'field' keyword in C# 13 (preview feature)
+    // Using 'field' keyword in C# 13
     public string Name
     {
         get => field;           // Access backing field directly
@@ -45,5 +45,6 @@ public class Person(string name, int age)
 - Less boilerplate - no need to declare `_name`, `_age` fields
 - Cleaner code when you need validation or logic in property accessors
 - Works seamlessly with primary constructor parameters
+- Stable feature in C# 13 (.NET 9+)
 
-**Important**: The `field` keyword is a preview feature in C# 13. Enable it in your project file with `<EnablePreviewFeatures>true</EnablePreviewFeatures>`.
+**Compatibility**: Requires C# 13 (available with .NET 9 SDK or by setting `<LangVersion>13</LangVersion>` in your project).

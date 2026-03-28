@@ -10,7 +10,7 @@ class PhotoGallery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Build a GridView with Hero-wrapped images
+    // Build a GridView with Hero-wrapped images below
     // Each image should navigate to PhotoDetailScreen when tapped
     return Container();
   }
@@ -28,7 +28,7 @@ class PhotoDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Display the photo with matching Hero tag
+    // Display the photo with matching Hero tag below
     // Add a flightShuttleBuilder that adds shadow during flight
     return Container();
   }

@@ -108,3 +108,70 @@ async Task<string> RetryAsync(Func<Task<string>> operation, int maxRetries)
     throw new Exception("All retries failed");
 }
 ```
+
+---
+
+## ConfigureAwait Guidance (.NET 9)
+
+```csharp
+// .NET 9 GUIDANCE: ConfigureAwait(false)
+
+// LIBRARY CODE - Still recommended in .NET 9
+public class DataService
+{
+    private readonly HttpClient _httpClient;
+    
+    public DataService(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+    
+    // Library code should use ConfigureAwait(false)
+    public async Task<string> GetDataAsync(string url)
+    {
+        var response = await _httpClient
+            .GetAsync(url)
+            .ConfigureAwait(false);  // Prevent deadlock risk
+            
+        return await response.Content
+            .ReadAsStringAsync()
+            .ConfigureAwait(false);  // On EVERY await!
+    }
+}
+
+// ASP.NET CORE - No sync context, ConfigureAwait is a no-op
+public class ApiController : ControllerBase
+{
+    private readonly DataService _dataService;
+    
+    public ApiController(DataService dataService)
+    {
+        _dataService = dataService;
+    }
+    
+    [HttpGet("data")]
+    public async Task<IActionResult> GetData()
+    {
+        // ASP.NET Core has no SynchronizationContext
+        // ConfigureAwait(false) is harmless but unnecessary
+        var data = await _dataService.GetDataAsync("/api/data");
+        return Ok(data);
+    }
+}
+
+// DESKTOP/WPF/WinForms - Keep context for UI updates
+public partial class MainWindow : Window
+{
+    private async void LoadButton_Click(object sender, RoutedEventArgs e)
+    {
+        LoadButton.IsEnabled = false;
+        
+        // DON'T use ConfigureAwait(false) - need UI thread
+        var data = await _dataService.GetDataAsync("/api/data");
+        
+        // This must run on UI thread
+        DataTextBox.Text = data;
+        LoadButton.IsEnabled = true;
+    }
+}
+```

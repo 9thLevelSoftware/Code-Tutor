@@ -1,7 +1,7 @@
 using System;
 
 Console.WriteLine("═══════════════════════════════════════════");
-Console.WriteLine("  BLAZOR RENDERING MODES (.NET 8)");
+Console.WriteLine("  BLAZOR RENDERING MODES (.NET 9)");
 Console.WriteLine("═══════════════════════════════════════════\n");
 
 Console.WriteLine("1. STATIC SSR (Server-Side Rendering)");
@@ -25,7 +25,7 @@ Console.WriteLine("   ✓ Pros: Works offline, no server calls, scales infinitel
 Console.WriteLine("   ✗ Cons: Large download (5-10MB), slow initial load");
 Console.WriteLine("   Example: Photo editing tool\n");
 
-Console.WriteLine("4. INTERACTIVE AUTO (.NET 8 - RECOMMENDED!)");
+Console.WriteLine("4. INTERACTIVE AUTO (.NET 9 - RECOMMENDED!)");
 Console.WriteLine("   Code: @rendermode InteractiveAuto");
 Console.WriteLine("   ✓ Use for: E-commerce, SPAs, social media");
 Console.WriteLine("   ✓ Pros: Fast start (Server), then offline (WASM), best UX");
@@ -45,7 +45,7 @@ Console.WriteLine("SEO              | ⭐⭐⭐ | ⭐⭐    | ⭐      | ⭐⭐"
 Console.WriteLine("Download Size    | 0 KB   | ~100KB  | 5-10MB  | ~100KB");
 
 Console.WriteLine("\n═══════════════════════════════════════════");
-Console.WriteLine("  .NET 8 CONFIGURATION");
+Console.WriteLine("  .NET 9 CONFIGURATION");
 Console.WriteLine("═══════════════════════════════════════════\n");
 Console.WriteLine("// Program.cs");
 Console.WriteLine("var builder = WebApplication.CreateBuilder(args);");

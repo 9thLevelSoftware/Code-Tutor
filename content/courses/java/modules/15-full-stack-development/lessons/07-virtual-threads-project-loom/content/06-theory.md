@@ -36,3 +36,34 @@ With virtual threads enabled:
 - Platform thread freed to handle other requests
 - Virtual thread "unparked" when DB returns
 - You don't change ANY code!
+
+CONFIGURATION (Enabled by Default in Spring Boot 4.0+):
+
+Virtual threads are automatically enabled in Spring Boot 4.0 with Java 25:
+
+```yaml
+# application.yml - Spring Boot 4.0+ (default configuration)
+spring:
+  threads:
+    virtual:
+      enabled: true  # Default in Spring Boot 4.0+, no need to set explicitly
+```
+
+To explicitly disable virtual threads (not recommended):
+
+```yaml
+# application.yml - Disable virtual threads
+spring:
+  threads:
+    virtual:
+      enabled: false  # Reverts to platform thread pool
+```
+
+HISTORICAL NOTE: In Spring Boot 3.2-3.x, you needed to manually enable:
+```yaml
+# Old Spring Boot 3.2-3.x configuration
+spring:
+  threads:
+    virtual:
+      enabled: true  # Required manual enable in older versions
+```

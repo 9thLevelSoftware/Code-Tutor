@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
   "id": "lesson-18-02-challenge-01",
+  "lessonId": "lesson-18-02",
+  "order": 1,
   "title": "Interface Placement in Clean Architecture",
   "description": "Test your understanding of where interfaces belong in Clean Architecture layers.",
   "question": "In a Clean Architecture project, you need to define an IProductRepository interface that will be implemented by a class using Entity Framework Core. Which layer should contain the IProductRepository interface definition?",

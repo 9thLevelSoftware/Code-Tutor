@@ -3,7 +3,7 @@ type: "EXAMPLE"
 title: "Code Example"
 ---
 
-Nullable reference types help you avoid the dreaded NullReferenceException - one of the most common bugs in C# programs! By marking variables with `?`, you're telling both the compiler and other developers that this value might be null and needs to be handled carefully. Modern C# (.NET 6+) enables this feature by default in new projects.
+Nullable reference types help you avoid the dreaded NullReferenceException - one of the most common bugs in C# programs! By marking variables with `?`, you're telling both the compiler and other developers that this value might be null and needs to be handled carefully. Modern C# (.NET 9) enables this feature by default in new projects.
 
 ```csharp
 // Non-nullable - MUST have a value!

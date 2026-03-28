@@ -3,6 +3,8 @@
   "id": "lesson-15-04-challenge-01",
   "title": "TDD Practice: Password Validator",
   "description": "Apply Test-Driven Development to build a password validator step by step.",
+  "lessonId": "lesson-15-04",
+  "order": 1,
   "instructions": "Build a PasswordValidator using TDD!\n\nRequirements (implement one at a time with TDD):\n1. Password must be at least 8 characters\n2. Password must contain at least one uppercase letter\n3. Password must contain at least one digit\n4. Password must contain at least one special character (!@#$%^&*)\n\nTDD Process:\n1. Write a failing test for requirement 1\n2. Implement minimum code to pass\n3. Refactor if needed\n4. Repeat for each requirement\n\nCreate:\n- PasswordValidator class with Validate(string password) method\n- Return a ValidationResult with IsValid and ErrorMessages\n- Write tests for valid passwords and each failure case",
   "language": "csharp",
   "testCases": [

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.7-challenge-0",
+  "lessonId": "lesson-15-07",
+  "order": 1,
   "title": "Create Accessible Product Card",
   "description": "Build a product card that works perfectly with screen readers.",
   "instructions": "Create an AccessibleProductCard widget that displays a product image, name, price, and rating. The card should: (1) Use MergeSemantics to combine all content into one announcement, (2) Exclude the decorative star icons but announce the rating value, (3) Be tappable with proper button semantics, (4) Have a minimum touch target of 48x48 dp.",

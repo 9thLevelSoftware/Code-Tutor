@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "17.1-challenge-0",
+  "lessonId": "lesson-17-01",
+  "order": 1,
   "title": "Implement Error Reporting Service",
   "description": "Create a comprehensive error reporting service that handles all types of Flutter errors.",
   "instructions": "Build an ErrorReportingService class that:\n\n1. Has an initialize() method that sets up FlutterError.onError and PlatformDispatcher.instance.onError\n2. Only reports errors in release mode (use kReleaseMode)\n3. Has a setUser() method to set user ID for crash context\n4. Has a logBreadcrumb() method to log navigation/action breadcrumbs\n5. Has a reportError() method for manually reporting caught exceptions\n6. Uses FirebaseCrashlytics for the actual reporting",

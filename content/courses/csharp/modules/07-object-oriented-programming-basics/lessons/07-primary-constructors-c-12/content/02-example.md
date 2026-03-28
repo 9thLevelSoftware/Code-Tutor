@@ -24,7 +24,7 @@ class PersonOld
     }
 }
 
-// NEW WAY - Primary Constructor (C# 12+)!
+// C# 12+ WAY - Primary Constructor!
 public class Person(string name, int age)
 {
     // Parameters are available everywhere in the class!
@@ -58,10 +58,10 @@ emp.ShowDepartment();   // Bob works in Engineering
 
 ---
 
-## C# 13 Preview: Using `field` with Primary Constructors
+## C# 13: Using `field` with Primary Constructors
 
 ```csharp
-// C# 13 (preview) - Using 'field' keyword for cleaner properties
+// C# 13 - Using 'field' keyword for cleaner properties
 public class Product(string name, decimal price)
 {
     // No explicit backing field needed!

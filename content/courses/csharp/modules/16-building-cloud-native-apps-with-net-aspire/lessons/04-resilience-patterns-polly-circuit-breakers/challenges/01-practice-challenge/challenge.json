@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-16-04-challenge-01",
+  "lessonId": "lesson-16-04",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Configure resilience for an external weather API client!\n\n1. Create WeatherApiClient with HttpClient injection\n\n2. Configure resilience with:\n   - Retry: 4 attempts, 200ms initial delay, exponential backoff with jitter\n   - Circuit Breaker: Opens at 30% failure rate, 5 request minimum, 20 second break\n   - Timeout: 8 seconds per request\n\n3. Add OnRetry callback that logs the attempt number\n\n4. Handle specific HTTP status codes:\n   - Retry on 503 (Service Unavailable)\n   - Retry on 429 (Too Many Requests)\n\nUse AddResilienceHandler with custom configuration!",

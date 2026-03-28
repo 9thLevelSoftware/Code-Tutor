@@ -1,8 +1,9 @@
 {
   "id": "lesson-13-07",
-  "title": "QuickGrid Component (.NET 8 Feature)",
+  "title": "QuickGrid Component",
   "moduleId": "module-13",
   "order": 7,
   "estimatedMinutes": 15,
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "topics": ["Blazor", "QuickGrid", "Data Grid", "Components", "Data Binding", "Tables"]
 }

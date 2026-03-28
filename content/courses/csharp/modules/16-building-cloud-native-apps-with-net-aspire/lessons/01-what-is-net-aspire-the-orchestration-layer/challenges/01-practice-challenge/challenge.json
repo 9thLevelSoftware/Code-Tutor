@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-16-01-challenge-01",
+  "lessonId": "lesson-16-01",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create an AppHost configuration for an e-commerce system!\n\n1. Define the infrastructure:\n   - Redis cache named 'productcache'\n   - Postgres database named 'orderdb'\n   - RabbitMQ message broker named 'messaging'\n\n2. Define three services:\n   - ProductApi: references Redis cache\n   - OrderApi: references Postgres and RabbitMQ\n   - WebStore: references both APIs\n\n3. Add comments explaining what each section does\n\nThink about the dependency chain: Web -> APIs -> Infrastructure",

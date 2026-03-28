@@ -3,6 +3,8 @@
   "id": "lesson-13-07-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-13-07",
+  "order": 1,
   "instructions": "Build a Product Inventory Manager with QuickGrid!\n\n1. Product model:\n   - int Id\n   - string Name\n   - decimal Price\n   - int Stock\n   - string Category\n   - bool IsAvailable\n\n2. Create QuickGrid with:\n   - Property columns: Name (sortable), Category, Stock\n   - Template column for Price (red if > $500, green otherwise)\n   - Template column for Status (badge: In Stock / Low Stock / Out)\n   - Template column for Actions (Edit, Delete buttons)\n   - Enable sorting on Name and Price\n\n3. Add search filter input\n4. Add pagination (10 items per page)\n5. Show total products count\n\nPrint complete component!",
   "language": "csharp",
   "testCases": [
@@ -48,7 +50,7 @@
     },
     {
       "level": 3,
-      "text": "Missing NuGet package: QuickGrid requires Microsoft.AspNetCore.Components.QuickGrid package. In .NET 8+ templates, it's included. Older projects need manual install."
+      "text": "Missing NuGet package: QuickGrid requires Microsoft.AspNetCore.Components.QuickGrid package. In .NET 9+ templates, it's included. Older projects need manual install."
     },
     {
       "level": 4,
@@ -67,7 +69,7 @@
     },
     {
       "mistake": "Missing NuGet package",
-      "consequence": "QuickGrid requires Microsoft.AspNetCore.Components.QuickGrid package. In .NET 8+ templates, it's included. Older projects need manual install.",
+      "consequence": "QuickGrid requires Microsoft.AspNetCore.Components.QuickGrid package. In .NET 9+ templates, it's included. Older projects need manual install.",
       "correction": "Review the correct syntax and best practices for this concept."
     },
     {

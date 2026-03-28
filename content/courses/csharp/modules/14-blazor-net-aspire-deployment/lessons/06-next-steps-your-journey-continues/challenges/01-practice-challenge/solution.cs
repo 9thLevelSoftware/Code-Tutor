@@ -49,7 +49,7 @@ Console.WriteLine("  - IAmTimCorey (C# fundamentals & best practices)");
 Console.WriteLine("  - Nick Chapsas (Advanced C# & performance)");
 Console.WriteLine("  - dotnet (Official Microsoft channel)");
 Console.WriteLine("\n  Books:");
-Console.WriteLine("  - 'C# 12 and .NET 8' by Mark J. Price");
+Console.WriteLine("  - 'C# 13 and .NET 9' by Mark J. Price");
 Console.WriteLine("  - 'Clean Code' by Robert C. Martin");
 Console.WriteLine("  - 'Designing Data-Intensive Applications' by Martin Kleppmann");
 Console.WriteLine("\n  Communities:");

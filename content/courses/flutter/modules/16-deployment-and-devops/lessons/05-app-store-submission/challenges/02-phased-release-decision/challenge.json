@@ -1,6 +1,8 @@
 {
   "type": "MULTI_CHOICE",
   "id": "16.5-challenge-1",
+  "lessonId": "lesson-16-05",
+  "order": 2,
   "title": "Phased Release Decision",
   "description": "Determine the appropriate action during a phased release.",
   "instructions": "You're on Day 3 of a phased release (5% of users). Multiple 1-star reviews mention the app crashes when taking a photo, and your crash reports confirm a 4% crash rate for this version (up from 0.5% in the previous version). What should you do?",

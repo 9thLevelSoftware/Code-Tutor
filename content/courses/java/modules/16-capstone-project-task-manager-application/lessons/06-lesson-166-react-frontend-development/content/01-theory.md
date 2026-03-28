@@ -5,6 +5,9 @@ title: "Two Approaches to Web Frontends"
 
 You have built the complete Spring Boot backend: entities, repositories, services, REST API, authentication, and validation. Now it is time to add a frontend so users can actually interact with your application.
 
+> **Remember:** Before testing your React frontend against the Spring Boot backend, ensure CORS is configured! 
+> See [M13.L6: Connecting to Spring Boot](/courses/java/modules/13-react-frontend-integration/lessons/06-lesson-r6-connecting-to-spring-boot) for CORS setup instructions.
+
 You have two choices, and this lesson covers both. Pick the one that fits your goals:
 
 Server-Side Rendering with Thymeleaf:

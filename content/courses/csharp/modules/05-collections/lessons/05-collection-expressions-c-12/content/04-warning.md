@@ -13,4 +13,4 @@ title: "Common Pitfalls"
 
 **Performance consideration**: Collection expressions are highly optimized, especially for immutable collections like ImmutableArray<T>. They often generate better code than traditional initializers!
 
-**Requires C# 12 / .NET 8 or later**: Collection expressions are a C# 12 language feature. This course uses .NET 9, which fully supports them. If working on older projects targeting .NET 7 or earlier, you'll need to upgrade to use this syntax.
+**Requires C# 12 / .NET 9 or later**: Collection expressions are a C# 12 language feature. This course uses .NET 9, which fully supports them. If working on older projects targeting .NET 7 or earlier, you'll need to upgrade to use this syntax.

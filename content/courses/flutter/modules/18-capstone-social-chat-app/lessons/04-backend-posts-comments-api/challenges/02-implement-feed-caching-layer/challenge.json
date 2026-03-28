@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.4-challenge-1",
+  "lessonId": "lesson-18-04",
+  "order": 2,
   "title": "Implement Feed Caching Layer",
   "description": "Create a caching layer for the social feed to improve performance and reduce database load.",
   "instructions": "Implement a FeedCache class that:\n\n1. Caches feed results with TTL (time-to-live)\n2. Invalidates cache on new posts\n3. Supports per-user feed caching\n4. Handles cache stampede prevention\n5. Provides cache statistics\n\nThe cache should significantly reduce database queries for frequently accessed feeds.",

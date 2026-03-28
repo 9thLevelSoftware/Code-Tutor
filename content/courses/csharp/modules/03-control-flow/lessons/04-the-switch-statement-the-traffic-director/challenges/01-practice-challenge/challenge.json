@@ -1,72 +1,55 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-03-04-challenge-01",
-  "title": "Practice Challenge",
-  "description": "Apply what you've learned in this interactive coding challenge.",
-  "instructions": "Create a simple calculator using switch!\n\n1. Create a string variable 'operation' (set to '+', '-', '*', or '/')\n2. Create int variables num1 = 10 and num2 = 5\n3. Use a switch statement on 'operation':\n   - case \"+\": Display num1 + num2\n   - case \"-\": Display num1 - num2\n   - case \"*\": Display num1 * num2\n   - case \"/\": Display num1 / num2\n   - default: Display 'Unknown operation'\n\nRemember to use break after each case!",
+  "title": "Day of the Week Converter",
+  "description": "Convert a day number to the day name using a switch statement!",
+  "instructions": "Write a program that converts a day number (1-7) to the day name:\n\n1. Create an int variable 'dayNumber' and set it to any value 1-7\n2. Use a switch statement to display:\n   - 1 → 'Monday'\n   - 2 → 'Tuesday'\n   - 3 → 'Wednesday'\n   - 4 → 'Thursday'\n   - 5 → 'Friday'\n   - 6 → 'Saturday'\n   - 7 → 'Sunday'\n   - default → 'Invalid day number'\n\n3. Try different values to test all cases!",
   "language": "csharp",
   "testCases": [
     {
       "id": "test-1",
-      "description": "Addition should output 15 (10 + 5)",
-      "expectedOutput": "15",
+      "description": "Output should contain a day name or 'Invalid'",
+      "expectedOutput": "day",
       "isVisible": true
-    },
-    {
-      "id": "test-2",
-      "description": "Code should use switch statement",
-      "expectedOutput": "switch",
-      "isVisible": true
-    },
-    {
-      "id": "test-3",
-      "description": "Code should have break statements",
-      "expectedOutput": "break",
-      "isVisible": false
     }
   ],
   "hints": [
     {
       "level": 1,
-      "text": "Structure: switch (operation) { case \"+\": code here; break; case \"-\": code here; break; ... }. Don't forget break!"
+      "text": "Start with: switch (dayNumber) { ... }"
     },
     {
       "level": 2,
-      "text": "Forgetting break: Without break, code 'falls through' to the next case! Always end each case with break (unless you want fall-through)."
+      "text": "Each case looks like: case 1: Console.WriteLine(\"Monday\"); break;"
     },
     {
       "level": 3,
-      "text": "Using variables in case: case myVariable: is WRONG! case values must be constants: case 1: or case \"text\":  "
+      "text": "Don't forget the 'break;' after each case - it's required in C#!"
     },
     {
       "level": 4,
-      "text": "Forgetting quotes on strings: case jump: is wrong! String cases need quotes: case \"jump\":"
+      "text": "End with a 'default:' case to handle numbers outside 1-7"
     },
     {
       "level": 5,
-      "text": "Using conditions in case: You can't do case (x > 5): ! Switch only checks EQUALITY. Use if-else for conditions."
+      "text": "Alternative: Try rewriting using a switch expression: string dayName = dayNumber switch { 1 => \"Monday\", ... };"
     }
   ],
   "commonMistakes": [
     {
-      "mistake": "Forgetting break",
-      "consequence": "Without break, code 'falls through' to the next case! Always end each case with break (unless you want fall-through).",
-      "correction": "Review the correct syntax and best practices for this concept."
+      "mistake": "Forgetting break; after each case",
+      "consequence": "The code won't compile! C# requires break to prevent accidental fall-through.",
+      "correction": "Always add break; (or return/throw) at the end of each case."
     },
     {
-      "mistake": "Using variables in case",
-      "consequence": "case myVariable: is WRONG! case values must be constants: case 1: or case \"text\":",
-      "correction": "Review the correct syntax and best practices for this concept."
+      "mistake": "Using string cases for numbers",
+      "consequence": "case \"1\" won't match int 1 - type mismatch!",
+      "correction": "Make sure your case types match your switch variable type."
     },
     {
-      "mistake": "Forgetting quotes on strings",
-      "consequence": "case jump: is wrong! String cases need quotes: case \"jump\":",
-      "correction": "Review the correct syntax and best practices for this concept."
-    },
-    {
-      "mistake": "Using conditions in case",
-      "consequence": "You can't do case (x > 5): ! Switch only checks EQUALITY. Use if-else for conditions.",
-      "correction": "Review the correct syntax and best practices for this concept."
+      "mistake": "Missing default case",
+      "consequence": "Invalid inputs won't be handled gracefully.",
+      "correction": "Always include a default case for unexpected values."
     }
   ],
   "difficulty": "beginner"

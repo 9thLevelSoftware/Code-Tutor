@@ -43,9 +43,19 @@
     },
     {
       "lessonPath": "content/courses/java/modules/04-object-oriented-programming/lessons/06-lesson-46-abstract-classes-interfaces-enforcing-contracts",
-      "lessonTitle": "Lesson 4.6: Abstract Classes & Interfaces - Enforcing Contracts",
-      "qualityRating": "good",
-      "issues": [],
+      "lessonTitle": "Lesson 4.6: Abstract Classes & Interfaces",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 35,
+          "originalText": "IO.println(\"Generic sound\")",
+          "description": "Example uses IO.println() in abstract class method which may be less clear than teaching abstract methods without implementation",
+          "webResearchNote": "This is a pedagogical choice rather than technical inaccuracy. The example shows a default implementation in abstract class vs pure abstract methods."
+        }
+      ],
       "fixesApplied": []
     },
     {
@@ -58,14 +68,24 @@
     {
       "lessonPath": "content/courses/java/modules/04-object-oriented-programming/lessons/08-lesson-48-sealed-classes-controlled-inheritance",
       "lessonTitle": "Lesson 4.8: Sealed Classes - Controlled Inheritance",
-      "qualityRating": "good",
-      "issues": [],
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 1,
+          "originalText": "sealed class Shape permits Circle, Rectangle, Triangle",
+          "description": "Sealed classes are final in Java 17+, but examples should verify permits clause syntax matches current Java 25 specification",
+          "webResearchNote": "Sealed classes (JEP 409) finalized in Java 17. Syntax is correct for Java 25. No changes needed."
+        }
+      ],
       "fixesApplied": []
     }
   ],
   "summary": {
-    "totalIssues": 0,
-    "bySeverity": { "critical": 0, "major": 0, "minor": 0 },
-    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+    "totalIssues": 2,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 2 },
+    "byCategory": { "STUB": 0, "OUTDATED": 2, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
   }
 }

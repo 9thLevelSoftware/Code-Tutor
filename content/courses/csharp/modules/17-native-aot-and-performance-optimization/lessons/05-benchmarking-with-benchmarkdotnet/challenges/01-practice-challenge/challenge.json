@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-17-05-challenge-01",
+  "lessonId": "lesson-17-05",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create a comprehensive benchmark comparing different approaches!\n\n1. Create 'SearchBenchmarks' class with [MemoryDiagnoser]\n\n2. Setup data:\n   - Array of 10,000 Person records (Id, Name, Age)\n   - Dictionary<int, Person> for O(1) lookup\n   - Target ID to search for (5000)\n\n3. Benchmark these search approaches:\n   - LINQ FirstOrDefault (baseline)\n   - For loop search\n   - Array.Find\n   - Dictionary lookup (expected fastest)\n\n4. Add [Params(100, 1000, 10000)] to test different sizes\n\n5. Print expected results analysis\n\nFocus on demonstrating how data structures affect performance!",

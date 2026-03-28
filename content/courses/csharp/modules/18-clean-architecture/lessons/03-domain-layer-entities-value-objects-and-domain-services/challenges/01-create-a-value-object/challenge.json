@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-18-03-challenge-01",
+  "lessonId": "lesson-18-03",
+  "order": 1,
   "title": "Create a Value Object",
   "description": "Implement an Address Value Object following Clean Architecture and DDD principles.",
   "instructions": "Create an Address value object for the ShopFlow e-commerce system that:\n\n1. Is immutable (use a record or readonly properties)\n2. Validates all required fields in the constructor\n3. Uses value equality (two addresses with same values are equal)\n4. Includes these properties: Street, City, State, PostalCode, Country\n5. Has a computed FullAddress property that formats the complete address\n6. Throws a DomainException for invalid data\n\nRemember: Value Objects have no identity - they ARE their attributes!",

@@ -3,6 +3,8 @@
   "id": "lesson-13-05-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-13-05",
+  "order": 1,
   "instructions": "Create an interactive task manager with events!\n\n1. TaskManager component:\n   - Input for task name (@oninput updates as you type)\n   - Button \"Add Task\" (@onclick)\n   - List of tasks\n   - Each task has:\n     - Checkbox (@onchange to mark complete)\n     - Delete button (@onclick)\n   - Show count of total and completed tasks\n\n2. Events to handle:\n   - Input change (live preview)\n   - Add task (button click)\n   - Toggle complete (checkbox change)\n   - Delete task (button click)\n\n3. Print component structure!",
   "language": "csharp",
   "testCases": [

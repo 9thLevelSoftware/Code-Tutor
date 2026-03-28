@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.12-challenge-1",
+  "lessonId": "lesson-18-12",
+  "order": 2,
   "title": "Launch Day Runbook",
   "description": "Create a comprehensive operational runbook with monitoring dashboards, rollback procedures, communication templates, and escalation paths for launch day.",
   "instructions": "Build a complete launch day operations system:\n\n1. Create a LaunchDayDashboard widget showing real-time metrics:\n   - Active users (with geographic distribution)\n   - Error rate and top errors\n   - API response times\n   - App store ratings and reviews\n\n2. Implement RollbackManager class with:\n   - Staged rollback (reduce rollout percentage)\n   - Full rollback to previous version\n   - Feature flag kill switches\n   - Database migration rollback\n\n3. Create CommunicationTemplates for:\n   - Status page updates\n   - User notification messages\n   - Team Slack alerts\n   - Executive summary emails\n\n4. Build EscalationManager with:\n   - Severity level definitions (P1-P4)\n   - On-call rotation lookup\n   - Automatic escalation timers\n   - PagerDuty/Opsgenie integration\n\n5. Implement IncidentTracker for:\n   - Incident creation and timeline\n   - Action items assignment\n   - Post-mortem generation\n   - Metrics impact calculation",

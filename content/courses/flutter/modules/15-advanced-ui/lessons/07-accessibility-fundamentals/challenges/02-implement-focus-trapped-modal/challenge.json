@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.7-challenge-1",
+  "lessonId": "lesson-15-07",
+  "order": 2,
   "title": "Implement Focus-Trapped Modal",
   "description": "Create a modal dialog that properly traps keyboard focus.",
   "instructions": "Build an AccessibleModal widget that: (1) Traps focus within the modal when open, (2) Has a visible focus indicator on interactive elements, (3) Closes when Escape key is pressed, (4) Auto-focuses the first interactive element when opened, (5) Includes proper heading semantics for the title.",

@@ -3,13 +3,13 @@ type: "WARNING"
 title: "Testing Anti-Patterns"
 ---
 
-### ❌ Not stopping Koin between tests
+### ❌ Forgetting to clean up Koin
 
 ```kotlin
 @Test
 fun test1() {
     startKoin { ... }
-    // Forgot stopKoin()
+    // Koin stays running, may cause conflicts
 }
 
 @Test
@@ -18,7 +18,13 @@ fun test2() {
 }
 ```
 
-**Fix**: Always call `stopKoin()` in `@AfterTest`.
+**Fix**: Use `AutoCloseKoinTest` for automatic cleanup:
+
+```kotlin
+class MyKoinTest : KoinTest, AutoCloseKoinTest {
+    // Koin automatically stopped after each test - no tearDown needed!
+}
+```
 
 ### ❌ Testing with production dependencies
 

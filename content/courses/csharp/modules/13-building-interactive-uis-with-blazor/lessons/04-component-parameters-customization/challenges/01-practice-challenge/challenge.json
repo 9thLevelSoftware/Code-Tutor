@@ -3,6 +3,8 @@
   "id": "lesson-13-04-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-13-04",
+  "order": 1,
   "instructions": "Build a flexible Button component with many parameters!\n\n1. CustomButton.razor:\n   - [Parameter] string Text\n   - [Parameter] string Color (\"primary\", \"danger\", \"success\")\n   - [Parameter] bool IsDisabled\n   - [Parameter] EventCallback OnClick\n   - Apply Bootstrap classes based on Color\n   - Disable if IsDisabled\n\n2. ButtonGroup.razor that uses CustomButton:\n   - Create 3 buttons: Save (success), Delete (danger), Cancel (primary)\n   - Track which button was clicked\n   - Display last action\n\n3. Demonstrate parameter flexibility\n\nPrint both components!",
   "language": "csharp",
   "testCases": [

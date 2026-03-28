@@ -99,3 +99,5 @@ npx playwright show-report  # View results
 ```
 
 E2E tests are slower but catch integration issues that unit tests miss. Run them in CI/CD before deployment.
+
+> **Production Tip:** For more realistic integration tests, consider [Testcontainers](https://testcontainers.com/) to test with an actual PostgreSQL database instead of H2. This catches SQL dialect differences early.

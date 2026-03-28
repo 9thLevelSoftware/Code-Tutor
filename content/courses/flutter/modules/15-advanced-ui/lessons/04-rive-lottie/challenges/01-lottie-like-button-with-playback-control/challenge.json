@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.4-challenge-0",
+  "lessonId": "lesson-15-04",
+  "order": 1,
   "title": "Lottie Like Button with Playback Control",
   "description": "Build an animated like button using Lottie with controlled playback.",
   "instructions": "Create a LikeButton widget that displays a heart Lottie animation. When tapped, it should play the animation forward (filling the heart). When tapped again, it should play in reverse (unfilling). Track the liked state and expose it via callback. The animation should only play on user interaction, not automatically.",

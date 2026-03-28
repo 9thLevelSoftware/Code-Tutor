@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "16.2-challenge-1",
+  "lessonId": "lesson-16-02",
+  "order": 2,
   "title": "Create ProGuard Rules",
   "description": "Write ProGuard rules for a Flutter app using Firebase and Retrofit.",
   "instructions": "Create a proguard-rules.pro file that: 1) Keeps all Flutter framework classes, 2) Keeps Firebase and Google Play Services classes, 3) Keeps model classes in com.example.myapp.models package, 4) Preserves attributes needed for Retrofit/Gson JSON parsing.",

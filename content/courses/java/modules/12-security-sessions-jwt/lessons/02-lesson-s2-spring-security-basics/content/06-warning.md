@@ -1,26 +1,16 @@
 ---
 type: "WARNING"
-title: "Spring Security Migration Notes"
+title: "Spring Security 7.x Pattern"
 ---
 
-If you see old tutorials, note these changes in modern Spring Security (7.x):
+Spring Security 7.x uses a modern bean-based configuration approach:
 
-OLD (Spring Security 5.x and earlier):
-@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Override
-    protected void configure(HttpSecurity http) {
-        http.authorizeRequests()
-            .antMatchers("/admin/**").hasRole("ADMIN")
-    }
-}
-
-CURRENT (Spring Security 7.x / Spring Boot 4.0):
+```java
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/admin/**").hasRole("ADMIN")
@@ -28,10 +18,10 @@ public class SecurityConfig {
             .build();
     }
 }
+```
 
-KEY CHANGES:
-- WebSecurityConfigurerAdapter was removed (use SecurityFilterChain beans)
-- authorizeRequests() -> authorizeHttpRequests()
-- antMatchers() -> requestMatchers()
-- Method returns SecurityFilterChain bean
-- Lambda DSL is the standard
+KEY POINTS:
+- Use `SecurityFilterChain` bean instead of deprecated class inheritance
+- `authorizeHttpRequests()` with lambda DSL style
+- `requestMatchers()` for URL patterns
+- Method returns `SecurityFilterChain` bean

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "13.7-challenge-0",
+  "lessonId": "lesson-14-07",
+  "order": 1,
   "title": "TDD: Build a Counter with Tests First",
   "description": "Practice TDD by writing tests before implementing a counter.",
   "instructions": "Write tests for increment, decrement, and reset. Then implement the CounterNotifier to make them pass.",

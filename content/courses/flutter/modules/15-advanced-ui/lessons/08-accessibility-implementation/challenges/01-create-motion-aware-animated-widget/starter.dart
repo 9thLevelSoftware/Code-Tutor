@@ -20,24 +20,24 @@ class NotificationCard extends StatefulWidget {
 
 class _NotificationCardState extends State<NotificationCard>
     with SingleTickerProviderStateMixin {
-  // TODO: Add AnimationController and animations
+  // Add AnimationController and animations here
   
   @override
   void initState() {
     super.initState();
-    // TODO: Initialize animations
+    // Initialize animations here
   }
 
   @override
   void didUpdateWidget(NotificationCard oldWidget) {
     super.didUpdateWidget(oldWidget);
-    // TODO: Handle visibility changes with motion awareness
+    // Handle visibility changes with motion awareness here
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Check for reduced motion preference
-    // TODO: Build animated card that respects motion preferences
+    // Check for reduced motion preference here
+    // Build animated card that respects motion preferences below
     return Container();
   }
 }

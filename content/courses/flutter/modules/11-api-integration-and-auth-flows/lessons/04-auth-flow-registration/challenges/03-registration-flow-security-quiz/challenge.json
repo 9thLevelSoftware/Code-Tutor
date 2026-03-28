@@ -3,66 +3,68 @@
   "id": "11.4-quiz-1",
   "title": "Registration Flow Security Quiz",
   "description": "Test your understanding of secure registration implementation.",
+  "lessonId": "lesson-11-04",
+  "order": 3,
   "questions": [
     {
       "id": "q1",
       "options": [
-        "flutter_secure_storage is faster",
-        "SharedPreferences stores data in plain text that can be easily extracted",
-        "flutter_secure_storage uses less memory",
-        "SharedPreferences does not work on iOS"
+        "Return different messages for 'email not found' vs 'wrong password'",
+        "Return the same generic message for both cases",
+        "Return HTTP 200 for both to avoid enumeration",
+        "Add a random delay before responding"
       ],
       "correctAnswer": 1,
-      "explanation": "SharedPreferences stores data in plain text (XML on Android, plist on iOS) that can be accessed by anyone with device access or through backup extraction. flutter_secure_storage uses platform-specific encryption (Keychain on iOS, EncryptedSharedPreferences on Android) to protect sensitive data like auth tokens.",
-      "question": "Why should you use flutter_secure_storage instead of SharedPreferences for storing auth tokens?"
+      "explanation": "Returning different messages for email vs password errors allows attackers to enumerate valid emails. Always return a generic message like 'Invalid credentials' so attackers cannot determine which emails exist in your system.",
+      "question": "How should you handle login error messages to prevent email enumeration?"
     },
     {
       "id": "q2",
       "options": [
-        "Client validation improves UX; server validation ensures security against bypassed clients",
-        "They serve identical purposes and only one is needed",
-        "Client validation is for security; server validation is for UX",
-        "Both are only for improved performance"
+        "Storing them in SharedPreferences",
+        "Using flutter_secure_storage or Keychain/Keystore",
+        "Saving to a plain text file in app documents",
+        "Keeping them only in memory"
       ],
-      "correctAnswer": 0,
-      "explanation": "Client-side validation provides immediate feedback to users, improving the registration experience. However, it can be bypassed by malicious users. Server-side validation is the security gatekeeper that ensures all data meets requirements regardless of how the request was made. Both are essential for a complete solution.",
-      "question": "What is the purpose of validating passwords on both client and server?"
+      "correctAnswer": 1,
+      "explanation": "Authentication tokens should be stored securely using platform-specific secure storage (Keychain on iOS, Keystore on Android). flutter_secure_storage provides this. SharedPreferences and plain files are insecure.",
+      "question": "What is the secure way to store authentication tokens in Flutter?"
     },
     {
       "id": "q3",
       "options": [
-        "To reduce server load only",
-        "To prevent email spam abuse and rate limiting from email providers",
-        "To make the UI more interesting",
-        "Email providers require it by law"
+        "Allow any redirect URL for flexibility",
+        "Whitelist specific redirect URLs and validate them",
+        "Use the referrer header to determine redirect",
+        "Don't use redirects, use popups only"
       ],
       "correctAnswer": 1,
-      "explanation": "Without a cooldown, malicious users could trigger thousands of emails, potentially getting your domain blacklisted by email providers or incurring excessive costs. The cooldown protects against abuse while still allowing legitimate users to request new emails when needed.",
-      "question": "Why do we implement a resend cooldown timer for verification emails?"
+      "explanation": "Open redirect vulnerabilities allow attackers to redirect users to malicious sites after authentication. Always whitelist and validate redirect URLs. Never trust user-supplied redirect parameters.",
+      "question": "How should you handle redirect URLs in OAuth flows?"
     },
     {
       "id": "q4",
       "options": [
-        "Wrap everything in a try-catch block",
-        "Check 'if (mounted)' before calling setState after await",
-        "Use a StatelessWidget instead",
-        "Disable the async operation"
+        "Trust the client-side validation only",
+        "Always validate on the server, client-side is just UX",
+        "Skip server validation for better performance",
+        "Validate only on the first request"
       ],
       "correctAnswer": 1,
-      "explanation": "After an await, the widget might have been disposed (user navigated away). Calling setState on a disposed widget throws an error. Always check 'if (!mounted) return;' after async operations before updating state to prevent this crash.",
-      "question": "What is the correct way to handle a 'widget not mounted' scenario after an async operation?"
+      "explanation": "Client-side validation can be bypassed by attackers. Always perform validation on the server - it's the only place you can trust. Client-side validation is just for better UX (immediate feedback).",
+      "question": "Where should input validation primarily happen?"
     },
     {
       "id": "q5",
       "options": [
-        "Users cannot remember longer passwords",
-        "Databases cannot store longer strings",
-        "Extremely long passwords can be used for DoS attacks on password hashing",
-        "The keyboard does not support more characters"
+        "Let attackers try unlimited times",
+        "Rate limit attempts per IP and per account",
+        "Block the IP after one failure",
+        "Require a CAPTCHA on every attempt"
       ],
-      "correctAnswer": 2,
-      "explanation": "Password hashing algorithms like bcrypt are intentionally slow to prevent brute-force attacks. An attacker could submit extremely long passwords (megabytes) to consume excessive CPU time, creating a denial-of-service condition. A reasonable limit like 128 characters prevents this while allowing any practical password.",
-      "question": "Why should passwords have a maximum length limit (like 128 characters)?"
+      "correctAnswer": 1,
+      "explanation": "Rate limiting prevents brute force attacks while not being too aggressive. Limit per IP (to prevent distributed attacks) and per account (to prevent targeted attacks). Progressive delays or CAPTCHA after several failures is also effective.",
+      "question": "How should you protect against brute force registration attempts?"
     }
   ]
 }

@@ -1,61 +1,25 @@
 {
-  "type": "FREE_CODING",
   "id": "10.4-challenge-1",
   "title": "Write Serverpod Endpoint Tests",
-  "description": "Create a comprehensive test suite for a Serverpod TodoEndpoint.",
-  "instructions": "Write tests for a TodoEndpoint with these methods:\n\n1. createTodo(session, title, description) - Creates a new todo\n2. getTodo(session, id) - Gets a todo by ID\n3. listTodos(session) - Lists all todos for authenticated user\n4. completeTodo(session, id) - Marks todo as complete\n5. deleteTodo(session, id) - Deletes a todo\n\nInclude tests for:\n- Authentication requirements\n- CRUD operations\n- Ownership validation (users can only access their own todos)",
-  "solutionCode": "import 'package:test/test.dart';\nimport 'package:serverpod_test/serverpod_test.dart';\n\nvoid main() {\n  late TestSession session;\n  late TodoEndpoint todoEndpoint;\n\n  setUpAll(() async {\n    await TestServer.start();\n  });\n\n  tearDownAll(() async {\n    await TestServer.stop();\n  });\n\n  setUp(() async {\n    session = await TestSession.create();\n    todoEndpoint = TodoEndpoint();\n  });\n\n  tearDown(() async {\n    await session.close();\n    await TestDatabase.truncateAll();\n  });\n\n  group('TodoEndpoint', () {\n    group('createTodo', () {\n      test('throws when not authenticated', () async {\n        expect(\n          () => todoEndpoint.createTodo(session, 'Test', 'Description'),\n          throwsA(isA<ServerpodException>()),\n        );\n      });\n\n      test('creates todo for authenticated user', () async {\n        await authenticateSession(session, 'user@test.com');\n\n        final todo = await todoEndpoint.createTodo(\n          session,\n          'Buy groceries',\n          'Milk, eggs, bread',\n        );\n\n        expect(todo.id, isNotNull);\n        expect(todo.title, equals('Buy groceries'));\n        expect(todo.isComplete, isFalse);\n      });\n    });\n\n    group('getTodo', () {\n      test('returns todo by ID', () async {\n        await authenticateSession(session, 'user@test.com');\n        final created = await todoEndpoint.createTodo(session, 'Test', 'Desc');\n\n        final retrieved = await todoEndpoint.getTodo(session, created.id!);\n\n        expect(retrieved, isNotNull);\n        expect(retrieved!.title, equals('Test'));\n      });\n\n      test('returns null for non-existent ID', () async {\n        await authenticateSession(session, 'user@test.com');\n\n        final result = await todoEndpoint.getTodo(session, 99999);\n\n        expect(result, isNull);\n      });\n\n      test('cannot access other user todos', () async {\n        // User 1 creates todo\n        await authenticateSession(session, 'user1@test.com');\n        final todo = await todoEndpoint.createTodo(session, 'Private', 'Secret');\n\n        // Switch to User 2\n        await authenticateSession(session, 'user2@test.com');\n\n        final result = await todoEndpoint.getTodo(session, todo.id!);\n        expect(result, isNull);\n      });\n    });\n\n    group('listTodos', () {\n      test('returns only current user todos', () async {\n        // User 1 creates todos\n        await authenticateSession(session, 'user1@test.com');\n        await todoEndpoint.createTodo(session, 'User1 Todo 1', '');\n        await todoEndpoint.createTodo(session, 'User1 Todo 2', '');\n\n        // User 2 creates todo\n        await authenticateSession(session, 'user2@test.com');\n        await todoEndpoint.createTodo(session, 'User2 Todo', '');\n\n        // List as User 1\n        await authenticateSession(session, 'user1@test.com');\n        final todos = await todoEndpoint.listTodos(session);\n\n        expect(todos, hasLength(2));\n        expect(todos.every((t) => t.title.startsWith('User1')), isTrue);\n      });\n    });\n\n    group('completeTodo', () {\n      test('marks todo as complete', () async {\n        await authenticateSession(session, 'user@test.com');\n        final todo = await todoEndpoint.createTodo(session, 'Task', '');\n\n        await todoEndpoint.completeTodo(session, todo.id!);\n\n        final updated = await todoEndpoint.getTodo(session, todo.id!);\n        expect(updated!.isComplete, isTrue);\n      });\n\n      test('cannot complete other user todo', () async {\n        await authenticateSession(session, 'user1@test.com');\n        final todo = await todoEndpoint.createTodo(session, 'Task', '');\n\n        await authenticateSession(session, 'user2@test.com');\n\n        expect(\n          () => todoEndpoint.completeTodo(session, todo.id!),\n          throwsA(isA<UnauthorizedException>()),\n        );\n      });\n    });\n\n    group('deleteTodo', () {\n      test('deletes todo', () async {\n        await authenticateSession(session, 'user@test.com');\n        final todo = await todoEndpoint.createTodo(session, 'Delete me', '');\n\n        await todoEndpoint.deleteTodo(session, todo.id!);\n\n        final deleted = await todoEndpoint.getTodo(session, todo.id!);\n        expect(deleted, isNull);\n      });\n    });\n  });\n}\n\nFuture<void> authenticateSession(TestSession session, String email) async {\n  final userInfo = UserInfo(\n    email: email,\n    userName: email.split('@').first,\n    userIdentifier: email,\n    created: DateTime.now(),\n  );\n  final inserted = await UserInfo.db.insertRow(session, userInfo);\n  session.updateAuthentication(AuthenticationInfo(\n    userInfo: inserted,\n    authId: inserted.id!,\n  ));\n}",
+  "type": "code",
+  "lessonId": "lesson-10-04",
+  "order": 2,
+  "description": "Write integration tests for a Serverpod endpoint with database interaction.",
+  "instructions": "Given a Todo endpoint that provides CRUD operations for todo items:\n\nWrite Serverpod integration tests that verify:\n1. Creating a new todo item\n2. Getting all todos for a user\n3. Updating a todo's completion status\n4. Deleting a todo\n5. Authorization: user A cannot see user B's todos\n\nUse test fixtures to set up test data and ensure proper cleanup.",
   "language": "dart",
-  "testCases": [
-    {
-      "id": "test-1",
-      "description": "Tests cover authentication requirements",
-      "expectedOutput": "Auth tests present",
-      "isVisible": true
-    },
-    {
-      "id": "test-2",
-      "description": "Tests cover ownership validation",
-      "expectedOutput": "Ownership tests present",
-      "isVisible": true
-    },
-    {
-      "id": "test-3",
-      "description": "Tests cover CRUD operations",
-      "expectedOutput": "CRUD tests present",
-      "isVisible": true
-    }
-  ],
+  "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Create a helper function to authenticate sessions with different users."
+      "text": "Use setUp() to create test users and tearDown() to clean up database state."
     },
     {
       "level": 2,
-      "text": "Test that unauthenticated users cannot access endpoints that require auth."
+      "text": "Create separate sessions for different users to test authorization."
     },
     {
       "level": 3,
-      "text": "Test that users cannot access or modify other users' todos."
+      "text": "Use the Serverpod test utilities to run endpoints with proper session context."
     }
-  ],
-  "commonMistakes": [
-    {
-      "mistake": "Not testing authentication requirements",
-      "consequence": "Security vulnerabilities in production",
-      "correction": "Always test that endpoints reject unauthenticated requests"
-    },
-    {
-      "mistake": "Forgetting to clean up between tests",
-      "consequence": "Tests interfere with each other",
-      "correction": "Use tearDown to truncate tables or roll back transactions"
-    },
-    {
-      "mistake": "Testing only happy paths",
-      "consequence": "Edge cases and error conditions go untested",
-      "correction": "Test error cases, ownership validation, and edge cases"
-    }
-  ],
-  "difficulty": "intermediate"
+  ]
 }

@@ -2,22 +2,24 @@
   "type": "CODE",
   "id": "11.8-challenge-3",
   "title": "Add Remember Me Feature",
-  "description": "Implement a 'Remember Me' checkbox that keeps users logged in across app restarts.",
-  "instructions": "Add a 'Remember Me' feature to the login screen that:\n\n1. Shows a checkbox on the login form\n2. When checked, persists the session token securely\n3. When unchecked, clears tokens on app close\n4. Auto-fills the email field if remembered\n5. Respects user's choice on subsequent logins\n\nThe implementation should:\n- Store the preference in secure storage\n- Optionally remember the email for convenience\n- Clear session appropriately based on the setting\n- Work with both email/password and OAuth login",
+  "description": "Implement a remember me checkbox that controls whether the session persists across app restarts.",
+  "lessonId": "lesson-11-08",
+  "order": 3,
+  "instructions": "Extend the login flow with a 'Remember Me' option:\n\n1. Add a 'Remember Me' checkbox to the login screen\n2. When checked:\n   - Store refresh token securely (flutter_secure_storage)\n   - Session persists after app restart\n   - Auto-login on next app launch\n\n3. When unchecked:\n   - Store access token in memory only\n   - User must login again after app restart\n   - No persistent storage of credentials\n\n4. Handle the auto-login logic in the app's initialization:\n   - Check if 'remember me' was enabled and token exists\n   - Validate token with server before auto-logging in\n   - Clear stored data if user chose not to be remembered",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Add a CheckboxListTile to the login form and a boolean state variable to track the preference."
+      "text": "Store the 'rememberMe' preference separately from tokens so you know how to handle them."
     },
     {
       "level": 2,
-      "text": "Store the email in secure storage when remember me is checked, and load it in initState."
+      "text": "For non-remembered sessions, keep tokens in a simple variable or StateNotifier, not in persistent storage."
     },
     {
       "level": 3,
-      "text": "When remember me is unchecked, you can either not store tokens at all (session-only) or store them but clear on explicit logout."
+      "text": "On logout, always clear both memory and persistent storage to ensure complete session termination."
     }
   ]
 }

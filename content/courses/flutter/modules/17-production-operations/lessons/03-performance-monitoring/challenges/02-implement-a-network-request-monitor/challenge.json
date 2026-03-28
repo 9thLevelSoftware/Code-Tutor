@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "17.3-challenge-1",
+  "lessonId": "lesson-17-03",
+  "order": 2,
   "title": "Implement a Network Request Monitor",
   "description": "Create an HTTP client wrapper that automatically monitors all network requests with Firebase Performance.",
   "instructions": "Create a MonitoredApiClient class that:\n\n1. Takes an optional http.Client in its constructor (for testing)\n2. Has a get(url, headers) method that performs GET with monitoring\n3. Has a post(url, headers, body) method that performs POST with monitoring\n4. Each request should track: URL, HTTP method, response status code, response size\n5. Include a getRequestStats() method that returns total requests, successful requests, and average response time in milliseconds\n6. Track statistics internally (don't need Firebase for stats, just the HTTP metrics)",

@@ -4,5 +4,6 @@
   "moduleId": "module-13",
   "order": 3,
   "estimatedMinutes": 15,
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "topics": ["Blazor", "Razor", "Components", "UI", "Building Blocks"]
 }

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "17.2-challenge-0",
+  "lessonId": "lesson-17-02",
+  "order": 1,
   "title": "Build an Analytics Service",
   "description": "Create a comprehensive analytics service that wraps Firebase Analytics for clean, type-safe event tracking.",
   "instructions": "Create an AnalyticsService class that:\n\n1. Uses the singleton pattern with FirebaseAnalytics.instance\n2. Has a logScreenView() method that takes screenName and optional screenClass\n3. Has a logButtonTap() method that takes buttonName and optional screenName\n4. Has a logSearch() method that takes searchTerm and resultsCount\n5. Has a setUserTier() method that sets a 'user_tier' user property\n6. Has a logFeatureUsed() method that takes featureName and optional duration in seconds",

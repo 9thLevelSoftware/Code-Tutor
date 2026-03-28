@@ -1,24 +1,25 @@
 {
-  "id": "11.4-challenge-1",
+  "type": "CODE",
+  "id": "12.4-challenge-2",
   "title": "Smart Typing Indicator",
-  "description": "Build an enhanced typing indicator that handles edge cases and provides better UX.",
-  "instructions": "Extend the basic typing indicator with these enhancements:\n\n1. Show 'User was typing...' when typing stops mid-composition (faded text)\n2. Group rapid typing/stopped events to prevent flickering\n3. Show different states: 'typing', 'recording audio', 'uploading file'\n4. Handle the case where user switches conversations while typing\n5. Persist typing state briefly when user navigates away and back\n\nRequirements:\n- EnhancedTypingService with multiple activity types\n- Anti-flicker logic with minimum display time (1 second)\n- State machine for typing lifecycle: idle -> active -> stopping -> idle\n- Memory of recent typing state per conversation\n- Proper cleanup when switching conversations",
-  "type": "implementation",
-  "expectedOutput": "An enhanced typing indicator system with smooth state transitions, anti-flicker logic, and support for multiple activity types.",
+  "description": "Implement an intelligent typing indicator that reduces noise while keeping users informed.",
+  "lessonId": "lesson-12-04",
+  "order": 2,
+  "instructions": "Build a smart typing indicator system:\n\n1. Typing detection on client:\n   - Detect when user starts typing (first keystroke)\n   - Send 'typing started' event to server\n   - Send periodic 'still typing' events every 3 seconds while active\n   - Send 'typing stopped' event when user stops for 2+ seconds or sends message\n\n2. Server typing manager:\n   - Broadcast typing events to appropriate recipients\n   - Handle multiple users typing in the same chat\n   - Auto-clear typing status if no update received for 5 seconds (client disconnected)\n\n3. Smart display logic:\n   - Show 'Someone is typing...' if you don't know who\n   - Show 'User is typing...' for single user\n   - Show 'User1 and User2 are typing...' for two users\n   - Show 'Several people are typing...' for 3+ users\n\n4. Privacy consideration:\n   - Only show typing indicator in direct chats, not in large groups",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Track _lastActiveTime when entering active state. In _transitionTo, check if enough time has passed before allowing transition to stopping/idle."
+      "text": "Use a Timer to track when typing stops - reset it on each keystroke."
     },
     {
       "level": 2,
-      "text": "For the stopping state, use AnimatedOpacity with a value of 0.5 to show the faded 'was typing' text. Transition to idle after stoppingDuration."
+      "text": "On the server, maintain a Map<userId, lastTypingTime> and periodically clean up stale entries."
     },
     {
       "level": 3,
-      "text": "Store conversation typing states in a static Map<String, SavedTypingState> to persist briefly across navigation. Clear entries older than 10 seconds."
+      "text": "Consider adding a setting for users to disable sending their typing status for privacy."
     }
   ]
 }

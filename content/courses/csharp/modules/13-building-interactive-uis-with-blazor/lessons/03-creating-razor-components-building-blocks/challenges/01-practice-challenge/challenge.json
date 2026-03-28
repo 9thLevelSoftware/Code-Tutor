@@ -3,6 +3,8 @@
   "id": "lesson-13-03-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-13-03",
+  "order": 1,
   "instructions": "Create a reusable ProductCard component!\n\n1. ProductCard.razor component:\n   - Parameters: string Name, decimal Price, string ImageUrl, bool InStock\n   - Display product in card layout\n   - Show \"In Stock\" or \"Out of Stock\" badge\n   - Button \"Add to Cart\" (only enabled if InStock)\n   - OnAddToCart event callback\n\n2. Create ProductList component that uses ProductCard:\n   - Display 3 ProductCard components\n   - Handle AddToCart event\n   - Show count of items in cart\n\n3. Print both component structures\n\nThis demonstrates component reusability!",
   "language": "csharp",
   "testCases": [

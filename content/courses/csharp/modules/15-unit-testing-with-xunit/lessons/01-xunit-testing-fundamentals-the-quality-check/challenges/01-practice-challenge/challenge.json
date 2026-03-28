@@ -3,6 +3,8 @@
   "id": "lesson-15-01-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-15-01",
+  "order": 1,
   "instructions": "Create unit tests for a StringHelper class!\n\n1. Create a StringHelper class with methods:\n   - Reverse(string s) - Reverses a string\n   - IsPalindrome(string s) - True if string reads same forwards/backwards\n   - CountWords(string s) - Counts words separated by spaces\n\n2. Write tests for each method:\n   - Test Reverse with normal string\n   - Test IsPalindrome with 'racecar' (true) and 'hello' (false)\n   - Test CountWords with 'hello world' (2 words)\n   - Test edge case: empty string\n\nUse [Fact] for single tests, [Theory] for multiple inputs!",
   "language": "csharp",
   "testCases": [

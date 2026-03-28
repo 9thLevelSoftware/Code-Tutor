@@ -38,6 +38,7 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
           cache: 'maven'
+          cache-dependency-path: '**/pom.xml'
       
       - name: Run tests
         run: ./mvnw verify
@@ -81,15 +82,15 @@ jobs:
             type=raw,value=latest
       
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
 
-  # Job 3: Deploy to Railway
+  # Job 3: Deploy to Fly.io
   deploy:
-    name: Deploy to Railway
+    name: Deploy to Fly.io
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -98,11 +99,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
+      - name: Install Fly.io CLI
+        run: |
+          curl -L https://fly.io/install.sh | sh
+          echo "$HOME/.fly/bin" >> $GITHUB_PATH
       
-      - name: Deploy to Railway
-        run: railway up --service ${{ secrets.RAILWAY_SERVICE_ID }}
+      - name: Deploy to Fly.io
+        run: fly deploy --remote-only
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 ```

@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
   "id": "lesson-18-04-challenge-01",
+  "lessonId": "lesson-18-04",
+  "order": 1,
   "title": "DbContext Layer Placement",
   "description": "Test your understanding of where Entity Framework Core components belong in Clean Architecture.",
   "question": "You're building a Clean Architecture application with Entity Framework Core. Where should the AppDbContext class (which inherits from DbContext) be defined?",

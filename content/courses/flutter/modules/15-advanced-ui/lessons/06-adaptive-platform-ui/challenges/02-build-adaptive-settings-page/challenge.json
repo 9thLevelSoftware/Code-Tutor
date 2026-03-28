@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.6-challenge-1",
+  "lessonId": "lesson-15-06",
+  "order": 2,
   "title": "Build Adaptive Settings Page",
   "description": "Create a settings page that uses platform-appropriate widgets for all controls.",
   "instructions": "Build an AdaptiveSettingsPage that displays: (1) A platform-appropriate app bar with title 'Settings', (2) A switch for 'Dark Mode' using CupertinoSwitch on iOS and Switch on Android, (3) A switch for 'Notifications', (4) A 'Log Out' button that shows a platform-appropriate confirmation dialog. Use CupertinoPageScaffold and CupertinoNavigationBar on iOS, Scaffold and AppBar on Android.",

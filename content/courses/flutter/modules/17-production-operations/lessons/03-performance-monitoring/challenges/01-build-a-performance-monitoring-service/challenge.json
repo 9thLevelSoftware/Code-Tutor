@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "17.3-challenge-0",
+  "lessonId": "lesson-17-03",
+  "order": 1,
   "title": "Build a Performance Monitoring Service",
   "description": "Create a comprehensive performance monitoring service that wraps Firebase Performance with convenient methods for common operations.",
   "instructions": "Create a PerformanceMonitor class that:\n\n1. Uses the singleton pattern with FirebasePerformance.instance\n2. Has a startTrace(name) method that starts a named trace and stores it internally\n3. Has a stopTrace(name) method that stops and removes the trace\n4. Has a setTraceAttribute(traceName, key, value) method to add attributes to active traces\n5. Has a measureAsync<T>(name, operation) method that wraps an async operation with timing\n6. Has a trackNetworkRequest(url, method, statusCode, responseSize, durationMs) method that creates and logs an HTTP metric",

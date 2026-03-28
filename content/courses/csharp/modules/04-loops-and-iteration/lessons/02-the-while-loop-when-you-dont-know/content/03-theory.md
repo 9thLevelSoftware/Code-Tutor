@@ -128,3 +128,107 @@ while (a < 10 || b < 5)  // b starts at 10, so b < 5 is always false, but a < 10
 ```
 
 **Tip**: Always trace through your loop mentally or with a debugger to ensure the condition will eventually become false.
+
+## Break and Continue in While Loops
+
+While loops support two special statements that give you more control: `break` and `continue`.
+
+### The `break` Statement
+
+**`break`** immediately exits the loop entirely, regardless of the condition. It's like hitting the emergency stop button.
+
+```csharp
+// Find the first number divisible by 7
+int number = 1;
+while (number <= 100)
+{
+    if (number % 7 == 0)
+    {
+        Console.WriteLine($"Found it: {number}");
+        break;  // Exit the loop immediately!
+    }
+    number++;
+}
+// Program continues here after break
+Console.WriteLine("Done searching");
+```
+
+### The `continue` Statement
+
+**`continue`** skips the rest of the current iteration and jumps back to check the condition. It's like saying "skip this one, move to the next."
+
+```csharp
+// Print all odd numbers from 1 to 10
+int i = 0;
+while (i < 10)
+{
+    i++;
+    if (i % 2 == 0)  // If even number
+    {
+        continue;  // Skip the rest, go back to condition check
+    }
+    Console.WriteLine(i);  // Only prints odd numbers: 1, 3, 5, 7, 9
+}
+```
+
+**Important**: When using `continue`, make sure you update your loop variable BEFORE the continue statement, or you might create an infinite loop:
+
+```csharp
+// DANGER: Infinite loop!
+int x = 0;
+while (x < 5)
+{
+    if (x == 2)
+    {
+        continue;  // Oops! x never increments past 2!
+    }
+    Console.WriteLine(x);
+    x++;  // This line is skipped when x == 2
+}
+```
+
+**Correct version**:
+```csharp
+int x = 0;
+while (x < 5)
+{
+    if (x == 2)
+    {
+        x++;  // Increment BEFORE continuing
+        continue;
+    }
+    Console.WriteLine(x);
+    x++;
+}
+```
+
+## When to Use break vs continue
+
+| Statement | Use When... |
+|-----------|-------------|
+| `break` | You found what you're looking for and want to stop searching |
+| `break` | An error occurred and you need to abort the loop |
+| `continue` | You want to skip specific values (skip even numbers) |
+| `continue` | You want to skip invalid data and keep processing |
+
+**Real-world pattern**: User input validation with `break`:
+
+```csharp
+string? input;
+while (true)  // Infinite loop, we'll break out when valid
+{
+    Console.Write("Enter your age (18-65): ");
+    input = Console.ReadLine();
+    
+    if (int.TryParse(input, out int age) && age >= 18 && age <= 65)
+    {
+        Console.WriteLine($"Valid age: {age}");
+        break;  // Valid input, exit loop
+    }
+    
+    Console.WriteLine("Invalid input. Try again.");
+    // Loop continues automatically
+}
+```
+
+This pattern of `while (true)` with a `break` is very common when you want the loop body to run at least once and the exit condition is complex.

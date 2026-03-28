@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
+          flutter-version: '3.38.0'
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test --coverage

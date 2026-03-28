@@ -73,3 +73,32 @@ import { api } from './services/api';
 
 const users = await api.get('/users');
 await api.post('/users', { name: 'John' });
+
+CORS CONFIGURATION (Spring Boot):
+
+When connecting React (running on port 5173) to Spring Boot (port 8080), you must configure CORS:
+
+```java
+@Bean
+public WebMvcConfigurer corsConfigurer() {
+    return new WebMvcConfigurer() {
+        @Override
+        public void addCorsMappings(CorsRegistry registry) {
+            registry.addMapping("/api/**")
+                .allowedOrigins("http://localhost:5173")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+        }
+    };
+}
+```
+
+Or use the `@CrossOrigin` annotation on your controller:
+
+```java
+@CrossOrigin(origins = "http://localhost:5173", allowedHeaders = "*")
+@RestController
+@RequestMapping("/api")
+public class MyController { }
+```

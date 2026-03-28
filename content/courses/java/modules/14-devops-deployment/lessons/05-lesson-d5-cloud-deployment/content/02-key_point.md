@@ -1,41 +1,39 @@
 ---
 type: "KEY_POINT"
-title: "Railway Basics"
+title: "Fly.io Basics"
 ---
 
-Railway is a modern PaaS that makes deployment simple:
+Fly.io is a modern platform that makes deployment simple:
 
 KEY FEATURES:
-- Deploy from GitHub with auto-deploy on push
-- Built-in PostgreSQL, Redis, MySQL
+- Deploy from GitHub or Docker images
+- Built-in PostgreSQL, Redis, object storage
 - Environment variables management
 - Automatic HTTPS certificates
 - Logs and metrics
 - Private networking between services
 
 PRICING (as of 2025):
-- Free tier: $5/month credit (enough for small apps)
-- Hobby: $5/month per service
+- Free tier: 256MB RAM, 3GB transfer/month
+- Hobby: Pay-as-you-go
 - Pro: Usage-based pricing
 
 DEPLOYMENT METHODS:
 
-1. GitHub Integration (recommended):
-   - Connect GitHub repo
-   - Auto-deploy on push to main
-   - Automatic rollback on failure
+1. Fly.io CLI (recommended):
+   - fly launch (creates config)
+   - fly deploy
+   - Auto-deploy on push if configured
 
-2. Railway CLI:
-   - railway login
-   - railway up
-   - Good for CI/CD pipelines
+2. GitHub Actions:
+   - Deploy via CI/CD pipeline
+   - Uses FLY_API_TOKEN secret
 
 3. Docker Image:
    - Push to container registry
-   - Railway pulls and runs
+   - Fly.io pulls and runs
 
-RAILWAY DETECTS:
+FLY.IO DETECTS:
+- fly.toml configuration file
 - Dockerfile (uses it)
-- pom.xml (runs Maven build)
-- package.json (runs npm)
-- Go, Python, Ruby, etc.
+- pom.xml or package.json (builds automatically)

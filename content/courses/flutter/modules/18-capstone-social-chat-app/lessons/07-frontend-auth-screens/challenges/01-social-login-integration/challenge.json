@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.7-challenge-0",
+  "lessonId": "lesson-18-07",
+  "order": 1,
   "title": "Social Login Integration",
   "description": "Add Google and Apple sign-in buttons to the login screen with OAuth flow handling and account linking.",
   "instructions": "Implement social login functionality:\n\n1. Add Google Sign-In button with proper branding\n2. Add Apple Sign-In button (iOS only, or web)\n3. Implement OAuth flow for each provider\n4. Handle account linking when email already exists\n5. Store social auth tokens securely\n6. Update auth state after successful social login\n7. Handle cancellation and errors gracefully",

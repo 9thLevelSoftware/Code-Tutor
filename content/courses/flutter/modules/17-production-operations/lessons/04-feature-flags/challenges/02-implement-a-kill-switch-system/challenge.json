@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "17.4-challenge-1",
+  "lessonId": "lesson-17-04",
+  "order": 2,
   "title": "Implement a Kill Switch System",
   "description": "Create a kill switch service that can instantly disable features in production with proper fallback behavior.",
   "instructions": "Create a KillSwitchService class that:\n\n1. Uses singleton pattern with FirebaseRemoteConfig.instance\n2. Has an isKilled(feature) method that checks if 'kill_switch_{feature}' is true\n3. Has specific kill switch getters: isPaymentsKilled, isRegistrationKilled\n4. Has isMaintenanceMode and maintenanceMessage getters\n5. Supports listeners that are notified when kill switch status changes (use onConfigUpdated)\n6. Has addListener(callback) and removeListener(callback) methods",

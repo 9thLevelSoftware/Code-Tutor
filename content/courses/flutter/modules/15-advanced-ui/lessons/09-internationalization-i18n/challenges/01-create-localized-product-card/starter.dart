@@ -23,9 +23,9 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Get locale and format values
-    // TODO: Build RTL-aware card layout
-    // TODO: Display localized price, review count, and date
+    // Get locale and format values here
+    // Build RTL-aware card layout below
+    // Display localized price, review count, and date below
     return Container();
   }
 }

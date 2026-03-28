@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "16.3-challenge-1",
+  "lessonId": "lesson-16-03",
+  "order": 2,
   "title": "Create iOS Entitlements File",
   "description": "Configure entitlements for an app using Push Notifications and Sign in with Apple.",
   "instructions": "Create a Runner.entitlements file that enables: 1) Push notifications in production environment, 2) Sign in with Apple capability, 3) Associated domains for universal links to 'myapp.example.com'. Use the correct entitlement keys and value formats.",

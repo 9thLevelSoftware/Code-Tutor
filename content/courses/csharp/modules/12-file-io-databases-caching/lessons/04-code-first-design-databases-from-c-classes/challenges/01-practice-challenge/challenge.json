@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-04-challenge-01",
+  "lessonId": "lesson-12-04",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build a Blog database with Code-First!\n\n1. Create 'BlogPost' entity:\n   - int Id\n   - string Title ([Required], [MaxLength(200)])\n   - string Content ([Required])\n   - DateTime PublishedDate\n   - int AuthorId (foreign key)\n   - Author Author (navigation property)\n\n2. Create 'Author' entity:\n   - int Id\n   - string Name ([Required], [MaxLength(100)])\n   - string Email ([Required])\n   - List<BlogPost> BlogPosts (navigation property)\n\n3. Create 'BlogDbContext':\n   - DbSet<BlogPost> BlogPosts\n   - DbSet<Author> Authors\n   - Configure relationship in OnModelCreating:\n     - Author has many BlogPosts\n     - BlogPost has one Author\n   - Seed one author\n\n4. Print the schema that would be created:\n   - Table names\n   - Column names and types\n   - Relationships\n\nThis shows Code-First design!",

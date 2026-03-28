@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
-  "id": "12.4-quiz-1",
+  "id": "13.4-quiz-1",
+  "lessonId": "lesson-13-04",
+  "order": 1,
   "title": "Migration Knowledge Check",
   "description": "Test your understanding of database migrations.",
   "questions": [

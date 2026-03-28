@@ -1,24 +1,25 @@
 {
-  "id": "11.6-challenge-0",
+  "type": "CODE",
+  "id": "12.6-challenge-1",
   "title": "Add Voice Messages",
-  "description": "Extend the chat with voice message support: record audio, upload to storage, and play in chat.",
-  "instructions": "Add voice message functionality to the live chat:\n\n1. **Recording**: Hold-to-record button that captures audio\n2. **Upload**: Upload recorded audio to Firebase Storage or your backend\n3. **Playback**: Audio player widget in message bubbles\n4. **Waveform**: Show audio waveform visualization\n5. **Duration**: Display message duration before sending\n\nRequirements:\n- Use record package for audio recording\n- Use just_audio for playback\n- Show recording duration while holding button\n- Cancel recording by sliding away\n- Compress audio before upload (consider using AAC format)\n- Show loading state during upload\n- Play/pause toggle with progress indicator\n- Handle playback errors gracefully",
-  "type": "implementation",
-  "expectedOutput": "A complete voice messaging feature with recording, uploading, and playback functionality, including proper UI feedback and error handling.",
+  "description": "Extend the live chat with voice message support including recording, playback, and waveform visualization.",
+  "lessonId": "lesson-12-06",
+  "order": 1,
+  "instructions": "Add voice message capabilities to your chat app:\n\n1. Voice recording:\n   - Record button in input area (hold to record, release to send)\n   - Show recording duration while holding\n   - Cancel recording if user slides finger left\n\n2. Audio playback:\n   - Inline audio player in chat bubbles\n   - Play/pause button with progress indicator\n   - Waveform visualization of audio\n   - Support for multiple concurrent recordings/playback states\n\n3. Upload and storage:\n   - Compress audio before upload (OPUS or AAC format)\n   - Upload to server and store URL in message\n   - Cache played audio locally\n\n4. UI polish:\n   - Animate the record button when recording\n   - Show playback progress on waveform\n   - Handle errors gracefully (failed upload, playback errors)\n\nUse the record and just_audio packages.",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use GestureDetector with onLongPressStart, onLongPressEnd, and onLongPressMoveUpdate for the hold-to-record and slide-to-cancel functionality."
+      "text": "Use GestureDetector with onLongPressStart and onLongPressEnd for the record button."
     },
     {
       "level": 2,
-      "text": "For the waveform visualization, sample the audio amplitude at regular intervals during recording. Store as List<double> normalized between 0 and 1."
+      "text": "For waveform visualization, you can use a simplified bar chart showing amplitude over time."
     },
     {
       "level": 3,
-      "text": "Use AudioPlayer.positionStream to update the progress bar. Calculate percentage as position.inMilliseconds / duration.inMilliseconds."
+      "text": "Use AudioPlayer.setUrl() for streaming playback and manage the player state carefully to avoid conflicts."
     }
   ]
 }

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.9-challenge-1",
+  "lessonId": "lesson-18-09",
+  "order": 2,
   "title": "Message Reply and Quoting",
   "description": "Implement a swipe-to-reply gesture with quoted message preview and reply thread indicator for contextual conversations.",
   "instructions": "Build a complete reply system for chat messages:\n\n1. Implement swipe-right gesture on messages to trigger reply mode\n2. Show reply preview bar above the input with quoted message content\n3. Display replied-to message reference in sent messages\n4. Tap on reply reference to scroll to original message\n5. Show reply thread indicator for messages with replies\n6. Support canceling reply mode\n7. Handle replies to deleted messages gracefully",

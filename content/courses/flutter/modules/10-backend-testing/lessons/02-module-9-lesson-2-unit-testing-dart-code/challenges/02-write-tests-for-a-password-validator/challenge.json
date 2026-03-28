@@ -1,43 +1,25 @@
 {
-  "type": "FREE_CODING",
   "id": "10.2-challenge-1",
   "title": "Write Tests for a Password Validator",
-  "description": "Create unit tests for a password validation function.",
-  "instructions": "You have a `PasswordValidator` class with a `validate(String password)` method that returns a `ValidationResult` containing `isValid` (bool) and `errors` (List<String>).\n\nPassword requirements:\n- At least 8 characters\n- Contains at least one uppercase letter\n- Contains at least one number\n- Contains at least one special character (!@#$%^&*)\n\nWrite tests covering:\n1. A valid password passes all checks\n2. Password too short fails\n3. Missing uppercase fails\n4. Missing number fails\n5. Missing special character fails\n6. Multiple errors are collected",
+  "type": "code",
+  "lessonId": "lesson-10-02",
+  "order": 2,
+  "description": "Write unit tests for a password validation function using best practices.",
+  "instructions": "Given a password validator with these rules:\n- Minimum 8 characters\n- Must contain at least one uppercase letter\n- Must contain at least one lowercase letter\n- Must contain at least one digit\n- Must contain at least one special character (!@#\$%^&*)\n\nWrite comprehensive unit tests that cover:\n1. Valid passwords that meet all requirements\n2. Invalid passwords for each rule\n3. Edge cases (empty string, null, exactly 8 chars, etc.)\n\nUse the test package with group() for organization and expect() with matchers.",
   "language": "dart",
+  "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use expect(result.isValid, isTrue) or expect(result.isValid, isFalse) to check validity."
+      "text": "Use group() to organize tests by rule - one group for length, one for uppercase, etc."
     },
     {
       "level": 2,
-      "text": "Use expect(result.errors, contains('error message')) to check for specific errors."
+      "text": "Test the boundary: exactly 8 characters should pass, 7 characters should fail."
     },
     {
       "level": 3,
-      "text": "For the multiple errors test, use hasLength(greaterThanOrEqualTo(3)) to verify at least 3 errors exist."
-    }
-  ],
-  "difficulty": "intermediate",
-  "testCases": [
-    {
-      "id": "test-1",
-      "description": "Contains the PasswordValidator class",
-      "expectedOutput": "PasswordValidator",
-      "isVisible": true
-    },
-    {
-      "id": "test-2",
-      "description": "Implements the character() method",
-      "expectedOutput": "character",
-      "isVisible": true
-    },
-    {
-      "id": "test-3",
-      "description": "Uses ValidationResult",
-      "expectedOutput": "ValidationResult",
-      "isVisible": false
+      "text": "Use isTrue and isFalse matchers for boolean assertions instead of equals(true)."
     }
   ]
 }

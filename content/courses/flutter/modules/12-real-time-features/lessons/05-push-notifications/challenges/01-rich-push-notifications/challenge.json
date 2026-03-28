@@ -1,24 +1,25 @@
 {
-  "id": "11.5-challenge-0",
+  "type": "CODE",
+  "id": "12.5-challenge-1",
   "title": "Rich Push Notifications",
-  "description": "Implement rich push notifications with images, action buttons, and notification channels.",
-  "instructions": "Extend the basic push notification system with advanced features:\n\n1. **Rich Media**: Display images in notifications\n2. **Action Buttons**: Add 'Reply' and 'Mark as Read' buttons to chat notifications\n3. **Notification Channels** (Android): Create separate channels for:\n   - Chat messages (high priority, sound)\n   - Order updates (default priority)\n   - Promotions (low priority, no sound)\n4. **Grouping**: Group multiple notifications from the same conversation\n\nRequirements:\n- Use flutter_local_notifications for advanced features\n- Create AndroidNotificationChannel for each category\n- Implement notification actions that work when app is backgrounded\n- Handle action button taps appropriately\n- Support inline reply for chat notifications",
-  "type": "implementation",
-  "expectedOutput": "A complete rich notification system with images, action buttons, proper channels, and notification grouping.",
+  "description": "Implement rich push notifications with images and actions for chat messages.",
+  "lessonId": "lesson-12-05",
+  "order": 1,
+  "instructions": "Extend the push notification system to support rich content:\n\n1. Notification types to support:\n   - Text messages: Show sender name and message preview\n   - Images: Show thumbnail in notification\n   - Group mentions: Highlight when you're mentioned\n   - Reactions: Show 'User reacted 👍 to your message'\n\n2. Notification actions:\n   - Reply: Quick reply from notification (Android direct reply, iOS notification action)\n   - Mark as read: Dismiss without opening app\n   - Mute: Temporarily mute this conversation\n\n3. Data payload handling:\n   - Parse FCM data payload to extract message type and content\n   - Show appropriate notification based on type\n   - Handle tap actions (open specific chat, mark as read)\n\n4. Group notifications:\n   - Bundle multiple messages from same chat\n   - Show '3 new messages from Chat Name'\n\nTest on both Android and iOS platforms.",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use AndroidNotificationChannel with different Importance levels: Importance.high for chat, Importance.defaultImportance for orders, Importance.low for promos."
+      "text": "Use flutter_local_notifications with proper notification channels for different types."
     },
     {
       "level": 2,
-      "text": "For action buttons, use AndroidNotificationAction with 'reply' and 'mark_read' action IDs. The reply action needs showsUserInterface: false and inputs for inline reply."
+      "text": "For iOS rich notifications, you'll need a Notification Service Extension to download images."
     },
     {
       "level": 3,
-      "text": "Group notifications using the 'groupKey' parameter in AndroidNotificationDetails. Create a summary notification with setAsGroupSummary: true for each group."
+      "text": "Use messagingStyle on Android for proper chat-style notifications with replies."
     }
   ]
 }

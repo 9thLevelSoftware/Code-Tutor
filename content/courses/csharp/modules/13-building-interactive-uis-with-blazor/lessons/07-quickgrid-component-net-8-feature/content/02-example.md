@@ -7,7 +7,7 @@ This example demonstrates the concepts in action.
 
 ```csharp
 // INSTALL: Microsoft.AspNetCore.Components.QuickGrid
-// (Included in .NET 8 templates!)
+// (Included in .NET 9 templates!)
 
 using Microsoft.AspNetCore.Components.QuickGrid;
 

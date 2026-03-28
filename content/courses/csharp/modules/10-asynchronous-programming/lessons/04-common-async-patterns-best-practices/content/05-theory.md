@@ -1,45 +1,62 @@
 ---
 type: "THEORY"
-title: "ConfigureAwait Deep Dive"
+title: "ConfigureAwait Deep Dive - .NET 9 Guidance"
 ---
 
 ## ConfigureAwait(false) - When and Why?
 
 **What does it do?**
-By default, after an await, execution resumes on the original context (UI thread, ASP.NET request context). `ConfigureAwait(false)` says 'I don't need to resume on the original context.'
+By default, after an `await`, execution resumes on the original "synchronization context" (UI thread, ASP.NET request context). `ConfigureAwait(false)` tells the runtime: 'I don't need to resume on the original context - resume anywhere.'
 
-**When to use ConfigureAwait(false):**
-- **Library code**: Always! You don't know if your code will be called from UI apps
-- **Internal helper methods**: When you don't need UI thread access
-- **Performance-critical code**: Avoids context-switch overhead
+---
 
-**When NOT to use it:**
-- **UI code**: You NEED to be on UI thread to update controls
-- **ASP.NET Core**: No synchronization context, so it's a no-op anyway
-- **Code that accesses HttpContext**: Needs the request context
+## 🆕 .NET 9 / Modern Guidance (2025)
+
+### When to use `ConfigureAwait(false)`:
+- **Library code**: Still recommended! Libraries don't know their callers
+- **Reusable components**: Middleware, utilities, shared code
+- **Performance-critical paths**: Avoids context-switch overhead
+
+### When NOT to use it:
+- **UI code (WPF, WinForms, MAUI, Avalonia)**: You NEED the UI thread to update controls
+- **ASP.NET Core**: No synchronization context since .NET Core 3.0 - `ConfigureAwait(false)` is harmless but unnecessary
+- **Legacy ASP.NET (.NET Framework)**: Still needs `ConfigureAwait(false)` for libraries
+
+### .NET 9 Best Practices Summary
 
 ```csharp
-// Library code - use ConfigureAwait(false)
-public async Task<string> FetchDataAsync()
+// LIBRARY CODE (.NET 9) - Still use ConfigureAwait(false)
+public class MyLibrary
 {
-    var response = await httpClient
-        .GetAsync(url)
-        .ConfigureAwait(false);  // Don't capture context!
-        
-    return await response.Content
-        .ReadAsStringAsync()
-        .ConfigureAwait(false);  // On EVERY await!
+    public async Task<string> FetchAsync(string url)
+    {
+        using var client = new HttpClient();
+        var response = await client.GetAsync(url).ConfigureAwait(false);
+        return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+    }
 }
 
-// UI code - DON'T use it
-private async void Button_Click(object sender, EventArgs e)
+// ASP.NET CORE (.NET 9) - No sync context, your choice
+public class MyController : ControllerBase
 {
-    string data = await FetchDataAsync();
-    label.Text = data;  // Needs UI thread!
+    [HttpGet("data")]
+    public async Task<IActionResult> GetData()
+    {
+        // Both work identically in ASP.NET Core:
+        var data = await _service.FetchAsync("url");        // OK
+        // var data = await _service.FetchAsync("url").ConfigureAwait(false);  // Also OK
+        return Ok(data);
+    }
+}
+
+// DESKTOP/WPF APP - Keep context for UI
+public async Task LoadDataAsync()
+{
+    // DON'T use ConfigureAwait(false) - need UI thread
+    var data = await _service.FetchAsync("url");
+    StatusLabel.Text = "Loaded";  // UI update requires UI thread
 }
 ```
-
-**Modern guidance (.NET 9 / 2025):** Use ConfigureAwait(false) in library code. For app code in ASP.NET Core (no sync context), it doesn't matter. This guidance remains valid in .NET 9.
 
 ---
 
@@ -72,7 +89,7 @@ async Task ProcessAsTheyCompleteAsync()
 **Benefits of Task.WhenEach:**
 - Start processing results immediately (no waiting for slowest task)
 - Great for UIs - show data as it streams in
-- More efficient than Task.WhenAny loops
+- More efficient than `Task.WhenAny` loops
 - Cleaner syntax with `await foreach`
 
 **Compare with old approach:**

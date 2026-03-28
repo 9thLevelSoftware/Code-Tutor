@@ -3,6 +3,8 @@
   "id": "11.3-challenge-2",
   "title": "Build an API Response Handler with Union Types",
   "description": "Create a type-safe API response wrapper using freezed union types that handles loading, success, and various error states.",
+  "lessonId": "lesson-11-03",
+  "order": 2,
   "instructions": "Create the following:\n\n1. `ApiError` enum with values: network, timeout, unauthorized, notFound, serverError, unknown\n\n2. `ApiResult<T>` freezed union type with states:\n   - loading() - request in progress\n   - success(T data) - successful response with data\n   - error(ApiError type, String message) - failed with error type and message\n\n3. Extension method `isLoading` on ApiResult that returns true if loading\n4. Extension method `dataOrNull` on ApiResult that returns the data if success, null otherwise\n5. Extension method `errorMessage` on ApiResult that returns the message if error, null otherwise\n\n6. Helper function `apiResultFromDioError(DioException e)` that converts DioException to ApiResult.error with appropriate ApiError type.",
   "language": "dart",
   "testCases": [],

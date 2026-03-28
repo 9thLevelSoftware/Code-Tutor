@@ -6,7 +6,7 @@ title: "Code Example"
 This example demonstrates the concepts in action.
 
 ```csharp
-// .NET 8 RENDERING MODES
+// .NET 9 RENDERING MODES
 
 // 1. STATIC SERVER-SIDE RENDERING (SSR)
 // Default when NO @rendermode specified - no interactivity, fast SEO
@@ -38,7 +38,7 @@ This example demonstrates the concepts in action.
 
 <button @onclick="Calculate">Calculate</button>
 
-// 4. INTERACTIVE AUTO (.NET 8 - BEST!)
+// 4. INTERACTIVE AUTO (.NET 9 - BEST!)
 // Starts with Server, switches to WASM when ready
 @page "/dashboard"
 @rendermode InteractiveAuto
@@ -47,7 +47,7 @@ This example demonstrates the concepts in action.
 
 // COMPARISON TABLE
 /*
-                    Server      WebAssembly     Auto (.NET 8)
+                    Server      WebAssembly     Auto (.NET 9)
 C# runs on:         Server      Browser         Both
 Initial load:       Fast        Slow            Fast
 Offline:            No          Yes             Yes*
@@ -56,7 +56,7 @@ Latency:            Network     None            Hybrid
 Best for:           Forms       SPAs            Everything
 */
 
-// CONFIGURING IN PROGRAM.CS (.NET 8)
+// CONFIGURING IN PROGRAM.CS (.NET 9)
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Blazor components with all render modes

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "16.1-challenge-0",
+  "lessonId": "lesson-16-01",
+  "order": 1,
   "title": "Create Environment Configuration",
   "description": "Set up a complete environment configuration system for a Flutter app.",
   "instructions": "Create an AppConfig class that supports dev, staging, and prod environments. Include API URL, app name, logging toggle, analytics toggle, and a feature flag for 'new_dashboard'. Initialize from dart-define values and provide convenient getters.",

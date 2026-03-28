@@ -3,6 +3,8 @@
   "id": "lesson-14-04-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-14-04",
+  "order": 1,
   "instructions": "Git workflow simulation!\n\nSimulate these Git commands (print what each does):\n\n1. git init - Initialize repository\n2. git add . - Stage all files\n3. git commit -m \"Initial commit\" - First commit\n4. git status - Check status\n5. git branch feature/add-books - Create feature branch\n6. git checkout feature/add-books - Switch to branch\n7. (Make changes)\n8. git add .\n9. git commit -m \"Add book CRUD\"\n10. git checkout main - Back to main\n11. git merge feature/add-books - Merge feature\n12. git push origin main - Push to GitHub\n\nExplain each step!",
   "language": "csharp",
   "testCases": [
@@ -46,7 +48,7 @@
   "hints": [
     {
       "level": 1,
-      "text": "git init → add → commit. Create branch, checkout, make changes, commit. Checkout main, merge branch. Push to remote. Learn: add, commit, branch, merge, push!"
+      "text": "git init \u00e2\u2020\u2019 add \u00e2\u2020\u2019 commit. Create branch, checkout, make changes, commit. Checkout main, merge branch. Push to remote. Learn: add, commit, branch, merge, push!"
     },
     {
       "level": 2,

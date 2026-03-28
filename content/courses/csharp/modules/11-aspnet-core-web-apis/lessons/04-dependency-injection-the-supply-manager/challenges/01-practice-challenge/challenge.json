@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-11-04-challenge-01",
+  "lessonId": "lesson-11-04",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build a TODO API with Dependency Injection!\n\n1. Create 'TodoItem' class (Id, Title, IsCompleted)\n\n2. Create 'ITodoRepository' interface:\n   - List<TodoItem> GetAll()\n   - TodoItem? GetById(int id)\n   - void Add(TodoItem item)\n   - void Update(int id, TodoItem item)\n   - void Delete(int id)\n\n3. Create 'TodoRepository' class implementing ITodoRepository:\n   - Use in-memory List<TodoItem>\n   - Implement all methods\n\n4. Register with DI: builder.Services.AddSingleton<ITodoRepository, TodoRepository>()\n\n5. Create endpoints that inject ITodoRepository:\n   - GET /api/todos\n   - GET /api/todos/{id}\n   - POST /api/todos\n   - PUT /api/todos/{id}\n   - DELETE /api/todos/{id}\n\n6. Print \"DI-based Todo API Ready!\"",

@@ -40,12 +40,13 @@
       "qualityRating": "acceptable",
       "issues": [
         {
-          "category": "PEDAGOGY",
+          "category": "OUTDATED",
           "severity": "minor",
           "file": "content/07-key_point.md",
           "line": 1,
-          "originalText": "title: \"Primitive Type Patterns (Preview Feature)\"",
-          "description": "References JEP 507 in JDK 25 as 3rd preview for primitive type patterns in switch. This is cutting-edge content that may confuse beginners. Consider clarifying that this is an advanced/preview feature."
+          "originalText": "JEP 507 in JDK 25, 3rd preview",
+          "description": "Primitive type patterns in switch correctly noted as preview feature - should be monitored for finalization in future Java versions",
+          "webResearchNote": "JEP 507 (Primitive Types in Patterns) is indeed in Third Preview in Java 25 as confirmed by OpenJDK docs. Feature may finalize in Java 26+. Content is accurate for current state."
         }
       ],
       "fixesApplied": []
@@ -53,14 +54,24 @@
     {
       "lessonPath": "content/courses/java/modules/01-java-fundamentals/lessons/06-lesson-16-modern-java-syntax-writing-less-code",
       "lessonTitle": "Lesson 1.6: Modern Java Syntax - Writing Less Code",
-      "qualityRating": "good",
-      "issues": [],
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 15,
+          "originalText": "import module java.base",
+          "description": "Module imports feature reference uses correct syntax but JEP number should be verified (JEP 511, not 513)",
+          "webResearchNote": "Module import declarations are JEP 511 (not 513). JEP 513 is 'Flexible Constructor Bodies'. Content syntax is correct, just the JEP reference may be inaccurate if mentioned elsewhere."
+        }
+      ],
       "fixesApplied": []
     }
   ],
   "summary": {
-    "totalIssues": 1,
-    "bySeverity": { "critical": 0, "major": 0, "minor": 1 },
-    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 1 }
+    "totalIssues": 2,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 2 },
+    "byCategory": { "STUB": 0, "OUTDATED": 2, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
   }
 }

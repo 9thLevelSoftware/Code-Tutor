@@ -3,7 +3,9 @@
   "id": "lesson-14-02-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
-  "instructions": "Build complete CRUD for a Book Library!\n\n1. Book model (Id, Title, Author, Year, ISBN)\n\n2. API with all CRUD endpoints:\n   - GET /api/books (list all)\n   - GET /api/books/{id} (single)\n   - POST /api/books (create)\n   - PUT /api/books/{id} (update)\n   - DELETE /api/books/{id} (delete)\n\n3. Blazor component:\n   - List books in table\n   - Add button → shows form\n   - Edit button for each book → populates form\n   - Delete button with confirmation\n   - Form with all fields\n   - Save/Cancel buttons\n   - Reload after operations\n\n4. Print complete API and Blazor code!",
+  "lessonId": "lesson-14-02",
+  "order": 1,
+  "instructions": "Build complete CRUD for a Book Library!\n\n1. Book model (Id, Title, Author, Year, ISBN)\n\n2. API with all CRUD endpoints:\n   - GET /api/books (list all)\n   - GET /api/books/{id} (single)\n   - POST /api/books (create)\n   - PUT /api/books/{id} (update)\n   - DELETE /api/books/{id} (delete)\n\n3. Blazor component:\n   - List books in table\n   - Add button \u00e2\u2020\u2019 shows form\n   - Edit button for each book \u00e2\u2020\u2019 populates form\n   - Delete button with confirmation\n   - Form with all fields\n   - Save/Cancel buttons\n   - Reload after operations\n\n4. Print complete API and Blazor code!",
   "language": "csharp",
   "testCases": [
     {

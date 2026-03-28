@@ -1,24 +1,25 @@
 {
-  "id": "11.2-challenge-1",
+  "type": "CODE",
+  "id": "12.2-challenge-2",
   "title": "Real-Time Notification Stream",
-  "description": "Implement a notification service that receives real-time notifications via Serverpod streams.",
-  "instructions": "Create a NotificationService that:\n\n1. Connects to a notification streaming endpoint\n2. Listens for incoming NotificationMessage objects\n3. Maintains a list of unread notifications\n4. Provides methods to mark notifications as read\n5. Exposes streams for both notifications and unread count\n6. Handles disconnection gracefully by preserving local state\n\nThe service should work with this message type:\n```dart\nclass NotificationMessage {\n  final String id;\n  final String title;\n  final String body;\n  final DateTime timestamp;\n  final bool isRead;\n}\n```\n\nRequirements:\n- Expose Stream<List<NotificationMessage>> for all notifications\n- Expose Stream<int> for unread count\n- Persist notifications locally during disconnection\n- Implement markAsRead(String id) method\n- Implement markAllAsRead() method",
-  "type": "implementation",
-  "expectedOutput": "A notification service that maintains real-time notification state with proper stream management and read tracking.",
+  "description": "Build a notification system using Serverpod streams to push updates to connected clients.",
+  "lessonId": "lesson-12-02",
+  "order": 2,
+  "instructions": "Create a notification streaming system:\n\n1. Serverpod endpoint that:\n   - Provides a stream of Notification objects\n   - Filters notifications by user ID\n   - Supports marking notifications as read via a separate endpoint\n\n2. Flutter NotificationService that:\n   - Connects to the notification stream on app start\n   - Maintains a list of unread notifications\n   - Exposes a stream of notification count updates\n   - Handles marking notifications as read\n\n3. UI components:\n   - Notification bell with badge showing unread count\n   - Notification list screen that updates in real-time\n   - Swipe-to-dismiss to mark as read\n\nInclude proper error handling and reconnection logic.",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use a BehaviorSubject or StreamController.broadcast() for the notifications list so late subscribers get the current value."
+      "text": "Use Serverpod's createStream to create a stream that filters by the authenticated user."
     },
     {
       "level": 2,
-      "text": "The unreadCount stream can be derived from the notifications stream using .map() to count where isRead == false."
+      "text": "Maintain notification state in a StateNotifier so UI can react to changes."
     },
     {
       "level": 3,
-      "text": "When marking as read, update the local list and emit a new value through the StreamController to notify listeners."
+      "text": "Consider using a BehaviorSubject or similar to always provide the current notification count to new listeners."
     }
   ]
 }

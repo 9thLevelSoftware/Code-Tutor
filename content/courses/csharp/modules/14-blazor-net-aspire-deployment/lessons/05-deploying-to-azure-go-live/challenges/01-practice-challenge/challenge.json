@@ -3,6 +3,8 @@
   "id": "lesson-14-05-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-14-05",
+  "order": 1,
   "instructions": "Azure deployment simulation!\n\nPrint complete deployment workflow:\n\n1. Prepare app for production:\n   - Update connection strings to use environment variables\n   - Add health check endpoint\n   - Configure logging\n\n2. Azure CLI commands:\n   - Create resource group\n   - Create App Service plan\n   - Create web app\n   - Deploy code\n\n3. Post-deployment:\n   - Configure connection strings in Azure\n   - Set environment variables\n   - Enable HTTPS only\n   - Configure custom domain (optional)\n\n4. Monitoring:\n   - Check application logs\n   - Set up alerts\n   - Monitor performance\n\nPrint step-by-step guide!",
   "language": "csharp",
   "testCases": [

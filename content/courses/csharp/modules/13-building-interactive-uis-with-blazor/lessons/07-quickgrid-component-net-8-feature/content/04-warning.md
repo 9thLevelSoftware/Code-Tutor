@@ -7,7 +7,7 @@ title: "Common Pitfalls"
 
 **IQueryable vs IEnumerable performance**: Use IQueryable with EF Core! Sorting/paging executes in database. IEnumerable loads ALL data first, then filters in memory - slow for large datasets!
 
-**Missing NuGet package**: QuickGrid requires `Microsoft.AspNetCore.Components.QuickGrid`. Included in .NET 8+ templates, but older projects need manual install.
+**Missing NuGet package**: QuickGrid requires `Microsoft.AspNetCore.Components.QuickGrid`. Included in .NET 9+ templates, but older projects need manual install.
 
 **Render mode required**: QuickGrid needs interactive render mode for sorting/paging! Static SSR won't work. Add `@rendermode InteractiveServer` or similar.
 

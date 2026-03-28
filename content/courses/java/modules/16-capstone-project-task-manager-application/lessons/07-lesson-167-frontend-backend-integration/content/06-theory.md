@@ -49,3 +49,13 @@ function TaskSkeleton() {
 ```
 
 Both approaches aim for the same goal: users should never face a blank screen or wonder if something is broken. The Thymeleaf path achieves this naturally through full page loads, while the React path requires explicit loading state management.
+
+## Troubleshooting Checklist
+
+If your frontend can't connect to the backend:
+
+1. **Is Spring Boot running?** Check `http://localhost:8080/actuator/health`
+2. **Is CORS configured?** Look for CORS errors in browser console
+3. **Are ports correct?** Frontend (5173) → Backend (8080)
+4. **Is the JWT token included?** Check Authorization header in network tab
+5. **Are environment variables set?** Check `.env` for VITE_API_URL

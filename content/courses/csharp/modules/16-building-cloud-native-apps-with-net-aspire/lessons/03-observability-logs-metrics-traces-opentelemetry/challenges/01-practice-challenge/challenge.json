@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-16-03-challenge-01",
+  "lessonId": "lesson-16-03",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Add observability to a shopping cart service!\n\n1. Create CartMetrics class with:\n   - Counter: items_added (with product_category tag)\n   - Counter: items_removed\n   - Histogram: cart_value (track cart totals)\n   - UpDownCounter: active_carts\n\n2. Create CartService with structured logging:\n   - Log when items are added (include CartId, ProductId, Quantity)\n   - Log warnings when cart exceeds $1000\n   - Log errors with exception details\n\n3. Add tracing with ActivitySource:\n   - Span for AddToCart operation\n   - Include cart_id and product_id as tags\n\nUse IMeterFactory and ILogger<T>!",

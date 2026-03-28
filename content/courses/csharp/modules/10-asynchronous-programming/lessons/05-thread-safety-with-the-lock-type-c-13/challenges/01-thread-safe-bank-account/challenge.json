@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-10-05-challenge-01",
+  "lessonId": "lesson-10-05",
+  "order": 1,
   "title": "Thread-Safe Bank Account",
   "description": "Build a thread-safe bank account using the C# 13 Lock type.",
   "instructions": "Create a thread-safe BankAccount class!\n\n1. Create 'BankAccount' class with:\n   - private decimal _balance field\n   - private readonly Lock _lock field (C# 13 Lock type)\n   - public decimal Balance property (thread-safe read)\n   - public void Deposit(decimal amount) method (thread-safe)\n   - public bool Withdraw(decimal amount) method (thread-safe, return false if insufficient funds)\n\n2. In main code:\n   - Create account with initial balance of 1000\n   - Start 10 tasks that each deposit 100 (total +1000)\n   - Start 10 tasks that each withdraw 50 (total -500)\n   - Wait for all tasks\n   - Print final balance (should be 1500)\n\nUse 'lock (_lock)' or '_lock.EnterScope()' to protect critical sections!",

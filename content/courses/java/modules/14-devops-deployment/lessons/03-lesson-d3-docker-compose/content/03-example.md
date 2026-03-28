@@ -7,7 +7,8 @@ Full example with Spring Boot + PostgreSQL + proper configuration:
 
 ```yaml
 # docker-compose.yml
-version: '3.8'
+# Version is optional in Docker Compose v2+
+# version: '3.8'
 
 services:
   # Spring Boot Application
@@ -26,7 +27,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/actuator/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
       interval: 30s
       timeout: 10s
       retries: 3

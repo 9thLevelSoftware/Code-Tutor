@@ -3,6 +3,7 @@
   "title": "Version Control with Git (Save Your Work!)",
   "moduleId": "module-14",
   "order": 4,
-  "estimatedMinutes": 15,
-  "difficulty": "advanced"
+  "estimatedMinutes": 20,
+  "difficulty": "advanced",
+  "topics": ["Git", "Version Control", "Source Control", "Repository", "Deployment"]
 }

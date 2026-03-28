@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "16.3-challenge-0",
+  "lessonId": "lesson-16-03",
+  "order": 1,
   "title": "Configure ExportOptions.plist for App Store",
   "description": "Create an ExportOptions.plist file for automated App Store submissions.",
   "instructions": "Write an ExportOptions.plist that configures: 1) app-store distribution method, 2) Team ID 'ABC123XYZ', 3) Upload symbols enabled, 4) Destination set to upload, 5) Provisioning profile mapping for bundle ID 'com.example.flutterapp' using profile 'Flutter App Store Profile'.",

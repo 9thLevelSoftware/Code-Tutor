@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.6-challenge-0",
+  "lessonId": "lesson-15-06",
+  "order": 1,
   "title": "Create Adaptive Dialog Utility",
   "description": "Build a utility class that shows platform-appropriate confirmation dialogs.",
   "instructions": "Create an AdaptiveConfirmDialog class with a static show() method. On iOS, it should show a CupertinoAlertDialog. On Android, it should show a Material AlertDialog. The method should accept context, title, message, confirmText, and cancelText parameters, and return a Future<bool?> indicating the user's choice.",

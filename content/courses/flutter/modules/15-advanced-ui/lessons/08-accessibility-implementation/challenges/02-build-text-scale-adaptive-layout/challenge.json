@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "15.8-challenge-1",
+  "lessonId": "lesson-15-08",
+  "order": 2,
   "title": "Build Text-Scale-Adaptive Layout",
   "description": "Create a profile header that adapts gracefully to large text sizes.",
   "instructions": "Build a ProfileHeader widget that displays a user avatar, name, title, and action buttons. At normal text sizes, show horizontal layout. At large text sizes (>1.5x), switch to a vertical layout that stacks elements. Requirements: (1) Check text scale factor using MediaQuery, (2) Horizontal layout at normal sizes with avatar, text, and buttons in a row, (3) Vertical layout at large sizes stacking avatar on top, then text, then buttons, (4) Icons should scale with text size, (5) Ensure minimum touch targets of 48x48.",

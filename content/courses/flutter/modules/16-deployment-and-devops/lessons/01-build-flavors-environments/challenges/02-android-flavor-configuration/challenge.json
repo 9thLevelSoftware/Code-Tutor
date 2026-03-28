@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "16.1-challenge-1",
+  "lessonId": "lesson-16-01",
+  "order": 2,
   "title": "Android Flavor Configuration",
   "description": "Configure Android build.gradle for three flavors with different app IDs.",
   "instructions": "Write the productFlavors block for build.gradle that creates dev, staging, and prod flavors. Each should have: appropriate applicationIdSuffix (except prod), versionNameSuffix, and app_name resource value.",

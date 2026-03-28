@@ -1,6 +1,8 @@
 {
   "type": "CODE",
   "id": "16.6-challenge-0",
+  "lessonId": "lesson-16-06",
+  "order": 1,
   "title": "Configure Fly.io Deployment",
   "description": "Create a fly.toml configuration for a Serverpod backend with health checks and auto-scaling.",
   "instructions": "Complete the fly.toml configuration file for deploying a Serverpod backend to Fly.io. The configuration should:\n\n1. Set the app name to 'my-flutter-backend'\n2. Use 'sjc' (San Jose) as the primary region\n3. Configure the HTTP service on port 8080 with HTTPS enforcement\n4. Add a health check that hits '/health' every 15 seconds\n5. Configure auto-scaling with minimum 1 machine running\n6. Set VM resources to 1 shared CPU and 512MB memory",

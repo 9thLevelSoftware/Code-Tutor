@@ -18,7 +18,7 @@ class AccessibleProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Implement accessible product card
+    // Implement accessible product card below
     // 1. Use MergeSemantics to combine announcements
     // 2. Add button semantics for the tap action
     // 3. Exclude decorative stars but include rating label

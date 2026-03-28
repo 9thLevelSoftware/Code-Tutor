@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.8-challenge-0",
+  "lessonId": "lesson-18-08",
+  "order": 1,
   "title": "Post Detail Screen",
   "description": "Build a full post detail view with comments section, add comment form, and share functionality for a complete social media experience.",
   "instructions": "Implement a comprehensive post detail screen:\n\n1. Display the full post with all content and images\n2. Show comments list with pagination\n3. Add comment input form at the bottom\n4. Implement real-time comment adding with optimistic updates\n5. Add share functionality with platform share sheet\n6. Handle loading and error states for comments\n7. Support replying to comments (nested comments)",

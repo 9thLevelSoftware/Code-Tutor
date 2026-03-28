@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-01-challenge-01",
+  "lessonId": "lesson-12-01",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Understand the limitations of file-based storage!\n\n1. Create a 'Product' class (Id, Name, Price)\n\n2. Create a list of 5 products\n\n3. Simulate file storage:\n   - 'Save' products by printing each as CSV line\n   - Print: \\\"Saving to file: [Id],[Name],[Price]\\\"\n\n4. Simulate file search:\n   - To find product by ID, print \\\"Reading entire file...\\\"\n   - Loop through ALL products to find match\n   - Print how many products were checked\n\n5. Explain the problems:\n   - Print why this is slow for 1 million products\n   - Print why concurrent writes are dangerous\n   - Print what databases solve\n\nThis demonstrates WHY we need databases!",

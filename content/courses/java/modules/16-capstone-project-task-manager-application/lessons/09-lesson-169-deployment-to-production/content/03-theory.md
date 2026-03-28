@@ -119,20 +119,20 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push API image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-api:latest
 
       - name: Build and push Frontend image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: ./frontend
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:latest
 
-  # Deploy to Railway
+  # Deploy to Fly.io
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -141,13 +141,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
+      - name: Install Fly.io CLI
+        run: |
+          curl -L https://fly.io/install.sh | sh
+          echo "$HOME/.fly/bin" >> $GITHUB_PATH
 
-      - name: Deploy to Railway
+      - name: Deploy to Fly.io
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: railway up --service api
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: fly deploy --remote-only
 ```
 
 This pipeline:
@@ -155,7 +157,9 @@ This pipeline:
 2. Runs frontend tests and build
 3. Builds Docker images on main branch
 4. Pushes to GitHub Container Registry
-5. Deploys to Railway
+5. Deploys to Fly.io
 
 Add secrets in GitHub repository settings:
-- RAILWAY_TOKEN: Your Railway deployment token
+- FLY_API_TOKEN: Your Fly.io deployment token (get it with: fly tokens create deploy -x 999d)
+
+**Note:** Railway discontinued their free tier in 2024. This lesson now uses Fly.io which offers a generous free tier with 256MB RAM and 3GB transfer per month.

@@ -16,25 +16,25 @@ class RiveToggle extends StatefulWidget {
 }
 
 class _RiveToggleState extends State<RiveToggle> {
-  // TODO: Store SMIBool reference for 'isOn' input
-  // TODO: Track current value
+  // Store SMIBool reference for 'isOn' input here
+  // Track current value here
 
   void _onRiveInit(Artboard artboard) {
-    // TODO: Get StateMachineController from artboard
+    // Get StateMachineController from artboard
     // State machine name: 'ToggleState'
-    // TODO: Find 'isOn' input and store reference
-    // TODO: Set initial value
+    // Find 'isOn' input and store reference
+    // Set initial value here
   }
 
   void _toggle() {
-    // TODO: Toggle value
-    // TODO: Update Rive input
-    // TODO: Call onChanged callback
+    // Toggle value here
+    // Update Rive input here
+    // Call onChanged callback here
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Return GestureDetector with RiveAnimation.asset
+    // Return GestureDetector with RiveAnimation.asset below
     // Asset path: 'assets/animations/toggle.riv'
     // Size: 80x40
     return Container();

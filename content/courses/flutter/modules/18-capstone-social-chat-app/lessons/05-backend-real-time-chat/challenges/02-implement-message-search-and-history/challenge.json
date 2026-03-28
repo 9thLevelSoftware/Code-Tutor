@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.5-challenge-1",
+  "lessonId": "lesson-18-05",
+  "order": 2,
   "title": "Implement Message Search and History",
   "description": "Create a full-text search system for messages with conversation filtering and result highlighting.",
   "instructions": "Implement a message search system that:\n\n1. Performs full-text search across user's messages\n2. Supports filtering by conversation\n3. Highlights matched text in results\n4. Returns messages with context (conversation info, sender)\n5. Uses efficient database indexing\n6. Supports pagination for large result sets\n\nCreate the search endpoint with proper indexing strategy.",

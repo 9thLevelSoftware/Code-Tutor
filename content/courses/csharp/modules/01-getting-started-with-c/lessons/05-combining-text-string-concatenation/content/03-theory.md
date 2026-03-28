@@ -13,7 +13,7 @@ title: "Syntax Breakdown"
 
 ## String Interpolation: The Modern Way
 
-In modern C# (.NET 6+), **string interpolation** is preferred over concatenation:
+In modern C# (.NET 9), **string interpolation** is preferred over concatenation:
 
 ```csharp
 // Old way (concatenation)

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-11-03-challenge-01",
+  "lessonId": "lesson-11-03",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build a complete CRUD API for Tasks!\n\n1. Create 'TaskItem' class:\n   - int Id\n   - string Title\n   - string Description\n   - bool IsCompleted\n\n2. Create in-memory list with 2 initial tasks\n\n3. Implement ALL CRUD operations:\n   - GET /api/tasks - Return all tasks\n   - GET /api/tasks/{id} - Return single task\n   - POST /api/tasks - Create new task (auto-assign ID)\n   - PUT /api/tasks/{id} - Update task\n   - DELETE /api/tasks/{id} - Delete task\n\n4. For POST: use nextId counter for auto-incrementing IDs\n\n5. Print available endpoints when API starts",

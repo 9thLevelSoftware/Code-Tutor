@@ -23,7 +23,7 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/myapp
 spring.datasource.username=postgres
 spring.datasource.password=postgres
 
-# In Railway, set environment variables:
+# In Fly.io, set environment variables:
 DATABASE_URL=postgresql://user:pass@host:5432/db
 # Spring Boot reads this automatically!
 
@@ -31,7 +31,7 @@ DATABASE_URL=postgresql://user:pass@host:5432/db
 @Value("${jwt.secret}")
 private String jwtSecret;
 
-# Set in Railway:
+# Set in Fly.io:
 JWT_SECRET=super-secret-production-key
 
 ENVIRONMENT-SPECIFIC PROFILES:
@@ -40,5 +40,5 @@ ENVIRONMENT-SPECIFIC PROFILES:
 spring.jpa.show-sql=false
 logging.level.root=WARN
 
-# In Railway:
+# In Fly.io:
 SPRING_PROFILES_ACTIVE=production

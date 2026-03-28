@@ -1,24 +1,59 @@
 {
-  "id": "11.1-challenge-0",
+  "type": "QUIZ",
+  "id": "12.1-quiz-1",
   "title": "Real-Time Patterns Quiz",
   "description": "Test your understanding of real-time communication patterns.",
-  "instructions": "Answer the following questions about real-time patterns:\n\n1. Which pattern provides true bidirectional communication?\n   A) Polling\n   B) Long-Polling\n   C) WebSocket\n   D) Server-Sent Events\n\n2. What is the main disadvantage of regular polling?\n   A) Requires special protocols\n   B) Wastes bandwidth when no updates exist\n   C) Only works on mobile devices\n   D) Cannot send JSON data\n\n3. How does long-polling differ from regular polling?\n   A) It uses a different protocol\n   B) Server holds connection until data is available\n   C) Client sends multiple requests simultaneously\n   D) It only works with WebSocket servers\n\n4. When would SSE be preferred over WebSocket?\n   A) For chat applications\n   B) When client needs to send frequent updates\n   C) For server-to-client notifications only\n   D) For gaming applications\n\n5. Which pattern does Serverpod use for real-time features?\n   A) Polling\n   B) Long-Polling\n   C) WebSocket\n   D) Server-Sent Events\n\nEnter your answers as a comma-separated list (e.g., 'A,B,C,D,E')",
-  "type": "QUIZ",
-  "expectedOutput": "C,B,B,C,C",
-  "language": "text",
-  "testCases": [],
-  "hints": [
+  "lessonId": "lesson-12-01",
+  "order": 1,
+  "questions": [
     {
-      "level": 1,
-      "text": "WebSocket is the only pattern that allows both client and server to send messages at any time."
+      "id": "q1",
+      "options": [
+        "Long polling",
+        "Server-Sent Events",
+        "WebSockets",
+        "All of the above"
+      ],
+      "correctAnswer": 3,
+      "explanation": "All three are valid real-time patterns. Long polling maintains an open HTTP request that the server responds to when data is available. Server-Sent Events use a persistent HTTP connection for server-to-client streaming. WebSockets provide bidirectional communication over a persistent connection.",
+      "question": "Which of the following are valid real-time communication patterns?"
     },
     {
-      "level": 2,
-      "text": "Regular polling sends requests even when there are no updates, wasting bandwidth and server resources."
+      "id": "q2",
+      "options": [
+        "Polling is more efficient than WebSockets",
+        "WebSockets provide bidirectional communication",
+        "Server-Sent Events require a special server protocol",
+        "Long polling cannot handle high-frequency updates"
+      ],
+      "correctAnswer": 1,
+      "explanation": "WebSockets maintain a persistent connection that allows both client and server to send messages at any time (bidirectional). This is more efficient than polling for real-time applications.",
+      "question": "What is a key advantage of WebSockets over HTTP polling?"
     },
     {
-      "level": 3,
-      "text": "SSE is unidirectional (server to client), making it simpler but not suitable when the client needs to send data frequently."
+      "id": "q3",
+      "options": [
+        "When you need real-time bidirectional communication",
+        "For simple server-to-client streaming only",
+        "When you need to support very old browsers",
+        "For one-time data fetching"
+      ],
+      "correctAnswer": 0,
+      "explanation": "WebSockets are ideal when you need real-time bidirectional communication like chat, multiplayer games, or collaborative editing. For simple streaming, Server-Sent Events might be simpler.",
+      "question": "When should you choose WebSockets over other patterns?"
+    },
+    {
+      "id": "q4",
+      "options": [
+        "Always use WebSockets for everything",
+        "Choose based on the specific requirements and trade-offs",
+        "Never use polling in modern applications",
+        "Server-Sent Events are always the best choice"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Each pattern has trade-offs. WebSockets add complexity but offer the best real-time performance. Polling is simpler but less efficient. Server-Sent Events are great for one-way streaming. Choose based on your specific needs.",
+      "question": "How should you choose between real-time patterns?"
     }
-  ]
+  ],
+  "difficulty": "intermediate"
 }

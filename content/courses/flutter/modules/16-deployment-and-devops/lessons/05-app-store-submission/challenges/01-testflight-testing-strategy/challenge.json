@@ -1,6 +1,8 @@
 {
   "type": "MULTI_CHOICE",
   "id": "16.5-challenge-0",
+  "lessonId": "lesson-16-05",
+  "order": 1,
   "title": "TestFlight Testing Strategy",
   "description": "Choose the appropriate TestFlight testing approach for different scenarios.",
   "instructions": "Your Flutter app is ready for beta testing. You want to distribute it to 500 external beta users who signed up on your website. You need their feedback before the public launch. Which TestFlight approach should you use?",

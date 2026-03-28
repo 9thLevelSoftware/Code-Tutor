@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-10-01-challenge-01",
+  "lessonId": "lesson-10-01",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Simulate a coffee shop with async operations!\n\n1. Create async method 'BrewCoffeeAsync(string type)':\n   - Print 'Brewing [type] coffee...'\n   - await Task.Delay(2000) to simulate brewing\n   - Print '[type] coffee ready!'\n   - Return Task\n\n2. Create async method 'ToastBreadAsync()':\n   - Print 'Toasting bread...'\n   - await Task.Delay(1000)\n   - Print 'Toast ready!'\n   - Return Task\n\n3. In Main (or top-level):\n   - Start brewing coffee (don't await yet!)\n   - Start toasting bread (don't await yet!)\n   - Print 'Doing other tasks...'\n   - await BOTH tasks\n   - Print 'Breakfast ready!'\n\nBoth should run SIMULTANEOUSLY!",

@@ -3,6 +3,8 @@
   "id": "lesson-13-06-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-13-06",
+  "order": 1,
   "instructions": "Create a User Profile Editor with full data binding!\n\n1. UserProfile model:\n   - string Name\n   - string Email\n   - int Age\n   - DateTime JoinDate\n   - bool IsActive\n   - string Bio (textarea)\n\n2. ProfileEditor component:\n   - Input for Name (@bind, updates live)\n   - Input for Email\n   - Number input for Age\n   - Date input for JoinDate\n   - Checkbox for IsActive\n   - Textarea for Bio\n   - Display preview card showing all values\n   - Show character count for Bio (live update)\n\n3. Demonstrate @bind:event=\"oninput\" for live updates\n\nPrint complete component!",
   "language": "csharp",
   "testCases": [
@@ -48,7 +50,7 @@
     },
     {
       "level": 3,
-      "text": "Format vs culture: @bind:format=\"C\" uses current culture! En-US = $, En-GB = £. Be aware for international apps. Use @bind:culture to specify."
+      "text": "Format vs culture: @bind:format=\"C\" uses current culture! En-US = $, En-GB = \u00c2\u00a3. Be aware for international apps. Use @bind:culture to specify."
     },
     {
       "level": 4,
@@ -67,7 +69,7 @@
     },
     {
       "mistake": "Format vs culture",
-      "consequence": "@bind:format=\"C\" uses current culture! En-US = $, En-GB = £. Be aware for international apps. Use @bind:culture to specify.",
+      "consequence": "@bind:format=\"C\" uses current culture! En-US = $, En-GB = \u00c2\u00a3. Be aware for international apps. Use @bind:culture to specify.",
       "correction": "Review the correct syntax and best practices for this concept."
     },
     {

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "17.6-challenge-1",
+  "lessonId": "lesson-17-06",
+  "order": 2,
   "title": "Create a Health Check System",
   "description": "Build a comprehensive health check system that monitors database, cache, and external services.",
   "instructions": "Create a HealthChecker class that:\n\n1. Defines a HealthCheck result class with name, status, latency, and error\n2. Implements checkDatabase() that tests database connectivity\n3. Implements checkCache() that tests Redis/cache connectivity\n4. Implements checkAll() that runs all checks and returns aggregate status\n5. Calculates overall system health based on individual check results\n6. Handles timeouts gracefully (max 5 seconds per check)",

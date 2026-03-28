@@ -8,7 +8,7 @@
     "You must explicitly call System.getenv(\"DATABASE_URL\") in your code",
     "Spring Boot automatically maps it to spring.datasource.url",
     "You must define it in application.properties first",
-    "Railway automatically injects it into application.properties file"
+    "Fly.io automatically injects it into application.properties file"
   ],
   "correctAnswer": 1,
   "explanation": "Spring Boot has built-in support for environment variables. DATABASE_URL is a special case that Spring Boot's DataSource auto-configuration recognizes and uses for the database connection. For custom variables, Spring Boot converts them: MY_CUSTOM_VAR becomes my.custom.var in properties.",

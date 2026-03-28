@@ -1,33 +1,25 @@
 {
-  "type": "FREE_CODING",
   "id": "10.5-challenge-1",
   "title": "Implement Contract Verification",
-  "description": "Write a contract verification test for an API endpoint.",
-  "instructions": "You are testing a Product API that should return products with id (int), name (String), price (number >= 0), inStock (bool), and category (String). Write a test that verifies the response contains all required fields with correct types.",
+  "type": "code",
+  "lessonId": "lesson-10-05",
+  "order": 2,
+  "description": "Implement contract testing to validate API responses against a JSON schema.",
+  "instructions": "Given this JSON schema for a User API response:\n\n```json\n{\n  \"type\": \"object\",\n  \"required\": [\"id\", \"name\", \"email\"],\n  \"properties\": {\n    \"id\": {\"type\": \"integer\"},\n    \"name\": {\"type\": \"string\", \"minLength\": 1},\n    \"email\": {\"type\": \"string\", \"format\": \"email\"},\n    \"avatar\": {\"type\": [\"string\", \"null\"]}\n  }\n}\n```\n\nWrite a contract test that:\n1. Makes an API request to GET /api/users/1\n2. Validates the response against the schema\n3. Tests that the response includes all required fields\n4. Tests that optional fields are handled correctly",
   "language": "dart",
+  "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use http.get() to make the request and jsonDecode() to parse the response body."
+      "text": "Use the json_schema package to validate responses against your schema."
     },
     {
       "level": 2,
-      "text": "Use json.containsKey() to check if a field exists, and 'is' type checks to verify types."
-    }
-  ],
-  "difficulty": "intermediate",
-  "testCases": [
-    {
-      "id": "test-1",
-      "description": "Contains the ContractVerification class",
-      "expectedOutput": "ContractVerification",
-      "isVisible": true
+      "text": "Create a helper function that takes a response and schema, then returns validation errors."
     },
     {
-      "id": "test-2",
-      "description": "Uses test() or group() for test organization",
-      "expectedOutput": "test(",
-      "isVisible": true
+      "level": 3,
+      "text": "Test both successful validation and failure cases where the response doesn't match."
     }
   ]
 }

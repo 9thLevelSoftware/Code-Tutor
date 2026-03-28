@@ -5,6 +5,30 @@ title: "Testing Repository Flows"
 
 Testing a repository that exposes a reactive Flow:
 
+### Required Dependencies
+
+```toml
+# gradle/libs.versions.toml
+[versions]
+turbine = "1.2.0"
+
+[libraries]
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+```
+
+```kotlin
+// shared/build.gradle.kts
+kotlin {
+    sourceSets {
+        commonTest.dependencies {
+            implementation(libs.turbine)
+        }
+    }
+}
+```
+
+### Test Implementation
+
 ```kotlin
 // Production code
 class NoteRepositoryImpl(private val database: AppDatabase) : NoteRepository {

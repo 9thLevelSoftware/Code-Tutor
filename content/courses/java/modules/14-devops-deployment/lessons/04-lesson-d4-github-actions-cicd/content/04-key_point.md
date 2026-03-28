@@ -18,10 +18,10 @@ SETTING UP SECRETS:
 1. Go to repository Settings
 2. Click 'Secrets and variables' > 'Actions'
 3. Click 'New repository secret'
-4. Add name (e.g., RAILWAY_TOKEN) and value
+4. Add name (e.g., FLY_API_TOKEN) and value
 
 COMMON SECRETS:
-- RAILWAY_TOKEN: For Railway deployment
+- FLY_API_TOKEN: For Fly.io deployment
 - DOCKER_USERNAME, DOCKER_PASSWORD: For Docker Hub
 - AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY: For AWS
 - GITHUB_TOKEN: Automatically provided by GitHub!

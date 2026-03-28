@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-03-challenge-01",
+  "lessonId": "lesson-12-03",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create your first Entity Framework Core application!\n\n1. Define a 'Student' entity:\n   - int Id (primary key)\n   - string Name\n   - int Age\n   - string Major\n\n2. Create 'SchoolDbContext' inheriting DbContext:\n   - DbSet<Student> Students property\n   - OnConfiguring: use SQLite (\\\"Data Source=school.db\\\")\n\n3. Simulate EF Core operations (print SQL commands that would execute):\n   - Create context\n   - Add 3 students\n   - Print: \\\"SQL: INSERT INTO Students...\\\"\n   - Query students over age 20\n   - Print: \\\"SQL: SELECT * FROM Students WHERE Age > 20\\\"\n   - Update first student's major\n   - Print: \\\"SQL: UPDATE Students SET Major = ...\\\"\n   - Delete a student\n   - Print: \\\"SQL: DELETE FROM Students WHERE Id = ...\\\"\n\nThis shows EF Core's CRUD operations!",

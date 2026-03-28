@@ -5,6 +5,38 @@ title: "Testing User Interactions"
 
 Testing clicks, text input, and state changes:
 
+### Required Dependencies
+
+```toml
+# gradle/libs.versions.toml
+[versions]
+compose-multiplatform = "1.10.3"
+
+[libraries]
+compose-ui-test = { module = "org.jetbrains.compose.ui:ui-test-junit4", version.ref = "compose-multiplatform" }
+compose-ui-test-manifest = { module = "org.jetbrains.compose.ui:ui-test-manifest", version.ref = "compose-multiplatform" }
+```
+
+```kotlin
+// shared/build.gradle.kts
+kotlin {
+    sourceSets {
+        commonTest.dependencies {
+            implementation(compose.uiTest)
+            implementation(compose.uiTestManifest)
+        }
+    }
+}
+
+// For Android-specific tests
+androidTest.dependencies {
+    implementation(libs.compose.ui.test)
+    debugImplementation(libs.compose.ui.test.manifest)
+}
+```
+
+### Test Implementation
+
 ```kotlin
 @Composable
 fun AddNoteScreen(

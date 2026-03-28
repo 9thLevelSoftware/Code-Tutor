@@ -3,6 +3,8 @@
   "id": "11.6-quiz",
   "title": "OAuth and Social Login Quiz",
   "description": "Test your understanding of OAuth implementation with Google and Apple Sign-In.",
+  "lessonId": "lesson-11-06",
+  "order": 3,
   "questions": [
     {
       "id": "q1",

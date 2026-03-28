@@ -48,7 +48,7 @@ val testModule = module {
 
 // ========== Tests ==========
 
-class NotesListViewModelTest : KoinTest {
+class NotesListViewModelTest : KoinTest, AutoCloseKoinTest {
     
     private val viewModel: NotesListViewModel by inject()
     private val repository: FakeNotesRepository by inject()
@@ -58,11 +58,6 @@ class NotesListViewModelTest : KoinTest {
         startKoin {
             modules(testModule)
         }
-    }
-    
-    @AfterTest
-    fun tearDown() {
-        stopKoin()
     }
     
     @Test
@@ -90,3 +85,5 @@ class NotesListViewModelTest : KoinTest {
     }
 }
 ```
+
+**Note:** `AutoCloseKoinTest` automatically stops Koin after each test. No manual `stopKoin()` needed!

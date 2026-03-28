@@ -3,7 +3,6 @@ type: "WARNING"
 title: "Common FP Pitfalls"
 ---
 
-
 ### Over-Engineering
 
 ```kotlin

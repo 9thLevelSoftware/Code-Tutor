@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.8-challenge-1",
+  "lessonId": "lesson-18-08",
+  "order": 2,
   "title": "Image Carousel in Posts",
   "description": "Implement multi-image posts with a PageView carousel, dots indicator, and pinch-to-zoom functionality for a polished image viewing experience.",
   "instructions": "Implement an image carousel for posts:\n\n1. Replace grid layout with PageView for 2+ images\n2. Add dots indicator showing current position\n3. Implement smooth page transitions\n4. Add pinch-to-zoom on individual images\n5. Support swipe gestures for navigation\n6. Show image counter (1/4, 2/4, etc.)\n7. Preload adjacent images for smooth scrolling",

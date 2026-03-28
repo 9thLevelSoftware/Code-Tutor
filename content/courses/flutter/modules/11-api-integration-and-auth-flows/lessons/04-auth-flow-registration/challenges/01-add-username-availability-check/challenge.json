@@ -2,22 +2,24 @@
   "type": "CODE",
   "id": "11.4-challenge-1",
   "title": "Add Username Availability Check",
-  "description": "Extend the registration form to check if a username is available in real-time as the user types, debouncing requests to avoid overwhelming the server.",
-  "instructions": "Add a username field to the registration form that:\n\n1. Shows a loading indicator while checking availability\n2. Debounces API calls (wait 500ms after user stops typing)\n3. Shows a green checkmark when username is available\n4. Shows a red X with error message when username is taken\n5. Validates that username is 3-20 characters, alphanumeric with underscores only\n\nCreate the following:\n- A debouncer utility class\n- Username validation logic\n- API call to check availability\n- UI feedback for each state (loading, available, taken, invalid)",
+  "description": "Extend the registration flow to check if a username is available in real-time.",
+  "lessonId": "lesson-11-04",
+  "order": 1,
+  "instructions": "Implement a username availability check feature:\n\n1. Create a UsernameValidator class that:\n   - Checks if the username meets format requirements (alphanumeric, 3-20 chars)\n   - Debounces the availability check (wait 500ms after user stops typing)\n   - Calls an API endpoint to check if username is taken\n   - Returns a status: available, taken, invalid, or checking\n\n2. Create a UsernameInput widget that:\n   - Shows a text field for username entry\n   - Displays visual feedback (checkmark, X, or spinner) based on status\n   - Shows appropriate error messages\n   - Disables the submit button if username is taken or invalid\n\n3. Integrate this into the registration form",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use Timer.cancel() to stop the previous timer before starting a new one in the debouncer."
+      "text": "Use Timer for debouncing - cancel previous timer and start new one on each keystroke."
     },
     {
       "level": 2,
-      "text": "Check if the widget is still mounted before calling setState after an async operation."
+      "text": "Use an enum for UsernameStatus with values: initial, checking, available, taken, invalid."
     },
     {
       "level": 3,
-      "text": "Use an enum to track all possible states: unchecked, checking, available, taken, and invalid format."
+      "text": "Consider using Riverpod to manage the username state so it can be accessed from both the widget and the submit button."
     }
   ]
 }

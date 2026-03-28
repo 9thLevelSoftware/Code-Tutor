@@ -1,57 +1,107 @@
 ---
 type: "EXAMPLE"
-title: "Code Example"
+title: "switch Statement in Action"
 ---
 
-This example demonstrates both switch statements and the modern switch expression syntax.
+## Example 1: Classic Switch Statement
+
+The traditional switch statement is perfect for menu selections:
 
 ```csharp
-// === SWITCH STATEMENT (classic) ===
-int dayNumber = 3;
+string day = "Wednesday";
 
-switch (dayNumber)
+switch (day)
 {
-    case 1:
-        Console.WriteLine("Monday");
+    case "Monday":
+        Console.WriteLine("Start of the work week!");
         break;
-    case 2:
-        Console.WriteLine("Tuesday");
+    case "Tuesday":
+        Console.WriteLine("Taco Tuesday!");
         break;
-    case 3:
-        Console.WriteLine("Wednesday");
+    case "Wednesday":
+        Console.WriteLine("Hump day!");
         break;
-    case 6:
-    case 7:
-        Console.WriteLine("Weekend!");
+    case "Thursday":
+        Console.WriteLine("Almost Friday!");
+        break;
+    case "Friday":
+        Console.WriteLine("Weekend is coming!");
+        break;
+    case "Saturday":
+    case "Sunday":
+        Console.WriteLine("It's the weekend!");
         break;
     default:
         Console.WriteLine("Invalid day");
         break;
 }
+```
 
-// === SWITCH EXPRESSION (modern C# 8+) ===
-// Much cleaner! Returns a value directly.
-string dayName = dayNumber switch
-{
-    1 => "Monday",
-    2 => "Tuesday",
-    3 => "Wednesday",
-    4 => "Thursday",
-    5 => "Friday",
-    6 or 7 => "Weekend!",   // 'or' pattern
-    _ => "Invalid day"       // _ is the default
-};
-Console.WriteLine(dayName);
+**Output:** `Hump day!`
 
-// === PATTERN MATCHING in switch expressions ===
+Notice: **Multiple cases can share the same code** (Saturday and Sunday both go to weekend message).
+
+## Example 2: Switch Expression (Modern C# 8+)
+
+Switch expressions are perfect for simple value mappings:
+
+```csharp
 int score = 85;
+
 string grade = score switch
 {
     >= 90 => "A",
-    >= 80 and < 90 => "B",   // relational + logical patterns
-    >= 70 and < 80 => "C",
+    >= 80 => "B",
+    >= 70 => "C",
     >= 60 => "D",
-    _ => "F"
+    _ => "F"  // _ is the default case
 };
+
 Console.WriteLine($"Grade: {grade}");
 ```
+
+**Output:** `Grade: B`
+
+## Example 3: Using Switch with Numbers
+
+```csharp
+int month = 3;
+
+switch (month)
+{
+    case 1:
+        Console.WriteLine("January");
+        break;
+    case 2:
+        Console.WriteLine("February");
+        break;
+    case 3:
+        Console.WriteLine("March");
+        break;
+    // ... more cases
+    default:
+        Console.WriteLine("Invalid month");
+        break;
+}
+```
+
+## Example 4: Switch Expression with String Result
+
+```csharp
+string command = "save";
+
+string result = command.ToLower() switch
+{
+    "start" => "Starting game...",
+    "save" => "Saving progress...",
+    "load" => "Loading save file...",
+    "quit" => "Quitting game...",
+    _ => "Unknown command"
+};
+
+Console.WriteLine(result);
+```
+
+**Output:** `Saving progress...`
+
+Switch expressions are **concise** and **return values directly**—great for assignments!

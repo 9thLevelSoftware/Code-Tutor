@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-10-02-challenge-01",
+  "lessonId": "lesson-10-02",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build an async data processing pipeline!\n\n1. Create 'async Task<int> LoadDataAsync()':\n   - Print 'Loading data...'\n   - await Task.Delay(1000)\n   - Print 'Data loaded!'\n   - Return 42\n\n2. Create 'async Task<int> ProcessDataAsync(int input)':\n   - Print 'Processing data...'\n   - await Task.Delay(1500)\n   - Print 'Processing complete!'\n   - Return input * 2\n\n3. Create 'async Task<string> SaveResultAsync(int result)':\n   - Print 'Saving result...'\n   - await Task.Delay(800)\n   - Print 'Result saved!'\n   - Return 'Saved: ' + result\n\n4. Create 'async Task RunPipelineAsync()':\n   - Call all three methods in sequence (await each)\n   - Print final message from SaveResultAsync\n\n5. Call RunPipelineAsync() and await it",

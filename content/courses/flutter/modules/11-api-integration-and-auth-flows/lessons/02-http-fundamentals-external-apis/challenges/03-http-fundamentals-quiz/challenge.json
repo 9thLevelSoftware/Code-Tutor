@@ -3,6 +3,8 @@
   "id": "11.2-quiz-1",
   "title": "HTTP Fundamentals Quiz",
   "description": "Test your understanding of HTTP communication with Dio and external APIs.",
+  "lessonId": "lesson-11-02",
+  "order": 3,
   "questions": [
     {
       "id": "q1",

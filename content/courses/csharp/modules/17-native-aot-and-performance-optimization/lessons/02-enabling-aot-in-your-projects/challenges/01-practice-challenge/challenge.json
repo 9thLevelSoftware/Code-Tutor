@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-17-02-challenge-01",
+  "lessonId": "lesson-17-02",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create an AOT-ready configuration system!\n\n1. Create a 'ServerSettings' class with:\n   - Port (int)\n   - Host (string)\n   - EnableSsl (bool)\n   - AllowedOrigins (List<string>)\n\n2. Create a JsonSerializerContext with [JsonSerializable] for:\n   - ServerSettings\n   - List<ServerSettings>\n\n3. Write code that:\n   - Creates a ServerSettings instance with sample values\n   - Serializes it to JSON using the source-generated context\n   - Prints the JSON (indented)\n   - Deserializes it back and verifies the values\n\n4. Print the .csproj settings needed for AOT\n\nUse JsonSerializer with the source-generated context!",

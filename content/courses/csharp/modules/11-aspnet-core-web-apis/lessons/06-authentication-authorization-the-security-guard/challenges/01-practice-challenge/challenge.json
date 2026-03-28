@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-11-06-challenge-01",
+  "lessonId": "lesson-11-06",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create a protected API with JWT authentication!\n\n1. Set up JWT authentication in Program.cs:\n   - Add authentication services\n   - Configure token validation parameters\n   - Add authorization services\n\n2. Create endpoints:\n   - POST /login - Issues JWT token for valid credentials\n   - GET /api/public - Accessible to everyone\n   - GET /api/protected - Requires authentication\n   - GET /api/admin - Requires 'Admin' role\n\n3. In the login endpoint:\n   - Validate credentials (use hardcoded for demo)\n   - Create claims (Name, Role, custom claims)\n   - Generate and return JWT token\n\n4. Access user info in protected endpoints:\n   - Read claims from ClaimsPrincipal\n   - Return personalized response\n\nRemember: UseAuthentication() BEFORE UseAuthorization()!",

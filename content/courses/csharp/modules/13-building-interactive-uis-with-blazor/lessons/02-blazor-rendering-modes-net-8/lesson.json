@@ -1,8 +1,9 @@
 {
   "id": "lesson-13-02",
-  "title": "Blazor Rendering Modes (.NET 8)",
+  "title": "Blazor Rendering Modes",
   "moduleId": "module-13",
   "order": 2,
-  "estimatedMinutes": 15,
-  "difficulty": "advanced"
+  "estimatedMinutes": 20,
+  "difficulty": "advanced",
+  "topics": ["Blazor", "Rendering", "SSR", "Server", "WebAssembly", "Interactive", "Auto"]
 }

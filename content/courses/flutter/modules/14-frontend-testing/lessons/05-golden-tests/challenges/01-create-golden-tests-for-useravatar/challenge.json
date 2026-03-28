@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "13.5-challenge-0",
+  "lessonId": "lesson-14-05",
+  "order": 1,
   "title": "Create Golden Tests for UserAvatar",
   "description": "Write golden tests for a UserAvatar widget with different states.",
   "instructions": "Create golden tests for the avatar showing initials vs image, and different sizes.",

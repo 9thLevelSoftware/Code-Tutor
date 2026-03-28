@@ -446,7 +446,7 @@ jobs:
           dart test --coverage=coverage
 
       - name: Upload coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: your_app_server/coverage/lcov.info
 

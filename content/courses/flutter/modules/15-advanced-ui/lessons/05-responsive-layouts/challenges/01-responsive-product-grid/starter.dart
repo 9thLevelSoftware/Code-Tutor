@@ -13,7 +13,7 @@ class ProductGrid extends StatelessWidget {
   
   const ProductGrid({super.key, required this.products});
   
-  // TODO: Calculate columns based on width
+  // Calculate columns based on width here
   int _getColumnCount(double width) {
     // Return 1, 2, 3, or 4 based on width breakpoints
     return 2;
@@ -21,8 +21,8 @@ class ProductGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Use LayoutBuilder to get available width
-    // TODO: Build GridView with calculated column count
+    // Use LayoutBuilder to get available width
+    // Build GridView with calculated column count below
     return Container();
   }
 }
@@ -34,7 +34,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Build a card with image placeholder, title, and price
+    // Build a card with image placeholder, title, and price below
     return Container();
   }
 }

@@ -3,6 +3,8 @@
   "id": "11.7-challenge-1",
   "title": "Implement Session Timeout Handling",
   "description": "Add automatic session timeout that redirects users to login when their session expires.",
+  "lessonId": "lesson-11-07",
+  "order": 1,
   "instructions": "Create a session manager that:\n\n1. Tracks session expiration time\n2. Checks session validity before each navigation\n3. Shows a warning dialog when session is about to expire\n4. Redirects to login with the current path preserved when session expires\n5. Allows session refresh when user is active\n\nIntegrate this with the existing router redirect logic.",
   "language": "dart",
   "testCases": [],

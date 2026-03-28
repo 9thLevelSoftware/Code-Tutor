@@ -1,68 +1,58 @@
 {
-  "type": "QUIZ",
   "id": "10.4-quiz-1",
   "title": "Serverpod Testing Concepts",
+  "type": "quiz",
+  "lessonId": "lesson-10-04",
+  "order": 1,
   "description": "Test your understanding of Serverpod endpoint testing.",
   "questions": [
     {
       "id": "q1",
       "options": [
-        "TestSession is faster to create",
-        "TestSession provides the same interface as production Session with testing features like database isolation",
-        "TestSession does not require database setup",
-        "TestSession automatically generates test data"
+        "Mocking the database connection",
+        "Creating a test-specific Serverpod configuration",
+        "Setting up a real database with test data",
+        "Disabling authentication for all tests"
       ],
       "correctAnswer": 1,
-      "explanation": "TestSession provides the same interface as a production Session but includes testing features like isolated database access, controllable time, and mock authentication support.",
-      "question": "What is the primary advantage of using TestSession over mocking the entire Session object?"
+      "explanation": "Serverpod tests require a test-specific configuration that points to a test database and has appropriate settings for the test environment.",
+      "question": "What is required to test Serverpod endpoints?"
     },
     {
       "id": "q2",
       "options": [
-        "Skip authentication tests - they are too complex",
-        "Use the production authentication system with real credentials",
-        "Create a test user and call session.updateAuthentication() with their info",
-        "Mock the entire endpoint to avoid authentication"
+        "It runs faster",
+        "It tests the endpoint in isolation from the client",
+        "It requires less memory",
+        "It avoids database calls"
       ],
-      "correctAnswer": 2,
-      "explanation": "The correct approach is to create a test user in the database and then update the session's authentication state using session.updateAuthentication(). This tests the real authentication flow.",
-      "question": "How should you test an endpoint that requires authentication?"
+      "correctAnswer": 1,
+      "explanation": "Server-side endpoint testing tests the endpoint logic directly without going through the generated client code, providing better isolation.",
+      "question": "Why test endpoints from the server side rather than client side?"
     },
     {
       "id": "q3",
       "options": [
-        "It makes tests run faster",
-        "It ensures tests are isolated and do not depend on data from other tests",
-        "Serverpod requires it or tests will crash",
-        "It is only needed for production databases"
+        "Using setUp() and tearDown()",
+        "Using test fixtures with transaction rollback",
+        "Creating a new database for each test",
+        "All of the above"
       ],
       "correctAnswer": 1,
-      "explanation": "Database cleanup ensures test isolation. Without cleanup, tests may pass or fail depending on which other tests ran before them, making results unreliable and debugging difficult.",
-      "question": "Why is database cleanup between tests important in Serverpod testing?"
+      "explanation": "Test fixtures with transaction rollback ensure each test starts with clean data and doesn't affect other tests. This is the most common pattern.",
+      "question": "How do you ensure test isolation with database state?"
     },
     {
       "id": "q4",
       "options": [
-        "Streaming endpoints cannot be tested",
-        "You must test on a production server",
-        "Add small delays when waiting for messages and properly clean up stream connections",
-        "Streaming tests must run in isolation without other tests"
+        "Mock the Session object completely",
+        "Create a real session with a test user",
+        "Use a mock authentication provider",
+        "Skip tests that require authentication"
       ],
-      "correctAnswer": 2,
-      "explanation": "Streaming tests need timing considerations because messages propagate asynchronously. Adding small delays ensures messages arrive before assertions, and cleaning up connections prevents resource leaks.",
-      "question": "When testing streaming endpoints, what special consideration is needed?"
-    },
-    {
-      "id": "q5",
-      "options": [
-        "Always call the real API in tests",
-        "Skip testing external API integration",
-        "Inject mock services using session.serverpod.registerSingleton()",
-        "Disable external API calls in test mode"
-      ],
-      "correctAnswer": 2,
-      "explanation": "Inject mock services for external APIs using Serverpod's dependency injection. This makes tests fast, reliable, and prevents side effects like sending real emails or making real API calls.",
-      "question": "What is the recommended approach for testing endpoints that call external APIs?"
+      "correctAnswer": 1,
+      "explanation": "For integration tests, create a real session with a test user so you're testing the actual authentication flow, not mocks.",
+      "question": "How should you handle authentication in Serverpod endpoint tests?"
     }
   ],
   "difficulty": "intermediate"

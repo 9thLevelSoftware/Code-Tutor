@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-02-challenge-01",
+  "lessonId": "lesson-12-02",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Understand ORM translation!\n\n1. Create a 'Book' class:\n   - int Id\n   - string Title\n   - string Author\n   - decimal Price\n   - int Year\n\n2. Create sample LINQ queries and show what SQL they would generate:\n\n   Query 1: Find all books by \\\"Orwell\\\"\n   - C# LINQ: books.Where(b => b.Author == \\\"Orwell\\\")\n   - Print equivalent SQL\n\n   Query 2: Find books over $20, sorted by price\n   - C# LINQ: books.Where(b => b.Price > 20).OrderBy(b => b.Price)\n   - Print equivalent SQL\n\n   Query 3: Get titles of books from 2020+\n   - C# LINQ: books.Where(b => b.Year >= 2020).Select(b => b.Title)\n   - Print equivalent SQL\n\n3. Show benefits of ORM:\n   - Print why type safety matters\n   - Print why LINQ is better than SQL strings\n   - Print relationship navigation benefit",

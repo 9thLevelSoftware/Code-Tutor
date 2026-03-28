@@ -13,7 +13,7 @@ Without QuickGrid (manual):
 • Handle loading states
 • 200+ lines of code!
 
-With QuickGrid (.NET 8):
+With QuickGrid (.NET 9):
 • <QuickGrid Items="@products" />
 • Add columns
 • Sorting? Built-in!
@@ -29,4 +29,4 @@ QuickGrid features:
 ✅ Custom templates
 ✅ Responsive
 
-Think: QuickGrid = 'Professional data grid with superpowers, included free in .NET 8!'
+Think: QuickGrid = 'Professional data grid with superpowers, included free in .NET 9!'

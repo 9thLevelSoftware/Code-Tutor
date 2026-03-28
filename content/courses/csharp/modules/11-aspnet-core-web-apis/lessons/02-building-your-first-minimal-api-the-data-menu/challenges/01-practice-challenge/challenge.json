@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-11-02-challenge-01",
+  "lessonId": "lesson-11-02",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build a Book Library API!\n\n1. Create a 'Book' class:\n   - int Id\n   - string Title\n   - string Author\n   - int Year\n   - bool IsAvailable\n\n2. Create in-memory List with 4-5 books\n\n3. Create these endpoints:\n   - GET /api/books -> Return all books\n   - GET /api/books/{id} -> Return single book (use Results.Ok or Results.NotFound)\n   - GET /api/books/available -> Return only available books\n   - GET /api/books/author/{author} -> Return books by specific author\n   - GET /api/books/stats -> Return statistics (total books, available, unavailable)\n\n4. Print endpoint list when API starts",

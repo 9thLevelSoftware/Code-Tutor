@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-16-05-challenge-01",
+  "lessonId": "lesson-16-05",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Prepare an AppHost for Azure deployment!\n\n1. Configure the following services:\n   - Redis cache named 'appcache'\n   - PostgreSQL database named 'appdb'\n   - Background worker service (internal only)\n   - Public API service (external endpoints)\n   - Public web frontend (external endpoints)\n\n2. Set up dependencies:\n   - Worker needs cache and database\n   - API needs cache and database\n   - Web needs to call API\n\n3. Add comments explaining:\n   - Which services are public vs internal\n   - What Azure resources each maps to\n\n4. Print deployment instructions",

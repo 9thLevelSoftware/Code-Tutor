@@ -1,6 +1,8 @@
 {
   "type": "MULTI_CHOICE",
   "id": "16.4-challenge-1",
+  "lessonId": "lesson-16-04",
+  "order": 2,
   "title": "Staged Rollout Decision",
   "description": "Determine the appropriate action based on rollout metrics.",
   "instructions": "You released a new version of your Flutter app with a 10% staged rollout. After 24 hours, you notice the crash-free users rate dropped from 99.5% to 96.2%, and several 1-star reviews mention the same crash occurring when saving data. What should you do?",

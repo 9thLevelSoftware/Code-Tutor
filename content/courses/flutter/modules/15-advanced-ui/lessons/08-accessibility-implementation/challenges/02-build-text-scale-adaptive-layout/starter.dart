@@ -18,13 +18,13 @@ class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Get text scale factor
-    // TODO: Build adaptive layout based on text scale
-    // TODO: Ensure proper touch targets and icon scaling
+    // Get text scale factor here
+    // Build adaptive layout based on text scale below
+    // Ensure proper touch targets and icon scaling
     return Container();
   }
 
-  // TODO: Add helper method for horizontal layout
-  
-  // TODO: Add helper method for vertical layout
+  // Add helper method for horizontal layout below
+
+  // Add helper method for vertical layout below
 }

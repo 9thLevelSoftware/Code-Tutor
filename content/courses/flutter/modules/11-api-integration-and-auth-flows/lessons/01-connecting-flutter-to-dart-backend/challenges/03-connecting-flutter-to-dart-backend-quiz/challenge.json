@@ -3,6 +3,8 @@
   "id": "11.1-quiz-1",
   "title": "Connecting Flutter to Dart Backend Quiz",
   "description": "Test your understanding of Serverpod client integration, session management, and error handling.",
+  "lessonId": "lesson-11-01",
+  "order": 3,
   "questions": [
     {
       "id": "q1",

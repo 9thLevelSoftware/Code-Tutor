@@ -3,7 +3,9 @@
   "id": "lesson-13-02-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
-  "instructions": "Understand Blazor rendering modes!\n\n1. Create examples showing when to use each mode:\n\n   STATIC SSR:\n   - Product catalog page\n   - Blog posts\n   - Why: Fast, SEO, no interactivity needed\n\n   INTERACTIVE SERVER:\n   - Admin dashboard\n   - Form with validation\n   - Why: Complex logic on server, small payload\n\n   INTERACTIVE WEBASSEMBLY:\n   - Image editor\n   - Game\n   - Why: Works offline, no server calls\n\n   INTERACTIVE AUTO:\n   - E-commerce site\n   - Social media feed\n   - Why: Fast start, then offline capability\n\n2. Print comparison table\n3. Show .NET 8 configuration code\n4. Explain trade-offs",
+  "lessonId": "lesson-13-02",
+  "order": 1,
+  "instructions": "Understand Blazor rendering modes!\n\n1. Create examples showing when to use each mode:\n\n   STATIC SSR:\n   - Product catalog page\n   - Blog posts\n   - Why: Fast, SEO, no interactivity needed\n\n   INTERACTIVE SERVER:\n   - Admin dashboard\n   - Form with validation\n   - Why: Complex logic on server, small payload\n\n   INTERACTIVE WEBASSEMBLY:\n   - Image editor\n   - Game\n   - Why: Works offline, no server calls\n\n   INTERACTIVE AUTO:\n   - E-commerce site\n   - Social media feed\n   - Why: Fast start, then offline capability\n\n2. Print comparison table\n3. Show .NET 9 configuration code\n4. Explain trade-offs",
   "language": "csharp",
   "testCases": [
     {
@@ -38,8 +40,8 @@
     },
     {
       "id": "test-6",
-      "description": "Output should contain \".NET 8\"",
-      "expectedOutput": ".NET 8",
+      "description": "Output should contain \".NET 9\"",
+      "expectedOutput": ".NET 9",
       "isVisible": true
     }
   ],
@@ -68,7 +70,7 @@
   "commonMistakes": [
     {
       "mistake": "Using wrong mode",
-      "consequence": "Static SSR for interactive app = no @onclick works! Must use Interactive* modes for interactivity. Static is like traditional HTML.",
+      "consequence": "Static SSR for interactive app = no @onclick works! Must use Interactive* modes for interactivity.",
       "correction": "Review the correct syntax and best practices for this concept."
     },
     {

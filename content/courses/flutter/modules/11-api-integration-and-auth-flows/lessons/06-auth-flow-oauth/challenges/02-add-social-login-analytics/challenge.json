@@ -3,6 +3,8 @@
   "id": "11.6-challenge-2",
   "title": "Add Social Login Analytics",
   "description": "Implement analytics tracking for social login events to understand user behavior.",
+  "lessonId": "lesson-11-06",
+  "order": 2,
   "instructions": "Create an analytics service that tracks social login events including:\n\n1. Login attempts (which provider, success/failure)\n2. Account linking events (which provider linked, success/failure)\n3. Login method preferences over time\n4. Error tracking with anonymized details\n\nThe service should be provider-agnostic (works with Firebase Analytics, Mixpanel, or any backend).",
   "language": "dart",
   "testCases": [],

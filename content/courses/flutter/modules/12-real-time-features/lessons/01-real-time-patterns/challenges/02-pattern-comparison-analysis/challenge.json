@@ -1,24 +1,25 @@
 {
-  "id": "12.1-challenge-1",
+  "type": "CODE",
+  "id": "12.1-challenge-2",
   "title": "Pattern Comparison Analysis",
-  "description": "Analyze a real-world scenario and recommend the best real-time pattern.",
-  "instructions": "You are designing a stock trading dashboard with the following requirements:\n\n- Display live stock prices (updates every 100ms)\n- Users can place buy/sell orders\n- Show a list of recent trades (updates when trades occur)\n- Display user portfolio value (updates with price changes)\n- Expected concurrent users: 5,000\n- Must work reliably with corporate firewalls\n\nAnalyze this scenario and write a brief analysis (as a code comment) explaining:\n1. Which pattern would you choose for live price updates?\n2. Which pattern would you choose for order placement?\n3. Why did you make these choices?\n4. What are the tradeoffs?\n\nThen implement a skeleton class that demonstrates your approach.",
-  "type": "implementation",
-  "expectedOutput": "Pattern selection and implementation demonstrates understanding of:\n- WebSocket for bidirectional price/order communication\n- Proper connection management\n- Consideration of scale and reliability",
+  "description": "Compare different real-time patterns and choose the best one for different scenarios.",
+  "lessonId": "lesson-12-01",
+  "order": 2,
+  "instructions": "Analyze the following scenarios and determine the best real-time pattern for each:\n\n1. Stock price ticker that updates every second\n2. Multiplayer game requiring instant player synchronization\n3. Blog comment system that updates when new comments arrive\n4. Live sports scoreboard with play-by-play updates\n\nFor each scenario:\n- Identify the key requirements (latency, directionality, scale)\n- Compare polling, SSE, and WebSockets\n- Justify your choice with pros/cons\n- Consider fallback strategies",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "High-frequency updates (100ms) rule out polling and long-polling due to latency and overhead."
+      "text": "Consider whether communication is one-way (server→client) or two-way when choosing a pattern."
     },
     {
       "level": 2,
-      "text": "Order placement requires sending data to the server, which eliminates SSE as a standalone solution."
+      "text": "For high-frequency updates (>1 per second), WebSockets are usually more efficient than polling."
     },
     {
       "level": 3,
-      "text": "WebSocket handles both price streaming (server-to-client) and order placement (client-to-server) efficiently with a single connection."
+      "text": "Think about battery life and data usage on mobile devices when comparing approaches."
     }
   ]
 }

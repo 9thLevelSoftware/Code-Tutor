@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.1-challenge-1",
+  "lessonId": "lesson-18-01",
+  "order": 2,
   "title": "Create Feature Folder Structure",
   "description": "Define the barrel exports for feature modules to enable clean imports.",
   "instructions": "Create barrel export files for the auth and chat features that:\n\n1. Export all public classes from data/, domain/, and presentation/ subdirectories\n2. Use proper relative imports\n3. Include a doc comment explaining what the feature does\n4. Follow the 'export package' pattern for clean imports\n\nCreate both auth.dart and chat.dart barrel files.",

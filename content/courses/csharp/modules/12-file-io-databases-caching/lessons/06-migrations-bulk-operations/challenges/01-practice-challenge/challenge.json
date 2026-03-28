@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-06-challenge-01",
+  "lessonId": "lesson-12-06",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Demonstrate migrations and bulk operations!\n\n1. Create 'Employee' entity:\n   - int Id\n   - string Name\n   - decimal Salary\n   - string Department\n\n2. Create 'CompanyDbContext'\n\n3. Show migration workflow (print commands):\n   - Print: dotnet ef migrations add InitialCreate\n   - Print: dotnet ef database update\n   - Print: (Add new property 'bool IsActive')\n   - Print: dotnet ef migrations add AddIsActive\n   - Print: dotnet ef database update\n\n4. Simulate bulk operations:\n   - BULK UPDATE: Give 10% raise to 'Engineering' department\n   - Print SQL that would execute\n   - BULK DELETE: Remove employees with salary < 30000\n   - Print SQL that would execute\n\n5. Compare with traditional approach:\n   - Show foreach loop version (slow)\n   - Show bulk version (fast)\n   - Explain performance difference",

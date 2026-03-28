@@ -3,6 +3,8 @@
   "id": "lesson-14-06-challenge-01",
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
+  "lessonId": "lesson-14-06",
+  "order": 1,
   "instructions": "Create your learning roadmap!\n\nPrint a personalized plan with:\n\n1. What you've learned (review curriculum)\n2. Skills to deepen (pick 3 topics)\n3. Projects to build (3 project ideas)\n4. Resources to explore:\n   - Microsoft Learn paths\n   - YouTube channels\n   - Books to read\n   - Communities to join\n5. 30-day action plan\n6. 90-day goals\n7. 1-year vision\n\nThis is YOUR roadmap to mastery!",
   "language": "csharp",
   "testCases": [

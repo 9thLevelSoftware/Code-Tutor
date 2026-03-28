@@ -33,7 +33,7 @@ object TestModules {
 
 // ========== Base Test Class ==========
 
-abstract class BaseKoinTest : KoinTest {
+abstract class BaseKoinTest : KoinTest, AutoCloseKoinTest {
     
     @BeforeTest
     fun baseSetUp() {
@@ -41,12 +41,6 @@ abstract class BaseKoinTest : KoinTest {
             modules(TestModules.allTestModules())
         }
         additionalSetUp()
-    }
-    
-    @AfterTest
-    fun baseTearDown() {
-        additionalTearDown()
-        stopKoin()
     }
     
     open fun additionalSetUp() {}
@@ -143,3 +137,5 @@ class KoinModuleTest {
     }
 }
 ```
+
+**Note:** `AutoCloseKoinTest` automatically stops Koin after each test. No manual `stopKoin()` needed!

@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-07-challenge-01",
+  "lessonId": "lesson-12-07",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Understand EF Core Compiled Models workflow.",
   "instructions": "Demonstrate the Compiled Models workflow!\n\n1. Show the CLI command to generate compiled models (traditional)\n2. Show the EF Core 9 auto-compiled models approach (MSBuild task)\n3. Show how to configure DbContext to use compiled model\n4. Print performance comparison (60-80% faster startup)\n5. List when to use (and when NOT to use)\n6. Show limitations (Global Query Filters, lazy-loading)\n\nExplain why this matters for microservices and serverless!",

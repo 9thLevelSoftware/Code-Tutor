@@ -1,6 +1,8 @@
 {
   "type": "CODE",
   "id": "16.8-challenge-0",
+  "lessonId": "lesson-16-08",
+  "order": 1,
   "title": "Platform-Aware Widget",
   "description": "Create a widget that renders differently based on the current platform.",
   "instructions": "Implement a PlatformAwareCard widget that:\n\n1. Detects whether running on web, desktop (Windows/macOS/Linux), or mobile\n2. Returns different card styles for each platform category:\n   - Web: Card with BorderRadius.circular(16) and elevation 2\n   - Desktop: Card with BorderRadius.circular(8) and elevation 4\n   - Mobile: Card with BorderRadius.circular(12) and elevation 1\n3. Uses kIsWeb for web detection and Platform checks for desktop\n4. Displays the platform name as a label in the card",

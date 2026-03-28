@@ -3,6 +3,8 @@
   "id": "11.5-challenge-1",
   "title": "Implement Biometric Authentication",
   "description": "Add fingerprint and Face ID authentication as an alternative login method for returning users who have previously logged in.",
+  "lessonId": "lesson-11-05",
+  "order": 1,
   "instructions": "Extend the login flow to support biometric authentication:\n\n1. Add the local_auth package to enable biometric authentication\n2. Check if biometrics are available on the device\n3. Show a biometric login button only when credentials are stored and biometrics are available\n4. Implement the biometric authentication flow that retrieves stored credentials\n5. Handle biometric authentication failures gracefully\n6. Allow users to enable/disable biometric login in settings\n\nCreate the following:\n- BiometricService class to handle all biometric operations\n- BiometricLoginButton widget that appears conditionally\n- Settings toggle for enabling/disabling biometric login\n- Proper error handling for various biometric failure scenarios",
   "language": "dart",
   "testCases": [],

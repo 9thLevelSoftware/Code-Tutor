@@ -33,10 +33,10 @@ HEALTH CHECK TYPES:
 - Liveness: Is the app running? (/actuator/health/liveness)
 - Readiness: Is the app ready for traffic? (/actuator/health/readiness)
 
-RAILWAY HEALTH CHECKS:
+FLY.IO HEALTH CHECKS:
 
-Railway checks /actuator/health automatically.
-If it returns non-200, Railway:
+Fly.io checks /actuator/health automatically.
+If it returns non-200, Fly.io:
 1. Marks the deploy as failed
 2. Rolls back to previous version
 3. Sends notification

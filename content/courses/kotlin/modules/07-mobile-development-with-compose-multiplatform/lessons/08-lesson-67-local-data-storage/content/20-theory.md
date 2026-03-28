@@ -46,6 +46,8 @@ actual class SettingsFactory(private val context: Context) {
 **iOS** uses UserDefaults:
 ```kotlin
 // iosMain
+import platform.Foundation.*  // Required for NSUserDefaults
+
 actual class SettingsFactory {
     actual fun create(): Settings {
         return NSUserDefaultsSettings(NSUserDefaults.standardUserDefaults)

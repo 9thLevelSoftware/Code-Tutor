@@ -14,26 +14,26 @@ class PulsingButton extends StatefulWidget {
 
 class _PulsingButtonState extends State<PulsingButton>
     with SingleTickerProviderStateMixin {
-  // TODO: Create AnimationController
-  // TODO: Create scale animation with Tween and CurvedAnimation
+  // Create AnimationController here
+  // Create scale animation with Tween and CurvedAnimation
   
   @override
   void initState() {
     super.initState();
-    // TODO: Initialize controller with 1 second duration
-    // TODO: Create scale animation (1.0 to 1.15 with elasticOut curve)
-    // TODO: Start repeating animation with reverse
+    // Initialize controller with 1 second duration
+    // Create scale animation (1.0 to 1.15 with elasticOut curve)
+    // Start repeating animation with reverse
   }
 
   @override
   void dispose() {
-    // TODO: Dispose controller
+    // Dispose controller here
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Use AnimatedBuilder to build pulsing button
+    // Use AnimatedBuilder to build pulsing button
     // Include glow effect that intensifies with scale
     return Container();
   }

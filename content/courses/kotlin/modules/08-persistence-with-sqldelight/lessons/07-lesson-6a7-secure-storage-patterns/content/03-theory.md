@@ -39,6 +39,7 @@ class AndroidSecureStorage(context: Context) {
 
 ```kotlin
 // iosMain/kotlin/SecureStorage.ios.kt
+import platform.Foundation.*  // Required for toNSData() extension
 import platform.Security.*
 import kotlinx.cinterop.*
 

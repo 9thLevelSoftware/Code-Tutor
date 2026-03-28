@@ -1,7 +1,9 @@
 {
-  "type": "QUIZ",
   "id": "10.1-quiz-1",
   "title": "Testing Philosophy Quiz",
+  "type": "quiz",
+  "lessonId": "lesson-10-01",
+  "order": 1,
   "description": "Test your understanding of testing concepts and the test pyramid.",
   "questions": [
     {

@@ -1,7 +1,7 @@
 {
   "id": "module-16",
   "title": "Capstone Project: Task Manager Application",
-  "description": "Build a complete full-stack Task Manager application from scratch. Choose your frontend path: Thymeleaf (server-rendered, simpler) or React (single-page app, advanced). Both paths share the same Spring Boot backend with JPA, REST APIs, authentication, and Railway deployment.",
+  "description": "Build a complete full-stack Task Manager application from scratch. Choose your frontend path: Thymeleaf (server-rendered, simpler) or React (single-page app, advanced). Both paths share the same Spring Boot backend with JPA, REST APIs, authentication, and Fly.io deployment.",
   "difficulty": "advanced",
   "estimatedHours": 12,
   "order": 16

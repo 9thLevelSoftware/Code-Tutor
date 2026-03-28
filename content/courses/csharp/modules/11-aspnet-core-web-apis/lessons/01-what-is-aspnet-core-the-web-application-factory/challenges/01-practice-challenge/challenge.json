@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-11-01-challenge-01",
+  "lessonId": "lesson-11-01",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create your first ASP.NET Core API!\n\n1. Create web application builder and app\n\n2. Create these endpoints:\n   - GET / -> Return \"Welcome to my API!\"\n   - GET /api/time -> Return current DateTime as JSON\n   - GET /api/greet/{name} -> Return greeting with name\n   - GET /api/math/add?a=5&b=3 -> Return sum of two numbers\n   - GET /api/products -> Return array of 3 product objects (Id, Name, Price)\n\n3. Run the application with app.Run()\n\nNOTE: For the learning platform, simulate endpoint behavior by printing what each would return!",

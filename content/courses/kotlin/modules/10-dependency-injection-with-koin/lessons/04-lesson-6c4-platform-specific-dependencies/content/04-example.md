@@ -47,6 +47,8 @@ class FirebaseAnalyticsProvider(
 
 // ========== iosMain ==========
 
+import platform.Foundation.*  // Required for NSNumber, NSString
+
 class FirebaseAnalyticsIOSProvider : AnalyticsProvider {
     override fun logEvent(name: String, params: Map<String, Any>) {
         val nsParams = params.mapValues { (_, value) ->

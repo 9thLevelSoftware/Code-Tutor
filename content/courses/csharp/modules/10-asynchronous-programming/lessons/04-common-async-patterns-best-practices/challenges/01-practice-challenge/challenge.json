@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-10-04-challenge-01",
+  "lessonId": "lesson-10-04",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Build a robust file processor with cancellation and progress!\n\n1. Create 'async Task ProcessFilesAsync(int fileCount, CancellationToken cancellationToken, IProgress<int> progress)':\n   - Loop from 0 to fileCount\n   - For each file:\n     - Check cancellation: cancellationToken.ThrowIfCancellationRequested()\n     - Print 'Processing file [i]...'\n     - await Task.Delay(500, cancellationToken)\n     - Report progress: progress?.Report((i + 1) * 100 / fileCount)\n   - Print 'All files processed!'\n\n2. In main code:\n   - Create CancellationTokenSource\n   - Create Progress<int> that prints progress percentage\n   - Start processing 10 files\n   - Cancel after 3 seconds with cts.CancelAfter(3000)\n   - Wrap in try/catch to handle OperationCanceledException\n   - Print appropriate message if cancelled or completed",

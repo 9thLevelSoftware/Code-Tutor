@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
-  "id": "12.5-quiz-1",
+  "id": "13.5-quiz-1",
+  "lessonId": "lesson-13-05",
+  "order": 1,
   "title": "Sync Engine Concepts",
   "description": "Test your understanding of sync engine design.",
   "questions": [

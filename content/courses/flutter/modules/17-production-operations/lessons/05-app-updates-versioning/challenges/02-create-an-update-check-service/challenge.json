@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "17.5-challenge-1",
+  "lessonId": "lesson-17-05",
+  "order": 2,
   "title": "Create an Update Check Service",
   "description": "Build a complete update checking service that compares app version against minimum/latest versions and returns appropriate update status.",
   "instructions": "Create an UpdateChecker class that:\n\n1. Takes current app version in constructor\n2. Has a checkUpdate method that accepts minVersion, recommendedVersion, and latestVersion\n3. Returns UpdateResult with status (upToDate, optional, recommended, required)\n4. Handles edge cases (null versions, invalid formats)\n5. Uses the Version class from the previous challenge for comparison\n6. Includes a static factory method fromPackageInfo that gets current version automatically",

@@ -1,7 +1,7 @@
 import kotlinx.coroutines.test.*
 import org.koin.core.context.startKoin
-import org.koin.core.context.stopKoin
 import org.koin.dsl.module
+import org.koin.test.AutoCloseKoinTest
 import org.koin.test.KoinTest
 import org.koin.test.inject
 import kotlin.test.*
@@ -60,22 +60,17 @@ val testModule = module {
 
 // ========== Tests ==========
 
-class BookViewModelTest : KoinTest {
+class BookViewModelTest : KoinTest, AutoCloseKoinTest {
     
     private val repository: FakeBookRepository by inject()
     private val testDispatcher = StandardTestDispatcher()
     
     @BeforeTest
     fun setUp() {
+        repository.clear()
         startKoin {
             modules(testModule)
         }
-    }
-    
-    @AfterTest
-    fun tearDown() {
-        repository.clear()
-        stopKoin()
     }
     
     @Test

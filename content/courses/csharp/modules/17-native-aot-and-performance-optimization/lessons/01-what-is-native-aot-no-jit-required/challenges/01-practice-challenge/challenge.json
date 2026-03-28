@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-17-01-challenge-01",
+  "lessonId": "lesson-17-01",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create a simple console application that demonstrates AOT compatibility!\n\n1. Create a record called 'AppInfo' with properties:\n   - Name (string)\n   - Version (string)\n   - StartTime (DateTime)\n\n2. In your main code:\n   - Create an AppInfo instance with your app's details\n   - Print the app name and version\n   - Calculate and print how long since the app started (use Stopwatch)\n   - Print whether the process is 64-bit\n   - Print the working set memory in MB\n\n3. Add comments indicating which parts are AOT-compatible\n\nFocus on AOT-safe patterns (no reflection, no dynamic code generation).",

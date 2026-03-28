@@ -1,6 +1,6 @@
 ---
 type: "EXAMPLE"
-title: "Deploying to Railway"
+title: "Deploying to Fly.io"
 ---
 
 Step-by-step deployment of your Spring Boot application:
@@ -8,10 +8,10 @@ Step-by-step deployment of your Spring Boot application:
 ```bash
 # Step 1: Prepare your application
 
-# Ensure you have a Dockerfile (Railway will use it)
-# Or Railway auto-detects pom.xml and builds with Maven
+# Ensure you have a Dockerfile (Fly.io will use it)
+# Or use fly deploy for simple deployments
 
-# Add health endpoint for Railway
+# Add health endpoint for Fly.io
 # In pom.xml, add Spring Boot Actuator:
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -26,33 +26,35 @@ management.endpoint.health.show-details=always
 
 # application-production.properties
 spring.datasource.url=${DATABASE_URL}
-server.port=${PORT:8080}
+server.port=8080
 spring.jpa.hibernate.ddl-auto=update
 
-# Note: Railway sets DATABASE_URL and PORT automatically!
+# Step 3: Install Fly.io CLI and deploy
 
-# Step 3: Deploy via GitHub
+# Install the Fly.io CLI (flyctl)
+# See: https://fly.io/docs/hands-on/install-flyctl/
 
-# 1. Push to GitHub
-git push origin main
+# Login to Fly.io
+fly auth login
 
-# 2. Go to railway.app
-# 3. Click 'New Project'
-# 4. Select 'Deploy from GitHub repo'
-# 5. Choose your repository
-# 6. Railway auto-detects and deploys!
+# Launch your app (creates fly.toml config)
+fly launch --no-deploy
 
-# Step 4: Add PostgreSQL
+# Create a PostgreSQL database
+fly postgres create --name myapp-db
 
-# In Railway dashboard:
-# 1. Click '+ New' in your project
-# 2. Select 'Database' > 'PostgreSQL'
-# 3. Railway auto-connects and sets DATABASE_URL
+# Attach the database to your app (sets DATABASE_URL automatically)
+fly postgres attach myapp-db
 
-# Step 5: Set environment variables
+# Set environment variables
+fly secrets set SPRING_PROFILES_ACTIVE=production
+fly secrets set JWT_SECRET=your-production-secret
 
-# In Railway dashboard > your service > Variables:
-SPRING_PROFILES_ACTIVE=production
-JWT_SECRET=your-production-secret
-# Railway auto-provides: DATABASE_URL, PORT
+# Deploy your application
+fly deploy
+
+# Step 4: View your deployed app
+fly open
 ```
+
+**Note:** Railway discontinued their free tier in 2024. This lesson now uses Fly.io which offers a generous free tier with 256MB RAM and 3GB transfer per month.

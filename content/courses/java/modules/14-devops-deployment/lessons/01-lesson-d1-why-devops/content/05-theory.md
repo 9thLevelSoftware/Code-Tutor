@@ -14,7 +14,7 @@ CI/CD PLATFORMS:
 - CircleCI, Travis CI: Cloud-based options
 
 CLOUD PLATFORMS:
-- Railway: Simple deployment, great for learning
+- Fly.io: Simple deployment, great for learning (generous free tier)
 - Heroku: Easy PaaS (Platform as a Service)
 - AWS, GCP, Azure: Full cloud providers
 - DigitalOcean, Render: Developer-friendly options
@@ -29,6 +29,6 @@ We'll focus on the most practical tools:
 1. Docker - containerize your Spring Boot app
 2. Docker Compose - add PostgreSQL database
 3. GitHub Actions - automate testing and deployment
-4. Railway - deploy to the cloud for free
+4. Fly.io - deploy to the cloud for free (Note: Railway discontinued their free tier in 2024, so we use Fly.io instead)
 
 By the end, every push to main = automatic deployment.

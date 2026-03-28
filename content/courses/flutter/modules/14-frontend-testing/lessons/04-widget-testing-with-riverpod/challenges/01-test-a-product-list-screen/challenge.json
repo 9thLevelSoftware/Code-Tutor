@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "13.4-challenge-0",
+  "lessonId": "lesson-14-04",
+  "order": 1,
   "title": "Test a Product List Screen",
   "description": "Write widget tests for a product list that uses Riverpod.",
   "instructions": "Test loading state, successful data display, and error handling.",

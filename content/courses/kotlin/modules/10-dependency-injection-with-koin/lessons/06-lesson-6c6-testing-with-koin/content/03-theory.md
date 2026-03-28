@@ -19,37 +19,29 @@ commonTest.dependencies {
 }
 ```
 
-### Base Test Class (Recommended Pattern)
+### Modern KoinTestRule Pattern (Recommended)
 
-Use `KoinTestRule` for proper test isolation:
+Use `KoinTestRule` for proper test isolation. This is the modern, preferred approach:
 
 ```kotlin
 import org.koin.test.KoinTest
 import org.koin.test.KoinTestRule
 import org.koin.test.inject
+import org.junit.Rule
 import kotlin.test.Test
 
-abstract class BaseKoinTest : KoinTest {
-    
-    // This rule automatically starts/stops Koin for each test
-    @get:Rule
-    val koinTestRule = KoinTestRule.create { 
-        modules(testModules())
-    }
-    
-    abstract fun testModules(): List<Module>
-}
+class NotesViewModelTest : KoinTest {
 
-// Example usage
-class NotesViewModelTest : BaseKoinTest() {
+    @get:Rule
+    val koinTestRule = KoinTestRule.create {
+        modules(testModule)
+    }
     
     private val viewModel: NotesViewModel by inject()
     
-    override fun testModules() = listOf(testModule)
-    
     @Test
     fun `test view model`() {
-        // Koin is automatically started before and stopped after
+        // Koin is automatically started before and stopped after each test
         val result = viewModel.loadNotes()
         assertNotNull(result)
     }
@@ -58,7 +50,7 @@ class NotesViewModelTest : BaseKoinTest() {
 
 ### Alternative: Manual Start/Stop
 
-For Kotlin Multiplatform (where JUnit rules may not be available):
+For Kotlin Multiplatform or edge cases where JUnit rules aren't available, use manual start/stop:
 
 ```kotlin
 import org.koin.core.context.startKoin
@@ -67,6 +59,7 @@ import org.koin.test.KoinTest
 import org.koin.test.inject
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
+import kotlin.test.Test
 
 abstract class BaseKoinTestMP : KoinTest {
     
@@ -84,4 +77,33 @@ abstract class BaseKoinTestMP : KoinTest {
     
     abstract fun testModules(): List<Module>
 }
+
+// Example usage
+class RepositoryTest : BaseKoinTestMP() {
+    
+    private val repository: NotesRepository by inject()
+    
+    override fun testModules() = listOf(testModule)
+    
+    @Test
+    fun `test repository`() {
+        val result = repository.getAll()
+        assertNotNull(result)
+    }
+}
 ```
+
+### Key Differences
+
+| Approach | Use When | Pros |
+|----------|----------|------|
+| **KoinTestRule** | JVM/Android tests with JUnit 4/5 | Automatic lifecycle, cleaner code, recommended |
+| **Manual Start/Stop** | Kotlin Multiplatform, edge cases | Full control, works everywhere |
+
+### Best Practice
+
+Always use `KoinTestRule` as your primary approach. Manual start/stop is reserved for:
+- Pure Kotlin Multiplatform tests without JUnit
+- Tests requiring special setup order
+- Legacy test migration scenarios
+---

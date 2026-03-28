@@ -1,7 +1,7 @@
 {
   "id": "lesson-16-09",
   "title": "Lesson 16.9: Deployment to Production",
-  "description": "Create production Dockerfiles (single JAR for Thymeleaf, multi-container for React), configure Docker Compose, set up GitHub Actions CI/CD, and deploy to Railway.",
+  "description": "Create production Dockerfiles (single JAR for Thymeleaf, multi-container for React), configure Docker Compose, set up GitHub Actions CI/CD, and deploy to Fly.io.",
   "moduleId": "module-16",
   "order": 9,
   "estimatedMinutes": 80,

@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
   "id": "12.1-quiz-1",
+  "lessonId": "lesson-13-01",
+  "order": 1,
   "title": "Offline-First Concepts",
   "description": "Test your understanding of offline-first principles.",
   "questions": [

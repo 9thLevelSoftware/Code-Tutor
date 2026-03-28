@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "18.11-challenge-0",
+  "lessonId": "lesson-18-11",
+  "order": 1,
   "title": "Offline Post Creation",
   "description": "Implement a complete offline post creation system that queues posts while offline, uploads images when online, and retries failed uploads with progress tracking.",
   "instructions": "Build a robust offline post creation system:\n\n1. Create an OfflinePostQueue class that manages pending posts\n2. Store posts in local database with pending status when offline\n3. Queue image uploads separately with progress tracking\n4. Implement ImageUploadService that uploads images one by one\n5. Handle partial upload failures (some images succeed, others fail)\n6. Show upload progress for each image in the UI\n7. Implement retry logic with exponential backoff for failed uploads\n8. Update post status from pending to synced after successful upload\n9. Notify user when offline posts are successfully synced",

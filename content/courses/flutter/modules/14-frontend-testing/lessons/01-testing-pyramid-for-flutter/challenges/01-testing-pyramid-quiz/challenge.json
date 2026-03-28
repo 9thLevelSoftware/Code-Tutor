@@ -1,6 +1,8 @@
 {
   "type": "QUIZ",
   "id": "13.1-quiz-0",
+  "lessonId": "lesson-14-01",
+  "order": 1,
   "title": "Testing Pyramid Quiz",
   "description": "Test your understanding of Flutter's testing layers.",
   "questions": [

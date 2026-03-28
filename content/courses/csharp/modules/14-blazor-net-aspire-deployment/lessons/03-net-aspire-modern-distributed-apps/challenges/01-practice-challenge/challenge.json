@@ -3,6 +3,8 @@
   "id": "lesson-14-03-challenge-01",
   "title": "Practice Challenge",
   "description": "Create an Aspire-orchestrated application architecture.",
+  "lessonId": "lesson-14-03",
+  "order": 1,
   "instructions": "Design a .NET Aspire application!\n\nPrint the code structure for:\n\n1. AppHost (orchestrator):\n   - Add Redis cache\n   - Add SQL Server database\n   - Add 'catalog-api' project with references\n   - Add 'web-store' frontend with API reference\n\n2. Catalog API service:\n   - AddServiceDefaults()\n   - AddSqlServerDbContext for products\n   - MapDefaultEndpoints()\n   - GET /products endpoint\n\n3. Explain the benefits:\n   - No hardcoded connection strings\n   - Automatic service discovery\n   - Dashboard observability\n   - One-click debugging\n\nShow how Aspire replaces docker-compose!",
   "language": "csharp",
   "testCases": [

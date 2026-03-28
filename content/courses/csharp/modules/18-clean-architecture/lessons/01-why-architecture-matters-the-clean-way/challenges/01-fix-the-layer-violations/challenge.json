@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-18-01-challenge-01",
+  "lessonId": "lesson-18-01",
+  "order": 1,
   "title": "Fix the Layer Violations",
   "description": "Identify and fix Clean Architecture violations in the given code.",
   "instructions": "The following code has several Clean Architecture violations. Your task is to:\n\n1. Identify which layer each class belongs to\n2. Fix the dependency violations\n3. Add the correct interfaces where needed\n\nRemember: Dependencies should only point inward (Presentation -> Infrastructure -> Application -> Domain).",

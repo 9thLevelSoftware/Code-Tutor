@@ -2,22 +2,24 @@
   "type": "CODE",
   "id": "11.8-challenge-2",
   "title": "Add Biometric Login",
-  "description": "Enhance the auth system with biometric authentication (fingerprint/face) for returning users.",
-  "instructions": "Add biometric login capability that allows users who have previously logged in to authenticate using their device's biometric sensor.\n\n1. Add the local_auth package dependency\n2. Check if biometrics are available on the device\n3. Store a flag when user enables biometric login\n4. Show biometric prompt on app launch if enabled\n5. Fall back to password login if biometric fails\n\nThe implementation should:\n- Check device capability before showing the option\n- Securely store the biometric preference\n- Handle all biometric authentication results\n- Work seamlessly with the existing auth flow",
+  "description": "Implement biometric authentication as an alternative to password entry.",
+  "lessonId": "lesson-11-08",
+  "order": 2,
+  "instructions": "Add biometric login to your auth system:\n\n1. Update the login screen to show a biometric button when:\n   - Biometrics are available on the device\n   - User has previously logged in successfully\n   - User has enabled biometric login in settings\n\n2. Implement secure credential storage:\n   - Store refresh token securely using flutter_secure_storage\n   - Add a biometric prompt before retrieving credentials\n   - Handle biometric authentication failures gracefully\n\n3. Add biometric settings to the profile screen:\n   - Toggle to enable/disable biometric login\n   - Requires password confirmation to enable\n   - Shows which biometric method is available (face, fingerprint)",
   "language": "dart",
   "testCases": [],
   "hints": [
     {
       "level": 1,
-      "text": "Use the local_auth package which provides cross-platform biometric authentication."
+      "text": "Use local_auth package to check available biometrics and authenticate."
     },
     {
       "level": 2,
-      "text": "Biometric should only be offered after a user has successfully logged in once - store their session tokens securely."
+      "text": "Create a BiometricAuthService that coordinates between local_auth and secure storage."
     },
     {
       "level": 3,
-      "text": "Handle all edge cases: device not supported, biometrics not enrolled, user cancelled, too many failed attempts."
+      "text": "Always require password entry at least once before enabling biometric for security."
     }
   ]
 }

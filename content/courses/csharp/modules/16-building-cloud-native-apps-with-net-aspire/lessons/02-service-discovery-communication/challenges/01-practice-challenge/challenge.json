@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-16-02-challenge-01",
+  "lessonId": "lesson-16-02",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Apply what you've learned in this interactive coding challenge.",
   "instructions": "Create a typed HTTP client for an inventory service!\n\n1. Define InventoryItem record:\n   - Id (int), Sku (string), Quantity (int), WarehouseId (string)\n\n2. Create InventoryApiClient class:\n   - Constructor takes HttpClient\n   - GetAllItemsAsync() - GET /api/inventory\n   - GetItemBySkuAsync(sku) - GET /api/inventory/{sku}\n   - UpdateQuantityAsync(sku, quantity) - PUT /api/inventory/{sku}/quantity\n   - CheckStockAsync(sku, required) - GET /api/inventory/{sku}/check?required={required}\n\n3. Use service discovery URL: http://inventory-api\n\nRemember: Use GetFromJsonAsync, PostAsJsonAsync, etc.!",

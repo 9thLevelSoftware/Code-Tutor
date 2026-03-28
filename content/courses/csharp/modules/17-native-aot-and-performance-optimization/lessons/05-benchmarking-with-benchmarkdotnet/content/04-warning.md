@@ -13,6 +13,6 @@ title: "Common Pitfalls"
 
 **Environment Interference**: Background processes, thermal throttling, and power management affect results. Run benchmarks on a quiet system, preferably with multiple iterations to detect anomalies.
 
-**Comparing Across Runtimes**: When comparing .NET 8 vs .NET 9, use separate jobs with explicit runtime configuration. BenchmarkDotNet supports `[Config]` attributes for multi-runtime comparisons.
+**Comparing Across Runtimes**: When comparing .NET 9 vs .NET 10, use separate jobs with explicit runtime configuration. BenchmarkDotNet supports `[Config]` attributes for multi-runtime comparisons.
 
 **Visual Studio Integration**: Visual Studio 2022+ can analyze BenchmarkDotNet results directly. Use the Profiling tools to correlate benchmark results with CPU and memory profiling data.

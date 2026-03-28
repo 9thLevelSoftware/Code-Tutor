@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-12-08-challenge-01",
+  "lessonId": "lesson-12-08",
+  "order": 1,
   "title": "Practice Challenge",
   "description": "Implement HybridCache patterns.",
   "instructions": "Demonstrate HybridCache usage!\n\n1. Show Program.cs setup with Redis backend\n2. Show GetOrCreateAsync usage in a service\n3. Demonstrate tagging for cache invalidation\n4. Explain stampede protection\n5. Compare to IMemoryCache and IDistributedCache\n6. Show when to use each caching approach\n\nThis is the modern way to cache in .NET!",

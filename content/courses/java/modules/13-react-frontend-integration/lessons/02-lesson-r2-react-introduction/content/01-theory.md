@@ -37,3 +37,17 @@ WHY VITE?
 - Optimized production builds
 - Modern ES modules support
 - Used by Vue, Svelte, and now React community
+
+NOTE: CREATE REACT APP (Legacy)
+
+You may see older tutorials using Create React App (CRA):
+
+npx create-react-app my-app
+
+While CRA is still valid, it's slower than Vite and no longer recommended for new projects. We use Vite in these examples because:
+- Faster development server startup
+- Quicker hot reload during development
+- Smaller production bundles
+- Modern tooling and better DX
+
+If you encounter CRA-based examples, the React concepts are identical - only the project setup and file structure may differ slightly.

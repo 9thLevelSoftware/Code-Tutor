@@ -36,3 +36,17 @@ Right: Return UserResponse DTO (no password)
 Mistake 8: No input validation
 Wrong: Accept any input, let database fail
 Right: Validate with @Valid and return 400 for bad input
+
+### HTTP Status Codes Quick Reference
+
+| Code | Meaning | When to Use |
+|------|---------|-------------|
+| 200 | OK | Successful GET, PUT, PATCH |
+| 201 | Created | Successful POST (resource created) |
+| 204 | No Content | Successful DELETE |
+| 400 | Bad Request | Validation errors, malformed JSON |
+| 401 | Unauthorized | Missing/invalid authentication |
+| 403 | Forbidden | Authenticated but not authorized |
+| 404 | Not Found | Resource doesn't exist |
+| 409 | Conflict | Duplicate data, concurrent modification |
+| 500 | Server Error | Unexpected exceptions |

@@ -1,24 +1,31 @@
-// Variables
-string operation = "+";
-int num1 = 10;
-int num2 = 5;
+// Create the day number variable
+int dayNumber = 3;
 
-// Write your switch statement here
-switch (operation)
+// Convert to day name using switch
+switch (dayNumber)
 {
-    case "+":
-        Console.WriteLine(num1 + num2);
+    case 1:
+        Console.WriteLine("Monday");
         break;
-    case "-":
-        Console.WriteLine(num1 - num2);
+    case 2:
+        Console.WriteLine("Tuesday");
         break;
-    case "*":
-        Console.WriteLine(num1 * num2);
+    case 3:
+        Console.WriteLine("Wednesday");
         break;
-    case "/":
-        Console.WriteLine(num1 / num2);
+    case 4:
+        Console.WriteLine("Thursday");
+        break;
+    case 5:
+        Console.WriteLine("Friday");
+        break;
+    case 6:
+        Console.WriteLine("Saturday");
+        break;
+    case 7:
+        Console.WriteLine("Sunday");
         break;
     default:
-        Console.WriteLine("Unknown operation");
+        Console.WriteLine("Invalid day number");
         break;
 }
