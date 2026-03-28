@@ -1,0 +1,105 @@
+{
+  "course": "python",
+  "module": "03-boolean-logic",
+  "moduleTitle": "Boolean Logic",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 7,
+  "lessonsReviewed": 7,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/01-boolean-logic-the-language-of-yes-and-no",
+      "lessonTitle": "Boolean Logic: The Language of Yes and No",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/02-logical-operators-combining-questions",
+      "lessonTitle": "Logical Operators: Combining Questions",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "major",
+          "file": "content/01-content.md",
+          "line": null,
+          "originalText": "This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content section. It has proper frontmatter so the loader will not fail to parse it.",
+          "description": "File contains placeholder stub text instead of actual lesson content. This file appears to be a duplicate/leftover - the actual theory content is in 01-theory.md.",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/03-if-statements-your-first-decisions",
+      "lessonTitle": "if Statements: Your First Decisions",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "major",
+          "file": "content/01-theory.md",
+          "line": null,
+          "originalText": "This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content section. It has proper frontmatter so the loader will not fail to parse it.",
+          "description": "Lesson introduction/theory section contains placeholder stub text instead of proper pedagogical content explaining if statements concept.",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/04-if-else-statements-the-fork-in-the-road",
+      "lessonTitle": "if-else Statements: The Fork in the Road",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "major",
+          "file": "content/01-theory.md",
+          "line": null,
+          "originalText": "This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content section. It has proper frontmatter so the loader will not fail to parse it.",
+          "description": "Lesson introduction/theory section contains placeholder stub text instead of proper pedagogical content explaining if-else statements concept.",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/05-elif-chains-multiple-decision-paths",
+      "lessonTitle": "elif Chains: Multiple Decision Paths",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/06-nested-conditionals-decisions-within-decisions",
+      "lessonTitle": "Nested Conditionals: Decisions Within Decisions",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/07-pattern-matching-with-matchcase-python-310",
+      "lessonTitle": "Pattern Matching with match/case (Python 3.10+)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 3,
+    "bySeverity": {
+      "critical": 0,
+      "major": 3,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 3,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}
