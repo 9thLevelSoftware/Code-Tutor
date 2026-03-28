@@ -171,7 +171,7 @@ test_calculator.py ..........                                   [100%]
 Options:
   pytest -v                    # Verbose output
   pytest -k "palindrome"       # Run tests matching name
-  pytest --cov                 # Show code coverage
+  pytest --cov=src             # Show code coverage
   pytest -x                    # Stop on first failure
   pytest --pdb                 # Drop into debugger on failure
 """)

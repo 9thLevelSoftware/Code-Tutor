@@ -1,0 +1,231 @@
+{
+  "moduleId": "13-asynchronous-python",
+  "moduleTitle": "Asynchronous Python",
+  "course": "python",
+  "targetPythonVersion": "3.12",
+  "auditDate": "2026-03-28",
+  "auditor": "subagent",
+  "overallStatus": "needs_fixes",
+  "criticalIssues": 2,
+  "warnings": 4,
+  "suggestions": 6,
+  "lessons": [
+    {
+      "lessonId": "lesson-13-01",
+      "lessonTitle": "Why Async Matters",
+      "status": "complete",
+      "findings": [],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-01-challenge-1",
+          "status": "complete",
+          "findings": []
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-02",
+      "lessonTitle": "Async/Await Basics",
+      "status": "complete",
+      "findings": [],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-02-challenge-1",
+          "status": "complete",
+          "findings": []
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-03",
+      "lessonTitle": "The Event Loop",
+      "status": "complete",
+      "findings": [],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-03-challenge-1",
+          "status": "complete",
+          "findings": []
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-04",
+      "lessonTitle": "Async Context Managers",
+      "status": "needs_fixes",
+      "findings": [
+        {
+          "type": "suggestion",
+          "severity": "medium",
+          "category": "best_practice",
+          "location": "challenge: 01-async-file-processing",
+          "message": "Challenge uses async file operations but aioshutil and aiosqlite aren't mentioned as popular async alternatives",
+          "details": "The async file processing challenge should mention modern async libraries like aiofiles, aioshutil for real async I/O, rather than just asyncio.sleep() simulation",
+          "recommendation": "Add content mentioning aiofiles for true async file I/O operations",
+          "rationale": "asyncio doesn't provide true async file I/O - it uses thread pool executors. aiofiles is the standard solution for true non-blocking file operations"
+        }
+      ],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-04-challenge-1",
+          "status": "complete",
+          "findings": []
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-05",
+      "lessonTitle": "Async HTTP with httpx",
+      "status": "needs_fixes",
+      "findings": [
+        {
+          "type": "warning",
+          "severity": "medium",
+          "category": "code_example",
+          "location": "challenge: 01-fetch-multiple-urls-concurrently",
+          "message": "HTTP requests in examples may fail in sandboxed environments",
+          "details": "The httpx examples use real HTTP requests. In restricted educational environments, these may timeout or be blocked",
+          "recommendation": "Add mock fallback or use httpbin.org with short timeouts, or document that external network access is required",
+          "rationale": "Educational platforms often restrict outbound HTTP for security"
+        }
+      ],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-05-challenge-1",
+          "status": "complete",
+          "findings": []
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-06",
+      "lessonTitle": "Error Handling in Async",
+      "status": "needs_fixes",
+      "findings": [
+        {
+          "type": "critical",
+          "severity": "high",
+          "category": "content_gap",
+          "location": "theory content",
+          "message": "Missing coverage of asyncio.Task exception handling",
+          "details": "asyncio.Task stores exceptions until result() is called or awaited. Unretrieved exceptions are logged as warnings. This critical behavior is not covered",
+          "recommendation": "Add section on proper Task exception handling including task.result(), task.exception(), and the 'unretrieved task exception' warning",
+          "rationale": "This is a common source of silent failures in async code - exceptions in background tasks often go unnoticed"
+        },
+        {
+          "type": "suggestion",
+          "severity": "medium",
+          "category": "best_practice",
+          "location": "key_point content",
+          "message": "Should mention asyncio.TimeoutError vs concurrent.futures.TimeoutError distinction",
+          "details": "Python 3.11+ has asyncio.TimeoutError which is different from the old asyncio.TimeoutError. Course should clarify which one is used",
+          "recommendation": "Explicitly mention that `asyncio.TimeoutError` is the exception to catch for async timeouts in Python 3.11+",
+          "rationale": "The exception hierarchy changed - asyncio.TimeoutError was moved and users need to import it correctly"
+        }
+      ],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-06-challenge-1",
+          "status": "complete",
+          "findings": []
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-07",
+      "lessonTitle": "Mini-Project: Async Web Scraper",
+      "status": "needs_fixes",
+      "findings": [
+        {
+          "type": "critical",
+          "severity": "high",
+          "category": "content_gap",
+          "location": "challenge: 01-build-url-fetcher-with-error-handling",
+          "message": "Web scraper challenge doesn't cover robots.txt or rate limiting ethics",
+          "details": "Teaching web scraping without covering ethical considerations (robots.txt, rate limiting, respect for servers) is problematic",
+          "recommendation": "Add a theory section or warning about web scraping ethics: check robots.txt, use delays between requests, respect 429 responses",
+          "rationale": "Students learning async web scraping should understand responsible practices to avoid being blocked or causing harm"
+        },
+        {
+          "type": "suggestion",
+          "severity": "medium",
+          "category": "best_practice",
+          "location": "challenge content",
+          "message": "Challenge should demonstrate using semaphore for connection limiting",
+          "details": "A proper async web scraper should limit concurrent connections using asyncio.Semaphore to avoid overwhelming target servers",
+          "recommendation": "Add example using asyncio.Semaphore to limit concurrent requests to a reasonable number (e.g., 5-10)",
+          "rationale": "Good async practices include limiting concurrency to prevent resource exhaustion and being a good network citizen"
+        }
+      ],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-07-challenge-1",
+          "status": "needs_fixes",
+          "findings": [
+            {
+              "type": "suggestion",
+              "severity": "low",
+              "category": "enhancement",
+              "location": "solution.py",
+              "message": "Solution could demonstrate structured concurrency patterns",
+              "details": "The solution should use modern patterns like asyncio.TaskGroup or at least asyncio.gather with return_exceptions=True",
+              "recommendation": "Update solution to use TaskGroup if Python 3.11+ is target, or show proper gather usage with exception handling"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-08",
+      "lessonTitle": "TaskGroup and Modern Async Patterns (Python 3.11+)",
+      "status": "needs_fixes",
+      "findings": [
+        {
+          "type": "warning",
+          "severity": "medium",
+          "category": "version_compatibility",
+          "location": "content and challenges",
+          "message": "TaskGroup is Python 3.11+ only - ensure course specifies this clearly",
+          "details": "The lesson title mentions Python 3.11+, but all examples should have clear compatibility notes for users on older Python versions",
+          "recommendation": "Add clear 'Python 3.11+' badge to all TaskGroup content and provide fallback examples using asyncio.gather() for older versions",
+          "rationale": "Not all students will have Python 3.11+ installed. Providing alternative patterns ensures broader usability"
+        },
+        {
+          "type": "suggestion",
+          "severity": "medium",
+          "category": "best_practice",
+          "location": "key_point content",
+          "message": "Should mention that TaskGroup automatically cancels remaining tasks on exception",
+          "details": "One of TaskGroup's main benefits is automatic cancellation propagation. This should be highlighted as a key feature",
+          "recommendation": "Add explicit explanation of TaskGroup's automatic cancellation behavior when one task raises an exception",
+          "rationale": "This is a major advantage of TaskGroup over manually managing tasks - structured concurrency with automatic cleanup"
+        }
+      ],
+      "challenges": [
+        {
+          "challengeId": "module-13-lesson-08-challenge-1",
+          "status": "complete",
+          "findings": []
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-13-09",
+      "lessonTitle": "Bridge: From Async to Web APIs",
+      "status": "complete",
+      "findings": [
+        {
+          "type": "suggestion",
+          "severity": "low",
+          "category": "enhancement",
+          "location": "theory content",
+          "message": "Could mention ASGI vs WSGI distinction briefly",
+          "details": "When bridging to FastAPI, a brief mention of ASGI as the async-capable successor to WSGI provides valuable context",
+          "recommendation": "Add 1-2 sentences explaining that FastAPI uses ASGI which supports async, unlike Flask's WSGI",
+          "rationale": "Understanding why FastAPI supports async while Flask requires workarounds helps solidify the learning"
+        }
+      ],
+      "challenges": []
+    }
+  ]
+}

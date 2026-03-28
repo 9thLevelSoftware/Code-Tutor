@@ -1,9 +1,9 @@
 {
   "type": "FREE_CODING",
-  "id": "module-11-lesson-04-challenge-3",
+  "id": "module-11-lesson-04-challenge",
   "title": "Interactive Exercise",
-  "description": "Create a payment processing system:\n- Payment base class with pay() method\n- CreditCard, PayPal, Bitcoin subclasses\n- process_payment() function that works with any payment type\n- Each payment type implements pay() differently",
-  "instructions": "Create a payment processing system:\n- Payment base class with pay() method\n- CreditCard, PayPal, Bitcoin subclasses\n- process_payment() function that works with any payment type\n- Each payment type implements pay() differently",
+  "description": "Create a shape hierarchy demonstrating polymorphism:\n- Shape base class with area() and perimeter()\n- Circle, Rectangle, Triangle classes that override methods\n- A function that calculates total area of any shapes",
+  "instructions": "Create a shape hierarchy demonstrating polymorphism:\n- Shape base class with area() and perimeter()\n- Circle, Rectangle, Triangle classes that override methods\n- A function that calculates total area of any shapes",
   "language": "python",
   "testCases": [
     {
@@ -16,24 +16,19 @@
   "hints": [
     {
       "level": 1,
-      "text": "Each pay() method should return a string describing the payment. process_payment() should work with any Payment object."
+      "text": "Define a base Shape class with area() and perimeter() methods. Override these in each shape subclass. Create a polymorphic function that works with any shape."
     }
   ],
   "commonMistakes": [
     {
-      "mistake": "Forgetting the colon after if/for/while",
-      "consequence": "SyntaxError",
-      "correction": "Add : at the end of the line"
+      "mistake": "Not overriding all required methods",
+      "consequence": "Base class implementation used instead of specific one",
+      "correction": "Override area() and perimeter() in each shape class"
     },
     {
-      "mistake": "Using = instead of == for comparison",
-      "consequence": "Assignment instead of comparison",
-      "correction": "Use == for equality checks"
-    },
-    {
-      "mistake": "Incorrect indentation",
-      "consequence": "IndentationError",
-      "correction": "Use consistent 4-space indentation"
+      "mistake": "Checking types instead of using polymorphism",
+      "consequence": "Code breaks when adding new shapes",
+      "correction": "Call methods directly without type checking"
     }
   ],
   "difficulty": "beginner"

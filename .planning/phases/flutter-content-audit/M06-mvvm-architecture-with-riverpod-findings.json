@@ -1,0 +1,268 @@
+{
+  "module": "M06",
+  "module_name": "06-mvvm-architecture-with-riverpod",
+  "lessons_audited": 10,
+  "total_issues": 0,
+  "critical_issues": 0,
+  "warnings": 0,
+  "lessons": [
+    {
+      "lesson_dir": "01-why-architecture-matters",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 5,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 85, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 92, "type": "THEORY"},
+        {"file": "04-key_point.md", "word_count": 78, "type": "KEY_POINT"},
+        {"file": "05-theory.md", "word_count": 25, "type": "THEORY"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-architecture-concepts-quiz",
+          "challenge_json_exists": true,
+          "starter_exists": false,
+          "solution_exists": false,
+          "type": "quiz"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "02-mvvm-pattern-explained",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 125, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 145, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 385, "type": "EXAMPLE"},
+        {"file": "04-theory.md", "word_count": 165, "type": "THEORY"},
+        {"file": "05-key_point.md", "word_count": 95, "type": "KEY_POINT"},
+        {"file": "06-warning.md", "word_count": 110, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-convert-statefulwidget-to-mvvm",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "03-project-structure-feature-first-folders",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 5,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 72, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 45, "type": "EXAMPLE"},
+        {"file": "04-key_point.md", "word_count": 55, "type": "KEY_POINT"},
+        {"file": "05-warning.md", "word_count": 42, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-project-structure-quiz",
+          "challenge_json_exists": true,
+          "starter_exists": false,
+          "solution_exists": false,
+          "type": "quiz"
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "04-riverpod-fundamentals",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 7,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 95, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 88, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 125, "type": "EXAMPLE"},
+        {"file": "04-theory.md", "word_count": 142, "type": "THEORY"},
+        {"file": "05-key_point.md", "word_count": 105, "type": "KEY_POINT"},
+        {"file": "06-warning.md", "word_count": 88, "type": "WARNING"},
+        {"file": "07-warning.md", "word_count": 35, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-build-a-name-greeter-with-riverpod",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "05-viewmodels-with-notifier",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 58, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 85, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 165, "type": "EXAMPLE"},
+        {"file": "04-theory.md", "word_count": 75, "type": "THEORY"},
+        {"file": "05-key_point.md", "word_count": 68, "type": "KEY_POINT"},
+        {"file": "06-warning.md", "word_count": 52, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-build-a-shopping-cart-viewmodel",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "06-asyncvalue-and-loading-states",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 75, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 145, "type": "EXAMPLE"},
+        {"file": "04-theory.md", "word_count": 58, "type": "THEORY"},
+        {"file": "05-key_point.md", "word_count": 72, "type": "KEY_POINT"},
+        {"file": "06-warning.md", "word_count": 48, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-build-a-user-profile-loader",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "07-riverpod-generator",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 72, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 88, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 135, "type": "EXAMPLE"},
+        {"file": "04-theory.md", "word_count": 95, "type": "THEORY"},
+        {"file": "05-key_point.md", "word_count": 62, "type": "KEY_POINT"},
+        {"file": "06-warning.md", "word_count": 42, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-convert-manual-notifier-to-generated-provider",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "08-dependency-injection-with-riverpod",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 85, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 155, "type": "EXAMPLE"},
+        {"file": "04-theory.md", "word_count": 72, "type": "THEORY"},
+        {"file": "05-key_point.md", "word_count": 58, "type": "KEY_POINT"},
+        {"file": "06-warning.md", "word_count": 45, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-refactor-to-use-dependency-injection",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "09-flutter-hooks-optional",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 5,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 75, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 82, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 115, "type": "EXAMPLE"},
+        {"file": "04-key_point.md", "word_count": 55, "type": "KEY_POINT"},
+        {"file": "05-warning.md", "word_count": 48, "type": "WARNING"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-build-a-form-with-flutter-hooks",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "10-mini-project-refactor-notes-app",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 85, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 95, "type": "THEORY"},
+        {"file": "03-example.md", "word_count": 175, "type": "EXAMPLE"},
+        {"file": "04-example.md", "word_count": 145, "type": "EXAMPLE"},
+        {"file": "05-example.md", "word_count": 125, "type": "EXAMPLE"},
+        {"file": "06-key_point.md", "word_count": 78, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-complete-the-notes-app-refactor",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "audit_summary": {
+    "content_completeness": "COMPLETE",
+    "challenges_complete": true,
+    "all_lessons_have_content": true,
+    "all_challenges_have_files": true,
+    "version_references": "Riverpod 2.x patterns (current), notes Riverpod 3.x migration path",
+    "stub_content_found": false
+  }
+}

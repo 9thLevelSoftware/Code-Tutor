@@ -22,7 +22,7 @@ uv add pyjwt
 # uv add pyjwt
 
 import jwt
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")  # In production: from environment
 ALGORITHM = "HS256"
@@ -39,7 +39,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None) -> s
         Encoded JWT token string
     """
     to_encode = data.copy()
-    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=15))
+    expire = datetime.now(timezone.utc) + (expires_delta or timedelta(minutes=15))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 

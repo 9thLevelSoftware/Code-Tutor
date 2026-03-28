@@ -2,7 +2,7 @@
   "type": "FREE_CODING",
   "id": "module-10-lesson-04-challenge-1",
   "title": "Challenge 1: Create a FastAPI Project",
-  "description": "Create a pyproject.toml for a FastAPI web API project. The project should include FastAPI, Pydantic (for data validation), Uvicorn (ASGI server), and development dependencies for testing and linting.\n\n**Requirements:**\n- Project name: \"my-api\"\n- Python 3.13 or higher\n- Production dependencies: fastapi, pydantic, uvicorn\n- Dev dependencies: pytest, httpx (for testing async), ruff",
+  "description": "Create a pyproject.toml for a FastAPI web API project. The project should include FastAPI, Pydantic (for data validation), Uvicorn (ASGI server), and development dependencies for testing and linting.\n\n**Requirements:**\n- Project name: \"my-api\"\n- Python 3.12 or higher\n- Production dependencies: fastapi, pydantic, uvicorn\n- Dev dependencies: pytest, httpx (for testing async), ruff",
   "instructions": "Create a complete pyproject.toml file that follows modern Python standards with uv.",
   "language": "python",
   "testCases": [
@@ -41,7 +41,7 @@
     {
       "mistake": "Forgetting requires-python",
       "consequence": "May run on incompatible Python versions",
-      "correction": "Always specify requires-python = \">=3.13\" or your minimum version"
+      "correction": "Always specify requires-python = \">=3.12\" or your minimum version"
     },
     {
       "mistake": "Putting dev deps in main dependencies",

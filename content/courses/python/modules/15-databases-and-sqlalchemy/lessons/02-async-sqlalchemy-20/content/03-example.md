@@ -20,7 +20,8 @@ name: Mapped[str] = mapped_column(String(100))
 bio: Mapped[str | None] = mapped_column(String(500), nullable=True)
 
 # With default
-created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+from datetime import datetime, timezone
+created_at: Mapped[datetime] = mapped_column(default=datetime.now(timezone.utc))
 
 # Relationship
 posts: Mapped[list["Post"]] = relationship(back_populates="author")
@@ -29,7 +30,7 @@ posts: Mapped[list["Post"]] = relationship(back_populates="author")
 ```python
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy import ForeignKey, String
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List
 
 class Base(DeclarativeBase):
@@ -48,7 +49,7 @@ class User(Base):
     name: Mapped[str] = mapped_column(String(100))
     
     # Timestamp with default value
-    created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now(timezone.utc))
     
     # One-to-many relationship
     transactions: Mapped[List["Transaction"]] = relationship(
@@ -64,7 +65,7 @@ class Transaction(Base):
     amount: Mapped[float]  # No mapped_column needed for simple types
     category: Mapped[str] = mapped_column(String(50))
     description: Mapped[str | None] = mapped_column(String(200), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now(timezone.utc))
     
     # Foreign key to users table
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))

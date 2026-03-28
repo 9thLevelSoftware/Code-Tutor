@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-03",
   "title": "Module 2, Lesson 3: Displaying and Styling Text",
+  "description": "Master the Text widget and TextStyle for displaying and formatting text. Learn about fonts, sizes, colors, weight, alignment, and how to create rich text layouts with multiple styles.",
   "moduleId": "module-03",
   "order": 3,
   "estimatedMinutes": 60,

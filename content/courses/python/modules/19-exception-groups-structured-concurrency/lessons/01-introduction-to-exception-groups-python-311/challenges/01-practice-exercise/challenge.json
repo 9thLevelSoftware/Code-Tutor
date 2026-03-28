@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-17-lesson-01-challenge-1",
+  "id": "module-19-lesson-01-challenge-1",
   "title": "Practice Exercise",
   "description": "Create a function that validates a config dictionary and raises an ExceptionGroup if there are errors.\n\n**Requirements:**\n- Check that 'host' exists and is a string\n- Check that 'port' exists and is an integer between 1-65535\n- Collect all errors and raise them as an ExceptionGroup",
   "instructions": "Validate config and raise ExceptionGroup for all errors.",

@@ -88,7 +88,7 @@ complete_config = '''
 [project]
 name = "my-project"
 version = "0.1.0"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.0",
 ]
@@ -102,7 +102,7 @@ dev = [
 
 [tool.ruff]
 line-length = 88
-target-version = "py313"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]

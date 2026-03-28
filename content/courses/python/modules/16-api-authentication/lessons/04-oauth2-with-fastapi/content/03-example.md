@@ -62,7 +62,7 @@ print("\n2. Creating Tokens with Scopes:")
 def create_access_token_with_scopes(data: dict, scopes: list) -> str:
     to_encode = data.copy()
     to_encode.update({
-        "exp": datetime.utcnow() + timedelta(minutes=30),
+        "exp": datetime.now(timezone.utc) + timedelta(minutes=30),
         "scopes": scopes
     })
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)

@@ -12,7 +12,7 @@ title: "Understanding the Concept"
 - **Panels and trees** - Organize complex output
 - **Colored text** - Make important info stand out
 
-**Typer 0.16+ integration:**
+**Typer 0.12+ integration:**
 - Use `rich.console.Console` for direct Rich output
 - Use `rich.table.Table` for beautiful data display
 - Rich markup works in docstrings with `rich_markup_mode="rich"`

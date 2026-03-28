@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-17-lesson-04-challenge-1",
+  "id": "module-19-lesson-04-challenge-1",
   "title": "Finance Tracker: Categorize Transactions with Partial Failures",
   "description": "Implement a transaction categorizer that handles partial failures for the Finance Tracker.\n\n**Requirements:**\n- Categorize a list of transactions concurrently\n- Some transactions may fail (invalid format, missing data)\n- Return lists of successfully categorized and failed transactions\n- Use the safe wrapper pattern to handle failures gracefully",
   "instructions": "Complete the transaction categorizer with partial failure handling.",

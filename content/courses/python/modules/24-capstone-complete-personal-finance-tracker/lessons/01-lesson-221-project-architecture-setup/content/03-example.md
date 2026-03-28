@@ -8,7 +8,7 @@ Initialize the project with uv and configure dependencies:
 **Expected pyproject.toml structure:**
 
 ```toml
-# Create project with uv (Python 3.13+)
+# Create project with uv (Python 3.12+)
 # Run: uv init finance_tracker
 # cd finance_tracker
 # uv add fastapi uvicorn asyncpg pydantic pydantic-settings python-jose passlib bcrypt
@@ -19,7 +19,7 @@ Initialize the project with uv and configure dependencies:
 name = "finance-tracker"
 version = "1.0.0"
 description = "Personal Finance Tracker - Python Capstone Project"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.0",
     "uvicorn[standard]>=0.32.0",
@@ -46,10 +46,10 @@ asyncio_default_fixture_loop_scope = "function"
 
 [tool.ruff]
 line-length = 100
-target-version = "py313"
+target-version = "py312"
 
 [tool.mypy]
-python_version = "3.13"
+python_version = "3.12"
 strict = true
 warn_return_any = true
 ```

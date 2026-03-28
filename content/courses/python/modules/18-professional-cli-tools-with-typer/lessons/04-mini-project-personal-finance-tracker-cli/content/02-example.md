@@ -27,7 +27,7 @@ Balance:  $1955.00
 ```
 
 ```python
-# cli.py - Personal Finance Tracker (Typer 0.16+)
+# cli.py - Personal Finance Tracker (Typer 0.12+)
 import typer
 from enum import Enum
 from pathlib import Path
@@ -36,7 +36,7 @@ from rich.table import Table
 import json
 from datetime import datetime
 
-# Typer 0.16+: rich_markup_mode enables Rich in help text
+# Typer 0.12+: rich_markup_mode enables Rich in help text
 app = typer.Typer(
     help="Personal Finance Tracker - manage your money.",
     rich_markup_mode="rich"

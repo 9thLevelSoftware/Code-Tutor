@@ -36,7 +36,7 @@ uv add pyjwt
 
 # Create token
 token = jwt.encode(
-    {"sub": email, "exp": datetime.utcnow() + timedelta(minutes=30)},
+    {"sub": email, "exp": datetime.now(timezone.utc) + timedelta(minutes=30)},
     SECRET_KEY,
     algorithm="HS256"
 )

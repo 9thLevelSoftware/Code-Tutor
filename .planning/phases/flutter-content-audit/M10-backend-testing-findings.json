@@ -1,0 +1,327 @@
+{
+  "module": "M10 Backend Testing",
+  "lesson_count": 8,
+  "findings_count": 40,
+  "findings": [
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\01-module-9-lesson-1-testing-philosophy\\challenges\\01-testing-philosophy-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-01",
+      "lesson_title": "Testing Philosophy"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\01-module-9-lesson-1-testing-philosophy\\challenges\\01-testing-philosophy-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-01",
+      "lesson_title": "Testing Philosophy"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\01-module-9-lesson-1-testing-philosophy\\challenges\\01-testing-philosophy-quiz",
+      "issue": "Missing starter.dart in 01-testing-philosophy-quiz",
+      "lesson_id": "lesson-10-01",
+      "lesson_title": "Testing Philosophy"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\01-module-9-lesson-1-testing-philosophy\\challenges\\01-testing-philosophy-quiz",
+      "issue": "Missing solution.dart in 01-testing-philosophy-quiz",
+      "lesson_id": "lesson-10-01",
+      "lesson_title": "Testing Philosophy"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\01-module-9-lesson-1-testing-philosophy\\challenges\\02-design-a-test-strategy\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-01",
+      "lesson_title": "Testing Philosophy"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\01-module-9-lesson-1-testing-philosophy\\challenges\\02-design-a-test-strategy\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-01",
+      "lesson_title": "Testing Philosophy"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\02-module-9-lesson-2-unit-testing-dart-code\\challenges\\01-unit-testing-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-02",
+      "lesson_title": "Unit Testing Dart Code"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\02-module-9-lesson-2-unit-testing-dart-code\\challenges\\01-unit-testing-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-02",
+      "lesson_title": "Unit Testing Dart Code"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\02-module-9-lesson-2-unit-testing-dart-code\\challenges\\01-unit-testing-quiz",
+      "issue": "Missing starter.dart in 01-unit-testing-quiz",
+      "lesson_id": "lesson-10-02",
+      "lesson_title": "Unit Testing Dart Code"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\02-module-9-lesson-2-unit-testing-dart-code\\challenges\\01-unit-testing-quiz",
+      "issue": "Missing solution.dart in 01-unit-testing-quiz",
+      "lesson_id": "lesson-10-02",
+      "lesson_title": "Unit Testing Dart Code"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\02-module-9-lesson-2-unit-testing-dart-code\\challenges\\02-write-tests-for-a-password-validator\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-02",
+      "lesson_title": "Unit Testing Dart Code"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\02-module-9-lesson-2-unit-testing-dart-code\\challenges\\02-write-tests-for-a-password-validator\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-02",
+      "lesson_title": "Unit Testing Dart Code"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\02-module-9-lesson-2-unit-testing-dart-code\\challenges\\02-write-tests-for-a-password-validator\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-10-02",
+      "lesson_title": "Unit Testing Dart Code"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\01-dart-frog-testing-concepts\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\01-dart-frog-testing-concepts\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\01-dart-frog-testing-concepts",
+      "issue": "Missing starter.dart in 01-dart-frog-testing-concepts",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\01-dart-frog-testing-concepts",
+      "issue": "Missing solution.dart in 01-dart-frog-testing-concepts",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\02-write-complete-route-tests\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\02-write-complete-route-tests\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\02-write-complete-route-tests",
+      "issue": "Missing solution.dart in 02-write-complete-route-tests",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\03-module-9-lesson-3-testing-dart-frog-routes\\challenges\\02-write-complete-route-tests\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-10-03",
+      "lesson_title": "Testing Dart Frog Routes"
+    },
+    {
+      "type": "STUBS",
+      "severity": "high",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\content\\08-theory.md",
+      "issue": "Content too short (49 words)",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\01-serverpod-testing-concepts\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\01-serverpod-testing-concepts\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\01-serverpod-testing-concepts",
+      "issue": "Missing starter.dart in 01-serverpod-testing-concepts",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\01-serverpod-testing-concepts",
+      "issue": "Missing solution.dart in 01-serverpod-testing-concepts",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\02-write-serverpod-endpoint-tests\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\02-write-serverpod-endpoint-tests\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\02-write-serverpod-endpoint-tests",
+      "issue": "Missing solution.dart in 02-write-serverpod-endpoint-tests",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\04-module-9-lesson-4-testing-serverpod-endpoints\\challenges\\02-write-serverpod-endpoint-tests\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-10-04",
+      "lesson_title": "Testing Serverpod Endpoints"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\05-module-9-lesson-5-api-contract-testing\\challenges\\01-contract-testing-concepts-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-05",
+      "lesson_title": "API Contract Testing"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\05-module-9-lesson-5-api-contract-testing\\challenges\\01-contract-testing-concepts-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-05",
+      "lesson_title": "API Contract Testing"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\05-module-9-lesson-5-api-contract-testing\\challenges\\01-contract-testing-concepts-quiz",
+      "issue": "Missing starter.dart in 01-contract-testing-concepts-quiz",
+      "lesson_id": "lesson-10-05",
+      "lesson_title": "API Contract Testing"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\05-module-9-lesson-5-api-contract-testing\\challenges\\01-contract-testing-concepts-quiz",
+      "issue": "Missing solution.dart in 01-contract-testing-concepts-quiz",
+      "lesson_id": "lesson-10-05",
+      "lesson_title": "API Contract Testing"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\05-module-9-lesson-5-api-contract-testing\\challenges\\02-implement-contract-verification\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-10-05",
+      "lesson_title": "API Contract Testing"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\05-module-9-lesson-5-api-contract-testing\\challenges\\02-implement-contract-verification\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-10-05",
+      "lesson_title": "API Contract Testing"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\05-module-9-lesson-5-api-contract-testing\\challenges\\02-implement-contract-verification\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-10-05",
+      "lesson_title": "API Contract Testing"
+    },
+    {
+      "type": "STUBS",
+      "severity": "high",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\06-lesson-6-device-features-sensors-biometrics\\content\\01-theory.md",
+      "issue": "Content too short (39 words)",
+      "lesson_id": "lesson-10-06",
+      "lesson_title": "Device Features (Sensors & Biometrics)"
+    },
+    {
+      "type": "STUBS",
+      "severity": "high",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\07-lesson-7-background-tasks-workmanager\\content\\01-theory.md",
+      "issue": "Content too short (46 words)",
+      "lesson_id": "lesson-10-07",
+      "lesson_title": "Background Tasks & Workmanager"
+    },
+    {
+      "type": "STUBS",
+      "severity": "high",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\10-backend-testing\\lessons\\08-lesson-8-mini-project-fitness-tracker-app\\content\\03-theory.md",
+      "issue": "Content too short (15 words)",
+      "lesson_id": "lesson-10-08",
+      "lesson_title": "Mini-Project: Fitness Tracker App"
+    }
+  ]
+}

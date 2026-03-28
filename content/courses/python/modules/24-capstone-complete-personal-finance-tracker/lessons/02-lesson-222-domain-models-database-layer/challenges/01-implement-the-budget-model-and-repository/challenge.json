@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-22-lesson-02-challenge-1",
+  "id": "module-24-lesson-02-challenge-1",
   "title": "Implement the Budget Model and Repository",
   "description": "Create the Budget domain model and repository following the patterns shown.",
   "instructions": "1. Create a Budget dataclass with id, category_id, user_id, amount_limit, period, start_date, end_date\n2. Create a BudgetPeriod StrEnum with WEEKLY, MONTHLY, YEARLY values\n3. Implement BudgetRepository with get_active_budgets() and check_budget_status() methods\n4. Include validation in __post_init__",

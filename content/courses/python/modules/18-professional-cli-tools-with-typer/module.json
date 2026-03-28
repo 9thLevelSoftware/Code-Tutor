@@ -1,7 +1,7 @@
 {
   "id": "module-18",
   "title": "Professional CLI Tools with Typer",
-  "description": "Build beautiful, type-safe command-line applications with Typer 0.16+, Rich integration, and modern Python patterns",
+  "description": "Build beautiful, type-safe command-line applications with Typer 0.12+, Rich integration, and modern Python patterns",
   "difficulty": "intermediate",
   "estimatedHours": 3,
   "order": 18

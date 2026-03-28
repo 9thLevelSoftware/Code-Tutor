@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-22-lesson-01-challenge-1",
+  "id": "module-24-lesson-01-challenge-1",
   "title": "Initialize Your Finance Tracker",
   "description": "Set up the project structure and configuration for your Personal Finance Tracker.",
   "instructions": "1. Create the project directory structure as shown\n2. Implement the Settings class with all required fields\n3. Create the .env.example file\n4. Test that settings load correctly from environment",

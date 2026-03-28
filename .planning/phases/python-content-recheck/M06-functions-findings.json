@@ -1,0 +1,139 @@
+{
+  "module": "06-functions",
+  "moduleTitle": "Functions",
+  "totalLessons": 7,
+  "lessonsReviewed": 7,
+  "findings": [
+    {
+      "lessonPath": "modules/06-functions/lessons/01-function-basics-reusable-code-blocks",
+      "lessonTitle": "Function Basics - Reusable Code Blocks",
+      "qualityRating": "B",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "No challenges directory exists for this lesson. All other modules (M05, M07, M08) have challenges for every lesson. This is a significant gap for a beginner-level lesson where practice exercises are most needed.",
+          "suggestedFix": "Add a challenges/01-practice-exercise/ directory with challenge.json, starter.py, and solution.py covering basic function definition and calling."
+        }
+      ]
+    },
+    {
+      "lessonPath": "modules/06-functions/lessons/02-parameters-and-return-values",
+      "lessonTitle": "Parameters and Return Values",
+      "qualityRating": "B",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "No challenges directory exists for this lesson.",
+          "suggestedFix": "Add a challenges directory with exercises on parameters, return values, and multiple returns."
+        }
+      ]
+    },
+    {
+      "lessonPath": "modules/06-functions/lessons/03-variable-scope-and-lifetime",
+      "lessonTitle": "Variable Scope and Lifetime",
+      "qualityRating": "C",
+      "issues": [
+        {
+          "category": "INACCURATE",
+          "severity": "major",
+          "description": "Expected output shows 'Call 1: counter = 1', 'Call 2: counter = 1', 'Call 3: counter = 1' but the code uses print(f'Call {counter}: counter = {counter}') where counter is always 1 after reset+increment. The actual output would be 'Call 1: counter = 1' repeated three times. There is no call-number tracking variable, so 'Call 2' and 'Call 3' would never appear.",
+          "suggestedFix": "Either add a call-tracking variable or change expected output to show 'Call 1: counter = 1' three times, or restructure to use a separate variable for the call label."
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "No challenges directory exists for this lesson.",
+          "suggestedFix": "Add a challenges directory with exercises on scope rules, global keyword usage, and variable lifetime."
+        }
+      ]
+    },
+    {
+      "lessonPath": "modules/06-functions/lessons/04-default-and-keyword-arguments",
+      "lessonTitle": "Default and Keyword Arguments",
+      "qualityRating": "C",
+      "issues": [
+        {
+          "category": "INACCURATE",
+          "severity": "major",
+          "description": "Expected output shows 'Order #1: burger with fries, Drink: cola' but the code prints 'Order #1: ' via print() with end='', then create_order() prints 'Order: burger with fries, Drink: cola'. The actual combined output would be 'Order #1: Order: burger with fries, Drink: cola' — the 'Order:' prefix from the function is duplicated with the 'Order #N:' prefix from the calling code.",
+          "suggestedFix": "Either remove the 'Order: ' prefix from the create_order function's print statement, or remove the 'Order #N: ' prefix from the calling code."
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "No challenges directory exists for this lesson.",
+          "suggestedFix": "Add a challenges directory with exercises on default arguments and keyword argument ordering."
+        }
+      ]
+    },
+    {
+      "lessonPath": "modules/06-functions/lessons/05-lambda-functions-and-built-in-functions",
+      "lessonTitle": "Lambda Functions and Built-in Functions",
+      "qualityRating": "B",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "minor",
+          "description": "Lesson difficulty is 'beginner' but lambda functions, map(), filter(), and reduce() are intermediate-level concepts that require solid understanding of functions and iterables.",
+          "suggestedFix": "Change difficulty to 'intermediate'."
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "No challenges directory exists for this lesson.",
+          "suggestedFix": "Add a challenges directory with exercises on lambda expressions and built-in higher-order functions."
+        }
+      ]
+    },
+    {
+      "lessonPath": "modules/06-functions/lessons/06-mini-project-personal-utility-library",
+      "lessonTitle": "Mini-Project: Personal Utility Library",
+      "qualityRating": "B",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "No challenges directory exists for this lesson. For a mini-project lesson, having a practice exercise is critical since it's the culmination of the module's concepts.",
+          "suggestedFix": "Add a challenges directory with a project-level exercise requiring students to build their own utility library."
+        }
+      ]
+    },
+    {
+      "lessonPath": "modules/06-functions/lessons/07-type-hints-self-documenting-code-python-310",
+      "lessonTitle": "Type Hints: Self-Documenting Code (Python 3.10+)",
+      "qualityRating": "B",
+      "issues": [
+        {
+          "category": "PEDAGOGY",
+          "severity": "minor",
+          "description": "The example greet(42) claims 'No runtime error - Python doesn't enforce type hints at runtime' but uses string concatenation (return greeting + ', ' + name + '!') which WOULD raise a TypeError with an int argument. If it used an f-string it wouldn't error. The pedagogical point about runtime non-enforcement is undermined by the actual code behavior.",
+          "suggestedFix": "Change the example to use an f-string (return f'{greeting}, {name}!') so the no-runtime-error claim is accurate, or acknowledge that this particular example does fail due to string concatenation."
+        },
+        {
+          "category": "METADATA",
+          "severity": "minor",
+          "description": "This lesson is difficulty 'intermediate' while all other M06 lessons are 'beginner'. While type hints are indeed more advanced, the difficulty jump is abrupt without a transitional note.",
+          "suggestedFix": "Add a brief note at the lesson start acknowledging this is more advanced material, or adjust other later lessons' difficulty to 'intermediate' for smoother progression."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalIssues": 12,
+    "bySeverity": {
+      "critical": 0,
+      "major": 8,
+      "minor": 4
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 2,
+      "INCOMPLETE": 8,
+      "METADATA": 2,
+      "PEDAGOGY": 0
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "id": "module-21-lesson-07-challenge-1",
+  "id": "module-23-lesson-07-challenge-1",
   "type": "FREE_CODING",
   "title": "Build Input Validator",
   "description": "Create a comprehensive input validation system for the Finance Tracker that combines Pydantic validation with SQL injection prevention and safe database queries.",

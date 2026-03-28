@@ -1,0 +1,85 @@
+{
+  "course": "python",
+  "module": "12-decorators-advanced-patterns",
+  "moduleTitle": "Decorators & Advanced Patterns",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "targetVersion": "Python 3.12",
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/12-decorators-advanced-patterns/lessons/01-decorators",
+      "lessonTitle": "Decorators",
+      "lessonId": "lesson-12-01",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "notes": "Comprehensive coverage of decorators including @cache (Python 3.9+) and @lru_cache. Uses modern functools patterns correctly."
+    },
+    {
+      "lessonPath": "content/courses/python/modules/12-decorators-advanced-patterns/lessons/02-generators-and-iterators",
+      "lessonTitle": "Generators and Iterators",
+      "lessonId": "lesson-12-02",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "notes": "Excellent coverage of generators, yield, generator expressions, and pipeline processing. All patterns appropriate for Python 3.12."
+    },
+    {
+      "lessonPath": "content/courses/python/modules/12-decorators-advanced-patterns/lessons/03-context-managers",
+      "lessonTitle": "Context Managers",
+      "lessonId": "lesson-12-03",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "notes": "Covers class-based context managers and @contextmanager decorator from contextlib. Error handling patterns are correct."
+    },
+    {
+      "lessonPath": "content/courses/python/modules/12-decorators-advanced-patterns/lessons/04-advanced-comprehensions",
+      "lessonTitle": "Advanced Comprehensions",
+      "lessonId": "lesson-12-04",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "notes": "Comprehensive coverage of list, dict, and set comprehensions. Nested comprehensions and practical examples are well done."
+    },
+    {
+      "lessonPath": "content/courses/python/modules/12-decorators-advanced-patterns/lessons/05-type-hints-and-annotations",
+      "lessonTitle": "Type Hints and Annotations",
+      "lessonId": "lesson-12-05",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "notes": "Excellent coverage of modern Python type hints. Uses list[str], X | None (Python 3.10+), TypedDict, Protocol. The type statement (Python 3.12+) is mentioned in comments but not as a primary example."
+    },
+    {
+      "lessonPath": "content/courses/python/modules/12-decorators-advanced-patterns/lessons/06-regular-expressions",
+      "lessonTitle": "Regular Expressions",
+      "lessonId": "lesson-12-06",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "notes": "Comprehensive coverage of re module including named groups, flags, and practical validation patterns. All examples appropriate for Python 3.12."
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  },
+  "overallAssessment": "Module 12 is in excellent condition. All 6 lessons are complete, accurate, and use appropriate Python 3.12 patterns. The content properly covers modern features like @cache, union syntax (X | None), TypedDict, Protocol, and type hints with lowercase collection types (list[str]). No issues requiring fixes were identified.",
+  "recommendations": [
+    "Consider updating the type hints lesson (Lesson 05) to include a concrete example of the 'type' statement syntax introduced in Python 3.12, currently it's only shown in comments"
+  ]
+}

@@ -2,7 +2,7 @@
   "type": "FREE_CODING",
   "id": "module-10-lesson-05-challenge-1",
   "title": "Challenge 1: Configure Ruff for Your Project",
-  "description": "Create a complete Ruff configuration in pyproject.toml for a web API project. The configuration should:\n- Target Python 3.13\n- Use 88 character line length\n- Enable common rule categories (E, F, I, UP, B, SIM)\n- Ignore print statements in scripts folder\n- Configure isort to recognize your package name",
+  "description": "Create a complete Ruff configuration in pyproject.toml for a web API project. The configuration should:\n- Target Python 3.12\n- Use 88 character line length\n- Enable common rule categories (E, F, I, UP, B, SIM)\n- Ignore print statements in scripts folder\n- Configure isort to recognize your package name",
   "instructions": "Write a complete [tool.ruff] configuration section for pyproject.toml.",
   "language": "python",
   "testCases": [
@@ -30,8 +30,8 @@
   "commonMistakes": [
     {
       "mistake": "Missing target-version",
-      "consequence": "Won't suggest Python 3.13-specific improvements",
-      "correction": "Add target-version = \"py313\" under [tool.ruff]"
+      "consequence": "Won't suggest Python 3.12-specific improvements",
+      "correction": "Add target-version = \"py312\" under [tool.ruff]"
     },
     {
       "mistake": "Forgetting isort configuration",

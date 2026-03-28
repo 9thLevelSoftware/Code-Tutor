@@ -21,7 +21,7 @@ payload = {
 # RIGHT: Only store identifiers
 payload = {
     "sub": str(user_id),  # User ID only
-    "exp": datetime.utcnow() + timedelta(minutes=15)
+    "exp": datetime.now(timezone.utc) + timedelta(minutes=15)
 }
 ```
 
@@ -48,7 +48,7 @@ payload = {"sub": user_id}  # No expiration!
 # RIGHT: Short-lived access tokens
 payload = {
     "sub": str(user_id),
-    "exp": datetime.utcnow() + timedelta(minutes=15)
+    "exp": datetime.now(timezone.utc) + timedelta(minutes=15)
 }
 ```
 

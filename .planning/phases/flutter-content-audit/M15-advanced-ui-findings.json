@@ -1,0 +1,258 @@
+{
+  "auditDate": "2026-03-28",
+  "course": "flutter",
+  "module": "15-advanced-ui",
+  "moduleId": "module-15",
+  "lessonsAudited": 9,
+  "challengesAudited": 14,
+  "totalIssues": 5,
+  "issues": [
+    {
+      "severity": "HIGH",
+      "type": "METADATA",
+      "lesson": "01-module-14-lesson-1-implicit-animations",
+      "description": "Lesson folder name references wrong module (14 instead of 15)",
+      "details": "Folder '01-module-14-lesson-1-implicit-animations' should be '01-implicit-animations' for consistency. The lesson.json correctly has id 'lesson-15-01'."
+    },
+    {
+      "severity": "MEDIUM",
+      "type": "CODE_ISSUES",
+      "lesson": "01-module-14-lesson-1-implicit-animations",
+      "challenge": "01-animated-product-card",
+      "description": "Starter file contains TODO comments that should be minimal guidance",
+      "details": "File: starter.dart - Contains '// TODO: Implement the expandable card' with detailed instructions. Should be simplified to just a skeleton with comments."
+    },
+    {
+      "severity": "MEDIUM",
+      "type": "CODE_ISSUES",
+      "lesson": "02-explicit-animations",
+      "challenge": "01-pulsing-button-with-glow-effect",
+      "description": "Challenge ID format inconsistent",
+      "details": "Challenge ID '14.2-challenge-0' uses wrong module prefix (14 instead of 15)."
+    },
+    {
+      "severity": "LOW",
+      "type": "METADATA",
+      "lesson": "module-15",
+      "description": "Module title says 'Module 14' instead of 'Module 15'",
+      "details": "module.json title field: 'Module 14: Advanced UI' - should be 'Module 15: Advanced UI' to match the folder structure and order."
+    },
+    {
+      "severity": "LOW",
+      "type": "OUTDATED",
+      "lesson": "09-internationalization-i18n",
+      "description": "intl package version not specified in content",
+      "details": "Lesson discusses ARB files and localization but doesn't reference specific intl package version. Could add: 'intl: ^0.19.0' to be consistent with Drift/dependencies approach in other modules."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson-15-01",
+      "title": "Implicit Animations",
+      "folder": "01-module-14-lesson-1-implicit-animations",
+      "status": "COMPLETE",
+      "contentFiles": 13,
+      "contentWords": 1240,
+      "issues": [
+        "Folder name references wrong module (14 instead of 15)",
+        "Starter contains TODO comments"
+      ]
+    },
+    {
+      "id": "lesson-15-02",
+      "title": "Explicit Animations",
+      "status": "COMPLETE",
+      "contentFiles": 15,
+      "contentWords": 1480,
+      "issues": [
+        "Challenge ID uses wrong module prefix"
+      ]
+    },
+    {
+      "id": "lesson-15-03",
+      "title": "Hero & Page Transitions",
+      "status": "COMPLETE",
+      "contentFiles": 14,
+      "contentWords": 1350,
+      "issues": []
+    },
+    {
+      "id": "lesson-15-04",
+      "title": "Rive & Lottie",
+      "status": "COMPLETE",
+      "contentFiles": 14,
+      "contentWords": 1420,
+      "issues": []
+    },
+    {
+      "id": "lesson-15-05",
+      "title": "Responsive Layouts",
+      "status": "COMPLETE",
+      "contentFiles": 12,
+      "contentWords": 1180,
+      "issues": []
+    },
+    {
+      "id": "lesson-15-06",
+      "title": "Adaptive Platform UI",
+      "status": "COMPLETE",
+      "contentFiles": 12,
+      "contentWords": 1280,
+      "issues": []
+    },
+    {
+      "id": "lesson-15-07",
+      "title": "Accessibility Fundamentals",
+      "status": "COMPLETE",
+      "contentFiles": 12,
+      "contentWords": 1080,
+      "issues": []
+    },
+    {
+      "id": "lesson-15-08",
+      "title": "Accessibility Implementation",
+      "status": "COMPLETE",
+      "contentFiles": 12,
+      "contentWords": 1150,
+      "issues": []
+    },
+    {
+      "id": "lesson-15-09",
+      "title": "Internationalization (i18n)",
+      "status": "COMPLETE",
+      "contentFiles": 13,
+      "contentWords": 1320,
+      "issues": [
+        "intl package version not specified"
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "id": "14.1-challenge-0",
+      "title": "Animated Product Card",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.1-challenge-1",
+      "title": "Animated Tab Indicator",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.2-challenge-0",
+      "title": "Pulsing Button with Glow Effect",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.2-challenge-1",
+      "title": "Staggered Menu Animation",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.3-challenge-0",
+      "title": "Photo Gallery with Hero Transitions",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.3-challenge-1",
+      "title": "Custom Page Route with Multiple Transitions",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.4-challenge-0",
+      "title": "Lottie Like Button with Playback Control",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.4-challenge-1",
+      "title": "Rive Interactive Toggle Switch",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.5-challenge-0",
+      "title": "Responsive Product Grid",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.5-challenge-1",
+      "title": "Responsive Navigation Shell",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.6-challenge-0",
+      "title": "Create Adaptive Dialog Utility",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.6-challenge-1",
+      "title": "Build Adaptive Settings Page",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.7-challenge-0",
+      "title": "Create Accessible Product Card",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.7-challenge-1",
+      "title": "Implement Focus Trapped Modal",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.8-challenge-0",
+      "title": "Create Motion-Aware Animated Widget",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.8-challenge-1",
+      "title": "Build Text Scale Adaptive Layout",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.9-challenge-0",
+      "title": "Create Localized Product Card",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    },
+    {
+      "id": "14.9-challenge-1",
+      "title": "Build Language Switcher",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (14 instead of 15)"]
+    }
+  ]
+}

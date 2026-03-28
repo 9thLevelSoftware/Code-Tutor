@@ -1,0 +1,177 @@
+{
+  "course": "python",
+  "module": "11-classes-objects-oop",
+  "moduleTitle": "Classes & Objects (OOP)",
+  "reviewDate": "2026-03-28",
+  "targetVersion": "Python 3.12",
+  "totalLessons": 9,
+  "lessonsReviewed": 9,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/01-introduction-to-classes-and-objects",
+      "lessonTitle": "Introduction to Classes and Objects",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/02-class-attributes-and-methods",
+      "lessonTitle": "Class Attributes and Methods",
+      "qualityRating": "critical",
+      "issues": [
+        {
+          "category": "INACCURATE",
+          "severity": "critical",
+          "file": "content/02-example.md",
+          "line": 1,
+          "originalText": "Code Example: Validated Finance Tracker with Pydantic",
+          "description": "CRITICAL CONTENT MISALIGNMENT: Lesson 02 folder contains Pydantic v2 content instead of class attributes/methods content. The entire content/02-example.md shows Pydantic patterns, not class attributes or methods. This makes the lesson completely wrong for its stated topic.",
+          "webResearchNote": "N/A - Content structure error, not version issue"
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "critical",
+          "file": "content/",
+          "line": null,
+          "originalText": "N/A",
+          "description": "Missing correct content for class attributes and methods lesson. Challenge starter/solution files also use Pydantic-style dataclass patterns instead of class attributes/methods patterns.",
+          "webResearchNote": "N/A - Content missing, needs to be created"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/03-inheritance",
+      "lessonTitle": "Inheritance",
+      "qualityRating": "critical",
+      "issues": [
+        {
+          "category": "INACCURATE",
+          "severity": "critical",
+          "file": "content/02-example.md",
+          "line": 1,
+          "originalText": "Code Example: Polymorphism in Action",
+          "description": "CRITICAL CONTENT MISALIGNMENT: Lesson 03 folder contains polymorphism content instead of inheritance content. The 02-example.md file is titled 'Code Example: Polymorphism in Action' and demonstrates polymorphism patterns (same method name, different implementations), not inheritance.",
+          "webResearchNote": "N/A - Content structure error, not version issue"
+        },
+        {
+          "category": "INACCURATE",
+          "severity": "critical",
+          "file": "content/01-analogy.md",
+          "line": 1,
+          "originalText": "The Concept: Same Name, Different Behaviors",
+          "description": "Content titled 'Same Name, Different Behaviors' describes polymorphism, not inheritance. Mentions 'Polymorphism = Many forms' which is incorrect for an inheritance lesson.",
+          "webResearchNote": "N/A - Content structure error, not version issue"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/04-polymorphism",
+      "lessonTitle": "Polymorphism",
+      "qualityRating": "critical",
+      "issues": [
+        {
+          "category": "INACCURATE",
+          "severity": "critical",
+          "file": "content/02-example.md",
+          "line": 1,
+          "originalText": "Code Example: Building a Class Hierarchy",
+          "description": "CRITICAL CONTENT MISALIGNMENT: Lesson 04 folder contains inheritance content instead of polymorphism content. The 02-example.md shows parent/child class inheritance with super().__init__() calls, not polymorphism patterns.",
+          "webResearchNote": "N/A - Content structure error, not version issue"
+        },
+        {
+          "category": "INACCURATE",
+          "severity": "critical",
+          "file": "content/01-analogy.md",
+          "line": 1,
+          "originalText": "The Concept: Building on a Foundation",
+          "description": "Content titled 'Building on a Foundation' describes inheritance with parent/child relationships and 'is-a' relationships, not polymorphism. This is incorrect content for the polymorphism lesson.",
+          "webResearchNote": "N/A - Content structure error, not version issue"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/05-encapsulation-and-properties",
+      "lessonTitle": "Encapsulation and Properties",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/06-mini-project-rpg-character-system",
+      "lessonTitle": "Mini-Project: RPG Character System",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "challenges/",
+          "line": null,
+          "originalText": "N/A",
+          "description": "No challenges directory exists for this mini-project lesson. Mini-projects typically have coding exercises, but this lesson has no challenge files.",
+          "webResearchNote": "N/A - Missing content, not a version issue"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/07-modern-dataclasses-with-slotstrue",
+      "lessonTitle": "Modern Dataclasses with slots=True",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/08-protocol-and-abc-interface-driven-design",
+      "lessonTitle": "Protocol and ABC: Interface-Driven Design",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/11-classes-objects-oop/lessons/09-pydantic-v2-for-validated-dataclasses",
+      "lessonTitle": "Pydantic v2 for Validated Dataclasses",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 15,
+          "originalText": "# Note: This example shows Pydantic v2 patterns\n# Install: pip install pydantic>=2.0",
+          "description": "The example uses a simulated Pydantic implementation using @dataclass instead of actual Pydantic BaseModel. While this teaches concepts, it doesn't show real Pydantic v2 code. The comments show what real Pydantic would look like, but learners may be confused.",
+          "webResearchNote": "Pydantic v2.10+ is current stable. Content uses simulation pattern which is pedagogically valid but may cause confusion. Real Pydantic code should ideally be shown in runnable form."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 15,
+          "originalText": "pip install 'pydantic>=2.0'",
+          "description": "Version pin '>=2.0' is very broad. Current Pydantic is v2.10+. The version-manifest.json specifies Pydantic 2.x as target, so this is acceptable but could be more specific.",
+          "webResearchNote": "Pydantic 2.10.6 is latest stable (Feb 2026). The >=2.0 specification is valid per version-manifest.json which targets 2.x."
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 7,
+    "bySeverity": {
+      "critical": 4,
+      "major": 0,
+      "minor": 3
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 1,
+      "INACCURATE": 4,
+      "INCOMPLETE": 2,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  },
+  "criticalFinding": "SEVERE CONTENT MISALIGNMENT DETECTED: Lessons 02, 03, and 04 have their content swapped. Lesson 02 (Class Attributes/Methods) contains Pydantic content. Lessons 03 (Inheritance) and 04 (Polymorphism) have their content swapped with each other. This makes 3 of 9 lessons completely incorrect for their titles."
+}

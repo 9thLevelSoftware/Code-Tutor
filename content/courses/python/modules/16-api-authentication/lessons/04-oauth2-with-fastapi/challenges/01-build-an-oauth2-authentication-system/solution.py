@@ -1,6 +1,6 @@
 import os
 import jwt
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, List
 
 SECRET_KEY = os.getenv("SECRET_KEY", "development-fallback-secret")
@@ -11,7 +11,7 @@ REFRESH_TOKEN_EXPIRE_DAYS = 7
 def create_access_token(data: dict, scopes: List[str] = None) -> str:
     """Create an access token with optional scopes."""
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({
         "exp": expire,
         "type": "access",
@@ -22,7 +22,7 @@ def create_access_token(data: dict, scopes: List[str] = None) -> str:
 def create_refresh_token(data: dict) -> str:
     """Create a refresh token."""
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
+    expire = datetime.now(timezone.utc) + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
     to_encode.update({
         "exp": expire,
         "type": "refresh"

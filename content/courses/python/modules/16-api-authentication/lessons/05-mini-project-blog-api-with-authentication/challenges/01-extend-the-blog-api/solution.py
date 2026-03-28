@@ -4,7 +4,7 @@ from fastapi.security import OAuth2PasswordBearer
 from pydantic import BaseModel
 from jose import jwt
 from passlib.context import CryptContext
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, List
 
 app = FastAPI(title="Extended Blog API")

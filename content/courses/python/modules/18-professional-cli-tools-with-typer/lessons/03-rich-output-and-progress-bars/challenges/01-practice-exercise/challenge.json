@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-16-lesson-03-challenge-1",
+  "id": "module-18-lesson-03-challenge-1",
   "title": "Practice Exercise",
   "description": "Create a CLI that displays expense categories in a Rich table.\n\n**Requirements:**\n- Create a table with columns: Category, Spent, Budget, Status\n- Color amounts green if under budget, red if over\n- Use Console for output",
   "instructions": "Create a category summary with Rich Table and Console.",

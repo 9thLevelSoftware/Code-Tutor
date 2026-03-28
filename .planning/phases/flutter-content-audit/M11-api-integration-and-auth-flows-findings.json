@@ -1,0 +1,678 @@
+{
+  "module": "M11 API Integration and Auth Flows",
+  "lesson_count": 10,
+  "findings_count": 84,
+  "findings": [
+    {
+      "type": "METADATA",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\lesson.json",
+      "issue": "Missing field: description",
+      "lesson_id": "lesson-11-01"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\01-implement-a-user-profile-service\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\01-implement-a-user-profile-service\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\01-implement-a-user-profile-service\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\02-build-a-repository-with-caching\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\02-build-a-repository-with-caching\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\02-build-a-repository-with-caching\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\03-connecting-flutter-to-dart-backend-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\03-connecting-flutter-to-dart-backend-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\03-connecting-flutter-to-dart-backend-quiz",
+      "issue": "Missing starter.dart in 03-connecting-flutter-to-dart-backend-quiz",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\01-connecting-flutter-to-dart-backend\\challenges\\03-connecting-flutter-to-dart-backend-quiz",
+      "issue": "Missing solution.dart in 03-connecting-flutter-to-dart-backend-quiz",
+      "lesson_id": "lesson-11-01",
+      "lesson_title": "Connecting Flutter to Dart Backend"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\content\\02-example.md",
+      "issue": "Contains placeholders: ['placeholder']",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\content\\04-example.md",
+      "issue": "Contains placeholders: ['placeholder']",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\content\\09-example.md",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\01-build-a-github-repository-search\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\01-build-a-github-repository-search\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\01-build-a-github-repository-search\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\02-create-a-token-refresh-interceptor\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\02-create-a-token-refresh-interceptor\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\02-create-a-token-refresh-interceptor\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\03-http-fundamentals-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\03-http-fundamentals-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\03-http-fundamentals-quiz",
+      "issue": "Missing starter.dart in 03-http-fundamentals-quiz",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\02-http-fundamentals-external-apis\\challenges\\03-http-fundamentals-quiz",
+      "issue": "Missing solution.dart in 03-http-fundamentals-quiz",
+      "lesson_id": "lesson-11-02",
+      "lesson_title": "HTTP Fundamentals (External APIs)"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\01-create-a-product-catalog-model\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\01-create-a-product-catalog-model\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\01-create-a-product-catalog-model\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\02-build-an-api-response-handler-with-union-types\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\02-build-an-api-response-handler-with-union-types\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\02-build-an-api-response-handler-with-union-types\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\03-json-serialization-knowledge-check\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\03-json-serialization-knowledge-check\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\03-json-serialization-knowledge-check",
+      "issue": "Missing starter.dart in 03-json-serialization-knowledge-check",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\03-json-serialization\\challenges\\03-json-serialization-knowledge-check",
+      "issue": "Missing solution.dart in 03-json-serialization-knowledge-check",
+      "lesson_id": "lesson-11-03",
+      "lesson_title": "JSON Serialization"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\01-add-username-availability-check\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\01-add-username-availability-check\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\01-add-username-availability-check\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\02-implement-social-sign-up-buttons\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\02-implement-social-sign-up-buttons\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\02-implement-social-sign-up-buttons\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\03-registration-flow-security-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\03-registration-flow-security-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\03-registration-flow-security-quiz",
+      "issue": "Missing starter.dart in 03-registration-flow-security-quiz",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\04-auth-flow-registration\\challenges\\03-registration-flow-security-quiz",
+      "issue": "Missing solution.dart in 03-registration-flow-security-quiz",
+      "lesson_id": "lesson-11-04",
+      "lesson_title": "Auth Flow: Registration"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\content\\02-example.md",
+      "issue": "Contains placeholders: ['placeholder']",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\01-implement-biometric-authentication\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\01-implement-biometric-authentication\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\01-implement-biometric-authentication\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\02-implement-session-timeout-with-activity-tracking\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\02-implement-session-timeout-with-activity-tracking\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\02-implement-session-timeout-with-activity-tracking\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\03-login-and-session-management-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\03-login-and-session-management-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\03-login-and-session-management-quiz",
+      "issue": "Missing starter.dart in 03-login-and-session-management-quiz",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\05-auth-flow-login-sessions\\challenges\\03-login-and-session-management-quiz",
+      "issue": "Missing solution.dart in 03-login-and-session-management-quiz",
+      "lesson_id": "lesson-11-05",
+      "lesson_title": "Auth Flow: Login & Sessions"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\content\\08-example.md",
+      "issue": "Contains placeholders: ['placeholder']",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\01-implement-oauth-token-refresh\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\01-implement-oauth-token-refresh\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\01-implement-oauth-token-refresh\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\02-add-social-login-analytics\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\02-add-social-login-analytics\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\02-add-social-login-analytics\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\03-oauth-and-social-login-quiz\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\03-oauth-and-social-login-quiz\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\03-oauth-and-social-login-quiz",
+      "issue": "Missing starter.dart in 03-oauth-and-social-login-quiz",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "INCOMPLETE",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\06-auth-flow-oauth\\challenges\\03-oauth-and-social-login-quiz",
+      "issue": "Missing solution.dart in 03-oauth-and-social-login-quiz",
+      "lesson_id": "lesson-11-06",
+      "lesson_title": "Auth Flow: OAuth"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\07-auth-guarded-navigation\\challenges\\01-implement-session-timeout-handling\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-07",
+      "lesson_title": "Auth-Guarded Navigation"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\07-auth-guarded-navigation\\challenges\\01-implement-session-timeout-handling\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-07",
+      "lesson_title": "Auth-Guarded Navigation"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\07-auth-guarded-navigation\\challenges\\01-implement-session-timeout-handling\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-07",
+      "lesson_title": "Auth-Guarded Navigation"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\07-auth-guarded-navigation\\challenges\\02-add-route-transition-animations\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-07",
+      "lesson_title": "Auth-Guarded Navigation"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\07-auth-guarded-navigation\\challenges\\02-add-route-transition-animations\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-07",
+      "lesson_title": "Auth-Guarded Navigation"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\07-auth-guarded-navigation\\challenges\\02-add-route-transition-animations\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-07",
+      "lesson_title": "Auth-Guarded Navigation"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\01-add-forgot-password-flow\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\01-add-forgot-password-flow\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\01-add-forgot-password-flow\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\02-add-biometric-login\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\02-add-biometric-login\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\02-add-biometric-login\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\03-add-remember-me-feature\\challenge.json",
+      "issue": "Missing challenge field: lessonId",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "METADATA",
+      "severity": "low",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\03-add-remember-me-feature\\challenge.json",
+      "issue": "Missing challenge field: order",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "STUBS",
+      "severity": "medium",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\08-mini-project-auth-system\\challenges\\03-add-remember-me-feature\\starter.dart",
+      "issue": "Contains placeholders: ['TODO']",
+      "lesson_id": "lesson-11-08",
+      "lesson_title": "Mini-Project: Auth System"
+    },
+    {
+      "type": "STUBS",
+      "severity": "high",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\09-cicd-for-flutter-apps\\content\\09-theory.md",
+      "issue": "Content too short (31 words)",
+      "lesson_id": "lesson-11-09",
+      "lesson_title": "CI/CD for Flutter Apps"
+    },
+    {
+      "type": "STUBS",
+      "severity": "high",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\09-cicd-for-flutter-apps\\content\\14-theory.md",
+      "issue": "Content too short (43 words)",
+      "lesson_id": "lesson-11-09",
+      "lesson_title": "CI/CD for Flutter Apps"
+    },
+    {
+      "type": "STUBS",
+      "severity": "high",
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\content\\courses\\flutter\\modules\\11-api-integration-and-auth-flows\\lessons\\10-testing-best-practices-mini-project\\content\\11-theory.md",
+      "issue": "Content too short (39 words)",
+      "lesson_id": "lesson-11-10",
+      "lesson_title": "Testing Best Practices Mini-Project"
+    }
+  ]
+}

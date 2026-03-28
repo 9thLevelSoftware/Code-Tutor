@@ -1,5 +1,5 @@
 {
-  "id": "module-21-lesson-02-challenge-1",
+  "id": "module-23-lesson-02-challenge-1",
   "type": "FREE_CODING",
   "title": "Build a Secure Password Manager Class",
   "description": "Create a password manager class for the Finance Tracker that handles hashing, verification, and automatic hash upgrades.",

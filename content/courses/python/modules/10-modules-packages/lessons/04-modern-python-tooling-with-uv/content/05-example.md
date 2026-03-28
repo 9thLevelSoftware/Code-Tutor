@@ -31,7 +31,7 @@ print("""
 """
 
 lock_example = '''version = 1
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 
 [[package]]
 name = "requests"

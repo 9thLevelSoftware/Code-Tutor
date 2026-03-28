@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-02",
   "title": "Module 2, Lesson 2: Building Blocks (Widgets)",
+  "description": "Learn the fundamental concept of widgets in Flutter. Understand how widgets are the building blocks of every Flutter UI, the difference between stateless and stateful widgets, and how to compose simple widgets together.",
   "moduleId": "module-03",
   "order": 2,
   "estimatedMinutes": 40,

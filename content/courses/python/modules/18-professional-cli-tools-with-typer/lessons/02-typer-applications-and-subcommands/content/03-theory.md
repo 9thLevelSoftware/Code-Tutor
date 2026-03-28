@@ -10,7 +10,7 @@ title: "Syntax Breakdown"
 - **`app()`** - Runs the application (replaces `typer.run()`)
 - **`typer.Exit(code=1)`** - Exit with error code
 
-**Typer 0.16+ features:**
+**Typer 0.12+ features:**
 - **`rich_markup_mode="rich"`** - Enable Rich formatting in help text
 - **`[bold]`, `[green]`** in docstrings renders as formatted text in `--help`
 

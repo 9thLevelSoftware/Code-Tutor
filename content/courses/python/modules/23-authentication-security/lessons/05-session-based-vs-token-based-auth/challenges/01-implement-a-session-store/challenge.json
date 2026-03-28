@@ -1,5 +1,5 @@
 {
-  "id": "module-21-lesson-05-challenge-1",
+  "id": "module-23-lesson-05-challenge-1",
   "type": "FREE_CODING",
   "title": "Implement a Session Store",
   "description": "Create a session store for the Finance Tracker that supports creation, retrieval, refresh, and destruction of sessions.",

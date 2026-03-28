@@ -68,5 +68,5 @@ requires-python = ">=3"
 
 # CORRECT - Specify minimum version you've tested
 [project]
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 ```

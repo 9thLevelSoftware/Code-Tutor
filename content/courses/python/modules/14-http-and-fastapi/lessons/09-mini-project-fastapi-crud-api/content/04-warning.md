@@ -49,13 +49,15 @@ def delete_user(id: int, db = Depends(get_db)):
     # Data is GONE forever!
 
 # BETTER: Soft delete
+from datetime import datetime, timezone
+
 class User(Base):
     deleted_at = Column(DateTime, nullable=True)
 
 @app.delete("/users/{id}")
 def delete_user(id: int, db = Depends(get_db)):
     user = db.query(User).filter(User.id == id).first()
-    user.deleted_at = datetime.utcnow()
+    user.deleted_at = datetime.now(timezone.utc)
     db.commit()
     # Data recoverable!
 ```

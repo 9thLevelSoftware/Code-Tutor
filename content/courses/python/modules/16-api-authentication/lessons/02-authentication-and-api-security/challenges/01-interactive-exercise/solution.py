@@ -4,7 +4,7 @@ from pydantic import BaseModel, EmailStr, Field
 from jose import JWTError, jwt
 import hashlib
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 app = FastAPI()
@@ -45,7 +45,7 @@ def verify_password(stored_hash: bytes, password: str) -> bool:
 def create_access_token(data: dict) -> str:
     """Create JWT access token."""
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({'exp': expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 

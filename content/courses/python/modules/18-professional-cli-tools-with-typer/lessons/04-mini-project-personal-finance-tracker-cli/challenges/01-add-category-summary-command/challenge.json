@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-16-lesson-04-challenge-1",
+  "id": "module-18-lesson-04-challenge-1",
   "title": "Add Category Summary Command",
   "description": "Add a `categories` command that shows spending per category in a table.\n\n**Requirements:**\n- Group transactions by category\n- Show category name and total amount\n- Use Rich Table with colored amounts\n- Skip categories with $0 spent",
   "instructions": "Implement the categories command for the finance tracker.",

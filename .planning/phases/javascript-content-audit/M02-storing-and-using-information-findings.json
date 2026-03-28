@@ -1,0 +1,41 @@
+{
+  "course": "javascript",
+  "module": "02-storing-and-using-information",
+  "moduleTitle": "Module 2: Storing & Using Information (The 'Boxes')",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 2,
+  "lessonsReviewed": 2,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/02-storing-and-using-information/lessons/01-variables-your-labeled-storage-boxes-let-and-const",
+      "lessonTitle": "Variables: Your Labeled Storage Boxes (let and const)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/02-storing-and-using-information/lessons/02-types-of-information-strings-numbers-and-booleans",
+      "lessonTitle": "Types of Information: Strings, Numbers, and Booleans",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

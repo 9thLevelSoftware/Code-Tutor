@@ -5,7 +5,7 @@ title: "Installing uv"
 
 **Installing uv is a one-line command.** Once installed, it manages itself - no Python required for installation!
 
-**Note:** Python 3.13 is the current stable version. Python 3.14 was released in October 2025.
+**Note:** Python 3.12 is the current stable version. Python 3.14 is scheduled for release in October 2026.
 
 ```python
 # This code demonstrates uv installation commands

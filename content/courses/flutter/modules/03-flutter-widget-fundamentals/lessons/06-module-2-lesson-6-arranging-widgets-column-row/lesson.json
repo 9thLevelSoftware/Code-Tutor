@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-06",
   "title": "Module 2, Lesson 6: Arranging Widgets (Column & Row)",
+  "description": "Learn to arrange widgets in vertical and horizontal layouts using Column and Row. Understand mainAxisAlignment, crossAxisAlignment, spacing, and how to build responsive layouts that adapt to different screen sizes.",
   "moduleId": "module-03",
   "order": 6,
   "estimatedMinutes": 60,

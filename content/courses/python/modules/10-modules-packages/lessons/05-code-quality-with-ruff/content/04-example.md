@@ -25,7 +25,7 @@ basic_config = '''
 line-length = 88
 
 # Target Python version (enables version-specific rules)
-target-version = "py313"
+target-version = "py312"
 
 # Directories to exclude
 exclude = [
@@ -77,7 +77,7 @@ advanced_config = '''
 
 [tool.ruff]
 line-length = 88
-target-version = "py313"
+target-version = "py312"
 
 [tool.ruff.lint]
 # Enable many more rules for strict checking

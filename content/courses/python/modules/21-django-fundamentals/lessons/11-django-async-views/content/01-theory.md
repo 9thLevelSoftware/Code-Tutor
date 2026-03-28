@@ -24,11 +24,11 @@ Django has progressively added async support across multiple versions:
 - aget_or_create, aupdate_or_create
 - Better async support in many areas
 
-**Django 5.0-5.2 (2024-2025)** - Full Async ORM
+**Django 5.0-5.1 (2024-2025)** - Full Async ORM
 - True async database queries with aall(), afirst(), acount()
-- Async authentication: aauthenticate(), alogin(), alogout()
 - Async context processors
 - Async signals (partial)
+- For async authentication, use sync_to_async with sync functions
 
 **Why Async Matters:**
 

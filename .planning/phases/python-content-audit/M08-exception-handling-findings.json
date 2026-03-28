@@ -1,0 +1,57 @@
+{
+  "course": "python",
+  "module": "08-exception-handling",
+  "moduleTitle": "Exception Handling",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/08-exception-handling/lessons/01-introduction-to-exceptions-and-error-handling",
+      "lessonTitle": "Introduction to Exceptions and Error Handling",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/08-exception-handling/lessons/02-tryexceptfinally-blocks-complete-error-handling",
+      "lessonTitle": "Try/Except/Finally Blocks - Complete Error Handling",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/08-exception-handling/lessons/03-exception-types-and-handling-multiple-exceptions",
+      "lessonTitle": "Exception Types and Handling Multiple Exceptions",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/08-exception-handling/lessons/04-raising-exceptions-and-creating-custom-exceptions",
+      "lessonTitle": "Raising Exceptions and Creating Custom Exceptions",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/08-exception-handling/lessons/05-input-validation-and-defensive-programming",
+      "lessonTitle": "Input Validation and Defensive Programming",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/08-exception-handling/lessons/06-mini-project-robust-calculator-with-complete-error-handling",
+      "lessonTitle": "Mini Project - Robust Calculator with Complete Error Handling",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 0 },
+    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

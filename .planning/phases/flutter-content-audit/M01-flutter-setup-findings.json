@@ -1,0 +1,76 @@
+{
+  "module": "M01-flutter-setup",
+  "title": "Module 0: Flutter Setup",
+  "auditedAt": "2026-03-28",
+  "lessons": [
+    {
+      "path": "content/courses/flutter/modules/01-flutter-setup/lessons/01-module-0-lesson-1-installing-flutter-dart-sdk",
+      "title": "Module 0, Lesson 1: Installing Flutter & Dart SDK",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "severity": "info",
+          "type": "outdated",
+          "message": "Version reference mentions 'Flutter 3.38.x' in key_point.md - course uses 'latest stable' approach which is correct"
+        }
+      ],
+      "contentFiles": 9,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/01-flutter-setup/lessons/02-module-0-lesson-2-setting-up-your-editor",
+      "title": "Module 0, Lesson 2: Setting Up Your Editor",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 7,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/01-flutter-setup/lessons/03-module-0-lesson-3-running-your-first-hello-world",
+      "title": "Module 0, Lesson 3: Running Your First 'Hello World'",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 12,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/01-flutter-setup/lessons/04-module-0-lesson-4-understanding-the-emulator-vs-physical-device",
+      "title": "Module 0, Lesson 4: Understanding the Emulator vs Physical Device",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 13,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/01-flutter-setup/lessons/05-module-0-lesson-5-troubleshooting-common-setup-issues",
+      "title": "Module 0, Lesson 5: Troubleshooting Common Setup Issues",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "incomplete",
+          "message": "Lesson has unusual content structure with numbered files (01-19) but many are analogy-type content - content density is lower than other lessons"
+        }
+      ],
+      "contentFiles": 19,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    }
+  ],
+  "summary": {
+    "totalLessons": 5,
+    "totalContentFiles": 60,
+    "totalChallenges": 5,
+    "qualityDistribution": {
+      "good": 4,
+      "acceptable": 1,
+      "needs-work": 0,
+      "critical": 0
+    },
+    "totalIssues": 2
+  }
+}

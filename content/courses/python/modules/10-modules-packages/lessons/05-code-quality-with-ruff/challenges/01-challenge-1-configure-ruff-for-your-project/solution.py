@@ -4,8 +4,8 @@ ruff_config = '''[tool.ruff]
 # Match Black's formatting standards
 line-length = 88
 
-# Target Python 3.13 for modern syntax rules
-target-version = "py313"
+# Target Python 3.12 for modern syntax rules
+target-version = "py312"
 
 # Exclude common directories
 exclude = [
@@ -74,7 +74,7 @@ print("Configuration Validation:")
 print("=" * 50)
 
 checks = [
-    ("py313" in ruff_config, "Targets Python 3.13"),
+    ("py312" in ruff_config, "Targets Python 3.12"),
     ("88" in ruff_config, "Line length is 88"),
     ('"E"' in ruff_config, "pycodestyle errors enabled"),
     ('"F"' in ruff_config, "pyflakes enabled"),

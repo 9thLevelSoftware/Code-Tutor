@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-01",
   "title": "Module 2, Lesson 1: What Happens When You Run an App?",
+  "description": "Understand the Flutter app lifecycle, from Dart code compilation to widget rendering on screen. Learn about the main() entry point, runApp(), and how the widget tree builds your UI.",
   "moduleId": "module-03",
   "order": 1,
   "estimatedMinutes": 60,

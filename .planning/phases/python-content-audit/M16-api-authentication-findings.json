@@ -1,0 +1,230 @@
+{
+  "course": "python",
+  "module": "16-api-authentication",
+  "moduleTitle": "API Authentication",
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "python": "3.12",
+    "fastapi": "0.115.x"
+  },
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/16-api-authentication/lessons/01-password-hashing",
+      "lessonTitle": "Password Hashing",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/16-api-authentication/lessons/02-authentication-and-api-security",
+      "lessonTitle": "Authentication and API Security",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 135,
+          "originalText": "from jose import jwt",
+          "description": "Uses deprecated python-jose library instead of PyJWT. python-jose has security vulnerabilities (CVE-2024-33663) and is no longer recommended.",
+          "webResearchNote": "CVE-2024-33663 is an algorithm confusion vulnerability in python-jose. The FastAPI community and security advisories recommend using PyJWT instead. See: https://www.sentinelone.com/vulnerability-database/cve-2024-33663/"
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 155,
+          "originalText": "expire = datetime.utcnow() + timedelta(minutes=15)",
+          "description": "Uses deprecated datetime.utcnow() which is deprecated in Python 3.12. Should use datetime.now(timezone.utc).",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow() and utcfromtimestamp(). The recommended replacement is datetime.now(timezone.utc) per PEP 696 and Python 3.12 release notes."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 45,
+          "originalText": "pwdhash = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)",
+          "description": "Uses hashlib.pbkdf2_hmac directly instead of recommended passlib. While functional, passlib provides better abstraction and security defaults.",
+          "webResearchNote": "While passlib has maintenance concerns with bcrypt 5.0+, it remains the recommended abstraction for password hashing in Python education. Using raw hashlib requires careful parameter tuning."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/16-api-authentication/lessons/03-jwt-authentication",
+      "lessonTitle": "JWT Authentication",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 34,
+          "originalText": "expire = datetime.utcnow() + (expires_delta or timedelta(minutes=15))",
+          "description": "Uses deprecated datetime.utcnow() which is deprecated in Python 3.12.",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/03-example.md",
+          "line": 58,
+          "originalText": "expire = datetime.utcnow() + timedelta(minutes=30)",
+          "description": "Uses deprecated datetime.utcnow() which is deprecated in Python 3.12.",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/05-key_point.md",
+          "line": 25,
+          "originalText": "\"exp\": datetime.utcnow() + timedelta(minutes=30)",
+          "description": "Quick reference example uses deprecated datetime.utcnow().",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/06-warning.md",
+          "line": 27,
+          "originalText": "\"exp\": datetime.utcnow() + timedelta(minutes=15)",
+          "description": "Warning example uses deprecated datetime.utcnow().",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "INACCURATE",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 42,
+          "originalText": "We use `pyjwt` (NOT `python-jose` which is deprecated)",
+          "description": "Lesson theory correctly notes python-jose is deprecated, but this creates inconsistency with other lessons that still use python-jose. All lessons should be updated to consistently use PyJWT.",
+          "webResearchNote": "Content is accurate but inconsistent with lessons 02, 04, 05 which use python-jose."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/16-api-authentication/lessons/04-oauth2-with-fastapi",
+      "lessonTitle": "OAuth2 with FastAPI",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 94,
+          "originalText": "expire = datetime.utcnow() + (expires_delta or timedelta(minutes=15))",
+          "description": "Uses deprecated datetime.utcnow() in token creation.",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/03-example.md",
+          "line": 28,
+          "originalText": "\"exp\": datetime.utcnow() + timedelta(minutes=30)",
+          "description": "Uses deprecated datetime.utcnow() in scope token creation example.",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/04-example.md",
+          "line": 23,
+          "originalText": "expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)",
+          "description": "Uses deprecated datetime.utcnow() in access token creation.",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/04-example.md",
+          "line": 31,
+          "originalText": "expire = datetime.utcnow() + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)",
+          "description": "Uses deprecated datetime.utcnow() in refresh token creation.",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/16-api-authentication/lessons/05-mini-project-blog-api-with-authentication",
+      "lessonTitle": "Mini-Project: Blog API with Authentication",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 110,
+          "originalText": "from jose import jwt",
+          "description": "Uses deprecated python-jose library with known security vulnerabilities.",
+          "webResearchNote": "CVE-2024-33663 is an algorithm confusion vulnerability in python-jose. PyJWT is the recommended replacement."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 118,
+          "originalText": "expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)",
+          "description": "Uses deprecated datetime.utcnow().",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(). Replace with datetime.now(timezone.utc)."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "challenges/01-extend-the-blog-api/solution.py",
+          "line": 4,
+          "originalText": "from jose import jwt",
+          "description": "Challenge solution uses deprecated python-jose library.",
+          "webResearchNote": "CVE-2024-33663 is an algorithm confusion vulnerability in python-jose. PyJWT is the recommended replacement."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/16-api-authentication/lessons/06-bridge-from-fastapi-to-django",
+      "lessonTitle": "Bridge: From FastAPI to Django",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "minor",
+          "file": "lesson.json",
+          "line": 7,
+          "originalText": "\"difficulty\": \"intermediate\"",
+          "description": "Lesson difficulty is 'intermediate' while module is 'advanced' and all other lessons are 'advanced'. Inconsistent difficulty rating.",
+          "webResearchNote": null
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "challenges/",
+          "line": null,
+          "originalText": null,
+          "description": "Lesson 06 lacks a challenges directory unlike all other lessons in the module.",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 13,
+    "bySeverity": {
+      "critical": 0,
+      "major": 10,
+      "minor": 3
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 10,
+      "INACCURATE": 1,
+      "INCOMPLETE": 1,
+      "METADATA": 1,
+      "PEDAGOGY": 0
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "module": "24-capstone-complete-personal-finance-tracker",
+  "course": "python",
+  "auditDate": "2026-03-28",
+  "reviewedBy": "content-auditor",
+  "runtimeTarget": "3.12",
+  "frameworkTargets": {
+    "FastAPI": "0.115.x",
+    "SQLAlchemy": "2.0.x"
+  },
+  "moduleInfo": {
+    "id": "module-24",
+    "title": "Capstone: Complete Personal Finance Tracker",
+    "description": "Build a complete Personal Finance Tracker application from scratch using FastAPI, PostgreSQL, and modern Python patterns.",
+    "lessonCount": 6,
+    "prerequisites": "Modules 1-21"
+  },
+  "findings": [
+    {
+      "lessonId": "lesson-24-01",
+      "lessonTitle": "01-lesson-221-project-architecture-setup",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/01-lesson-221-project-architecture-setup/content/03-example.md",
+      "severity": "major",
+      "category": "OUTDATED",
+      "description": "pyproject.toml example specifies requires-python as >=3.13 but the course target is Python 3.12. This should be >=3.12 to match the course requirements.",
+      "details": "The content shows 'requires-python = \">=3.13\"' and '[tool.ruff] target-version = \"py313\"' along with '[tool.mypy] python_version = \"3.13\"'. All version references should target Python 3.12 to align with the course requirements.",
+      "suggestion": "Update all Python version references from 3.13 to 3.12 in the pyproject.toml example to match the course target version."
+    },
+    {
+      "lessonId": "lesson-24-01",
+      "lessonTitle": "01-lesson-221-project-architecture-setup",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/01-lesson-221-project-architecture-setup/challenges/01-initialize-your-finance-tracker/challenge.json",
+      "severity": "minor",
+      "category": "METADATA",
+      "description": "Challenge ID uses inconsistent numbering format (module-22-lesson-01-challenge-1) when this is module 24.",
+      "details": "The challenge ID is 'module-22-lesson-01-challenge-1' but this is Module 24. This inconsistency could cause confusion when tracking challenges across modules.",
+      "suggestion": "Update challenge ID to 'module-24-lesson-01-challenge-1' for consistency with module numbering."
+    },
+    {
+      "lessonId": "lesson-24-02",
+      "lessonTitle": "02-lesson-222-domain-models-database-layer",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/02-lesson-222-domain-models-database-layer/challenges/01-implement-the-budget-model-and-repository/challenge.json",
+      "severity": "minor",
+      "category": "METADATA",
+      "description": "Challenge ID uses inconsistent numbering format (module-22-lesson-02-challenge-1) when this is module 24.",
+      "details": "The challenge ID is 'module-22-lesson-02-challenge-1' but this is Module 24. This inconsistency could cause confusion when tracking challenges across modules.",
+      "suggestion": "Update challenge ID to 'module-24-lesson-02-challenge-1' for consistency with module numbering."
+    },
+    {
+      "lessonId": "lesson-24-03",
+      "lessonTitle": "03-lesson-223-fastapi-routes-authentication",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/03-lesson-223-fastapi-routes-authentication/challenges/01-implement-the-categories-api/challenge.json",
+      "severity": "minor",
+      "category": "METADATA",
+      "description": "Challenge ID uses inconsistent numbering format (module-22-lesson-03-challenge-1) when this is module 24.",
+      "details": "The challenge ID is 'module-22-lesson-03-challenge-1' but this is Module 24. This inconsistency could cause confusion when tracking challenges across modules.",
+      "suggestion": "Update challenge ID to 'module-24-lesson-03-challenge-1' for consistency with module numbering."
+    },
+    {
+      "lessonId": "lesson-24-04",
+      "lessonTitle": "04-lesson-224-testing-the-finance-tracker",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/04-lesson-224-testing-the-finance-tracker/content/02-example.md",
+      "severity": "major",
+      "category": "OUTDATED",
+      "description": "conftest.py example uses pytest-asyncio patterns that may have compatibility issues with current versions.",
+      "details": "The fixture uses 'event_loop' pattern with pytest-asyncio which has changed in recent versions. Modern pytest-asyncio (0.24+) uses different fixture patterns and the 'asyncio_mode = auto' configuration in pyproject.toml may conflict with explicit event_loop fixtures.",
+      "suggestion": "Review and update pytest-asyncio fixture patterns to match current best practices. Consider removing explicit event_loop fixture when using asyncio_mode = auto."
+    },
+    {
+      "lessonId": "lesson-24-04",
+      "lessonTitle": "04-lesson-224-testing-the-finance-tracker",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/04-lesson-224-testing-the-finance-tracker/challenges/01-write-budget-api-tests/challenge.json",
+      "severity": "minor",
+      "category": "METADATA",
+      "description": "Challenge ID uses inconsistent numbering format (module-22-lesson-04-challenge-1) when this is module 24.",
+      "details": "The challenge ID is 'module-22-lesson-04-challenge-1' but this is Module 24. This inconsistency could cause confusion when tracking challenges across modules.",
+      "suggestion": "Update challenge ID to 'module-24-lesson-04-challenge-1' for consistency with module numbering."
+    },
+    {
+      "lessonId": "lesson-24-05",
+      "lessonTitle": "05-lesson-225-cli-data-export",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/05-lesson-225-cli-data-export/challenges/01-add-json-export-and-import-commands/challenge.json",
+      "severity": "minor",
+      "category": "METADATA",
+      "description": "Challenge ID uses inconsistent numbering format (module-22-lesson-05-challenge-1) when this is module 24.",
+      "details": "The challenge ID is 'module-22-lesson-05-challenge-1' but this is Module 24. This inconsistency could cause confusion when tracking challenges across modules.",
+      "suggestion": "Update challenge ID to 'module-24-lesson-05-challenge-1' for consistency with module numbering."
+    },
+    {
+      "lessonId": "lesson-24-06",
+      "lessonTitle": "06-lesson-226-deployment-final-project",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/06-lesson-226-deployment-final-project/content/01-theory.md",
+      "severity": "minor",
+      "category": "INCOMPLETE",
+      "description": "Lesson theory content is empty/placeholder.",
+      "details": "The 01-theory.md file contains no educational content - it appears to have placeholder content or minimal structure. The capstone deployment lesson should contain theory about deployment concepts.",
+      "suggestion": "Add comprehensive theory content covering deployment concepts for the capstone project, including Docker basics, environment configuration, and production considerations."
+    },
+    {
+      "lessonId": "lesson-24-06",
+      "lessonTitle": "06-lesson-226-deployment-final-project",
+      "filePath": "content/courses/python/modules/24-capstone-complete-personal-finance-tracker/lessons/06-lesson-226-deployment-final-project/challenges/01-final-challenge-add-a-feature/challenge.json",
+      "severity": "minor",
+      "category": "METADATA",
+      "description": "Challenge ID uses inconsistent numbering format (module-22-lesson-06-challenge-1) when this is module 24.",
+      "details": "The challenge ID is 'module-22-lesson-06-challenge-1' but this is Module 24. This inconsistency could cause confusion when tracking challenges across modules.",
+      "suggestion": "Update challenge ID to 'module-24-lesson-06-challenge-1' for consistency with module numbering."
+    }
+  ],
+  "summary": {
+    "totalLessons": 6,
+    "totalFilesReviewed": 31,
+    "issuesBySeverity": {
+      "critical": 0,
+      "major": 2,
+      "minor": 7
+    },
+    "issuesByCategory": {
+      "STUB": 0,
+      "OUTDATED": 2,
+      "INACCURATE": 0,
+      "INCOMPLETE": 1,
+      "METADATA": 6,
+      "PEDAGOGY": 0
+    },
+    "lessonsWithIssues": 6,
+    "lessonsWithoutIssues": 0
+  }
+}

@@ -61,7 +61,7 @@ line-length = 88
 # CORRECT - Specify your Python version
 [tool.ruff]
 line-length = 88
-target-version = "py313"  # Enables Python 3.13 rules
+target-version = "py312"  # Enables Python 3.12 rules
 ```
 
 **6. Not Updating Ruff Regularly**

@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-07",
   "title": "Module 2, Lesson 7: Dart 3.10 Dot Shorthands",
+  "description": "Learn modern Dart syntax with dot shorthands for enum values introduced in Dart 3.10. Write cleaner Flutter code by omitting enum names when the type is known from context.",
   "moduleId": "module-03",
   "order": 7,
   "estimatedMinutes": 30,

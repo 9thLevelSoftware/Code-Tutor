@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-16-lesson-01-challenge-1",
+  "id": "module-18-lesson-01-challenge-1",
   "title": "Practice Exercise",
   "description": "Create a CLI that calculates a tip for a restaurant bill.\n\n**Requirements:**\n- Accept `bill` as a required argument (float)\n- Add an optional `--percent` flag (default: 15)\n- Add an optional `--split` flag to divide among people (default: 1)\n- Print the tip amount and per-person total\n\n**Example usage:**\n```\n$ python tip.py 50.00\nTip: $7.50 | Total per person: $57.50\n\n$ python tip.py 120.00 --percent 20 --split 4\nTip: $24.00 | Total per person: $36.00\n```",
   "instructions": "Create a tip calculator CLI with bill amount, optional tip percentage, and optional split.",

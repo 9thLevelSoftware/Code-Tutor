@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean, ForeignKey, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
-from datetime import datetime
+from datetime import datetime, timezone
 
 Base = declarative_base()
 
@@ -27,7 +27,7 @@ class Order(Base):
     id = Column(Integer, primary_key=True)
     book_id = Column(Integer, ForeignKey('books.id'), nullable=False)
     quantity = Column(Integer, nullable=False, default=1)
-    order_date = Column(DateTime, default=datetime.utcnow)
+    order_date = Column(DateTime, default=datetime.now(timezone.utc))
     
     # Relationship to book
     book = relationship('Book', back_populates='orders')

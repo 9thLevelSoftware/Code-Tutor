@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-05",
   "title": "Module 2, Lesson 5: The Container Widget",
+  "description": "Master the versatile Container widget for creating boxes with custom styling. Learn about padding, margins, borders, colors, shadows, and how Container serves as the foundation for custom UI elements.",
   "moduleId": "module-03",
   "order": 5,
   "estimatedMinutes": 60,

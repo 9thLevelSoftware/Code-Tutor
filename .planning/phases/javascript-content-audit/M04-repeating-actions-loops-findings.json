@@ -1,0 +1,55 @@
+{
+  "course": "javascript",
+  "module": "04-repeating-actions-loops",
+  "moduleTitle": "Module 4: Repeating Actions (The 'Loops')",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 4,
+  "lessonsReviewed": 4,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/04-repeating-actions-loops/lessons/01-doing-something-a-specific-number-of-times-for-loops",
+      "lessonTitle": "Doing Something a Specific Number of Times (for Loops)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/04-repeating-actions-loops/lessons/02-looping-until-a-condition-changes-while-loops",
+      "lessonTitle": "Looping Until a Condition Changes (while Loops)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/04-repeating-actions-loops/lessons/03-breaking-out-early-break-and-continue",
+      "lessonTitle": "Breaking Out Early (break and continue)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/04-repeating-actions-loops/lessons/04-looping-through-lists-forof",
+      "lessonTitle": "Looping Through Lists (for...of)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

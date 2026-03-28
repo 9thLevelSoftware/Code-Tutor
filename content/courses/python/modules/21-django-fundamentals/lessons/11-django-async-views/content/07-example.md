@@ -1,57 +1,55 @@
 ---
 type: "EXAMPLE"
-title: "Async Authentication (Django 5.2)"
+title: "Async Authentication in Django 5.1"
 ---
 
-**Async Auth Functions in Django 5.2**
+**Async Auth in Django 5.1**
 
-Django 5.2 provides async versions of authentication functions:
+Django 5.1 requires using sync_to_async to wrap authentication functions in async views:
 
-| Sync | Async |
-|------|-------|
-| `authenticate()` | `aauthenticate()` |
-| `login()` | `alogin()` |
-| `logout()` | `alogout()` |
-| `get_user()` | `aget_user()` |
+| Sync Function | Async Pattern (Django 5.1) |
+|-------------|---------------------------|
+| `authenticate()` | `await sync_to_async(authenticate)(...)` |
+| `login()` | `await sync_to_async(login)(request, user)` |
+| `logout()` | `await sync_to_async(logout)(request)` |
+| `get_user()` | `request.user` (works in async views) |
 
 **Async Decorators:**
 - Use `@login_required` with async views - it handles both
-- For async-specific, use `@sync_to_async` wrapper
+- For legacy auth code, wrap with `@sync_to_async`
 
 **Request User in Async Views:**
 ```python
 async def my_view(request):
-    # request.user works but may block
-    # For fully async, use:
-    user = await aget_user(request)
+    # request.user works fine in async views
+    user = request.user
 ```
 
 ```python
 from django.http import JsonResponse
-from django.contrib.auth import (
-    aauthenticate, 
-    alogin, 
-    alogout,
-)
+from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.http import require_http_methods
+from asgiref.sync import sync_to_async
 import json
 
 
 @require_http_methods(["POST"])
 async def async_login_view(request):
-    """Async login endpoint."""
+    """Async login endpoint using sync_to_async."""
     data = json.loads(request.body)
     
-    # Async authentication
-    user = await aauthenticate(
-        request,
+    # Wrap sync authenticate with sync_to_async
+    auth_fn = sync_to_async(authenticate)
+    user = await auth_fn(
+        request=request,
         username=data.get("username"),
         password=data.get("password")
     )
     
     if user is not None:
-        # Async login
-        await alogin(request, user)
+        # Wrap sync login with sync_to_async
+        login_fn = sync_to_async(login)
+        await login_fn(request, user)
         return JsonResponse({
             "status": "success",
             "user": user.username
@@ -66,7 +64,8 @@ async def async_login_view(request):
 @require_http_methods(["POST"])
 async def async_logout_view(request):
     """Async logout endpoint."""
-    await alogout(request)
+    logout_fn = sync_to_async(logout)
+    await logout_fn(request)
     return JsonResponse({"status": "logged_out"})
 
 
@@ -82,12 +81,13 @@ async def protected_async_view(request):
     })
 
 
-print("=== Django 5.2 Async Authentication ===")
+print("=== Django 5.1 Async Authentication ===")
 
-print("\nAsync Auth Functions:")
-print("  await aauthenticate(request, username, password)")
-print("  await alogin(request, user)")
-print("  await alogout(request)")
+print("\nUsing sync_to_async with Auth Functions:")
+print("  auth_fn = sync_to_async(authenticate)")
+print("  user = await auth_fn(request, username, password)")
+print("  login_fn = sync_to_async(login)")
+print("  await login_fn(request, user)")
 
 print("\nDecorators Work with Async:")
 print("  @login_required")
@@ -95,7 +95,6 @@ print("  async def my_view(request):")
 print("      ...")
 
 print("\nMigration Tip:")
-print("  Replace authenticate() with aauthenticate()")
-print("  Replace login() with alogin()")
-print("  Add 'await' before calls")
+print("  Use sync_to_async() to wrap sync auth functions")
+print("  Add 'await' before the wrapped function calls")
 ```

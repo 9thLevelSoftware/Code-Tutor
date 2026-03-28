@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-22-lesson-03-challenge-1",
+  "id": "module-24-lesson-03-challenge-1",
   "title": "Implement the Categories API",
   "description": "Create the complete categories router with CRUD endpoints and default category seeding.",
   "instructions": "1. Create CategoryCreate and CategoryResponse Pydantic schemas\n2. Implement GET /categories (list user's categories)\n3. Implement POST /categories (create custom category)\n4. Implement DELETE /categories/{id} (delete only non-default categories)\n5. Add validation to prevent deleting categories with transactions",

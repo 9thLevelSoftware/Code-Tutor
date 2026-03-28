@@ -1,0 +1,83 @@
+{
+  "course": "python",
+  "module": "19-exception-groups-structured-concurrency",
+  "moduleTitle": "Exception Groups & Structured Concurrency",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 4,
+  "lessonsReviewed": 4,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/19-exception-groups-structured-concurrency/lessons/01-introduction-to-exception-groups-python-311",
+      "lessonTitle": "Introduction to Exception Groups (Python 3.11+)",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "minor",
+          "file": "challenges/01-practice-exercise/challenge.json",
+          "line": 3,
+          "originalText": "\"id\": \"module-17-lesson-01-challenge-1\"",
+          "description": "Challenge ID references wrong module (module-17 instead of module-19)",
+          "webResearchNote": ""
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/19-exception-groups-structured-concurrency/lessons/02-the-except-syntax-selective-handling",
+      "lessonTitle": "The except* Syntax - Selective Handling",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "minor",
+          "file": "challenges/01-practice-exercise/challenge.json",
+          "line": 3,
+          "originalText": "\"id\": \"module-17-lesson-02-challenge-1\"",
+          "description": "Challenge ID references wrong module (module-17 instead of module-19)",
+          "webResearchNote": ""
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/19-exception-groups-structured-concurrency/lessons/03-structured-concurrency-with-asynciotaskgroup",
+      "lessonTitle": "Structured Concurrency with asyncio.TaskGroup",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "minor",
+          "file": "challenges/01-finance-tracker-concurrent-dashboard-load/challenge.json",
+          "line": 3,
+          "originalText": "\"id\": \"module-17-lesson-03-challenge-1\"",
+          "description": "Challenge ID references wrong module (module-17 instead of module-19)",
+          "webResearchNote": ""
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/19-exception-groups-structured-concurrency/lessons/04-partial-failure-handling-patterns",
+      "lessonTitle": "Partial Failure Handling Patterns",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "minor",
+          "file": "challenges/01-finance-tracker-categorize-transactions-with-partial-failures/challenge.json",
+          "line": 3,
+          "originalText": "\"id\": \"module-17-lesson-04-challenge-1\"",
+          "description": "Challenge ID references wrong module (module-17 instead of module-19)",
+          "webResearchNote": ""
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 4,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 4 },
+    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 4, "PEDAGOGY": 0 }
+  }
+}

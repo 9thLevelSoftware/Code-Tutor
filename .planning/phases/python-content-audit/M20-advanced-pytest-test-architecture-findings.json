@@ -1,0 +1,58 @@
+{
+  "course": "python",
+  "module": "20-advanced-pytest-test-architecture",
+  "moduleTitle": "Advanced Pytest Test Architecture",
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "python": "3.12",
+    "pytest": "8.x"
+  },
+  "totalLessons": 4,
+  "lessonsReviewed": 4,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/20-advanced-pytest-test-architecture/lessons/01-fixtures-deep-dive",
+      "lessonTitle": "Fixtures Deep Dive",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/20-advanced-pytest-test-architecture/lessons/02-mocking-and-patching",
+      "lessonTitle": "Mocking and Patching",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/20-advanced-pytest-test-architecture/lessons/03-async-testing-with-pytest-asyncio",
+      "lessonTitle": "Async Testing with pytest-asyncio",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/20-advanced-pytest-test-architecture/lessons/04-conftestpy-patterns-and-test-organization",
+      "lessonTitle": "conftest.py Patterns and Test Organization",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

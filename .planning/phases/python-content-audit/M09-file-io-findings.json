@@ -1,0 +1,109 @@
+{
+  "course": "python",
+  "module": "09-file-io",
+  "moduleTitle": "File I/O",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 9,
+  "lessonsReviewed": 9,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/01-reading-and-writing-text-files",
+      "lessonTitle": "Reading and Writing Text Files",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "INACCURATE",
+          "severity": "critical",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "File contains content about data compression/zstd instead of lesson metadata",
+          "description": "The lesson.json file is corrupted - it contains markdown content about zstd compression instead of the proper lesson metadata (id, title, moduleId, order, estimatedMinutes, difficulty). This makes the lesson undiscoverable by the application.",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/02-context-managers-and-the-with-statement",
+      "lessonTitle": "Context Managers and the with Statement",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/03-working-with-csv-files",
+      "lessonTitle": "Working with CSV Files",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/04-working-with-json-files-structured-data-storage",
+      "lessonTitle": "Working with JSON Files - Structured Data Storage",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/05-file-paths-and-directory-operations",
+      "lessonTitle": "File Paths and Directory Operations",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/06-mini-project-log-file-analyzer",
+      "lessonTitle": "Mini-Project: Log File Analyzer",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/07-modern-file-handling-with-pathlib-python-34",
+      "lessonTitle": "Modern File Handling with Pathlib (Python 3.4+)",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/08-async-file-io-with-aiofiles",
+      "lessonTitle": "Async File I/O with aiofiles",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/09-file-io/lessons/09-data-compression-with-compressionzstd-python-314",
+      "lessonTitle": "Data Compression with compression.zstd (Python 3.14+)",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 23,
+          "originalText": "Python 3.14 introduces `compression.zstd`",
+          "description": "The lesson states that compression.zstd is introduced in Python 3.14, which is accurate. However, for Python 3.12 (the course target version), students will need to use the 'zstandard' PyPI package instead. The lesson does mention this alternative, but the title and emphasis on Python 3.14+ may confuse students targeting Python 3.12.",
+          "webResearchNote": "Python 3.14 is still in development (as of 2026). The compression.zstd module was indeed added in Python 3.14 (see PEP 784 and bpo-112764). For Python 3.12, students must use 'pip install zstandard' as the lesson correctly notes."
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 2,
+    "bySeverity": {
+      "critical": 1,
+      "major": 0,
+      "minor": 1
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 1,
+      "INACCURATE": 1,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

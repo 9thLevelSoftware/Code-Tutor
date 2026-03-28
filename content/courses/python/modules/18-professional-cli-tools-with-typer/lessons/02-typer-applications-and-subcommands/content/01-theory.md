@@ -12,4 +12,4 @@ Typer makes this easy with `typer.Typer()` - an application object that groups c
 - You want organized, discoverable commands
 - You're building something like: `finance add`, `finance list`, `finance summary`
 
-**Typer 0.16+ Feature:** Use `rich_markup_mode="rich"` to enable Rich formatting in help text!
+**Typer 0.12+ Feature:** Use `rich_markup_mode="rich"` to enable Rich formatting in help text!

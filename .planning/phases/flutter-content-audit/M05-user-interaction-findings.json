@@ -1,0 +1,154 @@
+{
+  "module": "M05",
+  "module_name": "05-user-interaction",
+  "lessons_audited": 5,
+  "total_issues": 0,
+  "critical_issues": 0,
+  "warnings": 0,
+  "lessons": [
+    {
+      "lesson_dir": "01-module-4-lesson-1-making-things-clickable-buttons",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 8,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 45, "type": "THEORY"},
+        {"file": "02-example.md", "word_count": 52, "type": "EXAMPLE"},
+        {"file": "03-theory.md", "word_count": 38, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 32, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 28, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 58, "type": "THEORY"},
+        {"file": "07-theory.md", "word_count": 18, "type": "THEORY"},
+        {"file": "08-key_point.md", "word_count": 72, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-button-types-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "02-module-4-lessons-2-3-text-input-and-forms",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 55, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 72, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 45, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 52, "type": "THEORY"},
+        {"file": "06-key_point.md", "word_count": 78, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-search-textfield-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "03-module-4-lesson-3-gestures-and-touch-interactions",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 11,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 42, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 55, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 48, "type": "THEORY"},
+        {"file": "04-example.md", "word_count": 85, "type": "EXAMPLE"},
+        {"file": "05-theory.md", "word_count": 38, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 45, "type": "THEORY"},
+        {"file": "07-theory.md", "word_count": 52, "type": "THEORY"},
+        {"file": "08-warning.md", "word_count": 42, "type": "WARNING"},
+        {"file": "09-theory.md", "word_count": 35, "type": "THEORY"},
+        {"file": "10-theory.md", "word_count": 22, "type": "THEORY"},
+        {"file": "11-key_point.md", "word_count": 75, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "04-module-4-lessons-4-5-statefulwidget-and-managing-state",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 8,
+      "content_files": [
+        {"file": "01-analogy.md", "word_count": 48, "type": "ANALOGY"},
+        {"file": "02-example.md", "word_count": 65, "type": "EXAMPLE"},
+        {"file": "03-theory.md", "word_count": 72, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 58, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 45, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 38, "type": "THEORY"},
+        {"file": "07-theory.md", "word_count": 25, "type": "THEORY"},
+        {"file": "08-key_point.md", "word_count": 82, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "05-module-4-mini-project-interactive-notes-app",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 8,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 52, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 85, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 72, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 95, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 42, "type": "THEORY"},
+        {"file": "07-theory.md", "word_count": 28, "type": "THEORY"},
+        {"file": "08-key_point.md", "word_count": 75, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-notes-statistics-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "audit_summary": {
+    "content_completeness": "COMPLETE",
+    "challenges_complete": true,
+    "all_lessons_have_content": true,
+    "all_challenges_have_files": true,
+    "version_references": "Standard Flutter widgets used",
+    "stub_content_found": false
+  }
+}

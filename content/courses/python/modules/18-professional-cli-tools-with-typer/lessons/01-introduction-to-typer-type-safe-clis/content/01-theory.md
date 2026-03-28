@@ -10,9 +10,9 @@ title: "Understanding the Concept"
 - **Auto-generated help** - Your docstrings become `--help` text
 - **Shell completion** - Tab completion for free
 - **Less boilerplate** - A Typer CLI is often 70% less code than argparse
-- **Rich markup in help** - Use `[bold]`, `[green]` in docstrings (0.16+)
+- **Rich markup in help** - Use `[bold]`, `[green]` in docstrings (0.12+)
 
-**Installation (Typer 0.16+):**
+**Installation (Typer 0.12+):**
 ```bash
 uv add typer[all]  # Includes Rich - typer-cli is now integrated!
 # or: pip install typer[all]

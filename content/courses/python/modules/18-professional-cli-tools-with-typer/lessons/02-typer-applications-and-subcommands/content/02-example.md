@@ -28,10 +28,10 @@ Balance: $1950.00
 ```python
 import typer
 
-# Typer 0.16+: rich_markup_mode enables Rich formatting in help
+# Typer 0.12+: rich_markup_mode enables Rich formatting in help
 app = typer.Typer(
     help="Personal Finance Tracker - manage your money.",
-    rich_markup_mode="rich"  # New in 0.16+
+    rich_markup_mode="rich"  # New in 0.12+
 )
 
 # In-memory storage (use a file or DB in real apps)

@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "course": "python",
+    "module": "17-sharing-your-work",
+    "targetVersion": "3.12",
+    "auditDate": "2026-03-28",
+    "auditor": "subagent",
+    "lessonsAudited": 11
+  },
+  "summary": {
+    "totalIssues": 9,
+    "critical": 0,
+    "warning": 9,
+    "info": 0,
+    "byCategory": {
+      "accuracy": 5,
+      "currency": 3,
+      "completeness": 1
+    }
+  },
+  "findings": [
+    {
+      "id": "M17-L03-ACC-001",
+      "category": "accuracy",
+      "severity": "warning",
+      "lessonId": "lesson-17-03",
+      "lessonTitle": "Testing Best Practices",
+      "location": "challenges/01-interactive-exercise/solution.py",
+      "type": "deprecated-cli-flag",
+      "title": "pytest uses deprecated --setup-show flag",
+      "description": "The solution uses `pytest --setup-show` which is deprecated in pytest 8.0+. The modern equivalent is `--setup-plan` or use `pytest -v` for verbose fixture setup output.",
+      "currentText": "pytest --setup-show test_fixture_lifecycle.py",
+      "suggestedFix": "pytest --setup-plan test_fixture_lifecycle.py",
+      "rationale": "pytest 8.0 changed fixture setup output flags"
+    },
+    {
+      "id": "M17-L05-ACC-001",
+      "category": "accuracy",
+      "severity": "warning",
+      "lessonId": "lesson-17-05",
+      "lessonTitle": "Dockerfile for Python",
+      "location": "challenges/01-create-a-dockerfile-for-your-project/solution.py",
+      "type": "best-practice",
+      "title": "Docker base image not version-pinned",
+      "description": "The solution uses `python:3.13-slim` which will always pull latest 3.13.x. Best practice is to pin to specific patch version like `python:3.13.1-slim` for reproducible builds.",
+      "currentText": "FROM python:3.13-slim",
+      "suggestedFix": "FROM python:3.13.1-slim",
+      "rationale": "Pinning patch versions ensures deterministic builds"
+    },
+    {
+      "id": "M17-L05-ACC-002",
+      "category": "accuracy",
+      "severity": "warning",
+      "lessonId": "lesson-17-05",
+      "lessonTitle": "Dockerfile for Python",
+      "location": "content/05-example.md",
+      "type": "deprecated-cli-flag",
+      "title": "pytest capture flag deprecated syntax",
+      "description": "Uses `pytest -s` shorthand (equivalent to --capture=no). The long form --capture=no is clearer and more explicit.",
+      "currentText": "pytest -s tests/",
+      "suggestedFix": "pytest --capture=no tests/",
+      "rationale": "Explicit flags are more readable and less error-prone"
+    },
+    {
+      "id": "M17-L06-CUR-001",
+      "category": "currency",
+      "severity": "warning",
+      "lessonId": "lesson-17-06",
+      "lessonTitle": "Docker Compose for Development",
+      "location": "content/04-example.md",
+      "type": "outdated-version-reference",
+      "title": "PostgreSQL version outdated in example",
+      "description": "The Docker Compose example uses PostgreSQL 15. Current stable is PostgreSQL 17 (released September 2024). The course should reference a more current version.",
+      "currentText": "image: postgres:15",
+      "suggestedFix": "image: postgres:17",
+      "rationale": "PostgreSQL 17 is the current stable version"
+    },
+    {
+      "id": "M17-L06-CUR-002",
+      "category": "currency",
+      "severity": "warning",
+      "lessonId": "lesson-17-06",
+      "lessonTitle": "Docker Compose for Development",
+      "location": "content/05-example.md",
+      "type": "deprecated-syntax",
+      "title": "GitLab CI uses deprecated 'only:' keyword",
+      "description": "The GitLab CI example uses the deprecated `only:` keyword. Modern GitLab CI uses `rules:` for workflow control.",
+      "currentText": "only:\n  - main\n  - merge_requests",
+      "suggestedFix": "rules:\n  - if: $CI_COMMIT_BRANCH == \"main\"\n  - if: $CI_MERGE_REQUEST_IID",
+      "rationale": "GitLab 15.0+ deprecates 'only/except' in favor of 'rules'"
+    },
+    {
+      "id": "M17-L07-COM-001",
+      "category": "completeness",
+      "severity": "warning",
+      "lessonId": "lesson-17-07",
+      "lessonTitle": "Deployment and Final Capstone Project",
+      "location": "lesson.json",
+      "type": "json-syntax",
+      "title": "Missing comma in JSON array",
+      "description": "The lesson.json file has a missing comma after one of the content filenames in the contentFiles array.",
+      "currentText": "\"content/03-analogy.md\"\n    \"content/04-key_point.md\"",
+      "suggestedFix": "\"content/03-analogy.md\",\n    \"content/04-key_point.md\"",
+      "rationale": "Valid JSON requires commas between array elements"
+    },
+    {
+      "id": "M17-L08-ACC-001",
+      "category": "accuracy",
+      "severity": "warning",
+      "lessonId": "lesson-17-08",
+      "lessonTitle": "Deploying to Render",
+      "location": "challenges/01-create-a-render-blueprint/challenge.json",
+      "type": "wrong-module-reference",
+      "title": "Challenge ID references wrong module number",
+      "description": "The challenge.json has id 'module-16-lesson-08-challenge-1' but this is module 17.",
+      "currentText": "\"id\": \"module-16-lesson-08-challenge-1\"",
+      "suggestedFix": "\"id\": \"module-17-lesson-08-challenge-1\"",
+      "rationale": "ID should match the actual module number (17)"
+    },
+    {
+      "id": "M17-L09-CUR-001",
+      "category": "currency",
+      "severity": "warning",
+      "lessonId": "lesson-17-09",
+      "lessonTitle": "Deploying to Railway",
+      "location": "content/03-example.md",
+      "type": "outdated-cli-command",
+      "title": "Railway CLI login pattern outdated",
+      "description": "The example shows `railway login` as a separate step. Modern Railway CLI (v3+) uses browser-based auth automatically on first command.",
+      "currentText": "railway login",
+      "suggestedFix": "# Login is automatic on first command, or use:\nrailway login --browserless",
+      "rationale": "Railway CLI v3 changed authentication flow"
+    },
+    {
+      "id": "M17-L11-CUR-001",
+      "category": "currency",
+      "severity": "warning",
+      "lessonId": "lesson-17-11",
+      "lessonTitle": "Modern CI Pipeline with GitHub Actions",
+      "location": "content/03-example.md",
+      "type": "action-version",
+      "title": "GitHub Actions version reference",
+      "description": "Uses actions/checkout@v4 which is current, but could mention that v5 may be available or that v4 is the current standard.",
+      "currentText": "uses: actions/checkout@v4",
+      "suggestedFix": "uses: actions/checkout@v4  # Latest stable as of 2025",
+      "rationale": "Version pinning should note currency status"
+    }
+  ]
+}

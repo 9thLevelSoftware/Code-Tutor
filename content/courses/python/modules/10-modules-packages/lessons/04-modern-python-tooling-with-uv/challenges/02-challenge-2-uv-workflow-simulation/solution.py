@@ -1,9 +1,9 @@
-def new_project_workflow(project_name: str, python_version: str = "3.13") -> list[str]:
+def new_project_workflow(project_name: str, python_version: str = "3.12") -> list[str]:
     """Generate commands to create a new uv project.
     
     Args:
         project_name: Name of the new project
-        python_version: Python version to use (default: 3.13)
+        python_version: Python version to use (default: 3.12)
     
     Returns:
         List of terminal commands to execute
@@ -88,8 +88,8 @@ print("uv WORKFLOW COMMAND GENERATOR")
 print("=" * 60)
 
 print("\n=== 1. New Project Workflow ===")
-print("Creating a new Python 3.13 project named 'my-app':")
-for cmd in new_project_workflow("my-app", "3.13"):
+print("Creating a new Python 3.12 project named 'my-app':")
+for cmd in new_project_workflow("my-app", "3.12"):
     print(f"  $ {cmd}")
 
 print("\n=== 2. Clone Project Workflow ===")

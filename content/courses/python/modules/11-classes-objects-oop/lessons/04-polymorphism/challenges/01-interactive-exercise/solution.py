@@ -1,75 +1,94 @@
-# Payment Processing System
-# This solution demonstrates polymorphism in action
+import math
 
-class Payment:
-    """Base class for all payment methods."""
+class Shape:
+    def area(self):
+        raise NotImplementedError("Subclass must implement area()")
     
-    def __init__(self, amount):
-        self.amount = amount
-    
-    def pay(self):
-        """Must be implemented by subclasses."""
-        raise NotImplementedError("Subclasses must implement pay()")
+    def perimeter(self):
+        raise NotImplementedError("Subclass must implement perimeter()")
 
-class CreditCard(Payment):
-    """Credit card payment method."""
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
     
-    def __init__(self, amount, card_number):
-        super().__init__(amount)
-        # Store only last 4 digits for security
-        self.card_last_four = card_number[-4:]
+    def area(self):
+        return math.pi * self.radius ** 2
     
-    def pay(self):
-        """Process credit card payment."""
-        return f"Charged ${self.amount:.2f} to card ending in {self.card_last_four}"
+    def perimeter(self):
+        return 2 * math.pi * self.radius
 
-class PayPal(Payment):
-    """PayPal payment method."""
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
     
-    def __init__(self, amount, email):
-        super().__init__(amount)
-        self.email = email
+    def area(self):
+        return self.width * self.height
     
-    def pay(self):
-        """Process PayPal payment."""
-        return f"Sent ${self.amount:.2f} via PayPal to {self.email}"
+    def perimeter(self):
+        return 2 * (self.width + self.height)
 
-class Bitcoin(Payment):
-    """Bitcoin payment method."""
+class Triangle(Shape):
+    def __init__(self, base, height, side1, side2, side3):
+        self.base = base
+        self.height = height
+        self.sides = [side1, side2, side3]
     
-    def __init__(self, amount, wallet_address):
-        super().__init__(amount)
-        # Shorten wallet address for display
-        self.wallet_short = wallet_address[:8] + '...'
+    def area(self):
+        return 0.5 * self.base * self.height
     
-    def pay(self):
-        """Process Bitcoin payment."""
-        btc_amount = self.amount / 45000  # Simplified conversion
-        return f"Sent {btc_amount:.6f} BTC (${self.amount:.2f}) to {self.wallet_short}"
+    def perimeter(self):
+        return sum(self.sides)
 
-def process_payment(payment):
-    """Process any type of payment (polymorphism)."""
-    print(f"Processing {type(payment).__name__} payment...")
-    result = payment.pay()
-    print(f"  {result}")
-    return result
-
-# Test the payment system
-print("=== Payment Processing System ===")
-
-# Create different payment types
-payments = [
-    CreditCard(99.99, "4111111111111234"),
-    PayPal(49.99, "user@example.com"),
-    Bitcoin(199.99, "1A1zP1eP5QGefi2DMPTfTL5SLmv7")
-]
-
-# Process all payments using the same function
-print("\nProcessing payments:")
-for payment in payments:
-    process_payment(payment)
+# Polymorphic function - works with any Shape
+def print_shape_info(shape):
+    """Works with any object that has area() and perimeter()"""
+    print(f"Shape: {shape.__class__.__name__}")
+    print(f"  Area: {shape.area():.2f}")
+    print(f"  Perimeter: {shape.perimeter():.2f}")
     print()
 
-# Demonstrate polymorphism
-print("The same function works with any payment type!")
-print(f"All payments inherit from: {Payment.__name__}")
+def calculate_total_area(shapes):
+    """Works with list of any shapes"""
+    return sum(shape.area() for shape in shapes)
+
+# Create different shapes
+print("=== Creating Shapes ===")
+circle = Circle(5)
+rectangle = Rectangle(4, 6)
+triangle = Triangle(base=3, height=4, side1=3, side2=4, side3=5)
+
+# Polymorphism: same method, different behavior
+print("\n=== Polymorphism: Each shape implements methods differently ===")
+print_shape_info(circle)
+print_shape_info(rectangle)
+print_shape_info(triangle)
+
+# Polymorphism: treating different types uniformly
+print("=== Treating Different Shapes Uniformly ===")
+shapes = [circle, rectangle, triangle]
+
+for shape in shapes:
+    print(f"{shape.__class__.__name__}: Area = {shape.area():.2f}")
+
+print(f"\nTotal area of all shapes: {calculate_total_area(shapes):.2f}")
+
+# Duck typing: if it has the methods, it works!
+print("\n=== Duck Typing Example ===")
+
+class Square:
+    def __init__(self, side):
+        self.side = side
+    
+    def area(self):
+        return self.side ** 2
+    
+    def perimeter(self):
+        return 4 * self.side
+
+square = Square(5)
+print_shape_info(square)  # Works! Has area() and perimeter()
+
+# Add to shapes list
+shapes.append(square)
+print(f"Total area including square: {calculate_total_area(shapes):.2f}")

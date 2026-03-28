@@ -10,7 +10,7 @@ title: "Key Takeaways"
 2. Run with ASGI server: `uvicorn project.asgi:application`
 3. Mix sync and async views freely - Django handles it
 
-**Django 5.2 Async ORM:**
+**Django 5.1 Async ORM:**
 - `aall()`, `afirst()`, `alast()` - Async iteration
 - `acount()`, `aexists()` - Async aggregation
 - `acreate()`, `aupdate()`, `adelete()` - Async mutations
@@ -19,10 +19,11 @@ title: "Key Takeaways"
 **sync_to_async:**
 - Wrap sync functions: `@sync_to_async`
 - Use for legacy code, complex queries, sync libraries
+- Use for authentication functions in async views
 - `thread_sensitive=True` for Django ORM (default)
 
-**Async Authentication (5.2):**
-- `aauthenticate()`, `alogin()`, `alogout()`
+**Async Authentication:**
+- Use `sync_to_async()` to wrap sync auth functions
 - Standard decorators work with async views
 
 **Performance Guidelines:**

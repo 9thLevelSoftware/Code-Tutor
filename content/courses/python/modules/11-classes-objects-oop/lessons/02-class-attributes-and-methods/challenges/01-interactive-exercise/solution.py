@@ -1,68 +1,56 @@
-# Employee Class with Class/Static Methods
-# This solution demonstrates different types of methods
-
-class Employee:
-    """Employee class with class and static methods."""
+class BankAccount:
+    # Class attributes (shared by all instances)
+    bank_name = "Python Bank"
+    total_accounts = 0
     
-    # Class attributes - shared by all instances
-    company_name = "TechCorp"
-    employee_count = 0
+    def __init__(self, owner, balance=0):
+        # Instance attributes (unique to each instance)
+        self.owner = owner
+        self.balance = balance
+        # Increment class attribute
+        BankAccount.total_accounts += 1
     
-    def __init__(self, name, position, salary):
-        """Initialize employee with name, position, and salary."""
-        self.name = name
-        self.position = position
-        self.salary = salary
-        # Increment class-level counter
-        Employee.employee_count += 1
+    def deposit(self, amount):
+        """Add amount to balance if valid"""
+        if self.is_valid_amount(amount):
+            self.balance += amount
+            return f"Deposited ${amount}. New balance: ${self.balance}"
+        return "Invalid amount"
     
-    def give_raise(self, amount):
-        """Instance method: Give employee a raise."""
-        if amount > 0:
-            self.salary += amount
-            print(f"{self.name} received a ${amount:,.2f} raise!")
-            print(f"New salary: ${self.salary:,.2f}")
+    def withdraw(self, amount):
+        """Subtract amount if valid and sufficient balance"""
+        if not self.is_valid_amount(amount):
+            return "Invalid amount"
+        if amount > self.balance:
+            return "Insufficient funds"
+        self.balance -= amount
+        return f"Withdrew ${amount}. New balance: ${self.balance}"
     
     @classmethod
-    def from_dict(cls, emp_dict):
-        """Class method: Create employee from dictionary."""
-        return cls(
-            name=emp_dict['name'],
-            position=emp_dict['position'],
-            salary=emp_dict['salary']
-        )
+    def get_total_accounts(cls):
+        """Class method to get total number of accounts"""
+        return f"Total accounts at {cls.bank_name}: {cls.total_accounts}"
     
     @staticmethod
-    def is_valid_salary(amount):
-        """Static method: Check if salary is in valid range."""
-        return 20000 <= amount <= 500000
-    
-    def __str__(self):
-        return f"{self.name} - {self.position} (${self.salary:,.2f})"
+    def is_valid_amount(amount):
+        """Static method to validate amount"""
+        return isinstance(amount, (int, float)) and amount > 0
 
-# Test the Employee class
-print(f"=== {Employee.company_name} Employee System ===")
+# Create accounts and test
+print("=== Creating Bank Accounts ===")
+account1 = BankAccount("Alice", 1000)
+account2 = BankAccount("Bob", 500)
+account3 = BankAccount("Charlie")
 
-# Create employees
-emp1 = Employee("Alice", "Developer", 75000)
-emp2 = Employee("Bob", "Manager", 90000)
+print(f"Bank: {BankAccount.bank_name}")
+print(BankAccount.get_total_accounts())
 
-# Create from dictionary (class method)
-emp_data = {'name': 'Carol', 'position': 'Designer', 'salary': 65000}
-emp3 = Employee.from_dict(emp_data)
+print("\n=== Testing Instance Methods ===")
+print(account1.deposit(500))
+print(account1.withdraw(200))
+print(account2.withdraw(1000))  # Should fail - insufficient funds
 
-# Print all employees
-print(f"\nTotal employees: {Employee.employee_count}")
-for emp in [emp1, emp2, emp3]:
-    print(f"  - {emp}")
-
-# Test give_raise
-print("\n--- Giving raises ---")
-emp1.give_raise(5000)
-
-# Test static method
-print("\n--- Salary validation ---")
-test_salaries = [15000, 50000, 600000]
-for sal in test_salaries:
-    valid = Employee.is_valid_salary(sal)
-    print(f"${sal:,}: {'Valid' if valid else 'Invalid'}")
+print("\n=== Testing Validation ===")
+print(f"Is 100 valid? {BankAccount.is_valid_amount(100)}")
+print(f"Is -50 valid? {BankAccount.is_valid_amount(-50)}")
+print(f"Is 'abc' valid? {BankAccount.is_valid_amount('abc')}")

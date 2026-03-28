@@ -1,0 +1,228 @@
+{
+  "module": "M04",
+  "module_name": "04-layouts-and-scrolling",
+  "lessons_audited": 8,
+  "total_issues": 0,
+  "critical_issues": 0,
+  "warnings": 0,
+  "lessons": [
+    {
+      "lesson_dir": "01-module-3-lesson-1-scrollable-lists-listview",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 9,
+      "content_files": [
+        {"file": "01-analogy.md", "word_count": 48, "type": "ANALOGY"},
+        {"file": "02-theory.md", "word_count": 40, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 35, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 45, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 30, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 32, "type": "THEORY"},
+        {"file": "07-warning.md", "word_count": 120, "type": "WARNING"},
+        {"file": "08-theory.md", "word_count": 18, "type": "THEORY"},
+        {"file": "09-key_point.md", "word_count": 65, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "02-module-3-lesson-2-photo-grids-gridview",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 7,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 50, "type": "THEORY"},
+        {"file": "02-example.md", "word_count": 55, "type": "EXAMPLE"},
+        {"file": "03-theory.md", "word_count": 45, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 48, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 62, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 25, "type": "THEORY"},
+        {"file": "07-key_point.md", "word_count": 68, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [
+        {
+          "challenge_dir": "01-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "03-module-3-lesson-3-layering-widgets-stack",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 6,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 38, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 65, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 55, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 42, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 28, "type": "THEORY"},
+        {"file": "06-key_point.md", "word_count": 72, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-stack-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "04-module-3-lesson-4-responsive-layouts",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 7,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 42, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 48, "type": "THEORY"},
+        {"file": "03-key_point.md", "word_count": 88, "type": "KEY_POINT"},
+        {"file": "04-theory.md", "word_count": 55, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 32, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 35, "type": "THEORY"},
+        {"file": "07-theory.md", "word_count": 22, "type": "THEORY"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "05-module-3-lesson-5-creating-custom-widgets",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 7,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 35, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 95, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 88, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 78, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 52, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 25, "type": "THEORY"},
+        {"file": "07-key_point.md", "word_count": 82, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "06-module-3-lesson-6-advanced-scrolling-techniques",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 8,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 38, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 42, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 28, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 35, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 32, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "07-theory.md", "word_count": 15, "type": "THEORY"},
+        {"file": "08-key_point.md", "word_count": 75, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-practice-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    },
+    {
+      "lesson_dir": "07-app-theming-with-material-3",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 14,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 145, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 88, "type": "THEORY"},
+        {"file": "04-example.md", "word_count": 125, "type": "EXAMPLE"},
+        {"file": "05-theory.md", "word_count": 165, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 92, "type": "THEORY"},
+        {"file": "07-theory.md", "word_count": 55, "type": "THEORY"},
+        {"file": "08-theory.md", "word_count": 48, "type": "THEORY"},
+        {"file": "09-example.md", "word_count": 185, "type": "EXAMPLE"},
+        {"file": "10-example.md", "word_count": 142, "type": "EXAMPLE"},
+        {"file": "11-theory.md", "word_count": 95, "type": "THEORY"},
+        {"file": "12-key_point.md", "word_count": 88, "type": "KEY_POINT"},
+        {"file": "13-key_point.md", "word_count": 125, "type": "KEY_POINT"},
+        {"file": "14-theory.md", "word_count": 22, "type": "THEORY"}
+      ],
+      "has_theory": true,
+      "has_example": true,
+      "challenges": [],
+      "issues": []
+    },
+    {
+      "lesson_dir": "08-module-3-lesson-7-mini-project-instagram-style-feed",
+      "lesson_json_exists": true,
+      "lesson_json_valid": true,
+      "content_count": 7,
+      "content_files": [
+        {"file": "01-theory.md", "word_count": 52, "type": "THEORY"},
+        {"file": "02-theory.md", "word_count": 85, "type": "THEORY"},
+        {"file": "03-theory.md", "word_count": 95, "type": "THEORY"},
+        {"file": "04-theory.md", "word_count": 72, "type": "THEORY"},
+        {"file": "05-theory.md", "word_count": 68, "type": "THEORY"},
+        {"file": "06-theory.md", "word_count": 38, "type": "THEORY"},
+        {"file": "07-key_point.md", "word_count": 78, "type": "KEY_POINT"}
+      ],
+      "has_theory": true,
+      "has_example": false,
+      "challenges": [
+        {
+          "challenge_dir": "01-adaptive-layout-challenge",
+          "challenge_json_exists": true,
+          "starter_exists": true,
+          "solution_exists": true
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "audit_summary": {
+    "content_completeness": "COMPLETE",
+    "challenges_complete": true,
+    "all_lessons_have_content": true,
+    "all_challenges_have_files": true,
+    "version_references": "Flutter 3.16+ mentioned in theming lesson",
+    "stub_content_found": false
+  }
+}

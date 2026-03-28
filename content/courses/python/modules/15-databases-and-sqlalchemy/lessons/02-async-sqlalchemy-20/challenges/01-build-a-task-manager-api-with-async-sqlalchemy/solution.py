@@ -4,7 +4,7 @@ from sqlalchemy import ForeignKey, String, select, func
 from sqlalchemy.orm import selectinload
 from fastapi import FastAPI, Depends, HTTPException
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List
 
 # Database setup
@@ -22,7 +22,7 @@ class Project(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(100))
     description: Mapped[str | None] = mapped_column(String(500), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now(timezone.utc))
     
     tasks: Mapped[List["Task"]] = relationship(
         back_populates="project",
@@ -35,7 +35,7 @@ class Task(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(String(200))
     completed: Mapped[bool] = mapped_column(default=False)
-    created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now(timezone.utc))
     project_id: Mapped[int] = mapped_column(ForeignKey("projects.id"))
     
     project: Mapped["Project"] = relationship(back_populates="tasks")

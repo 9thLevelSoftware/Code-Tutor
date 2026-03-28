@@ -36,7 +36,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 ```python
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import jwt
 
 print("=== OAuth2 with FastAPI ===")
@@ -77,7 +77,7 @@ def authenticate_user(email: str, password: str):
 
 def create_access_token(data: dict, expires_delta: timedelta = None) -> str:
     to_encode = data.copy()
-    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=15))
+    expire = datetime.now(timezone.utc) + (expires_delta or timedelta(minutes=15))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 

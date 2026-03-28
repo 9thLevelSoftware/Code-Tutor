@@ -7,7 +7,7 @@ title: "Token Implementation Comparison"
 
 ```python
 import jwt
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict, Any
 
 class JWTTokenAuth:
@@ -21,8 +21,8 @@ class JWTTokenAuth:
         payload = {
             "sub": user_id,
             "email": user_data.get("email"),
-            "iat": datetime.utcnow(),
-            "exp": datetime.utcnow() + self.access_ttl
+            "iat": datetime.now(timezone.utc),
+            "exp": datetime.now(timezone.utc) + self.access_ttl
         }
         return jwt.encode(payload, self.secret, self.algorithm)
     

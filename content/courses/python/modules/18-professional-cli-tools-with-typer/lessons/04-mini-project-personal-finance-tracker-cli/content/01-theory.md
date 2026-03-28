@@ -22,7 +22,7 @@ finance/
   models.py    # Transaction dataclass
 ```
 
-**Typer 0.16+ features used:**
+**Typer 0.12+ features used:**
 - `rich_markup_mode="rich"` for formatted help
 - Rich Console and Table integration
 - typer[all] includes everything needed

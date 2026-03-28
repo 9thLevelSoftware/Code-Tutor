@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-04",
   "title": "Module 2, Lesson 4: Displaying Images",
+  "description": "Learn to display images in Flutter using the Image widget from various sources including assets, network URLs, and files. Understand image fitting, alignment, and caching for optimal performance.",
   "moduleId": "module-03",
   "order": 4,
   "estimatedMinutes": 60,

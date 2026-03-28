@@ -1,0 +1,126 @@
+{
+  "course": "python",
+  "module": "15-databases-and-sqlalchemy",
+  "moduleTitle": "Databases and SQLAlchemy",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/python/modules/15-databases-and-sqlalchemy/lessons/01-object-relational-mapping-with-sqlalchemy",
+      "lessonTitle": "Object-Relational Mapping with SQLAlchemy",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 28,
+          "originalText": "Base = declarative_base()",
+          "description": "Uses SQLAlchemy 1.x style declarative_base() instead of SQLAlchemy 2.0 DeclarativeBase class pattern",
+          "webResearchNote": "SQLAlchemy 2.0 recommends using DeclarativeBase class pattern with Mapped[] and mapped_column() for better type hints and modern API"
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-analogy.md",
+          "line": 15,
+          "originalText": "DATABASE_URL = \"sqlite:///./dev.db\"",
+          "description": "Uses sync SQLite URL instead of async URL pattern used in other lessons",
+          "webResearchNote": "For consistency with async SQLAlchemy 2.0 lessons, should use sqlite+aiosqlite:///./dev.db"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/15-databases-and-sqlalchemy/lessons/02-async-sqlalchemy-20",
+      "lessonTitle": "Async SQLAlchemy 2.0",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/03-example.md",
+          "line": 45,
+          "originalText": "created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)",
+          "description": "Uses deprecated datetime.utcnow() which is deprecated in Python 3.12",
+          "webResearchNote": "Python 3.12 deprecated datetime.utcnow(); should use datetime.now(timezone.utc) per PEP 696"
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 50,
+          "originalText": "@app.on_event(\"startup\")",
+          "description": "Uses deprecated FastAPI on_event startup pattern",
+          "webResearchNote": "FastAPI recommends using lifespan context managers instead of on_event decorators in newer versions"
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/05-example.md",
+          "line": 42,
+          "originalText": "class Config:\n    from_attributes = True",
+          "description": "Uses Pydantic V1 Config class pattern instead of V2 model_config",
+          "webResearchNote": "Pydantic V2 uses model_config = ConfigDict(from_attributes=True) instead of nested Config class"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/15-databases-and-sqlalchemy/lessons/03-database-migrations-with-alembic",
+      "lessonTitle": "Database Migrations with Alembic",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/15-databases-and-sqlalchemy/lessons/04-sqlite-for-development",
+      "lessonTitle": "SQLite for Development",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-example.md",
+          "line": 15,
+          "originalText": "from sqlalchemy.orm import declarative_base\nBase = declarative_base()",
+          "description": "Uses SQLAlchemy 1.x style declarative_base() instead of SQLAlchemy 2.0 DeclarativeBase",
+          "webResearchNote": "SQLAlchemy 2.0 recommends DeclarativeBase class pattern for consistency with other lessons"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/15-databases-and-sqlalchemy/lessons/05-postgresql-for-production",
+      "lessonTitle": "PostgreSQL for Production",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/04-example.md",
+          "line": 18,
+          "originalText": "from sqlalchemy.orm import declarative_base\nBase = declarative_base()",
+          "description": "Uses SQLAlchemy 1.x style declarative_base() instead of SQLAlchemy 2.0 DeclarativeBase",
+          "webResearchNote": "SQLAlchemy 2.0 recommends DeclarativeBase class pattern for consistency"
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/05-example.md",
+          "line": 45,
+          "originalText": "model_config = {\"env_file\": \".env\"}",
+          "description": "Uses dict instead of SettingsConfigDict for Pydantic V2",
+          "webResearchNote": "Pydantic V2 recommends using SettingsConfigDict(env_file=\".env\") for better type safety"
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 7,
+    "bySeverity": { "critical": 0, "major": 1, "minor": 6 },
+    "byCategory": { "STUB": 0, "OUTDATED": 7, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

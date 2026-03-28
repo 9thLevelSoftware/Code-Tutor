@@ -1,0 +1,97 @@
+{
+  "module": "M02-dart-programming-basics",
+  "title": "Module 1: Dart Programming Basics",
+  "auditedAt": "2026-03-28",
+  "lessons": [
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/01-module-1-lesson-1-what-is-code",
+      "title": "Module 1, Lesson 1: What is Code?",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 12,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/02-module-1-lesson-2-storing-information-variables",
+      "title": "Module 1, Lesson 2: Storing Information (Variables)",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 14,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/03-module-1-lesson-3-making-decisions-ifelse",
+      "title": "Module 1, Lesson 3: Making Decisions (if/else)",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 14,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/04-module-1-lesson-4-repeating-actions-loops",
+      "title": "Module 1, Lesson 4: Repeating Actions (Loops)",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 14,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/05-module-1-lesson-5-reusable-instructions-functions",
+      "title": "Module 1, Lesson 5: Reusable Instructions (Functions)",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 17,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/06-module-1-lesson-6-organizing-collections-lists-and-maps",
+      "title": "Module 1, Lesson 6: Organizing Collections (Lists and Maps)",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 19,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/07-module-1-lesson-7-mini-project-number-guessing-game",
+      "title": "Module 1, Lesson 7: Mini-Project - Number Guessing Game",
+      "qualityRating": "good",
+      "issues": [],
+      "contentFiles": 13,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/02-dart-programming-basics/lessons/08-module-1-lesson-8-dart-3-modern-features",
+      "title": "Module 1, Lesson 8: Dart 3 Modern Features",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "severity": "info",
+          "type": "outdated",
+          "message": "References 'Dart 3' as modern (released 2023). As of 2026, Dart 3.x is standard, content remains valid but may need periodic updates"
+        }
+      ],
+      "contentFiles": 20,
+      "challenges": 3,
+      "challengeFilesComplete": true
+    }
+  ],
+  "summary": {
+    "totalLessons": 8,
+    "totalContentFiles": 123,
+    "totalChallenges": 10,
+    "qualityDistribution": {
+      "good": 8,
+      "acceptable": 0,
+      "needs-work": 0,
+      "critical": 0
+    },
+    "totalIssues": 1
+  }
+}

@@ -53,7 +53,7 @@ session.commit()
 ```python
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
-from datetime import datetime
+from datetime import datetime, timezone
 
 print("=== SQLAlchemy Setup ===")
 
@@ -76,7 +76,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
     email = Column(String(100), unique=True, nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now(timezone.utc))
     
     # Relationship to posts
     posts = relationship('Post', back_populates='author')
@@ -92,7 +92,7 @@ class Post(Base):
     title = Column(String(200), nullable=False)
     content = Column(String(1000))
     author_id = Column(Integer, ForeignKey('users.id'))
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now(timezone.utc))
     
     # Relationship to user
     author = relationship('User', back_populates='posts')

@@ -1,0 +1,149 @@
+{
+  "module": "M03-flutter-widget-fundamentals",
+  "title": "Module 2: Flutter Widget Fundamentals",
+  "auditedAt": "2026-03-28",
+  "lessons": [
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/01-module-2-lesson-1-what-happens-when-you-run-an-app",
+      "title": "Module 2, Lesson 1: What Happens When You Run an App?",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field - has id, title, moduleId, order, estimatedMinutes, difficulty but no description"
+        }
+      ],
+      "contentFiles": 15,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/02-module-2-lesson-2-building-blocks-widgets",
+      "title": "Module 2, Lesson 2: Building Blocks (Widgets)",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field"
+        },
+        {
+          "severity": "warning",
+          "type": "stub",
+          "message": "File 01-content.md contains placeholder text: 'This is a sufficiently long piece of placeholder text...' - marked as stub content"
+        }
+      ],
+      "contentFiles": 7,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/03-module-2-lesson-3-displaying-and-styling-text",
+      "title": "Module 2, Lesson 3: Displaying and Styling Text",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field"
+        }
+      ],
+      "contentFiles": 11,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/04-module-2-lesson-4-displaying-images",
+      "title": "Module 2, Lesson 4: Displaying Images",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field"
+        }
+      ],
+      "contentFiles": 12,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/05-module-2-lesson-5-the-container-widget",
+      "title": "Module 2, Lesson 5: The Container Widget",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field"
+        }
+      ],
+      "contentFiles": 13,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/06-module-2-lesson-6-arranging-widgets-column-row",
+      "title": "Module 2, Lesson 6: Arranging Widgets (Column & Row)",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field"
+        }
+      ],
+      "contentFiles": 12,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/07-module-2-lesson-7-dart-310-dot-shorthands",
+      "title": "Module 2, Lesson 7: Dart 3.10 Dot Shorthands",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field"
+        },
+        {
+          "severity": "info",
+          "type": "outdated",
+          "message": "References 'Dart 3.10' - newer Dart versions exist but content remains valid and accurate"
+        }
+      ],
+      "contentFiles": 5,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    },
+    {
+      "path": "content/courses/flutter/modules/03-flutter-widget-fundamentals/lessons/08-module-2-lesson-8-mini-project-business-card-app",
+      "title": "Module 2, Lesson 8: Mini-Project - Business Card App",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "severity": "warning",
+          "type": "metadata",
+          "message": "lesson.json is missing 'description' field"
+        }
+      ],
+      "contentFiles": 13,
+      "challenges": 1,
+      "challengeFilesComplete": true
+    }
+  ],
+  "summary": {
+    "totalLessons": 8,
+    "totalContentFiles": 88,
+    "totalChallenges": 8,
+    "qualityDistribution": {
+      "good": 1,
+      "acceptable": 7,
+      "needs-work": 0,
+      "critical": 0
+    },
+    "totalIssues": 9
+  }
+}

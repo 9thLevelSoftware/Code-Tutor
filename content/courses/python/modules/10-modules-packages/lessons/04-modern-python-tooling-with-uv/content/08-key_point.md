@@ -9,7 +9,7 @@ title: "Key Takeaways"
 - **`uv add package`** - Adds dependency to pyproject.toml and installs
 - **`uv run python script.py`** - Runs with correct Python and dependencies (no activation needed!)
 - **`uv sync`** - Installs exactly what's in uv.lock (reproducible builds)
-- **`uv python install 3.13`** - Installs Python versions (replaces pyenv)
+- **`uv python install 3.12`** - Installs Python versions (replaces pyenv)
 - **pyproject.toml** - Modern project config, replaces requirements.txt
 - **uv.lock** - Ensures reproducible builds across all machines
 - **Always use `uv run`** - Never worry about activating virtual environments again

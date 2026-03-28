@@ -1,0 +1,136 @@
+{
+  "auditDate": "2026-03-28",
+  "course": "flutter",
+  "module": "14-frontend-testing",
+  "moduleId": "module-14",
+  "lessonsAudited": 7,
+  "challengesAudited": 7,
+  "totalIssues": 2,
+  "issues": [
+    {
+      "severity": "LOW",
+      "type": "OUTDATED",
+      "lesson": "02-unit-testing-business-logic",
+      "description": "Mocktail version reference is outdated (1.0.0 vs current 1.0.4)",
+      "details": "Content references mocktail: ^1.0.0. While functional, this could be updated to ^1.0.4 for bug fixes. Not critical as Flutter dependency resolution handles this."
+    },
+    {
+      "severity": "LOW",
+      "type": "METADATA",
+      "lesson": "module-14",
+      "description": "Module title says 'Module 13' instead of 'Module 14'",
+      "details": "module.json title field: 'Module 13: Frontend Testing' - should be 'Module 14: Frontend Testing' to match the folder structure and order."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson-14-01",
+      "title": "Testing Pyramid for Flutter",
+      "status": "COMPLETE",
+      "contentFiles": 5,
+      "contentWords": 380,
+      "issues": []
+    },
+    {
+      "id": "lesson-14-02",
+      "title": "Unit Testing Business Logic",
+      "status": "COMPLETE",
+      "contentFiles": 4,
+      "contentWords": 620,
+      "issues": [
+        "Mocktail version could be updated"
+      ]
+    },
+    {
+      "id": "lesson-14-03",
+      "title": "Widget Testing Fundamentals",
+      "status": "COMPLETE",
+      "contentFiles": 6,
+      "contentWords": 720,
+      "issues": []
+    },
+    {
+      "id": "lesson-14-04",
+      "title": "Widget Testing with Riverpod",
+      "status": "COMPLETE",
+      "contentFiles": 4,
+      "contentWords": 580,
+      "issues": []
+    },
+    {
+      "id": "lesson-14-05",
+      "title": "Golden Tests",
+      "status": "COMPLETE",
+      "contentFiles": 6,
+      "contentWords": 650,
+      "issues": []
+    },
+    {
+      "id": "lesson-14-06",
+      "title": "Integration Tests",
+      "status": "COMPLETE",
+      "contentFiles": 5,
+      "contentWords": 540,
+      "issues": []
+    },
+    {
+      "id": "lesson-14-07",
+      "title": "TDD Workflow",
+      "status": "COMPLETE",
+      "contentFiles": 4,
+      "contentWords": 420,
+      "issues": []
+    }
+  ],
+  "challenges": [
+    {
+      "id": "13.1-quiz-1",
+      "title": "Testing Pyramid Quiz",
+      "type": "QUIZ",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (13 instead of 14)"]
+    },
+    {
+      "id": "13.2-challenge-0",
+      "title": "Test a TodoNotifier",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (13 instead of 14)"]
+    },
+    {
+      "id": "13.3-challenge-0",
+      "title": "Test a Counter Widget",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (13 instead of 14)"]
+    },
+    {
+      "id": "13.4-challenge-0",
+      "title": "Test a Product List Screen",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (13 instead of 14)"]
+    },
+    {
+      "id": "13.5-challenge-0",
+      "title": "Create Golden Tests for UserAvatar",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (13 instead of 14)"]
+    },
+    {
+      "id": "13.6-challenge-0",
+      "title": "Write Login Flow Integration Test",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (13 instead of 14)"]
+    },
+    {
+      "id": "13.7-challenge-0",
+      "title": "TDD Build a Counter with Tests First",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (13 instead of 14)"]
+    }
+  ]
+}

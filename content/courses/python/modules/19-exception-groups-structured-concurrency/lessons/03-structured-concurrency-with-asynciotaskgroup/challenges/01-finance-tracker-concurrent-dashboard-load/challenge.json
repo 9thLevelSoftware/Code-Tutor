@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-17-lesson-03-challenge-1",
+  "id": "module-19-lesson-03-challenge-1",
   "title": "Finance Tracker: Concurrent Dashboard Load",
   "description": "Build the `load_dashboard()` function for the Finance Tracker that fetches accounts, transactions, and budgets concurrently using TaskGroup.\n\n**Requirements:**\n- Use `asyncio.TaskGroup` to run all fetches in parallel\n- Return a dictionary with all three data sources\n- Handle errors with `except*` for both ValueError and ConnectionError",
   "instructions": "Complete the Finance Tracker dashboard loader using TaskGroup.",

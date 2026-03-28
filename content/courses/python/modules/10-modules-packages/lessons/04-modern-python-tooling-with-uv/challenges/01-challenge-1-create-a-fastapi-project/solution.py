@@ -6,7 +6,7 @@ name = "my-api"
 version = "0.1.0"
 description = "A modern FastAPI web API"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.0",
     "pydantic>=2.10.0",
@@ -26,7 +26,7 @@ build-backend = "hatchling.build"
 
 [tool.ruff]
 line-length = 88
-target-version = "py313"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
@@ -52,7 +52,7 @@ checks = [
     ("pydantic" in pyproject_content.lower(), "Has Pydantic dependency"),
     ("uvicorn" in pyproject_content.lower(), "Has Uvicorn dependency"),
     ("requires-python" in pyproject_content, "Has Python version requirement"),
-    (">=3.13" in pyproject_content, "Requires Python 3.13+"),
+    (">=3.12" in pyproject_content, "Requires Python 3.12+"),
     ("[project.optional-dependencies]" in pyproject_content, "Has dev dependencies"),
     ("pytest" in pyproject_content.lower(), "Has pytest for testing"),
     ("ruff" in pyproject_content.lower(), "Has ruff for linting"),

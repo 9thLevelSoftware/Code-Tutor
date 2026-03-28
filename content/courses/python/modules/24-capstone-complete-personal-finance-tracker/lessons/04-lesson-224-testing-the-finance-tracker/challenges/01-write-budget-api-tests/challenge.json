@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-22-lesson-04-challenge-1",
+  "id": "module-24-lesson-04-challenge-1",
   "title": "Write Budget API Tests",
   "description": "Create comprehensive tests for the budgets API endpoints.",
   "instructions": "Write tests that cover:\n1. Creating a budget (happy path)\n2. Creating budget with invalid amount (validation)\n3. Getting budget status (spent vs limit)\n4. Budget alerts when over limit\n5. User isolation (can't see other user's budgets)",

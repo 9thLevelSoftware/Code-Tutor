@@ -1,0 +1,154 @@
+{
+  "auditDate": "2026-03-28",
+  "course": "flutter",
+  "module": "13-offline-first-and-persistence",
+  "moduleId": "module-13",
+  "lessonsAudited": 7,
+  "challengesAudited": 7,
+  "totalIssues": 3,
+  "issues": [
+    {
+      "severity": "HIGH",
+      "type": "METADATA",
+      "lesson": "01-offline-first-principles",
+      "challenge": "01-offline-first-concepts",
+      "description": "Challenge ID uses inconsistent format '12.1-quiz-1' instead of module-prefixed format like '13.1-quiz-1'",
+      "details": "Challenge ID '12.1-quiz-1' appears to reference wrong module (12 instead of 13)."
+    },
+    {
+      "severity": "MEDIUM",
+      "type": "CODE_ISSUES",
+      "lesson": "03-drift-setup-queries",
+      "challenge": "01-build-a-task-table",
+      "description": "Starter file contains TODO comment that needs to be removed for production",
+      "details": "File: starter.dart - Contains '// TODO: Define the Tasks table' comment. Starter files should provide minimal guidance without explicit TODO markers."
+    },
+    {
+      "severity": "LOW",
+      "type": "METADATA",
+      "lesson": "module-13",
+      "description": "Module title says 'Module 12' instead of 'Module 13'",
+      "details": "module.json title field: 'Module 12: Offline-First & Persistence' - should be 'Module 13: Offline-First & Persistence' to match the folder structure and order."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson-13-01",
+      "title": "Offline-First Principles",
+      "status": "COMPLETE",
+      "contentFiles": 5,
+      "contentWords": 425,
+      "issues": [
+        "Challenge ID '12.1-quiz-1' uses inconsistent numbering"
+      ]
+    },
+    {
+      "id": "lesson-13-02",
+      "title": "Local Storage Options",
+      "status": "COMPLETE",
+      "contentFiles": 8,
+      "contentWords": 680,
+      "issues": []
+    },
+    {
+      "id": "lesson-13-03",
+      "title": "Drift Setup & Queries",
+      "status": "COMPLETE",
+      "contentFiles": 6,
+      "contentWords": 890,
+      "issues": [
+        "Starter file contains TODO comment"
+      ]
+    },
+    {
+      "id": "lesson-13-04",
+      "title": "Drift Migrations",
+      "status": "COMPLETE",
+      "contentFiles": 6,
+      "contentWords": 520,
+      "issues": []
+    },
+    {
+      "id": "lesson-13-05",
+      "title": "Sync Engine Design",
+      "status": "COMPLETE",
+      "contentFiles": 6,
+      "contentWords": 710,
+      "issues": []
+    },
+    {
+      "id": "lesson-13-06",
+      "title": "Optimistic UI Updates",
+      "status": "COMPLETE",
+      "contentFiles": 4,
+      "contentWords": 450,
+      "issues": []
+    },
+    {
+      "id": "lesson-13-07",
+      "title": "Mini-Project: Offline Notes",
+      "status": "COMPLETE",
+      "contentFiles": 6,
+      "contentWords": 520,
+      "issues": []
+    }
+  ],
+  "challenges": [
+    {
+      "id": "12.1-quiz-1",
+      "title": "Offline-First Concepts",
+      "type": "QUIZ",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (12 instead of 13)"]
+    },
+    {
+      "id": "13.2-quiz-1",
+      "title": "Storage Options Quiz",
+      "type": "QUIZ",
+      "filesComplete": true,
+      "issues": []
+    },
+    {
+      "id": "12.3-challenge-1",
+      "title": "Build a Task Table",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (12 instead of 13)"]
+    },
+    {
+      "id": "12.4-challenge-1",
+      "title": "Migration Knowledge Check",
+      "type": "QUIZ",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (12 instead of 13)"]
+    },
+    {
+      "id": "12.5-challenge-1",
+      "title": "Sync Engine Concepts",
+      "type": "QUIZ",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (12 instead of 13)"]
+    },
+    {
+      "id": "12.6-challenge-1",
+      "title": "Build a Sync Status Widget",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (12 instead of 13)"]
+    },
+    {
+      "id": "12.7-challenge-1",
+      "title": "Implement Note Creation",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (12 instead of 13)"]
+    },
+    {
+      "id": "12.7-challenge-2",
+      "title": "Offline-First Architecture",
+      "type": "FREE_CODING",
+      "filesComplete": true,
+      "issues": ["ID uses wrong module prefix (12 instead of 13)"]
+    }
+  ]
+}

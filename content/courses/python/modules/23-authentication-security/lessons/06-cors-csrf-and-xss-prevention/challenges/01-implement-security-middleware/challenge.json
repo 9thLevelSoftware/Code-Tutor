@@ -1,5 +1,5 @@
 {
-  "id": "module-21-lesson-06-challenge-1",
+  "id": "module-23-lesson-06-challenge-1",
   "type": "FREE_CODING",
   "title": "Implement Security Middleware",
   "description": "Create a comprehensive security middleware for the Finance Tracker that adds security headers, implements CSRF protection, and sanitizes output.",

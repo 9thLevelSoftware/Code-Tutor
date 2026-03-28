@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "module-16-lesson-02-challenge-1",
+  "id": "module-18-lesson-02-challenge-1",
   "title": "Practice Exercise",
   "description": "Create a budget tracker CLI with `set`, `spend`, and `remaining` commands.\n\n**Requirements:**\n- `set <amount>` - Set the monthly budget\n- `spend <amount> <category>` - Record an expense\n- `remaining` - Show budget remaining\n\n**Example:**\n```\n$ python budget.py set 1000\nBudget set to $1000.00\n$ python budget.py spend 50 food\nSpent $50.00 on food\n$ python budget.py remaining\nRemaining: $950.00\n```",
   "instructions": "Build a budget CLI with set, spend, and remaining subcommands.",

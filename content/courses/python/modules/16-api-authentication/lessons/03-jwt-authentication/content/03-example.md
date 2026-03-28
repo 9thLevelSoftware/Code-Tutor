@@ -23,7 +23,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 import jwt
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from passlib.context import CryptContext
 
 app = FastAPI()
@@ -38,7 +38,7 @@ ALGORITHM = "HS256"
 def create_access_token(data: dict) -> str:
     """Create JWT token with 30 minute expiration."""
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(minutes=30)
+    expire = datetime.now(timezone.utc) + timedelta(minutes=30)
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
@@ -93,7 +93,7 @@ print("   - Verifies password hash")
 print()
 print("3. If valid, server responds:")
 example_token = jwt.encode(
-    {"sub": "alice@example.com", "exp": datetime.utcnow() + timedelta(minutes=30)},
+    {"sub": "alice@example.com", "exp": datetime.now(timezone.utc) + timedelta(minutes=30)},
     SECRET_KEY,
     algorithm=ALGORITHM
 )

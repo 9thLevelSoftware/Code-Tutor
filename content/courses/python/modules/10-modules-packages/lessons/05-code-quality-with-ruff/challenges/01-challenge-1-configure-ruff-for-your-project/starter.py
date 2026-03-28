@@ -21,8 +21,8 @@ print("=" * 50)
 print(ruff_config)
 
 # Validate the configuration
-if "py313" in ruff_config or "py313" in ruff_config:
-    print("\n[OK] Targets Python 3.13")
+if "py312" in ruff_config or "py312" in ruff_config:
+    print("\n[OK] Targets Python 3.12")
 if "88" in ruff_config:
     print("[OK] Line length is 88")
 if '"E"' in ruff_config and '"F"' in ruff_config:

@@ -1,0 +1,156 @@
+{
+  "course": "csharp",
+  "modules": [
+    "13-building-interactive-uis-with-blazor",
+    "14-blazor-net-aspire-deployment",
+    "15-unit-testing-with-xunit",
+    "16-building-cloud-native-apps-with-net-aspire",
+    "17-native-aot-and-performance-optimization",
+    "18-clean-architecture"
+  ],
+  "reviewDate": "2026-03-28",
+  "totalLessons": 27,
+  "lessonsReviewed": 27,
+  "findings": [
+    {
+      "lessonId": "lesson-13-02",
+      "lessonTitle": "Blazor Rendering Modes (.NET 8)",
+      "moduleId": "module-13",
+      "category": "OUTDATED",
+      "severity": "minor",
+      "description": "Lesson title and content references '.NET 8' for Blazor rendering modes. While the features are correct and available in .NET 9, the version reference should be updated to reflect the target .NET 9 version. The content correctly mentions .NET 9 improvements but the title still says '.NET 8'.",
+      "affectedFiles": [
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/02-blazor-rendering-modes-net-8/lesson.json",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/02-blazor-rendering-modes-net-8/content/01-analogy.md",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/02-blazor-rendering-modes-net-8/content/02-example.md",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/02-blazor-rendering-modes-net-8/challenges/01-practice-challenge/challenge.json"
+      ],
+      "webResearchNote": "Blazor rendering modes (Server, WebAssembly, Auto) introduced in .NET 8 continue to be fully supported in .NET 9 with additional improvements like [ExcludeFromInteractiveRouting] attribute."
+    },
+    {
+      "lessonId": "lesson-13-07",
+      "lessonTitle": "QuickGrid Component (.NET 8 Feature)",
+      "moduleId": "module-13",
+      "category": "OUTDATED",
+      "severity": "minor",
+      "description": "Lesson title specifically references '.NET 8 Feature'. QuickGrid continues to be available and enhanced in .NET 9. The title should be updated to '.NET 9' or made version-agnostic like 'QuickGrid Component (Built-in Data Grid)'.",
+      "affectedFiles": [
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/07-quickgrid-component-net-8-feature/lesson.json",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/07-quickgrid-component-net-8-feature/content/01-analogy.md",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/07-quickgrid-component-net-8-feature/content/02-example.md",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/07-quickgrid-component-net-8-feature/content/04-warning.md",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/07-quickgrid-component-net-8-feature/challenges/01-practice-challenge/challenge.json"
+      ],
+      "webResearchNote": "QuickGrid was introduced in .NET 8 and continues to be fully supported in .NET 9. The component is included in .NET 9 templates and has no breaking changes."
+    },
+    {
+      "lessonId": "lesson-14-06",
+      "lessonTitle": "Next Steps (Your Journey Continues!)",
+      "moduleId": "module-14",
+      "category": "OUTDATED",
+      "severity": "minor",
+      "description": "The solution.cs file references book 'C# 12 and .NET 8' by Mark J. Price. For a course targeting .NET 9/C# 13, this book recommendation should be updated to the latest edition covering .NET 9/C# 13.",
+      "affectedFiles": [
+        "content/courses/csharp/modules/14-blazor-net-aspire-deployment/lessons/06-next-steps-your-journey-continues/challenges/01-practice-challenge/solution.cs"
+      ],
+      "webResearchNote": "Mark J. Price's 'C# 12 and .NET 8' was the latest edition as of late 2024. For .NET 9/C# 13 content, a newer edition or supplemental resources should be referenced."
+    },
+    {
+      "lessonId": "lesson-14-04",
+      "lessonTitle": "Version Control with Git (Save Your Work!)",
+      "moduleId": "module-14",
+      "category": "PEDAGOGY",
+      "severity": "minor",
+      "description": "This Git lesson appears out of place in the Blazor Deployment module. Git/version control concepts are fundamental and should be covered earlier in the curriculum (e.g., in M01-M02 getting started modules), not in an advanced module about Blazor deployment.",
+      "affectedFiles": [
+        "content/courses/csharp/modules/14-blazor-net-aspire-deployment/lessons/04-version-control-with-git-save-your-work/lesson.json"
+      ]
+    },
+    {
+      "lessonId": "lesson-13-01",
+      "lessonTitle": "What is Blazor? (C# in the Browser!)",
+      "moduleId": "module-13",
+      "category": "OUTDATED",
+      "severity": "minor",
+      "description": "Content references '.NET 8+' and mentions 'Blazor Auto (.NET 8)' as if it's a new feature. While technically accurate that it was introduced in .NET 8, the content should emphasize that this is standard in .NET 9.",
+      "affectedFiles": [
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/01-what-is-blazor-c-in-the-browser/content/01-analogy.md",
+        "content/courses/csharp/modules/13-building-interactive-uis-with-blazor/lessons/01-what-is-blazor-c-in-the-browser/content/04-warning.md"
+      ],
+      "webResearchNote": "Blazor was introduced earlier, but unified hosting model with Auto rendering mode was the .NET 8 feature that continues in .NET 9."
+    },
+    {
+      "lessonId": "lesson-17-04",
+      "lessonTitle": "Minimal APIs with AOT",
+      "moduleId": "module-17",
+      "category": "OUTDATED",
+      "severity": "minor",
+      "description": "Content correctly mentions .NET 9 features like 'built-in OpenAPI document generation with Native AOT support' and compares .NET 8 vs .NET 9. However, the lesson metadata doesn't reflect this is .NET 9 specific content.",
+      "affectedFiles": [
+        "content/courses/csharp/modules/17-native-aot-and-performance-optimization/lessons/04-minimal-apis-with-aot/content/04-warning.md",
+        "content/courses/csharp/modules/17-native-aot-and-performance-optimization/lessons/04-minimal-apis-with-aot/content/05-key_point.md"
+      ],
+      "webResearchNote": "Native AOT was introduced in .NET 7, improved in .NET 8, and significantly enhanced in .NET 9 with better memory usage (30-40% less) and built-in OpenAPI support."
+    },
+    {
+      "lessonId": "lesson-17-05",
+      "lessonTitle": "Benchmarking with BenchmarkDotNet",
+      "moduleId": "module-17",
+      "category": "OUTDATED",
+      "severity": "minor",
+      "description": "Content mentions comparing '.NET 8 vs .NET 9' which implies .NET 9 is the current/new version. This is correct, but the course should ensure all other lessons are updated to .NET 9 for consistency.",
+      "affectedFiles": [
+        "content/courses/csharp/modules/17-native-aot-and-performance-optimization/lessons/05-benchmarking-with-benchmarkdotnet/content/04-warning.md"
+      ],
+      "webResearchNote": "BenchmarkDotNet is the standard benchmarking library for .NET and supports comparing different .NET versions."
+    }
+  ],
+  "summary": {
+    "totalIssues": 7,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 7
+    },
+    "byCategory": {
+      "OUTDATED": 5,
+      "PEDAGOGY": 1,
+      "STUB": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0
+    },
+    "modulesBreakdown": {
+      "13-building-interactive-uis-with-blazor": {
+        "totalLessons": 7,
+        "issues": 3,
+        "severity": "minor"
+      },
+      "14-blazor-net-aspire-deployment": {
+        "totalLessons": 6,
+        "issues": 2,
+        "severity": "minor"
+      },
+      "15-unit-testing-with-xunit": {
+        "totalLessons": 4,
+        "issues": 0,
+        "severity": "none"
+      },
+      "16-building-cloud-native-apps-with-net-aspire": {
+        "totalLessons": 5,
+        "issues": 0,
+        "severity": "none"
+      },
+      "17-native-aot-and-performance-optimization": {
+        "totalLessons": 5,
+        "issues": 2,
+        "severity": "minor"
+      },
+      "18-clean-architecture": {
+        "totalLessons": 4,
+        "issues": 0,
+        "severity": "none"
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "id": "module-21-lesson-08-challenge-1",
+  "id": "module-23-lesson-08-challenge-1",
   "type": "FREE_CODING",
   "title": "Implement a Rate Limiter",
   "description": "Build a rate limiter that protects the Finance Tracker API from abuse using the sliding window algorithm.",

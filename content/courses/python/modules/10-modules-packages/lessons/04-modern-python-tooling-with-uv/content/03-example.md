@@ -29,7 +29,7 @@ cd my-awesome-project
 #   pyproject.toml    <- Project config and dependencies
 #   README.md         <- Documentation
 #   hello.py          <- Starter script
-#   .python-version   <- Python version (e.g., "3.13")
+#   .python-version   <- Python version (e.g., "3.12")
 """)
 
 print("\n" + "="*60)
@@ -41,7 +41,7 @@ name = "my-awesome-project"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = []
 
 [build-system]

@@ -1,24 +1,26 @@
-class Employee:
-    # TODO: Add class attributes
+class BankAccount:
+    # TODO: Define class attributes: bank_name, total_accounts
     
-    def __init__(self, name, position, salary):
-        # TODO: Set instance attributes
-        # TODO: Increment employee_count
+    def __init__(self, owner, balance=0):
+        # TODO: Set instance attributes and increment total_accounts
         pass
     
-    def give_raise(self, amount):
-        # TODO: Increase salary
+    def deposit(self, amount):
+        # TODO: Add amount to balance if valid
+        pass
+    
+    def withdraw(self, amount):
+        # TODO: Subtract amount if valid and sufficient balance
         pass
     
     @classmethod
-    def from_dict(cls, emp_dict):
-        # TODO: Create employee from dictionary
-        # Example: {'name': 'John', 'position': 'Dev', 'salary': 75000}
+    def get_total_accounts(cls):
+        # TODO: Return total number of accounts
         pass
     
     @staticmethod
-    def is_valid_salary(amount):
-        # TODO: Return True if salary between 20k and 500k
+    def is_valid_amount(amount):
+        # TODO: Return True if amount is positive number
         pass
 
-# TODO: Create employees and test methods
+# TODO: Create accounts and test methods

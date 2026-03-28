@@ -2,7 +2,7 @@
 # Requirements:
 # - Project name: my-api
 # - Version: 0.1.0
-# - Python >= 3.13
+# - Python >= 3.12
 # - Dependencies: fastapi, pydantic, uvicorn
 # - Dev dependencies: pytest, httpx, ruff
 

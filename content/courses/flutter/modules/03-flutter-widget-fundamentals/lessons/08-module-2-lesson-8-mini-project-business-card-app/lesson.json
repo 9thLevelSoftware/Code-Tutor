@@ -1,6 +1,7 @@
 {
   "id": "lesson-03-08",
   "title": "Module 2, Lesson 8: Mini-Project - Business Card App",
+  "description": "Apply everything learned in this module by building a professional business card app. Combine Text, Image, Container, Column, and Row widgets to create a polished, responsive UI.",
   "moduleId": "module-03",
   "order": 8,
   "estimatedMinutes": 60,

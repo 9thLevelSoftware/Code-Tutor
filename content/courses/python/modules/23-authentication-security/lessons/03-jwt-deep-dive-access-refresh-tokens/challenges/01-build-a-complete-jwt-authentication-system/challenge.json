@@ -1,5 +1,5 @@
 {
-  "id": "module-21-lesson-03-challenge-1",
+  "id": "module-23-lesson-03-challenge-1",
   "type": "FREE_CODING",
   "title": "Build a Complete JWT Authentication System",
   "description": "Create a JWT authentication service for the Finance Tracker that handles login, token refresh, and secure logout with token revocation.",

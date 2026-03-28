@@ -1,40 +1,36 @@
-class Payment:
-    def __init__(self, amount):
-        self.amount = amount
+class Shape:
+    def area(self):
+        # TODO: Raise NotImplementedError
+        pass
     
-    def pay(self):
+    def perimeter(self):
         # TODO: Raise NotImplementedError
         pass
 
-class CreditCard(Payment):
-    def __init__(self, amount, card_number):
-        # TODO: Call parent init and store card_number
+class Circle(Shape):
+    def __init__(self, radius):
+        # TODO: Set radius
         pass
     
-    def pay(self):
-        # TODO: Return payment message
-        pass
-
-class PayPal(Payment):
-    def __init__(self, amount, email):
-        # TODO: Call parent init and store email
+    def area(self):
+        # TODO: Calculate and return circle area (π * r²)
         pass
     
-    def pay(self):
-        # TODO: Return payment message
+    def perimeter(self):
+        # TODO: Calculate and return circumference (2 * π * r)
         pass
 
-class Bitcoin(Payment):
-    def __init__(self, amount, wallet_address):
-        # TODO: Call parent init and store wallet_address
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        # TODO: Set width and height
         pass
     
-    def pay(self):
-        # TODO: Return payment message
+    def area(self):
+        # TODO: Calculate and return rectangle area (width * height)
+        pass
+    
+    def perimeter(self):
+        # TODO: Calculate and return perimeter (2 * (width + height))
         pass
 
-def process_payment(payment):
-    # TODO: Process any payment type
-    pass
-
-# TODO: Create different payment types and process them
+# TODO: Create shapes and demonstrate polymorphism
