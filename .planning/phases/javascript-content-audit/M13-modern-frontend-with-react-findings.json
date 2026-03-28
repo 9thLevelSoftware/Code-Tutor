@@ -1,0 +1,76 @@
+{
+  "course": "javascript",
+  "module": "13-modern-frontend-with-react",
+  "moduleTitle": "Module 13: Modern Frontend with React",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 7,
+  "lessonsReviewed": 7,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/13-modern-frontend-with-react/lessons/01-what-is-react",
+      "lessonTitle": "What is React?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/13-modern-frontend-with-react/lessons/02-components-and-jsx",
+      "lessonTitle": "Components and JSX",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/13-modern-frontend-with-react/lessons/03-state-with-usestate",
+      "lessonTitle": "State with useState",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/13-modern-frontend-with-react/lessons/04-effects-with-useeffect",
+      "lessonTitle": "Effects with useEffect",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/13-modern-frontend-with-react/lessons/05-handling-events-in-react",
+      "lessonTitle": "Handling Events in React",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/13-modern-frontend-with-react/lessons/06-conditional-rendering-and-lists",
+      "lessonTitle": "Conditional Rendering and Lists",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/13-modern-frontend-with-react/lessons/07-building-a-complete-react-app",
+      "lessonTitle": "Building a Complete React App",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

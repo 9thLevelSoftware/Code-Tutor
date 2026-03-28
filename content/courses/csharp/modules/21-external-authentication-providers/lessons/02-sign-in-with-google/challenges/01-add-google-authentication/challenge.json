@@ -1,0 +1,86 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-02-challenge-google-auth",
+  "title": "Add Google Authentication with Account Linking",
+  "description": "Integrate Google OAuth into an ASP.NET Core Identity app with automatic account linking for existing users.",
+  "instructions": "Add Google OAuth to an existing ASP.NET Core Identity application. Implement full account linking flow where existing local users can link their Google account, and new users are created automatically.\n\n**Requirements:**\n\n1. **Configure Identity**\n   - Use ApplicationUser (extends IdentityUser with FirstName, LastName, ProfilePictureUrl, CreatedAt, LastLoginAt)\n   - Password policy: minimum 8 chars, require digit, require uppercase\n   - RequireConfirmedEmail = false for easier testing\n\n2. **Configure Google Authentication**\n   - Add Cookie authentication (default)\n   - Add Google authentication with:\n     - ClientId and ClientSecret from Configuration\n     - SaveTokens = true\n     - Scopes: email, profile\n     - AccessType = \"offline\" (to get refresh token)\n     - Map 'picture' claim to ClaimTypes.Uri for avatar URL\n     - Log email in OnCreatingTicket event\n\n3. **Create /auth/google/login Endpoint**\n   - Challenge with Google scheme\n   - Redirect to /auth/google/callback after authentication\n\n4. **Create /auth/google/callback Endpoint**\n   This is the critical account linking logic:\n   - Get external login info using SignInManager.GetExternalLoginInfoAsync()\n   - If null, redirect to /login-failed\n   - Extract email, given_name, family_name, picture from claims\n   - Find user by email using UserManager\n   - **If user exists but Google not linked:**\n     - Link Google using userManager.AddLoginAsync()\n     - Sign in and redirect to /account/linked\n   - **If user doesn't exist:**\n     - Create new ApplicationUser with Google info\n     - Set EmailConfirmed = true (Google verified)\n     - Add external login and sign in\n     - Redirect to /welcome\n   - **If user exists and Google already linked:**\n     - Sign in normally and redirect to /dashboard\n\n5. **Create /api/account/link/google**\n   - Protected endpoint for logged-in users to add Google to existing account\n\n6. **Create /api/account/external-logins**\n   - Protected endpoint returning user's linked providers and account status",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure Google authentication",
+      "expectedOutput": "AddGoogle",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should set AccessType to offline for refresh tokens",
+      "expectedOutput": "AccessType",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should use SignInManager for external login",
+      "expectedOutput": "GetExternalLoginInfoAsync",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should link external login to existing user",
+      "expectedOutput": "AddLoginAsync",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should require authorization on protected endpoints",
+      "expectedOutput": "RequireAuthorization",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use builder.Services.AddIdentity<ApplicationUser, IdentityRole>() and chain .AddEntityFrameworkStores<ApplicationDbContext>()."
+    },
+    {
+      "level": 2,
+      "text": "For Google, use options.AccessType = 'offline' to request a refresh token."
+    },
+    {
+      "level": 3,
+      "text": "In the callback, await signInManager.GetExternalLoginInfoAsync() gets the authenticated user info from Google."
+    },
+    {
+      "level": 4,
+      "text": "Use userManager.AddLoginAsync(user, info) to link a Google account to an existing Identity user."
+    },
+    {
+      "level": 5,
+      "text": "Check if Google is already linked using userManager.GetLoginsAsync(user) and checking for LoginProvider == 'Google'."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not checking if external login is already linked before adding",
+      "consequence": "Duplicate external login errors or constraint violations in database.",
+      "correction": "Check existing logins with GetLoginsAsync() before calling AddLoginAsync()."
+    },
+    {
+      "mistake": "Forgetting to set EmailConfirmed = true for Google-created accounts",
+      "consequence": "New users cannot log in because Identity requires email confirmation.",
+      "correction": "Set EmailConfirmed = true when creating user from Google since Google already verified the email."
+    },
+    {
+      "mistake": "Not handling the case where email already exists but from different provider",
+      "consequence": "Users with existing local accounts can't link Google, or duplicate accounts created.",
+      "correction": "Always look up by email first. If exists, link the external login rather than creating new user."
+    },
+    {
+      "mistake": "Not calling SaveTokens = true when refresh tokens needed",
+      "consequence": "Cannot get refresh token for offline API access to Google services.",
+      "correction": "Set SaveTokens = true AND AccessType = 'offline' to receive refresh tokens."
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedMinutes": 40
+}

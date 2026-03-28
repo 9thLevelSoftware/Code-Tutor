@@ -1,6 +1,6 @@
 {
   "type": "QUIZ",
-  "id": "10.3-quiz-1",
+  "id": "11.3-quiz-1",
   "title": "JSON Serialization Knowledge Check",
   "description": "Test your understanding of JSON serialization patterns in Dart.",
   "questions": [

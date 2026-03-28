@@ -1,0 +1,150 @@
+{
+  "audit_metadata": {
+    "audited_by": "Architecture & DI Auditor",
+    "modules_audited": ["09-kmp-architecture-patterns", "10-dependency-injection-with-koin", "11-testing-kmp-applications"],
+    "total_lessons": 21,
+    "total_challenges": 21,
+    "total_files_audited": 126,
+    "audit_date": "2026-03-28",
+    "audit_scope": "STUBS, INACCURATE, OUTDATED, INCOMPLETE, METADATA, PEDAGOGY"
+  },
+  "findings": [
+    {
+      "file_path": "modules/09-kmp-architecture-patterns/lessons/04-lesson-6b4-mvi-pattern-implementation/content/05-example.md",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "MVI example code uses SwipeRefresh composable which is deprecated in modern Compose Material. The SwipeRefresh component from accompanist is deprecated in favor of PullRefresh from Compose Material3.",
+      "suggested_fix": "Update example to use PullRefresh from androidx.compose.material3:pullrefresh or add a note about version compatibility"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/03-lesson-6c3-koin-in-kmp-projects/content/07-example.md",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Koin example code uses `KoinPlatform.getKoin()` which may not be the recommended approach in Koin 4.0. The Swift interop helper pattern shown is valid but should reference current Koin Multiplatform documentation.",
+      "suggested_fix": "Verify against Koin 4.0 documentation and update if needed. Consider adding KoinContext helper pattern instead."
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/06-lesson-6c6-testing-with-koin/content/07-example.md",
+      "issue_type": "OUTDATED",
+      "severity": "minor",
+      "description": "Koin test example uses `verify()` function from koin-test which may have changed in newer versions. The testing DSL has evolved.",
+      "suggested_fix": "Update to use current Koin 4.0 testing API with proper imports and verify syntax"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/05-lesson-6c5-koin-annotations-modern-approach/challenges/01-convert-dsl-to-annotations/solution.kt",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Koin annotations solution uses @Single and @Factory annotations but doesn't show required koin-compiler plugin configuration or the gradle setup needed for KSP. Without this context, learners won't be able to make annotations work.",
+      "suggested_fix": "Add content explaining the required KSP plugin configuration and gradle setup for Koin annotations to function"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/04-lesson-6c4-platform-specific-dependencies/content/04-example.md",
+      "issue_type": "INACCURATE",
+      "severity": "critical",
+      "description": "Platform-specific example uses NSNumber which requires proper Kotlin/Native Foundation import. The code snippet lacks import statements and may not compile as shown.",
+      "suggested_fix": "Add required imports (platform.Foundation.NSNumber) and clarify the Kotlin/Native interop requirements"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/04-lesson-7a4-mocking-in-kmp-limitations-and-workarounds/content/04-example.md",
+      "issue_type": "OUTDATED",
+      "severity": "minor",
+      "description": "MockK usage examples show `mock<T> { }` and `everySuspend { }` patterns but don't mention MockK's KMP support limitations or version requirements. MockK's KMP support is still evolving.",
+      "suggested_fix": "Add warning about MockK's experimental KMP support and suggest alternatives like manual fakes for production KMP projects"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/07-lesson-7a7-cicd-for-kmp-testing/challenges/01-create-a-ci-workflow/solution.kt",
+      "issue_type": "INCOMPLETE",
+      "severity": "major",
+      "description": "CI workflow solution is stored in a .kt file but contains YAML content. This is technically incorrect - the solution should be a YAML file or the challenge should accept the mixed content appropriately.",
+      "suggested_fix": "Rename solution file to .yml extension or adjust challenge type to properly handle YAML workflow solutions"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/05-lesson-7a5-ui-testing-with-compose-multiplatform/content/04-example.md",
+      "issue_type": "INCOMPLETE",
+      "severity": "major",
+      "description": "UI testing lesson references Compose Test API (createComposeRule, onNodeWithText) but doesn't show the required test dependency setup in build.gradle.kts. Learners cannot run the tests without knowing the dependencies.",
+      "suggested_fix": "Add gradle dependency configuration block showing required testing dependencies for Compose Multiplatform"
+    },
+    {
+      "file_path": "modules/09-kmp-architecture-patterns/lessons/06-lesson-6b6-navigation-patterns/content/01-theory.md",
+      "issue_type": "INCOMPLETE",
+      "severity": "minor",
+      "description": "Navigation patterns lesson mentions type-safe navigation but doesn't provide concrete examples of how to implement type-safe navigation with Voyager or other KMP navigation libraries.",
+      "suggested_fix": "Add a concrete example showing type-safe navigation implementation with sealed classes and Voyager Screen types"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/01-lesson-6c1-why-dependency-injection/content/03-analogy.md",
+      "issue_type": "PEDAGOGY",
+      "severity": "minor",
+      "description": "DI analogy (coffee shop) is present but the lesson transitions too quickly from analogy to code without clearly mapping analogy elements to DI concepts.",
+      "suggested_fix": "Add explicit mapping section showing: Barista -> Dependency Provider, Coffee Machine -> Service, Customer -> Client/Consumer"
+    },
+    {
+      "file_path": "modules/09-kmp-architecture-patterns/lessons/01-lesson-6b1-why-architecture-matters/challenges/01-identify-architecture-problems/challenge.json",
+      "issue_type": "METADATA",
+      "severity": "minor",
+      "description": "Challenge validation rules check for specific file structure but the hints don't clearly indicate what the learner needs to identify in the messy code.",
+      "suggested_fix": "Add clearer hints about specific architectural violations to look for (tight coupling, UI logic in database, etc.)"
+    },
+    {
+      "file_path": "modules/09-kmp-architecture-patterns/lessons/07-lesson-6b7-architecture-in-practice/content/04-example.md",
+      "issue_type": "INACCURATE",
+      "severity": "minor",
+      "description": "Architecture in practice example uses generic ViewModel without specifying lifecycle dependencies. The KMP ViewModel shown assumes commonMain implementation but doesn't clarify platform lifecycle integration.",
+      "suggested_fix": "Clarify that the ViewModel requires lifecycle-viewmodel-compose dependency and show platform-specific lifecycle integration"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/07-lesson-6c7-advanced-patterns/content/05-example.md",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Koin scope example shows session management but doesn't demonstrate proper scope closing when session ends, which can lead to memory leaks.",
+      "suggested_fix": "Add example showing `scope.close()` when user logs out or session expires"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/02-lesson-7a2-unit-testing-shared-code/challenges/01-test-a-search-use-case/solution.kt",
+      "issue_type": "INACCURATE",
+      "severity": "minor",
+      "description": "Test solution uses kotlin.test but doesn't include the import statement. This could confuse learners about which test framework is being used.",
+      "suggested_fix": "Add import kotlin.test.* at the top of the solution file for clarity"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/03-lesson-7a3-testing-coroutines-and-flows/content/06-example.md",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Turbine example doesn't show the required dependency import or gradle setup. Learners won't know how to add Turbine to their project.",
+      "suggested_fix": "Add gradle dependency snippet for Turbine library and import statement for app.cash.turbine.test"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/06-lesson-6c6-testing-with-koin/content/07-example.md",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Koin test example uses `stopKoin()` at the end but doesn't show proper test rule/class setup that would handle this automatically. This pattern can cause test isolation issues.",
+      "suggested_fix": "Recommend using `@After` or AutoCloseKoinTest class pattern instead of manual stopKoin()"
+    }
+  ],
+  "summary": {
+    "critical_issues": 1,
+    "major_issues": 9,
+    "minor_issues": 6,
+    "total_issues": 16,
+    "lessons_with_issues": 13,
+    "clean_lessons": 8,
+    "module_breakdown": {
+      "M09": {
+        "lessons": 7,
+        "issues": 5,
+        "issue_types": ["INACCURATE", "INCOMPLETE"]
+      },
+      "M10": {
+        "lessons": 7,
+        "issues": 8,
+        "issue_types": ["INACCURATE", "OUTDATED", "INCOMPLETE", "PEDAGOGY"]
+      },
+      "M11": {
+        "lessons": 7,
+        "issues": 3,
+        "issue_types": ["OUTDATED", "INCOMPLETE", "INACCURATE"]
+      }
+    }
+  }
+}

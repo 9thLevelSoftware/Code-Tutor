@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.5-challenge-2",
+  "id": "11.5-challenge-2",
   "title": "Implement Session Timeout with Activity Tracking",
   "description": "Add automatic session timeout that logs users out after a period of inactivity, with a warning dialog before timeout.",
   "instructions": "Create an activity-based session timeout system that:\n\n1. Tracks user activity (taps, scrolls, keyboard input)\n2. Resets a timeout timer on any activity\n3. Shows a warning dialog 1 minute before timeout\n4. Allows users to extend their session from the warning dialog\n5. Logs out automatically if no action is taken\n6. Configurable timeout duration (default 15 minutes)\n\nCreate the following:\n- ActivityTracker widget that wraps your app and tracks user interactions\n- SessionTimeoutManager class to manage timeout logic\n- TimeoutWarningDialog that appears before session expires\n- Integration with the existing auth state management",

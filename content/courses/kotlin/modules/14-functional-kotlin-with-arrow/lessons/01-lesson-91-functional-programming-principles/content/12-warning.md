@@ -39,5 +39,31 @@ list.asSequence()
     .toList()  // Single list created
 ```
 
+### Unclear Naming
+
+Functional code can become cryptic with single-letter variables:
+
+```kotlin
+// UNCLEAR
+val r = l.filter { it.a > 0 }.map { it.b }
+
+// CLEAR
+val activeUserNames = users
+    .filter { user -> user.isActive }
+    .map { user -> user.name }
+```
+
+### Over-Using let
+
+Not everything needs to be a chain:
+
+```kotlin
+// UNNECESSARY
+val name = person.let { it.name }
+
+// SIMPLE
+val name = person.name
+```
+
 ---
 

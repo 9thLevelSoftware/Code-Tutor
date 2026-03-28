@@ -1,14 +1,74 @@
 ---
 type: "WARNING"
-title: "Watch Out!"
+title: "Common Pitfalls to Avoid"
 ---
 
-## Common Pitfalls with else if Chains
+## ⚠️ Pitfall 1: Wrong Order of Conditions
 
-**Wrong order of conditions:** If checking ranges, always start with the highest first! If you check `score >= 70` before `score >= 90`, a score of 95 will match the 70 check first and show 'C' instead of 'A'.
+This is the #1 mistake beginners make! Remember: first match wins.
 
-**Putting else if after else:** The final `else` must be LAST! C# will give you an error if you try to add `else if` after `else`.
+```csharp
+// WRONG - 85 prints "C" instead of "B"
+int score = 85;
+if (score >= 70)
+    Console.WriteLine("C");    // This runs first!
+else if (score >= 80)
+    Console.WriteLine("B");    // Never reached
+else if (score >= 90)
+    Console.WriteLine("A");    // Never reached
+```
 
-**Overlapping conditions:** Make sure your conditions don't overlap unexpectedly. Each condition should be mutually exclusive or ordered from most specific to least specific.
+**Fix:** Arrange from highest to lowest (or most specific to least specific).
 
-**Missing final else:** While optional, forgetting a final `else` can lead to silent bugs where no code runs and you get unexpected behavior.
+## ⚠️ Pitfall 2: Using = Instead of ==
+
+```csharp
+int x = 5;
+
+// WRONG - assigns 10 to x, always true
+if (x = 10)
+    Console.WriteLine("x is 10");
+
+// CORRECT - compares x to 10
+if (x == 10)
+    Console.WriteLine("x is 10");
+```
+
+C# actually prevents this in most cases (unlike some languages), but it's still worth knowing!
+
+## ⚠️ Pitfall 3: Forgetting the else
+
+```csharp
+// Missing the "unknown" case
+if (day == "Saturday" || day == "Sunday")
+    Console.WriteLine("Weekend!");
+else if (day == "Friday")
+    Console.WriteLine("Almost weekend!");
+// What about Monday-Thursday? Nothing prints!
+```
+
+**Best Practice:** Always consider adding an `else` to catch unexpected cases, even if just for error reporting.
+
+## ⚠️ Pitfall 4: Overlapping Ranges
+
+```csharp
+// Confusing: what happens at exactly 18?
+int age = 18;
+if (age < 18)
+    Console.WriteLine("Minor");
+else if (age > 18)
+    Console.WriteLine("Adult");
+// At exactly 18, nothing prints!
+```
+
+**Fix:** Use `<=` or `>=` to be explicit about boundaries:
+```csharp
+if (age < 18)
+    Console.WriteLine("Minor");
+else
+    Console.WriteLine("Adult");  // Catches 18 and up
+```
+
+## ⚠️ Pitfall 5: Too Many else ifs
+
+If you have more than 5-6 else if conditions, consider using a `switch` statement instead. It's cleaner and easier to maintain!

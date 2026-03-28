@@ -1,0 +1,86 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-01-challenge-oauth-pkce",
+  "title": "Implement OAuth 2.0 with PKCE",
+  "description": "Implement a complete OAuth 2.0 authorization code flow with PKCE for secure authentication against a generic OIDC provider.",
+  "instructions": "Build a secure OAuth 2.0 implementation using OpenID Connect with PKCE (Proof Key for Code Exchange).\n\n**Requirements:**\n\n1. **Configure Authentication Services**\n   - Set DefaultScheme to CookieAuthenticationDefaults.AuthenticationScheme\n   - Set DefaultChallengeScheme to OpenIdConnectDefaults.AuthenticationScheme\n\n2. **Configure Cookie Authentication**\n   - LoginPath = \"/auth/login\"\n   - LogoutPath = \"/auth/logout\"\n   - Cookie.HttpOnly = true\n   - Cookie.SameSite = SameSiteMode.Lax\n   - ExpireTimeSpan = 8 hours\n\n3. **Configure OpenID Connect with PKCE**\n   - Load Authority, ClientId, ClientSecret from configuration\n   - ResponseType = \"code\"\n   - UsePkce = true (REQUIRED - prevents authorization code interception)\n   - SaveTokens = true\n   - GetClaimsFromUserInfoEndpoint = true\n   - ValidateIssuer and ValidateAudience in TokenValidationParameters\n   - Add scopes: openid, profile, email\n   - CallbackPath = \"/signin-oidc\"\n   - Add custom header \"X-Client-Version: 1.0\" in OnRedirectToIdentityProvider event\n\n4. **Create Endpoints**\n   - GET /auth/login - Challenge with OIDC, redirect to /dashboard\n   - GET /auth/logout - Sign out from both cookie and OIDC\n   - GET /dashboard - Protected, return auth status, Name, Email, and all claims\n   - GET /auth/token - Return access_token, refresh_token, id_token if available\n\n**Key Concepts:**\n- PKCE prevents authorization code interception attacks\n- OpenID Connect extends OAuth 2.0 with identity layer\n- SaveTokens allows calling provider APIs on user's behalf",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure OpenID Connect authentication",
+      "expectedOutput": "AddOpenIdConnect",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should use PKCE for security",
+      "expectedOutput": "UsePkce",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should save tokens for API calls",
+      "expectedOutput": "SaveTokens",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should validate tokens properly",
+      "expectedOutput": "TokenValidationParameters",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should require authorization on protected endpoints",
+      "expectedOutput": "RequireAuthorization",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Start with builder.Services.AddAuthentication() and configure both DefaultScheme and DefaultChallengeScheme."
+    },
+    {
+      "level": 2,
+      "text": "Chain .AddCookie() for local session management, then .AddOpenIdConnect() for the OAuth flow."
+    },
+    {
+      "level": 3,
+      "text": "For PKCE, explicitly set options.UsePkce = true and options.ResponseType = 'code'."
+    },
+    {
+      "level": 4,
+      "text": "Use options.Events.OnRedirectToIdentityProvider to add custom headers before redirect."
+    },
+    {
+      "level": 5,
+      "text": "The logout endpoint should call ctx.SignOutAsync() for cookies and optionally Challenge for OIDC."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Disabling PKCE or using ResponseType='token'",
+      "consequence": "Authorization codes can be intercepted and used by attackers - major security vulnerability.",
+      "correction": "Always use PKCE with 'code' response type for native and SPA applications."
+    },
+    {
+      "mistake": "Not setting SaveTokens = true when calling APIs",
+      "consequence": "Cannot retrieve access tokens to call provider APIs on behalf of the user.",
+      "correction": "Set SaveTokens = true and use ctx.GetTokenAsync('access_token') to retrieve tokens."
+    },
+    {
+      "mistake": "Hardcoding OIDC endpoints instead of using discovery",
+      "consequence": "Breaks when provider rotates keys or changes endpoints.",
+      "correction": "Use Authority URL which enables automatic discovery via .well-known/openid-configuration."
+    },
+    {
+      "mistake": "Not validating issuer or audience",
+      "consequence": "Accepts tokens from any provider or intended for different clients.",
+      "correction": "Set ValidateIssuer = true and ValidateAudience = true in TokenValidationParameters."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 45
+}

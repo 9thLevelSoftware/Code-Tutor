@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "14.2-challenge-0",
+  "id": "15.2-challenge-0",
   "title": "Pulsing Button with Glow Effect",
   "description": "Create a button that continuously pulses with a glowing effect.",
   "instructions": "Build a circular button that continuously scales between 1.0 and 1.15 with an elastic curve. Add a glow effect (BoxShadow) that intensifies as the button grows. The animation should loop forever using repeat(reverse: true).",

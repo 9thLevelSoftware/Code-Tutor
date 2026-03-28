@@ -1,0 +1,238 @@
+{
+  "course": "flutter",
+  "module": "09-serverpod-production-backend",
+  "moduleTitle": "Module 8: Serverpod Production Backend",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 19,
+  "lessonsReviewed": 19,
+  "findings": [
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/01-module-8-lesson-1-dart-frog-vs-serverpod-choosing-the-right-framework",
+      "lessonTitle": "Dart Frog vs Serverpod - Choosing the Right Framework",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/02-module-8-lesson-2-serverpod-setup-and-project-structure",
+      "lessonTitle": "Serverpod Setup and Project Structure",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/03-module-8-lesson-3-serverpod-models-code-generation",
+      "lessonTitle": "Serverpod Models & Code Generation",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/04-module-8-lesson-4-serverpod-endpoints-methods",
+      "lessonTitle": "Serverpod Endpoints & Methods",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/05-module-8-lesson-5-database-orm",
+      "lessonTitle": "Database & ORM",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/06-module-8-lesson-6-authentication-module",
+      "lessonTitle": "Authentication Module",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/07-module-8-lesson-7-real-time-streams",
+      "lessonTitle": "Real-Time Streams",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/08-module-8-lesson-8-file-storage",
+      "lessonTitle": "File Storage",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/09-module-8-lesson-9-background-tasks",
+      "lessonTitle": "Background Tasks",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/10-module-8-lesson-1-introduction-to-backend-services-firebase-setup",
+      "lessonTitle": "[Archive] Introduction to Backend Services & Firebase Setup",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Description indicates it's [Legacy content] retained for reference. Module description clarifies lessons 10-19 are archived.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/11-module-8-lesson-2-firebase-authentication",
+      "lessonTitle": "[Archive] Firebase Authentication",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase content.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/12-module-8-lesson-3-cloud-firestore-database-operations",
+      "lessonTitle": "[Archive] Cloud Firestore Database Operations",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase content.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/13-module-8-lesson-4-firebase-cloud-storage-file-storage",
+      "lessonTitle": "[Archive] Firebase Cloud Storage - File Storage",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase content.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/14-module-8-lesson-5-firebase-security-rules",
+      "lessonTitle": "[Archive] Firebase Security Rules",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase content.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/15-module-8-lesson-6-real-time-features-with-firebase",
+      "lessonTitle": "[Archive] Real-Time Features with Firebase",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase content.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/16-module-8-lesson-7-push-notifications-analytics",
+      "lessonTitle": "[Archive] Push Notifications & Analytics",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase content.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/17-module-8-lesson-8-mini-project-complete-firebase-social-app",
+      "lessonTitle": "[Archive] Mini-Project: Complete Firebase Social App",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase content.",
+          "webResearchNote": "Archived by design - Firebase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/18-module-8-lesson-10-mini-project-chat-backend",
+      "lessonTitle": "Mini-Project: Chat Backend",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/09-serverpod-production-backend/lessons/19-module-8-lesson-15-supabase-the-open-source-alternative",
+      "lessonTitle": "[Archive] Supabase: The Open Source Alternative",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "lesson.json",
+          "line": 1,
+          "originalText": "archived: true",
+          "description": "Lesson is archived/legacy content. Lesson 10-19 series is archived Firebase/Supabase content.",
+          "webResearchNote": "Archived by design - Supabase content moved to archive in favor of Serverpod focus"
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 10,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 0, "info": 10 },
+    "byCategory": { "STUB": 0, "OUTDATED": 10, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

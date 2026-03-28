@@ -1,6 +1,6 @@
 {
   "type": "QUIZ",
-  "id": "10.6-quiz",
+  "id": "11.6-quiz",
   "title": "OAuth and Social Login Quiz",
   "description": "Test your understanding of OAuth implementation with Google and Apple Sign-In.",
   "questions": [

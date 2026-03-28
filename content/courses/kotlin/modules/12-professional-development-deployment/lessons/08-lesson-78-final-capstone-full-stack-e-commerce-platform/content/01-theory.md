@@ -1,39 +1,139 @@
 ---
 type: "THEORY"
-title: "Capstone Project: TaskFlow KMP"
+title: "Introduction"
 ---
 
-**Estimated Time**: 12-16 hours
+**Estimated Time**: 90 minutes
 
-Welcome to the final capstone project. You will build **TaskFlow** -- a full-stack task management application using Kotlin Multiplatform. This project ties together every major topic from the course into a single, cohesive, production-style application.
+This capstone project brings together everything you've learned to build a complete e-commerce platform. You'll create a KMP mobile app with shared business logic, a Ktor backend, and real-world features like authentication, payments, and order management.
 
-TaskFlow has three modules that mirror real KMP project structure:
+**Project Architecture**
 
-| Module | Technology | Purpose |
-|--------|-----------|---------|
-| `server/` | Ktor 3.4 + Exposed 1.0 + H2 | REST API with JWT auth |
-| `shared/` | commonMain + kotlinx-serialization | Domain models, repository interfaces, DTOs |
-| `composeApp/` | Compose Multiplatform 1.10 | Material 3 UI for Android and Desktop |
+```
+├── shared/                 # KMP shared module
+│   ├── domain/            # Business logic, use cases
+│   ├── data/              # Repositories, API clients
+│   └── presentation/      # ViewModels, MVI
+├── androidApp/            # Android UI (Compose)
+├── iosApp/               # iOS UI (SwiftUI)
+├── backend/              # Ktor server
+│   ├── routes/           # API endpoints
+│   ├── services/         # Business logic
+│   └── persistence/      # Database with Exposed
+```
 
-The application supports user registration and login (JWT), full task CRUD with categories and priorities, an offline-first SQLDelight cache on the client, and a synchronized server-side database via Exposed.
+**Core Features to Implement**
 
-### Why This Architecture?
+1. **User Authentication**
+   - JWT-based auth
+   - Secure token storage
+   - Biometric login (platform-specific)
 
-Every layer maps to something you learned in the course:
+2. **Product Catalog**
+   - Browse categories
+   - Search and filters
+   - Product details with images
 
-- **Modules 01-04**: Kotlin fundamentals, OOP, FP, and coroutines power every layer
-- **Module 05**: Coroutines and Flows drive the reactive data pipeline
-- **Module 06**: Ktor server routes, Exposed database tables, Koin DI
-- **Module 07**: Compose Multiplatform UI with Material 3
-- **Module 08**: SQLDelight for the shared cache, expect/actual for platform drivers
-- **Module 09**: KMP architecture with shared domain layer
-- **Module 10**: Koin dependency injection across server and client
-- **Module 11**: kotlin.test, runTest, and MockK for testing
-- **Module 12**: CI/CD, deployment, and this capstone itself
+3. **Shopping Cart**
+   - Add/remove items
+   - Persist cart locally (SQLDelight)
+   - Sync with backend when online
 
-### No External Services Required
+4. **Checkout Flow**
+   - Address management
+   - Payment integration (Stripe)
+   - Order confirmation
 
-TaskFlow uses **H2 embedded database** on the server side. There is no PostgreSQL to install, no Docker required for development, and no cloud accounts needed. Run the server with a single Gradle command and the database creates itself in memory (or as a file for persistence).
+5. **Order History**
+   - View past orders
+   - Order status tracking
+   - Reorder functionality
 
----
+**Shared Domain Models**
 
+```kotlin
+// shared/src/commonMain/kotlin/domain/model/Product.kt
+data class Product(
+    val id: String,
+    val name: String,
+    val description: String,
+    val price: Money,
+    val images: List<String>,
+    val category: Category,
+    val inventory: Int
+)
+
+data class CartItem(
+    val product: Product,
+    val quantity: Int
+) {
+    val subtotal: Money
+        get() = product.price * quantity
+}
+
+data class Order(
+    val id: String,
+    val items: List<CartItem>,
+    val total: Money,
+    val status: OrderStatus,
+    val createdAt: Instant
+)
+```
+
+**API Contract**
+
+```kotlin
+// Backend routes
+fun Route.products() {
+    get("/products") {
+        val category = call.parameters["category"]
+        val products = productService.getProducts(category)
+        call.respond(products)
+    }
+    
+    get("/products/{id}") {
+        val id = call.parameters["id"]!!
+        val product = productService.getProduct(id)
+            ?: return@get call.respond(HttpStatusCode.NotFound)
+        call.respond(product)
+    }
+}
+
+fun Route.orders() {
+    authenticate {
+        post("/orders") {
+            val request = call.receive<CreateOrderRequest>()
+            val order = orderService.createOrder(
+                userId = call.principal<UserId>()!!,
+                items = request.items,
+                shippingAddress = request.address
+            )
+            call.respond(HttpStatusCode.Created, order)
+        }
+    }
+}
+```
+
+**Technology Stack**
+
+| Layer | Technology |
+|-------|-----------|
+| UI | Compose Multiplatform / SwiftUI |
+| State | MVI with StateFlow |
+| Network | Ktor client + Kotlinx Serialization |
+| Database | SQLDelight |
+| Backend | Ktor + Exposed |
+| Auth | JWT |
+| Payments | Stripe SDK (platform-specific) |
+| Images | Coil (Android) / AsyncImage (iOS) |
+
+**Success Criteria**
+
+- [ ] User can browse products on both Android and iOS
+- [ ] Cart persists across app restarts
+- [ ] Checkout completes successfully with test payments
+- [ ] Orders appear in order history
+- [ ] App works offline with sync when online
+- [ ] All tests pass (unit, integration, UI)
+
+This capstone demonstrates how KMP enables true code sharing while delivering native-quality experiences across platforms.

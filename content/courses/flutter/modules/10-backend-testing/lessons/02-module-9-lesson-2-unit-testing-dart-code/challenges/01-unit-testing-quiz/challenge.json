@@ -1,6 +1,6 @@
 {
   "type": "QUIZ",
-  "id": "9.2-quiz-1",
+  "id": "10.2-quiz-1",
   "title": "Unit Testing Quiz",
   "description": "Test your understanding of unit testing concepts in Dart.",
   "questions": [

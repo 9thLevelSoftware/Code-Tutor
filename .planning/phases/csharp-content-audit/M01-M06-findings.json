@@ -1,0 +1,247 @@
+{
+  "course": "csharp",
+  "modules": ["01-getting-started-with-c", "02-variables-and-data-types", "03-control-flow", "04-loops-and-iteration", "05-collections", "06-methods-and-functions"],
+  "reviewDate": "2026-03-28",
+  "totalLessons": 35,
+  "lessonsReviewed": 35,
+  "findings": [
+    {
+      "lessonPath": "content/courses/csharp/modules/01-getting-started-with-c/lessons/03-displaying-multiple-lines",
+      "lessonTitle": "Displaying Multiple Lines",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 1,
+          "originalText": "---\ntype: \"EXAMPLE\"\ntitle: \"Code Example\"\n---\n\nThis example demonstrates the concepts in action.\n\n```csharp\n// Method 1: Multiple WriteLine statements\nConsole.WriteLine(\"First line\");\nConsol",
+          "description": "Content file is truncated/incomplete (38 words). The code example is cut off mid-line with 'Consol' and lacks complete code demonstrations.",
+          "webResearchNote": ""
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-theory.md",
+          "line": 23,
+          "originalText": "C# 13",
+          "description": "References to C# 13 features are correct for .NET 9 target. No issue.",
+          "webResearchNote": "C# 13 is the correct version for .NET 9 - verified via Microsoft Learn"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/02-variables-and-data-types/lessons/06-nullable-reference-types",
+      "lessonTitle": "Nullable Reference Types",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 6,
+          "originalText": ".NET 6",
+          "description": "References .NET 6 SDK for nullable reference types example. While the feature works in .NET 9, referencing an older SDK version may confuse learners about current requirements.",
+          "webResearchNote": "Nullable reference types were introduced in C# 8 (.NET Core 3.0) and are fully supported in .NET 9. The .NET 6 reference is not incorrect but could be updated to .NET 9 for consistency."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-theory.md",
+          "line": 16,
+          "originalText": "C# 8",
+          "description": "Correctly identifies C# 8 as the introduction point for nullable reference types feature.",
+          "webResearchNote": "Verified: Nullable reference types introduced in C# 8.0 - https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/03-control-flow/lessons/02-else-and-else-if-multiple-paths",
+      "lessonTitle": "else and else if: Multiple Paths",
+      "qualityRating": "critical",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "file": "content/01-content.md",
+          "line": 1,
+          "originalText": "---\ntype: \"THEORY\"\ntitle: \"Explanation\"\n---\n\nThis is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content secti",
+          "description": "Content is clearly placeholder text (30 words) with generic filler content. Lesson is incomplete and unusable for learning.",
+          "webResearchNote": ""
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "file": "content/",
+          "line": 0,
+          "originalText": "N/A",
+          "description": "Lesson has only 1 content file (01-content.md) which is a stub. Missing: analogy, proper theory, example, warning, key_point sections expected for a complete lesson.",
+          "webResearchNote": ""
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/03-control-flow/lessons/03-comparison-logical-operators",
+      "lessonTitle": "Comparison & Logical Operators",
+      "qualityRating": "critical",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "---\ntype: \"THEORY\"\ntitle: \"Explanation\"\n---\n\nThis is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content secti",
+          "description": "Content is placeholder text (44 words). Lesson is incomplete and unusable.",
+          "webResearchNote": ""
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "file": "content/",
+          "line": 0,
+          "originalText": "N/A",
+          "description": "Lesson has only 1 content file (01-theory.md) which is a stub. Missing: analogy, example, warning, key_point sections.",
+          "webResearchNote": ""
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/03-control-flow/lessons/04-the-switch-statement-the-traffic-director",
+      "lessonTitle": "The switch Statement: The Traffic Director",
+      "qualityRating": "critical",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "---\ntype: \"THEORY\"\ntitle: \"Explanation\"\n---\n\nThis is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content secti",
+          "description": "Content is placeholder text (44 words). Lesson theory section is unusable.",
+          "webResearchNote": ""
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/01-analogy.md",
+          "line": 14,
+          "originalText": "C# 8",
+          "description": "Correctly references C# 8 for switch expression feature introduction.",
+          "webResearchNote": "Verified: Switch expressions introduced in C# 8.0 - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/04-loops-and-iteration/lessons/02-the-while-loop-when-you-dont-know",
+      "lessonTitle": "The while Loop: When You Don't Know",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "major",
+          "file": "content/03-theory.md",
+          "line": 1,
+          "originalText": "---\ntype: \"THEORY\"\ntitle: \"Syntax Breakdown\"\n---\n\n## Breaking Down the Syntax\n\n**`while (condition)`**: The loop checks the condition BEFORE each iteration. If true, the loop body runs. If fals",
+          "description": "Theory file is truncated/incomplete (142 words). The content appears to be cut off mid-sentence at 'If fals'.",
+          "webResearchNote": ""
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/05-collections/lessons/05-collection-expressions-c-12",
+      "lessonTitle": "Collection Expressions (C# 12)",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/04-warning.md",
+          "line": 16,
+          "originalText": ".NET 8",
+          "description": "References .NET 8 for collection expressions. While C# 12 collection expressions work in .NET 9, the warning about .NET 8 vs .NET 7 compatibility is outdated.",
+          "webResearchNote": "Collection expressions were introduced in C# 12 (.NET 8). They work in .NET 9. The content should mention .NET 9 as the current version while noting backward compatibility."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/04-warning.md",
+          "line": 16,
+          "originalText": ".NET 7",
+          "description": "References .NET 7 as unsupported for collection expressions. While accurate, this is outdated pedagogy for a .NET 9 course.",
+          "webResearchNote": "For a .NET 9 course, focus should be on current .NET 9/C# 13 features rather than warning about .NET 7 limitations."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/06-methods-and-functions/lessons/03-properties-controlled-access-to-data",
+      "lessonTitle": "Properties: Controlled Access to Data",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 32,
+          "originalText": "C# 11",
+          "description": "Correctly identifies C# 11 for required modifier feature.",
+          "webResearchNote": "Verified: The 'required' modifier was introduced in C# 11.0 - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/required"
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 38,
+          "originalText": "C# 6",
+          "description": "Correctly identifies C# 6 for expression-bodied members feature.",
+          "webResearchNote": "Verified: Expression-bodied members introduced in C# 6.0 - https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/expression-bodied-members"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/01-getting-started-with-c/lessons/02-what-is-net-and-the-clr",
+      "lessonTitle": "What is .NET and the CLR?",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-theory.md",
+          "line": 20,
+          "originalText": ".NET 9",
+          "description": "Correctly references .NET 9 as current version.",
+          "webResearchNote": "Verified: .NET 9 released November 2024 - https://devblogs.microsoft.com/dotnet/announcing-dotnet-9/"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/csharp/modules/01-getting-started-with-c/lessons/05-combining-text-string-concatenation",
+      "lessonTitle": "Combining Text: String Concatenation",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-theory.md",
+          "line": 16,
+          "originalText": ".NET 6",
+          "description": "References .NET 6 SDK for string interpolation examples. Could be updated to .NET 9 for consistency with target version.",
+          "webResearchNote": "String interpolation has been supported since C# 6.0 and works in all newer versions including .NET 9."
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 16,
+    "bySeverity": { "critical": 3, "major": 4, "minor": 9 },
+    "byCategory": { "STUB": 4, "OUTDATED": 9, "INACCURATE": 0, "INCOMPLETE": 3, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

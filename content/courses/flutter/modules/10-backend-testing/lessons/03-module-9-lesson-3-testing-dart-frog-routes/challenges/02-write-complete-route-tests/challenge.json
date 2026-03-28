@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "9.3-challenge-1",
+  "id": "10.3-challenge-1",
   "title": "Write Complete Route Tests",
   "description": "Create a comprehensive test suite for a product endpoint.",
   "instructions": "Write tests for a /products endpoint that handles GET, POST, PUT, and DELETE operations. Include tests for happy paths, validation errors, and not found scenarios.",

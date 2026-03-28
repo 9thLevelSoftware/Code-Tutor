@@ -1,0 +1,91 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-04-challenge-account-linking",
+  "title": "Implement Complete Account Linking System",
+  "description": "Build a comprehensive account linking system allowing users to manage multiple authentication methods, merge accounts, and view unified identity information.",
+  "instructions": "Implement a full-featured account linking and management system for an ASP.NET Core Identity application with multiple external providers.\n\n**Requirements:**\n\n1. **GET /api/account/identity (protected)**\n   Returns unified account identity:\n   - User basic info (id, email, userName, phone, confirmation status)\n   - Profile info (displayName, avatar, timestamps)\n   - Authentication methods summary (hasPassword, external providers list with keys, 2FA methods)\n   - User preferences (preferredProvider, autoLinkNewProviders)\n   - User roles\n\n2. **POST /api/account/link/initiate/{provider} (protected)**\n   Initiates OAuth linking flow:\n   - Validate provider is supported (google, microsoft)\n   - Get current user from UserManager\n   - Challenge with provider scheme\n   - Store user ID and provider in AuthenticationProperties.Items\n   - Redirect to /api/account/link/callback\n\n3. **GET /api/account/link/callback (protected)**\n   Handles OAuth callback for linking:\n   - Get external login info via SignInManager\n   - Extract provider, key, email from claims\n   - Check if external account already linked to ANOTHER user using FindByLoginAsync\n     - If yes: Return 409 Conflict with suggestion to merge or contact support\n   - Check if already linked to current user\n     - If yes: Return 200 with 'already linked' message\n   - Add external login using UserManager.AddLoginAsync\n   - Merge profile data (name, avatar) if current user fields empty\n   - Return 200 with success details\n\n4. **DELETE /api/account/unlink/{provider} (protected)**\n   Removes external login with lockout prevention:\n   - Get current user and their logins\n   - Check hasPassword and count other providers\n   - CRITICAL: If no password AND this is last provider, return 400 BadRequest\n   - Find and remove login using RemoveLoginAsync\n   - Return 200 with remaining authentication methods\n\n5. **GET /api/account/security-status (protected)**\n   Security analysis endpoint:\n   - Calculate total login methods (password + external count)\n   - Determine IsSecure (>=2 methods OR password+2FA)\n   - Determine IsAtRisk (only 1 method)\n   - Generate contextual recommendations:\n     * If 1 method: suggest adding backup\n     * If no password but has external: suggest setting password\n     * If >=2 methods but no 2FA: suggest enabling 2FA\n     * If multiple providers but no preferred: suggest setting preference\n\n6. **PUT /api/account/preferences (protected)**\n   Update user preferences:\n   - PreferredProvider: must be linked provider or 'Local'\n   - AutoLinkNewProviders: boolean\n   - Validate and update user entity",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should return unified identity with all auth methods",
+      "expectedOutput": "AccountIdentityResponse",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should check for duplicate external account linkage",
+      "expectedOutput": "FindByLoginAsync",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should prevent unlinking last login method",
+      "expectedOutput": "Cannot unlink your only login method",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should validate preferred provider is linked",
+      "expectedOutput": "Preferred provider must be a linked provider",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should merge profile data during linking",
+      "expectedOutput": "ProfilePictureUrl",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use UserManager.FindByLoginAsync(provider, key) to check if external account is already linked to any user."
+    },
+    {
+      "level": 2,
+      "text": "In the initiate endpoint, store the current user ID in AuthenticationProperties.Items['link_user_id']."
+    },
+    {
+      "level": 3,
+      "text": "Before unlinking, verify: hasPassword OR otherProviders.Count > 0. If false, reject the request."
+    },
+    {
+      "level": 4,
+      "text": "Use pattern matching or a switch expression to generate contextual security recommendations."
+    },
+    {
+      "level": 5,
+      "text": "When merging profile data, only update fields that are currently null/empty on the existing user."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not checking if external account already linked to another user",
+      "consequence": "Security vulnerability where malicious user can hijack another's external account.",
+      "correction": "Always call FindByLoginAsync before linking to verify account isn't already associated."
+    },
+    {
+      "mistake": "Allowing unlink of last authentication method",
+      "consequence": "User permanently locked out of account with no way to recover.",
+      "correction": "Check (hasPassword || otherProviders.Any()) before allowing any unlink operation."
+    },
+    {
+      "mistake": "Not validating preferred provider is actually linked",
+      "consequence": "User sets preferred provider they haven't linked yet, causing login confusion.",
+      "correction": "Verify requested preferred provider exists in user's linked providers list."
+    },
+    {
+      "mistake": "Overwriting existing profile data during merge",
+      "consequence": "User's carefully set custom name/avatar replaced by provider defaults.",
+      "correction": "Only update null/empty fields: if (string.IsNullOrEmpty(user.DisplayName)) user.DisplayName = newValue;"
+    },
+    {
+      "mistake": "Not using AuthenticationProperties to carry state through OAuth flow",
+      "consequence": "Can't verify which user initiated linking after callback, causing security issues.",
+      "correction": "Store user ID in AuthenticationProperties.Items when challenging, verify in callback."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 50
+}

@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "14.2-challenge-1",
+  "id": "15.2-challenge-1",
   "title": "Staggered Menu Animation",
   "description": "Create a menu with items that animate in sequence.",
   "instructions": "Build a vertical menu with 4 items that slide in from the left with a staggered delay. Each item should start animating 100ms after the previous one. Use Interval to create the stagger effect. Items should fade in while sliding.",

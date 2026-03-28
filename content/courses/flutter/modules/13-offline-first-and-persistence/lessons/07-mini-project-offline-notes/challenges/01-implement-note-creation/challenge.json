@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "12.7-challenge-1",
+  "id": "13.7-challenge-1",
   "title": "Implement Note Creation",
   "description": "Create the core note creation logic with sync queue integration.",
   "instructions": "Implement a createNote method that: 1) Generates a UUID for the note, 2) Inserts into local database with pending status, 3) Queues a sync operation, 4) Returns the created note.",

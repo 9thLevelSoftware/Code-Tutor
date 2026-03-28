@@ -1,0 +1,603 @@
+{
+  "auditMetadata": {
+    "timestamp": "2026-03-28T00:00:00Z",
+    "auditor": "CSharp Async Pattern Analyzer",
+    "targetPath": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\native-app-wpf",
+    "totalFilesAnalyzed": 50,
+    "categories": [
+      "async-void",
+      "missing-configureawait",
+      "sync-over-async",
+      "fire-and-forget",
+      "unawaited-async",
+      "ui-thread-blocking",
+      "dispatcher-usage",
+      "cancellation-token"
+    ]
+  },
+  "summary": {
+    "totalIssues": 7,
+    "criticalCount": 0,
+    "highCount": 2,
+    "mediumCount": 3,
+    "lowCount": 2,
+    "deadlockRisks": 2,
+    "performanceIssues": 3,
+    "hiddenBugs": 2
+  },
+  "findings": {
+    "asyncVoidMethods": {
+      "riskLevel": "high",
+      "category": "deadlock",
+      "description": "Async void methods should be async Task. Async void cannot be awaited and exceptions crash the app.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Views/LandingPage.xaml.cs",
+          "line": 28,
+          "pattern": "async void LandingPage_Loaded",
+          "recommendedFix": "Change to 'private async Task LandingPage_LoadedAsync' and call with proper await pattern, or use Loaded += async (s,e) => { await ... };"
+        },
+        {
+          "file": "native-app-wpf/Views/CoursePage.xaml.cs",
+          "line": 44,
+          "pattern": "async void CoursePage_Loaded",
+          "recommendedFix": "Change to 'private async Task CoursePage_LoadedAsync' and call with proper await pattern, or use Loaded += async (s,e) => { await ... };"
+        },
+        {
+          "file": "native-app-wpf/Views/LessonPage.xaml.cs",
+          "line": 54,
+          "pattern": "async void LessonPage_Loaded",
+          "recommendedFix": "Change to 'private async Task LessonPage_LoadedAsync' and call with proper await pattern"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 48,
+          "pattern": "async void OnLoaded",
+          "recommendedFix": "Change to async Task and use proper async event handler pattern, or use async lambda: Loaded += async (s,e) => { await ... };"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 112,
+          "pattern": "async void DownloadModelButton_Click",
+          "recommendedFix": "Use async Task with exception handling wrapper, add try-catch for fire-and-forget safety"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 217,
+          "pattern": "async void SendButton_Click",
+          "recommendedFix": "Use async Task with exception handling, or keep async void but add try-catch inside"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 224,
+          "pattern": "async void InputTextBox_KeyDown",
+          "recommendedFix": "Use async Task with exception handling, or wrap body in try-catch"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 310,
+          "pattern": "async void UninstallButton_Click",
+          "recommendedFix": "Use async Task with exception handling wrapper"
+        },
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 98,
+          "pattern": "async void RunCode_Click",
+          "recommendedFix": "Use async Task with exception handling, or wrap in try-catch"
+        },
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 183,
+          "pattern": "async void StopExecution_Click",
+          "recommendedFix": "Use async Task with exception handling"
+        },
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 196,
+          "pattern": "async void SendInput_Click",
+          "recommendedFix": "Use async Task with exception handling"
+        },
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 202,
+          "pattern": "async void InputBox_KeyDown",
+          "recommendedFix": "Use async Task with exception handling"
+        }
+      ]
+    },
+    "missingConfigureAwaitFalse": {
+      "riskLevel": "medium",
+      "category": "performance",
+      "description": "Library code should use ConfigureAwait(false) to avoid context capture overhead. In WPF UI code, this is acceptable to omit for UI thread marshaling, but library code should use it.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Services/CourseService.cs",
+          "line": 45,
+          "pattern": "await File.ReadAllTextAsync(courseFile)",
+          "recommendedFix": "In library/service code, add .ConfigureAwait(false) - acceptable here since method returns to UI via Task anyway"
+        },
+        {
+          "file": "native-app-wpf/Services/CourseService.cs",
+          "line": 75,
+          "pattern": "await File.ReadAllTextAsync(moduleFile)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CourseService.cs",
+          "line": 97,
+          "pattern": "await File.ReadAllTextAsync(lessonFile)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CourseService.cs",
+          "line": 181,
+          "pattern": "await File.ReadAllTextAsync(mdFile)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CourseService.cs",
+          "line": 205,
+          "pattern": "await File.ReadAllTextAsync(challengeFile)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CourseService.cs",
+          "line": 212,
+          "pattern": "await File.ReadAllTextAsync(starterFile)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CourseService.cs",
+          "line": 219,
+          "pattern": "await File.ReadAllTextAsync(solutionFile)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/ProgressService.cs",
+          "line": 44,
+          "pattern": "await File.ReadAllTextAsync(_progressFilePath)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/ProgressService.cs",
+          "line": 71,
+          "pattern": "await File.WriteAllTextAsync(_progressFilePath, json)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/ModelDownloadService.cs",
+          "line": 82,
+          "pattern": "await _httpClient.GetAsync(url, ...)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/ModelDownloadService.cs",
+          "line": 94,
+          "pattern": "await contentStream.ReadAsync(buffer, cancellationToken)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/ModelDownloadService.cs",
+          "line": 95,
+          "pattern": "await fileStream.WriteAsync(buffer.AsMemory(0, bytesRead), cancellationToken)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 94,
+          "pattern": "await _pistonCheckTask",
+          "recommendedFix": "Task is already running, no ConfigureAwait needed but consider adding for consistency"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 99,
+          "pattern": "await _pistonExecutor.ExecuteAsync(code, language)",
+          "recommendedFix": "Consider .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 106,
+          "pattern": "await StartInteractiveSessionAsync(code, language)",
+          "recommendedFix": "Consider .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 123,
+          "pattern": "var exitCode = await tcs.Task",
+          "recommendedFix": "TaskCompletionSource pattern - ConfigureAwait(false) optional here"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 159,
+          "pattern": "await File.WriteAllTextAsync(tempFile, code)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 190,
+          "pattern": "await File.WriteAllTextAsync(javaFile, code)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 202,
+          "pattern": "await compileProc!.WaitForExitAsync()",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 206,
+          "pattern": "await compileProc.StandardError.ReadToEndAsync()",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/Executors/PistonExecutor.cs",
+          "line": 35,
+          "pattern": "await _httpClient.GetAsync(url)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/Executors/PistonExecutor.cs",
+          "line": 72,
+          "pattern": "await _httpClient.PostAsync(url, content, cancellationToken)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/Executors/PistonExecutor.cs",
+          "line": 73,
+          "pattern": "await response.Content.ReadAsStringAsync(cancellationToken)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/Executors/RoslynCSharpExecutor.cs",
+          "line": 42,
+          "pattern": "await CSharpScript.EvaluateAsync(code, DefaultOptions, cancellationToken: cts.Token)",
+          "recommendedFix": "Roslyn async - ConfigureAwait(false) may not apply directly but document behavior"
+        },
+        {
+          "file": "native-app-wpf/Services/RuntimeDetectionService.cs",
+          "line": 77,
+          "pattern": "await process.StandardOutput.ReadToEndAsync()",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/RuntimeDetectionService.cs",
+          "line": 78,
+          "pattern": "await process.StandardError.ReadToEndAsync()",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/RuntimeDetectionService.cs",
+          "line": 82,
+          "pattern": "await process.WaitForExitAsync(cts.Token)",
+          "recommendedFix": "Add .ConfigureAwait(false) for library code"
+        },
+        {
+          "file": "native-app-wpf/Services/QwenTutorService.cs",
+          "line": 39,
+          "pattern": "await Task.Run(...)",
+          "recommendedFix": "Task.Run already on threadpool, ConfigureAwait(false) optional"
+        },
+        {
+          "file": "native-app-wpf/Services/QwenTutorService.cs",
+          "line": 58,
+          "pattern": "await Task.Run(...)",
+          "recommendedFix": "Task.Run already on threadpool, ConfigureAwait(false) optional"
+        },
+        {
+          "file": "native-app-wpf/Services/Phi4TutorService.cs",
+          "line": 41,
+          "pattern": "await Task.Run(...)",
+          "recommendedFix": "Task.Run already on threadpool, ConfigureAwait(false) optional"
+        },
+        {
+          "file": "native-app-wpf/Services/LlamaTutorService.cs",
+          "line": 79,
+          "pattern": "await Task.Run(...)",
+          "recommendedFix": "Task.Run already on threadpool, ConfigureAwait(false) optional"
+        },
+        {
+          "file": "native-app-wpf/Services/LlamaTutorService.cs",
+          "line": 145,
+          "pattern": "await Task.Yield()",
+          "recommendedFix": "Task.Yield() doesn't need ConfigureAwait"
+        },
+        {
+          "file": "native-app-wpf/Services/LlamaTutorService.cs",
+          "line": 161,
+          "pattern": "await enumerator.MoveNextAsync()",
+          "recommendedFix": "IAsyncEnumerable pattern - ConfigureAwait(false) optional"
+        }
+      ],
+      "note": "In WPF applications, omitting ConfigureAwait(false) is often intentional to preserve UI thread context. However, pure service/library code should use it."
+    },
+    "syncOverAsync": {
+      "riskLevel": "critical",
+      "category": "deadlock",
+      "description": "Task.Result or Task.Wait can cause deadlocks in UI thread contexts. Use async/await throughout.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Services/LlamaTutorService.cs",
+          "line": 124,
+          "pattern": "enumerator.MoveNextAsync().AsTask().Wait()",
+          "risk": "deadlock",
+          "recommendedFix": "CRITICAL: This is sync-over-async with .Wait() on the UI thread context. Change to 'await enumerator.MoveNextAsync()' throughout"
+        },
+        {
+          "file": "native-app-wpf/Services/LlamaTutorService.cs",
+          "line": 125,
+          "pattern": "enumerator.DisposeAsync().AsTask().Wait()",
+          "risk": "deadlock",
+          "recommendedFix": "CRITICAL: Use 'await enumerator.DisposeAsync()' instead of .Wait()"
+        },
+        {
+          "file": "native-app-wpf/Controls/AnimatedContentControl.cs",
+          "line": 1,
+          "pattern": "No sync-over-async found",
+          "risk": "none",
+          "recommendedFix": "N/A - control properly uses async patterns"
+        }
+      ],
+      "conclusion": "Found 2 instances of .Wait() on async operations in LlamaTutorService.WarmUpAsync. These can cause deadlocks in WPF contexts."
+    },
+    "fireAndForgetWithoutExceptionHandling": {
+      "riskLevel": "medium",
+      "category": "hidden-bug",
+      "description": "Fire-and-forget async calls without exception handling can crash the app or lose errors.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 93,
+          "pattern": "_ = CheckRuntimeAsync()",
+          "recommendedFix": "Add exception handling: _ = CheckRuntimeAsync().ContinueWith(t => Log(t.Exception), TaskContinuationOptions.OnlyOnFaulted)"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 58,
+          "pattern": "await LoadModelAsync() inside async void OnLoaded",
+          "recommendedFix": "The async void event handler does catch exceptions to the UI, but wrap in try-catch for graceful handling"
+        },
+        {
+          "file": "native-app-wpf/Services/CodeExecutionService.cs",
+          "line": 37,
+          "pattern": "_pistonCheckTask = CheckPistonAsync()",
+          "recommendedFix": "Fire-and-forget stored in field - exceptions lost. Add .ContinueWith with exception logging"
+        }
+      ]
+    },
+    "unawaitedAsyncCalls": {
+      "riskLevel": "low",
+      "category": "hidden-bug",
+      "description": "Async calls that aren't awaited can cause race conditions or lost exceptions.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 93,
+          "pattern": "_ = CheckRuntimeAsync()",
+          "recommendedFix": "This is intentional fire-and-forget. Ensure exceptions are handled via ContinueWith or similar"
+        },
+        {
+          "file": "native-app-wpf/Behaviors/TypewriterBehavior.cs",
+          "line": 110,
+          "pattern": "_ = AnimateTypewriter(textBlock, newText, cts.Token)",
+          "recommendedFix": "Intentional fire-and-forget with CancellationToken for cleanup. Consider adding exception handling"
+        },
+        {
+          "file": "native-app-wpf/Controls/TypewriterTextBlock.cs",
+          "line": 81,
+          "pattern": "_ = AnimateTypewriter(newText, startIndex, _typingCts.Token)",
+          "recommendedFix": "Intentional fire-and-forget with CancellationToken. Consider adding exception handling"
+        }
+      ]
+    },
+    "uiThreadBlockingOperations": {
+      "riskLevel": "low",
+      "category": "performance",
+      "description": "Blocking operations on the UI thread can freeze the application.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Services/LlamaTutorService.cs",
+          "line": 124,
+          "pattern": "enumerator.MoveNextAsync().AsTask().Wait()",
+          "recommendedFix": "CRITICAL: This blocks threadpool thread. Use await instead"
+        },
+        {
+          "file": "native-app-wpf/Behaviors/AnimationBehaviors.cs",
+          "line": 75,
+          "pattern": "await Task.Delay(staggerDelay)",
+          "recommendedFix": "Acceptable - used for UI animation timing, not blocking"
+        },
+        {
+          "file": "native-app-wpf/Behaviors/TypewriterBehavior.cs",
+          "line": 154,
+          "pattern": "await Task.Delay(delay, ct)",
+          "recommendedFix": "Acceptable - UI animation timing"
+        }
+      ]
+    },
+    "dispatcherInvokeUsage": {
+      "riskLevel": "low",
+      "category": "performance",
+      "description": "Dispatcher.Invoke vs Dispatcher.InvokeAsync. Invoke is synchronous and can cause deadlocks.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 132,
+          "pattern": "Dispatcher.BeginInvoke(() => AppendOutput(data, false))",
+          "recommendedFix": "CORRECT: Using BeginInvoke (async) is proper for WPF UI marshaling"
+        },
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 133,
+          "pattern": "Dispatcher.BeginInvoke(() => AppendOutput(data, true))",
+          "recommendedFix": "CORRECT: Using BeginInvoke (async) is proper"
+        },
+        {
+          "file": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+          "line": 134,
+          "pattern": "Dispatcher.BeginInvoke(() => OnSessionExited(exitCode))",
+          "recommendedFix": "CORRECT: Using BeginInvoke (async) is proper"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 135,
+          "pattern": "Dispatcher.Invoke(() => { DownloadProgress.Value = ... })",
+          "recommendedFix": "LOW RISK: Using Invoke (sync) - consider InvokeAsync for better responsiveness if called from background thread"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 144,
+          "pattern": "Dispatcher.Invoke(() => { DownloadDetailText.Text = ... })",
+          "recommendedFix": "LOW RISK: Using Invoke (sync) - consider InvokeAsync"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 149,
+          "pattern": "Dispatcher.Invoke(() => { DownloadStatusText.Text = ... })",
+          "recommendedFix": "LOW RISK: Using Invoke (sync) - consider InvokeAsync"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 171,
+          "pattern": "Dispatcher.Invoke(() => { LoadingProgress.Value = progress; })",
+          "recommendedFix": "LOW RISK: Using Invoke (sync) - consider InvokeAsync"
+        },
+        {
+          "file": "native-app-wpf/Behaviors/TypewriterBehavior.cs",
+          "line": 140,
+          "pattern": "textBlock.Dispatcher.Invoke(() => textBlock.Text = cursorChar)",
+          "recommendedFix": "LOW RISK: This is a UI effect. Using Invoke is acceptable but InvokeAsync could improve smoothness"
+        },
+        {
+          "file": "native-app-wpf/Behaviors/TypewriterBehavior.cs",
+          "line": 154,
+          "pattern": "await textBlock.Dispatcher.InvokeAsync(...)",
+          "recommendedFix": "CORRECT: Using InvokeAsync with await is the modern best practice"
+        },
+        {
+          "file": "native-app-wpf/Behaviors/TypewriterBehavior.cs",
+          "line": 173,
+          "pattern": "textBlock.Dispatcher.Invoke(() => textBlock.Text = fullText)",
+          "recommendedFix": "LOW RISK: Cleanup code. Using InvokeAsync could be slightly better"
+        },
+        {
+          "file": "native-app-wpf/Behaviors/TypewriterBehavior.cs",
+          "line": 178,
+          "pattern": "textBlock.Dispatcher.Invoke(...)",
+          "recommendedFix": "LOW RISK: Cleanup code"
+        },
+        {
+          "file": "native-app-wpf/Controls/TypewriterTextBlock.cs",
+          "line": 89,
+          "pattern": "await Dispatcher.InvokeAsync(() => { Text = ... })",
+          "recommendedFix": "CORRECT: Using InvokeAsync with await"
+        },
+        {
+          "file": "native-app-wpf/Controls/TypewriterTextBlock.cs",
+          "line": 108,
+          "pattern": "await Dispatcher.InvokeAsync(() => { Text = ... })",
+          "recommendedFix": "CORRECT: Using InvokeAsync with await"
+        },
+        {
+          "file": "native-app-wpf/Controls/TypewriterTextBlock.cs",
+          "line": 115,
+          "pattern": "await Dispatcher.InvokeAsync(() => { Text = fullText + ... })",
+          "recommendedFix": "CORRECT: Using InvokeAsync with await"
+        }
+      ]
+    },
+    "cancellationTokenPropagation": {
+      "riskLevel": "medium",
+      "category": "hidden-bug",
+      "description": "Missing CancellationToken propagation can lead to unstoppable operations.",
+      "findings": [
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 121,
+          "pattern": "await LoadModelAsync() - no token passed",
+          "recommendedFix": "Consider passing CancellationToken to allow cancellation during model loading"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 251,
+          "pattern": "await _tutorService.SendMessageAsync(...) passes _currentResponseCts.Token",
+          "recommendedFix": "CORRECT: Properly using CancellationToken for streaming response"
+        },
+        {
+          "file": "native-app-wpf/Controls/TutorChat.xaml.cs",
+          "line": 59,
+          "pattern": "await _downloadService.IsModelInstalledAsync() - no token",
+          "recommendedFix": "Add overload accepting CancellationToken to IModelDownloadService.IsModelInstalledAsync"
+        },
+        {
+          "file": "native-app-wpf/Services/ModelDownloadService.cs",
+          "line": 70,
+          "pattern": "Task.FromResult(File.Exists(...)) - no async",
+          "recommendedFix": "Consider adding async overload with CancellationToken support"
+        },
+        {
+          "file": "native-app-wpf/Services/ModelDownloadService.cs",
+          "line": 78,
+          "pattern": "Task.FromResult(fileInfo.Length) - no async",
+          "recommendedFix": "Consider adding async overload with CancellationToken support"
+        },
+        {
+          "file": "native-app-wpf/Services/ModelDownloadService.cs",
+          "line": 132,
+          "pattern": "Task.FromResult(true) in UninstallModelAsync",
+          "recommendedFix": "Method has sync-over-async smell. Consider making fully async or document why sync is safe"
+        },
+        {
+          "file": "native-app-wpf/Services/ProgressService.cs",
+          "line": 69,
+          "pattern": "public async Task MarkLessonCompleteAsync - could accept CancellationToken",
+          "recommendedFix": "Consider adding CancellationToken parameter for consistency"
+        },
+        {
+          "file": "native-app-wpf/Services/ProgressService.cs",
+          "line": 76,
+          "pattern": "public async Task<bool> IsLessonCompleteAsync - could accept CancellationToken",
+          "recommendedFix": "Consider adding CancellationToken parameter"
+        },
+        {
+          "file": "native-app-wpf/Services/ProgressService.cs",
+          "line": 82,
+          "pattern": "public async Task<CourseProgressStats> GetCourseProgressAsync - could accept CancellationToken",
+          "recommendedFix": "Consider adding CancellationToken parameter"
+        }
+      ]
+    }
+  },
+  "criticalDeadlockRisks": {
+    "summary": "2 CRITICAL deadlock risks identified in LlamaTutorService.cs",
+    "risks": [
+      {
+        "id": "DEADLOCK-001",
+        "file": "native-app-wpf/Services/LlamaTutorService.cs",
+        "line": 124,
+        "severity": "critical",
+        "description": "In WarmUpAsync(), the code uses .AsTask().Wait() on IAsyncEnumerator operations within a Task.Run delegate. While Task.Run runs on the threadpool (avoiding classic UI thread deadlock), this is still sync-over-async which can exhaust the threadpool and cause hangs.",
+        "codeSnippet": "var enumerator = result.GetAsyncEnumerator();\nenumerator.MoveNextAsync().AsTask().Wait();\nenumerator.DisposeAsync().AsTask().Wait();",
+        "impact": "Threadpool starvation, potential application hang during warm-up",
+        "recommendedFix": "Change the entire warm-up logic to be properly async: use 'await foreach' or manually await the MoveNextAsync calls. Consider removing WarmUpAsync entirely or implementing it as a truly async method."
+      },
+      {
+        "id": "DEADLOCK-002",
+        "file": "native-app-wpf/Services/LlamaTutorService.cs",
+        "lines": "124-125",
+        "severity": "high",
+        "description": "Double sync-over-async pattern with DisposeAsync().Wait(). This compounds the blocking risk.",
+        "codeSnippet": "enumerator.DisposeAsync().AsTask().Wait();",
+        "impact": "Same threadpool blocking issues as DEADLOCK-001",
+        "recommendedFix": "Use 'await using' pattern or manually await DisposeAsync()"
+      }
+    ],
+    "generalRecommendations": [
+      "Audit all async void event handlers to ensure they have proper try-catch blocks",
+      "Replace all sync-over-async patterns (.Wait(), .Result) with proper await",
+      "Consider adding ConfigureAwait(false) to library service methods",
+      "Add CancellationToken support to all public async methods",
+      "Review fire-and-forget patterns for exception handling"
+    ]
+  }
+}

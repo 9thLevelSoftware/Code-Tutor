@@ -1,0 +1,71 @@
+{
+  "course": "flutter",
+  "module": "08-dart-frog-backend-fundamentals",
+  "moduleTitle": "Module 7: Dart Frog Backend Fundamentals",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 8,
+  "lessonsReviewed": 8,
+  "findings": [
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/01-lesson-71-why-dart-on-the-backend",
+      "lessonTitle": "Why Dart on the Backend?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/02-lesson-72-dart-frog-setup",
+      "lessonTitle": "Dart Frog Setup",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/03-lesson-73-file-based-routing",
+      "lessonTitle": "File-Based Routing",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/04-lesson-74-request-response",
+      "lessonTitle": "Request & Response",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/05-lesson-75-middleware",
+      "lessonTitle": "Middleware",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/06-lesson-76-database-integration",
+      "lessonTitle": "Database Integration",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/07-lesson-77-authentication-with-jwt",
+      "lessonTitle": "Authentication with JWT",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/08-dart-frog-backend-fundamentals/lessons/08-lesson-78-mini-project-complete-rest-api",
+      "lessonTitle": "Mini-Project: Complete REST API",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 0 },
+    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

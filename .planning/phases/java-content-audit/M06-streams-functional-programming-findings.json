@@ -1,0 +1,60 @@
+{
+  "module": "M06",
+  "moduleName": "Streams and Functional Programming",
+  "auditDate": "2026-03-28",
+  "targetVersions": {
+    "java": "25",
+    "junit": "5.x",
+    "gradle": "8.x"
+  },
+  "findings": {
+    "STUB": [],
+    "OUTDATED": [],
+    "INACCURATE": [],
+    "INCOMPLETE": [],
+    "METADATA": [],
+    "PEDAGOGY": []
+  },
+  "lessons": [
+    {
+      "id": "lesson-s1",
+      "title": "Lambdas and Functional Interfaces",
+      "contentType": "intermediate",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-s2",
+      "title": "Stream Basics",
+      "contentType": "intermediate",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-s3",
+      "title": "Collecting Results",
+      "contentType": "intermediate",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-s4",
+      "title": "Advanced Streams",
+      "contentType": "advanced",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-s5",
+      "title": "Optional and Null Safety",
+      "contentType": "intermediate",
+      "issues": [],
+      "status": "VERIFIED"
+    }
+  ],
+  "summary": {
+    "totalLessons": 5,
+    "verifiedLessons": 5,
+    "totalIssues": 0
+  }
+}

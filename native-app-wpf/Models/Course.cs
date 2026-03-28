@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Text.Json;
 using System.Text.Json.Serialization;
+using CodeTutor.Wpf.Models.Validation;
 
 namespace CodeTutor.Wpf.Models;
 
@@ -144,7 +144,8 @@ public class Challenge
     public List<string>? Options { get; set; }
 
     [JsonPropertyName("correctAnswer")]
-    public JsonElement? CorrectAnswer { get; set; }
+    [JsonConverter(typeof(ValidatedCorrectAnswerConverter))]
+    public ValidatedCorrectAnswer? CorrectAnswer { get; set; }
 
     [JsonPropertyName("explanation")]
     public string? Explanation { get; set; }
@@ -214,7 +215,8 @@ public class QuizQuestion
     public List<string> Options { get; set; } = new();
 
     [JsonPropertyName("correctAnswer")]
-    public JsonElement? CorrectAnswer { get; set; }
+    [JsonConverter(typeof(ValidatedCorrectAnswerConverter))]
+    public ValidatedCorrectAnswer? CorrectAnswer { get; set; }
 
     [JsonPropertyName("explanation")]
     public string? Explanation { get; set; }

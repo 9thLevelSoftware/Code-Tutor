@@ -1,0 +1,69 @@
+{
+  "course": "javascript",
+  "module": "20-capstone-task-manager-api",
+  "moduleTitle": "Module 20: Capstone: Task Manager API",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/20-capstone-task-manager-api/lessons/01-project-setup",
+      "lessonTitle": "Project Setup",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/20-capstone-task-manager-api/lessons/02-designing-the-data-model",
+      "lessonTitle": "Designing the Data Model",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/20-capstone-task-manager-api/lessons/03-implementing-crud-endpoints",
+      "lessonTitle": "Implementing CRUD Endpoints",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/20-capstone-task-manager-api/lessons/04-adding-authentication",
+      "lessonTitle": "Adding Authentication",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/20-capstone-task-manager-api/lessons/05-testing-your-api",
+      "lessonTitle": "Testing Your API",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/20-capstone-task-manager-api/lessons/06-deployment",
+      "lessonTitle": "Deployment",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

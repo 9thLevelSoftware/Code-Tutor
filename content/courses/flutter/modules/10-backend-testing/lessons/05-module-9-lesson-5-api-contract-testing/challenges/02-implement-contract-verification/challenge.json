@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "9.5-challenge-1",
+  "id": "10.5-challenge-1",
   "title": "Implement Contract Verification",
   "description": "Write a contract verification test for an API endpoint.",
   "instructions": "You are testing a Product API that should return products with id (int), name (String), price (number >= 0), inStock (bool), and category (String). Write a test that verifies the response contains all required fields with correct types.",

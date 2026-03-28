@@ -1,14 +1,87 @@
 ---
 type: "WARNING"
-title: "Watch Out!"
+title: "Common Pitfalls to Avoid"
 ---
 
-## Common Pitfalls with Operators
+## ⚠️ Pitfall 1: Single & or | Instead of && or ||
 
-**Single & or | vs && or ||:** In C#, use DOUBLE symbols (`&&` and `||`) for logical operators. Single `&` and `|` are bitwise operators - they work but don't short-circuit, which can cause bugs!
+In C#, use **DOUBLE** symbols (`&&` and `||`) for logical operators:
 
-**Short-circuit evaluation:** `&&` stops checking if the left side is false. `||` stops if the left is true. This matters with method calls: `obj != null && obj.Value > 0` is safe because if obj is null, the second part never runs.
+```csharp
+// WRONG (single symbols don't short-circuit)
+if (obj != null & obj.Value > 0)  // & is bitwise, not logical
 
-**Operator precedence:** `age > 18 && hasTicket || isVIP` is confusing! Use parentheses: `(age > 18 && hasTicket) || isVIP` to make intent clear. `&&` has higher precedence than `||`.
+// CORRECT
+if (obj != null && obj.Value > 0)  // && is proper logical AND
+```
 
-**Pattern matching alternative:** Modern C# offers `is not null` instead of `!= null`, which reads more naturally: `if (obj is not null)`.
+**Why it matters:** `&&` and `||` short-circuit (stop early), but `&` and `|` don't. Single versions evaluate BOTH sides, which can cause crashes or extra work.
+
+## ⚠️ Pitfall 2: Forgetting == vs = 
+
+```csharp
+int x = 5;
+
+// WRONG (this is assignment, not comparison)
+if (x = 10)  // Sets x to 10, always true!
+    Console.WriteLine("x is 10");
+
+// CORRECT
+if (x == 10)  // Compares x to 10
+    Console.WriteLine("x is 10");
+```
+
+C# actually prevents this in most cases (unlike JavaScript), but be careful with the distinction!
+
+## ⚠️ Pitfall 3: Relying on Operator Precedence
+
+```csharp
+// CONFUSING - relies on precedence rules
+if (age > 18 && hasTicket || isVIP)  // Which comes first?
+
+// CLEAR - use parentheses!
+if ((age > 18 && hasTicket) || isVIP)
+```
+
+**Operator precedence:** `&&` has higher precedence than `||`, but don't rely on memorizing this. Use parentheses!
+
+## ⚠️ Pitfall 4: Checking Equality on Floating Point
+
+```csharp
+double price = 0.1 + 0.2;  // Actually 0.30000000000000004!
+
+// WRONG (might be false due to precision)
+if (price == 0.3)
+
+// CORRECT (check within tolerance)
+if (Math.Abs(price - 0.3) < 0.0001)
+```
+
+## ⚠️ Pitfall 5: NOT Overuse (!!)
+
+```csharp
+// CONFUSING - double negative
+if (!isNotReady)
+    StartTask();
+
+// BETTER - rename the variable
+bool isReady = true;
+if (isReady)
+    StartTask();
+```
+
+Avoid double negatives! They're hard to reason about. Rename variables to be positive instead.
+
+## ⚠️ Pitfall 6: Chaining || with && Without Parentheses
+
+```csharp
+// AMBIGUOUS - what was the intent?
+if (isAdmin || isModerator && isActive)
+
+// Does it mean:
+// (isAdmin || isModerator) && isActive  ?
+// or:
+// isAdmin || (isModerator && isActive)  ?
+```
+
+**Always use parentheses** when mixing `&&` and `||`!

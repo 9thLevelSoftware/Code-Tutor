@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "9.4-challenge-1",
+  "id": "10.4-challenge-1",
   "title": "Write Serverpod Endpoint Tests",
   "description": "Create a comprehensive test suite for a Serverpod TodoEndpoint.",
   "instructions": "Write tests for a TodoEndpoint with these methods:\n\n1. createTodo(session, title, description) - Creates a new todo\n2. getTodo(session, id) - Gets a todo by ID\n3. listTodos(session) - Lists all todos for authenticated user\n4. completeTodo(session, id) - Marks todo as complete\n5. deleteTodo(session, id) - Deletes a todo\n\nInclude tests for:\n- Authentication requirements\n- CRUD operations\n- Ownership validation (users can only access their own todos)",

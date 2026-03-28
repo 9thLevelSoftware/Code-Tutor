@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "12.6-challenge-1",
+  "id": "13.6-challenge-1",
   "title": "Build a Sync Status Widget",
   "description": "Create a widget that displays sync status with appropriate icons and colors.",
   "instructions": "Implement a SyncBadge widget that shows different icons for synced (green check), pending (orange clock), and failed (red X) states.",

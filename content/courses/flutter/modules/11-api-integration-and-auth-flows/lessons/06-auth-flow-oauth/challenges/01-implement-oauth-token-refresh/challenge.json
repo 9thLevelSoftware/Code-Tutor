@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.6-challenge-1",
+  "id": "11.6-challenge-1",
   "title": "Implement OAuth Token Refresh",
   "description": "Extend the OAuth implementation to handle token refresh for social login sessions.",
   "instructions": "When a user signs in with Google or Apple, the access tokens have limited lifetimes. Implement a token refresh mechanism that:\n\n1. Detects when OAuth tokens are about to expire\n2. Silently refreshes Google tokens using the refresh token\n3. For Apple, re-authenticates if the identity token expires (Apple tokens are longer-lived)\n4. Updates stored tokens after successful refresh\n5. Falls back to requiring re-authentication if refresh fails\n\nCreate an OAuthTokenManager class that handles this for both providers.",

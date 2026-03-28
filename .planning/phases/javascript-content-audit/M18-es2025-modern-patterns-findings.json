@@ -1,0 +1,71 @@
+{
+  "course": "javascript",
+  "module": "18-es2025-modern-patterns",
+  "moduleTitle": "Module 18: ES2025 Modern Patterns",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/18-es2025-modern-patterns/lessons/01-new-features-overview",
+      "lessonTitle": "New Features Overview",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/18-es2025-modern-patterns/lessons/02-pattern-matching",
+      "lessonTitle": "Pattern Matching",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/18-es2025-modern-patterns/lessons/03-records-and-tuples",
+      "lessonTitle": "Records and Tuples",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/18-es2025-modern-patterns/lessons/04-pipeline-operator",
+      "lessonTitle": "Pipeline Operator",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/03-theory.md",
+          "line": 8,
+          "description": "Pipeline operator (|>) is still in TC39 Stage 2 and not yet in ES2025. Content may need update if feature doesn't advance.",
+          "webResearchNote": "As of 2025, pipeline operator is Stage 2, not guaranteed for ES2025. Verify current TC39 status."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/18-es2025-modern-patterns/lessons/05-decorators",
+      "lessonTitle": "Decorators",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 1,
+    "bySeverity": {
+      "critical": 0,
+      "major": 1,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 1,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

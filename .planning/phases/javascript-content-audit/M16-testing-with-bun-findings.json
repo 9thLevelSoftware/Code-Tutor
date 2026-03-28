@@ -1,0 +1,55 @@
+{
+  "course": "javascript",
+  "module": "16-testing-with-bun",
+  "moduleTitle": "Module 16: Testing with Bun",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 4,
+  "lessonsReviewed": 4,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/16-testing-with-bun/lessons/01-why-test-your-code",
+      "lessonTitle": "Why Test Your Code?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/16-testing-with-bun/lessons/02-writing-unit-tests",
+      "lessonTitle": "Writing Unit Tests",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/16-testing-with-bun/lessons/03-testing-async-code",
+      "lessonTitle": "Testing Async Code",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+      {
+      "lessonPath": "content/courses/javascript/modules/16-testing-with-bun/lessons/04-mocking-and-stubbing",
+      "lessonTitle": "Mocking and Stubbing",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

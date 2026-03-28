@@ -1,0 +1,101 @@
+{
+  "course": "java",
+  "module": "09-databases-and-sql",
+  "moduleTitle": "Databases and SQL",
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "java": "25",
+    "hibernate": "6.6.x",
+    "jpa": "3.2 (Jakarta EE 11)"
+  },
+  "totalLessons": 7,
+  "lessonsReviewed": 7,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/09-databases-and-sql/lessons/01-lesson-91-why-do-we-need-databases",
+      "lessonTitle": "Why Do We Need Databases?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/09-databases-and-sql/lessons/02-lesson-92-sql-basics-your-first-database",
+      "lessonTitle": "SQL Basics - Your First Database",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/09-databases-and-sql/lessons/03-lesson-93-sql-queries-filtering-sorting-and-aggregating",
+      "lessonTitle": "SQL Queries - Filtering, Sorting, and Aggregating",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/09-databases-and-sql/lessons/04-lesson-94-joins-connecting-tables",
+      "lessonTitle": "JOINs - Connecting Tables",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/09-databases-and-sql/lessons/05-lesson-95-jdbc-databases-java",
+      "lessonTitle": "JDBC - Databases + Java",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "INACCURATE",
+          "severity": "minor",
+          "file": "content/06-theory.md",
+          "line": 45,
+          "originalText": "IO.println(\"Inserted: \" + rowsInserted);",
+          "description": "The code uses `IO.println()` which is not standard Java. This appears to be a custom utility class that is not defined or imported in the lesson. Standard Java uses `System.out.println()`. Students following this code will encounter compilation errors.",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/09-databases-and-sql/lessons/06-lesson-96-jpa-and-hibernate-the-orm-solution",
+      "lessonTitle": "JPA and Hibernate - The ORM Solution",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "info",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "JPA and Hibernate ORM content",
+          "description": "Content references JPA patterns that are valid for Hibernate 6.x. However, the lesson could benefit from mentioning Hibernate 6.6's newer features like the improved @IdClass validation (starting from 6.6, mapped classes must be annotated with @MappedSuperclass or @Entity).",
+          "webResearchNote": "Hibernate 6.6 was released in March 2026 and adds stricter validation for mapped classes. The current content is still functional but could be enhanced with migration considerations."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/09-databases-and-sql/lessons/07-lesson-97-database-migrations-with-flyway",
+      "lessonTitle": "Database Migrations with Flyway",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 2,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 1,
+      "info": 1
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 1,
+      "INACCURATE": 1,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

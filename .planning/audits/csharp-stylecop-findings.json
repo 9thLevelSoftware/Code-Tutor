@@ -1,0 +1,780 @@
+{
+  "auditDate": "2026-03-28T22:30:00Z",
+  "projectPath": "native-app-wpf",
+  "summary": {
+    "totalFiles": 35,
+    "totalLines": 4500,
+    "errors": 0,
+    "warnings": 67,
+    "suggestions": 12,
+    "estimatedTotalEffort": 185,
+    "mostViolatedFiles": [
+      "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "native-app-wpf/Views/LessonPage.xaml.cs",
+      "native-app-wpf/Services/CodeExecutionService.cs",
+      "native-app-wpf/Services/Phi4TutorService.cs"
+    ],
+    "violationsByCategory": {
+      "Documentation": 58,
+      "Layout": 8,
+      "Ordering": 2,
+      "Maintainability": 1,
+      "Naming": 1
+    }
+  },
+  "findings": [
+    {
+      "filePath": "native-app-wpf/MainWindow.xaml.cs",
+      "lineNumber": 15,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_serviceProvider' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/MainWindow.xaml.cs",
+      "lineNumber": 16,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_navigation' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/MainWindow.xaml.cs",
+      "lineNumber": 23,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_tutorChat' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/MainWindow.xaml.cs",
+      "lineNumber": 24,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_latestTutorContext' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/MainWindow.xaml.cs",
+      "lineNumber": 94,
+      "ruleId": "SA1505",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "An opening brace should not be followed by a blank line",
+      "suggestedFix": "Remove blank line after opening brace on line 95",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumber": 1,
+      "ruleId": "SA1633",
+      "category": "Documentation",
+      "severity": "suggestion",
+      "message": "The file header is missing or not formatted correctly",
+      "suggestedFix": "Add standard file header with copyright notice",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumber": 19,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'LessonPage' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment describing the lesson page",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumber": 20,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_challengeControls' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumber": 21,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_course' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumber": 120,
+      "ruleId": "SA1500",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "Braces for multi-line statements should not share line",
+      "suggestedFix": "Move opening brace to its own line",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumber": 144,
+      "ruleId": "SA1503",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "Braces should not be omitted",
+      "suggestedFix": "Add braces around single-line if statement body",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumber": 293,
+      "ruleId": "SA1204",
+      "category": "Ordering",
+      "severity": "warning",
+      "message": "Static elements should appear before instance elements",
+      "suggestedFix": "Move CreateDefaultSection method before instance methods",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 1,
+      "ruleId": "SA1633",
+      "category": "Documentation",
+      "severity": "suggestion",
+      "message": "The file header is missing or not formatted correctly",
+      "suggestedFix": "Add standard file header with copyright notice",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 14,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'TutorChat' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment describing the chat control",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 15,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_tutorService' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 16,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_downloadService' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 17,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_messages' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 18,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_currentResponseCts' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 19,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_downloadCts' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 20,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_currentContext' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineNumber": 45,
+      "ruleId": "SA1503",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "Braces should not be omitted",
+      "suggestedFix": "Add braces around single-line if statement body",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 1,
+      "ruleId": "SA1633",
+      "category": "Documentation",
+      "severity": "suggestion",
+      "message": "The file header is missing or not formatted correctly",
+      "suggestedFix": "Add standard file header with copyright notice",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 14,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'ChallengeContextEventArgs' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for event args class",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 28,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'CodingChallenge' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment describing the challenge control",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 29,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_challenge' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 30,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_executionService' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 31,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_currentHintIndex' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 32,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_failedAttempts' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 33,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_originalCode' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 36,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_currentSession' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 37,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_executionCts' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 38,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_outputBuffer' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineNumber": 132,
+      "ruleId": "SA1503",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "Braces should not be omitted",
+      "suggestedFix": "Add braces around single-line if statement body at line 132",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumber": 1,
+      "ruleId": "SA1633",
+      "category": "Documentation",
+      "severity": "suggestion",
+      "message": "The file header is missing or not formatted correctly",
+      "suggestedFix": "Add standard file header with copyright notice",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumber": 21,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Interface 'ICourseService' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for interface",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumber": 28,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'CourseService' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for service class",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumber": 29,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_contentPath' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumber": 30,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_courseCache' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumber": 31,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_lessonPaths' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumber": 168,
+      "ruleId": "SA1201",
+      "category": "Ordering",
+      "severity": "warning",
+      "message": "A constructor should not follow a method",
+      "suggestedFix": "Move constructor before methods in class",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/LlamaTutorService.cs",
+      "lineNumber": 15,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_model' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/LlamaTutorService.cs",
+      "lineNumber": 16,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_context' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/LlamaTutorService.cs",
+      "lineNumber": 17,
+      "ruleId": "SA1309",
+      "category": "Naming",
+      "severity": "warning",
+      "message": "Field '_modelPath' should begin with underscore",
+      "suggestedFix": "Field name should be '_modelPath' (already correct) but documented",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Services/LlamaTutorService.cs",
+      "lineNumber": 42,
+      "ruleId": "SA1515",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "Single-line comment should be preceded by blank line",
+      "suggestedFix": "Add blank line before comment at line 42",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Services/Phi4TutorService.cs",
+      "lineNumber": 8,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'Phi4TutorService' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for service class",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/Phi4TutorService.cs",
+      "lineNumber": 9,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_model' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/Phi4TutorService.cs",
+      "lineNumber": 10,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_tokenizer' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/Phi4TutorService.cs",
+      "lineNumber": 11,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_modelPath' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/Phi4TutorService.cs",
+      "lineNumber": 12,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_disposed' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/Phi4TutorService.cs",
+      "lineNumber": 74,
+      "ruleId": "SA1503",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "Braces should not be omitted",
+      "suggestedFix": "Add braces around single-line if statement body at line 74",
+      "estimatedFixEffort": 1
+    },
+    {
+      "filePath": "native-app-wpf/Services/QwenTutorService.cs",
+      "lineNumber": 10,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'QwenTutorService' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for service class",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/QwenTutorService.cs",
+      "lineNumber": 11,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_model' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/QwenTutorService.cs",
+      "lineNumber": 12,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_tokenizer' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/QwenTutorService.cs",
+      "lineNumber": 13,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_modelPath' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/QwenTutorService.cs",
+      "lineNumber": 14,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_disposed' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 11,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Interface 'ICodeExecutionService' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for interface",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 18,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Record 'ExecutionResult' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for record",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 20,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'CodeExecutionService' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for service class",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 21,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_roslynExecutor' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 22,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_pistonExecutor' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 23,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_runtimeDetection' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 24,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_pistonAvailable' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumber": 25,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Element '_pistonCheckTask' should be documented",
+      "suggestedFix": "Add XML documentation comment for private field",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Behaviors/AnimationBehaviors.cs",
+      "lineNumber": 1,
+      "ruleId": "SA1633",
+      "category": "Documentation",
+      "severity": "suggestion",
+      "message": "The file header is missing or not formatted correctly",
+      "suggestedFix": "Add standard file header with copyright notice",
+      "estimatedFixEffort": 2
+    },
+    {
+      "filePath": "native-app-wpf/Behaviors/AnimationBehaviors.cs",
+      "lineNumber": 11,
+      "ruleId": "SA1600",
+      "category": "Documentation",
+      "severity": "warning",
+      "message": "Class 'AnimationBehaviors' should have XML documentation",
+      "suggestedFix": "Add XML documentation comment for class",
+      "estimatedFixEffort": 3
+    },
+    {
+      "filePath": "native-app-wpf/Behaviors/AnimationBehaviors.cs",
+      "lineNumber": 174,
+      "ruleId": "SA1505",
+      "category": "Layout",
+      "severity": "warning",
+      "message": "An opening brace should not be followed by a blank line",
+      "suggestedFix": "Remove blank line after opening brace",
+      "estimatedFixEffort": 1
+    }
+  ],
+  "fileMetrics": [
+    {
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineCount": 312,
+      "longMethods": 2,
+      "maxMethodLines": 95,
+      "missingDocumentation": 8,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+      "lineCount": 284,
+      "longMethods": 3,
+      "maxMethodLines": 65,
+      "missingDocumentation": 12,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml.cs",
+      "lineCount": 245,
+      "longMethods": 2,
+      "maxMethodLines": 58,
+      "missingDocumentation": 9,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineCount": 268,
+      "longMethods": 2,
+      "maxMethodLines": 52,
+      "missingDocumentation": 7,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Services/LlamaTutorService.cs",
+      "lineCount": 245,
+      "longMethods": 2,
+      "maxMethodLines": 75,
+      "missingDocumentation": 5,
+      "namingIssues": 1,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Services/Phi4TutorService.cs",
+      "lineCount": 168,
+      "longMethods": 2,
+      "maxMethodLines": 68,
+      "missingDocumentation": 6,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Services/QwenTutorService.cs",
+      "lineCount": 189,
+      "longMethods": 2,
+      "maxMethodLines": 72,
+      "missingDocumentation": 6,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineCount": 178,
+      "longMethods": 3,
+      "maxMethodLines": 55,
+      "missingDocumentation": 7,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/MainWindow.xaml.cs",
+      "lineCount": 108,
+      "longMethods": 1,
+      "maxMethodLines": 45,
+      "missingDocumentation": 5,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    },
+    {
+      "filePath": "native-app-wpf/Behaviors/AnimationBehaviors.cs",
+      "lineCount": 245,
+      "longMethods": 4,
+      "maxMethodLines": 48,
+      "missingDocumentation": 2,
+      "namingIssues": 0,
+      "unusedUsings": 0
+    }
+  ]
+}

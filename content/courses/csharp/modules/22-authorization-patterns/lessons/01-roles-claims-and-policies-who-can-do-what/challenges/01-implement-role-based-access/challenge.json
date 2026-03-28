@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l01-challenge-01",
+  "title": "Implement Role-Based Access Control",
+  "description": "Add role-based authorization to an existing authenticated ASP.NET Core application. Implement Admin, User, and Guest roles with different access permissions.",
+  "instructions": "You have an ASP.NET Core 9.0 app with authentication configured but no authorization. Implement a role-based access control system for ShopFlow!\n\n**Requirements:**\n\n1. **Configure Roles in Program.cs:**\n   - Add role services to DI container\n   - Create policies for each role combination\n\n2. **Create Role-Protected Endpoints:**\n   - GET /api/admin/dashboard - Only accessible to \"Admin\" role\n   - GET /api/user/profile - Accessible to \"User\" and \"Admin\" roles\n   - GET /api/public/catalog - Accessible to all authenticated users (including \"Guest\")\n   - POST /api/admin/users/assign-role - Only \"Admin\" can assign roles\n\n3. **Add Role Seeding:**\n   - Create a seeder that ensures roles exist: Admin, User, Guest\n   - Create a default admin user with Admin role\n\n4. **Handle Edge Cases:**\n   - Return 403 Forbidden when user lacks required role\n   - Return 401 Unauthorized when not authenticated\n   - Include helpful error messages\n\n**Scenarios to Support:**\n- Admin: Full access to all endpoints including user management\n- User: Can access profile and public catalog, cannot access admin endpoints\n- Guest: Can only access public catalog, cannot access profile or admin\n\n**Hint:** Use [Authorize(Roles = \"...\")] for declarative authorization and IAuthorizationService for imperative checks when needed.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure AddIdentity with roles",
+      "expectedOutput": "AddIdentity",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should have Authorize attribute with Admin role",
+      "expectedOutput": "Authorize(Roles",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should have Admin endpoint protected",
+      "expectedOutput": "/api/admin",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should handle 403 Forbidden for unauthorized roles",
+      "expectedOutput": "Forbid",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use builder.Services.AddIdentity<ApplicationUser, IdentityRole>() to enable role support."
+    },
+    {
+      "level": 2,
+      "text": "Apply [Authorize(Roles = \"Admin\")] attribute to protect admin-only endpoints."
+    },
+    {
+      "level": 3,
+      "text": "Use RoleManager<IdentityRole> to check and create roles in your seeder."
+    },
+    {
+      "level": 4,
+      "text": "For multiple roles, use [Authorize(Roles = \"Admin,User\")] which means ANY of the roles is sufficient."
+    },
+    {
+      "level": 5,
+      "text": "Return Results.Forbid() when the user is authenticated but lacks the required role."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not calling AddRoles<IdentityRole>()",
+      "consequence": "Role services won't be registered. You'll get runtime errors when checking roles.",
+      "correction": "Make sure to call builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddRoles<IdentityRole>()."
+    },
+    {
+      "mistake": "Using AND logic instead of OR for multiple roles",
+      "consequence": "[Authorize(Roles = \"Admin,User\")] means Admin OR User, not Admin AND User.",
+      "correction": "For AND logic, apply multiple Authorize attributes or use a policy with multiple role requirements."
+    },
+    {
+      "mistake": "Checking roles manually instead of using attributes",
+      "consequence": "More verbose code, harder to maintain, inconsistent security patterns.",
+      "correction": "Prefer [Authorize(Roles = \"...\")] for simple scenarios. It's declarative and easy to read."
+    },
+    {
+      "mistake": "Returning 401 instead of 403",
+      "consequence": "Clients can't distinguish between 'not logged in' and 'logged in but not authorized'.",
+      "correction": "Return 401 for unauthenticated users, 403 for authenticated users without proper roles."
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedMinutes": 35
+}

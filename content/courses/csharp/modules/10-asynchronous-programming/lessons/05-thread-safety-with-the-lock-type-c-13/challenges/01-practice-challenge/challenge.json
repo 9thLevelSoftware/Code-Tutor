@@ -1,0 +1,84 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-10-05-challenge-01",
+  "title": "Build a Thread-Safe Async Cache with C# 13 Lock",
+  "description": "Implement a thread-safe async cache using the C# 13 Lock type to handle concurrent read/write operations safely.",
+  "instructions": "Create a thread-safe asynchronous cache using C# 13 Lock type!\n\n1. Create a class `AsyncCache<TKey, TValue>` with:\n   - Private readonly Lock field: `private readonly Lock _lock = new();`\n   - Private Dictionary<TKey, TValue> for storage\n   - Private Dictionary<TKey, DateTime> for expiration tracking\n   - Default cache expiration: 5 seconds\n\n2. Implement `async Task<TValue?> GetAsync(TKey key)`:\n   - Use lock to check if key exists and is not expired\n   - If valid, return the value\n   - If expired or missing, return default(TValue)\n   - Use proper C# 13 Lock: `lock (_lock) { ... }`\n\n3. Implement `async Task SetAsync(TKey key, TValue value, TimeSpan? expiration = null)`:\n   - Calculate expiration time (default 5 seconds, or use parameter)\n   - Use lock to safely add/update the key and its expiration\n   - Must be thread-safe for concurrent writes\n\n4. Implement `async Task<bool> RemoveAsync(TKey key)`:\n   - Use lock to safely remove from both dictionaries\n   - Return true if key was removed, false if not found\n\n5. Implement `int Count { get }` property:\n   - Use lock to return the count of non-expired items\n   - Clean up expired items while counting\n\n6. Test code (will be provided):\n   - Creates cache, sets values concurrently\n   - Waits for expiration\n   - Verifies items expired\n   - Tests thread safety\n\n**Requirements:**\n- Use C# 13 Lock type: `private readonly Lock _lock = new();`\n- All dictionary access must be inside lock blocks\n- Handle expiration logic correctly\n- Ensure thread-safe concurrent operations",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Output should contain 'Cache created successfully'",
+      "expectedOutput": "Cache created successfully",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Output should contain 'Items added'",
+      "expectedOutput": "Items added",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Output should contain 'Cache is thread-safe'",
+      "expectedOutput": "Cache is thread-safe",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Output should contain 'SUCCESS'",
+      "expectedOutput": "SUCCESS",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Declare the Lock: `private readonly Lock _lock = new();`. Use it like: `lock (_lock) { /* access dictionary */ }`. Remember: C# 13 Lock type, not object!"
+    },
+    {
+      "level": 2,
+      "text": "For GetAsync: First await any async setup, then lock to read from dictionary. Check `DateTime.UtcNow > expirationTime` to determine if expired."
+    },
+    {
+      "level": 3,
+      "text": "Don't hold the lock during async operations! Do async work first (like fetching data), then lock only when updating shared state."
+    },
+    {
+      "level": 4,
+      "text": "For concurrent testing: Use `Task.Run` multiple times to simulate parallel access. The C# 13 Lock ensures only one thread modifies the cache at a time."
+    },
+    {
+      "level": 5,
+      "text": "For Count property: Lock, iterate through expiration dictionary to remove expired items, then return the count. Clean up while counting!"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Using object instead of Lock type",
+      "consequence": "Not using C# 13 Lock type misses the performance benefits and the learning objective of this lesson. Use: `private readonly Lock _lock = new();`",
+      "correction": "Change your lock declaration to use the C# 13 Lock type."
+    },
+    {
+      "mistake": "Trying to use await inside lock statement",
+      "consequence": "Compiler error: 'The await operator cannot be used in the body of a lock statement'. You must structure async methods to do async work outside the lock.",
+      "correction": "Do async operations first, then lock only for shared state access."
+    },
+    {
+      "mistake": "Forgetting to check expiration in GetAsync",
+      "consequence": "Cache returns stale data that should have expired, causing incorrect behavior.",
+      "correction": "Always check DateTime.UtcNow against the stored expiration time."
+    },
+    {
+      "mistake": "Not removing expired items from Count property",
+      "consequence": "Count returns inflated numbers including expired items that are no longer accessible.",
+      "correction": "Clean up expired entries when counting, or maintain accurate counts."
+    },
+    {
+      "mistake": "Using DateTime.Now instead of DateTime.UtcNow",
+      "consequence": "Expiration behavior varies by timezone and daylight saving time changes.",
+      "correction": "Always use DateTime.UtcNow for expiration tracking to ensure consistent behavior."
+    }
+  ],
+  "difficulty": "intermediate"
+}

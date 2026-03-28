@@ -38,7 +38,7 @@ fun loadUsers(): List<User> {
 }
 ```
 
-> **Feature Status**: Context parameters are Beta since Kotlin 2.2. Enable with `-Xcontext-parameters`. They replace the deprecated *context receivers* experiment (`-Xcontext-receivers`) which used unnamed `context(Type)` syntax.
+> **Feature Status**: Context parameters are Beta since Kotlin 2.2 and experimental in Kotlin 2.3.4. Enable with `-Xcontext-parameters`. They replace the deprecated *context receivers* experiment (`-Xcontext-receivers`) which used unnamed `context(Type)` syntax.
 
 ---
 

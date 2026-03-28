@@ -1,0 +1,62 @@
+{
+  "course": "javascript",
+  "module": "06-creating-reusable-tools",
+  "moduleTitle": "Module 6: Creating Reusable Tools (Functions)",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/06-creating-reusable-tools/lessons/01-functions-your-first-reusable-recipe",
+      "lessonTitle": "Functions: Your First Reusable Recipe",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/06-creating-reusable-tools/lessons/02-parameters-and-arguments-passing-information-in",
+      "lessonTitle": "Parameters and Arguments: Passing Information In",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/06-creating-reusable-tools/lessons/03-return-values-sending-information-back-out",
+      "lessonTitle": "Return Values: Sending Information Back Out",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/06-creating-reusable-tools/lessons/04-arrow-functions-modern-concise-syntax",
+      "lessonTitle": "Arrow Functions: Modern Concise Syntax",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/06-creating-reusable-tools/lessons/05-scope-understanding-variable-lifetime",
+      "lessonTitle": "Scope: Understanding Variable Lifetime",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

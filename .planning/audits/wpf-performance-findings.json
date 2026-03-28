@@ -1,0 +1,331 @@
+{
+  "auditMetadata": {
+    "target": "native-app-wpf",
+    "timestamp": "2026-03-28T16:35:00Z",
+    "auditor": "subagent-performance-audit",
+    "scope": "WPF performance analysis focusing on startup time, UI responsiveness, and memory usage"
+  },
+  "summary": {
+    "totalIssues": 17,
+    "criticalCount": 3,
+    "highCount": 6,
+    "mediumCount": 6,
+    "lowCount": 2,
+    "startupTimeIssues": 5,
+    "runtimeIssues": 9,
+    "memoryIssues": 3
+  },
+  "issues": [
+    {
+      "id": "WPFP-001",
+      "impact": "critical",
+      "category": "startup",
+      "title": "Constructor Synchronous Initialization in Page Views",
+      "description": "LandingPage, CoursePage, LessonPage, and CourseSidebar all perform synchronous DI dependency injection and UI initialization in their constructors. This blocks the UI thread during navigation.",
+      "filePath": "native-app-wpf/Views/LandingPage.xaml.cs",
+      "lineNumbers": [18, 21, 28],
+      "estimatedImpact": {
+        "startupTimeMs": 150,
+        "runtimeMs": 50,
+        "memoryMb": 0
+      },
+      "codeSnippet": "public LandingPage(ICourseService courseService, INavigationService navigation, IProgressService progressService, ICodeExecutionService codeExecutionService, ITutorService tutorService, IModelDownloadService downloadService)\n{\n    InitializeComponent();\n    _courseService = courseService;\n    // ... synchronous assignments",
+      "recommendation": "Move heavy initialization to async Loaded event handlers. Use Lazy<T> for expensive dependencies. Consider async factory pattern for page creation.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-002",
+      "impact": "critical",
+      "category": "startup",
+      "title": "LessonPage Constructor Performs Heavy Synchronous Work",
+      "description": "LessonPage constructor initializes multiple services, creates new CourseSidebar instance, and performs immediate sidebar refresh all on UI thread before Loaded event.",
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumbers": [30, 46, 54],
+      "estimatedImpact": {
+        "startupTimeMs": 200,
+        "runtimeMs": 80,
+        "memoryMb": 5
+      },
+      "codeSnippet": "public LessonPage(Course course, Lesson lesson, ...)\n{\n    InitializeComponent();\n    // ... validation\n    // Refresh sidebar and highlight active lesson\n    if (Application.Current.MainWindow is MainWindow mainWindow)\n    {\n        var sidebar = new CourseSidebar(...);\n        sidebar.SetCurrentLesson(lesson);\n        mainWindow.SetSidebarContent(sidebar);\n    }\n    SetupNavigation();\n}",
+      "recommendation": "Defer sidebar creation to Loaded event. Use virtualization for lesson content. Consider singleton sidebar pattern with content swapping instead of recreation.",
+      "effort": "high"
+    },
+    {
+      "id": "WPFP-003",
+      "impact": "critical",
+      "category": "memory",
+      "title": "Memory Leak: LessonPage Event Handlers Never Unsubscribed",
+      "description": "Challenge controls (CodingChallenge, QuizChallenge, etc.) subscribe to ChallengeCompleted and ContextChanged events in LessonPage, but these event handlers are never unsubscribed when navigating away, causing memory leaks.",
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumbers": [174, 189, 202, 212],
+      "estimatedImpact": {
+        "startupTimeMs": 0,
+        "runtimeMs": 0,
+        "memoryMb": 15
+      },
+      "codeSnippet": "var challengeControl = new Controls.CodingChallenge(challenge, _codeExecutionService);\nchallengeControl.ChallengeCompleted += OnChallengeCompleted;\nchallengeControl.ContextChanged += OnChallengeContextChanged;\n_challengeControls.Add(new ChallengeControlWrapper(challengeControl));\nContentPanel.Children.Add(challengeControl);",
+      "recommendation": "Implement IDisposable pattern for LessonPage. In Dispose(), iterate through _challengeControls and unsubscribe from all events. Also clear ContentPanel.Children.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-004",
+      "impact": "high",
+      "category": "memory",
+      "title": "Memory Leak: CourseSidebar Lesson Buttons Dictionary Never Cleared",
+      "description": "CourseSidebar maintains a _lessonButtons dictionary that accumulates Button references every time LessonItem_Loaded fires. These are never removed, causing memory leaks during navigation.",
+      "filePath": "native-app-wpf/Views/CourseSidebar.xaml.cs",
+      "lineNumbers": [116, 153],
+      "estimatedImpact": {
+        "startupTimeMs": 0,
+        "runtimeMs": 0,
+        "memoryMb": 8
+      },
+      "codeSnippet": "private readonly Dictionary<string, Button> _lessonButtons = new();\n\nprivate void LessonItem_Loaded(object sender, RoutedEventArgs e)\n{\n    if (sender is Button button && button.Tag is Lesson lesson)\n    {\n        _lessonButtons[lesson.Id] = button;  // Accumulates without cleanup\n    }\n}",
+      "recommendation": "Implement IDisposable and clear _lessonButtons on unload. Use WeakReference for button tracking, or implement proper cleanup in Unloaded event.",
+      "effort": "low"
+    },
+    {
+      "id": "WPFP-005",
+      "impact": "high",
+      "category": "startup",
+      "title": "ResourceDictionary Bloat: App.xaml Merges All Theme Dictionaries",
+      "description": "App.xaml merges all theme ResourceDictionaries at startup regardless of which are actually needed. This includes complex animation storyboards, gradient brushes, and control templates that may not all be used immediately.",
+      "filePath": "native-app-wpf/App.xaml",
+      "lineNumbers": [1, 15],
+      "estimatedImpact": {
+        "startupTimeMs": 120,
+        "runtimeMs": 0,
+        "memoryMb": 12
+      },
+      "codeSnippet": "<Application.Resources>\n    <ResourceDictionary>\n        <ResourceDictionary.MergedDictionaries>\n            <ResourceDictionary Source=\"Themes/Colors.xaml\"/>\n            <ResourceDictionary Source=\"Themes/Typography.xaml\"/>\n            <ResourceDictionary Source=\"Themes/Animations.xaml\"/>\n            <ResourceDictionary Source=\"Themes/Controls.xaml\"/>\n        </ResourceDictionary.MergedDictionaries>\n    </ResourceDictionary>\n</Application.Resources>",
+      "recommendation": "Consider lazy-loading theme resources. Split Controls.xaml into smaller dictionaries loaded on demand. Use ResourceDictionary.ThemeDictionaries for conditional loading.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-006",
+      "impact": "high",
+      "category": "runtime",
+      "title": "ItemsControl Without Virtualization in LessonPage ContentPanel",
+      "description": "ContentPanel (StackPanel) loads all content sections and challenge controls synchronously without virtualization. For lessons with many sections, this creates UI freeze.",
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumbers": [86, 141],
+      "estimatedImpact": {
+        "startupTimeMs": 300,
+        "runtimeMs": 100,
+        "memoryMb": 20
+      },
+      "codeSnippet": "// Add content sections dynamically\nContentPanel.Children.Clear();\nforeach (var section in contentSections)\n{\n    var sectionControl = CreateSectionControl(section);\n    ContentPanel.Children.Add(sectionControl);  // All added immediately\n}\n// Add challenges\nforeach (var challenge in challenges)\n{\n    // ... all challenges created immediately\n}",
+      "recommendation": "Replace StackPanel with VirtualizingStackPanel. Use DataTemplateSelector for different section types. Implement lazy loading for off-screen content.",
+      "effort": "high"
+    },
+    {
+      "id": "WPFP-007",
+      "impact": "high",
+      "category": "runtime",
+      "title": "TutorChat ItemsControl Lacks Virtualization for Message History",
+      "description": "TutorChat uses ItemsControl inside a ScrollViewer for chat messages without virtualization. Long conversations will cause performance degradation.",
+      "filePath": "native-app-wpf/Controls/TutorChat.xaml",
+      "lineNumbers": [117, 125],
+      "estimatedImpact": {
+        "startupTimeMs": 50,
+        "runtimeMs": 200,
+        "memoryMb": 25
+      },
+      "codeSnippet": "<ScrollViewer Grid.Row=\"1\" x:Name=\"MessagesScrollViewer\" VerticalScrollBarVisibility=\"Auto\" Padding=\"4\">\n    <ItemsControl x:Name=\"MessagesPanel\">\n        <ItemsControl.ItemTemplate>\n            <DataTemplate>\n                <controls:ChatMessageBubble Message=\"{Binding}\"/>\n            </DataTemplate>\n        </ItemsControl.ItemTemplate>\n    </ItemsControl>\n</ScrollViewer>",
+      "recommendation": "Replace ItemsControl with ListBox using VirtualizingStackPanel. Implement message pagination or trimming for long conversations. Set VirtualizationMode to Recycling.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-008",
+      "impact": "high",
+      "category": "runtime",
+      "title": "AnimatedCard 3D Rendering Without Hardware Detection",
+      "description": "AnimatedCard uses Viewport3D with complex 3D transformations for all cards, even on systems without hardware acceleration. No fallback to simpler 2D rendering.",
+      "filePath": "native-app-wpf/Controls/AnimatedCard.xaml",
+      "lineNumbers": [12, 75],
+      "estimatedImpact": {
+        "startupTimeMs": 80,
+        "runtimeMs": 150,
+        "memoryMb": 30
+      },
+      "codeSnippet": "<Viewport3D x:Name=\"CardViewport\">\n    <Viewport3D.Camera>\n        <PerspectiveCamera x:Name=\"CardCamera\" Position=\"0,0,1.1\" .../>\n    </Viewport3D.Camera>\n    <!-- Complex 3D mesh and lighting -->\n    <Viewport2DVisual3D x:Name=\"CardSurface\">\n        <Viewport2DVisual3D.Geometry>\n            <MeshGeometry3D x:Name=\"CardMesh\" .../>\n        </Viewport2DVisual3D.Geometry>\n    </Viewport2DVisual3D>\n</Viewport3D>",
+      "recommendation": "Check PerformanceProfile.IsSoftwareRendering and disable 3D effects. Provide 2D fallback with simple scale transforms. Consider using CacheMode=BitmapCache for software rendering mode.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-009",
+      "impact": "high",
+      "category": "runtime",
+      "title": "Complex Multi-Binding in Staggered Animation Behavior",
+      "description": "AnimationBehaviors.AnimateItemsWithStagger uses reflection and multiple animations per item, firing for every ItemsControl item change. No throttling or debouncing.",
+      "filePath": "native-app-wpf/Behaviors/AnimationBehaviors.cs",
+      "lineNumbers": [67, 102],
+      "estimatedImpact": {
+        "startupTimeMs": 0,
+        "runtimeMs": 300,
+        "memoryMb": 5
+      },
+      "codeSnippet": "private static async Task AnimateItemsWithStagger(ItemsControl itemsControl)\n{\n    for (int i = 0; i < itemsControl.Items.Count; i++)\n    {\n        var container = itemsControl.ItemContainerGenerator.ContainerFromIndex(i);\n        // Creates multiple animations per item\n        var opacityAnim = new DoubleAnimation(...);\n        var slideAnim = new DoubleAnimation(...);\n        container.BeginAnimation(...);\n        await Task.Delay(staggerDelay);  // Sequential blocking\n    }\n}",
+      "recommendation": "Batch animations using Storyboard. Use CompositionTarget.Rendering for frame-synchronized updates. Limit staggered items to visible viewport only.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-010",
+      "impact": "high",
+      "category": "startup",
+      "title": "LandingPage Creates Skeleton Cards Synchronously Before Data Load",
+      "description": "LandingPage creates 4 SkeletonCard controls synchronously in constructor before async data load begins, blocking UI thread unnecessarily.",
+      "filePath": "native-app-wpf/Views/LandingPage.xaml.cs",
+      "lineNumbers": [28, 34],
+      "estimatedImpact": {
+        "startupTimeMs": 60,
+        "runtimeMs": 0,
+        "memoryMb": 2
+      },
+      "codeSnippet": "private async void LandingPage_Loaded(object sender, RoutedEventArgs e)\n{\n    // Show skeleton loading\n    SkeletonContainer.Visibility = Visibility.Visible;\n    for (int i = 0; i < 4; i++)\n    {\n        SkeletonContainer.Children.Add(new Controls.SkeletonCard { Margin = new Thickness(0, 0, 16, 16) });\n    }\n    var courses = await _courseService.GetAllCoursesAsync();\n}",
+      "recommendation": "Defer skeleton creation until after first layout pass. Use single placeholder instead of 4 separate controls. Consider using ItemsControl with ItemsSource binding for skeletons.",
+      "effort": "low"
+    },
+    {
+      "id": "WPFP-011",
+      "impact": "medium",
+      "category": "runtime",
+      "title": "CourseSidebar Recreates Entire Sidebar on Every Lesson Navigation",
+      "description": "Every lesson navigation creates a new CourseSidebar instance and calls SetSidebarContent, causing full visual tree reconstruction. No sidebar reuse.",
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumbers": [46, 50],
+      "estimatedImpact": {
+        "startupTimeMs": 100,
+        "runtimeMs": 50,
+        "memoryMb": 10
+      },
+      "codeSnippet": "if (Application.Current.MainWindow is MainWindow mainWindow)\n{\n    var sidebar = new CourseSidebar(course, courseService, navigation, ...);\n    sidebar.SetCurrentLesson(lesson);\n    mainWindow.SetSidebarContent(sidebar);\n}",
+      "recommendation": "Implement singleton sidebar pattern in MainWindow. Use content binding to switch course context instead of sidebar recreation. Cache sidebar per course.",
+      "effort": "high"
+    },
+    {
+      "id": "WPFP-012",
+      "impact": "medium",
+      "category": "runtime",
+      "title": "INotifyPropertyChanged Not Using Weak Event Pattern",
+      "description": "TutorMessage implements INotifyPropertyChanged but subscribers hold strong references. In long-running chat sessions, this can prevent garbage collection.",
+      "filePath": "native-app-wpf/Models/TutorMessage.cs",
+      "lineNumbers": [12, 25],
+      "estimatedImpact": {
+        "startupTimeMs": 0,
+        "runtimeMs": 0,
+        "memoryMb": 5
+      },
+      "codeSnippet": "public class TutorMessage : INotifyPropertyChanged\n{\n    public event PropertyChangedEventHandler? PropertyChanged;\n    \n    public string Content\n    {\n        get => _content;\n        set\n        {\n            _content = value;\n            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Content)));\n        }\n    }\n}",
+      "recommendation": "Consider using WeakEventManager for PropertyChanged events in long-lived message collections. Implement message history trimming.",
+      "effort": "low"
+    },
+    {
+      "id": "WPFP-013",
+      "impact": "medium",
+      "category": "memory",
+      "title": "ConfettiOverlay Creates Particles Without Cleanup Verification",
+      "description": "ConfettiOverlay creates particle animations for achievement celebrations. No explicit cleanup of particle objects or animation storyboards after completion.",
+      "filePath": "native-app-wpf/Controls/ConfettiOverlay.xaml.cs",
+      "lineNumbers": [1, 60],
+      "estimatedImpact": {
+        "startupTimeMs": 0,
+        "runtimeMs": 20,
+        "memoryMb": 3
+      },
+      "codeSnippet": "// Based on Play() pattern - creates particles dynamically\nfor (int i = 0; i < particleCount; i++)\n{\n    var particle = new Ellipse();\n    var storyboard = new Storyboard();\n    // ... animations added\n    storyboard.Begin();\n}",
+      "recommendation": "Implement proper particle cleanup after animation completion. Use Completed event to remove particles from visual tree. Pool particle objects for reuse.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-014",
+      "impact": "medium",
+      "category": "runtime",
+      "title": "QuizChallenge and MultiQuizChallenge Create RadioButtons in Constructor",
+      "description": "Both quiz controls create all radio button UI elements synchronously in their constructors. For quizzes with many questions/options, this blocks UI thread.",
+      "filePath": "native-app-wpf/Controls/QuizChallenge.xaml.cs",
+      "lineNumbers": [28, 58],
+      "estimatedImpact": {
+        "startupTimeMs": 40,
+        "runtimeMs": 30,
+        "memoryMb": 2
+      },
+      "codeSnippet": "public QuizChallenge(Challenge challenge)\n{\n    InitializeComponent();\n    _challenge = challenge;\n    // Build radio button options\n    var options = challenge.Options ?? new List<string>();\n    _radioButtons = new RadioButton[options.Count];\n    for (int i = 0; i < options.Count; i++)\n    {\n        // Creates Border, TextBlock for each option\n    }\n}",
+      "recommendation": "Defer radio button creation until first visibility. Use virtualization for multi-question quizzes with many options. Consider async initialization pattern.",
+      "effort": "medium"
+    },
+    {
+      "id": "WPFP-015",
+      "impact": "medium",
+      "category": "runtime",
+      "title": "DataTrigger on IsSoftwareRendering Evaluated Per Button Instance",
+      "description": "NeonPrimaryButton style uses DataTrigger binding to PerformanceProfile.IsSoftwareRendering for each button instance. Static value evaluated repeatedly.",
+      "filePath": "native-app-wpf/Themes/Controls.xaml",
+      "lineNumbers": [52, 56],
+      "estimatedImpact": {
+        "startupTimeMs": 10,
+        "runtimeMs": 5,
+        "memoryMb": 0.5
+      },
+      "codeSnippet": "<DataTrigger Binding=\"{Binding Source={x:Static services:PerformanceProfile.IsSoftwareRendering}}\" Value=\"True\">\n    <Setter TargetName=\"ButtonBorder\" Property=\"Effect\" Value=\"{x:Null}\"/>\n</DataTrigger>",
+      "recommendation": "Cache PerformanceProfile.IsSoftwareRendering value and use it to conditionally apply styles at application startup. Consider separate style dictionaries for hardware/software rendering.",
+      "effort": "low"
+    },
+    {
+      "id": "WPFP-016",
+      "impact": "medium",
+      "category": "runtime",
+      "title": "No Database Query Async/Await Pattern Verification",
+      "description": "ProgressService and CourseService methods use async/await, but LessonPage performs progress check synchronously in async void Loaded handler. Potential for UI thread blocking.",
+      "filePath": "native-app-wpf/Views/LessonPage.xaml.cs",
+      "lineNumbers": [60, 68],
+      "estimatedImpact": {
+        "startupTimeMs": 30,
+        "runtimeMs": 20,
+        "memoryMb": 0
+      },
+      "codeSnippet": "private async void LessonPage_Loaded(object sender, RoutedEventArgs e)\n{\n    Loaded -= LessonPage_Loaded;\n    try\n    {\n        await LoadLessonAsync();\n        await CheckCompletionStatusAsync();\n    }\n}",
+      "recommendation": "Ensure all database operations use ConfigureAwait(false). Move progress checks to background thread. Add cancellation token support for navigation interruptions.",
+      "effort": "low"
+    },
+    {
+      "id": "WPFP-017",
+      "impact": "low",
+      "category": "runtime",
+      "title": "PulseBorderCard Uses Forever Repeating Animation on Loaded",
+      "description": "PulseBorderCard style triggers infinite rotation animation on every card Loaded event. Multiple cards on screen create multiple concurrent forever-animations.",
+      "filePath": "native-app-wpf/Themes/Controls.xaml",
+      "lineNumbers": [270, 285],
+      "estimatedImpact": {
+        "startupTimeMs": 5,
+        "runtimeMs": 10,
+        "memoryMb": 1
+      },
+      "codeSnippet": "<Style.Triggers>\n    <EventTrigger RoutedEvent=\"Loaded\">\n        <BeginStoryboard>\n            <Storyboard RepeatBehavior=\"Forever\">\n                <DoubleAnimation Storyboard.TargetProperty=\"BorderBrush.(LinearGradientBrush.RelativeTransform).(RotateTransform.Angle)\"\n                                 From=\"0\" To=\"360\" Duration=\"0:0:6\" />\n            </Storyboard>\n        </BeginStoryboard>\n    </EventTrigger>\n</Style.Triggers>",
+      "recommendation": "Limit concurrent animations. Use Visibility-based trigger instead of Loaded. Consider reducing animation complexity when multiple pulse cards visible.",
+      "effort": "low"
+    }
+  ],
+  "recommendations": {
+    "immediate": [
+      "Implement IDisposable pattern for LessonPage to unsubscribe challenge events",
+      "Add VirtualizingStackPanel to ItemsControl in TutorChat and LessonPage",
+      "Cache CourseSidebar instance instead of recreating on each navigation"
+    ],
+    "shortTerm": [
+      "Defer AnimatedCard 3D effects until hardware acceleration confirmed",
+      "Split ResourceDictionary loading to be demand-based",
+      "Add message history limits to TutorChat"
+    ],
+    "longTerm": [
+      "Implement page pooling for LessonPage and CoursePage",
+      "Add performance profiling telemetry",
+      "Consider CompiledBinding for hot paths"
+    ]
+  },
+  "estimatedSavings": {
+    "startupTimeMs": 610,
+    "runtimeMs": 700,
+    "memoryMb": 85
+  }
+}

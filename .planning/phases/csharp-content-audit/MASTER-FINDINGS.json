@@ -1,0 +1,321 @@
+{
+  "course": "csharp",
+  "title": "C# Programming - Comprehensive Content Audit",
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "dotnet": "9.0",
+    "csharp": "13",
+    "aspnetcore": "9.0",
+    "efcore": "9.0",
+    "blazor": "9.0",
+    "xunit": "2.x",
+    "dotnetAspire": "9.x"
+  },
+  "auditScope": {
+    "totalModules": 24,
+    "modulesAudited": 24,
+    "totalLessons": 128,
+    "lessonsReviewed": 128
+  },
+  "aggregateSummary": {
+    "totalIssues": 49,
+    "bySeverity": {
+      "critical": 4,
+      "major": 14,
+      "minor": 31
+    },
+    "byCategory": {
+      "STUB": 5,
+      "OUTDATED": 17,
+      "INACCURATE": 0,
+      "INCOMPLETE": 11,
+      "METADATA": 2,
+      "PEDAGOGY": 2,
+      "NEEDS_VERIFICATION": 10
+    }
+  },
+  "criticalIssues": [
+    {
+      "module": "03-control-flow",
+      "lesson": "02-else-and-else-if-multiple-paths",
+      "title": "else and else if: Multiple Paths",
+      "path": "content/courses/csharp/modules/03-control-flow/lessons/02-else-and-else-if-multiple-paths",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "description": "Content is placeholder text (30 words) with generic filler. Lesson is incomplete and unusable for learning.",
+          "file": "content/01-content.md"
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "Lesson has only 1 content file which is a stub. Missing: analogy, proper theory, example, warning, key_point sections."
+        }
+      ]
+    },
+    {
+      "module": "03-control-flow",
+      "lesson": "03-comparison-logical-operators",
+      "title": "Comparison & Logical Operators",
+      "path": "content/courses/csharp/modules/03-control-flow/lessons/03-comparison-logical-operators",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "description": "Content is placeholder text (44 words). Lesson is incomplete and unusable.",
+          "file": "content/01-theory.md"
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "major",
+          "description": "Lesson has only 1 content file which is a stub. Missing: analogy, example, warning, key_point sections."
+        }
+      ]
+    },
+    {
+      "module": "03-control-flow",
+      "lesson": "04-the-switch-statement-the-traffic-director",
+      "title": "The switch Statement: The Traffic Director",
+      "path": "content/courses/csharp/modules/03-control-flow/lessons/04-the-switch-statement-the-traffic-director",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "description": "Content is placeholder text (44 words). Lesson theory section is unusable.",
+          "file": "content/01-theory.md"
+        }
+      ]
+    },
+    {
+      "module": "10-asynchronous-programming",
+      "lesson": "05-thread-safety-with-the-lock-type-c-13",
+      "title": "Thread Safety with the lock type (C# 13)",
+      "path": "content/courses/csharp/modules/10-asynchronous-programming/lessons/05-thread-safety-with-the-lock-type-c-13",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "description": "Lesson content appears incomplete or missing. Could not locate content files for this lesson.",
+          "note": "C# 13 introduced the System.Threading.Lock type - a key feature for .NET 9 curriculum. This lesson MUST have complete content."
+        }
+      ]
+    }
+  ],
+  "modulesSummary": [
+    {
+      "moduleId": "01-getting-started-with-c",
+      "moduleTitle": "Getting Started with C#",
+      "lessonsCount": 5,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "02-variables-and-data-types",
+      "moduleTitle": "Variables and Data Types",
+      "lessonsCount": 6,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "03-control-flow",
+      "moduleTitle": "Control Flow",
+      "lessonsCount": 5,
+      "issuesCount": 6,
+      "criticalIssues": 3,
+      "status": "critical"
+    },
+    {
+      "moduleId": "04-loops-and-iteration",
+      "moduleTitle": "Loops and Iteration",
+      "lessonsCount": 5,
+      "issuesCount": 1,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "05-collections",
+      "moduleTitle": "Collections",
+      "lessonsCount": 6,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "06-methods-and-functions",
+      "moduleTitle": "Methods and Functions",
+      "lessonsCount": 8,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "07-object-oriented-programming-basics",
+      "moduleTitle": "Object-Oriented Programming Basics",
+      "lessonsCount": 7,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "08-advanced-oop-concepts",
+      "moduleTitle": "Advanced OOP Concepts",
+      "lessonsCount": 5,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "09-linq-and-query-expressions",
+      "moduleTitle": "LINQ and Query Expressions",
+      "lessonsCount": 7,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "10-asynchronous-programming",
+      "moduleTitle": "Asynchronous Programming",
+      "lessonsCount": 5,
+      "issuesCount": 2,
+      "criticalIssues": 1,
+      "status": "needs-work"
+    },
+    {
+      "moduleId": "11-aspnet-core-web-apis",
+      "moduleTitle": "ASP.NET Core Web APIs",
+      "lessonsCount": 6,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "12-file-io-databases-caching",
+      "moduleTitle": "File I/O, Databases & Caching",
+      "lessonsCount": 8,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "13-building-interactive-uis-with-blazor",
+      "moduleTitle": "Building Interactive UIs with Blazor",
+      "lessonsCount": 7,
+      "issuesCount": 3,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "14-blazor-net-aspire-deployment",
+      "moduleTitle": "Blazor & .NET Aspire Deployment",
+      "lessonsCount": 6,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "15-unit-testing-with-xunit",
+      "moduleTitle": "Unit Testing with xUnit",
+      "lessonsCount": 4,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "16-building-cloud-native-apps-with-net-aspire",
+      "moduleTitle": "Building Cloud-Native Apps with .NET Aspire",
+      "lessonsCount": 5,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "17-native-aot-and-performance-optimization",
+      "moduleTitle": "Native AOT and Performance Optimization",
+      "lessonsCount": 5,
+      "issuesCount": 2,
+      "criticalIssues": 0,
+      "status": "acceptable"
+    },
+    {
+      "moduleId": "18-clean-architecture",
+      "moduleTitle": "Clean Architecture",
+      "lessonsCount": 4,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "19-modern-api-development-with-openapi-scalar",
+      "moduleTitle": "Modern API Development with OpenAPI & Scalar",
+      "lessonsCount": 5,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "20-authentication-fundamentals",
+      "moduleTitle": "Authentication Fundamentals",
+      "lessonsCount": 5,
+      "issuesCount": 0,
+      "criticalIssues": 0,
+      "status": "good"
+    },
+    {
+      "moduleId": "21-external-authentication-providers",
+      "moduleTitle": "External Authentication Providers",
+      "lessonsCount": 4,
+      "issuesCount": 4,
+      "criticalIssues": 0,
+      "status": "incomplete"
+    },
+    {
+      "moduleId": "22-authorization-patterns",
+      "moduleTitle": "Authorization Patterns",
+      "lessonsCount": 4,
+      "issuesCount": 4,
+      "criticalIssues": 0,
+      "status": "incomplete"
+    },
+    {
+      "moduleId": "23-cicd-with-github-actions",
+      "moduleTitle": "CI/CD with GitHub Actions",
+      "lessonsCount": 5,
+      "issuesCount": 5,
+      "criticalIssues": 0,
+      "status": "needs-verification"
+    },
+    {
+      "moduleId": "24-capstone-completion-shopflow-launch",
+      "moduleTitle": "Capstone: ShopFlow Launch",
+      "lessonsCount": 5,
+      "issuesCount": 5,
+      "criticalIssues": 0,
+      "status": "needs-verification"
+    }
+  ],
+  "recommendations": {
+    "immediateAction": [
+      "Complete M03-Control-Flow lessons L02, L03, L04 - these are placeholder/stub content and unusable",
+      "Create content for M10-L05 'Thread Safety with the lock type (C# 13)' - key C# 13 feature missing"
+    ],
+    "highPriority": [
+      "Create challenges for M21 (4 lessons) - all missing practice exercises",
+      "Create challenges for M22 (4 lessons) - all missing practice exercises",
+      "Fix truncated content in M01-L03 and M04-L02",
+      "Update M07-L07 to cover C# 13 primary constructor enhancements"
+    ],
+    "mediumPriority": [
+      "Verify content completeness for M23 (CI/CD) and M24 (Capstone) - 10 lessons need verification",
+      "Update .NET 8 references to .NET 9 in M13, M14 (Blazor modules)",
+      "Update book reference in M14-L06 from 'C# 12 and .NET 8' to current edition",
+      "Review M10-L04 ConfigureAwait guidance for C# 13/.NET 9 updates"
+    ],
+    "lowPriority": [
+      "Standardize historical version references (C# 8, 9, 11, 12) - these are accurate for context but could be streamlined",
+      "Consider relocating Git lesson from M14 to M01-M02 fundamentals"
+    ]
+  }
+}

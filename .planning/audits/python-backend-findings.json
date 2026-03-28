@@ -1,0 +1,799 @@
+{
+  "audit_date": "2026-03-28T16:23:54.077095",
+  "auditor": "python-backend-audit",
+  "target": "Python scripts in scripts/, build tools, content processing utilities",
+  "exclude_patterns": [
+    "content/",
+    "node_modules/",
+    ".venv/",
+    "venv/"
+  ],
+  "summary": {
+    "files_audited": 1,
+    "total_issues": 26,
+    "critical_issues": 0,
+    "warning_issues": 5,
+    "suggestion_issues": 21,
+    "avg_type_coverage": 0.0
+  },
+  "files": [
+    {
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\scripts\\refactor_course.py",
+      "total_lines": 168,
+      "code_lines": 115,
+      "type_coverage_percent": 0.0,
+      "issues": [
+        {
+          "line": 28,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'slugify' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def slugify(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 39,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'write_file' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def write_file(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 41,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 45,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'write_json' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def write_json(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 49,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'get_frontmatter' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def get_frontmatter(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 60,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'process_course' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def process_course(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 61,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 63,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 64,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 67,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 80,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 86,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 87,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 89,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 94,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 104,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 111,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 136,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 143,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 147,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 149,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 152,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 155,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 159,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 165,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 168,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        }
+      ],
+      "issue_count": 26,
+      "issues_by_category": {
+        "missing_type_hints": [
+          {
+            "line": 28,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'slugify' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def slugify(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 39,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'write_file' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def write_file(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 45,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'write_json' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def write_json(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 49,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'get_frontmatter' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def get_frontmatter(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 60,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'process_course' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def process_course(param: Type) -> ReturnType:"
+          }
+        ],
+        "os_path_usage": [
+          {
+            "line": 41,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 61,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 63,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 86,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 87,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 94,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 104,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 111,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 136,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 143,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 147,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 149,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 152,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 155,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 165,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          }
+        ],
+        "print_statement": [
+          {
+            "line": 64,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 67,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 80,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 89,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 159,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 168,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          }
+        ]
+      }
+    }
+  ],
+  "top_issues_by_file": [
+    {
+      "file": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\scripts\\refactor_course.py",
+      "total_lines": 168,
+      "code_lines": 115,
+      "type_coverage_percent": 0.0,
+      "issues": [
+        {
+          "line": 28,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'slugify' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def slugify(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 39,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'write_file' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def write_file(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 41,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 45,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'write_json' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def write_json(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 49,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'get_frontmatter' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def get_frontmatter(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 60,
+          "type": "missing_type_hints",
+          "severity": "warning",
+          "message": "Function 'process_course' missing type hints: return type, parameter types",
+          "fix": "Add type hints: def process_course(param: Type) -> ReturnType:"
+        },
+        {
+          "line": 61,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 63,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 64,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 67,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 80,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 86,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 87,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 89,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 94,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 104,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 111,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 136,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 143,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 147,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 149,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 152,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 155,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 159,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        },
+        {
+          "line": 165,
+          "type": "os_path_usage",
+          "severity": "suggestion",
+          "message": "Using os.path - consider pathlib for modern path handling",
+          "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+        },
+        {
+          "line": 168,
+          "type": "print_statement",
+          "severity": "suggestion",
+          "message": "Using print() - consider using logging module",
+          "fix": "Replace with logging.info(), logging.error(), etc."
+        }
+      ],
+      "issue_count": 26,
+      "issues_by_category": {
+        "missing_type_hints": [
+          {
+            "line": 28,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'slugify' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def slugify(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 39,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'write_file' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def write_file(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 45,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'write_json' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def write_json(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 49,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'get_frontmatter' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def get_frontmatter(param: Type) -> ReturnType:"
+          },
+          {
+            "line": 60,
+            "type": "missing_type_hints",
+            "severity": "warning",
+            "message": "Function 'process_course' missing type hints: return type, parameter types",
+            "fix": "Add type hints: def process_course(param: Type) -> ReturnType:"
+          }
+        ],
+        "os_path_usage": [
+          {
+            "line": 41,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 61,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 63,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 86,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 87,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 94,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 104,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 111,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 136,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 143,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 147,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 149,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 152,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 155,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          },
+          {
+            "line": 165,
+            "type": "os_path_usage",
+            "severity": "suggestion",
+            "message": "Using os.path - consider pathlib for modern path handling",
+            "fix": "Replace os.path.join() with Path('/').joinpath() or / operator"
+          }
+        ],
+        "print_statement": [
+          {
+            "line": 64,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 67,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 80,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 89,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 159,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          },
+          {
+            "line": 168,
+            "type": "print_statement",
+            "severity": "suggestion",
+            "message": "Using print() - consider using logging module",
+            "fix": "Replace with logging.info(), logging.error(), etc."
+          }
+        ]
+      }
+    }
+  ],
+  "issues_by_category": {
+    "missing_type_hints": {
+      "count": 5,
+      "severity": "warning"
+    },
+    "os_path_usage": {
+      "count": 15,
+      "severity": "suggestion"
+    },
+    "print_statement": {
+      "count": 6,
+      "severity": "suggestion"
+    }
+  }
+}

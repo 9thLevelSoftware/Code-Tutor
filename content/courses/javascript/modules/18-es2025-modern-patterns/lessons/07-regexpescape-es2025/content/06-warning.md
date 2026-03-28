@@ -34,3 +34,17 @@ if (typeof RegExp.escape !== 'function') {
   RegExp.escape = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 ```
+
+4. **ES2025 Status**
+
+`RegExp.escape` is an ES2025 feature. Check runtime support before using:
+
+| Runtime | Version | Support |
+|---------|---------|---------|
+| Bun | 1.1+ | ✅ Yes |
+| Node.js | 23+ (24+ stable) | ✅ Yes |
+| Chrome | 134+ | ✅ Yes |
+| Firefox | - | ❌ Not yet |
+| Safari | - | ❌ Not yet |
+
+For production use, include the polyfill (section 3) or use a library like `lodash.escaperegexp` for broader compatibility.

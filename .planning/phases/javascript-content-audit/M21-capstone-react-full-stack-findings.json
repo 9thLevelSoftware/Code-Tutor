@@ -1,0 +1,69 @@
+{
+  "course": "javascript",
+  "module": "21-capstone-react-full-stack",
+  "moduleTitle": "Module 21: Capstone: React Full Stack",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/21-capstone-react-full-stack/lessons/01-project-architecture",
+      "lessonTitle": "Project Architecture",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/21-capstone-react-full-stack/lessons/02-building-the-backend",
+      "lessonTitle": "Building the Backend",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/21-capstone-react-full-stack/lessons/03-building-the-frontend",
+      "lessonTitle": "Building the Frontend",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/21-capstone-react-full-stack/lessons/04-connecting-frontend-and-backend",
+      "lessonTitle": "Connecting Frontend and Backend",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/21-capstone-react-full-stack/lessons/05-adding-features-and-polish",
+      "lessonTitle": "Adding Features and Polish",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/21-capstone-react-full-stack/lessons/06-final-deployment",
+      "lessonTitle": "Final Deployment",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

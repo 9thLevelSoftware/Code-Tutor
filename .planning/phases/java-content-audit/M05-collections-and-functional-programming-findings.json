@@ -1,0 +1,74 @@
+{
+  "module": "M05",
+  "moduleName": "Collections and Functional Programming",
+  "auditDate": "2026-03-28",
+  "targetVersions": {
+    "java": "25",
+    "junit": "5.x",
+    "gradle": "8.x"
+  },
+  "findings": {
+    "STUB": [],
+    "OUTDATED": [],
+    "INACCURATE": [],
+    "INCOMPLETE": [],
+    "METADATA": [],
+    "PEDAGOGY": []
+  },
+  "lessons": [
+    {
+      "id": "lesson-05-01",
+      "title": "Arrays - Storing Multiple Values",
+      "contentType": "beginner",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-05-02",
+      "title": "ArrayList - Arrays That Grow",
+      "contentType": "beginner",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-05-03",
+      "title": "HashMap - Looking Up by Name",
+      "contentType": "beginner",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-05-04",
+      "title": "LinkedList - A Different Kind of List",
+      "contentType": "beginner",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-05-05",
+      "title": "Sorting, Searching, and Collection Utilities",
+      "contentType": "beginner",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-05-06",
+      "title": "Lambda Expressions - Functions as Data",
+      "contentType": "intermediate",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-05-07",
+      "title": "Streams - Functional Collection Processing",
+      "contentType": "intermediate",
+      "issues": [],
+      "status": "VERIFIED"
+    }
+  ],
+  "summary": {
+    "totalLessons": 7,
+    "verifiedLessons": 7,
+    "totalIssues": 0
+  }
+}

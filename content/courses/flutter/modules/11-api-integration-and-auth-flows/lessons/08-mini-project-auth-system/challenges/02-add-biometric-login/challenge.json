@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.8-challenge-2",
+  "id": "11.8-challenge-2",
   "title": "Add Biometric Login",
   "description": "Enhance the auth system with biometric authentication (fingerprint/face) for returning users.",
   "instructions": "Add biometric login capability that allows users who have previously logged in to authenticate using their device's biometric sensor.\n\n1. Add the local_auth package dependency\n2. Check if biometrics are available on the device\n3. Store a flag when user enables biometric login\n4. Show biometric prompt on app launch if enabled\n5. Fall back to password login if biometric fails\n\nThe implementation should:\n- Check device capability before showing the option\n- Securely store the biometric preference\n- Handle all biometric authentication results\n- Work seamlessly with the existing auth flow",

@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l04-challenge-01",
+  "title": "Implement Resource-Based Authorization",
+  "description": "Build a resource-based authorization system where users can only edit/delete their own resources using IAuthorizationHandler, IAuthorizationRequirement, and resource-specific authorization.",
+  "instructions": "Implement 'users can only edit their own resources' authorization for ShopFlow! This is the most granular form of authorization where permissions depend on the specific resource being accessed.\n\n**Scenario:**\nYou have a document management system and a product marketplace. Users should only be able to edit/delete their own documents and products they created, even if they have the 'can:edit-products' permission.\n\n**Requirements:**\n\n1. **IAuthorizationHandler Implementation:**\n   - Create DocumentAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Document>\n   - Create ProductAuthorizationHandler : AuthorizationHandler<OperationAuthorizationRequirement, Product>\n   - Check if resource.OwnerId == currentUserId\n   - Admins can access all resources\n\n2. **Authorization Requirements:**\n   - Use OperationAuthorizationRequirement with operations: Create, Read, Update, Delete\n   - Or create custom requirements: IsOwnerRequirement, IsAdminRequirement\n\n3. **Resource Entities:**\n   - Document: Id, Title, Content, OwnerId, CreatedAt, IsPublic\n   - Product: Id, Name, Price, OwnerId (seller), CreatedAt, Status\n\n4. **Protected Endpoints:**\n   - GET /api/documents/{id} - Allow if owner OR document is public\n   - PUT /api/documents/{id} - Only owner can edit\n   - DELETE /api/documents/{id} - Only owner can delete\n   - GET /api/products/{id} - Anyone can view\n   - PUT /api/products/{id} - Only owner/seller can edit\n   - DELETE /api/products/{id} - Only owner can delete\n\n5. **Imperative Authorization:**\n   - Use IAuthorizationService.AuthorizeAsync(User, resource, operationName)\n   - Show both operation-based and policy-based approaches\n\n**Edge Cases:**\n- Handle resources that don't exist (404 before auth check)\n- Admins can bypass ownership checks\n- Handle concurrent updates (optimistic locking consideration)\n- Support resource sharing (future: co-owners, teams)\n\n**Hint:** The key is the second type parameter in AuthorizationHandler<TRequirement, TResource> - this enables resource-specific authorization logic.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should implement IAuthorizationHandler with resource type",
+      "expectedOutput": "AuthorizationHandler",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should use IAuthorizationService with resource",
+      "expectedOutput": "AuthorizeAsync",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should check resource owner against current user",
+      "expectedOutput": "OwnerId",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should allow Admin role to bypass ownership",
+      "expectedOutput": "Admin",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Create a DocumentAuthorizationHandler that inherits from AuthorizationHandler<OperationAuthorizationRequirement, Document>."
+    },
+    {
+      "level": 2,
+      "text": "In HandleRequirementAsync, get current user ID from context.User.FindFirstValue(ClaimTypes.NameIdentifier)."
+    },
+    {
+      "level": 3,
+      "text": "Check if resource.OwnerId == currentUserId OR user is in Admin role. If true, call context.Succeed(requirement)."
+    },
+    {
+      "level": 4,
+      "text": "Register handlers: builder.Services.AddSingleton<IAuthorizationHandler, DocumentAuthorizationHandler>()."
+    },
+    {
+      "level": 5,
+      "text": "In the endpoint, use await authorizationService.AuthorizeAsync(User, document, Operations.Update) to check access."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not checking if resource exists before authorization",
+      "consequence": "NullReferenceException when resource is null, confusing 403 vs 404 responses.",
+      "correction": "Load the resource first, return 404 if not found, then perform authorization check."
+    },
+    {
+      "mistake": "Using the wrong AuthorizationHandler overload",
+      "consequence": "Resource-based auth won't work - handler only gets the requirement, not the resource.",
+      "correction": "Use AuthorizationHandler<TRequirement, TResource> with TWO type parameters for resource-based auth."
+    },
+    {
+      "mistake": "Not calling context.Succeed()",
+      "consequence": "Authorization always fails because handler never signals success.",
+      "correction": "Call context.Succeed(requirement) when your condition is met. Don't call Fail() - just don't call Succeed()."
+    },
+    {
+      "mistake": "Not registering handlers in DI",
+      "consequence": "Handlers are never invoked, authorization silently fails.",
+      "correction": "Register all IAuthorizationHandler implementations in Program.cs with AddSingleton or AddScoped."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 45
+}

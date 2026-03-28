@@ -1,6 +1,6 @@
 {
   "type": "QUIZ",
-  "id": "10.4-quiz-1",
+  "id": "11.4-quiz-1",
   "title": "Registration Flow Security Quiz",
   "description": "Test your understanding of secure registration implementation.",
   "questions": [

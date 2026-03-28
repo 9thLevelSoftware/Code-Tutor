@@ -1,0 +1,416 @@
+{
+  "course": "csharp",
+  "modules": ["07-object-oriented-programming-basics", "08-advanced-oop-concepts", "09-linq-and-query-expressions", "10-asynchronous-programming", "11-aspnet-core-web-apis", "12-file-io-databases-caching"],
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "dotnet": "9.0",
+    "csharp": "13",
+    "aspnetcore": "9.0",
+    "efcore": "9.0",
+    "blazor": "9.0",
+    "xunit": "2.x",
+    "aspire": "9.x"
+  },
+  "totalLessons": 38,
+  "lessonsReviewed": 38,
+  "findings": [
+    {
+      "lessonPath": "modules/07-object-oriented-programming-basics/lessons/01-inheritance-blueprints-based-on-blueprints",
+      "lessonTitle": "Inheritance (Blueprints Based on Blueprints)",
+      "moduleId": "module-07",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/07-object-oriented-programming-basics/lessons/02-polymorphism-virtual-override",
+      "lessonTitle": "Polymorphism (virtual & override)",
+      "moduleId": "module-07",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/07-object-oriented-programming-basics/lessons/03-abstract-classes-the-unfinished-blueprint",
+      "lessonTitle": "Abstract Classes (The Unfinished Blueprint)",
+      "moduleId": "module-07",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/07-object-oriented-programming-basics/lessons/04-interfaces-the-contract",
+      "lessonTitle": "Interfaces (The Contract)",
+      "moduleId": "module-07",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/07-object-oriented-programming-basics/lessons/05-when-to-use-each-oop-feature",
+      "lessonTitle": "When to Use Each OOP Feature",
+      "moduleId": "module-07",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/07-object-oriented-programming-basics/lessons/06-records-c-9",
+      "lessonTitle": "Records (C# 9)",
+      "moduleId": "module-07",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "PEDAGOGY",
+          "severity": "minor",
+          "description": "Lesson title references C# 9, but Records continue to be relevant in C# 13",
+          "details": "Records were introduced in C# 9 but remain fully supported and recommended in C# 13. Title could be updated to emphasize current relevance rather than origin version."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/07-object-oriented-programming-basics/lessons/07-primary-constructors-c-12",
+      "lessonTitle": "Primary Constructors (C# 12)",
+      "moduleId": "module-07",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "description": "Lesson references C# 12, but target is C# 13",
+          "details": "Primary constructors were enhanced in C# 13 with field initialization improvements. Content should verify it covers C# 13 features."
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "description": "Content files structure inconsistent",
+          "details": "Lesson directory structure exists but content verification needed for completeness"
+        }
+      ],
+      "fixesApplied": [],
+      "webResearchNote": "C# 13 primary constructors: Added ability to initialize fields directly in the primary constructor parameter list without separate field declarations."
+    },
+    {
+      "lessonPath": "modules/08-advanced-oop-concepts/lessons/01-exceptions-trycatch-planning-for-problems",
+      "lessonTitle": "Exceptions: Try/Catch - Planning for Problems",
+      "moduleId": "module-08",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/08-advanced-oop-concepts/lessons/02-the-finally-block-custom-exceptions",
+      "lessonTitle": "The finally Block & Custom Exceptions",
+      "moduleId": "module-08",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/08-advanced-oop-concepts/lessons/03-namespaces-organizing-your-blueprints",
+      "lessonTitle": "Namespaces: Organizing Your Blueprints",
+      "moduleId": "module-08",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "description": "References C# 10+ features (file-scoped namespaces, global usings)",
+          "details": "Content correctly references C# 10+ features. Since target is C# 13, these are valid. No updates needed."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/08-advanced-oop-concepts/lessons/04-using-system-libraries-built-in-tools",
+      "lessonTitle": "Using System Libraries: Built-In Tools",
+      "moduleId": "module-08",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/08-advanced-oop-concepts/lessons/05-nuget-the-app-store-for-code",
+      "lessonTitle": "NuGet: The App Store for Code",
+      "moduleId": "module-08",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/09-linq-and-query-expressions/lessons/01-what-is-linq-the-search-engine-analogy",
+      "lessonTitle": "What is LINQ? (The Search Engine Analogy)",
+      "moduleId": "module-09",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/09-linq-and-query-expressions/lessons/02-ienumerablet-the-stream-of-data",
+      "lessonTitle": "IEnumerable<T>: The Stream of Data",
+      "moduleId": "module-09",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/09-linq-and-query-expressions/lessons/03-filtering-with-where-the-filter-funnel",
+      "lessonTitle": "Filtering with Where (The Filter Funnel)",
+      "moduleId": "module-09",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/09-linq-and-query-expressions/lessons/04-transforming-with-select-the-transformation-machine",
+      "lessonTitle": "Transforming with Select (The Transformation Machine)",
+      "moduleId": "module-09",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/09-linq-and-query-expressions/lessons/05-sorting-aggregating-orderby-sum-count",
+      "lessonTitle": "Sorting & Aggregating: OrderBy, Sum, Count",
+      "moduleId": "module-09",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/09-linq-and-query-expressions/lessons/06-advanced-linq-groupby-selectmany-join",
+      "lessonTitle": "Advanced LINQ: GroupBy, SelectMany, Join",
+      "moduleId": "module-09",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/09-linq-and-query-expressions/lessons/07-new-in-net-9-countby-and-aggregateby",
+      "lessonTitle": "New in .NET 9: CountBy and AggregateBy",
+      "moduleId": "module-09",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/10-asynchronous-programming/lessons/01-synchronous-vs-asynchronous-restaurant-buzzer-analogy",
+      "lessonTitle": "Synchronous vs Asynchronous (Restaurant Buzzer Analogy)",
+      "moduleId": "module-10",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/10-asynchronous-programming/lessons/02-the-async-await-keywords-the-modern-way",
+      "lessonTitle": "The async & await Keywords (The Modern Way)",
+      "moduleId": "module-10",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "PEDAGOGY",
+          "severity": "minor",
+          "description": "Content correctly warns about async void dangers",
+          "details": "Good coverage of anti-patterns like async void and .Result blocking"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/10-asynchronous-programming/lessons/03-taskt-the-promise-of-a-future-result",
+      "lessonTitle": "Task<T>: The Promise of a Future Result",
+      "moduleId": "module-10",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/10-asynchronous-programming/lessons/04-common-async-patterns-best-practices",
+      "lessonTitle": "Common Async Patterns & Best Practices",
+      "moduleId": "module-10",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "description": "ConfigureAwait guidance needs C# 13/.NET 9 updates",
+          "details": "Content states 'Modern guidance: Use ConfigureAwait(false) in library code. For app code in ASP.NET Core (no sync context), it doesn't matter.' This is partially accurate, but .NET 9 introduced lock type which affects async patterns."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/10-asynchronous-programming/lessons/05-thread-safety-with-the-lock-type-c-13",
+      "lessonTitle": "Thread Safety with the lock type (C# 13)",
+      "moduleId": "module-10",
+      "qualityRating": "critical",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "critical",
+          "description": "Lesson content appears incomplete or missing",
+          "details": "Could not locate content files for this lesson. Directory exists but content files may be missing or named differently."
+        },
+        {
+          "category": "METADATA",
+          "severity": "major",
+          "description": "Lesson references C# 13 lock type which is a major new feature",
+          "details": "C# 13 introduced the 'lock' object type for thread-safe async scenarios. This is a key feature for .NET 9/C# 13 curriculum and should have complete content."
+        }
+      ],
+      "fixesApplied": [],
+      "webResearchNote": "C# 13 introduces the System.Threading.Lock type which provides a modern, efficient alternative to lock statements with better async support and performance characteristics."
+    },
+    {
+      "lessonPath": "modules/11-aspnet-core-web-apis/lessons/01-what-is-aspnet-core-the-web-application-factory",
+      "lessonTitle": "What is ASP.NET Core? (The Web Application Factory)",
+      "moduleId": "module-11",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/11-aspnet-core-web-apis/lessons/02-building-your-first-minimal-api-the-data-menu",
+      "lessonTitle": "Building Your First Minimal API (The Data Menu)",
+      "moduleId": "module-11",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/11-aspnet-core-web-apis/lessons/03-routing-mapget-mappost-mapput-mapdelete",
+      "lessonTitle": "Routing: MapGet, MapPost, MapPut, MapDelete",
+      "moduleId": "module-11",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/11-aspnet-core-web-apis/lessons/04-dependency-injection-the-supply-manager",
+      "lessonTitle": "Dependency Injection: The Supply Manager",
+      "moduleId": "module-11",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/11-aspnet-core-web-apis/lessons/05-returning-data-status-codes-speaking-http",
+      "lessonTitle": "Returning Data & Status Codes: Speaking HTTP",
+      "moduleId": "module-11",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/11-aspnet-core-web-apis/lessons/06-authentication-authorization-the-security-guard",
+      "lessonTitle": "Authentication & Authorization: The Security Guard",
+      "moduleId": "module-11",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/01-why-databases-beyond-text-files",
+      "lessonTitle": "Why Databases? Beyond Text Files",
+      "moduleId": "module-12",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/02-what-is-an-orm-the-translator-analogy",
+      "lessonTitle": "What is an ORM? (The Translator Analogy)",
+      "moduleId": "module-12",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/03-entity-framework-core-basics",
+      "lessonTitle": "Entity Framework Core Basics",
+      "moduleId": "module-12",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "PEDAGOGY",
+          "severity": "minor",
+          "description": "Content should verify EF Core 9 specific features",
+          "details": "Lesson covers EF Core basics. Should verify coverage of EF Core 9 improvements like improved JSON mapping and LINQ translation."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/04-code-first-design-databases-from-c-classes",
+      "lessonTitle": "Code First: Design Databases from C# Classes",
+      "moduleId": "module-12",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/05-dbcontext-dbset-your-database-connection",
+      "lessonTitle": "DbContext & DbSet: Your Database Connection",
+      "moduleId": "module-12",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/06-migrations-bulk-operations",
+      "lessonTitle": "Migrations & Bulk Operations",
+      "moduleId": "module-12",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "description": "References EF Core 7+ for bulk operations",
+          "details": "ExecuteUpdate and ExecuteDelete were introduced in EF Core 7. For .NET 9/EF Core 9 target, this is valid but could emphasize any EF Core 9 improvements."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/07-ef-core-compiled-models-startup-performance",
+      "lessonTitle": "EF Core Compiled Models: Startup Performance",
+      "moduleId": "module-12",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "webResearchNote": "EF Core 9 auto-compiled models feature confirmed. Microsoft.EntityFrameworkCore.Tasks package enables automatic regeneration on build."
+    },
+    {
+      "lessonPath": "modules/12-file-io-databases-caching/lessons/08-hybridcache-modern-caching",
+      "lessonTitle": "HybridCache: Modern Caching",
+      "moduleId": "module-12",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": [],
+      "webResearchNote": "HybridCache is a .NET 9 feature for multi-tier caching with L1 (in-memory) and L2 (distributed) support. Package Microsoft.Extensions.Caching.Hybrid."
+    }
+  ],
+  "summary": {
+    "totalIssues": 8,
+    "bySeverity": {
+      "critical": 1,
+      "major": 2,
+      "minor": 5
+    },
+    "byCategory": {
+      "STUB": 1,
+      "OUTDATED": 3,
+      "INCOMPLETE": 1,
+      "METADATA": 1,
+      "PEDAGOGY": 2
+    },
+    "qualityDistribution": {
+      "good": 31,
+      "acceptable": 2,
+      "needs-work": 2,
+      "critical": 1
+    },
+    "modulesAffected": ["07-object-oriented-programming-basics", "10-asynchronous-programming", "12-file-io-databases-caching"]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "course": "flutter",
+  "module": "18-capstone-social-chat-app",
+  "moduleTitle": "Capstone: Social Chat App",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 12,
+  "lessonsReviewed": 12,
+  "findings": [
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/01-project-setup-architecture",
+      "lessonTitle": "Project Setup and Architecture",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/02-backend-models-database",
+      "lessonTitle": "Backend: Models and Database",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/03-backend-auth-endpoints",
+      "lessonTitle": "Backend: Authentication Endpoints",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/04-backend-posts-comments-api",
+      "lessonTitle": "Backend: Posts and Comments API",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/05-backend-real-time-chat",
+      "lessonTitle": "Backend: Real-Time Chat",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/06-backend-media-upload",
+      "lessonTitle": "Backend: Media Upload",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/07-frontend-auth-screens",
+      "lessonTitle": "Frontend: Authentication Screens",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/08-frontend-feed-posts",
+      "lessonTitle": "Frontend: Feed and Posts",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/09-frontend-chat-ui",
+      "lessonTitle": "Frontend: Chat UI",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/10-frontend-profile-settings",
+      "lessonTitle": "Frontend: Profile and Settings",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/11-offline-sync",
+      "lessonTitle": "Offline and Sync",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/18-capstone-social-chat-app/lessons/12-deploy-launch",
+      "lessonTitle": "Deploy and Launch",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

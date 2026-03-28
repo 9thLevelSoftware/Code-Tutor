@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "14.5-challenge-1",
+  "id": "15.5-challenge-1",
   "title": "Responsive Navigation Shell",
   "description": "Create a navigation shell that switches between bottom navigation, navigation rail, and sidebar based on screen width.",
   "instructions": "Build a ResponsiveNavigationShell widget that wraps child content with appropriate navigation. For screens < 600px wide, use a BottomNavigationBar. For screens 600-900px, use a NavigationRail. For screens > 900px, use a NavigationDrawer (permanent sidebar). All navigation types should have the same 4 destinations: Home, Search, Favorites, Profile. The selected index and onDestinationSelected callback should be passed as parameters.",

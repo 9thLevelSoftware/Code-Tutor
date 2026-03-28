@@ -1,0 +1,119 @@
+{
+  "auditInfo": {
+    "moduleId": "M12",
+    "moduleSlug": "security-sessions-jwt",
+    "auditDate": "2026-03-28",
+    "auditor": "Content Auditor",
+    "targetVersions": {
+      "java": "25",
+      "springBoot": "4.0.x",
+      "springSecurity": "7.x",
+      "jjwt": "0.12.x"
+    }
+  },
+  "findings": [
+    {
+      "lessonId": "lesson-s1",
+      "lessonTitle": "Web Security Fundamentals",
+      "severity": "OK",
+      "category": "CONTENT",
+      "finding": "Complete security fundamentals. 6 content blocks covering CIA triad, auth vs authz, OWASP Top 10.",
+      "details": "Good foundation for security module. OWASP coverage current. HTTPS explanation accurate."
+    },
+    {
+      "lessonId": "lesson-s2",
+      "lessonTitle": "Spring Security Basics",
+      "severity": "OK",
+      "category": "CONTENT",
+      "finding": "Modern Spring Security patterns. 7 content blocks with SecurityFilterChain, BCrypt, form/Basic auth.",
+      "details": "Uses SecurityFilterChain bean correctly. Password encoding with BCryptPasswordEncoder shown."
+    },
+    {
+      "lessonId": "lesson-s2",
+      "lessonTitle": "Spring Security Basics",
+      "severity": "INFO",
+      "category": "VERSION",
+      "finding": "Warning block explicitly shows OLD vs NEW patterns",
+      "details": "Shows OLD (authorizeRequests, antMatchers) vs NEW (authorizeHttpRequests, requestMatchers). Good for migration context."
+    },
+    {
+      "lessonId": "lesson-s2",
+      "lessonTitle": "Spring Security Basics",
+      "severity": "OK",
+      "category": "VERSION",
+      "finding": "Challenge notes: 'WebSecurityConfigurerAdapter was removed in Spring Security 6'",
+      "details": "Explicitly states modern approach requirement."
+    },
+    {
+      "lessonId": "lesson-s3",
+      "lessonTitle": "Session-Based Authentication",
+      "severity": "OK",
+      "category": "CONTENT",
+      "finding": "Complete session auth coverage. 7 content blocks with SecurityFilterChain, session config, CSRF.",
+      "details": "SessionCreationPolicy.ALWAYS/IF_REQUIRED/STATELESS covered. CSRF explanation accurate."
+    },
+    {
+      "lessonId": "lesson-s4",
+      "lessonTitle": "JWT Authentication",
+      "severity": "OK",
+      "category": "CONTENT",
+      "finding": "Comprehensive JWT implementation. 7 content blocks covering structure, flow, Spring Security integration.",
+      "details": "Uses Jwts.builder() and Jwts.parser() patterns. SecretKey generation correct."
+    },
+    {
+      "lessonId": "lesson-s4",
+      "lessonTitle": "JWT Authentication",
+      "severity": "INFO",
+      "category": "VERSION",
+      "finding": "Uses jjwt library imports: io.jsonwebtoken.*",
+      "details": "Imports: io.jsonwebtoken.Claims, io.jsonwebtoken.Jwts, io.jsonwebtoken.security.Keys - all modern jjwt API"
+    },
+    {
+      "lessonId": "lesson-s4",
+      "lessonTitle": "JWT Authentication",
+      "severity": "OK",
+      "category": "VERSION",
+      "finding": "Uses Jwts.parser().verifyWith(key).build().parseSignedClaims() - modern jjwt 0.12.x API",
+      "details": "Not using deprecated setSigningKey() pattern. Correct modern parser builder pattern."
+    },
+    {
+      "lessonId": "lesson-s4",
+      "lessonTitle": "JWT Authentication",
+      "severity": "INFO",
+      "category": "BEST_PRACTICE",
+      "finding": "Access token vs refresh token distinction covered - production-ready pattern",
+      "details": "Explains why two tokens are needed and their different lifetimes."
+    },
+    {
+      "lessonId": "lesson-s5",
+      "lessonTitle": "Role-Based Access Control",
+      "severity": "OK",
+      "category": "CONTENT",
+      "finding": "Complete RBAC coverage. 7 content blocks with roles, authorities, @PreAuthorize, method security.",
+      "details": "Role vs authority distinction clear. @PreAuthorize, @PostAuthorize examples correct."
+    },
+    {
+      "lessonId": "lesson-s5",
+      "lessonTitle": "Role-Based Access Control",
+      "severity": "OK",
+      "category": "VERSION",
+      "finding": "Uses modern SecurityFilterChain with requestMatchers()",
+      "details": "All authorization examples use current lambda DSL pattern."
+    }
+  ],
+  "summary": {
+    "totalLessons": 5,
+    "lessonsWithIssues": 0,
+    "lessonsOK": 5,
+    "criticalIssues": 0,
+    "warnings": 0,
+    "infoItems": 4,
+    "coverage": {
+      "SecurityFundamentals": "Complete",
+      "SpringSecurityBasics": "Complete - modern patterns",
+      "SessionAuth": "Complete",
+      "JWTAuth": "Complete - modern jjwt 0.12.x API",
+      "RBAC": "Complete - Spring Security 7"
+    }
+  }
+}

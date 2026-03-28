@@ -24,7 +24,7 @@ class PersonOld
     }
 }
 
-// NEW WAY - Primary Constructor (C# 12)!
+// NEW WAY - Primary Constructor (C# 12+)!
 public class Person(string name, int age)
 {
     // Parameters are available everywhere in the class!
@@ -54,4 +54,40 @@ public class Employee(string name, int age, string department)
 var emp = new Employee("Bob", 25, "Engineering");
 emp.Introduce();        // From Person
 emp.ShowDepartment();   // Bob works in Engineering
+```
+
+---
+
+## C# 13 Preview: Using `field` with Primary Constructors
+
+```csharp
+// C# 13 (preview) - Using 'field' keyword for cleaner properties
+public class Product(string name, decimal price)
+{
+    // No explicit backing field needed!
+    public string Name
+    {
+        get => field;
+        set => field = !string.IsNullOrWhiteSpace(value) 
+            ? value 
+            : throw new ArgumentException("Name cannot be empty");
+    }
+    
+    public decimal Price
+    {
+        get => field;
+        init => field = value > 0 
+            ? value 
+            : throw new ArgumentOutOfRangeException("Price must be positive");
+    }
+    
+    // Primary constructor parameters still available
+    public string GetInfo() => $"{name} costs ${price}";
+}
+
+// Usage
+var product = new Product("Laptop", 999.99m);
+Console.WriteLine(product.Name);  // "Laptop"
+product.Name = "Gaming Laptop";     // Valid update
+// product.Price = 899.99m;         // Error: Price is init-only
 ```

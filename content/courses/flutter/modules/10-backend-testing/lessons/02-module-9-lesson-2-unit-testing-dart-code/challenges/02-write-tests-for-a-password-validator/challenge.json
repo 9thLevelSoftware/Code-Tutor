@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "9.2-challenge-1",
+  "id": "10.2-challenge-1",
   "title": "Write Tests for a Password Validator",
   "description": "Create unit tests for a password validation function.",
   "instructions": "You have a `PasswordValidator` class with a `validate(String password)` method that returns a `ValidationResult` containing `isValid` (bool) and `errors` (List<String>).\n\nPassword requirements:\n- At least 8 characters\n- Contains at least one uppercase letter\n- Contains at least one number\n- Contains at least one special character (!@#$%^&*)\n\nWrite tests covering:\n1. A valid password passes all checks\n2. Password too short fails\n3. Missing uppercase fails\n4. Missing number fails\n5. Missing special character fails\n6. Multiple errors are collected",

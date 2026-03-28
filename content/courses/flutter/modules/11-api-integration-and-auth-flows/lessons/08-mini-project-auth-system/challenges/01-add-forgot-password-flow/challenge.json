@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.8-challenge-1",
+  "id": "11.8-challenge-1",
   "title": "Add Forgot Password Flow",
   "description": "Extend the auth system with a forgot password feature that sends a reset link to the user's email.",
   "instructions": "Implement a forgot password flow that includes:\n\n1. A ForgotPasswordScreen with an email input field\n2. A method in AuthService to request a password reset\n3. Success/error feedback to the user\n4. Navigation from login screen to forgot password\n5. Proper validation and error handling\n\nThe screen should:\n- Validate the email format\n- Show a loading indicator during the request\n- Display success message with instructions to check email\n- Handle errors gracefully (user not found, network error)",

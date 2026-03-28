@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.7-challenge-2",
+  "id": "11.7-challenge-2",
   "title": "Add Route Transition Animations",
   "description": "Enhance the navigation experience with custom page transitions for different route types.",
   "instructions": "Create a custom page builder that applies different animations based on route type:\n\n1. Fade transition for auth screens (login, register)\n2. Slide from right for forward navigation within the app\n3. Slide from bottom for modal-style screens (settings, profile edit)\n4. No animation for redirect navigations\n\nUse GoRouter's pageBuilder to apply these transitions.",

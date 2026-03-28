@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.1-challenge-2",
+  "id": "11.1-challenge-2",
   "title": "Build a Repository with Caching",
   "description": "Create a ProductRepository that fetches products from the server and caches them locally.",
   "instructions": "Implement a ProductRepository that:\n1. Fetches products from the Serverpod client\n2. Caches products in memory with a configurable TTL (time-to-live)\n3. Returns cached data if available and not expired\n4. Provides a method to force refresh, bypassing the cache\n5. Handles errors gracefully and returns them in ApiResult",

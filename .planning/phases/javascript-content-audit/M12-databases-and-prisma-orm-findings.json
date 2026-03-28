@@ -1,0 +1,62 @@
+{
+  "course": "javascript",
+  "module": "12-databases-and-prisma-orm",
+  "moduleTitle": "Module 12: Databases and Prisma ORM",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/12-databases-and-prisma-orm/lessons/01-database-fundamentals",
+      "lessonTitle": "Database Fundamentals",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/12-databases-and-prisma-orm/lessons/02-setting-up-prisma",
+      "lessonTitle": "Setting Up Prisma",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/12-databases-and-prisma-orm/lessons/03-defining-your-data-model",
+      "lessonTitle": "Defining Your Data Model",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/12-databases-and-prisma-orm/lessons/04-crud-operations-with-prisma",
+      "lessonTitle": "CRUD Operations with Prisma",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/12-databases-and-prisma-orm/lessons/05-relationships-and-migrations",
+      "lessonTitle": "Relationships and Migrations",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

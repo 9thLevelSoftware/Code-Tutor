@@ -1,0 +1,25 @@
+{
+  "auditDate": "2026-03-28",
+  "course": "javascript",
+  "totalModules": 21,
+  "totalLessons": 104,
+  "lessonsReviewed": 104,
+  "totalIssues": 5,
+  "bySeverity": {
+    "critical": 0,
+    "major": 2,
+    "minor": 3
+  },
+  "byCategory": {
+    "OUTDATED": 3,
+    "PEDAGOGY": 2,
+    "STUB": 0,
+    "INACCURATE": 0,
+    "INCOMPLETE": 0,
+    "METADATA": 0,
+    "MALFORMED": 0
+  },
+  "modulesWithIssues": ["01-the-absolute-basics", "03-making-decisions", "10-typescript-fundamentals", "18-es2025-modern-patterns"],
+  "modulesClean": 17,
+  "outputFiles": 43
+}

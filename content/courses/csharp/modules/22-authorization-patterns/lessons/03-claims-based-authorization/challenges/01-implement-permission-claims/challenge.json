@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l03-challenge-01",
+  "title": "Implement Permission Claims System",
+  "description": "Implement a fine-grained permission system using claims-based authorization with custom policies for permissions like can:view-reports, can:edit-products, can:delete-users.",
+  "instructions": "Extend the role-based system with claims-based authorization for granular permission control in ShopFlow!\n\n**Background:**\nRoles are too coarse-grained. You need permissions like 'can:view-reports', 'can:edit-products', 'can:delete-users' that can be assigned independently of roles.\n\n**Requirements:**\n\n1. **Claims Transformation Service:**\n   - Create IClaimsTransformation implementation\n   - Map roles to permission claims\n   - Add custom claims during authentication\n\n2. **Permission Policies:**\n   - Define policies for each permission in AddAuthorization()\n   - can:view-reports, can:edit-products, can:delete-users\n   - can:manage-inventory, can:process-refunds\n\n3. **Protected Endpoints:**\n   - GET /api/reports/sales - requires can:view-reports\n   - POST /api/products - requires can:edit-products\n   - DELETE /api/users/{id} - requires can:delete-users\n   - PUT /api/inventory/{id} - requires can:manage-inventory\n   - POST /api/orders/{id}/refund - requires can:process-refunds\n\n4. **Permission-Based UI Data:**\n   - GET /api/my-permissions - return current user's permissions\n   - Return array of permission strings for UI rendering\n\n5. **Imperative Authorization:**\n   - Use IAuthorizationService.AuthorizeAsync in one endpoint\n   - Demonstrate programmatic permission checking\n\n**Claims Mapping:**\n- Admin role → ALL permissions\n- Manager role → can:view-reports, can:manage-inventory\n- User role → can:edit-products (own products only via resource auth)\n- SupportService role → can:process-refunds\n\n**Edge Cases:**\n- Handle missing permission claims gracefully\n- Cache claims transformation (don't hit database every request)\n- Support dynamic permission assignment (not just role-based)",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should implement IClaimsTransformation",
+      "expectedOutput": "IClaimsTransformation",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should define custom authorization policies",
+      "expectedOutput": "AddPolicy",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should use permission claims in authorization",
+      "expectedOutput": "permission:",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should implement IAuthorizationService check",
+      "expectedOutput": "AuthorizeAsync",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Create a PermissionClaimsTransformation class that implements IClaimsTransformation."
+    },
+    {
+      "level": 2,
+      "text": "Register the transformation: builder.Services.AddScoped<IClaimsTransformation, PermissionClaimsTransformation>()."
+    },
+    {
+      "level": 3,
+      "text": "In AddAuthorization, define policies: options.AddPolicy(\"ViewReports\", policy => policy.RequireClaim(\"permission\", \"can:view-reports\"))."
+    },
+    {
+      "level": 4,
+      "text": "Use [Authorize(Policy = \"ViewReports\")] attribute on protected endpoints."
+    },
+    {
+      "level": 5,
+      "text": "For imperative checks: await authorizationService.AuthorizeAsync(User, null, \"DeleteUsers\")."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not caching role lookups in claims transformation",
+      "consequence": "Database query on every request, severe performance degradation.",
+      "correction": "Use IMemoryCache or check if claims already exist to avoid redundant lookups."
+    },
+    {
+      "mistake": "Creating claims with wrong claim type",
+      "consequence": "Policy won't match because it looks for 'permission' but you used 'Permission' or 'perm'.",
+      "correction": "Be consistent: use 'permission' as the claim type and match it exactly in policies."
+    },
+    {
+      "mistake": "Using string literals instead of constants",
+      "consequence": "Typos cause authorization to silently fail. Hard to maintain.",
+      "correction": "Create a static Permissions class with const strings for all permission names."
+    },
+    {
+      "mistake": "Not handling the case where user has no roles",
+      "consequence": "NullReferenceException when trying to enumerate roles.",
+      "correction": "Always check if roles is null or empty before iterating."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 40
+}

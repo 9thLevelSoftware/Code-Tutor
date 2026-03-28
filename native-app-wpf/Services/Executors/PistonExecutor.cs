@@ -10,14 +10,21 @@ namespace CodeTutor.Wpf.Services.Executors;
 
 public class PistonExecutor
 {
-    private static readonly HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(35) };
+    private static readonly HttpClient DefaultHttpClient = new() { Timeout = TimeSpan.FromSeconds(35) };
+    private readonly HttpClient _httpClient;
     private readonly string _baseUrl;
 
     public PistonExecutor(string baseUrl = "http://localhost:2000")
+        : this(baseUrl, DefaultHttpClient)
+    {
+    }
+
+    internal PistonExecutor(string baseUrl, HttpClient httpClient)
     {
         if (!Uri.TryCreate(baseUrl, UriKind.Absolute, out _))
             throw new ArgumentException("Invalid base URL", nameof(baseUrl));
         _baseUrl = baseUrl.TrimEnd('/');
+        _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
     }
 
     public async Task<bool> IsAvailableAsync()

@@ -7,6 +7,9 @@ namespace CodeTutor.Tests.Models;
 /// </summary>
 public class UserProgress
 {
+    [JsonPropertyName("userId")]
+    public string UserId { get; set; } = string.Empty;
+
     [JsonPropertyName("completedLessons")]
     public HashSet<string> CompletedLessons { get; set; } = new();
 

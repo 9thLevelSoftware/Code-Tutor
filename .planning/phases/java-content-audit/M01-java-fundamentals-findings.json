@@ -1,0 +1,66 @@
+{
+  "course": "java",
+  "module": "01-java-fundamentals",
+  "moduleTitle": "Java Fundamentals",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/01-java-fundamentals/lessons/01-lesson-11-what-is-a-computer-program",
+      "lessonTitle": "Lesson 1.1: What is a Computer Program?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/01-java-fundamentals/lessons/02-lesson-12-your-first-java-program",
+      "lessonTitle": "Lesson 1.2: Your First Java Program",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/01-java-fundamentals/lessons/03-lesson-13-understanding-variables",
+      "lessonTitle": "Lesson 1.3: Understanding Variables",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/01-java-fundamentals/lessons/04-lesson-14-making-decisions-with-ifelse",
+      "lessonTitle": "Lesson 1.4: Making Decisions with If/Else",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/01-java-fundamentals/lessons/05-lesson-15-switch-expressions-pattern-matching",
+      "lessonTitle": "Lesson 1.5: Switch Expressions & Pattern Matching",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "PEDAGOGY",
+          "severity": "minor",
+          "file": "content/07-key_point.md",
+          "line": 1,
+          "originalText": "title: \"Primitive Type Patterns (Preview Feature)\"",
+          "description": "References JEP 507 in JDK 25 as 3rd preview for primitive type patterns in switch. This is cutting-edge content that may confuse beginners. Consider clarifying that this is an advanced/preview feature."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/01-java-fundamentals/lessons/06-lesson-16-modern-java-syntax-writing-less-code",
+      "lessonTitle": "Lesson 1.6: Modern Java Syntax - Writing Less Code",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 1,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 1 },
+    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 1 }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.1-challenge-1",
+  "id": "11.1-challenge-1",
   "title": "Implement a User Profile Service",
   "description": "Create a service class that uses the Serverpod client to manage user profiles, including proper error handling.",
   "instructions": "Build a UserProfileService class that:\n1. Takes a Serverpod Client in its constructor\n2. Implements getProfile() to fetch the current user's profile\n3. Implements updateProfile() to update user details\n4. Uses the ApiResult pattern for error handling\n5. Includes a method to check if a username is available",

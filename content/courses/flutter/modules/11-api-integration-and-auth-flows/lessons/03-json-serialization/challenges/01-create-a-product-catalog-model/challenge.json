@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.3-challenge-1",
+  "id": "11.3-challenge-1",
   "title": "Create a Product Catalog Model",
   "description": "Build a complete product model using freezed with nested categories and proper JSON serialization.",
   "instructions": "Create the following models using freezed:\n\n1. `Product` with fields:\n   - id (int, required)\n   - name (String, required)\n   - description (String, nullable)\n   - price (double, required)\n   - discountPrice (double, nullable, JSON key: discount_price)\n   - category (Category, required)\n   - tags (List<String>, default empty)\n   - inStock (bool, default true, JSON key: in_stock)\n   - createdAt (DateTime, required, JSON key: created_at)\n\n2. `Category` with fields:\n   - id (int, required)\n   - name (String, required)\n   - parentId (int, nullable, JSON key: parent_id)\n\n3. Add a custom getter `hasDiscount` that returns true if discountPrice is not null and less than price.\n\n4. Add a custom getter `discountPercentage` that returns the discount percentage as an int (0 if no discount).",

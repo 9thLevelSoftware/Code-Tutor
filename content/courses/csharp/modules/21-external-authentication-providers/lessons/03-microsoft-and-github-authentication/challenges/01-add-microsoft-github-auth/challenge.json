@@ -1,0 +1,91 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-03-challenge-multi-provider",
+  "title": "Add Microsoft and GitHub Authentication",
+  "description": "Implement multiple OAuth providers (Microsoft and GitHub) with a unified provider selection UI and account linking system.",
+  "instructions": "Add both Microsoft Account and GitHub OAuth providers to an existing ASP.NET Core Identity application. Implement a provider-agnostic challenge system that works with both providers and includes a selection UI.\n\n**Requirements:**\n\n1. **Configure Microsoft Account Authentication**\n   - Add MicrosoftAccount authentication\n   - ClientId and ClientSecret from Configuration\n   - SaveTokens = true\n   - Scopes: openid, email, profile, User.Read\n   - Tenant = \"common\" (allows personal AND work/school accounts)\n   - Log email in OnCreatingTicket event\n\n2. **Configure GitHub Authentication**\n   - Use generic OAuth handler (AddOAuth with scheme name \"GitHub\")\n   - ClientId and ClientSecret from Configuration\n   - Endpoints:\n     - Authorization: https://github.com/login/oauth/authorize\n     - Token: https://github.com/login/oauth/access_token\n     - UserInfo: https://api.github.com/user\n   - CallbackPath = \"/signin-github\"\n   - Scopes: read:user, user:email\n   - Map claims: id -> NameIdentifier, login -> Name, avatar_url -> ProfileImage\n   - IMPORTANT: GitHub's user endpoint doesn't always return email\n     - If email is null, fetch from https://api.github.com/user/emails\n     - Find the primary email and add it to claims\n   - Add User-Agent header (required by GitHub API)\n\n3. **Create GET /api/auth/providers**\n   - Return JSON array of available providers with:\n     - name, displayName, icon, color for each provider\n   - Use this to populate provider selection UI\n\n4. **Create GET /api/auth/challenge/{provider}**\n   - Accepts provider name (microsoft or github) in route\n   - Query parameter: returnUrl\n   - Validate provider name, return 400 if invalid\n   - Challenge with appropriate scheme for the provider\n   - Store returnUrl in AuthenticationProperties\n   - Redirect to callback URL after OAuth flow\n\n5. **Create GET /api/auth/callback/{provider}**\n   - Handle callback from both providers uniformly\n   - Get external login info\n   - Extract email (handle GitHub's different claim structure)\n   - Find or create user (same logic as Google challenge)\n   - Link provider if not already linked\n   - Redirect to returnUrl from query or /dashboard\n\n6. **Create POST /api/account/link/{provider}**\n   - Protected endpoint for adding providers to existing account\n   - Challenge with specified provider\n   - Redirect back to /account/connections or specified URL\n\n7. **Create GET /api/account/suggested-providers**\n   - Protected endpoint returning providers NOT linked to current user\n   - Also return linked providers list and hasPassword flag",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure Microsoft Account authentication",
+      "expectedOutput": "AddMicrosoftAccount",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should configure GitHub OAuth",
+      "expectedOutput": "AddOAuth",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should set correct GitHub endpoints",
+      "expectedOutput": "github.com/login/oauth",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should validate provider names in challenge endpoint",
+      "expectedOutput": "validProviders",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should add User-Agent header for GitHub API",
+      "expectedOutput": "User-Agent",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use builder.Services.AddAuthentication().AddMicrosoftAccount() for Microsoft - it has built-in configuration."
+    },
+    {
+      "level": 2,
+      "text": "For GitHub, use .AddOAuth('GitHub', 'GitHub', options => { ... }) as there's no built-in handler."
+    },
+    {
+      "level": 3,
+      "text": "GitHub requires User-Agent header on all API requests. Add it in OnCreatingTicket when calling user info."
+    },
+    {
+      "level": 4,
+      "text": "Fetch additional emails from https://api.github.com/user/emails if the user endpoint returns null email."
+    },
+    {
+      "level": 5,
+      "text": "Use pattern matching or a dictionary to map provider names to their authentication scheme names."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not adding User-Agent header for GitHub API calls",
+      "consequence": "GitHub returns 403 Forbidden with 'Request forbidden by administrative rules' error.",
+      "correction": "Always include User-Agent header: request.Headers.Add('User-Agent', 'YourApp/1.0')."
+    },
+    {
+      "mistake": "Not handling GitHub's separate emails endpoint",
+      "consequence": "Email claim is null for users with private emails, breaking user lookup/creation.",
+      "correction": "If user endpoint email is null, call /user/emails and find the primary email."
+    },
+    {
+      "mistake": "Using wrong tenant for Microsoft Account",
+      "consequence": "Only work accounts allowed, or only personal accounts, instead of both.",
+      "correction": "Set options.Tenant = 'common' to allow both Microsoft personal and work/school accounts."
+    },
+    {
+      "mistake": "Not validating provider names before challenging",
+      "consequence": "Users can pass arbitrary provider names causing exceptions or unexpected behavior.",
+      "correction": "Validate provider against allowed list and return 400 for invalid providers."
+    },
+    {
+      "mistake": "Not handling different claim mappings per provider",
+      "consequence": "Name or email claims return null because you're looking for wrong claim types.",
+      "correction": "GitHub uses 'login' for username, Microsoft uses standard claim types. Map appropriately."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 45
+}

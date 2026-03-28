@@ -1,0 +1,74 @@
+{
+  "module": "M07",
+  "moduleName": "Concurrency and Virtual Threads",
+  "auditDate": "2026-03-28",
+  "targetVersions": {
+    "java": "25",
+    "junit": "5.x",
+    "gradle": "8.x"
+  },
+  "findings": {
+    "STUB": [],
+    "OUTDATED": [],
+    "INACCURATE": [],
+    "INCOMPLETE": [
+      {
+        "lessonId": "lesson-c3",
+        "lessonTitle": "Executors and Thread Pools",
+        "issue": "Duplicate content file",
+        "details": "Contains both 01-theory.md and 01-content.md in the content directory",
+        "severity": "LOW"
+      }
+    ],
+    "METADATA": [],
+    "PEDAGOGY": []
+  },
+  "lessons": [
+    {
+      "id": "lesson-c1",
+      "title": "Why Concurrency?",
+      "contentType": "beginner",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-c2",
+      "title": "Threads and Runnables",
+      "contentType": "intermediate",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-c3",
+      "title": "Executors and Thread Pools",
+      "contentType": "intermediate",
+      "issues": [
+        {
+          "type": "INCOMPLETE",
+          "description": "Duplicate content file (01-content.md and 01-theory.md)"
+        }
+      ],
+      "status": "NEEDS_REVIEW"
+    },
+    {
+      "id": "lesson-c4",
+      "title": "CompletableFuture",
+      "contentType": "advanced",
+      "issues": [],
+      "status": "VERIFIED"
+    },
+    {
+      "id": "lesson-c5",
+      "title": "Virtual Threads",
+      "contentType": "advanced",
+      "issues": [],
+      "status": "VERIFIED"
+    }
+  ],
+  "summary": {
+    "totalLessons": 5,
+    "verifiedLessons": 4,
+    "needsReviewLessons": 1,
+    "totalIssues": 1
+  }
+}

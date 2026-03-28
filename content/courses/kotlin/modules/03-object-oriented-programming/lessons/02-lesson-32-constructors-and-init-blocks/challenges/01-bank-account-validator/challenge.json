@@ -1,0 +1,47 @@
+---
+type: "FREE_CODING"
+id: "3.2.1"
+title: "Bank Account Validator"
+description: "Create a BankAccount class with validation in the primary constructor using init blocks."
+instructions: |
+  Create a BankAccount class with:
+  - accountNumber: String (read-only)
+  - ownerName: String (read-only)  
+  - balance: Double (mutable, starts with initialBalance)
+  
+  Validation rules in init block:
+  1. accountNumber must not be blank
+  2. accountNumber must be at least 8 characters
+  3. ownerName must not be blank
+  4. initialBalance must be >= 0
+  
+  Create an account with accountNumber="ACC123456", ownerName="John Doe", initialBalance=1000.0
+  Then print: "Account ACC123456 owned by John Doe has balance $1000.0"
+  
+  If validation fails, throw an IllegalArgumentException with appropriate message.
+
+language: "kotlin"
+testCases:
+  - id: "test-1"
+    description: "Valid account creation"
+    expectedOutput: "Account ACC123456 owned by John Doe has balance 1000.0"
+    isVisible: true
+
+hints:
+  - level: 1
+    text: "Use require() in the init block for validation"
+  - level: 2
+    text: "Check accountNumber.isNotBlank() and accountNumber.length >= 8"
+  - level: 3
+    text: "Format: class BankAccount(val accountNumber: String, val ownerName: String, initialBalance: Double)"
+
+commonMistakes:
+  - mistake: "Forgetting to make balance mutable"
+    consequence: "Cannot deposit or withdraw later"
+    correction: "Use var for balance, val for accountNumber and ownerName"
+  - mistake: "Using wrong parameter name"
+    consequence: "Confusion between parameter and property"
+    correction: "The parameter initialBalance initializes the property balance"
+
+difficulty: "intermediate"
+---

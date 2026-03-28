@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l02-challenge-01",
+  "title": "Create Admin Dashboard",
+  "description": "Build a complete admin dashboard with elevated permissions including user management, role assignment, and audit logging.",
+  "instructions": "Extend the role-based system from Lesson 1 to build a full-featured Admin Dashboard for ShopFlow!\n\n**Requirements:**\n\n1. **User Management Endpoints:**\n   - GET /api/admin/users - List all users with pagination (Admin only)\n   - GET /api/admin/users/{id} - Get user details including roles\n   - PUT /api/admin/users/{id}/status - Enable/disable user account\n   - DELETE /api/admin/users/{id} - Soft-delete a user (mark inactive)\n\n2. **Role Management UI Endpoints:**\n   - GET /api/admin/roles - List all available roles\n   - POST /api/admin/users/{id}/roles - Add role to user\n   - DELETE /api/admin/users/{id}/roles/{role} - Remove role from user\n   - GET /api/admin/users/{id}/permissions - Get effective permissions for user\n\n3. **Audit Logging:**\n   - Create AuditLog entity to track admin actions\n   - Log all user/role modifications with: admin ID, action, target user, timestamp, IP\n   - GET /api/admin/audit-logs - View audit trail (Admin only)\n\n4. **Dashboard Statistics:**\n   - GET /api/admin/stats - Return aggregated stats:\n     * Total users by role\n     * New users this week/month\n     * Recent login activity\n     * Pending role assignments\n\n**Security Requirements:**\n- All endpoints require Admin role\n- Audit all administrative actions\n- Prevent self-lockout (admin cannot disable their own account)\n- Validate inputs to prevent injection attacks\n\n**Edge Cases:**\n- Handle non-existent user IDs gracefully\n- Prevent removing the last Admin role from a user\n- Log failed admin actions (attempted unauthorized access)\n\n**Hint:** Use a service layer to encapsulate business logic and ensure audit logging happens consistently.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should have Admin authorization on all admin endpoints",
+      "expectedOutput": "Authorize(Roles",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should implement user listing endpoint",
+      "expectedOutput": "/api/admin/users",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should implement audit logging",
+      "expectedOutput": "AuditLog",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should prevent self-lockout",
+      "expectedOutput": "self-lockout",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Create a UserManagementService to encapsulate user CRUD operations and keep controllers thin."
+    },
+    {
+      "level": 2,
+      "text": "Inject IHttpContextAccessor to get the current admin's ID for audit logging."
+    },
+    {
+      "level": 3,
+      "text": "Use UserManager<ApplicationUser>.GetUsersInRoleAsync to get users by role for statistics."
+    },
+    {
+      "level": 4,
+      "text": "For pagination, accept pageNumber and pageSize parameters and return a PaginatedResult<T>."
+    },
+    {
+      "level": 5,
+      "text": "In the delete endpoint, check if user.Id == currentUserId and return BadRequest to prevent self-deletion."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not auditing failed attempts",
+      "consequence": "Security blind spots - you won't detect brute force or unauthorized access attempts.",
+      "correction": "Log both successful and failed admin actions, including the reason for failure."
+    },
+    {
+      "mistake": "Hard-deleting users instead of soft-deleting",
+      "consequence": "Data loss and broken referential integrity (orders, reviews linked to deleted users).",
+      "correction": "Add an IsActive flag and filter it in queries. Keep data for audit trails."
+    },
+    {
+      "mistake": "Not checking for last admin before role removal",
+      "consequence": "Could lock out all admins from the system requiring database intervention.",
+      "correction": "Count admins before allowing role removal. If count == 1, prevent the operation."
+    },
+    {
+      "mistake": "Exposing sensitive user data in list endpoints",
+      "consequence": "GDPR/privacy violations by exposing personal information unnecessarily.",
+      "correction": "Create DTOs that only expose necessary fields. Don't return password hashes, tokens, etc."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 45
+}

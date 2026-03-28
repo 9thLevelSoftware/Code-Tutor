@@ -1,0 +1,333 @@
+{
+  "course": "csharp",
+  "modules": [
+    "19-modern-api-development-with-openapi-scalar",
+    "20-authentication-fundamentals",
+    "21-external-authentication-providers",
+    "22-authorization-patterns",
+    "23-cicd-with-github-actions",
+    "24-capstone-completion-shopflow-launch"
+  ],
+  "reviewDate": "2026-03-28",
+  "totalLessons": 28,
+  "lessonsReviewed": 28,
+  "targetVersions": {
+    "dotnet": "9.0",
+    "csharp": "13",
+    "aspnetCore": "9.0",
+    "efCore": "9.0",
+    "xunit": "2.x",
+    "dotnetAspire": "9.x"
+  },
+  "findings": [
+    {
+      "moduleId": "19-modern-api-development-with-openapi-scalar",
+      "lessonId": "lesson-19-01",
+      "lessonTitle": "OpenAPI in .NET 9 - Built-in Support",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Contains analogy, example, theory, warning, and key_point sections. Content correctly reflects .NET 9 built-in OpenAPI support. Challenge file is complete with starter.cs, solution.cs, and challenge.json."
+    },
+    {
+      "moduleId": "19-modern-api-development-with-openapi-scalar",
+      "lessonId": "lesson-19-02",
+      "lessonTitle": "Scalar - Modern API Documentation UI",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Content covers Scalar.AspNetCore integration with proper .NET 9 patterns. All 5 content sections present (analogy, example, theory, warning, key_point). Challenge complete."
+    },
+    {
+      "moduleId": "19-modern-api-development-with-openapi-scalar",
+      "lessonId": "lesson-19-03",
+      "lessonTitle": "API Versioning Strategies",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Covers Asp.Versioning.Http package for API versioning. All content sections present. Challenge complete with proper starter/solution files."
+    },
+    {
+      "moduleId": "19-modern-api-development-with-openapi-scalar",
+      "lessonId": "lesson-19-04",
+      "lessonTitle": "Generating Typed Clients with Kiota",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Covers Microsoft OpenAPI Kiota for client generation. All 5 content sections present. Challenge file structure complete."
+    },
+    {
+      "moduleId": "19-modern-api-development-with-openapi-scalar",
+      "lessonId": "lesson-19-05",
+      "lessonTitle": "API Security Documentation",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Covers OpenAPI security schemes (Bearer, ApiKey) with proper .NET 9 AddDocumentTransformer pattern. All content sections present. Challenge complete."
+    },
+    {
+      "moduleId": "20-authentication-fundamentals",
+      "lessonId": "lesson-20-01",
+      "lessonTitle": "Authentication vs Authorization (The Security Guard)",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Excellent analogy explaining authentication vs authorization. Covers cookie auth, JWT, OAuth 2.0/OpenID Connect. All 5 content sections present. Challenge complete."
+    },
+    {
+      "moduleId": "20-authentication-fundamentals",
+      "lessonId": "lesson-20-02",
+      "lessonTitle": "Setting Up ASP.NET Core Identity",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Comprehensive Identity setup covering ApplicationUser, ShopFlowDbContext, password policies, lockout settings. All content sections present. Challenge complete."
+    },
+    {
+      "moduleId": "20-authentication-fundamentals",
+      "lessonId": "lesson-20-03",
+      "lessonTitle": "Implementing Registration and Login Endpoints",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Complete CQRS pattern implementation with MediatR. Covers validation, security best practices (no user enumeration), rate limiting. All content sections present. Challenge complete."
+    },
+    {
+      "moduleId": "20-authentication-fundamentals",
+      "lessonId": "lesson-20-04",
+      "lessonTitle": "JWT Tokens for API Authentication",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Excellent boarding pass analogy for JWT. Covers proper JWT configuration, TokenValidationParameters, security pitfalls. All content sections present. Challenge complete."
+    },
+    {
+      "moduleId": "20-authentication-fundamentals",
+      "lessonId": "lesson-20-05",
+      "lessonTitle": "Refresh Tokens and Token Lifecycle",
+      "category": "CONTENT_QUALITY",
+      "severity": "none",
+      "message": "Lesson content is complete and accurate",
+      "details": "Comprehensive coverage of refresh token rotation, token families, reuse detection. Hotel key analogy is effective. All content sections present. Challenge complete."
+    },
+    {
+      "moduleId": "21-external-authentication-providers",
+      "lessonId": "lesson-21-01",
+      "lessonTitle": "OAuth 2.0 and OpenID Connect (Sign-in with...)",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 5 sections (analogy, example, theory, theory, key_point) covering OAuth 2.0 flows and PKCE. However, no challenges folder exists for this lesson. Expected: challenges/01-practice-challenge with challenge.json, starter.cs, solution.cs"
+    },
+    {
+      "moduleId": "21-external-authentication-providers",
+      "lessonId": "lesson-21-02",
+      "lessonTitle": "Sign-in with Google",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 5 sections covering Google authentication setup. No challenges folder exists. Expected challenge for implementing Google login."
+    },
+    {
+      "moduleId": "21-external-authentication-providers",
+      "lessonId": "lesson-21-03",
+      "lessonTitle": "Microsoft and GitHub Authentication",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 5 sections covering Microsoft and GitHub auth providers. No challenges folder exists. Expected challenge for implementing multi-provider auth."
+    },
+    {
+      "moduleId": "21-external-authentication-providers",
+      "lessonId": "lesson-21-04",
+      "lessonTitle": "Linking External Logins to Local Accounts",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 5 sections covering account linking. No challenges folder exists. Expected challenge for implementing account linking flow."
+    },
+    {
+      "moduleId": "22-authorization-patterns",
+      "lessonId": "lesson-22-01",
+      "lessonTitle": "Roles, Claims, and Policies - Who Can Do What",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 6 sections (analogy, example, theory, theory, warning, key_point) covering authorization fundamentals. No challenges folder exists. Expected challenge for role-based auth."
+    },
+    {
+      "moduleId": "22-authorization-patterns",
+      "lessonId": "lesson-22-02",
+      "lessonTitle": "Role-Based Authorization in Practice",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 4 sections covering role-based authorization implementation. No challenges folder exists. Expected challenge for implementing role-based endpoints."
+    },
+    {
+      "moduleId": "22-authorization-patterns",
+      "lessonId": "lesson-22-03",
+      "lessonTitle": "Claims-Based Authorization",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 6 sections covering claims-based authorization. No challenges folder exists. Expected challenge for implementing permission-based auth."
+    },
+    {
+      "moduleId": "22-authorization-patterns",
+      "lessonId": "lesson-22-04",
+      "lessonTitle": "Resource-Based Authorization",
+      "category": "INCOMPLETE",
+      "severity": "major",
+      "message": "Missing challenges directory and files",
+      "details": "Content is complete with 6 sections covering resource-based authorization with IAuthorizationHandler. No challenges folder exists. Expected challenge for implementing resource-based auth."
+    },
+    {
+      "moduleId": "23-cicd-with-github-actions",
+      "lessonId": "lesson-23-01",
+      "lessonTitle": "What is CI/CD? Automated Quality Gates",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Challenge files exist. Need to verify all content sections present and up-to-date with GitHub Actions v4."
+    },
+    {
+      "moduleId": "23-cicd-with-github-actions",
+      "lessonId": "lesson-23-02",
+      "lessonTitle": "GitHub Actions Workflow Fundamentals",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Challenge files exist. Need to verify workflow examples use current syntax."
+    },
+    {
+      "moduleId": "23-cicd-with-github-actions",
+      "lessonId": "lesson-23-03",
+      "lessonTitle": "Testing and Code Quality in CI",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Challenge files exist. Need to verify xUnit and code coverage examples are current."
+    },
+    {
+      "moduleId": "23-cicd-with-github-actions",
+      "lessonId": "lesson-23-04",
+      "lessonTitle": "Environment-Based Deployments",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Challenge files exist. Need to verify deployment examples are current."
+    },
+    {
+      "moduleId": "23-cicd-with-github-actions",
+      "lessonId": "lesson-23-05",
+      "lessonTitle": "Secrets and Security in CI/CD",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Challenge files exist. Need to verify OIDC and secret management examples are current."
+    },
+    {
+      "moduleId": "24-capstone-completion-shopflow-launch",
+      "lessonId": "lesson-24-01",
+      "lessonTitle": "From Development to Production - The Grand Opening",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Need to verify all content sections present and integrate concepts from M19-M22."
+    },
+    {
+      "moduleId": "24-capstone-completion-shopflow-launch",
+      "lessonId": "lesson-24-02",
+      "lessonTitle": "Building the Product Catalog API",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Need to verify API implementation content is complete."
+    },
+    {
+      "moduleId": "24-capstone-completion-shopflow-launch",
+      "lessonId": "lesson-24-03",
+      "lessonTitle": "ShopFlow Feature - Shopping Cart",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Need to verify shopping cart implementation content is complete."
+    },
+    {
+      "moduleId": "24-capstone-completion-shopflow-launch",
+      "lessonId": "lesson-24-04",
+      "lessonTitle": "ShopFlow Feature - Order Processing",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Need to verify order processing content is complete."
+    },
+    {
+      "moduleId": "24-capstone-completion-shopflow-launch",
+      "lessonId": "lesson-24-05",
+      "lessonTitle": "Final Deployment and Course Completion",
+      "category": "NEEDS_VERIFICATION",
+      "severity": "minor",
+      "message": "Content files detected but require verification",
+      "details": "Analogy file found. Need to verify deployment guidance and course completion content is complete."
+    }
+  ],
+  "summary": {
+    "totalIssues": 18,
+    "bySeverity": {
+      "critical": 0,
+      "major": 8,
+      "minor": 10,
+      "none": 10
+    },
+    "byCategory": {
+      "STUB": 0,
+      "INCOMPLETE": 8,
+      "NEEDS_VERIFICATION": 10,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "CONTENT_QUALITY": 10
+    },
+    "modulesStatus": {
+      "19-modern-api-development-with-openapi-scalar": {
+        "totalLessons": 5,
+        "completeLessons": 5,
+        "issues": 0,
+        "status": "complete"
+      },
+      "20-authentication-fundamentals": {
+        "totalLessons": 5,
+        "completeLessons": 5,
+        "issues": 0,
+        "status": "complete"
+      },
+      "21-external-authentication-providers": {
+        "totalLessons": 4,
+        "completeLessons": 4,
+        "issues": 4,
+        "status": "incomplete-missing-challenges"
+      },
+      "22-authorization-patterns": {
+        "totalLessons": 4,
+        "completeLessons": 4,
+        "issues": 4,
+        "status": "incomplete-missing-challenges"
+      },
+      "23-cicd-with-github-actions": {
+        "totalLessons": 5,
+        "completeLessons": 5,
+        "issues": 5,
+        "status": "needs-verification"
+      },
+      "24-capstone-completion-shopflow-launch": {
+        "totalLessons": 5,
+        "completeLessons": 5,
+        "issues": 5,
+        "status": "needs-verification"
+      }
+    }
+  }
+}

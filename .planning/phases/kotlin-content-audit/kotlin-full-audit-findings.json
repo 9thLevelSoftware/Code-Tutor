@@ -1,0 +1,972 @@
+{
+  "audit_metadata": {
+    "course": "kotlin",
+    "course_title": "Kotlin Multiplatform Complete Course",
+    "audit_date": "2026-03-28",
+    "total_modules": 15,
+    "total_lessons": 107,
+    "total_files_audited": 825,
+    "auditors": ["basics-auditor", "backend-auditor", "architecture-auditor", "deployment-auditor"]
+  },
+  "summary_by_severity": {
+    "critical": 14,
+    "major": 64,
+    "minor": 83,
+    "total": 161
+  },
+  "summary_by_category": {
+    "STUB": 35,
+    "INCOMPLETE": 42,
+    "INACCURATE": 8,
+    "OUTDATED": 12,
+    "METADATA": 28,
+    "PEDAGOGY": 36
+  },
+  "module_summaries": [
+    {
+      "module_id": "01-the-absolute-basics",
+      "module_number": "M01",
+      "lessons_audited": 10,
+      "rating": "good",
+      "issues_count": 2,
+      "critical": 0,
+      "major": 0,
+      "minor": 2
+    },
+    {
+      "module_id": "02-controlling-the-flow",
+      "module_number": "M02",
+      "lessons_audited": 7,
+      "rating": "good",
+      "issues_count": 1,
+      "critical": 0,
+      "major": 0,
+      "minor": 1
+    },
+    {
+      "module_id": "03-object-oriented-programming",
+      "module_number": "M03",
+      "lessons_audited": 7,
+      "rating": "needs-work",
+      "issues_count": 2,
+      "critical": 1,
+      "major": 1,
+      "minor": 0
+    },
+    {
+      "module_id": "04-advanced-kotlin",
+      "module_number": "M04",
+      "lessons_audited": 13,
+      "rating": "needs-work",
+      "issues_count": 2,
+      "critical": 0,
+      "major": 2,
+      "minor": 0
+    },
+    {
+      "module_id": "05-coroutines-and-flows",
+      "module_number": "M05",
+      "lessons_audited": 7,
+      "rating": "good",
+      "issues_count": 0,
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    {
+      "module_id": "06-backend-development-with-ktor",
+      "module_number": "M06",
+      "lessons_audited": 15,
+      "rating": "poor",
+      "issues_count": 24,
+      "critical": 4,
+      "major": 10,
+      "minor": 10
+    },
+    {
+      "module_id": "07-mobile-development-with-compose-multiplatform",
+      "module_number": "M07",
+      "lessons_audited": 10,
+      "rating": "poor",
+      "issues_count": 16,
+      "critical": 9,
+      "major": 4,
+      "minor": 3
+    },
+    {
+      "module_id": "08-persistence-with-sqldelight",
+      "module_number": "M08",
+      "lessons_audited": 7,
+      "rating": "good",
+      "issues_count": 7,
+      "critical": 1,
+      "major": 4,
+      "minor": 2
+    },
+    {
+      "module_id": "09-kmp-architecture-patterns",
+      "module_number": "M09",
+      "lessons_audited": 7,
+      "rating": "good",
+      "issues_count": 5,
+      "critical": 0,
+      "major": 2,
+      "minor": 3
+    },
+    {
+      "module_id": "10-dependency-injection-with-koin",
+      "module_number": "M10",
+      "lessons_audited": 7,
+      "rating": "needs-work",
+      "issues_count": 8,
+      "critical": 1,
+      "major": 5,
+      "minor": 2
+    },
+    {
+      "module_id": "11-testing-kmp-applications",
+      "module_number": "M11",
+      "lessons_audited": 7,
+      "rating": "good",
+      "issues_count": 3,
+      "critical": 0,
+      "major": 2,
+      "minor": 1
+    },
+    {
+      "module_id": "12-professional-development-deployment",
+      "module_number": "M12",
+      "lessons_audited": 14,
+      "rating": "needs-work",
+      "issues_count": 21,
+      "critical": 0,
+      "major": 8,
+      "minor": 13
+    },
+    {
+      "module_id": "13-gradle-mastery-for-kotlin-developers",
+      "module_number": "M13",
+      "lessons_audited": 6,
+      "rating": "needs-work",
+      "issues_count": 7,
+      "critical": 0,
+      "major": 3,
+      "minor": 4
+    },
+    {
+      "module_id": "14-functional-kotlin-with-arrow",
+      "module_number": "M14",
+      "lessons_audited": 6,
+      "rating": "needs-work",
+      "issues_count": 27,
+      "critical": 0,
+      "major": 10,
+      "minor": 17
+    },
+    {
+      "module_id": "15-the-k2-era-modern-kotlin-tooling",
+      "module_number": "M15",
+      "lessons_audited": 5,
+      "rating": "needs-work",
+      "issues_count": 7,
+      "critical": 0,
+      "major": 3,
+      "minor": 4
+    }
+  ],
+  "findings": [
+    {
+      "file_path": "modules/03-object-oriented-programming/lessons/02-lesson-32-constructors-and-init-blocks/",
+      "module": "M03",
+      "lesson": "02-lesson-32-constructors-and-init-blocks",
+      "issue_type": "INCOMPLETE",
+      "severity": "critical",
+      "description": "Lesson is essentially empty. Only has 01-content.md with minimal placeholder content. Missing all theory files (01-theory.md, 02-theory.md, etc.), missing examples, missing warnings, missing key_point.md, missing analogy.md, and completely missing challenges folder.",
+      "suggested_fix": "Complete this lesson with full content structure including theory progression, code examples, warnings, key points, and at least one coding challenge"
+    },
+    {
+      "file_path": "modules/03-object-oriented-programming/lessons/02-lesson-22-properties-and-initialization/lesson.json",
+      "module": "M03",
+      "lesson": "02-lesson-22-properties-and-initialization",
+      "issue_type": "METADATA",
+      "severity": "major",
+      "description": "Lesson ID naming collision. Uses '02-lesson-22' which duplicates the naming convention from Module 02 (Controlling the Flow). This creates confusion in lesson progression.",
+      "suggested_fix": "Rename to '03-lesson-32' to follow module-based naming convention consistently"
+    },
+    {
+      "file_path": "modules/04-advanced-kotlin/lessons/10-lesson-410-delegation-and-lazy-initialization/content/01-theory.md",
+      "module": "M04",
+      "lesson": "10-lesson-410-delegation-and-lazy-initialization",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction file contains only placeholder text: 'This is a sufficiently long piece of placeholder text that should be replaced with actual educational content about the topic at hand.' No actual educational content present.",
+      "suggested_fix": "Replace with comprehensive introduction to Kotlin delegation patterns including by-keyword explanation"
+    },
+    {
+      "file_path": "modules/04-advanced-kotlin/lessons/10-lesson-410-delegation-and-lazy-initialization/content/03-analogy.md",
+      "module": "M04",
+      "lesson": "10-lesson-410-delegation-and-lazy-initialization",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Analogy file has empty sections between 'The Problem' and 'The Solution' headers. The actual analogy content is missing.",
+      "suggested_fix": "Complete with real-world delegation analogy such as property management or assistant delegation"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/13-lesson-613-structuring-ktor-apps-with-koin/",
+      "module": "M06",
+      "lesson": "13-lesson-613-structuring-ktor-apps-with-koin",
+      "issue_type": "INCOMPLETE",
+      "severity": "critical",
+      "description": "Lesson is completely empty. No content files, no challenge folder. Only has lesson.json with metadata.",
+      "suggested_fix": "Create full lesson content covering Ktor + Koin integration with examples and challenges"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/14-lesson-614-testing-ktor-applications/",
+      "module": "M06",
+      "lesson": "14-lesson-614-testing-ktor-applications",
+      "issue_type": "INCOMPLETE",
+      "severity": "critical",
+      "description": "Lesson is completely empty. No content files, no challenge folder. Only has lesson.json with metadata.",
+      "suggested_fix": "Create full lesson content covering Ktor testing patterns, test client usage, and mockk integration"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/01-lesson-61-introduction-to-ktor/content/01-theory.md",
+      "module": "M06",
+      "lesson": "01-lesson-61-introduction-to-ktor",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text instead of actual Ktor introduction content.",
+      "suggested_fix": "Write comprehensive Ktor framework introduction"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/02-lesson-62-routing/content/01-theory.md",
+      "module": "M06",
+      "lesson": "02-lesson-62-routing",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text instead of routing explanation.",
+      "suggested_fix": "Write comprehensive routing introduction with Ktor routing DSL examples"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/02-lesson-62-routing/content/03-analogy.md",
+      "module": "M06",
+      "lesson": "02-lesson-62-routing",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Analogy file contains content from a different lesson (variables/types analogy instead of routing analogy).",
+      "suggested_fix": "Replace with appropriate routing analogy such as postal address delivery or traffic routing"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/03-lesson-63-handling-requests/content/01-theory.md",
+      "module": "M06",
+      "lesson": "03-lesson-63-handling-requests",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write request handling introduction covering receive<T>() and ContentNegotiation"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/04-lesson-64-responding-with-content/content/01-theory.md",
+      "module": "M06",
+      "lesson": "04-lesson-64-responding-with-content",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write response handling introduction covering respond(), status codes, and content types"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/05-lesson-65-content-negotiation/content/01-theory.md",
+      "module": "M06",
+      "lesson": "05-lesson-65-content-negotiation",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write content negotiation introduction covering JSON/XML serialization setup"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/05-lesson-65-content-negotiation/content/03-analogy.md",
+      "module": "M06",
+      "lesson": "05-lesson-65-content-negotiation",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Analogy file contains content from variables/types lesson instead of content negotiation analogy.",
+      "suggested_fix": "Replace with content negotiation analogy such as international business communication or language interpreters"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/06-lesson-66-authentication/content/01-theory.md",
+      "module": "M06",
+      "lesson": "06-lesson-66-authentication",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write authentication introduction covering JWT, OAuth, and session-based auth in Ktor"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/07-lesson-67-websockets/content/01-theory.md",
+      "module": "M06",
+      "lesson": "07-lesson-67-websockets",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write WebSocket introduction for real-time communication in Ktor"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/07-lesson-67-websockets/content/03-analogy.md",
+      "module": "M06",
+      "lesson": "07-lesson-67-websockets",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Analogy contains content from conditionals lesson instead of WebSocket analogy.",
+      "suggested_fix": "Replace with WebSocket analogy such as walkie-talkies or persistent phone calls"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/09-lesson-69-deployment/content/01-theory.md",
+      "module": "M06",
+      "lesson": "09-lesson-69-deployment",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write deployment options introduction (Docker, cloud platforms, fat JARs)"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/09-lesson-69-deployment/content/03-analogy.md",
+      "module": "M06",
+      "lesson": "09-lesson-69-deployment",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Analogy contains content from loops lesson instead of deployment analogy.",
+      "suggested_fix": "Replace with deployment analogy such as moving to a new home or restaurant opening"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/10-lesson-610-introduction-to-websockets/content/01-theory.md",
+      "module": "M06",
+      "lesson": "10-lesson-610-introduction-to-websockets",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write WebSocket fundamentals introduction (note: potential duplicate with lesson 67)"
+    },
+    {
+      "file_path": "modules/06-backend-development-with-ktor/lessons/10-lesson-610-introduction-to-websockets/content/03-analogy.md",
+      "module": "M06",
+      "lesson": "10-lesson-610-introduction-to-websockets",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Analogy contains content from functions lesson instead of WebSocket analogy.",
+      "suggested_fix": "Consolidate with lesson 67 or provide distinct WebSocket use case analogy"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/01-lesson-61-compose-multiplatform-fundamentals/content/01-theory.md",
+      "module": "M07",
+      "lesson": "01-lesson-61-compose-multiplatform-fundamentals",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text. Module entry point is unusable.",
+      "suggested_fix": "Write Compose Multiplatform introduction covering CMP vs Android Compose"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/02-lesson-610-part-6-capstone-task-manager-app/content/01-theory.md",
+      "module": "M07",
+      "lesson": "02-lesson-610-part-6-capstone-task-manager-app",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text. Capstone project introduction missing.",
+      "suggested_fix": "Write task manager capstone introduction with project overview and architecture"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/03-lesson-62-introduction-to-compose-multiplatform-ui/content/01-theory.md",
+      "module": "M07",
+      "lesson": "03-lesson-62-introduction-to-compose-multiplatform-ui",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write UI fundamentals introduction covering @Composable, State, and recomposition"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/04-lesson-63-layouts-and-ui-design/content/01-theory.md",
+      "module": "M07",
+      "lesson": "04-lesson-63-layouts-and-ui-design",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write layouts introduction covering Row, Column, Box, ConstraintLayout"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/05-lesson-64-state-management/content/01-theory.md",
+      "module": "M07",
+      "lesson": "05-lesson-64-state-management",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write state management introduction covering remember, mutableStateOf, ViewModel integration"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/06-lesson-65-theming-and-styling/content/01-theory.md",
+      "module": "M07",
+      "lesson": "06-lesson-65-theming-and-styling",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write theming introduction covering MaterialTheme, custom colors, typography, dark mode"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/08-lesson-67-local-data-storage/content/01-theory.md",
+      "module": "M07",
+      "lesson": "08-lesson-67-local-data-storage",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write local storage introduction covering DataStore, MultiplatformSettings, expect/actual"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/09-lesson-68-mvvm-architecture/content/01-theory.md",
+      "module": "M07",
+      "lesson": "09-lesson-68-mvvm-architecture",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text. Architecture pattern introduction missing.",
+      "suggested_fix": "Write MVVM introduction for KMP covering ViewModel, StateFlow, and platform integration"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/10-lesson-69-advanced-ui-animations/content/01-theory.md",
+      "module": "M07",
+      "lesson": "10-lesson-69-advanced-ui-animations",
+      "issue_type": "STUB",
+      "severity": "critical",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write animations introduction covering animate*AsState, AnimatedVisibility, transitions"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/module.json",
+      "module": "M07",
+      "lesson": null,
+      "issue_type": "METADATA",
+      "severity": "major",
+      "description": "module.json has duplicate 'lessons' key causing potential JSON parsing issues. File structure appears malformed.",
+      "suggested_fix": "Fix JSON structure - remove duplicate 'lessons' key and validate JSON syntax"
+    },
+    {
+      "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/09-lesson-68-mvvm-architecture/content/23-key_point.md",
+      "module": "M07",
+      "lesson": "09-lesson-68-mvvm-architecture",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Key point file (23-key_point.md) contains placeholder text instead of actual key takeaways.",
+      "suggested_fix": "Write actual key points summarizing MVVM in KMP"
+    },
+    {
+      "file_path": "modules/08-persistence-with-sqldelight/lessons/01-lesson-6a1-introduction-to-sqldelight/content/01-theory.md",
+      "module": "M08",
+      "lesson": "01-lesson-6a1-introduction-to-sqldelight",
+      "issue_type": "OUTDATED",
+      "severity": "critical",
+      "description": "Using old package 'com.squareup.sqldelight' instead of 'app.cash.sqldelight'. SQLDelight 2.x moved to Cash App organization.",
+      "suggested_fix": "Update all references to 'app.cash.sqldelight' and verify version 2.2.1+ syntax"
+    },
+    {
+      "file_path": "modules/08-persistence-with-sqldelight/lessons/02-lesson-6a2-setting-up-sqldelight-in-kmp/content/01-theory.md",
+      "module": "M08",
+      "lesson": "02-lesson-6a2-setting-up-sqldelight-in-kmp",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write SQLDelight KMP setup instructions with proper Gradle configuration"
+    },
+    {
+      "file_path": "modules/09-kmp-architecture-patterns/lessons/06-lesson-6b6-navigation-patterns/content/01-theory.md",
+      "module": "M09",
+      "lesson": "06-lesson-6b6-navigation-patterns",
+      "issue_type": "OUTDATED",
+      "severity": "major",
+      "description": "References SwipeRefresh which is deprecated. Material 3 uses PullToRefreshContainer instead.",
+      "suggested_fix": "Update to current Material 3 patterns using PullToRefreshContainer"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/03-lesson-6c3-koin-in-kmp-projects/challenges/01-kmp-module-organization/solution.kt",
+      "module": "M10",
+      "lesson": "03-lesson-6c3-koin-in-kmp-projects",
+      "challenge": "01-kmp-module-organization",
+      "issue_type": "INACCURATE",
+      "severity": "critical",
+      "description": "iOS-specific code uses NSNumber without 'import platform.Foundation.*' - this code will not compile.",
+      "suggested_fix": "Add required import statement: import platform.Foundation.*"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/05-lesson-6c5-koin-annotations-modern-approach/content/03-theory.md",
+      "module": "M10",
+      "lesson": "05-lesson-6c5-koin-annotations-modern-approach",
+      "issue_type": "INCOMPLETE",
+      "severity": "major",
+      "description": "KSP plugin setup is missing. Without this, Koin annotations won't work. Learners will be unable to use the feature.",
+      "suggested_fix": "Add KSP Gradle plugin setup instructions and configuration for all platforms"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/06-lesson-6c6-testing-with-koin/content/03-theory.md",
+      "module": "M10",
+      "lesson": "06-lesson-6c6-testing-with-koin",
+      "issue_type": "OUTDATED",
+      "severity": "major",
+      "description": "Uses deprecated 'stopKoin()' pattern instead of recommended test rules with KoinTest extension.",
+      "suggested_fix": "Update to current Koin testing patterns using KoinTestRule or KoinTest extension"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/04-lesson-7a4-mocking-in-kmp-limitations-and-workarounds/content/01-theory.md",
+      "module": "M11",
+      "lesson": "04-lesson-7a4-mocking-in-kmp-limitations-and-workarounds",
+      "issue_type": "INCOMPLETE",
+      "severity": "major",
+      "description": "Missing Turbine and Compose testing dependencies documentation. Learners won't know which Gradle dependencies to add.",
+      "suggested_fix": "Add Gradle dependency snippets for Turbine (app.cash.turbine) and Compose testing"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/01-lesson-71-advanced-kmp-patterns/content/01-theory.md",
+      "module": "M12",
+      "lesson": "01-lesson-71-advanced-kmp-patterns",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write advanced patterns introduction covering Clean Architecture, MVI, and modularization"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/03-lesson-73-performance-optimization/content/01-theory.md",
+      "module": "M12",
+      "lesson": "03-lesson-73-performance-optimization",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write performance optimization introduction covering memory, rendering, and build performance"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/04-lesson-74-security-best-practices/content/01-theory.md",
+      "module": "M12",
+      "lesson": "04-lesson-74-security-best-practices",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write security introduction covering OWASP Mobile Top 10, encryption, secure storage"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/05-lesson-75-cicd-and-devops/content/01-theory.md",
+      "module": "M12",
+      "lesson": "05-lesson-75-cicd-and-devops",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write CI/CD introduction covering GitHub Actions, GitLab CI for KMP"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/06-lesson-76-cloud-deployment/content/01-theory.md",
+      "module": "M12",
+      "lesson": "06-lesson-76-cloud-deployment",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write cloud deployment introduction covering AWS, GCP, Azure deployment options"
+    },
+    {
+      "file_path": "modules/13-gradle-mastery-for-kotlin-developers/lessons/01-lesson-81-understanding-gradle-basics-with-kotlin-dsl/content/01-theory.md",
+      "module": "M13",
+      "lesson": "01-lesson-81-understanding-gradle-basics-with-kotlin-dsl",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Gradle Kotlin DSL introduction covering build.gradle.kts syntax"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/01-lesson-91-functional-programming-principles/content/01-theory.md",
+      "module": "M14",
+      "lesson": "01-lesson-91-functional-programming-principles",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text. Module 14 is entirely about functional programming but has placeholder content.",
+      "suggested_fix": "Write FP principles introduction covering immutability, pure functions, composition"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/01-lesson-91-functional-programming-principles/content/12-warning.md",
+      "module": "M14",
+      "lesson": "01-lesson-91-functional-programming-principles",
+      "issue_type": "INACCURATE",
+      "severity": "major",
+      "description": "Warning file contains Gradle warnings instead of functional programming warnings. Content is misfiled from another module.",
+      "suggested_fix": "Replace with FP-specific warnings about side effects, mutable state, or functional anti-patterns"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/02-lesson-92-kotlins-built-in-result-type/content/01-theory.md",
+      "module": "M14",
+      "lesson": "02-lesson-92-kotlins-built-in-result-type",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Kotlin Result<T> introduction covering fold, map, recover operations"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/03-lesson-93-arrow-core-either-option-validated/content/01-theory.md",
+      "module": "M14",
+      "lesson": "03-lesson-93-arrow-core-either-option-validated",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Arrow Core introduction covering Either, Option, Validated data types"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/04-lesson-94-railway-oriented-programming/content/01-theory.md",
+      "module": "M14",
+      "lesson": "04-lesson-94-railway-oriented-programming",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write ROP introduction covering flatMap/bind for error handling composition"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/05-lesson-95-effect-system-with-arrow/content/01-theory.md",
+      "module": "M14",
+      "lesson": "05-lesson-95-effect-system-with-arrow",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Arrow Effects introduction covering IO, suspend, and effect composition"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/06-lesson-96-practical-patterns-error-handling-without-exceptions/content/01-theory.md",
+      "module": "M14",
+      "lesson": "06-lesson-96-practical-patterns-error-handling-without-exceptions",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write exception-free error handling introduction with practical patterns"
+    },
+    {
+      "file_path": "modules/15-the-k2-era-modern-kotlin-tooling/lessons/01-lesson-101-k2-compiler-whats-new-and-why-it-matters/content/01-theory.md",
+      "module": "M15",
+      "lesson": "01-lesson-101-k2-compiler-whats-new-and-why-it-matters",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write K2 compiler introduction covering FIR, performance improvements, and migration benefits"
+    },
+    {
+      "file_path": "modules/15-the-k2-era-modern-kotlin-tooling/lessons/02-lesson-102-migrating-projects-to-k2/content/01-theory.md",
+      "module": "M15",
+      "lesson": "02-lesson-102-migrating-projects-to-k2",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write K2 migration guide introduction covering common issues and solutions"
+    },
+    {
+      "file_path": "modules/15-the-k2-era-modern-kotlin-tooling/lessons/03-lesson-103-ksp-replacing-kapt-with-speed/content/01-theory.md",
+      "module": "M15",
+      "lesson": "03-lesson-103-ksp-replacing-kapt-with-speed",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write KSP introduction comparing to kapt and explaining migration benefits"
+    },
+    {
+      "file_path": "modules/15-the-k2-era-modern-kotlin-tooling/lessons/04-lesson-104-writing-your-first-ksp-processor/content/01-theory.md",
+      "module": "M15",
+      "lesson": "04-lesson-104-writing-your-first-ksp-processor",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write KSP processor development introduction with SymbolProcessor API overview"
+    },
+    {
+      "file_path": "modules/15-the-k2-era-modern-kotlin-tooling/lessons/05-lesson-105-context-receivers-and-future-features/content/01-theory.md",
+      "module": "M15",
+      "lesson": "05-lesson-105-context-receivers-and-future-features",
+      "issue_type": "STUB",
+      "severity": "major",
+      "description": "Introduction contains placeholder text. Note: Context receivers are deprecated in favor of context parameters.",
+      "suggested_fix": "Update to context parameters (Kotlin 2.3.4) instead of deprecated context receivers"
+    },
+    {
+      "file_path": "modules/02-controlling-the-flow/lessons/07-lesson-27-maps-and-part-2-capstone-project/content/01-theory.md",
+      "module": "M02",
+      "lesson": "07-lesson-27-maps-and-part-2-capstone-project",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Placeholder content in introduction.",
+      "suggested_fix": "Write proper Maps lesson introduction"
+    },
+    {
+      "file_path": "modules/01-the-absolute-basics/lessons/03-lesson-13-control-flow-conditionals-loops/content/12-theory.md",
+      "module": "M01",
+      "lesson": "03-lesson-13-control-flow-conditionals-loops",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Placeholder content for 'Next Steps' theory section.",
+      "suggested_fix": "Add summary content or remove placeholder file"
+    },
+    {
+      "file_path": "modules/09-kmp-architecture-patterns/lessons/05-lesson-6b5-shared-viewmodels-in-kmp/content/01-theory.md",
+      "module": "M09",
+      "lesson": "05-lesson-6b5-shared-viewmodels-in-kmp",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write shared ViewModel introduction for KMP"
+    },
+    {
+      "file_path": "modules/09-kmp-architecture-patterns/lessons/07-lesson-6b7-architecture-in-practice/content/01-theory.md",
+      "module": "M09",
+      "lesson": "07-lesson-6b7-architecture-in-practice",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write architecture practice introduction with real-world patterns"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/01-lesson-6c1-why-dependency-injection/content/01-theory.md",
+      "module": "M10",
+      "lesson": "01-lesson-6c1-why-dependency-injection",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write DI principles introduction"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/02-lesson-6c2-koin-fundamentals/content/01-theory.md",
+      "module": "M10",
+      "lesson": "02-lesson-6c2-koin-fundamentals",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Koin fundamentals introduction"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/04-lesson-6c4-platform-specific-dependencies/content/01-theory.md",
+      "module": "M10",
+      "lesson": "04-lesson-6c4-platform-specific-dependencies",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write platform-specific DI introduction"
+    },
+    {
+      "file_path": "modules/10-dependency-injection-with-koin/lessons/07-lesson-6c7-advanced-patterns/content/01-theory.md",
+      "module": "M10",
+      "lesson": "07-lesson-6c7-advanced-patterns",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write advanced Koin patterns introduction"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/01-lesson-7a1-testing-philosophy-in-kmp/content/01-theory.md",
+      "module": "M11",
+      "lesson": "01-lesson-7a1-testing-philosophy-in-kmp",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write KMP testing philosophy introduction"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/02-lesson-7a2-unit-testing-shared-code/content/01-theory.md",
+      "module": "M11",
+      "lesson": "02-lesson-7a2-unit-testing-shared-code",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write shared code testing introduction"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/03-lesson-7a3-testing-coroutines-and-flows/content/01-theory.md",
+      "module": "M11",
+      "lesson": "03-lesson-7a3-testing-coroutines-and-flows",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write coroutines/Flow testing introduction"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/05-lesson-7a5-ui-testing-with-compose-multiplatform/content/01-theory.md",
+      "module": "M11",
+      "lesson": "05-lesson-7a5-ui-testing-with-compose-multiplatform",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Compose UI testing introduction"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/06-lesson-7a6-integration-testing/content/01-theory.md",
+      "module": "M11",
+      "lesson": "06-lesson-7a6-integration-testing",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write integration testing introduction"
+    },
+    {
+      "file_path": "modules/11-testing-kmp-applications/lessons/07-lesson-7a7-cicd-for-kmp-testing/content/01-theory.md",
+      "module": "M11",
+      "lesson": "07-lesson-7a7-cicd-for-kmp-testing",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write CI/CD testing introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/02-lesson-72-testing-strategies/content/01-theory.md",
+      "module": "M12",
+      "lesson": "02-lesson-72-testing-strategies",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write testing strategies introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/07-lesson-77-monitoring-and-analytics/content/01-theory.md",
+      "module": "M12",
+      "lesson": "07-lesson-77-monitoring-and-analytics",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write monitoring and analytics introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/08-lesson-78-final-capstone-full-stack-e-commerce-platform/content/01-theory.md",
+      "module": "M12",
+      "lesson": "08-lesson-78-final-capstone-full-stack-e-commerce-platform",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write e-commerce capstone introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/09-lesson-79-android-app-signing/content/01-theory.md",
+      "module": "M12",
+      "lesson": "09-lesson-79-android-app-signing",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Android signing introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/10-lesson-710-ios-provisioning-and-certificates/content/01-theory.md",
+      "module": "M12",
+      "lesson": "10-lesson-710-ios-provisioning-and-certificates",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write iOS provisioning introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/11-lesson-711-github-actions-for-kmp/content/01-theory.md",
+      "module": "M12",
+      "lesson": "11-lesson-711-github-actions-for-kmp",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write GitHub Actions introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/12-lesson-712-deploying-to-google-play-store/content/01-theory.md",
+      "module": "M12",
+      "lesson": "12-lesson-712-deploying-to-google-play-store",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Google Play deployment introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/13-lesson-713-deploying-to-app-store-via-testflight/content/01-theory.md",
+      "module": "M12",
+      "lesson": "13-lesson-713-deploying-to-app-store-via-testflight",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write TestFlight deployment introduction"
+    },
+    {
+      "file_path": "modules/12-professional-development-deployment/lessons/14-lesson-714-fastlane-automation/content/01-theory.md",
+      "module": "M12",
+      "lesson": "14-lesson-714-fastlane-automation",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write Fastlane introduction"
+    },
+    {
+      "file_path": "modules/13-gradle-mastery-for-kotlin-developers/lessons/02-lesson-82-dependency-management-version-catalogs/content/01-theory.md",
+      "module": "M13",
+      "lesson": "02-lesson-82-dependency-management-version-catalogs",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write version catalogs introduction"
+    },
+    {
+      "file_path": "modules/13-gradle-mastery-for-kotlin-developers/lessons/03-lesson-83-multiplatform-build-configuration/content/01-theory.md",
+      "module": "M13",
+      "lesson": "03-lesson-83-multiplatform-build-configuration",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write KMP build configuration introduction"
+    },
+    {
+      "file_path": "modules/13-gradle-mastery-for-kotlin-developers/lessons/04-lesson-84-custom-tasks-and-plugins/content/01-theory.md",
+      "module": "M13",
+      "lesson": "04-lesson-84-custom-tasks-and-plugins",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write custom Gradle tasks introduction"
+    },
+    {
+      "file_path": "modules/13-gradle-mastery-for-kotlin-developers/lessons/05-lesson-85-convention-plugins-for-team-standards/content/01-theory.md",
+      "module": "M13",
+      "lesson": "05-lesson-85-convention-plugins-for-team-standards",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write convention plugins introduction"
+    },
+    {
+      "file_path": "modules/13-gradle-mastery-for-kotlin-developers/lessons/06-lesson-86-build-optimization-caching/content/01-theory.md",
+      "module": "M13",
+      "lesson": "06-lesson-86-build-optimization-caching",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Introduction contains placeholder text.",
+      "suggested_fix": "Write build optimization introduction"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/02-lesson-92-kotlins-built-in-result-type/content/12-warning.md",
+      "module": "M14",
+      "lesson": "02-lesson-92-kotlins-built-in-result-type",
+      "issue_type": "INACCURATE",
+      "severity": "minor",
+      "description": "Warning file contains Gradle content instead of Result type warnings.",
+      "suggested_fix": "Replace with Result type specific warnings"
+    },
+    {
+      "file_path": "modules/14-functional-kotlin-with-arrow/lessons/02-lesson-92-kotlins-built-in-result-type/content/15-key_point.md",
+      "module": "M14",
+      "lesson": "02-lesson-92-kotlins-built-in-result-type",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Key point file contains placeholder text.",
+      "suggested_fix": "Write actual key points for Result type lesson"
+    },
+    {
+      "file_path": "modules/15-the-k2-era-modern-kotlin-tooling/lessons/03-lesson-103-ksp-replacing-kapt-with-speed/content/12-key_point.md",
+      "module": "M15",
+      "lesson": "03-lesson-103-ksp-replacing-kapt-with-speed",
+      "issue_type": "STUB",
+      "severity": "minor",
+      "description": "Key point file contains placeholder text.",
+      "suggested_fix": "Write KSP migration key points"
+    },
+    {
+      "file_path": "modules/15-the-k2-era-modern-kotlin-tooling/lessons/05-lesson-105-context-receivers-and-future-features/content/13-warning.md",
+      "module": "M15",
+      "lesson": "05-lesson-105-context-receivers-and-future-features",
+      "issue_type": "OUTDATED",
+      "severity": "minor",
+      "description": "References context receivers which are deprecated. Should reference context parameters (Kotlin 2.3.4).",
+      "suggested_fix": "Update terminology to context parameters and mark as experimental/beta"
+    }
+  ]
+}

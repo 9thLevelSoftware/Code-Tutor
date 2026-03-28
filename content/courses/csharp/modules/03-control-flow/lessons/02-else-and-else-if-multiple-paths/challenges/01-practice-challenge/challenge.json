@@ -1,14 +1,14 @@
 {
   "type": "FREE_CODING",
   "id": "lesson-03-02-challenge-01",
-  "title": "Practice Challenge",
-  "description": "Apply what you've learned in this interactive coding challenge.",
-  "instructions": "Create a simple game difficulty selector!\n\n1. Create an int variable 'level' and set it to any number\n2. Use if-else if-else to display messages:\n   - If level == 1: 'Easy mode selected'\n   - Else if level == 2: 'Normal mode selected'\n   - Else if level == 3: 'Hard mode selected'\n   - Else: 'Invalid level! Defaulting to Normal.'\n\nTry changing the level value to test all paths!",
+  "title": "Game Difficulty Selector",
+  "description": "Create a game difficulty selector using if-else if-else chains!",
+  "instructions": "Write a program that selects game difficulty based on a level number:\n\n1. Create an int variable called 'level' and set it to any number (try 1, 2, 3, or something else)\n2. Use if-else if-else to display:\n   - If level == 1: 'Easy mode selected'\n   - Else if level == 2: 'Normal mode selected'\n   - Else if level == 3: 'Hard mode selected'\n   - Else: 'Invalid level! Please choose 1, 2, or 3.'\n\nTest your code by changing the level value to make sure all paths work!",
   "language": "csharp",
   "testCases": [
     {
       "id": "test-1",
-      "description": "Output should contain \"mode\"",
+      "description": "Output should contain 'mode' or 'level'",
       "expectedOutput": "mode",
       "isVisible": true
     }
@@ -16,45 +16,40 @@
   "hints": [
     {
       "level": 1,
-      "text": "Use == to compare (not =). Chain them: if (...) { } else if (...) { } else if (...) { } else { }"
+      "text": "Start with: if (level == 1) { Console.WriteLine(...); }. Remember to use == for comparison, not =!"
     },
     {
       "level": 2,
-      "text": "Using = instead of == for comparison: level = 1 ASSIGNS 1, level == 1 COMPARES!"
+      "text": "Chain conditions together: if (...) { } else if (...) { } else if (...) { } else { }"
     },
     {
       "level": 3,
-      "text": "Forgetting that only ONE block runs: If score is 95, only the 'A' grade displays. The others are skipped!"
+      "text": "Common mistake: Using = instead of ==. level = 1 ASSIGNS 1, level == 1 COMPARES!"
     },
     {
       "level": 4,
-      "text": "Putting else if AFTER else: The final else must be LAST! else if after else causes an error."
+      "text": "Remember: only ONE block runs! If level is 2, only the second message displays."
     },
     {
       "level": 5,
-      "text": "Wrong order of conditions: If you check score >= 70 BEFORE score >= 90, a score of 95 will hit 'C' first and stop!"
+      "text": "The else must be LAST. It catches everything that didn't match above."
     }
   ],
   "commonMistakes": [
     {
       "mistake": "Using = instead of == for comparison",
-      "consequence": "level = 1 ASSIGNS 1, level == 1 COMPARES!",
-      "correction": "Review the correct syntax and best practices for this concept."
-    },
-    {
-      "mistake": "Forgetting that only ONE block runs",
-      "consequence": "If score is 95, only the 'A' grade displays. The others are skipped!",
-      "correction": "Review the correct syntax and best practices for this concept."
-    },
-    {
-      "mistake": "Putting else if AFTER else",
-      "consequence": "The final else must be LAST! else if after else causes an error.",
-      "correction": "Review the correct syntax and best practices for this concept."
+      "consequence": "level = 1 changes the value of level! Use == to compare.",
+      "correction": "Always use == when checking if two values are equal."
     },
     {
       "mistake": "Wrong order of conditions",
-      "consequence": "If you check score >= 70 BEFORE score >= 90, a score of 95 will hit 'C' first and stop!",
-      "correction": "Review the correct syntax and best practices for this concept."
+      "consequence": "If checking ranges, put most specific first (e.g., >= 90 before >= 80).",
+      "correction": "Order conditions from most specific to least specific."
+    },
+    {
+      "mistake": "Forgetting only ONE block runs",
+      "consequence": "Beginners sometimes expect multiple messages to print.",
+      "correction": "Only the FIRST matching condition executes!"
     }
   ],
   "difficulty": "beginner"

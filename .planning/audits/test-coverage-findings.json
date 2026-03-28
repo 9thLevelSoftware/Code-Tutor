@@ -1,0 +1,471 @@
+{
+  "auditMetadata": {
+    "timestamp": "2026-03-28T12:00:00Z",
+    "targetDirectory": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\native-app.Tests\\",
+    "totalTestFiles": 6,
+    "totalTestMethods": 78
+  },
+  "coverageByCategory": {
+    "ContentValidation": {
+      "testCount": 14,
+      "coveragePercentage": 45,
+      "files": [
+        "CourseContentValidationTests.cs",
+        "ChallengeValidationTests.cs"
+      ]
+    },
+    "CodeExecution": {
+      "testCount": 36,
+      "coveragePercentage": 55,
+      "files": [
+        "RuntimeDetectionTests.cs",
+        "RoslynExecutorTests.cs"
+      ]
+    },
+    "UserJourneys": {
+      "testCount": 28,
+      "coveragePercentage": 35,
+      "files": [
+        "LearningJourneyTests.cs",
+        "ProgressTrackingTests.cs"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "category": "ContentValidation",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing course metadata validation tests",
+      "description": "No tests for validating course.json schema compliance, required fields (title, description, difficulty, estimatedHours), or malformed course files.",
+      "affectedFiles": [
+        "CourseContentValidationTests.cs"
+      ],
+      "recommendedAdditions": [
+        "CourseMetadata_ShouldHaveAllRequiredFields",
+        "CourseMetadata_InvalidDifficulty_ShouldFailValidation",
+        "CourseMetadata_NegativeEstimatedHours_ShouldFailValidation",
+        "CourseMetadata_MalformedJson_ShouldBeHandled"
+      ]
+    },
+    {
+      "category": "ContentValidation",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing lesson structure validation",
+      "description": "No tests for lesson ordering gaps, duplicate lesson IDs, or empty lesson content validation.",
+      "affectedFiles": [
+        "CourseContentValidationTests.cs"
+      ],
+      "recommendedAdditions": [
+        "LessonStructure_NoDuplicateIds",
+        "LessonStructure_NoOrderGaps",
+        "LessonContent_MinimumLength",
+        "LessonReferences_NonExistentModule"
+      ]
+    },
+    {
+      "category": "ContentValidation",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing markdown content validation",
+      "description": "No tests for markdown frontmatter parsing, broken links, or malformed markdown in lesson content.",
+      "affectedFiles": [
+        "CourseContentValidationTests.cs",
+        "TestCourseLoader.cs"
+      ],
+      "recommendedAdditions": [
+        "MarkdownContent_FrontmatterParsing",
+        "MarkdownContent_NoBrokenLinks",
+        "MarkdownContent_ValidCodeBlocks"
+      ]
+    },
+    {
+      "category": "ContentValidation",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing challenge edge case tests",
+      "description": "No tests for challenges with null/empty required fields, malformed test cases, or missing solution files.",
+      "affectedFiles": [
+        "ChallengeValidationTests.cs"
+      ],
+      "recommendedAdditions": [
+        "Challenge_NullId_ShouldFail",
+        "Challenge_EmptyStarterCode_ShouldWarn",
+        "Challenge_MissingSolutionFile",
+        "Challenge_NullTestCaseExpectedOutput",
+        "Challenge_EmptyOptions_MultipleChoice"
+      ]
+    },
+    {
+      "category": "ContentValidation",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing content relationship validation",
+      "description": "No tests for challenge-to-lesson mapping, lesson-to-module consistency, or orphaned content detection.",
+      "affectedFiles": [
+        "CourseContentValidationTests.cs",
+        "ChallengeValidationTests.cs"
+      ],
+      "recommendedAdditions": [
+        "AllChallenges_BelongToValidLesson",
+        "AllLessons_BelongToValidModule",
+        "NoOrphanedChallengeDirectories",
+        "LessonReferences_ExistInModule"
+      ]
+    },
+    {
+      "category": "CodeExecution",
+      "risk": "slow",
+      "severity": "high",
+      "title": "Process-based runtime detection tests are slow",
+      "description": "RuntimeDetectionTests.CheckRuntimeAsync spawns actual processes with 5-second timeouts. 6 tests use Theory with process execution. These should be mocked.",
+      "affectedMethods": [
+        "RuntimeDetectionTests.DetectRuntime_ChecksCorrectCommand"
+      ],
+      "estimatedDurationMs": 5000,
+      "recommendedAction": "Replace with mocked process execution or move to integration test suite"
+    },
+    {
+      "category": "CodeExecution",
+      "risk": "flaky",
+      "severity": "high",
+      "title": "Runtime detection has environment dependencies",
+      "description": "DetectRuntime_ChecksCorrectCommand tests depend on system having python, node, java, etc. installed. Tests will fail on clean CI environments.",
+      "affectedMethods": [
+        "RuntimeDetectionTests.DetectRuntime_ChecksCorrectCommand",
+        "RuntimeDetectionTests.DetectRuntime_HandlesTimeout"
+      ],
+      "recommendedAction": "Mock Process.Start or use docker-based test environment"
+    },
+    {
+      "category": "CodeExecution",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing PistonExecutor tests",
+      "description": "PistonExecutor.cs exists in WPF app but has no corresponding E2E tests. Critical for multi-language code execution.",
+      "affectedFiles": [
+        "native-app-wpf/Services/Executors/PistonExecutor.cs"
+      ],
+      "recommendedAdditions": [
+        "PistonExecutor_IsAvailable_ReturnsTrueWhenHealthy",
+        "PistonExecutor_ExecuteAsync_ValidCode_ReturnsSuccess",
+        "PistonExecutor_ExecuteAsync_InvalidLanguage_ReturnsError",
+        "PistonExecutor_ExecuteAsync_Timeout_ReturnsTimeoutError",
+        "PistonExecutor_ExecuteAsync_HttpError_ReturnsErrorMessage",
+        "PistonExecutor_ExecuteAsync_MultipleFiles_Supported",
+        "PistonExecutor_MapLanguage_Unsupported_ReturnsNull"
+      ]
+    },
+    {
+      "category": "CodeExecution",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing CodeExecutionService tests",
+      "description": "No E2E tests for the main CodeExecutionService that orchestrates between Roslyn and Piston executors.",
+      "affectedFiles": [
+        "native-app-wpf/Services/CodeExecutionService.cs"
+      ],
+      "recommendedAdditions": [
+        "CodeExecutionService_CSharp_UsesRoslyn",
+        "CodeExecutionService_Python_UsesPiston",
+        "CodeExecutionService_NoPiston_FallsBackToRoslyn",
+        "CodeExecutionService_InvalidLanguage_ReturnsError"
+      ]
+    },
+    {
+      "category": "CodeExecution",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing InteractiveProcessSession tests",
+      "description": "InteractiveProcessSession.cs provides REPL-style execution but has no E2E tests.",
+      "affectedFiles": [
+        "native-app-wpf/Services/InteractiveProcessSession.cs"
+      ],
+      "recommendedAdditions": [
+        "InteractiveProcessSession_StartAsync_Success",
+        "InteractiveProcessSession_SendInput_ReceivesOutput",
+        "InteractiveProcessSession_Timeout_ThrowsException",
+        "InteractiveProcessSession_Dispose_CleansUpProcess"
+      ]
+    },
+    {
+      "category": "CodeExecution",
+      "risk": "no-cleanup",
+      "severity": "medium",
+      "title": "RoslynExecutorTests lacks proper cleanup isolation",
+      "description": "Console.SetOut/SetError manipulation in ExecuteAsync could affect subsequent tests if not properly isolated.",
+      "affectedMethods": [
+        "RoslynExecutorTests.ExecuteAsync"
+      ],
+      "recommendedAction": "Add test-level cleanup to restore Console streams, or use [CollectionDefinition(DisableParallelization = true)]"
+    },
+    {
+      "category": "CodeExecution",
+      "risk": "missing",
+      "severity": "low",
+      "title": "Missing Roslyn edge case tests",
+      "description": "RoslynExecutorTests lacks tests for empty/null code, very long code, or memory pressure scenarios.",
+      "recommendedAdditions": [
+        "Execute_NullCode_ThrowsArgumentNullException",
+        "Execute_VeryLongCode_HandlesCorrectly",
+        "Execute_InfiniteLoop_TimesOut"
+      ]
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing CourseService integration tests",
+      "description": "No E2E tests for CourseService which loads and manages course content in the WPF app.",
+      "affectedFiles": [
+        "native-app-wpf/Services/CourseService.cs"
+      ],
+      "recommendedAdditions": [
+        "CourseService_LoadCourse_ReturnsCourse",
+        "CourseService_LoadCourse_NotFound_ReturnsNull",
+        "CourseService_GetAllCourses_ReturnsAll",
+        "CourseService_Cache_InvalidatesCorrectly"
+      ]
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing ProgressService persistence tests",
+      "description": "No tests for actual file system persistence, corruption handling, or migration scenarios.",
+      "affectedFiles": [
+        "native-app-wpf/Services/ProgressService.cs"
+      ],
+      "recommendedAdditions": [
+        "ProgressService_Save_Load_RoundTrip",
+        "ProgressService_CorruptedFile_HandlesGracefully",
+        "ProgressService_ConcurrentAccess_Safe",
+        "ProgressService_Migration_OldVersion"
+      ]
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing NavigationService tests",
+      "description": "NavigationService.cs handles view navigation but has no E2E tests for navigation flows.",
+      "affectedFiles": [
+        "native-app-wpf/Services/NavigationService.cs"
+      ],
+      "recommendedAdditions": [
+        "NavigationService_NavigateToLesson_ChangesView",
+        "NavigationService_Back_NavigatesBack",
+        "NavigationService_InvalidRoute_HandlesError"
+      ]
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "no-assertion",
+      "severity": "low",
+      "title": "Weak assertions in LearningJourneyTests",
+      "description": "Several tests only check basic properties without validating actual business logic or state transitions.",
+      "affectedMethods": [
+        "LearningJourneyTests.UserJourney_CourseSelection_CanBrowseAllCourses",
+        "LearningJourneyTests.UserJourney_ModuleNavigation_CanViewAllModules",
+        "LearningJourneyTests.UserJourney_LessonViewing_CanViewLessonContent"
+      ],
+      "recommendedAction": "Add state-based assertions and validate user journey transitions"
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "hardcoded",
+      "severity": "low",
+      "title": "Test data hardcoding in ProgressTrackingTests",
+      "description": "Multiple tests use hardcoded lesson/challenge IDs instead of factory methods or test data builders.",
+      "affectedMethods": [
+        "ProgressTrackingTests.Progress_MarkLessonComplete_AddsToCompletedSet",
+        "ProgressTrackingTests.Progress_LessonProgress_TracksStartTime",
+        "ProgressTrackingTests.Progress_ChallengeAttempts_IncrementCorrectly"
+      ],
+      "recommendedAction": "Create TestDataFactory or builders for UserProgress and related entities"
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing edge case tests for progress tracking",
+      "description": "No tests for null handling, empty strings, or malformed progress data.",
+      "recommendedAdditions": [
+        "Progress_NullLessonId_HandlesGracefully",
+        "Progress_EmptyChallengeId_NoCrash",
+        "Progress_NegativeScore_ClampedToZero",
+        "Progress_Deserialize_MissingFields_Handles"
+      ]
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing achievement system comprehensive tests",
+      "description": "Achievement tests are basic. Missing tests for edge cases like multiple achievements, progressive unlock thresholds, and achievement persistence.",
+      "recommendedAdditions": [
+        "Achievement_MultipleUnlocks_SameSession",
+        "Achievement_Progressive_ThresholdBoundary",
+        "Achievement_Persistence_RoundTrip",
+        "Achievement_RareUnlocks_Correctly"
+      ]
+    },
+    {
+      "category": "UserJourneys",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing TutorService tests",
+      "description": "QwenTutorService, Phi4TutorService, LlamaTutorService have no E2E tests. Critical for AI tutoring feature.",
+      "affectedFiles": [
+        "native-app-wpf/Services/QwenTutorService.cs",
+        "native-app-wpf/Services/Phi4TutorService.cs",
+        "native-app-wpf/Services/LlamaTutorService.cs"
+      ],
+      "recommendedAdditions": [
+        "QwenTutorService_GenerateHint_ReturnsHint",
+        "QwenTutorService_ExplainError_ReturnsExplanation",
+        "QwenTutorService_ModelNotLoaded_ReturnsFallback",
+        "TutorService_Cache_SameQuery_ReturnsCached"
+      ]
+    },
+    {
+      "category": "General",
+      "risk": "missing",
+      "severity": "high",
+      "title": "Missing View/Control tests",
+      "description": "No E2E tests for WPF views (LessonPage, CoursePage, LandingPage) or controls (CodingChallenge, QuizChallenge, etc.).",
+      "affectedFiles": [
+        "native-app-wpf/Views/LessonPage.xaml.cs",
+        "native-app-wpf/Views/CoursePage.xaml.cs",
+        "native-app-wpf/Controls/CodingChallenge.xaml.cs",
+        "native-app-wpf/Controls/QuizChallenge.xaml.cs"
+      ],
+      "recommendedAdditions": [
+        "LessonPage_LoadCourse_DisplaysContent",
+        "CodingChallenge_SubmitCode_ShowsResults",
+        "QuizChallenge_SelectAnswer_ValidatesCorrect"
+      ]
+    },
+    {
+      "category": "General",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing SyntaxHighlightingService tests",
+      "description": "SyntaxHighlightingService.cs provides code highlighting but has no E2E tests.",
+      "affectedFiles": [
+        "native-app-wpf/Services/SyntaxHighlightingService.cs"
+      ],
+      "recommendedAdditions": [
+        "SyntaxHighlightingService_Highlight_Python_ReturnsFormatted",
+        "SyntaxHighlightingService_Highlight_InvalidLanguage_Handles",
+        "SyntaxHighlightingService_Highlight_Empty_ReturnsEmpty"
+      ]
+    },
+    {
+      "category": "General",
+      "risk": "missing",
+      "severity": "medium",
+      "title": "Missing ModelDownloadService tests",
+      "description": "ModelDownloadService.cs manages AI model downloads but has no E2E tests.",
+      "affectedFiles": [
+        "native-app-wpf/Services/ModelDownloadService.cs"
+      ],
+      "recommendedAdditions": [
+        "ModelDownloadService_Download_ProgressReported",
+        "ModelDownloadService_Cancel_DownloadStops",
+        "ModelDownloadService_Resume_PartialDownload"
+      ]
+    }
+  ],
+  "riskSummary": {
+    "missing": 17,
+    "slow": 1,
+    "flaky": 1,
+    "no-cleanup": 1,
+    "no-assertion": 1,
+    "hardcoded": 1
+  },
+  "top10MissingTestAreas": [
+    {
+      "rank": 1,
+      "area": "PistonExecutor multi-language execution",
+      "impact": "Critical - Core feature for Python, Java, etc. execution",
+      "priority": "P0"
+    },
+    {
+      "rank": 2,
+      "area": "CourseService content loading",
+      "impact": "High - Main entry point for all course content",
+      "priority": "P0"
+    },
+    {
+      "rank": 3,
+      "area": "ProgressService persistence",
+      "impact": "High - User data integrity",
+      "priority": "P0"
+    },
+    {
+      "rank": 4,
+      "area": "AI Tutor Services (Qwen/Phi4/Llama)",
+      "impact": "High - Key differentiating feature",
+      "priority": "P0"
+    },
+    {
+      "rank": 5,
+      "area": "Content schema validation",
+      "impact": "High - Prevents content runtime errors",
+      "priority": "P1"
+    },
+    {
+      "rank": 6,
+      "area": "CodeExecutionService orchestration",
+      "impact": "High - Bridges Roslyn and Piston",
+      "priority": "P1"
+    },
+    {
+      "rank": 7,
+      "area": "WPF Views and Controls",
+      "impact": "Medium - UI functionality",
+      "priority": "P1"
+    },
+    {
+      "rank": 8,
+      "area": "InteractiveProcessSession REPL",
+      "impact": "Medium - Interactive learning feature",
+      "priority": "P2"
+    },
+    {
+      "rank": 9,
+      "area": "Achievement system edge cases",
+      "impact": "Medium - Gamification",
+      "priority": "P2"
+    },
+    {
+      "rank": 10,
+      "area": "Syntax highlighting",
+      "impact": "Low - Nice to have",
+      "priority": "P2"
+    }
+  ],
+  "recommendations": {
+    "immediate": [
+      "Create PistonExecutorTests.cs with mocked HTTP responses",
+      "Add CourseService E2E tests with temporary file fixtures",
+      "Add ProgressService file persistence tests with cleanup",
+      "Mock external processes in RuntimeDetectionTests"
+    ],
+    "shortTerm": [
+      "Add content schema validation tests using JSON Schema",
+      "Create TestDataFactory for UserProgress and Course models",
+      "Add CodeExecutionService orchestration tests",
+      "Add edge case tests for all challenge types"
+    ],
+    "longTerm": [
+      "Implement UI automation tests with FlaUI or similar",
+      "Add performance tests for slow operations",
+      "Create integration test suite with docker-compose",
+      "Add mutation testing for critical paths"
+    ]
+  }
+}

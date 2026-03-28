@@ -1,0 +1,62 @@
+{
+  "course": "javascript",
+  "module": "11-server-with-bun-and-hono",
+  "moduleTitle": "Module 11: Server with Bun and Hono",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/11-server-with-bun-and-hono/lessons/01-what-is-bun",
+      "lessonTitle": "What is Bun?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/11-server-with-bun-and-hono/lessons/02-setting-up-your-first-bun-project",
+      "lessonTitle": "Setting Up Your First Bun Project",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/11-server-with-bun-and-hono/lessons/03-introduction-to-hono",
+      "lessonTitle": "Introduction to Hono",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/11-server-with-bun-and-hono/lessons/04-routing-with-hono",
+      "lessonTitle": "Routing with Hono",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/11-server-with-bun-and-hono/lessons/05-middleware-and-request-handling",
+      "lessonTitle": "Middleware and Request Handling",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "course": "java",
+  "module": "02-data-types-loops-and-methods",
+  "moduleTitle": "Data Types, Loops, and Methods",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/02-data-types-loops-and-methods/lessons/01-lesson-21-data-types-in-depth",
+      "lessonTitle": "Lesson 2.1: Data Types in Depth",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/02-data-types-loops-and-methods/lessons/02-lesson-22-operators-and-expressions",
+      "lessonTitle": "Lesson 2.2: Operators and Expressions",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/02-data-types-loops-and-methods/lessons/03-lesson-23-while-loops-mastering-repetition",
+      "lessonTitle": "Lesson 2.3: While Loops - Mastering Repetition",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/02-data-types-loops-and-methods/lessons/04-lesson-24-for-loops-counting-made-easy",
+      "lessonTitle": "Lesson 2.4: For Loops - Counting Made Easy",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/02-data-types-loops-and-methods/lessons/05-lesson-25-introduction-to-methods",
+      "lessonTitle": "Lesson 2.5: Introduction to Methods",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/02-data-types-loops-and-methods/lessons/06-lesson-26-what-do-public-static-and-void-mean",
+      "lessonTitle": "Lesson 2.6: What Do 'public', 'static', and 'void' Mean?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 0 },
+    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

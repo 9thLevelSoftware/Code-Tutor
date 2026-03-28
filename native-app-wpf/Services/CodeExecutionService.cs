@@ -8,6 +8,31 @@ using CodeTutor.Wpf.Services.Executors;
 
 namespace CodeTutor.Wpf.Services;
 
+/// <summary>
+/// [OBSOLETE - CRITICAL SECURITY VULNERABILITY SEC-001]
+/// 
+/// This implementation has CRITICAL security vulnerabilities:
+/// - No sandboxing enables arbitrary code execution (Command Injection)
+/// - User code written to temp files and executed directly
+/// - Only protection is a 30-second timeout
+/// - No input validation or code scanning
+/// - No audit logging
+/// - No resource limits
+/// - No command whitelist
+/// 
+/// SECURITY ADVISORY: This class was used before implementation of SEC-001 fix.
+/// It has been replaced by SandboxedCodeExecutionService which provides:
+/// - Windows Job Objects for resource limits (memory, CPU time, process limits)
+/// - Pattern-based code security scanning for dangerous operations
+/// - Command whitelist (only python, node, java, etc.)
+/// - Restricted environment variables (minimal PATH)
+/// - Audit logging with JSON output
+/// - Secure temp file handling with random names
+/// - Input validation (code size limits)
+/// 
+/// DO NOT USE - Use SandboxedCodeExecutionService instead.
+/// </summary>
+[Obsolete("CRITICAL SECURITY VULNERABILITY SEC-001: This class has command injection vulnerabilities. Use SandboxedCodeExecutionService instead.", error: false)]
 public interface ICodeExecutionService
 {
     Task<ExecutionResult> ExecuteAsync(string code, string language);
@@ -18,6 +43,23 @@ public interface ICodeExecutionService
 
 public record ExecutionResult(bool Success, string Output, string Error);
 
+/// <summary>
+/// [OBSOLETE - CRITICAL SECURITY VULNERABILITY SEC-001]
+/// 
+/// This implementation has CRITICAL security vulnerabilities:
+/// - Command injection via unsanitized user input
+/// - No sandboxing enables arbitrary code execution
+/// - User code written to temp files and executed directly
+/// - No input validation or code scanning
+/// - No audit logging
+/// - No resource limits (memory, CPU)
+/// - No command whitelist
+/// 
+/// REPLACED BY: SandboxedCodeExecutionService
+/// 
+/// DO NOT USE - Use SandboxedCodeExecutionService instead.
+/// </summary>
+[Obsolete("CRITICAL SECURITY VULNERABILITY SEC-001: This class has command injection vulnerabilities. Use SandboxedCodeExecutionService.", error: false)]
 public class CodeExecutionService : ICodeExecutionService
 {
     private readonly RoslynCSharpExecutor _roslynExecutor;

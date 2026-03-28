@@ -1,6 +1,6 @@
 {
   "id": "module-13",
-  "title": "Module 12: Offline-First & Persistence",
+  "title": "Module 13: Offline-First & Persistence",
   "description": "Build robust offline-first Flutter apps with local storage, Drift databases, and sync engines.",
   "difficulty": "advanced",
   "estimatedHours": 6,

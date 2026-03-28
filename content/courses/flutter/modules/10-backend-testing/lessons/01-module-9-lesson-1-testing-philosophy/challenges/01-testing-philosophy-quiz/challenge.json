@@ -1,6 +1,6 @@
 {
   "type": "QUIZ",
-  "id": "9.1-quiz-1",
+  "id": "10.1-quiz-1",
   "title": "Testing Philosophy Quiz",
   "description": "Test your understanding of testing concepts and the test pyramid.",
   "questions": [

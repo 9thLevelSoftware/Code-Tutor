@@ -33,7 +33,7 @@ You've completed Module 15: The K2 Era - Modern Kotlin Tooling!
    - Testing processors
 
 5. **Context Parameters**
-   - Named context dependencies (Beta since Kotlin 2.2)
+   - Named context dependencies (experimental in Kotlin 2.3.4, Beta since Kotlin 2.2)
    - DSL patterns
    - Transaction contexts
    - Arrow Raise integration

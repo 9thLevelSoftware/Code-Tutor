@@ -1,6 +1,6 @@
 {
   "type": "QUIZ",
-  "id": "10.5-quiz",
+  "id": "11.5-quiz",
   "title": "Login and Session Management Quiz",
   "description": "Test your understanding of login flows, session management, and token handling.",
   "questions": [

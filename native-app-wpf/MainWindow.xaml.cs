@@ -31,7 +31,7 @@ public partial class MainWindow : Window
         services.AddSingleton<ICourseService, CourseService>();
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<IProgressService, ProgressService>();
-        services.AddSingleton<ICodeExecutionService, CodeExecutionService>();
+        services.AddSingleton<ICodeExecutionService, SandboxedCodeExecutionService>();
         services.AddSingleton<ITutorService, LlamaTutorService>();
         services.AddSingleton<IModelDownloadService, ModelDownloadService>();
         var provider = services.BuildServiceProvider();

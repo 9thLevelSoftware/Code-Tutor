@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.8-challenge-3",
+  "id": "11.8-challenge-3",
   "title": "Add Remember Me Feature",
   "description": "Implement a 'Remember Me' checkbox that keeps users logged in across app restarts.",
   "instructions": "Add a 'Remember Me' feature to the login screen that:\n\n1. Shows a checkbox on the login form\n2. When checked, persists the session token securely\n3. When unchecked, clears tokens on app close\n4. Auto-fills the email field if remembered\n5. Respects user's choice on subsequent logins\n\nThe implementation should:\n- Store the preference in secure storage\n- Optionally remember the email for convenience\n- Clear session appropriately based on the setting\n- Work with both email/password and OAuth login",

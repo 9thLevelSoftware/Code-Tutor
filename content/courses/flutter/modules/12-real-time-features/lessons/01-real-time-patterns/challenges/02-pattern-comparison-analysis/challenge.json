@@ -1,5 +1,5 @@
 {
-  "id": "11.1-challenge-1",
+  "id": "12.1-challenge-1",
   "title": "Pattern Comparison Analysis",
   "description": "Analyze a real-world scenario and recommend the best real-time pattern.",
   "instructions": "You are designing a stock trading dashboard with the following requirements:\n\n- Display live stock prices (updates every 100ms)\n- Users can place buy/sell orders\n- Show a list of recent trades (updates when trades occur)\n- Display user portfolio value (updates with price changes)\n- Expected concurrent users: 5,000\n- Must work reliably with corporate firewalls\n\nAnalyze this scenario and write a brief analysis (as a code comment) explaining:\n1. Which pattern would you choose for live price updates?\n2. Which pattern would you choose for order placement?\n3. Why did you make these choices?\n4. What are the tradeoffs?\n\nThen implement a skeleton class that demonstrates your approach.",

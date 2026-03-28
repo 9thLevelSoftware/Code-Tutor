@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "9.1-challenge-1",
+  "id": "10.1-challenge-1",
   "title": "Design a Test Strategy",
   "description": "Plan the test strategy for a user authentication feature.",
   "instructions": "You are building a user authentication system with the following features:\n- User registration with email validation\n- Password hashing\n- Login with email and password\n- JWT token generation\n- Token validation\n\nWrite out a test plan that identifies:\n1. At least 3 unit tests you would write\n2. At least 2 integration tests\n3. At least 1 end-to-end test\n\nFor each test, describe what it tests and why it matters.",

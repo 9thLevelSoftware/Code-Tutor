@@ -1,0 +1,352 @@
+{
+  "audit_summary": {
+    "modules_audited": ["06", "07", "08"],
+    "total_lessons_audited": 32,
+    "total_issues_found": 47,
+    "critical_issues": 8,
+    "major_issues": 18,
+    "minor_issues": 21
+  },
+  "module_06_backend_development_with_ktor": {
+    "lessons_count": 15,
+    "issues_count": 24,
+    "rating": "C+",
+    "findings": [
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/01-lesson-51-introduction-to-backend-development-http-fundamentals/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Placeholder content: Contains only 'This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement' without actual lesson content",
+        "suggested_fix": "Replace with complete HTTP fundamentals lesson content including methods, status codes, and REST principles"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/02-lesson-52-setting-up-your-first-ktor-project/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Empty introduction section with only metadata (Estimated Time, Difficulty, Prerequisites) but no actual educational content",
+        "suggested_fix": "Add comprehensive introduction explaining what Ktor is and what will be learned"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/02-lesson-52-setting-up-your-first-ktor-project/content/02-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "critical",
+        "description": "Theory file contains only 'Previous lesson you learned...' intro but references non-existent Lesson 5.1 content (module ID mismatch - this is module 06, not 05)",
+        "suggested_fix": "Fix module reference and complete the lesson content with actual Ktor project setup instructions"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/02-lesson-52-setting-up-your-first-ktor-project/content/05-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "critical",
+        "description": "Project setup guide missing actual build.gradle.kts code block - shows 'Create build.gradle.kts:' but no code follows",
+        "suggested_fix": "Add complete build.gradle.kts with Ktor 3.4 dependencies, plugins, and repository configuration"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/02-lesson-52-setting-up-your-first-ktor-project/content/09-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "major",
+        "description": "Expected server output code block exists but truncated/incomplete - shows server output but no actual Kotlin main function code shown before it",
+        "suggested_fix": "Add complete Application.kt main function code that produces the shown output"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/10-lesson-510-authentication-user-registration-password-hashing/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Placeholder content with only metadata (Estimated Time: 60 minutes) and placeholder text, no authentication lesson content",
+        "suggested_fix": "Write complete lesson on password hashing with bcrypt, user registration flow, and security best practices"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/10-lesson-510-authentication-user-registration-password-hashing/content/07-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "minor",
+        "description": "TODO markers in homework section: '// TODO: Update Users table definition', '// TODO: Implement enhanced UserValidator' - these are incomplete learning exercises without solutions",
+        "suggested_fix": "Complete the homework section with full implementations or move to challenge files"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/11-lesson-511-authentication-login-jwt-tokens/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Placeholder content with only metadata, missing JWT authentication lesson content",
+        "suggested_fix": "Add complete JWT implementation guide with token generation, validation, and refresh flows"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/11-lesson-511-authentication-login-jwt-tokens/content/07-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "minor",
+        "description": "TODO markers in homework: '// TODO: Create RefreshTokens table', '// TODO: Implement refresh token generation', etc.",
+        "suggested_fix": "Complete homework section with full refresh token implementation"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/12-lesson-512-authentication-protecting-routes-with-jwt/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Placeholder content with only metadata, missing route protection lesson content",
+        "suggested_fix": "Add complete lesson on JWT route authentication and authorization"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/12-lesson-512-authentication-protecting-routes-with-jwt/content/05-example.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "major",
+        "description": "Code example contains empty 'Authentication Flow' and 'Role-Based Access Control Flow' sections with only headings - no actual code implementation",
+        "suggested_fix": "Add complete JWT authentication flow implementation with role-based access control examples"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/12-lesson-512-authentication-protecting-routes-with-jwt/content/07-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "minor",
+        "description": "TODO markers in homework: '// TODO: Implement canModifyPost authorization', '// TODO: Implement update and delete with ownership checks'",
+        "suggested_fix": "Complete homework with full ownership check implementations"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/13-lesson-513-dependency-injection-with-koin/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only 'Estimated Time: 60 minutes' and placeholder text - this is a critical architecture lesson completely missing",
+        "suggested_fix": "Write complete Koin DI lesson with modules, scopes, and testing strategies"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/13-lesson-513-dependency-injection-with-koin/content/02-theory.md",
+        "issue_type": "PEDAGOGY",
+        "severity": "minor",
+        "description": "Good content exists but lesson.json ID mismatch - file references Lesson 5.1 concepts but this is Module 06",
+        "suggested_fix": "Update references to point to correct previous lessons in this module"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/13-lesson-513-dependency-injection-with-koin/content/10-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "minor",
+        "description": "TODO markers in advanced section: '// TODO: Define request scope', '// TODO: Provide TenantContext from request header'",
+        "suggested_fix": "Complete advanced DI patterns section or remove if not in scope"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/14-lesson-514-testing-your-api/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only 'Estimated Time: 70 minutes' and placeholder text - testing is critical for production APIs",
+        "suggested_fix": "Write complete testing lesson with Ktor test framework, mocking, and integration tests"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/14-lesson-514-testing-your-api/content/18-key_point.md",
+        "issue_type": "METADATA",
+        "severity": "critical",
+        "description": "Key point file contains completely wrong content: 'What Compose Multiplatform is and its declarative approach' - this is from Module 07, not testing content",
+        "suggested_fix": "Replace with actual key points about Ktor API testing"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/15-lesson-515-part-5-capstone-project-task-management-api/content/01-theory.md",
+        "issue_type": "INACCURATE",
+        "severity": "major",
+        "description": "Content mismatch - file contains Lesson 5.2 'Creating Your First Ktor Project' content (project generator steps) instead of capstone project introduction",
+        "suggested_fix": "Replace with actual capstone project overview, requirements, and architecture guidance"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/15-lesson-515-part-5-capstone-project-task-management-api/content/08-example.md",
+        "issue_type": "INACCURATE",
+        "severity": "major",
+        "description": "Contains 'Testing Your API' browser/curl/Postman content instead of authentication flow example as expected from filename",
+        "suggested_fix": "Replace with actual authentication flow implementation for the capstone"
+      },
+      {
+        "file_path": "modules/06-backend-development-with-ktor/lessons/15-lesson-515-part-5-capstone-project-task-management-api/content/10-example.md",
+        "issue_type": "INACCURATE",
+        "severity": "major",
+        "description": "Contains 'Code Breakdown' with authentication flow content but references UserPrincipal from wrong context - this should be Task API specific",
+        "suggested_fix": "Rewrite with Task API specific authentication and authorization examples"
+      }
+    ]
+  },
+  "module_07_mobile_development_compose": {
+    "lessons_count": 10,
+    "issues_count": 16,
+    "rating": "D+",
+    "findings": [
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/module.json",
+        "issue_type": "METADATA",
+        "severity": "critical",
+        "description": "Module JSON file contains markdown content instead of JSON: has '---\ntype: THEORY\ntitle: Introduction\n---' frontmatter format",
+        "suggested_fix": "Convert to proper JSON format with id, title, description, difficulty, order fields"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/01-lesson-61-compose-multiplatform-fundamentals/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content: 'What Compose Multiplatform is and its declarative approach...' is a summary list, not actual lesson content. Missing proper introduction",
+        "suggested_fix": "Write complete lesson introduction explaining Compose Multiplatform fundamentals with examples"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/02-lesson-610-part-6-capstone-task-manager-app/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only placeholder text, no capstone project content",
+        "suggested_fix": "Write complete capstone project guide for Task Manager app"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/03-lesson-62-introduction-to-compose-multiplatform-ui/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only placeholder text - this is a core UI lesson completely empty",
+        "suggested_fix": "Write complete Compose UI lesson with @Composable functions, basic components, and modifiers"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/03-lesson-62-introduction-to-compose-multiplatform-ui/content/01-content.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Duplicate placeholder content file - should be removed or merged with 01-theory.md",
+        "suggested_fix": "Consolidate content into single 01-theory.md file with proper structure"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/03-lesson-62-introduction-to-compose-multiplatform-ui/content/02-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "major",
+        "description": "Next Steps content references 'Lesson 6.3: Layouts and UI Design' but lesson ID is lesson-62 (should be sequential progression)",
+        "suggested_fix": "Ensure lesson numbering is consistent throughout module"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/04-lesson-63-layouts-and-ui-design/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only placeholder text - layouts lesson is core curriculum and empty",
+        "suggested_fix": "Write complete layouts lesson with Column, Row, Box, and Material Design 3 components"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/05-lesson-64-state-management/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only placeholder text - state management is critical for Compose",
+        "suggested_fix": "Write complete state management lesson with remember, mutableStateOf, ViewModel patterns"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/05-lesson-64-state-management/content/07-theory.md",
+        "issue_type": "INACCURATE",
+        "severity": "major",
+        "description": "Code example references 'viewModel()' function but doesn't explain it requires additional dependencies (androidx.lifecycle.ViewModel for multiplatform)",
+        "suggested_fix": "Add explanation of ViewModel dependencies and provide alternative for pure Compose state management"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/06-lesson-65-navigation/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only placeholder text - navigation is essential for apps",
+        "suggested_fix": "Write complete navigation lesson with Navigation 3.0 patterns for multiplatform"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/07-lesson-66-networking-and-apis/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only placeholder text - networking lesson empty",
+        "suggested_fix": "Write complete networking lesson with Ktor client for multiplatform"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/08-lesson-67-local-data-storage/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Placeholder content with only placeholder text - local storage lesson empty",
+        "suggested_fix": "Write complete data storage lesson covering expect/actual pattern for platform-specific storage"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/09-lesson-68-mvvm-architecture/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "critical",
+        "description": "Placeholder content with only placeholder text - MVVM architecture lesson empty",
+        "suggested_fix": "Write complete MVVM lesson with ViewModel, Repository pattern, and StateFlow"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/10-lesson-69-advanced-ui-animations/content/01-theory.md",
+        "issue_type": "STUB",
+        "severity": "major",
+        "description": "Placeholder content with only placeholder text - animations lesson empty",
+        "suggested_fix": "Write complete animations lesson with AnimatedVisibility, animate*AsState, and custom animations"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/10-lesson-69-advanced-ui-animations/lesson.json",
+        "issue_type": "METADATA",
+        "severity": "minor",
+        "description": "Lesson title is 'Lesson 6.9: Advanced UI Animations' but module is Module 07, not 06",
+        "suggested_fix": "Update lesson titles to reflect correct module numbering (Lesson 7.9)"
+      },
+      {
+        "file_path": "modules/07-mobile-development-with-compose-multiplatform/lessons/03-lesson-62-introduction-to-compose-multiplatform-ui/lesson.json",
+        "issue_type": "METADATA",
+        "severity": "minor",
+        "description": "Lesson title is 'Lesson 6.2: Introduction to Compose Multiplatform UI' but moduleId is module-07",
+        "suggested_fix": "Update to 'Lesson 7.2' for consistency with module numbering"
+      }
+    ]
+  },
+  "module_08_persistence_sqldelight": {
+    "lessons_count": 7,
+    "issues_count": 7,
+    "rating": "B",
+    "findings": [
+      {
+        "file_path": "modules/08-persistence-with-sqldelight/module.json",
+        "issue_type": "METADATA",
+        "severity": "critical",
+        "description": "Module JSON file contains wrong lesson JSON content: has lesson-07-03 data instead of module metadata (id, title, description, difficulty, order)",
+        "suggested_fix": "Replace with proper module metadata JSON with correct module ID and details"
+      },
+      {
+        "file_path": "modules/08-persistence-with-sqldelight/lessons/01-lesson-6a1-introduction-to-sqldelight/content/02-theory.md",
+        "issue_type": "OUTDATED",
+        "severity": "major",
+        "description": "May reference SQLDelight 1.5 patterns - needs verification against SQLDelight 2.2 current version",
+        "suggested_fix": "Update all SQLDelight examples to use version 2.2.1 APIs and verify package names (app.cash.sqldelight)"
+      },
+      {
+        "file_path": "modules/08-persistence-with-sqldelight/lessons/02-lesson-6a2-setting-up-sqldelight-in-kmp/content/05-theory.md",
+        "issue_type": "OUTDATED",
+        "severity": "major",
+        "description": "Gradle setup may use old plugin syntax - SQLDelight 2.x uses app.cash.sqldelight plugin ID, not com.squareup.sqldelight",
+        "suggested_fix": "Update to use correct plugin ID: id(\"app.cash.sqldelight\") version \"2.2.1\""
+      },
+      {
+        "file_path": "modules/08-persistence-with-sqldelight/lessons/03-lesson-6a3-writing-sql-queries/content/03-theory.md",
+        "issue_type": "INCOMPLETE",
+        "severity": "minor",
+        "description": "Should verify SQL syntax works with SQLDelight 2.x query validation",
+        "suggested_fix": "Test all SQL queries against SQLDelight 2.2.1 to ensure validation passes"
+      },
+      {
+        "file_path": "modules/08-persistence-with-sqldelight/lessons/04-lesson-6a4-migrations-and-schema-changes/content/01-theory.md",
+        "issue_type": "PEDAGOGY",
+        "severity": "minor",
+        "description": "Verify migration file naming convention (.sqm) is correct for SQLDelight 2.x",
+        "suggested_fix": "Confirm .sqm naming and directory structure matches SQLDelight 2.2.1 requirements"
+      },
+      {
+        "file_path": "modules/08-persistence-with-sqldelight/lessons/05-lesson-6a5-flows-and-reactive-queries/content/01-theory.md",
+        "issue_type": "OUTDATED",
+        "severity": "major",
+        "description": "Coroutines extensions API may have changed in 2.x - verify asFlow() and related methods",
+        "suggested_fix": "Update to use SQLDelight 2.x coroutines extensions API"
+      },
+      {
+        "file_path": "modules/08-persistence-with-sqldelight/lessons/02-lesson-6a2-setting-up-sqldelight-in-kmp/content/07-example.md",
+        "issue_type": "OUTDATED",
+        "severity": "major",
+        "description": "Generated code example may show old package structure - SQLDelight 2.x uses app.cash.sqldelight package",
+        "suggested_fix": "Update all imports and generated code examples to use app.cash.sqldelight package"
+      }
+    ]
+  },
+  "version_verification": {
+    "ktor_version": {
+      "required": "3.4",
+      "actual_latest": "3.4.0 (January 2026)",
+      "status": "CURRENT",
+      "notes": "Ktor 3.4.0 is up to date as of March 2026"
+    },
+    "compose_multiplatform_version": {
+      "required": "1.10",
+      "actual_latest": "1.10.3 (March 2026)",
+      "status": "CURRENT",
+      "notes": "Compose 1.10.x is up to date, 1.11 not yet released"
+    },
+    "sqldelight_version": {
+      "required": "Compatible with Kotlin 2.3",
+      "actual_latest": "2.2.1 (Latest stable)",
+      "status": "NEEDS_VERIFICATION",
+      "notes": "SQLDelight 2.2.1 is latest, but content may reference 2.0 or older APIs. Package changed from com.squareup to app.cash"
+    }
+  }
+}

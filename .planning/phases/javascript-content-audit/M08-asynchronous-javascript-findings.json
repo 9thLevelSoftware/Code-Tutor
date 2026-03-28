@@ -1,0 +1,62 @@
+{
+  "course": "javascript",
+  "module": "08-asynchronous-javascript",
+  "moduleTitle": "Module 8: Asynchronous JavaScript",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/08-asynchronous-javascript/lessons/01-understanding-asynchronous-code",
+      "lessonTitle": "Understanding Asynchronous Code",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/08-asynchronous-javascript/lessons/02-callbacks-the-classic-approach",
+      "lessonTitle": "Callbacks: The Classic Approach",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/08-asynchronous-javascript/lessons/03-promises-a-cleaner-way",
+      "lessonTitle": "Promises: A Cleaner Way",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/08-asynchronous-javascript/lessons/04-async-await-modern-syntactic-sugar",
+      "lessonTitle": "Async/Await: Modern Syntactic Sugar",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/08-asynchronous-javascript/lessons/05-fetch-api-making-http-requests",
+      "lessonTitle": "Fetch API: Making HTTP Requests",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

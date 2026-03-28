@@ -1,0 +1,55 @@
+{
+  "course": "javascript",
+  "module": "14-full-stack-integration",
+  "moduleTitle": "Module 14: Full Stack Integration",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 4,
+  "lessonsReviewed": 4,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/14-full-stack-integration/lessons/01-architecting-full-stack-apps",
+      "lessonTitle": "Architecting Full-Stack Apps",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/14-full-stack-integration/lessons/02-connecting-frontend-to-backend",
+      "lessonTitle": "Connecting Frontend to Backend",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/14-full-stack-integration/lessons/03-authentication-basics",
+      "lessonTitle": "Authentication Basics",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/14-full-stack-integration/lessons/04-deployment-preparation",
+      "lessonTitle": "Deployment Preparation",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

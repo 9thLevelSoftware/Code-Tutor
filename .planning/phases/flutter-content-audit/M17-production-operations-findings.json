@@ -1,0 +1,84 @@
+{
+  "course": "flutter",
+  "module": "17-production-operations",
+  "moduleTitle": "Production Operations",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 6,
+  "lessonsReviewed": 6,
+  "findings": [
+    {
+      "lessonPath": "content/courses/flutter/modules/17-production-operations/lessons/01-crash-reporting",
+      "lessonTitle": "Crash Reporting",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/06-example.md",
+          "description": "References Sentry Flutter 8.0.0 - verify current version",
+          "webResearchNote": "Sentry Flutter SDK version should be verified"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/17-production-operations/lessons/02-analytics",
+      "lessonTitle": "Analytics",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/06-example.md",
+          "description": "References firebase_analytics 11.0.0 - verify current version",
+          "webResearchNote": "Firebase Analytics version should be verified against latest"
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/17-production-operations/lessons/03-performance-monitoring",
+      "lessonTitle": "Performance Monitoring",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/17-production-operations/lessons/04-feature-flags",
+      "lessonTitle": "Feature Flags",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/17-production-operations/lessons/05-app-updates-versioning",
+      "lessonTitle": "App Updates and Versioning",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/17-production-operations/lessons/06-serverpod-insights",
+      "lessonTitle": "Serverpod Insights",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 2,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 2
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 2,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

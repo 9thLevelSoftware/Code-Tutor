@@ -1,0 +1,52 @@
+{
+  "course": "java",
+  "module": "10-web-fundamentals-and-apis",
+  "moduleTitle": "Web Fundamentals and APIs",
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "java": "25",
+    "httpClient": "Java 11+ (built-in)"
+  },
+  "totalLessons": 3,
+  "lessonsReviewed": 3,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/10-web-fundamentals-and-apis/lessons/01-lesson-101-how-does-the-web-actually-work",
+      "lessonTitle": "How Does the Web Actually Work?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/10-web-fundamentals-and-apis/lessons/02-lesson-102-rest-apis-the-standard-for-web-services",
+      "lessonTitle": "REST APIs - The Standard for Web Services",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/10-web-fundamentals-and-apis/lessons/03-lesson-103-httpclient-calling-apis-from-java",
+      "lessonTitle": "HttpClient - Calling APIs from Java",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0,
+      "info": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

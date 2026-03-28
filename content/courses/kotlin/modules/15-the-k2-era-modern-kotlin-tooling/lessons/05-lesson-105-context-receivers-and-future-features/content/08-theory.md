@@ -38,6 +38,7 @@ kotlin {
 - Context parameters are **named**: `context(name: Type)` instead of `context(Type)`
 - Access is **explicit**: `name.member()` instead of implicit `member()`
 - Multiple contexts: `context(a: TypeA, b: TypeB)` -- no ambiguity
+- **Kotlin 2.3.4 Status**: Context parameters are experimental. Enable with `-Xcontext-parameters`
 - Historical note: context receivers were experimental in Kotlin 1.6.20-1.9.x, deprecated in 2.0.20
 
 ---

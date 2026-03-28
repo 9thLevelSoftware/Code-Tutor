@@ -1,0 +1,43 @@
+{
+  "course": "java",
+  "module": "03-git-development-workflow",
+  "moduleTitle": "Git Development Workflow",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 4,
+  "lessonsReviewed": 4,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/03-git-development-workflow/lessons/01-lesson-31-why-version-control",
+      "lessonTitle": "Lesson 3.1: Why Version Control?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/03-git-development-workflow/lessons/02-lesson-32-git-basics",
+      "lessonTitle": "Lesson 3.2: Git Basics",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/03-git-development-workflow/lessons/03-lesson-33-branching-merging",
+      "lessonTitle": "Lesson 3.3: Branching and Merging",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/03-git-development-workflow/lessons/04-lesson-34-github-collaboration",
+      "lessonTitle": "Lesson 3.4: GitHub Collaboration",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 0 },
+    "byCategory": { "STUB": 0, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

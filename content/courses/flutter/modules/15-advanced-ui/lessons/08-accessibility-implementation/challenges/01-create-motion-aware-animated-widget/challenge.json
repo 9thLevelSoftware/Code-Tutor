@@ -1,6 +1,6 @@
 {
   "type": "FREE_CODING",
-  "id": "14.8-challenge-0",
+  "id": "15.8-challenge-0",
   "title": "Create Motion-Aware Animated Widget",
   "description": "Build a notification card that respects reduced motion preferences.",
   "instructions": "Create a NotificationCard widget that slides in from the right when shown. When the user has reduced motion enabled, it should fade in instantly instead of sliding. The card should include: (1) Check for reduced motion preference using MediaQuery, (2) Animate with slide + fade when motion is allowed, (3) Show instantly or with simple fade when reduced motion is preferred, (4) Include a dismiss button with proper semantics.",

@@ -31,4 +31,29 @@ _ = DoWorkAsync();
 // BETTER - log errors
 _ = DoWorkAsync().ContinueWith(t => 
     Log(t.Exception), TaskContinuationOptions.OnlyOnFaulted);
+
+// BEST in .NET 6+ - use async void only for event handlers with try/catch
+private async void Button_Click(object sender, EventArgs e)
+{
+    try
+    {
+        await DoWorkAsync();
+    }
+    catch (Exception ex)
+    {
+        Log(ex);
+    }
+}
+```
+
+**7. NEVER use `.Result` or `.Wait()` - causes deadlocks!**
+```csharp
+// DANGEROUS - can deadlock!
+var result = GetDataAsync().Result;
+
+// SAFE - use await all the way up
+var result = await GetDataAsync();
+
+// Or use .GetAwaiter().GetResult() in Main (last resort)
+static void Main() => MainAsync().GetAwaiter().GetResult();
 ```

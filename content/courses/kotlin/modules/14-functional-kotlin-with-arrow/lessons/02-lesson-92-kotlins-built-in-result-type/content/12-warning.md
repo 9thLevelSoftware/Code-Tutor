@@ -1,6 +1,6 @@
 ---
 type: "WARNING"
-title: "Result Limitations"
+title: "Result Type Limitations"
 ---
 
 
@@ -37,6 +37,19 @@ Can't collect multiple errors:
 val results = listOf("1", "a", "2", "b")
     .map { parseNumber(it) }
 // Only know about first failure, not all
+```
+
+### Stack Trace Overhead
+
+`runCatching` captures full stack traces even for expected errors:
+
+```kotlin
+// SLOW for expected errors - captures stack trace
+val result = runCatching { parseInput(userInput) }
+
+// BETTER for control flow - use Either or nullable returns
+val result = parseInput(userInput)
+    .mapLeft { ParseError(it) }
 ```
 
 ---

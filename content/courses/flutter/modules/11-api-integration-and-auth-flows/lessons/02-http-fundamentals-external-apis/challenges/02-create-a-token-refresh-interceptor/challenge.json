@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.2-challenge-2",
+  "id": "11.2-challenge-2",
   "title": "Create a Token Refresh Interceptor",
   "description": "Build an interceptor that automatically refreshes expired JWT tokens.",
   "instructions": "Implement a TokenRefreshInterceptor that:\n1. Detects 401 Unauthorized responses\n2. Calls a refreshToken() function to get a new token\n3. Updates the failed request with the new token\n4. Retries the original request\n5. If refresh fails, calls onRefreshFailed callback\n6. Prevents multiple simultaneous refresh attempts (use a lock)",

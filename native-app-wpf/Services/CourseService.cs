@@ -22,10 +22,56 @@ public class CourseService : ICourseService
     private readonly string _contentPath;
     private readonly ConcurrentDictionary<string, Course> _courseCache = new();
     private readonly ConcurrentDictionary<string, string> _lessonPaths = new();
+    private readonly IJsonValidationService _validationService;
 
     public CourseService()
     {
-        _contentPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "courses");
+        _contentPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "courses"));
+        _validationService = new JsonValidationService(new LoggingService());
+    }
+
+    public CourseService(IJsonValidationService validationService)
+    {
+        _contentPath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "courses"));
+        _validationService = validationService;
+    }
+
+    /// <summary>
+    /// Validates and sanitizes a file path to ensure it stays within the content directory.
+    /// </summary>
+    private string? ValidateAndGetFullPath(string relativePath)
+    {
+        if (string.IsNullOrWhiteSpace(relativePath))
+            return null;
+
+        try
+        {
+            var fullPath = Path.GetFullPath(Path.Combine(_contentPath, relativePath));
+            
+            // Ensure the resolved path is within the content directory
+            if (!PathSecurityValidator.IsPathWithinBaseDirectory(fullPath, _contentPath))
+                return null;
+
+            return fullPath;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// Validates that all identifiers are safe before processing.
+    /// </summary>
+    private static void ValidateIdentifiers(string courseId, string? moduleId = null, string? lessonId = null)
+    {
+        PathSecurityValidator.ValidateIdentifierOrThrow(courseId, nameof(courseId));
+        
+        if (moduleId != null)
+            PathSecurityValidator.ValidateIdentifierOrThrow(moduleId, nameof(moduleId));
+        
+        if (lessonId != null)
+            PathSecurityValidator.ValidateIdentifierOrThrow(lessonId, nameof(lessonId));
     }
 
     public async Task<List<Course>> GetAllCoursesAsync()
@@ -37,6 +83,13 @@ public class CourseService : ICourseService
 
         foreach (var courseDir in Directory.GetDirectories(_contentPath))
         {
+            // Validate that discovered directory is within content path
+            if (!PathSecurityValidator.IsPathWithinBaseDirectory(courseDir, _contentPath))
+            {
+                Log($"SECURITY: Skipping directory outside content path: {courseDir}");
+                continue;
+            }
+
             var courseFile = Path.Combine(courseDir, "course.json");
             if (!File.Exists(courseFile))
                 continue;
@@ -44,7 +97,12 @@ public class CourseService : ICourseService
             try
             {
                 var json = await File.ReadAllTextAsync(courseFile);
-                var course = JsonSerializer.Deserialize<Course>(json);
+                var (course, errors) = _validationService.Deserialize<Course>(json, "course");
+                if (errors.Count > 0)
+                {
+                    Log($"SECURITY: Course validation failed for {courseFile}: {string.Join(", ", errors)}");
+                    continue;
+                }
                 if (course != null)
                 {
                     await LoadModulesAsync(course, courseDir);
@@ -63,6 +121,13 @@ public class CourseService : ICourseService
 
     private async Task LoadModulesAsync(Course course, string courseDir)
     {
+        // Validate course directory is within content path
+        if (!PathSecurityValidator.IsPathWithinBaseDirectory(courseDir, _contentPath))
+        {
+            Log($"SECURITY: Attempted to load modules from outside content path: {courseDir}");
+            return;
+        }
+
         var modulesDir = Path.Combine(courseDir, "modules");
         if (!Directory.Exists(modulesDir))
             return;
@@ -71,6 +136,13 @@ public class CourseService : ICourseService
 
         foreach (var moduleDir in moduleDirs)
         {
+            // Validate module directory is within the course's modules directory
+            if (!PathSecurityValidator.IsPathWithinBaseDirectory(moduleDir, modulesDir))
+            {
+                Log($"SECURITY: Skipping module directory outside modules path: {moduleDir}");
+                continue;
+            }
+
             var moduleFile = Path.Combine(moduleDir, "module.json");
             if (!File.Exists(moduleFile))
                 continue;
@@ -78,7 +150,12 @@ public class CourseService : ICourseService
             try
             {
                 var json = await File.ReadAllTextAsync(moduleFile);
-                var module = JsonSerializer.Deserialize<Module>(json);
+                var (module, errors) = _validationService.Deserialize<Module>(json, "module");
+                if (errors.Count > 0)
+                {
+                    Log($"SECURITY: Module validation failed for {moduleFile}: {string.Join(", ", errors)}");
+                    continue;
+                }
                 if (module != null)
                 {
                     await LoadLessonStubsAsync(module, moduleDir);
@@ -94,6 +171,13 @@ public class CourseService : ICourseService
 
     private async Task LoadLessonStubsAsync(Module module, string moduleDir)
     {
+        // Validate module directory is within content path
+        if (!PathSecurityValidator.IsPathWithinBaseDirectory(moduleDir, _contentPath))
+        {
+            Log($"SECURITY: Attempted to load lessons from outside content path: {moduleDir}");
+            return;
+        }
+
         var lessonsDir = Path.Combine(moduleDir, "lessons");
         if (!Directory.Exists(lessonsDir))
             return;
@@ -102,6 +186,13 @@ public class CourseService : ICourseService
 
         foreach (var lessonDir in lessonDirs)
         {
+            // Validate lesson directory is within the module's lessons directory
+            if (!PathSecurityValidator.IsPathWithinBaseDirectory(lessonDir, lessonsDir))
+            {
+                Log($"SECURITY: Skipping lesson directory outside lessons path: {lessonDir}");
+                continue;
+            }
+
             var lessonFile = Path.Combine(lessonDir, "lesson.json");
             if (!File.Exists(lessonFile))
                 continue;
@@ -109,11 +200,24 @@ public class CourseService : ICourseService
             try
             {
                 var json = await File.ReadAllTextAsync(lessonFile);
-                var lesson = JsonSerializer.Deserialize<Lesson>(json);
+                var (lesson, errors) = _validationService.Deserialize<Lesson>(json, "lesson");
+                if (errors.Count > 0)
+                {
+                    Log($"SECURITY: Lesson validation failed for {lessonFile}: {string.Join(", ", errors)}");
+                    continue;
+                }
                 if (lesson != null)
                 {
-                    _lessonPaths[lesson.Id] = lessonDir;
-                    module.Lessons.Add(lesson);
+                    // Validate lesson ID before using as dictionary key
+                    if (PathSecurityValidator.IsValidIdentifier(lesson.Id))
+                    {
+                        _lessonPaths[lesson.Id] = lessonDir;
+                        module.Lessons.Add(lesson);
+                    }
+                    else
+                    {
+                        Log($"SECURITY: Skipping lesson with invalid ID: {lesson.Id}");
+                    }
                 }
             }
             catch (Exception ex)
@@ -125,6 +229,13 @@ public class CourseService : ICourseService
 
     public async Task<Course?> GetCourseAsync(string courseId)
     {
+        // Validate courseId to prevent path traversal
+        if (!PathSecurityValidator.IsValidIdentifier(courseId))
+        {
+            Log($"SECURITY: Invalid course ID rejected: {courseId}");
+            return null;
+        }
+
         if (_courseCache.TryGetValue(courseId, out var cached))
             return cached;
 
@@ -134,6 +245,17 @@ public class CourseService : ICourseService
 
     public async Task<Lesson?> GetLessonAsync(string courseId, string moduleId, string lessonId)
     {
+        // Validate all identifiers to prevent path traversal
+        try
+        {
+            ValidateIdentifiers(courseId, moduleId, lessonId);
+        }
+        catch (ArgumentException ex)
+        {
+            Log($"SECURITY: Invalid identifier rejected: {ex.Message}");
+            return null;
+        }
+
         Log($"GetLessonAsync: course={courseId}, module={moduleId}, lesson={lessonId}");
 
         var course = await GetCourseAsync(courseId);
@@ -160,6 +282,13 @@ public class CourseService : ICourseService
                             Log($"Lazy loading content...");
                             if (_lessonPaths.TryGetValue(lessonId, out var lessonDir))
                             {
+                                // Validate the cached path is still within content directory
+                                if (!PathSecurityValidator.IsPathWithinBaseDirectory(lessonDir, _contentPath))
+                                {
+                                    Log($"SECURITY: Cached lesson path is outside content directory: {lessonDir}");
+                                    return null;
+                                }
+                                
                                 Log($"Lesson path: {lessonDir}");
                                 await LoadLessonContentAsync(lesson, lessonDir);
                                 Log($"After load: ContentSections.Count={lesson.ContentSections.Count}, Challenges.Count={lesson.Challenges.Count}");
@@ -181,6 +310,13 @@ public class CourseService : ICourseService
 
     private async Task LoadLessonContentAsync(Lesson lesson, string lessonDir)
     {
+        // Validate lesson directory is within content path
+        if (!PathSecurityValidator.IsPathWithinBaseDirectory(lessonDir, _contentPath))
+        {
+            Log($"SECURITY: Attempted to load content from outside content path: {lessonDir}");
+            return;
+        }
+
         Log($"Loading content for lesson: {lesson.Id} from {lessonDir}");
 
         // Load content sections from markdown files
@@ -189,11 +325,25 @@ public class CourseService : ICourseService
 
         if (Directory.Exists(contentDir))
         {
+            // Validate content directory is within lesson directory
+            if (!PathSecurityValidator.IsPathWithinBaseDirectory(contentDir, lessonDir))
+            {
+                Log($"SECURITY: Content directory is outside lesson directory: {contentDir}");
+                return;
+            }
+
             var mdFiles = Directory.GetFiles(contentDir, "*.md").OrderBy(f => Path.GetFileName(f)).ToList();
             Log($"Found {mdFiles.Count} markdown files");
 
             foreach (var mdFile in mdFiles)
             {
+                // Validate each file is within the content directory
+                if (!PathSecurityValidator.IsPathWithinBaseDirectory(mdFile, contentDir))
+                {
+                    Log($"SECURITY: Skipping file outside content directory: {mdFile}");
+                    continue;
+                }
+
                 try
                 {
                     var content = await File.ReadAllTextAsync(mdFile);
@@ -221,9 +371,23 @@ public class CourseService : ICourseService
         var challengesDir = Path.Combine(lessonDir, "challenges");
         if (Directory.Exists(challengesDir))
         {
+            // Validate challenges directory is within lesson directory
+            if (!PathSecurityValidator.IsPathWithinBaseDirectory(challengesDir, lessonDir))
+            {
+                Log($"SECURITY: Challenges directory is outside lesson directory: {challengesDir}");
+                return;
+            }
+
             var challengeDirs = Directory.GetDirectories(challengesDir).OrderBy(d => Path.GetFileName(d));
             foreach (var challengeDir in challengeDirs)
             {
+                // Validate each challenge directory is within the challenges directory
+                if (!PathSecurityValidator.IsPathWithinBaseDirectory(challengeDir, challengesDir))
+                {
+                    Log($"SECURITY: Skipping challenge directory outside challenges path: {challengeDir}");
+                    continue;
+                }
+
                 try
                 {
                     var challenge = await LoadChallengeAsync(challengeDir);
@@ -285,12 +449,31 @@ public class CourseService : ICourseService
 
     private async Task<Challenge?> LoadChallengeAsync(string challengeDir)
     {
+        // Validate challenge directory is within content path
+        if (!PathSecurityValidator.IsPathWithinBaseDirectory(challengeDir, _contentPath))
+        {
+            Log($"SECURITY: Attempted to load challenge from outside content path: {challengeDir}");
+            return null;
+        }
+
         var challengeFile = Path.Combine(challengeDir, "challenge.json");
         if (!File.Exists(challengeFile))
             return null;
 
+        // Validate challenge.json is within the challenge directory
+        if (!PathSecurityValidator.IsPathWithinBaseDirectory(challengeFile, challengeDir))
+        {
+            Log($"SECURITY: Challenge file is outside challenge directory: {challengeFile}");
+            return null;
+        }
+
         var json = await File.ReadAllTextAsync(challengeFile);
-        var challenge = JsonSerializer.Deserialize<Challenge>(json);
+        var (challenge, errors) = _validationService.Deserialize<Challenge>(json, "challenge");
+        if (errors.Count > 0)
+        {
+            Log($"SECURITY: Challenge validation failed for {challengeFile}: {string.Join(", ", errors)}");
+            return null;
+        }
         if (challenge == null)
             return null;
 
@@ -298,10 +481,18 @@ public class CourseService : ICourseService
         var starterFile = Directory.GetFiles(challengeDir, "starter.*").OrderBy(f => f).FirstOrDefault();
         if (starterFile != null)
         {
-            challenge.StarterCode = await File.ReadAllTextAsync(starterFile);
-            if (string.IsNullOrEmpty(challenge.Language))
+            // Validate starter file is within challenge directory
+            if (PathSecurityValidator.IsPathWithinBaseDirectory(starterFile, challengeDir))
             {
-                challenge.Language = GetLanguageFromExtension(Path.GetExtension(starterFile));
+                challenge.StarterCode = await File.ReadAllTextAsync(starterFile);
+                if (string.IsNullOrEmpty(challenge.Language))
+                {
+                    challenge.Language = GetLanguageFromExtension(Path.GetExtension(starterFile));
+                }
+            }
+            else
+            {
+                Log($"SECURITY: Starter file is outside challenge directory: {starterFile}");
             }
         }
         else if (!string.IsNullOrEmpty(challenge.StartingCode))
@@ -313,7 +504,15 @@ public class CourseService : ICourseService
         var solutionFile = Directory.GetFiles(challengeDir, "solution.*").OrderBy(f => f).FirstOrDefault();
         if (solutionFile != null)
         {
-            challenge.Solution = await File.ReadAllTextAsync(solutionFile);
+            // Validate solution file is within challenge directory
+            if (PathSecurityValidator.IsPathWithinBaseDirectory(solutionFile, challengeDir))
+            {
+                challenge.Solution = await File.ReadAllTextAsync(solutionFile);
+            }
+            else
+            {
+                Log($"SECURITY: Solution file is outside challenge directory: {solutionFile}");
+            }
         }
 
         return challenge;
@@ -348,7 +547,7 @@ public class CourseService : ICourseService
     {
         try
         {
-            var logDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CodeTutor");
+            var logDir = Path.GetFullPath(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CodeTutor"));
             Directory.CreateDirectory(logDir);
             var logPath = Path.Combine(logDir, "course-service.log");
             File.AppendAllText(logPath, $"{DateTime.Now:HH:mm:ss.fff}: {message}\n");

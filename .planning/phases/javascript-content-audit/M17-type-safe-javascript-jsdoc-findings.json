@@ -1,0 +1,55 @@
+{
+  "course": "javascript",
+  "module": "17-type-safe-javascript-jsdoc",
+  "moduleTitle": "Module 17: Type-Safe JavaScript with JSDoc",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 4,
+  "lessonsReviewed": 4,
+  "findings": [
+    {
+      "lessonPath": "content/courses/javascript/modules/17-type-safe-javascript-jsdoc/lessons/01-what-is-jsdoc",
+      "lessonTitle": "What is JSDoc?",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/17-type-safe-javascript-jsdoc/lessons/02-documenting-functions-and-parameters",
+      "lessonTitle": "Documenting Functions and Parameters",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/17-type-safe-javascript-jsdoc/lessons/03-type-annotations-with-jsdoc",
+      "lessonTitle": "Type Annotations with JSDoc",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/javascript/modules/17-type-safe-javascript-jsdoc/lessons/04-generating-documentation",
+      "lessonTitle": "Generating Documentation",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0,
+      "MALFORMED": 0
+    }
+  }
+}

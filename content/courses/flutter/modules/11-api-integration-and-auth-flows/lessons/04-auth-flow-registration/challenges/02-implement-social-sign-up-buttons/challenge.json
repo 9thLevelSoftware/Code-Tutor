@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.4-challenge-2",
+  "id": "11.4-challenge-2",
   "title": "Implement Social Sign-Up Buttons",
   "description": "Add Google and Apple sign-up options to the registration screen with proper platform detection and error handling.",
   "instructions": "Extend the registration screen to include social sign-up options:\n\n1. Add Google Sign-Up button that works on both iOS and Android\n2. Add Apple Sign-Up button that only appears on iOS devices\n3. Create a divider between social buttons and email form saying \"or register with email\"\n4. Handle the different OAuth flows for each provider\n5. Store the tokens securely after successful social auth\n6. Handle cancellation and errors gracefully\n\nNote: You do not need to implement the actual OAuth logic - focus on the UI structure and placeholder methods.",

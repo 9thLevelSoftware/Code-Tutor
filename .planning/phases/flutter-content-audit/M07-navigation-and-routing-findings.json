@@ -1,0 +1,88 @@
+{
+  "course": "flutter",
+  "module": "07-navigation-and-routing",
+  "moduleTitle": "Module 6: Navigation and Routing",
+  "reviewDate": "2026-03-28",
+  "totalLessons": 9,
+  "lessonsReviewed": 9,
+  "findings": [
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/01-module-6-lesson-1-basic-navigation",
+      "lessonTitle": "Basic Navigation",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/02-module-6-lesson-2-named-routes",
+      "lessonTitle": "Named Routes",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/03-module-6-lesson-3-modern-navigation-with-gorouter",
+      "lessonTitle": "Modern Navigation with GoRouter",
+      "qualityRating": "needs-work",
+      "issues": [
+        {
+          "category": "STUB",
+          "severity": "minor",
+          "file": "content/01-content.md",
+          "line": 1,
+          "originalText": "01-content.md appears to be a duplicate/minimal placeholder file alongside 01-theory.md",
+          "description": "The file 01-content.md exists alongside 01-theory.md with minimal content, possibly a leftover placeholder. Lesson has proper theory.md content files.",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/04-module-6-lesson-4-deep-linking",
+      "lessonTitle": "Deep Linking",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/05-module-6-lesson-5-bottom-navigation-bar",
+      "lessonTitle": "Bottom Navigation Bar",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/06-module-6-lesson-6-tab-bars-and-tabbarview",
+      "lessonTitle": "Tab Bars and TabBarView",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/07-module-6-lesson-7-drawer-navigation",
+      "lessonTitle": "Drawer Navigation",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/08-module-6-lesson-8-handling-back-navigation-with-popscope",
+      "lessonTitle": "Handling Back Navigation with PopScope",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/flutter/modules/07-navigation-and-routing/lessons/09-module-6-mini-project-social-media-app-with-complete-navigation",
+      "lessonTitle": "Mini-Project: Social Media App with Complete Navigation",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 1,
+    "bySeverity": { "critical": 0, "major": 0, "minor": 1 },
+    "byCategory": { "STUB": 1, "OUTDATED": 0, "INACCURATE": 0, "INCOMPLETE": 0, "METADATA": 0, "PEDAGOGY": 0 }
+  }
+}

@@ -49,10 +49,24 @@ fun NotesScreen(
             )
             
             // Pull to refresh
-            SwipeRefresh(
-                isRefreshing = state.isRefreshing,
-                onRefresh = { viewModel.processIntent(NotesIntent.Refresh) }
+            Box(
+                modifier = Modifier.fillMaxSize()
             ) {
+                val pullRefreshState = rememberPullToRefreshState()
+                
+                if (pullRefreshState.isRefreshing) {
+                    LaunchedEffect(true) {
+                        viewModel.processIntent(NotesIntent.Refresh)
+                        pullRefreshState.endRefresh()
+                    }
+                }
+                
+                PullToRefreshContainer(
+                    state = pullRefreshState,
+                    onRefresh = { viewModel.processIntent(NotesIntent.Refresh) },
+                    modifier = Modifier.align(Alignment.TopCenter)
+                )
+                
                 when {
                     state.isLoading -> LoadingIndicator()
                     state.error != null -> {

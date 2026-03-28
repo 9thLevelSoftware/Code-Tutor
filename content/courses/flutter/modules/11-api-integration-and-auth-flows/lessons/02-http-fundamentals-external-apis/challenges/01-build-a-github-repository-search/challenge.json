@@ -1,6 +1,6 @@
 {
   "type": "CODE",
-  "id": "10.2-challenge-1",
+  "id": "11.2-challenge-1",
   "title": "Build a GitHub Repository Search",
   "description": "Create a service that searches GitHub repositories using their public API.",
   "instructions": "Implement a GitHubService class that:\n1. Creates a Dio instance configured for the GitHub API (https://api.github.com)\n2. Implements searchRepositories(String query) that calls GET /search/repositories\n3. Parses the response into a list of Repository objects\n4. Handles errors properly, especially rate limiting (403 with rate limit message)\n5. The Repository class should have: id, name, fullName, description, stargazersCount, language",

@@ -1,0 +1,248 @@
+{
+  "auditMetadata": {
+    "auditDate": "2026-03-28T00:00:00Z",
+    "auditor": "Security Audit Subagent",
+    "targetPath": "C:\\Users\\dasbl\\Downloads\\Code-Tutor\\native-app-wpf",
+    "scope": [
+      "Content file parsing (JSON/markdown) - injection risks",
+      "User input validation gaps",
+      "Path traversal risks in file operations",
+      "Hardcoded secrets or connection strings",
+      "Unsafe deserialization",
+      "Missing input sanitization before display",
+      "SQL injection risks",
+      "Unsafe file operations (delete without confirmation)"
+    ]
+  },
+  "summary": {
+    "criticalCount": 1,
+    "highCount": 3,
+    "mediumCount": 5,
+    "lowCount": 2,
+    "infoCount": 1,
+    "totalFindings": 12
+  },
+  "findings": [
+    {
+      "id": "SEC-001",
+      "severity": "CRITICAL",
+      "category": "Injection",
+      "owaspCategory": "A03:2021 - Injection",
+      "title": "Command Injection via User Code Execution",
+      "description": "The CodeExecutionService executes user-provided code by writing it to temp files and spawning system processes. While this is the application's intended functionality, there's no sandboxing or resource limits for external language runtimes (Python, Node.js, Java, etc.) beyond a 30-second timeout.",
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumbers": [136, 146, 150],
+      "vulnerability": "User code is written to temporary files and executed with system command interpreters. An attacker could craft malicious code that accesses the filesystem, network, or executes system commands.",
+      "impact": "An attacker with access to the lesson interface could execute arbitrary system commands, read sensitive files, or perform lateral movement.",
+      "recommendedRemediation": "Implement proper sandboxing for code execution:\n1. Use containers or VM-based isolation for external language execution\n2. Implement strict resource limits (CPU, memory, disk, network)\n3. Run external code in a separate, low-privilege process with restricted permissions\n4. Consider using seccomp-bpf or similar syscall filtering on Linux\n5. Implement input validation for code patterns before execution",
+      "references": [
+        "https://owasp.org/Top10/A03_2021-Injection/",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Command_Injection_Defense_Cheat_Sheet.html"
+      ]
+    },
+    {
+      "id": "SEC-002",
+      "severity": "HIGH",
+      "category": "Path Traversal",
+      "owaspCategory": "A01:2021 - Broken Access Control",
+      "title": "Missing Path Traversal Validation in CourseService",
+      "description": "CourseService constructs file paths using Path.Combine with directory names from the filesystem without validating that the resulting paths stay within the intended content directory. While directory enumeration uses Directory.GetDirectories which limits exposure, there's no explicit path traversal protection.",
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumbers": [38, 66, 97, 187, 221],
+      "vulnerability": "File paths are constructed dynamically without validating that the resolved path stays within the intended base directory. Maliciously crafted directory names (if an attacker could create them) could potentially access files outside the content directory.",
+      "impact": "An attacker who can create directories in the content folder could potentially read arbitrary files on the filesystem.",
+      "recommendedRemediation": "Implement path validation:\n1. Use Path.GetFullPath() on constructed paths\n2. Validate that resolved paths start with the expected base directory\n3. Validate all directory/file names against a whitelist pattern\n4. Implement the PathSecurityValidator helper class to validate identifiers",
+      "references": [
+        "https://owasp.org/Top10/A01_2021-Broken_Access_Control/",
+        "https://owasp.org/www-community/attacks/Path_Traversal"
+      ]
+    },
+    {
+      "id": "SEC-003",
+      "severity": "HIGH",
+      "category": "Deserialization",
+      "owaspCategory": "A08:2021 - Software and Data Integrity Failures",
+      "title": "Unsafe JSON Deserialization Without Type Validation",
+      "description": "JsonSerializer.Deserialize is used throughout the application to parse course.json, module.json, lesson.json, challenge.json, and progress.json files without schema validation or type constraints. While System.Text.Json is safer than Newtonsoft.Json, the Challenge class uses JsonElement for dynamic properties (CorrectAnswer) which could lead to type confusion.",
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumbers": [47, 81, 112, 293],
+      "vulnerability": "JSON deserialization without schema validation. The Challenge.CorrectAnswer property uses JsonElement? which accepts any JSON type without validation.",
+      "impact": "Maliciously crafted JSON files could cause type confusion, resource exhaustion during deserialization, or application crashes.",
+      "recommendedRemediation": "1. Implement JSON schema validation using System.Text.Json.Schema\n2. Add type constraints and validation for all deserialized properties\n3. Limit maximum JSON file sizes\n4. Implement specific type converters for dynamic properties like CorrectAnswer\n5. Validate deserialized objects before use",
+      "references": [
+        "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/",
+        "https://docs.microsoft.com/en-us/dotnet/api/system.text.json.jsonserializeroptions"
+      ]
+    },
+    {
+      "id": "SEC-004",
+      "severity": "HIGH",
+      "category": "Unsafe File Operations",
+      "owaspCategory": "A01:2021 - Broken Access Control",
+      "title": "Model Uninstall Without User Confirmation on File Deletion",
+      "description": "ModelDownloadService.UninstallModelAsync deletes large model files and directories without requiring additional confirmation or implementing secure deletion practices.",
+      "filePath": "native-app-wpf/Services/ModelDownloadService.cs",
+      "lineNumbers": [219, 225],
+      "vulnerability": "Files and directories are deleted using File.Delete and Directory.Delete without: secure wiping (for sensitive data), verification that the correct path is being deleted, or audit logging of deletion operations.",
+      "impact": "Race conditions or bugs could lead to deletion of wrong files. No recovery mechanism exists for accidental deletions.",
+      "recommendedRemediation": "1. Implement path verification before deletion using Path.GetFullPath\n2. Add audit logging for all file deletion operations\n3. Move files to a 'trash' location instead of immediate deletion\n4. Implement file locking to prevent deletion of in-use files\n5. Verify file hashes before deletion to ensure correct target",
+      "references": [
+        "https://owasp.org/Top10/A01_2021-Broken_Access_Control/"
+      ]
+    },
+    {
+      "id": "SEC-005",
+      "severity": "MEDIUM",
+      "category": "Input Validation",
+      "owaspCategory": "A03:2021 - Injection",
+      "title": "Missing Input Validation for Markdown Content Parsing",
+      "description": "The ParseMarkdown method in CourseService parses markdown frontmatter without validating the content length, structure, or encoding. Content from markdown files is directly inserted into UI elements without sanitization.",
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumbers": [256, 277, 279],
+      "vulnerability": "Markdown content is parsed with string operations that could be vulnerable to malformed input. No validation of: content length (DoS), encoding issues, or malicious patterns.",
+      "impact": "Very large markdown files could cause memory exhaustion. Malformed content could cause parsing errors or unexpected behavior.",
+      "recommendedRemediation": "1. Implement maximum file size limits for markdown files\n2. Validate encoding (UTF-8) before parsing\n3. Use a proper YAML frontmatter parser instead of manual string splitting\n4. Implement content sanitization before display\n5. Add try-catch with specific exception handling for parsing errors",
+      "references": [
+        "https://owasp.org/Top10/A03_2021-Injection/"
+      ]
+    },
+    {
+      "id": "SEC-006",
+      "severity": "MEDIUM",
+      "category": "Temporary File Handling",
+      "owaspCategory": "A01:2021 - Broken Access Control",
+      "title": "Predictable Temporary File Names with Race Condition Risk",
+      "description": "CodeExecutionService and InteractiveProcessSession create temporary files with partially predictable names (using Guid.NewGuid() which is random but files are created in shared temp directories).",
+      "filePath": "native-app-wpf/Services/CodeExecutionService.cs",
+      "lineNumbers": [136, 172, 174],
+      "vulnerability": "Temp files are created in Path.GetTempPath() which is a shared location. The code does not set restrictive file permissions before writing sensitive content.",
+      "impact": "Race condition attacks could potentially read or modify temp files. Other users on the same system could access these files.",
+      "recommendedRemediation": "1. Use Path.GetRandomFileName() for temp files\n2. Create temp files with restrictive permissions (600 on Unix, private on Windows)\n3. Consider using MemoryStream for small code files instead of disk\n4. Implement secure temp file creation with exclusive access\n5. Clean up temp files in a finally block with guaranteed execution",
+      "references": [
+        "https://owasp.org/www-community/vulnerabilities/Insecure_Temporary_File"
+      ]
+    },
+    {
+      "id": "SEC-007",
+      "severity": "MEDIUM",
+      "category": "Information Disclosure",
+      "owaspCategory": "A01:2021 - Broken Access Control",
+      "title": "Verbose Error Logging with Potential Sensitive Information",
+      "description": "CourseService.LogError and other logging methods capture full exception messages and stack traces which could expose internal implementation details, file paths, or system information.",
+      "filePath": "native-app-wpf/Services/CourseService.cs",
+      "lineNumbers": [345, 351, 353],
+      "vulnerability": "Exception details including stack traces are written to a log file in LocalApplicationData. No sanitization of paths or sensitive data in error messages.",
+      "impact": "Log files may contain sensitive information about the system, internal paths, or implementation details that could aid an attacker.",
+      "recommendedRemediation": "1. Implement structured logging with configurable log levels\n2. Sanitize paths and sensitive data before logging\n3. Use a logging framework (Serilog, NLog) with proper security controls\n4. Implement log file rotation and size limits\n5. Store logs in a more secure location with restricted access",
+      "references": [
+        "https://owasp.org/www-community/vulnerabilities/Information_Exposure"
+      ]
+    },
+    {
+      "id": "SEC-008",
+      "severity": "MEDIUM",
+      "category": "UI Security",
+      "owaspCategory": "A07:2021 - Identification and Authentication Failures",
+      "title": "Missing Output Sanitization in ChatMessageBubble",
+      "description": "User and assistant messages are displayed directly in TextBlock controls without HTML/XAML escaping or sanitization. While WPF TextBlock doesn't execute scripts, specially crafted content could cause UI issues or unexpected behavior.",
+      "filePath": "native-app-wpf/Controls/ChatMessageBubble.xaml.cs",
+      "lineNumbers": [45, 50, 75, 83],
+      "vulnerability": "Message content from the AI model or user is assigned directly to TextBlock.Text without validation or sanitization.",
+      "impact": "Malformed XAML-like content could potentially cause parsing issues. Long content could impact UI responsiveness.",
+      "recommendedRemediation": "1. Implement text length limits for messages\n2. Strip or escape special XAML characters ({, }, <, >)\n3. Validate message content before display\n4. Use a converter for text binding that performs sanitization",
+      "references": [
+        "https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/xaml-security-considerations"
+      ]
+    },
+    {
+      "id": "SEC-009",
+      "severity": "MEDIUM",
+      "category": "HTTP Security",
+      "owaspCategory": "A02:2021 - Cryptographic Failures",
+      "title": "HTTP Client Without Certificate Validation in ModelDownloadService",
+      "description": "ModelDownloadService uses HttpClient without explicit SSL/TLS certificate validation settings. While .NET defaults are generally secure, there's no pinning or explicit validation of the HuggingFace endpoint.",
+      "filePath": "native-app-wpf/Services/ModelDownloadService.cs",
+      "lineNumbers": [103, 126],
+      "vulnerability": "No certificate pinning or explicit SSL validation. Downloads occur over HTTPS but without verifying the expected certificate fingerprint.",
+      "impact": "MITM attacks could potentially intercept or modify model downloads if certificate validation fails silently.",
+      "recommendedRemediation": "1. Implement certificate pinning for the HuggingFace endpoint\n2. Verify downloaded file checksums/hashes against known good values\n3. Add integrity verification after download completion\n4. Consider code signing verification for model files",
+      "references": [
+        "https://owasp.org/Top10/A02_2021-Cryptographic_Failures/",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Pinning_Cheat_Sheet.html"
+      ]
+    },
+    {
+      "id": "SEC-010",
+      "severity": "LOW",
+      "category": "Data Exposure",
+      "owaspCategory": "A05:2021 - Security Misconfiguration",
+      "title": "Progress Data Stored Without Encryption",
+      "description": "User progress data (completed lessons, streak information) is stored in a JSON file in LocalApplicationData without encryption. While not highly sensitive, this represents a privacy concern.",
+      "filePath": "native-app-wpf/Services/ProgressService.cs",
+      "lineNumbers": [35, 39, 80],
+      "vulnerability": "Progress.json is written to disk with potentially sensitive user activity data without encryption.",
+      "impact": "Other applications or users with file system access could read learning progress and activity patterns.",
+      "recommendedRemediation": "1. Consider using Windows DPAPI or similar OS-level encryption for user data\n2. Implement application-level encryption for sensitive fields\n3. Store progress in a local SQLite database with encryption (SQLCipher)\n4. Add data protection using Windows Data Protection API",
+      "references": [
+        "https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.protecteddata"
+      ]
+    },
+    {
+      "id": "SEC-011",
+      "severity": "LOW",
+      "category": "Resource Management",
+      "owaspCategory": "A05:2021 - Security Misconfiguration",
+      "title": "Missing Resource Limits on LLM Token Generation",
+      "description": "QwenTutorService and Phi4TutorService don't implement strict token generation limits that could prevent resource exhaustion during AI response generation.",
+      "filePath": "native-app-wpf/Services/QwenTutorService.cs",
+      "lineNumbers": [112, 127],
+      "vulnerability": "Token generation has a MaxTokens parameter but no runtime enforcement or circuit breaker for unexpectedly long generations.",
+      "impact": "Maliciously crafted prompts could cause excessive resource consumption during AI inference.",
+      "recommendedRemediation": "1. Implement strict MaxTokens enforcement with runtime checks\n2. Add a circuit breaker for generation time limits\n3. Implement request throttling\n4. Add resource monitoring during inference",
+      "references": [
+        "https://owasp.org/Top10/A05_2021-Security_Misconfiguration/"
+      ]
+    },
+    {
+      "id": "SEC-012",
+      "severity": "INFO",
+      "category": "Code Quality",
+      "owaspCategory": "N/A",
+      "title": "Console Output Redirection in RoslynCSharpExecutor",
+      "description": "The RoslynCSharpExecutor captures Console.Out which affects global state. While this is a legitimate technique for capturing output, it could potentially interfere with other components if not properly managed.",
+      "filePath": "native-app-wpf/Services/Executors/RoslynCSharpExecutor.cs",
+      "lineNumbers": [35, 70, 75],
+      "vulnerability": "Console.Out is redirected globally using Console.SetOut, which affects the entire application domain.",
+      "impact": "Low risk due to proper lock usage and finally block, but theoretically could cause issues with concurrent execution.",
+      "recommendedRemediation": "1. Consider using isolated AppDomains for script execution\n2. Evaluate using Microsoft.CodeAnalysis.CSharp.Scripting in a more isolated context\n3. Ensure the lock is held for the minimum time necessary",
+      "references": [
+        "https://docs.microsoft.com/en-us/dotnet/api/microsoft.codeanalysis.csharp.csharpscript"
+      ]
+    }
+  ],
+  "recommendations": {
+    "immediate": [
+      "Implement PathSecurityValidator and validate all file paths before filesystem operations",
+      "Add JSON schema validation for all content file deserialization",
+      "Implement sandboxing for external code execution",
+      "Add secure deletion practices and path verification for file removal operations"
+    ],
+    "shortTerm": [
+      "Implement structured logging with sensitive data redaction",
+      "Add output sanitization for all UI-bound string content",
+      "Implement certificate pinning for external API calls",
+      "Add encryption for locally stored user data"
+    ],
+    "longTerm": [
+      "Consider container-based sandboxing for code execution",
+      "Implement comprehensive audit logging",
+      "Add runtime application self-protection (RASP) measures",
+      "Regular security scanning in CI/CD pipeline"
+    ]
+  },
+  "complianceNotes": {
+    "gdpr": "Progress tracking data should be reviewed for privacy implications. Consider data retention policies.",
+    "coppa": "If used by children under 13, additional safeguards may be required for data collection and AI interactions.",
+    "general": "Application handles user-generated code which requires careful sandboxing for security."
+  }
+}
