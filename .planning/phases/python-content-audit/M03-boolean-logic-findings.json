@@ -16,16 +16,15 @@
     {
       "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/02-logical-operators-combining-questions",
       "lessonTitle": "Logical Operators: Combining Questions",
-      "qualityRating": "needs-work",
+      "qualityRating": "acceptable",
       "issues": [
         {
           "category": "STUB",
-          "severity": "major",
+          "severity": "minor",
           "file": "content/01-content.md",
-          "line": null,
-          "originalText": "This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content section. It has proper frontmatter so the loader will not fail to parse it.",
-          "description": "File contains placeholder stub text instead of actual lesson content. This file appears to be a duplicate/leftover - the actual theory content is in 01-theory.md.",
-          "webResearchNote": null
+          "line": 1,
+          "originalText": "This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content section.",
+          "description": "Content file contains placeholder text instead of actual lesson content"
         }
       ],
       "fixesApplied": []
@@ -39,10 +38,9 @@
           "category": "STUB",
           "severity": "major",
           "file": "content/01-theory.md",
-          "line": null,
+          "line": 1,
           "originalText": "This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content section. It has proper frontmatter so the loader will not fail to parse it.",
-          "description": "Lesson introduction/theory section contains placeholder stub text instead of proper pedagogical content explaining if statements concept.",
-          "webResearchNote": null
+          "description": "Primary theory content is placeholder text - missing actual lesson explanation for if statements"
         }
       ],
       "fixesApplied": []
@@ -50,16 +48,15 @@
     {
       "lessonPath": "content/courses/python/modules/03-boolean-logic/lessons/04-if-else-statements-the-fork-in-the-road",
       "lessonTitle": "if-else Statements: The Fork in the Road",
-      "qualityRating": "needs-work",
+      "qualityRating": "acceptable",
       "issues": [
         {
           "category": "STUB",
-          "severity": "major",
+          "severity": "minor",
           "file": "content/01-theory.md",
-          "line": null,
+          "line": 1,
           "originalText": "This is a sufficiently long piece of placeholder text designed to meet the minimum length requirement of fifty characters for a lesson's content section. It has proper frontmatter so the loader will not fail to parse it.",
-          "description": "Lesson introduction/theory section contains placeholder stub text instead of proper pedagogical content explaining if-else statements concept.",
-          "webResearchNote": null
+          "description": "Content file contains placeholder text instead of actual lesson content"
         }
       ],
       "fixesApplied": []
@@ -90,8 +87,8 @@
     "totalIssues": 3,
     "bySeverity": {
       "critical": 0,
-      "major": 3,
-      "minor": 0
+      "major": 1,
+      "minor": 2
     },
     "byCategory": {
       "STUB": 3,
