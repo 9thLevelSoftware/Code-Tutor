@@ -1,0 +1,92 @@
+{
+  "course": "java",
+  "module": "11-spring-boot",
+  "moduleTitle": "Spring Boot",
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "springBoot": "4.0.x",
+    "springFramework": "7.0",
+    "java": "25",
+    "jakartaEE": "11"
+  },
+  "totalLessons": 7,
+  "lessonsReviewed": 7,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/11-spring-boot/lessons/01-lesson-111-why-spring-boot",
+      "lessonTitle": "Why Spring Boot?",
+      "qualityRating": "excellent",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/11-spring-boot/lessons/02-lesson-112-rest-controllers-building-your-api",
+      "lessonTitle": "REST Controllers - Building Your API",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/11-spring-boot/lessons/03-lesson-113-spring-data-jpa-no-more-sql",
+      "lessonTitle": "Spring Data JPA - No More SQL!",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/11-spring-boot/lessons/04-lesson-114-dependency-injection-the-heart-of-spring",
+      "lessonTitle": "Dependency Injection - The Heart of Spring",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/11-spring-boot/lessons/05-lesson-115-configuration-making-your-app-flexible",
+      "lessonTitle": "Configuration - Making Your App Flexible",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/11-spring-boot/lessons/06-lesson-116-exception-handling-failing-gracefully",
+      "lessonTitle": "Exception Handling - Failing Gracefully",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/11-spring-boot/lessons/07-lesson-117-spring-security-protecting-your-api",
+      "lessonTitle": "Spring Security - Protecting Your API",
+      "qualityRating": "good",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "lesson.json",
+          "line": 6,
+          "originalText": "description": "Secure your API with Spring Security 7",
+          "description": "Lesson metadata correctly references Spring Security 7, but the content files should be verified to ensure all code examples use Spring Security 7 configuration patterns (SecurityFilterChain lambda DSL instead of deprecated WebSecurityConfigurerAdapter).",
+          "webResearchNote": "Spring Boot 4.0 uses Spring Security 7.0 which has removed WebSecurityConfigurerAdapter in favor of SecurityFilterChain bean configuration. All examples should use the new lambda DSL style."
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 1,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 1,
+      "info": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 1,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

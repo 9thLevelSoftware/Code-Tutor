@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l01-challenge-01",
+  "title": "Implement Role-Based Access Control for ShopFlow",
+  "description": "Add role-based authorization to an existing authenticated ASP.NET Core application. Implement Admin, Manager, and Customer roles with different access permissions for ShopFlow e-commerce platform.",
+  "instructions": "You have an ASP.NET Core 9.0 app with authentication configured but no authorization. Implement a role-based access control system for ShopFlow!\n\n**Requirements:**\n\n1. **Configure Roles in Program.cs:**\n   - Add role services to DI container with AddIdentity<ApplicationUser, IdentityRole>()\n   - Include AddRoles<IdentityRole>() to enable role management\n   - Configure role-based authorization policies\n\n2. **Create Role-Protected Endpoints:**\n   - GET /api/admin/dashboard - Only accessible to \"Admin\" role\n   - GET /api/manager/inventory - Accessible to \"Admin\" and \"Manager\" roles\n   - GET /api/customer/orders - Accessible to \"Customer\" and \"Admin\" roles\n   - POST /api/admin/users/promote - Only \"Admin\" can promote users to Manager\n   - DELETE /api/admin/products/{id} - Only \"Admin\" can delete products\n\n3. **Add Role Seeding:**\n   - Create a seeder that ensures roles exist: Admin, Manager, Customer\n   - Create a default admin user with Admin role\n   - Create a test manager user\n\n4. **Handle Edge Cases:**\n   - Return 403 Forbidden when user lacks required role\n   - Return 401 Unauthorized when not authenticated\n   - Include helpful error messages with role requirements\n\n**Scenarios to Support:**\n- Admin: Full access to all endpoints including user management and product deletion\n- Manager: Can access inventory management but cannot delete products or manage users\n- Customer: Can only access their own orders, cannot access admin or manager endpoints\n\n**Hint:** Use [Authorize(Roles = \"...\")] for declarative authorization. Multiple roles use comma-separated values for OR logic.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure AddIdentity with role support",
+      "expectedOutput": "AddIdentity",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should have Authorize attribute with role restrictions",
+      "expectedOutput": "Authorize(Roles",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should have admin-only endpoints protected",
+      "expectedOutput": "api/admin",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should handle 403 Forbidden for unauthorized roles",
+      "expectedOutput": "Forbid",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddRoles<IdentityRole>() to enable role support."
+    },
+    {
+      "level": 2,
+      "text": "Apply [Authorize(Roles = \"Admin\")] attribute to protect admin-only endpoints declaratively."
+    },
+    {
+      "level": 3,
+      "text": "For multiple roles with OR logic, use [Authorize(Roles = \"Admin,Manager\")] - any of these roles is sufficient."
+    },
+    {
+      "level": 4,
+      "text": "Use RoleManager<IdentityRole> to check and create roles in your seeder class."
+    },
+    {
+      "level": 5,
+      "text": "Return Results.Forbid() when the user is authenticated but lacks the required role - this sends HTTP 403."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not calling AddRoles<IdentityRole>()",
+      "consequence": "Role services won't be registered. You'll get runtime errors when checking roles.",
+      "correction": "Make sure to chain .AddRoles<IdentityRole>() after AddIdentity()."
+    },
+    {
+      "mistake": "Using AND logic instead of OR for multiple roles",
+      "consequence": "[Authorize(Roles = \"Admin,User\")] means Admin OR User, not Admin AND User.",
+      "correction": "For AND logic, apply multiple Authorize attributes or use a policy with multiple role requirements."
+    },
+    {
+      "mistake": "Checking roles manually instead of using attributes",
+      "consequence": "More verbose code, harder to maintain, inconsistent security patterns.",
+      "correction": "Prefer [Authorize(Roles = \"...\")] for simple scenarios. It's declarative and self-documenting."
+    },
+    {
+      "mistake": "Returning 401 instead of 403",
+      "consequence": "Clients can't distinguish between 'not logged in' and 'logged in but not authorized'.",
+      "correction": "Return 401 for unauthenticated users, 403 for authenticated users without proper roles."
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedMinutes": 40
+}

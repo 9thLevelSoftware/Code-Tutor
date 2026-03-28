@@ -1,0 +1,137 @@
+{
+  "course": "java",
+  "module": "14-devops-deployment",
+  "moduleTitle": "DevOps and Deployment",
+  "reviewDate": "2026-03-28",
+  "targetJavaVersion": "Java 25",
+  "targetSpringBootVersion": "Spring Boot 4.0.x",
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/14-devops-deployment/lessons/01-lesson-d1-why-devops",
+      "lessonTitle": "Lesson D1: Why DevOps",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/14-devops-deployment/lessons/02-lesson-d2-docker-fundamentals",
+      "lessonTitle": "Lesson D2: Docker Fundamentals",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/03-example.md",
+          "line": 5,
+          "originalText": "FROM eclipse-temurin:25-jdk-alpine AS build",
+          "description": "The Dockerfile uses wget for healthchecks but alpine-based images may not have wget installed by default. Should use curl or ensure wget is installed, or use a more robust health check method",
+          "webResearchNote": "The eclipse-temurin:25-jre-alpine image does not include wget by default. The HEALTHCHECK should either install wget (apk add --no-cache wget) or use a different approach like 'CMD-SHELL' with built-in tools."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-example.md",
+          "line": 7,
+          "originalText": "Multi-stage Dockerfile with Maven wrapper",
+          "description": "The example shows Maven wrapper usage but doesn't mention that the wrapper files must be executable (chmod +x mvnw) which can be a common issue in CI/CD environments",
+          "webResearchNote": "When copying the Maven wrapper into Docker, file permissions can be lost. The Dockerfile should handle this with 'RUN chmod +x mvnw' or use 'chmod 755' before build."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/14-devops-deployment/lessons/03-lesson-d3-docker-compose",
+      "lessonTitle": "Lesson D3: Docker Compose",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/03-example.md",
+          "line": 9,
+          "originalText": "depends_on with condition: service_healthy",
+          "description": "The docker-compose.yml uses 'condition: service_healthy' in depends_on which requires Docker Compose v2.20+ or v3.4+ file format. The version '3.8' shown is correct but this feature may not work with older Docker Compose versions",
+          "webResearchNote": "Docker Compose v2.20+ (June 2023) added depends_on condition support. Earlier versions ignore conditions. This is worth noting for students with older Docker installations."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/03-example.md",
+          "line": 5,
+          "originalText": "version: '3.8'",
+          "description": "Docker Compose v2 no longer requires the version declaration. While including it is backward compatible, the modern best practice is to omit the version line",
+          "webResearchNote": "Docker Compose v2 (the Go rewrite) uses the compose spec which doesn't require version. The version line is optional and ignored in newer versions."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/14-devops-deployment/lessons/04-lesson-d4-github-actions-cicd",
+      "lessonTitle": "Lesson D4: GitHub Actions CI/CD",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/02-example.md",
+          "line": 28,
+          "originalText": "uses: actions/setup-java@v4",
+          "description": "The workflow uses actions/setup-java@v4 with 'cache: maven' which requires the pom.xml to be at repository root. If the project is in a subdirectory (like java/ or backend/), caching won't work correctly",
+          "webResearchNote": "For monorepos or projects not at root, use 'cache-dependency-path: path/to/pom.xml' to specify the location."
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 80,
+          "originalText": "Railway CLI deployment step",
+          "description": "The Railway deployment example uses 'railway up' but doesn't mention that Railway v3 CLI requires a project ID or service ID. Students may encounter authentication/authorization errors",
+          "webResearchNote": "Railway CLI v3 requires 'RAILWAY_PROJECT_ID' or 'RAILWAY_SERVICE_ID' environment variables, or the --project flag. The lesson should mention this requirement."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/02-example.md",
+          "line": 40,
+          "originalText": "uses: docker/build-push-action@v5",
+          "description": "docker/build-push-action@v6 is now available with improved performance and features. While v5 works, upgrading to v6 is recommended",
+          "webResearchNote": "docker/build-push-action@v6 was released in early 2024. It includes better BuildKit support and improved caching. Not critical but worth updating."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/14-devops-deployment/lessons/05-lesson-d5-cloud-deployment",
+      "lessonTitle": "Lesson D5: Cloud Deployment",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/03-example.md",
+          "line": 15,
+          "originalText": "Railway auto-detects and deploys",
+          "description": "Railway's free tier and auto-detection behavior has changed. The lesson should note that Railway now requires a credit card for deployment even on the hobby plan",
+          "webResearchNote": "As of 2024-2025, Railway requires credit card verification for all deployments. The 'no credit card required' statement is outdated."
+        },
+        {
+          "category": "OUTDATED",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 40,
+          "originalText": "We'll use Railway because: free tier for hobby projects",
+          "description": "Railway's free tier has been discontinued. The platform now requires payment for all usage. Alternative free options should be mentioned (Fly.io, Render free tier)",
+          "webResearchNote": "Railway ended their free tier in late 2023/early 2024. The course should update to mention Render, Fly.io, or Oracle Cloud Free Tier as alternatives."
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 8,
+    "bySeverity": { "critical": 0, "major": 4, "minor": 4 },
+    "byCategory": { "STUB": 0, "OUTDATED": 6, "INACCURATE": 0, "INCOMPLETE": 1, "METADATA": 0, "PEDAGOGY": 1 }
+  }
+}

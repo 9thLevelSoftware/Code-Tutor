@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l02-challenge-01",
+  "title": "Implement Policy-Based Authorization for ShopFlow",
+  "description": "Create custom authorization policies with requirements and handlers for ShopFlow e-commerce platform. Implement age-based, permission-based, and combined policy authorization.",
+  "instructions": "Build a policy-based authorization system for ShopFlow that goes beyond simple roles. Policies allow flexible, reusable authorization rules.\n\n**Requirements:**\n\n1. **Configure Policies in Program.cs:**\n   - Create a policy that requires users to be 18+ years old (AgeRequirement)\n   - Create a policy that requires 'CanEditProducts' permission (PermissionRequirement)\n   - Create a policy that requires both Admin role AND 18+ age (CombinedRequirement)\n   - Create a policy for premium customers (PremiumCustomerRequirement)\n\n2. **Implement Custom Authorization Handlers:**\n   - AgeAuthorizationHandler: Checks claim 'Age' >= 18\n   - PermissionAuthorizationHandler: Checks if user has specific permission claim\n   - PremiumCustomerHandler: Checks if user has 'IsPremium' claim with value 'true'\n\n3. **Create Policy-Protected Endpoints:**\n   - GET /api/products/restricted - Requires 'Age18Plus' policy\n   - POST /api/products - Requires 'CanEditProducts' policy\n   - GET /api/admin/advanced - Requires 'AdminAndAdult' policy (Admin role + 18+)\n   - GET /api/customer/premium-content - Requires 'PremiumCustomer' policy\n   - DELETE /api/products/{id} - Requires 'CanDeleteProducts' policy\n\n4. **Register Handlers and Policies:**\n   - AddSingleton for each authorization handler\n   - Use AddAuthorization with policy definitions\n\n**Scenarios to Support:**\n- Regular users under 18 cannot access age-restricted products (alcohol, mature content)\n- Only users with explicit 'CanEditProducts' permission can create/modify products\n- Premium content only accessible to customers with IsPremium claim\n- Advanced admin operations require both admin role AND verified adult status\n\n**Hint:** Use IAuthorizationService for imperative checks inside handlers and policy-based attributes for declarative protection.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure AddAuthorization with custom policies",
+      "expectedOutput": "AddAuthorization",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should have custom authorization handler",
+      "expectedOutput": "AuthorizationHandler",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should have policy-based Authorize attribute",
+      "expectedOutput": "Authorize(Policy",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should register authorization handlers",
+      "expectedOutput": "AddSingleton.*Handler",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Define policies in AddAuthorization(options => { options.AddPolicy(\"PolicyName\", policy => policy.RequireClaim(...)); })"
+    },
+    {
+      "level": 2,
+      "text": "Create custom requirements as classes implementing IAuthorizationRequirement."
+    },
+    {
+      "level": 3,
+      "text": "Implement handlers by inheriting from AuthorizationHandler<TRequirement> and override HandleRequirementAsync."
+    },
+    {
+      "level": 4,
+      "text": "Register handlers with builder.Services.AddSingleton<IAuthorizationHandler, YourHandler>()."
+    },
+    {
+      "level": 5,
+      "text": "Use context.Succeed(requirement) to indicate the requirement is met, or do nothing to fail."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not registering the authorization handlers in DI",
+      "consequence": "Handlers won't be discovered and policies will fail silently or throw errors.",
+      "correction": "Always register handlers: builder.Services.AddSingleton<IAuthorizationHandler, MyHandler>()"
+    },
+    {
+      "mistake": "Forgetting to call context.Succeed()",
+      "consequence": "The requirement never succeeds, causing authorization to always fail.",
+      "correction": "Call context.Succeed(requirement) when your condition is met. Don't call Fail() - just don't succeed."
+    },
+    {
+      "mistake": "Using policies before they're defined",
+      "consequence": "Runtime error: 'Policy XXX was not found' when the endpoint is accessed.",
+      "correction": "Define all policies in AddAuthorization during service configuration before building the app."
+    },
+    {
+      "mistake": "Checking claims without validating their format",
+      "consequence": "Claims like 'Age' might not parse correctly, causing logic errors.",
+      "correction": "Always validate and parse claims safely. Use int.TryParse for numeric claims."
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedMinutes": 45
+}

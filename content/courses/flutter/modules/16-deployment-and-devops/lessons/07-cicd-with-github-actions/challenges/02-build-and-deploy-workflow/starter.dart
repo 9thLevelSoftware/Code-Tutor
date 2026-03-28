@@ -19,16 +19,16 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
+          flutter-version: '3.38.0'
           cache: true
 
       - run: flutter pub get
 
-      # TODO: Decode keystore from secret
+      # Decode keystore from secret
       - name: Decode keystore
         run: echo "${{ secrets.___ }}" | base64 -d > android/app/keystore.jks
 
-      # TODO: Build signed APK
+      # Build signed APK
       - name: Build APK
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -36,7 +36,7 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: flutter build apk ___
 
-      # TODO: Upload artifact
+      # Upload artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
@@ -44,7 +44,7 @@ jobs:
           path: ___
           retention-days: ___
 
-      # TODO: Deploy to Play Store
+      # Deploy to Play Store
       - name: Deploy to Play Store
         uses: r0adkll/upload-google-play@v1
         with:

@@ -1,0 +1,85 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-02-google-authentication",
+  "title": "Implement Google OAuth2 for ShopFlow",
+  "description": "Integrate Google OAuth2 authentication into an ASP.NET Core web application with user profile retrieval, token storage, and secure session management.",
+  "instructions": "Add Google Sign-In to the ShopFlow e-commerce platform. Implement a complete Google OAuth2 flow including login initiation, callback handling, user info retrieval, and secure authentication cookie management.\n\n**Requirements:**\n\n1. **Configure Authentication Services**\n   - Add Cookie authentication as the default scheme\n   - Add Google authentication with:\n     - ClientId from Configuration[\"Authentication:Google:ClientId\"]\n     - ClientSecret from Configuration[\"Authentication:Google:ClientSecret\"]\n     - SaveTokens = true (to store access token for API calls)\n     - Add scopes: \"openid\", \"email\", \"profile\"\n     - Map the Google 'picture' claim to a custom 'ProfileImage' claim\n\n2. **Create Login Endpoint**\n   - GET /auth/google/login - Initiates Google OAuth challenge\n   - Set redirect URI to /auth/google/callback\n   - Use AuthenticationProperties to store return URL\n\n3. **Create Callback Handler**\n   - GET /auth/google/callback - Handles OAuth callback from Google\n   - Get external login info from context\n   - Extract user claims: email, name, given_name, family_name, picture\n   - Create or update ShopFlowUser in your user store\n   - Sign in the user with Cookie authentication\n   - Redirect to original return URL or /dashboard\n\n4. **Create User Profile Endpoint**\n   - GET /api/user/profile (protected with [Authorize])\n   - Return authenticated user's info:\n     - Email, Name, ProfileImage\n     - GoogleAccessToken (from saved tokens for API calls)\n     - Authentication provider (Google)\n     - Login time\n\n5. **Create Logout Endpoint**\n   - POST /auth/logout - Signs out the user\n   - Clear authentication cookies\n   - Redirect to home page\n\n6. **ShopFlowUser Model**\n   - Properties: Id, Email, Name, ProfileImageUrl, GoogleId, LastLoginAt, CreatedAt\n   - Simple in-memory storage or dictionary for this challenge\n\n**Note:** For this challenge, focus on the OAuth flow implementation. In production, you'd use ASP.NET Core Identity for proper user management.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure Google authentication with Cookie default",
+      "expectedOutput": "AddGoogle",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should map Google picture claim to ProfileImage",
+      "expectedOutput": "ProfileImage",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should create protected profile endpoint",
+      "expectedOutput": "RequireAuthorization",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should save tokens for API access",
+      "expectedOutput": "SaveTokens",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should handle logout and clear cookies",
+      "expectedOutput": "SignOutAsync",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use builder.Services.AddAuthentication().AddCookie().AddGoogle() to chain the authentication providers."
+    },
+    {
+      "level": 2,
+      "text": "In the Google options, use options.ClaimActions.MapJsonKey(\"ProfileImage\", \"picture\") to map the picture claim."
+    },
+    {
+      "level": 3,
+      "text": "Use await HttpContext.AuthenticateAsync(\"Google\") in the callback to get the external login info and tokens."
+    },
+    {
+      "level": 4,
+      "text": "Get the saved access token using await HttpContext.GetTokenAsync(\"Google\", \"access_token\")."
+    },
+    {
+      "level": 5,
+      "text": "For protected endpoints, use .RequireAuthorization() or the [Authorize] attribute on the handler."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not setting SaveTokens = true",
+      "consequence": "Cannot retrieve the Google access token later for API calls (e.g., fetching Google Drive files or Calendar).",
+      "correction": "Set options.SaveTokens = true in Google authentication options to preserve access and refresh tokens."
+    },
+    {
+      "mistake": "Storing Google access token in a non-secure cookie",
+      "correction": "Store the access token server-side linked to the session; only store a session ID in the cookie."
+    },
+    {
+      "mistake": "Not handling OAuth errors in callback",
+      "consequence": "Users see generic error pages when they deny consent or when OAuth fails.",
+      "correction": "Check for error query parameters in the callback (error, error_description) and handle them gracefully."
+    },
+    {
+      "mistake": "Using Google access token after expiration",
+      "consequence": "API calls fail with 401 Unauthorized after token expires (typically 1 hour).",
+      "correction": "Check token expiration or handle 401 responses and implement refresh token flow if needed."
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedMinutes": 35
+}

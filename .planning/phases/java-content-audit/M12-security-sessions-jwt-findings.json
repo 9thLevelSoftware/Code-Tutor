@@ -1,0 +1,68 @@
+{
+  "course": "java",
+  "module": "12-security-sessions-jwt",
+  "moduleTitle": "Security: Sessions & JWT",
+  "reviewDate": "2026-03-28",
+  "targetVersions": {
+    "springBoot": "4.0.x",
+    "springSecurity": "7.0",
+    "java": "25",
+    "jwtLibrary": "JJWT 0.12.x or Spring Security OAuth2"
+  },
+  "totalLessons": 5,
+  "lessonsReviewed": 5,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/12-security-sessions-jwt/lessons/01-lesson-s1-web-security-fundamentals",
+      "lessonTitle": "Web Security Fundamentals",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/12-security-sessions-jwt/lessons/02-lesson-s2-spring-security-basics",
+      "lessonTitle": "Spring Security Basics",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/12-security-sessions-jwt/lessons/03-lesson-s3-session-based-authentication",
+      "lessonTitle": "Session-Based Authentication",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/12-security-sessions-jwt/lessons/04-lesson-s4-jwt-authentication",
+      "lessonTitle": "JWT Authentication",
+      "qualityRating": "excellent",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/12-security-sessions-jwt/lessons/05-lesson-s5-role-based-access-control",
+      "lessonTitle": "Role-Based Access Control",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 0,
+    "bySeverity": {
+      "critical": 0,
+      "major": 0,
+      "minor": 0,
+      "info": 0
+    },
+    "byCategory": {
+      "STUB": 0,
+      "OUTDATED": 0,
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 0,
+      "PEDAGOGY": 0
+    }
+  }
+}

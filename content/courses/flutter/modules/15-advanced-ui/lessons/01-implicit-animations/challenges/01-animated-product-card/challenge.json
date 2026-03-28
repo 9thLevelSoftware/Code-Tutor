@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
-  "id": "14.1-challenge-0",
+  "id": "15.1-challenge-0",
+  "lessonId": "lesson-15-01",
+  "order": 1,
   "title": "Animated Product Card",
   "description": "Create an expandable product card that animates when tapped.",
   "instructions": "Build a product card that expands when tapped to show more details. Use AnimatedContainer for the size change, AnimatedOpacity to fade in the description, and AnimatedRotation to spin the expand/collapse icon.",

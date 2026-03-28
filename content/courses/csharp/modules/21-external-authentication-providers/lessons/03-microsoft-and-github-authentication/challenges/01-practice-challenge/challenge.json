@@ -1,0 +1,86 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-03-microsoft-github-auth",
+  "title": "Add Microsoft and GitHub Authentication",
+  "description": "Implement Microsoft Account and GitHub OAuth2 authentication providers alongside Google, creating a multi-provider authentication system with unified user management.",
+  "instructions": "Extend ShopFlow's authentication to support Microsoft Account and GitHub OAuth providers. Create a provider-agnostic system that handles different claim structures and authentication flows uniformly.\n\n**Requirements:**\n\n1. **Configure Microsoft Account Authentication**\n   - Add Microsoft Account OAuth handler\n   - Configuration:\n     - ClientId from Configuration[\"Authentication:Microsoft:ClientId\"]\n     - ClientSecret from Configuration[\"Authentication:Microsoft:ClientSecret\"]\n     - Tenant = \"common\" (allows personal AND work/school accounts)\n     - SaveTokens = true\n     - Scopes: openid, email, profile, User.Read\n     - Map 'displayName' claim to standard name claim\n\n2. **Configure GitHub Authentication**\n   - Add GitHub OAuth using the generic OAuth handler (AddOAuth with scheme name \"GitHub\")\n   - Configuration:\n     - ClientId from Configuration[\"Authentication:GitHub:ClientId\"]\n     - ClientSecret from Configuration[\"Authentication:GitHub:ClientSecret\"]\n     - AuthorizationEndpoint: https://github.com/login/oauth/authorize\n     - TokenEndpoint: https://github.com/login/oauth/access_token\n     - UserInformationEndpoint: https://api.github.com/user\n     - CallbackPath: /signin-github\n     - SaveTokens = true\n     - Scopes: read:user, user:email\n     - Map claims: id -> NameIdentifier, login -> Name, avatar_url -> ProfileImage, html_url -> ProfileUrl\n   - **IMPORTANT**: GitHub may not return email if private. In OnCreatingTicket:\n     - If email is null, call https://api.github.com/user/emails\n     - Add User-Agent header (required by GitHub)\n     - Find primary email and add to claims\n\n3. **Create Provider Selection Endpoint**\n   - GET /api/auth/providers - Returns available providers\n   - Response: [{ name, displayName, icon, color }, ...]\n\n4. **Create Generic Challenge Endpoint**\n   - GET /api/auth/challenge/{provider} - Accepts provider name (google, microsoft, github)\n   - Query: returnUrl (optional)\n   - Validate provider against allowed list\n   - Map provider name to correct scheme\n   - Challenge with appropriate scheme\n   - Store returnUrl in AuthenticationProperties\n\n5. **Create Generic Callback Handler**\n   - GET /api/auth/callback/{provider} - Handles all providers\n   - Get external login info\n   - Extract email (handle different claim paths per provider)\n   - Extract name and profile image\n   - Create/update unified ShopFlowUser\n   - Track which providers are linked\n   - Sign in with Cookie scheme\n   - Redirect to returnUrl or /dashboard\n\n6. **User Model with Multiple Providers**\n   - ShopFlowUser: Id, Email, Name, ProfileImageUrl, PrimaryProvider\n   - ExternalLogin: Provider, ProviderKey, AccessToken, RefreshToken, ExpiresAt\n   - Support multiple ExternalLogins per user\n\n**ShopFlow Scenario:**\nMerchants may prefer different login methods. Some use Microsoft work accounts, others prefer GitHub. Provide flexibility while maintaining a unified account identity.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should configure Microsoft Account with common tenant",
+      "expectedOutput": "Tenant",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should configure GitHub OAuth with custom endpoints",
+      "expectedOutput": "github.com/login/oauth",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should add User-Agent header for GitHub API",
+      "expectedOutput": "User-Agent",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should validate provider names in challenge endpoint",
+      "expectedOutput": "validProviders",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should support multiple external logins per user",
+      "expectedOutput": "ExternalLogins",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use AddMicrosoftAccount() for Microsoft - it has built-in OpenID Connect support."
+    },
+    {
+      "level": 2,
+      "text": "For GitHub, use AddOAuth('GitHub', 'GitHub', options => { ... }) as there's no built-in handler."
+    },
+    {
+      "level": 3,
+      "text": "In GitHub's OnCreatingTicket, use context.Backchannel.SendAsync() to fetch additional emails."
+    },
+    {
+      "level": 4,
+      "text": "Use a Dictionary<string, string> to map provider names to their authentication scheme names."
+    },
+    {
+      "level": 5,
+      "text": "For Microsoft, email is in standard ClaimTypes.Email. For GitHub, map from the 'email' JSON property."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not setting Tenant to 'common' for Microsoft",
+      "consequence": "Only work/school accounts work, personal Microsoft accounts fail authentication.",
+      "correction": "Set options.Tenant = 'common' to allow both consumer and enterprise Microsoft accounts."
+    },
+    {
+      "mistake": "Forgetting User-Agent header for GitHub API",
+      "consequence": "GitHub returns 403 Forbidden: 'Request forbidden by administrative rules'.",
+      "correction": "Always add request.Headers.Add('User-Agent', 'YourApp/1.0') for GitHub API calls."
+    },
+    {
+      "mistake": "Not handling GitHub's private email scenario",
+      "consequence": "Email claim is null for users with private emails, breaking user lookup.",
+      "correction": "Check if email is null, then call /user/emails endpoint to get the primary email."
+    },
+    {
+      "mistake": "Using wrong claim type mappings for each provider",
+      "consequence": "Name or email returns null because you're looking for the wrong claim type.",
+      "correction": "Microsoft uses standard ClaimTypes. GitHub uses custom claim mappings. Check each provider's docs."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 45
+}

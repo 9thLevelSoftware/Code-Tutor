@@ -1,0 +1,86 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-01-oauth2-fundamentals",
+  "title": "Implement OAuth2 Authorization Code Flow",
+  "description": "Build a complete OAuth2 authorization code flow implementation with PKCE support, token exchange, and secure state validation for the ShopFlow application.",
+  "instructions": "Implement a secure OAuth2 client for the ShopFlow e-commerce platform. This challenge focuses on the core OAuth2 authorization code flow with PKCE (Proof Key for Code Exchange) for enhanced security.\n\n**Requirements:**\n\n1. **OAuth2 Configuration**\n   - Create an `OAuth2Config` class with properties:\n     - ClientId, ClientSecret, AuthorizationEndpoint, TokenEndpoint\n     - RedirectUri, Scope (space-separated string)\n     - UsePkce (boolean, default true)\n\n2. **PKCE Generator**\n   - Create a `PkceGenerator` class with method `Generate()` that returns:\n     - CodeVerifier: cryptographically random string (43-128 chars, alphanumeric + -._~ )\n     - CodeChallenge: base64url-encoded SHA256 hash of verifier\n     - CodeChallengeMethod: \"S256\"\n\n3. **Authorization URL Builder**\n   - Create `BuildAuthorizationUrl()` method that constructs the OAuth2 authorization URL with:\n     - response_type=code\n     - client_id from config\n     - redirect_uri (URL encoded)\n     - scope (URL encoded, space-separated)\n     - state: cryptographically random state parameter\n     - code_challenge and code_challenge_method (if PKCE enabled)\n\n4. **Token Exchange**\n   - Create `ExchangeCodeForTokensAsync()` method:\n     - Accept authorization code and original code verifier\n     - POST to token endpoint with grant_type=authorization_code\n     - Include code, redirect_uri, client_id, client_secret\n     - Include code_verifier if PKCE was used\n     - Return parsed TokenResponse with access_token, refresh_token, expires_in, token_type\n\n5. **State Validation**\n   - Create `ValidateState()` method to prevent CSRF attacks\n   - Compare returned state with originally generated state\n   - Return true/false and log security warning on mismatch\n\n6. **Token Response Model**\n   - Create `TokenResponse` record with:\n     - AccessToken, RefreshToken, ExpiresIn (int seconds), TokenType\n     - IsExpired property that checks if token expired based on creation time + ExpiresIn\n\n**ShopFlow Scenario:**\nThe ShopFlow platform needs to integrate with external inventory providers that use OAuth2. Your implementation will allow ShopFlow to request access to vendor APIs on behalf of merchants.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should generate valid PKCE code verifier and challenge",
+      "expectedOutput": "CodeChallengeMethod",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should build authorization URL with all required parameters",
+      "expectedOutput": "response_type=code",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should include PKCE parameters when enabled",
+      "expectedOutput": "code_challenge",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should exchange authorization code for tokens",
+      "expectedOutput": "grant_type=authorization_code",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should validate state parameter for CSRF protection",
+      "expectedOutput": "ValidateState",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use RandomNumberGenerator.GetBytes() for cryptographically secure random values in PKCE and state generation."
+    },
+    {
+      "level": 2,
+      "text": "Convert bytes to base64url encoding using Convert.ToBase64String().Replace('+', '-').Replace('/', '_').TrimEnd('=') for PKCE."
+    },
+    {
+      "level": 3,
+      "text": "Use SHA256.HashData() from System.Security.Cryptography for the code challenge."
+    },
+    {
+      "level": 4,
+      "text": "Use Uri.EscapeDataString() for URL encoding parameter values to ensure proper OAuth2 compliance."
+    },
+    {
+      "level": 5,
+      "text": "Store the generated state and code verifier in a secure temporary storage (session/cache) to validate the callback."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Using non-cryptographic random for state or PKCE",
+      "consequence": "Security vulnerability allowing attackers to predict or guess the code verifier, compromising the OAuth flow.",
+      "correction": "Always use RandomNumberGenerator.GetBytes() for generating security-sensitive random values."
+    },
+    {
+      "mistake": "Not URL-encoding parameters in authorization URL",
+      "consequence": "Invalid URLs when scopes or redirect URIs contain special characters, causing OAuth provider errors.",
+      "correction": "Use Uri.EscapeDataString() on all dynamic parameter values before concatenating into URL."
+    },
+    {
+      "mistake": "Sending client_secret in authorization URL",
+      "consequence": "Client secret exposed in browser history and server logs, leading to security breach.",
+      "correction": "Client secret should ONLY be sent in the token exchange POST request body, never in URLs."
+    },
+    {
+      "mistake": "Not validating the state parameter on callback",
+      "consequence": "Vulnerable to CSRF attacks where malicious sites can link their OAuth grants to victim users.",
+      "correction": "Always compare the state returned in callback with the state stored in session before processing."
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedMinutes": 35
+}

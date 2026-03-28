@@ -1,6 +1,8 @@
 {
   "type": "FREE_CODING",
-  "id": "14.1-challenge-1",
+  "id": "15.1-challenge-1",
+  "lessonId": "lesson-15-01",
+  "order": 2,
   "title": "Animated Tab Indicator",
   "description": "Create a custom animated tab bar with a sliding indicator.",
   "instructions": "Build a horizontal tab bar with 3 tabs. When a tab is selected, animate an underline indicator to slide to that tab's position. Use TweenAnimationBuilder to animate the indicator position and AnimatedOpacity to highlight the selected tab text.",

@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l03-challenge-01",
+  "title": "Implement Resource-Based Authorization for ShopFlow",
+  "description": "Build resource-based authorization using IAuthorizationService to enforce ownership and access control for specific resources like orders, products, and user profiles in ShopFlow.",
+  "instructions": "Implement resource-based authorization where access depends on ownership of specific resources, not just roles or claims. Users should only modify their own data.\n\n**Requirements:**\n\n1. **Create Resource Models with Ownership:**\n   - Order class with OwnerId property\n   - Product class with SellerId property\n   - UserProfile class with UserId property\n\n2. **Implement Custom Authorization Handler:**\n   - ResourceOwnerAuthorizationHandler that checks if current user owns the resource\n   - Support different operations: Read, Update, Delete\n   - Admin users can access any resource (override ownership)\n\n3. **Create Resource-Based Requirements:**\n   - ResourceOwnerRequirement with ResourceType and Operation parameters\n\n4. **Create Protected Endpoints with Resource Auth:**\n   - GET /api/orders/{id} - Owner or Admin can view\n   - PUT /api/orders/{id} - Only owner can update\n   - DELETE /api/orders/{id} - Only owner or Admin can delete\n   - PUT /api/products/{id} - Only seller (product owner) can update\n   - GET /api/users/{id}/profile - Only the user or Admin can view\n\n5. **Use IAuthorizationService for Imperative Checks:**\n   - Inject IAuthorizationService into endpoints\n   - Call AuthorizeAsync with the resource and requirement\n\n**Scenarios to Support:**\n- User A can view, update, delete their own orders\n- User A cannot access User B's orders (returns 403)\n- Admin can view/update/delete any order (full override)\n- Product sellers can only update their own products\n- Users can only view their own profile, not others'\n\n**Hint:** Resource-based auth uses IAuthorizationService.AuthorizeAsync(user, resource, policyName) - pass the actual resource object so handlers can check ownership.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should use IAuthorizationService for authorization",
+      "expectedOutput": "IAuthorizationService",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should have AuthorizeAsync call with resource",
+      "expectedOutput": "AuthorizeAsync",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should check resource ownership",
+      "expectedOutput": "OwnerId",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should handle forbidden access",
+      "expectedOutput": "ForbidResult",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Inject IAuthorizationService into your endpoint handler to perform resource-based checks."
+    },
+    {
+      "level": 2,
+      "text": "Use await authorizationService.AuthorizeAsync(User, resource, \"PolicyName\") to check access."
+    },
+    {
+      "level": 3,
+      "text": "Create an IAuthorizationRequirement that accepts the resource type and operation type."
+    },
+    {
+      "level": 4,
+      "text": "In your handler, check if context.Resource is the expected type and cast it."
+    },
+    {
+      "level": 5,
+      "text": "Always allow Admin role to bypass ownership checks - check context.User.IsInRole(\"Admin\") first."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not passing the actual resource to AuthorizeAsync",
+      "consequence": "The authorization handler receives null resource and cannot check ownership.",
+      "correction": "Pass the loaded entity: await authService.AuthorizeAsync(User, order, \"CanViewOrder\")"
+    },
+    {
+      "mistake": "Checking resource ownership before verifying authentication",
+      "consequence": "Anonymous users might cause null reference exceptions.",
+      "correction": "Check context.User.Identity?.IsAuthenticated first, or use [Authorize] attribute on endpoint."
+    },
+    {
+      "mistake": "Not handling the case where resource doesn't exist",
+      "consequence": "Returns 403 when should return 404 - user doesn't know if resource exists or they lack access.",
+      "correction": "Check if resource exists first (return 404), then check authorization (return 403)."
+    },
+    {
+      "mistake": "Forgetting to register the authorization handler",
+      "consequence": "Policy evaluation fails because the handler isn't in DI container.",
+      "correction": "Register with builder.Services.AddSingleton<IAuthorizationHandler, ResourceOwnerHandler>()"
+    }
+  ],
+  "difficulty": "intermediate",
+  "estimatedMinutes": 50
+}

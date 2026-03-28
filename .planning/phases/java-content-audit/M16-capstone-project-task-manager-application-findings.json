@@ -1,0 +1,149 @@
+{
+  "course": "java",
+  "module": "16-capstone-project-task-manager-application",
+  "moduleTitle": "Capstone Project: Task Manager Application",
+  "reviewDate": "2026-03-28",
+  "targetJavaVersion": "Java 25",
+  "targetSpringBootVersion": "Spring Boot 4.0.x",
+  "totalLessons": 9,
+  "lessonsReviewed": 9,
+  "findings": [
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/01-lesson-161-project-requirements-architecture",
+      "lessonTitle": "Lesson 16.1: Project Requirements and Architecture",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/02-lesson-162-backend-setup-data-layer",
+      "lessonTitle": "Lesson 16.2: Backend Setup - Data Layer",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/03-lesson-163-rest-api-development",
+      "lessonTitle": "Lesson 16.3: REST API Development",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 30,
+          "originalText": "HTTP Status Codes communication",
+          "description": "The lesson mentions HTTP status codes but could include a quick reference table for the most common codes students will use in the capstone",
+          "webResearchNote": "A visual reference card showing 200, 201, 204, 400, 401, 403, 404, 409, 500 with brief descriptions would be helpful for quick reference during implementation."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/04-lesson-164-authentication-implementation",
+      "lessonTitle": "Lesson 16.4: Authentication Implementation",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "Spring Security functional configuration",
+          "description": "The lesson covers SecurityFilterChain configuration well but could explicitly show a complete example of the SecurityConfig class with JWT filter integration",
+          "webResearchNote": "Students need to see the complete wiring: SecurityFilterChain bean, PasswordEncoder bean, and JwtAuthenticationFilter integration in one place."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/05-lesson-165-business-logic-validation",
+      "lessonTitle": "Lesson 16.5: Business Logic and Validation",
+      "qualityRating": "good",
+      "issues": [],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/06-lesson-166-react-frontend-development",
+      "lessonTitle": "Lesson 16.6: React Frontend Development",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "React frontend path setup",
+          "description": "The lesson for React path students should include a note about CORS configuration being required on the backend (covered in M13.6) since this is easily forgotten",
+          "webResearchNote": "Cross-reference to M13.6 CORS content would help students remember to configure this before trying to connect frontend to backend."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/07-lesson-167-frontend-backend-integration",
+      "lessonTitle": "Lesson 16.7: Frontend-Backend Integration",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "PEDAGOGY",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "Integration troubleshooting",
+          "description": "The lesson covers integration but could include a troubleshooting checklist for common connection issues (CORS errors, port mismatches, authentication failures)",
+          "webResearchNote": "Common issues: 1) Spring Boot not running on expected port, 2) CORS not configured, 3) React dev server proxy not set up, 4) JWT token not included in requests."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/08-lesson-168-testing-the-application",
+      "lessonTitle": "Lesson 16.8: Testing the Application",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "Testing strategy",
+          "description": "The lesson could benefit from mentioning Testcontainers for integration testing with the actual PostgreSQL database instead of H2",
+          "webResearchNote": "Testcontainers provides more realistic integration tests than H2 (which has different SQL dialect). This would be valuable for a capstone project."
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/java/modules/16-capstone-project-task-manager-application/lessons/09-lesson-169-deployment-to-production",
+      "lessonTitle": "Lesson 16.9: Deployment to Production",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "OUTDATED",
+          "severity": "major",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "Railway deployment instructions",
+          "description": "This lesson likely contains Railway deployment instructions similar to M14. The free tier discontinuation issue from M14.5 applies here as well",
+          "webResearchNote": "Must update deployment instructions to reflect Railway's discontinued free tier and suggest alternatives (Render, Fly.io, etc.)."
+        },
+        {
+          "category": "INCOMPLETE",
+          "severity": "minor",
+          "file": "content/01-theory.md",
+          "line": 1,
+          "originalText": "Production security checklist",
+          "description": "The deployment lesson should include a pre-deployment security checklist (environment variables, HTTPS, database credentials, JWT secrets)",
+          "webResearchNote": "A checklist would ensure students don't deploy with default passwords or exposed secrets. Items: change default passwords, set strong JWT secret, enable HTTPS, configure CORS for production domain."
+        }
+      ],
+      "fixesApplied": []
+    }
+  ],
+  "summary": {
+    "totalIssues": 7,
+    "bySeverity": { "critical": 0, "major": 1, "minor": 6 },
+    "byCategory": { "STUB": 0, "OUTDATED": 1, "INACCURATE": 0, "INCOMPLETE": 5, "METADATA": 0, "PEDAGOGY": 1 }
+  }
+}

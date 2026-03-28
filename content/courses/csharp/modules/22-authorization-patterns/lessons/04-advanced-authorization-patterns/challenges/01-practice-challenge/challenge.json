@@ -1,0 +1,80 @@
+{
+  "type": "FREE_CODING",
+  "id": "m22-l04-challenge-01",
+  "title": "Implement Advanced Authorization Patterns for ShopFlow",
+  "description": "Build advanced authorization patterns including time-based access, location-based restrictions, multi-factor requirements, and custom authorization middleware for ShopFlow e-commerce platform.",
+  "instructions": "Implement sophisticated authorization patterns that go beyond basic roles, policies, and resource ownership. Combine multiple factors for high-security scenarios.\n\n**Requirements:**\n\n1. **Time-Based Access Control:**\n   - Create BusinessHoursRequirement that only allows access during 9 AM - 6 PM (configurable)\n   - Create MaintenanceWindowRequirement that blocks access during maintenance\n   - Apply to sensitive admin operations like bulk user deletion\n\n2. **Location-Based Authorization:**\n   - Create LocationRequirement that checks user's IP geolocation\n   - Allow configurable allowed/blocked countries or regions\n   - Apply to high-value operations like viewing financial reports\n\n3. **Multi-Factor Authorization:**\n   - Create MfaRequirement that checks if user has completed MFA recently\n   - Implement MFA grace period (e.g., MFA valid for 30 minutes)\n   - Apply to critical operations like changing account settings\n\n4. **Composite Authorization Handler:**\n   - Create a handler that requires ALL specified requirements to pass (AND logic)\n   - Use for ultra-sensitive operations requiring multiple factors\n\n5. **Create Protected Endpoints:**\n   - POST /api/admin/bulk-delete - Requires business hours + admin role + MFA\n   - GET /api/financial/reports - Requires location (allowed countries) + admin role\n   - PUT /api/account/security-settings - Requires MFA + resource ownership\n   - POST /api/admin/system-maintenance - Requires time-based + location + MFA (composite)\n\n**Scenarios to Support:**\n- Bulk operations only allowed during business hours to prevent accidents\n- Financial data only accessible from approved geographic locations\n- Account security changes require recent MFA verification\n- System maintenance commands require multiple authorization factors\n\n**Hint:** Combine multiple IAuthorizationRequirement objects and create handlers that can evaluate complex conditions. Use claims to store MFA timestamp and location data.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should have time-based authorization requirement",
+      "expectedOutput": "TimeBased",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should have location-based authorization",
+      "expectedOutput": "Location",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should check MFA requirements",
+      "expectedOutput": "MFA",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should have composite authorization handler",
+      "expectedOutput": "Composite",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Time-based checks use DateTime.UtcNow and compare against configured business hours."
+    },
+    {
+      "level": 2,
+      "text": "For location-based auth, check a 'Country' or 'Region' claim against an allowlist."
+    },
+    {
+      "level": 3,
+      "text": "Store MFA completion timestamp in a claim and verify it's within the grace period."
+    },
+    {
+      "level": 4,
+      "text": "Composite handlers can check multiple conditions - all must pass for authorization."
+    },
+    {
+      "level": 5,
+      "text": "Consider using DateTime.UtcNow and TimeSpan for precise time calculations."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Using local time instead of UTC for time-based checks",
+      "consequence": "Authorization behaves inconsistently across different time zones.",
+      "correction": "Always use DateTime.UtcNow and convert configured hours to UTC or use TimeZoneInfo."
+    },
+    {
+      "mistake": "Not handling daylight saving time",
+      "consequence": "Business hours shift by an hour during DST transitions.",
+      "correction": "Use TimeZoneInfo.ConvertTimeToUtc to properly handle DST."
+    },
+    {
+      "mistake": "Hardcoding grace periods",
+      "consequence": "Cannot adjust MFA timeout without code changes.",
+      "correction": "Inject IConfiguration or IOptions to make grace periods configurable."
+    },
+    {
+      "mistake": "Not providing helpful error messages",
+      "consequence": "Users don't know why they're denied - is it time, location, or MFA?",
+      "correction": "Add custom middleware or filters that explain which requirement failed."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 55
+}

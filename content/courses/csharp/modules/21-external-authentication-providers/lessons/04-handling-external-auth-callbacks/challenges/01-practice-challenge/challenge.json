@@ -1,0 +1,86 @@
+{
+  "type": "FREE_CODING",
+  "id": "lesson-21-04-callback-handling",
+  "title": "Implement Secure OAuth Callback Handling",
+  "description": "Build a robust OAuth callback handler with comprehensive error handling, state validation, security logging, and user experience improvements for the ShopFlow application.",
+  "instructions": "Create a production-ready OAuth callback handler that handles all edge cases, security scenarios, and provides clear feedback to users. This is the critical security endpoint in OAuth flows.\n\n**Requirements:**\n\n1. **Error Detection & Classification**\n   - Create `OAuthErrorClassifier` class that parses OAuth error responses:\n     - access_denied: User denied consent\n     - invalid_request: Missing or invalid parameters\n     - invalid_scope: Requested scopes invalid\n     - server_error: Provider server error\n     - temporarily_unavailable: Provider temporarily down\n     - invalid_state: State parameter mismatch (CSRF)\n   - Each error should have: Type, Description, IsRetryable, UserMessage, LogLevel\n\n2. **Secure Callback Handler**\n   Create GET /auth/callback/{provider} with comprehensive handling:\n   - Validate provider name against allowlist\n   - Extract and classify any OAuth errors from query string\n   - Retrieve original state from secure session storage\n   - Validate state parameter using constant-time comparison\n   - If state invalid: log security warning, clear session, redirect to /auth/security-error\n   - Exchange authorization code for tokens\n   - Handle token exchange failures with detailed logging\n\n3. **User Experience Flows**\n   Redirect destinations based on outcome:\n   - Success: /dashboard with ?welcome=first or ?welcome=back\n   - First-time user: /welcome with onboarding flag\n   - Existing user, new provider: /account/connections?linked={provider}\n   - Access denied: /login?message=consent_denied\n   - Security error (invalid state): /auth/security-error (generic message to not leak info)\n   - Provider error: /login?message=provider_error&retry=1\n\n4. **Security Logging**\n   Create `ISecurityAuditLogger` interface and implementation:\n   - Log all callback attempts: timestamp, provider, IP, user agent, outcome\n   - Log security events: state mismatch, replay attempts, rapid-fire requests\n   - Include correlation ID for tracing across logs\n   - Different log levels: Info (success), Warning (user errors), Error (system), Critical (security)\n\n5. **Rate Limiting & Replay Protection**\n   - Create `AuthorizationState` class stored in distributed cache:\n     - State string, PKCE verifier, CreatedAt, ExpiresAt, Used\n   - On callback: mark state as used, check for replay (Used=true is error)\n   - Auto-expire states after 10 minutes\n   - Track callback attempts per IP (max 10 per minute)\n\n6. **Error Response Handler**\n   - Create middleware or filter that catches OAuth exceptions\n   - Returns appropriate HTTP status codes:\n     - 400: Invalid request parameters\n     - 401: Authentication failed\n     - 403: Access denied by user\n     - 503: Provider unavailable\n   - Include X-Request-ID header for support\n\n**ShopFlow Scenario:**\nThe callback endpoint is ShopFlow's most security-critical OAuth component. It must gracefully handle every failure mode while maintaining security and user trust.",
+  "language": "csharp",
+  "testCases": [
+    {
+      "id": "test-1",
+      "description": "Should validate state parameter with constant-time comparison",
+      "expectedOutput": "CryptographicOperations.FixedTimeEquals",
+      "isVisible": true
+    },
+    {
+      "id": "test-2",
+      "description": "Should classify OAuth errors correctly",
+      "expectedOutput": "OAuthErrorClassifier",
+      "isVisible": true
+    },
+    {
+      "id": "test-3",
+      "description": "Should implement rate limiting for callback attempts",
+      "expectedOutput": "RateLimiter",
+      "isVisible": true
+    },
+    {
+      "id": "test-4",
+      "description": "Should detect and prevent replay attacks",
+      "expectedOutput": "Used",
+      "isVisible": true
+    },
+    {
+      "id": "test-5",
+      "description": "Should log security events with correlation ID",
+      "expectedOutput": "CorrelationId",
+      "isVisible": true
+    }
+  ],
+  "hints": [
+    {
+      "level": 1,
+      "text": "Use CryptographicOperations.FixedTimeEquals() for state comparison to prevent timing attacks."
+    },
+    {
+      "level": 2,
+      "text": "Store AuthorizationState in IDistributedCache with a key like 'oauth:state:{state}' and 10-minute expiration."
+    },
+    {
+      "level": 3,
+      "text": "Use MemoryCache or IDistributedCache to track IP-based rate limits with sliding expiration."
+    },
+    {
+      "level": 4,
+      "text": "Generate a correlation ID at the start of the OAuth flow and propagate it through logs using ILogger.BeginScope()."
+    },
+    {
+      "level": 5,
+      "text": "For replay protection, check if the state was already used before processing - if Used=true, reject immediately."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Using regular string comparison (==) for state validation",
+      "consequence": "Vulnerable to timing attacks that could leak valid state values.",
+      "correction": "Always use CryptographicOperations.FixedTimeEquals() for comparing security tokens."
+    },
+    {
+      "mistake": "Not marking state as used after successful callback",
+      "consequence": "Replay attacks possible - attacker can reuse intercepted callback URLs.",
+      "correction": "Set Used=true in AuthorizationState after first successful use and check before processing."
+    },
+    {
+      "mistake": "Exposing detailed error messages to users",
+      "consequence": "Information leakage aids attackers in understanding system internals.",
+      "correction": "Log detailed errors internally, show generic user-friendly messages externally."
+    },
+    {
+      "mistake": "No rate limiting on callback endpoint",
+      "consequence": "Brute force attacks on state parameters possible.",
+      "correction": "Implement per-IP rate limiting with progressive delays or temporary blocks."
+    }
+  ],
+  "difficulty": "advanced",
+  "estimatedMinutes": 50
+}
