@@ -1,0 +1,9 @@
+ commands:
+   build: dotnet build native-app-wpf/CodeTutor.Wpf.csproj
+   test: dotnet test native-app.Tests/native-app.Tests.csproj
+   lint: dotnet build native-app-wpf/CodeTutor.Wpf.csproj --no-restore
+   format: dotnet csharpier format native-app-wpf native-app.Tests
+ 
+ # No services needed for this content audit mission.
+ # Workers only read content files and produce report files.
+ services: {}
