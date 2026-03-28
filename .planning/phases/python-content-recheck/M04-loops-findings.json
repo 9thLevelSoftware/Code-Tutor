@@ -1,179 +1,128 @@
 {
+  "course": "python",
   "module": "04-loops",
   "moduleTitle": "Loops",
+  "reviewDate": "2026-03-28",
   "totalLessons": 5,
   "lessonsReviewed": 5,
   "findings": [
     {
-      "lessonPath": "modules/04-loops/lessons/01-while-loops-the-power-of-repetition",
-      "lessonTitle": "while Loops: The Power of Repetition",
-      "qualityRating": "B",
+      "lessonPath": "content/courses/python/modules/04-loops/lessons/01-while-loops-the-power-of-repetition",
+      "lessonTitle": "While Loops - The Power of Repetition",
+      "qualityRating": "acceptable",
       "issues": [
         {
-          "category": "INACCURATE",
+          "category": "METADATA",
           "severity": "major",
-          "description": "starter.py uses fill-in-the-blank pattern with empty expressions: 'while :' (line with empty condition), 'guess = ' (bare assignment), 'attempts = ' (bare assignment). These are all Python SyntaxErrors — the file cannot be parsed or run as-is.",
-          "suggestedFix": "Use placeholder values: 'while True:  # TODO: what condition keeps the loop going?', 'guess = 0  # TODO: get user guess', 'attempts = attempts  # TODO: increment counter'."
-        },
-        {
-          "category": "PEDAGOGY",
-          "severity": "minor",
-          "description": "03-theory.md 'Visual Flow' section shows loop body repeated inline 3 times within the same code block, as if it were a single unrolled execution. Could confuse beginners about actual loop structure.",
-          "suggestedFix": "Use a step-by-step trace table instead of repeating code lines inline."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "01-theory.md code blocks use generic fences (no 'python' tag), inconsistent with 02-example.md which uses ```python.",
-          "suggestedFix": "Add 'python' language tag to all code fences in 01-theory.md."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "Content markdown files mix HTML tags (ol, li) with Markdown list syntax — may render inconsistently.",
-          "suggestedFix": "Standardize on Markdown list syntax or HTML, not a mix."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "Challenge has only 1 trivial test case ('Code runs without errors') — doesn't verify game logic correctness.",
-          "suggestedFix": "Add test cases that check for 'Too high'/'Too low' output or correct win message."
+          "file": "lesson.json",
+          "line": null,
+          "originalText": null,
+          "description": "lesson.json contains challenge data instead of lesson metadata. File has challenge fields (testCases, hints, commonMistakes) but missing lesson fields (id, title, moduleId, order, estimatedMinutes, difficulty)",
+          "webResearchNote": null
         }
-      ]
+      ],
+      "fixesApplied": []
     },
     {
-      "lessonPath": "modules/04-loops/lessons/02-for-loops-iterate-with-ease",
-      "lessonTitle": "for Loops: Iterate with Ease",
-      "qualityRating": "B",
+      "lessonPath": "content/courses/python/modules/04-loops/lessons/02-for-loops-iterate-with-ease",
+      "lessonTitle": "For Loops - Iterate With Ease",
+      "qualityRating": "acceptable",
       "issues": [
         {
-          "category": "PEDAGOGY",
-          "severity": "minor",
-          "description": "04-warning.md suggests using numpy for float ranges — numpy is an external package not installed or covered in this curriculum; confusing for absolute beginners.",
-          "suggestedFix": "Replace numpy suggestion with a simpler 'use a while loop for float steps' recommendation (which is already shown)."
-        },
-        {
-          "category": "PEDAGOGY",
-          "severity": "minor",
-          "description": "04-warning.md introduces enumerate() with a list example, but lists and enumerate are Module 5 topics. Premature for Module 4.",
-          "suggestedFix": "Label the enumerate() section as a 'Preview' or move it to Module 5."
-        },
-        {
-          "category": "INACCURATE",
-          "severity": "minor",
-          "description": "starter.py Pattern 2 inner loop body is print() (bare print = newline), which is misleading since students must replace it with print('*', end=''). Other starters use blank expressions which are clearer placeholders.",
-          "suggestedFix": "Use a comment placeholder like '# print star here' instead of a bare print()."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "Challenge has only 1 trivial test case ('Code runs without errors').",
-          "suggestedFix": "Add output-verifying test cases for each pattern."
-        }
-      ]
-    },
-    {
-      "lessonPath": "modules/04-loops/lessons/03-loop-control-break-continue-and-pass",
-      "lessonTitle": "Loop Control: break, continue, and pass",
-      "qualityRating": "B",
-      "issues": [
-        {
-          "category": "INACCURATE",
+          "category": "METADATA",
           "severity": "major",
-          "description": "starter.py uses fill-in-the-blank conditions: 'if :  # If negative' and 'if :  # If found'. These are Python SyntaxErrors — the file cannot be run as-is.",
-          "suggestedFix": "Use valid placeholder expressions: 'if False:  # TODO: check if negative', 'if False:  # TODO: check if found target'."
-        },
-        {
-          "category": "PEDAGOGY",
-          "severity": "minor",
-          "description": "The challenge uses enumerate(), map(), and list comprehension via join — these are concepts from later modules (M05, M06). The starter scaffolding is more advanced than the lesson content.",
-          "suggestedFix": "Simplify the starter to use only concepts taught so far, or add comments explaining the advanced constructs."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "Challenge has only 1 trivial test case.",
-          "suggestedFix": "Add test cases verifying 'Skipping negative' output and 'Found' or 'not found' messages."
+          "file": "lesson.json",
+          "line": null,
+          "originalText": null,
+          "description": "lesson.json contains challenge data instead of lesson metadata. File has challenge fields but missing lesson metadata fields",
+          "webResearchNote": null
         }
-      ]
+      ],
+      "fixesApplied": []
     },
     {
-      "lessonPath": "modules/04-loops/lessons/04-nested-loops-loops-within-loops",
-      "lessonTitle": "Nested Loops: Loops Within Loops",
-      "qualityRating": "B",
+      "lessonPath": "content/courses/python/modules/04-loops/lessons/03-loop-control-break-continue-and-pass",
+      "lessonTitle": "Loop Control - Break, Continue, and Pass",
+      "qualityRating": "acceptable",
       "issues": [
         {
-          "category": "INACCURATE",
+          "category": "METADATA",
           "severity": "major",
-          "description": "starter.py uses fill-in-the-blank pattern: 'if :  # Even sum' (bare if with no condition), 'product = ' (bare assignment). These are Python SyntaxErrors.",
-          "suggestedFix": "Use 'if True:  # TODO: check if (row + col) % 2 == 0' and 'product = 0  # TODO: calculate row * col'."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "starter.py only scaffolds the bottom half of Pattern 1 (Diamond) with 'pass', leaving it for the student. The top half is fully implemented. This creates an inconsistent scaffolding approach within the same file.",
-          "suggestedFix": "Either scaffold both halves equally or provide comments explaining what the student needs to implement."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "Challenge has only 1 trivial test case.",
-          "suggestedFix": "Add test cases for each pattern's output format."
+          "file": "lesson.json",
+          "line": null,
+          "originalText": null,
+          "description": "lesson.json contains challenge data instead of lesson metadata. File has challenge fields but missing lesson metadata fields",
+          "webResearchNote": null
         }
-      ]
+      ],
+      "fixesApplied": []
     },
     {
-      "lessonPath": "modules/04-loops/lessons/05-mini-project-practical-loop-programs",
-      "lessonTitle": "Mini-Project: Practical Loop Programs",
-      "qualityRating": "C",
+      "lessonPath": "content/courses/python/modules/04-loops/lessons/04-nested-loops-loops-within-loops",
+      "lessonTitle": "Nested Loops - Loops Within Loops",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "major",
+          "file": "lesson.json",
+          "line": null,
+          "originalText": null,
+          "description": "lesson.json contains challenge data instead of lesson metadata. File has challenge fields but missing lesson metadata fields",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/04-loops/lessons/05-mini-project-practical-loop-programs",
+      "lessonTitle": "Mini-Project - Practical Loop Programs",
+      "qualityRating": "acceptable",
+      "issues": [
+        {
+          "category": "METADATA",
+          "severity": "major",
+          "file": "lesson.json",
+          "line": null,
+          "originalText": null,
+          "description": "lesson.json contains challenge data instead of lesson metadata. File has challenge fields but missing lesson metadata fields",
+          "webResearchNote": null
+        }
+      ],
+      "fixesApplied": []
+    },
+    {
+      "lessonPath": "content/courses/python/modules/04-loops/module.json",
+      "lessonTitle": "Module Metadata",
+      "qualityRating": "needs-work",
       "issues": [
         {
           "category": "STUB",
           "severity": "critical",
-          "description": "starter.py contains only '# TODO: Add your implementation here' — completely empty with no scaffolding. This is the most complex challenge in the module (Student Grade Manager with menu system, statistics, distribution, and high/low tracking) and provides zero guidance to the student.",
-          "suggestedFix": "Add scaffolding with menu structure, function stubs for each menu option, and TODO comments for each section."
-        },
-        {
-          "category": "PEDAGOGY",
-          "severity": "major",
-          "description": "The challenge (Student Grade Manager) requires lists, append(), enumerate(), len(), and list operations, but lists are not taught until Module 5. The challenge also assumes knowledge of functions and complex data structures beyond what M04 covers.",
-          "suggestedFix": "Redesign the challenge to use only loop constructs taught in M04 (while, for, break, continue, nested loops) without requiring list operations, or add prerequisite notes."
-        },
-        {
-          "category": "METADATA",
-          "severity": "minor",
-          "description": "challenge.json difficulty is 'beginner' but the challenge requires combining all loop types with menu systems, statistics calculations, and data structures. This is at minimum 'intermediate' difficulty.",
-          "suggestedFix": "Change difficulty to 'intermediate'."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "Challenge has only 1 trivial test case ('Code runs without errors'). For a complex multi-feature program, more validation is needed.",
-          "suggestedFix": "Add test cases for menu display, grade entry confirmation, and statistics output."
-        },
-        {
-          "category": "INCOMPLETE",
-          "severity": "minor",
-          "description": "challenge.json commonMistakes are generic and identical across all M04 lessons (forgetting colon, = vs ==, incorrect indentation). They should be specific to the exercise.",
-          "suggestedFix": "Add challenge-specific mistakes like 'forgetting to check if grades list is empty before calculating average' or 'not validating grade range 0-100'."
+          "file": "module.json",
+          "line": 1,
+          "originalText": "# TODO: Add your implementation here",
+          "description": "module.json is a placeholder stub with TODO comment instead of proper module metadata (id, title, description, order, lessons array)",
+          "webResearchNote": null
         }
-      ]
+      ],
+      "fixesApplied": []
     }
   ],
   "summary": {
-    "totalIssues": 20,
+    "totalIssues": 6,
     "bySeverity": {
       "critical": 1,
-      "major": 4,
-      "minor": 15
+      "major": 5,
+      "minor": 0
     },
     "byCategory": {
       "STUB": 1,
       "OUTDATED": 0,
-      "INACCURATE": 3,
-      "INCOMPLETE": 9,
-      "METADATA": 1,
-      "PEDAGOGY": 4
+      "INACCURATE": 0,
+      "INCOMPLETE": 0,
+      "METADATA": 5,
+      "PEDAGOGY": 0
     }
   }
 }
